@@ -1,0 +1,19 @@
+name: "Generate latest definitions files"
+
+env:
+  VS_WORKFLOW_TYPE: "trigger-postman"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dummy:
+    name: "Dummy action"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/ISSUE_TEMPLATE/openapi-changes.yml

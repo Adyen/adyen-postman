@@ -23,7 +23,7 @@ do
   sed -i.bak2 "0,/title:.*/{s//title: $REAL_NAME $VERSION [$DATE]/}" $FILENAME # Set unique name of API for Postman
 
   /script.sh generate \
-      --additional-properties postmanVariables=YOUR_MERCHANT_ACCOUNT-YOUR_MERCHANT_NAME-YOUR_DOMAIN_NAME-YOUR_MERCHANT_ID \
+      --additional-properties postmanVariables=YOUR_MERCHANT_ACCOUNT-YOUR_BALANCE_PLATFORM,generatedVariables=YOUR_REFERENCE_NUMBER-YOUR_REFERENCE-YOUR_ORDER_NUMBER-YOUR_ORDER_NUMBER\
       -i $FILENAME \
       -o postman/$BASE
 

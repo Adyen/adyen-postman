@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Management API-v1",
+		"name": "Management API (v1)",
 		"description": {
 		    "content": "Configure and manage your Adyen company and merchant accounts, stores, and payment terminals.\n## Authentication\nEach request to the Management API must be signed with an API key. [Generate your API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key) in the Customer Area and then set this key to the `X-API-Key` header value.\n\nTo access the live endpoints, you need to generate a new API key in your live Customer Area.\n## Versioning\n\nManagement API handles versioning as part of the endpoint URL. For example, to send a request to version 1 of the `/companies/{companyId}/webhooks` endpoint, use:\n\n```text\nhttps://management-test.adyen.com/v1/companies/{companyId}/webhooks\n```\n\n## Going live\n\nTo access the live endpoints, you need an API key from your live Customer Area. Use this API key to make requests to:\n\n```text\nhttps://management-live.adyen.com/v1\n```",
 		    "type": "text/markdown"
@@ -188,7 +188,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"companyId\": \"YOUR_COMPANY_ACCOUNT\",\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY_ID\",\n \"businessLineId\": \"YOUR_BUSINESS_LINE_ID\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"reference\": \"YOUR_OWN_REFERENCE\"\n}",
+                                        "raw": "{\n \"companyId\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY_ID\",\n \"businessLineId\": \"YOUR_BUSINESS_LINE_ID\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"reference\": \"YOUR_OWN_REFERENCE\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -7317,6 +7317,11 @@
 		{
 			"key": "paymentMethodId",
 			"value": "paymentMethodId_example",
+			"type": "string"
+		},
+		{
+			"key": "YOUR_COMPANY_ACCOUNT",
+			"value": "",
 			"type": "string"
 		},
 		{

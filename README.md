@@ -1,9 +1,6 @@
 # Adyen Postman
 
-Icons for external tools (e.g. Travis)
-
-Short description explaining (1) what the repo contains, (2) how it works and (3) why you would need it.
-
+s
 This repository contains declaration files in the [Postman](https://postman.com/) format. The files are automatically generated based on the latest [adyen-openapi](https://github.com/adyen/adyen-openapi) definition files.
 They are then uploaded on our [AdyenDev](https://www.postman.com/adyendev/) Postman space and you can fork it from there. You can also directly pick the `.json` files available here and upload them if you prefer.
 

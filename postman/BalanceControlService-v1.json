@@ -1,0 +1,91 @@
+{
+	"info": {
+		"name": "Adyen Balance Control API (v1)",
+		"description": {
+		    "content": "The Balance Control API lets you transfer funds between merchant accounts that belong to the same legal entity and are under the same company account.\n\n## Authentication\nTo connect to the Balance Control API, you must authenticate your requests with an [API key or basic auth username and password](https://docs.adyen.com/development-resources/api-authentication). To learn how you can generate these, see [API credentials](https://docs.adyen.com/development-resources/api-credentials).Here is an example of authenticating a request with an API key:\n\n```\ncurl\n-H \"X-API-Key: Your_API_key\" \\n-H \"Content-Type: application/json\" \\n...\n```\nNote that when going live, you need to generate API credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nThe Balance Control API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n\n```\nhttps://pal-test.adyen.com/pal/servlet/BalanceControl/v1/balanceTransfer\n```\n",
+		    "type": "text/markdown"
+		},
+		"version": "1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "General",
+	            "item": [
+	                        {
+    "name": "/balanceTransfer",
+                "description": "Starts a balance transfer request between merchant accounts. The following conditions must be met before you can successfully transfer balances:  * The source and destination merchant accounts must be under the same company account and legal entity.  * The source merchant account must have sufficient funds.  * The source and destination merchant accounts must have at least one common processing currency.  When sending multiple API requests with the same source and destination merchant accounts, send the requests sequentially and *not* in parallel. Some requests may not be processed if the requests are sent in parallel. ",
+                 "item": [
+                            {
+                                "name": "Transfer balances between merchant accounts",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"value\": 50000,\n \"currency\": \"EUR\"\n},\n \"description\": \"Your description for the transfer\",\n \"fromMerchant\": \"MerchantAccount_NL\",\n \"toMerchant\": \"MerchantAccount_DE\",\n \"type\": \"debit\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/balanceTransfer",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "balanceTransfer"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Starts a balance transfer request between merchant accounts. The following conditions must be met before you can successfully transfer balances:  * The source and destination merchant accounts must be under the same company account and legal entity.  * The source merchant account must have sufficient funds.  * The source and destination merchant accounts must have at least one common processing currency.  When sending multiple API requests with the same source and destination merchant accounts, send the requests sequentially and *not* in parallel. Some requests may not be processed if the requests are sent in parallel. "
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    "auth": {
+    		"type": "apikey",
+    		"apikey": [
+    			{
+    				"key": "value",
+    				"value": "{{X-API-Key}}",
+    				"type": "string"
+    			},
+    			{
+    				"key": "key",
+    				"value": "X-API-Key",
+    				"type": "string"
+    			}
+    		]
+    	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://pal-test.adyen.com/pal/servlet/BalanceControl/v1",
+			"type": "string"
+        },
+        {
+            "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        }
+	]
+}
+

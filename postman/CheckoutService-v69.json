@@ -1,0 +1,2410 @@
+{
+	"info": {
+		"name": "Adyen Checkout API (v69)",
+		"description": {
+		    "content": "Adyen Checkout API provides a simple and flexible way to initiate and authorise online payments. You can use the same integration for payments made with cards (including 3D Secure), mobile wallets, and local payment methods (for example, iDEAL and Sofort).\n\nThis API reference provides information on available endpoints and how to interact with them. To learn more about the API, visit [online payments documentation](https://docs.adyen.com/online-payments).\n\n## Authentication\nEach request to Checkout API must be signed with an API key. For this, [get your API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key) from your Customer Area, and set this key to the `X-API-Key` header value, for example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n## Versioning\nCheckout API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://checkout-test.adyen.com/v69/payments\n```\n\n## Going live\n\nTo access the live endpoints, you need an API key from your live Customer Area.\n\nThe live endpoint URLs contain a prefix which is unique to your company account, for example:\n```\nhttps://{PREFIX}-checkout-live.adyenpayments.com/checkout/v69/payments\n```\n\nGet your `{PREFIX}` from your live Customer Area under **Developers** > **API URLs** > **Prefix**.\n\nWhen preparing to do live transactions with Checkout API, follow the [go-live checklist](https://docs.adyen.com/online-payments/go-live-checklist) to make sure you've got all the required configuration in place.\n\n## Release notes\nHave a look at the [release notes](https://docs.adyen.com/online-payments/release-notes?integration_type=api&version=69) to find out what changed in this version!",
+		    "type": "text/markdown"
+		},
+		"version": "69",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "Modifications",
+	            "item": [
+	                        {
+    "name": "/cancels",
+                "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**TECHNICAL_CANCEL** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment using the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/payments/{paymentPspReference}/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel).",
+                 "item": [
+                            {
+                                "name": "Cancel an authorised payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"paymentReference\": \"<string>\",\n \"reference\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/cancels",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "cancels"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**TECHNICAL_CANCEL** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment using the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/payments/{paymentPspReference}/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/payments/{{paymentPspReference}}/amountUpdates",
+                "description": "Increases or decreases the authorised payment amount and returns a unique reference for this request. You get the outcome of the request asynchronously, in an [**AUTHORISATION_ADJUSTMENT** webhook](https://docs.adyen.com/development-resources/webhooks/understand-notifications#event-codes).  You can only update authorised amounts that have not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures).  The amount you specify in the request is the updated amount, which is larger or smaller than the initial authorised amount.  For more information, refer to [Authorisation adjustment](https://docs.adyen.com/online-payments/adjust-authorisation#use-cases).",
+                 "item": [
+                            {
+                                "name": "Update an authorised amount",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"reason\": \"<string>\",\n \"reference\": \"<string>\",\n \"splits\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/amountUpdates",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments",
+                                            "{{paymentPspReference}}",
+                                            "amountUpdates"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "paymentPspReference",
+                                                "value": "",
+                                                "description": "The [&#x60;pspReference&#x60;](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference) of the payment."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Increases or decreases the authorised payment amount and returns a unique reference for this request. You get the outcome of the request asynchronously, in an [**AUTHORISATION_ADJUSTMENT** webhook](https://docs.adyen.com/development-resources/webhooks/understand-notifications#event-codes).  You can only update authorised amounts that have not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures).  The amount you specify in the request is the updated amount, which is larger or smaller than the initial authorised amount.  For more information, refer to [Authorisation adjustment](https://docs.adyen.com/online-payments/adjust-authorisation#use-cases)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/payments/{{paymentPspReference}}/cancels",
+                "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/paymentPspReference/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel).",
+                 "item": [
+                            {
+                                "name": "Cancel an authorised payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/cancels",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments",
+                                            "{{paymentPspReference}}",
+                                            "cancels"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "paymentPspReference",
+                                                "value": "",
+                                                "description": "The [&#x60;pspReference&#x60;](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference) of the payment that you want to cancel. "
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/paymentPspReference/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/payments/{{paymentPspReference}}/captures",
+                "description": " Captures an authorised payment and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CAPTURE** webhook](https://docs.adyen.com/online-payments/capture#capture-notification).  You can capture either the full authorised amount or a part of the authorised amount. By default, any unclaimed amount after a partial capture gets cancelled. This does not apply if you enabled multiple partial captures on your account and the payment method supports multiple partial captures.   [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture) is the default setting for most payment methods. In these cases, you don't need to make capture requests. However, making capture requests for payments that are captured automatically does not result in double charges.  For more information, refer to [Capture](https://docs.adyen.com/online-payments/capture).",
+                 "item": [
+                            {
+                                "name": "Capture an authorised payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": \"<string>\",\n \"lineItems\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\",\n \"splits\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/captures",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments",
+                                            "{{paymentPspReference}}",
+                                            "captures"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "paymentPspReference",
+                                                "value": "",
+                                                "description": "The [&#x60;pspReference&#x60;](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference) of the payment that you want to capture."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": " Captures an authorised payment and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CAPTURE** webhook](https://docs.adyen.com/online-payments/capture#capture-notification).  You can capture either the full authorised amount or a part of the authorised amount. By default, any unclaimed amount after a partial capture gets cancelled. This does not apply if you enabled multiple partial captures on your account and the payment method supports multiple partial captures.   [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture) is the default setting for most payment methods. In these cases, you don't need to make capture requests. However, making capture requests for payments that are captured automatically does not result in double charges.  For more information, refer to [Capture](https://docs.adyen.com/online-payments/capture)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/payments/{{paymentPspReference}}/refunds",
+                "description": "Refunds a payment that has been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**REFUND** webhook](https://docs.adyen.com/online-payments/refund#refund-webhook).  You can refund either the full captured amount or a part of the captured amount. You can also perform multiple partial refunds, as long as their sum doesn't exceed the captured amount.  > Some payment methods do not support partial refunds. To learn if a payment method supports partial refunds, refer to the payment method page such as [cards](https://docs.adyen.com/payment-methods/cards#supported-cards), [iDEAL](https://docs.adyen.com/payment-methods/ideal), or [Klarna](https://docs.adyen.com/payment-methods/klarna).   If you want to refund a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Refund](https://docs.adyen.com/online-payments/refund).",
+                 "item": [
+                            {
+                                "name": "Refund a captured payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": \"<string>\",\n \"lineItems\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"merchantRefundReason\": \"<string>\",\n \"reference\": \"<string>\",\n \"splits\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/refunds",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments",
+                                            "{{paymentPspReference}}",
+                                            "refunds"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "paymentPspReference",
+                                                "value": "",
+                                                "description": "The [&#x60;pspReference&#x60;](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference) of the payment that you want to refund."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Refunds a payment that has been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**REFUND** webhook](https://docs.adyen.com/online-payments/refund#refund-webhook).  You can refund either the full captured amount or a part of the captured amount. You can also perform multiple partial refunds, as long as their sum doesn't exceed the captured amount.  > Some payment methods do not support partial refunds. To learn if a payment method supports partial refunds, refer to the payment method page such as [cards](https://docs.adyen.com/payment-methods/cards#supported-cards), [iDEAL](https://docs.adyen.com/payment-methods/ideal), or [Klarna](https://docs.adyen.com/payment-methods/klarna).   If you want to refund a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Refund](https://docs.adyen.com/online-payments/refund)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/payments/{{paymentPspReference}}/reversals",
+                "description": "[Refunds](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/refunds) a payment if it has already been captured, and [cancels](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) a payment if it has not yet been captured. Returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCEL_OR_REFUND** webhook](https://docs.adyen.com/online-payments/reverse#cancel-or-refund-webhook).  The reversed amount is always the full payment amount. > Do not use this request for payments that involve multiple partial captures.  For more information, refer to [Reversal](https://docs.adyen.com/online-payments/reversal).",
+                 "item": [
+                            {
+                                "name": "Refund or cancel a payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/reversals",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments",
+                                            "{{paymentPspReference}}",
+                                            "reversals"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "paymentPspReference",
+                                                "value": "",
+                                                "description": "The [&#x60;pspReference&#x60;](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference) of the payment that you want to reverse. "
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "[Refunds](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/refunds) a payment if it has already been captured, and [cancels](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) a payment if it has not yet been captured. Returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCEL_OR_REFUND** webhook](https://docs.adyen.com/online-payments/reverse#cancel-or-refund-webhook).  The reversed amount is always the full payment amount. > Do not use this request for payments that involve multiple partial captures.  For more information, refer to [Reversal](https://docs.adyen.com/online-payments/reversal)."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Classic Checkout SDK",
+	            "item": [
+	                        {
+    "name": "/paymentSession",
+                "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks).",
+                 "item": [
+                            {
+                                "name": "Set up a payment session (Android)",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"channel\": \"Android\",\n \"token\": \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n \"returnUrl\": \"app: //\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"sessionValidity\": \"2017-04-06T13: 09: 13Z\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentSession",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentSession"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
+                                }
+                            },
+                            {
+                                "name": "Set up a payment session with the option to store card details",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"enableOneClick\": true,\n \"enableRecurring\": true,\n \"channel\": \"Web\",\n \"html\": true,\n \"origin\": \"https: //www.yourwebsite.com\",\n \"returnUrl\": \"https: //www.yourshop.com/checkout/result\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"sdkVersion\": \"1.7.0\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentSession",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentSession"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
+                                }
+                            },
+                            {
+                                "name": "Set up a payment session (iOS)",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"channel\": \"iOS\",\n \"token\": \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n \"returnUrl\": \"app: //\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"sessionValidity\": \"2017-04-06T13: 09: 13Z\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentSession",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentSession"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
+                                }
+                            },
+                            {
+                                "name": "Split a payment between a sub-merchant and a platform account",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 6200\n},\n \"additionalData\": {\n \"split.api\": \"1\",\n \"split.nrOfItems\": \"2\",\n \"split.totalAmount\": \"6200\",\n \"split.currencyCode\": \"EUR\",\n \"split.item1.amount\": \"6000\",\n \"split.item1.type\": \"MarketPlace\",\n \"split.item1.account\": \"151272963\",\n \"split.item1.reference\": \"6124145\",\n \"split.item1.description\": \"Porcelain Doll:  Eliza (20cm)\",\n \"split.item2.amount\": \"200\",\n \"split.item2.type\": \"Commission\",\n \"split.item2.reference\": \"6124146\"\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"channel\": \"Android\",\n \"token\": \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n \"returnUrl\": \"app: //\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"sessionValidity\": \"2017-04-06T13: 09: 13Z\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentSession",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentSession"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
+                                }
+                            },
+                            {
+                                "name": "Set up a payment session (Web)",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"channel\": \"Web\",\n \"html\": true,\n \"origin\": \"https: //www.yourwebsite.com\",\n \"returnUrl\": \"https: //www.yourshop.com/checkout/result\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"sdkVersion\": \"1.9.5\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentSession",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentSession"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/payments/result",
+                "description": "Verifies the payment result using the payload returned from the Checkout SDK.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks).",
+                 "item": [
+                            {
+                                "name": "Verify payment results",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"payload\": \"VALUE_YOU_GET_FROM_CHECKOUT_SDK\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments/result",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments",
+                                            "result"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Verifies the payment result using the payload returned from the Checkout SDK.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Orders",
+	            "item": [
+	                        {
+    "name": "/orders",
+                "description": "Creates an order to be used for partial payments. Make a POST `/orders` call before making a `/payments` call when processing payments with different payment methods.",
+                 "item": [
+                            {
+                                "name": "Create an order",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"reference\": \"YOUR_ORDER_REFERENCE\",\n \"amount\": {\n \"value\": 2500,\n \"currency\": \"EUR\"\n},\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/orders",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "orders"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates an order to be used for partial payments. Make a POST `/orders` call before making a `/payments` call when processing payments with different payment methods."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/orders/cancel",
+                "description": "Cancels an order. Cancellation of an order results in an automatic rollback of all payments made in the order, either by canceling or refunding the payment, depending on the type of payment method.",
+                 "item": [
+                            {
+                                "name": "Cancel an order",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"order\": {\n \"pspReference\": \"8815517812932012\",\n \"orderData\": \"823fh892f8f18f4...148f13f9f3f\"\n},\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/orders/cancel",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "orders",
+                                            "cancel"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Cancels an order. Cancellation of an order results in an automatic rollback of all payments made in the order, either by canceling or refunding the payment, depending on the type of payment method."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/paymentMethods/balance",
+                "description": "Retrieves the balance remaining on a shopper's gift card. To check a gift card's balance, make a POST `/paymentMethods/balance` call and include the gift card's details inside a `paymentMethod` object.",
+                 "item": [
+                            {
+                                "name": "Retrieve gift card balance",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"paymentMethod\": {\n \"type\": \"givex\",\n \"number\": \"4126491073027401\",\n \"cvc\": \"737\"\n},\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentMethods/balance",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentMethods",
+                                            "balance"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Retrieves the balance remaining on a shopper's gift card. To check a gift card's balance, make a POST `/paymentMethods/balance` call and include the gift card's details inside a `paymentMethod` object."
+                                }
+                            },
+                            {
+                                "name": "Retrieve gift card balance",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"paymentMethod\": {\n \"type\": \"plastix\",\n \"number\": \"4010100000000000000\",\n \"cvc\": \"73737\",\n \"holderName\": \"BALANCE EUR 888\"\n},\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentMethods/balance",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentMethods",
+                                            "balance"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Retrieves the balance remaining on a shopper's gift card. To check a gift card's balance, make a POST `/paymentMethods/balance` call and include the gift card's details inside a `paymentMethod` object."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Utility",
+	            "item": [
+	                        {
+    "name": "/applePay/sessions",
+                "description": "You need to use this endpoint if you have an API-only integration with Apple Pay which uses Adyen's Apple Pay certificate.  The endpoint returns the Apple Pay session data which you need to complete the [Apple Pay session validation](https://docs.adyen.com/payment-methods/apple-pay/api-only?tab=adyen-certificate-validation_1#complete-apple-pay-session-validation).",
+                 "item": [
+                            {
+                                "name": "Get payment session for Apple Pay",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"displayName\": \"YOUR_MERCHANT_NAME\",\n \"domainName\": \"YOUR_DOMAIN_NAME\",\n \"merchantIdentifier\": \"YOUR_MERCHANT_ID\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/applePay/sessions",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "applePay",
+                                            "sessions"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "You need to use this endpoint if you have an API-only integration with Apple Pay which uses Adyen's Apple Pay certificate.  The endpoint returns the Apple Pay session data which you need to complete the [Apple Pay session validation](https://docs.adyen.com/payment-methods/apple-pay/api-only?tab=adyen-certificate-validation_1#complete-apple-pay-session-validation)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/originKeys (DEPRECATED)",
+                "description": "This operation takes the origin domains and returns a JSON object containing the corresponding origin keys for the domains.  > If you're still using origin key for your Web Drop-in or Components integration, we recommend [switching to client key](https://docs.adyen.com/development-resources/client-side-authentication/migrate-from-origin-key-to-client-key). This allows you to use a single key for all origins, add or remove origins without generating a new key, and detect the card type from the number entered in your payment form. ",
+                 "item": [
+                            {
+                                "name": "Get origin keys",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"originDomains\": [\"https: //www.your-domain1.com\",\n \"https: //www.your-domain2.com\",\n \"https: //www.your-domain3.com\"]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/originKeys",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "originKeys"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "This operation takes the origin domains and returns a JSON object containing the corresponding origin keys for the domains.  > If you're still using origin key for your Web Drop-in or Components integration, we recommend [switching to client key](https://docs.adyen.com/development-resources/client-side-authentication/migrate-from-origin-key-to-client-key). This allows you to use a single key for all origins, add or remove origins without generating a new key, and detect the card type from the number entered in your payment form. "
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Payments",
+	            "item": [
+	                        {
+    "name": "/cardDetails",
+                "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  ",
+                 "item": [
+                            {
+                                "name": "Get a list of brands on a card",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"cardNumber\": \"411111\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/cardDetails",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "cardDetails"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
+                                }
+                            },
+                            {
+                                "name": "Get a list of brands on a card specifying your supported card brands",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"cardNumber\": \"411111\",\n \"supportedBrands\": [\"visa\",\n \"mc\",\n \"amex\"]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/cardDetails",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "cardDetails"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/donations",
+                "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation for the donation account specified in the request.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations).",
+                 "item": [
+                            {
+                                "name": "Start a donation transaction",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/donations",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "donations"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation for the donation account specified in the request.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
+                                }
+                            },
+                            {
+                                "name": "Start a donation transaction with a token",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8415718415172200\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/donations",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "donations"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation for the donation account specified in the request.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/paymentMethods",
+                "description": "Queries the available payment methods for a transaction based on the transaction context (like amount, country, and currency). Besides giving back a list of the available payment methods, the response also returns which input details you need to collect from the shopper (to be submitted to `/payments`).  Although we highly recommend using this endpoint to ensure you are always offering the most up-to-date list of payment methods, its usage is optional. You can, for example, also cache the `/paymentMethods` response and update it once a week.",
+                 "item": [
+                            {
+                                "name": "Get available payment methods",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentMethods",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentMethods"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Queries the available payment methods for a transaction based on the transaction context (like amount, country, and currency). Besides giving back a list of the available payment methods, the response also returns which input details you need to collect from the shopper (to be submitted to `/payments`).  Although we highly recommend using this endpoint to ensure you are always offering the most up-to-date list of payment methods, its usage is optional. You can, for example, also cache the `/paymentMethods` response and update it once a week."
+                                }
+                            },
+                            {
+                                "name": "Get payment methods based on the country and amount",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl-NL\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentMethods",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentMethods"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Queries the available payment methods for a transaction based on the transaction context (like amount, country, and currency). Besides giving back a list of the available payment methods, the response also returns which input details you need to collect from the shopper (to be submitted to `/payments`).  Although we highly recommend using this endpoint to ensure you are always offering the most up-to-date list of payment methods, its usage is optional. You can, for example, also cache the `/paymentMethods` response and update it once a week."
+                                }
+                            },
+                            {
+                                "name": "Get payment methods including stored card details",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"countryCode\": \"NL\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentMethods",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentMethods"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Queries the available payment methods for a transaction based on the transaction context (like amount, country, and currency). Besides giving back a list of the available payment methods, the response also returns which input details you need to collect from the shopper (to be submitted to `/payments`).  Although we highly recommend using this endpoint to ensure you are always offering the most up-to-date list of payment methods, its usage is optional. You can, for example, also cache the `/paymentMethods` response and update it once a week."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/payments",
+                "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. ",
+                 "item": [
+                            {
+                                "name": "Make an Apple Pay payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"applepay\",\n \"applePayToken\": \"VNRWtuNlNEWkRCSm1xWndjMDFFbktkQU...\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a card payment with 3D Secure 2 native authentication",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"{{$guid}}\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4035501428146300\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\",\n \"holderName\": \"John Smith\"\n},\n \"authenticationData\": {\n \"threeDSRequestData\": {\n \"nativeThreeDS\": \"preferred\"\n}\n},\n \"billingAddress\": {\n \"country\": \"US\",\n \"city\": \"New York\",\n \"street\": \"Redwood Block\",\n \"houseNumberOrName\": \"37C\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"10039\"\n},\n \"shopperEmail\": \"s.hopper@test.com\",\n \"shopperIP\": \"192.0.2.1\",\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\",\n \"language\": \"nl-NL\",\n \"colorDepth\": 24,\n \"screenHeight\": 723,\n \"screenWidth\": 1536,\n \"timeZoneOffset\": 0,\n \"javaEnabled\": true\n},\n \"channel\": \"web\",\n \"origin\": \"https: //your-company.com\",\n \"returnUrl\": \"https: //your-company.com/checkout/\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make card payment with 3D Secure redirect authentication",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4212345678901237\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv: 1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a card payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a card payment (using encrypted card details)",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4111111111111111\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Tokenize card details for one-off payments (using encrypted card details)",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4111111111111111\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_IOfW3k9G2PvXFu2j\",\n \"storePaymentMethod\": true,\n \"shopperInteraction\": \"Ecommerce\",\n \"recurringProcessingModel\": \"CardOnFile\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Tokenize card details for one-off payments",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_IOfW3k9G2PvXFu2j\",\n \"shopperInteraction\": \"Ecommerce\",\n \"recurringProcessingModel\": \"CardOnFile\",\n \"storePaymentMethod\": true,\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a giropay payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"giropay\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a Google Pay payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"paywithgoogle\",\n \"googlePayToken\": \"==Payload as retrieved from Google Pay response==\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"YourMerchantAccount\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make an iDEAL payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"ideal\",\n \"issuer\": \"1121\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a Klarna payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"YOUR_ORDER_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"klarna\"\n},\n \"amount\": {\n \"currency\": \"SEK\",\n \"value\": \"1000\"\n},\n \"shopperLocale\": \"en_US\",\n \"countryCode\": \"SE\",\n \"telephoneNumber\": \"+46 840 839 298\",\n \"shopperEmail\": \"youremail@email.com\",\n \"shopperName\": {\n \"firstName\": \"Testperson-se\",\n \"gender\": \"UNKNOWN\",\n \"lastName\": \"Approved\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_IOfW3k9G2PvXFu2j\",\n \"billingAddress\": {\n \"city\": \"Ankeborg\",\n \"country\": \"SE\",\n \"houseNumberOrName\": \"1\",\n \"postalCode\": \"12345\",\n \"street\": \"Stargatan\"\n},\n \"deliveryAddress\": {\n \"city\": \"Ankeborg\",\n \"country\": \"SE\",\n \"houseNumberOrName\": \"1\",\n \"postalCode\": \"12345\",\n \"street\": \"Stargatan\"\n},\n \"returnUrl\": \"https: //www.your-company.com/...\",\n \"lineItems\": [{\n \"quantity\": \"1\",\n \"amountExcludingTax\": \"331\",\n \"taxPercentage\": \"2100\",\n \"description\": \"Shoes\",\n \"id\": \"Item #1\",\n \"taxAmount\": \"69\",\n \"amountIncludingTax\": \"400\",\n \"productUrl\": \"URL_TO_PURCHASED_ITEM\",\n \"imageUrl\": \"URL_TO_PICTURE_OF_PURCHASED_ITEM\"\n},\n {\n \"quantity\": \"2\",\n \"amountExcludingTax\": \"248\",\n \"taxPercentage\": \"2100\",\n \"description\": \"Socks\",\n \"id\": \"Item #2\",\n \"taxAmount\": \"52\",\n \"amountIncludingTax\": \"300\",\n \"productUrl\": \"URL_TO_PURCHASED_ITEM\",\n \"imageUrl\": \"URL_TO_PICTURE_OF_PURCHASED_ITEM\"\n}]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a one-off payment with a token and CVV",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8416038790273850\",\n \"cardDetails.cvc\": \"737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a one-off payment with a token and CVV (using encrypted card details)",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8416038790273850\",\n \"encryptedSecurityCode\": \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a card payment with a token",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"storedPaymentMethodId\": \"8316038796685850\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_IOfW3subscription\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\",\n \"recurringProcessingModel\": \"Subscription\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Make a Sofort payment",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"directEbanking\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Split a payment between a sub-merchant and a platform account",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 6200,\n \"currency\": \"EUR\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 6000\n},\n \"type\": \"MarketPlace\",\n \"account\": \"151272963\",\n \"reference\": \"6124145\",\n \"description\": \"Porcelain Doll:  Eliza (20cm)\"\n},\n {\n \"amount\": {\n \"value\": 200\n},\n \"type\": \"Commission\",\n \"reference\": \"6124146\"\n}]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Tokenize card details for a subscription",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_IOfW3k9G2PvXFu2j\",\n \"storePaymentMethod\": true,\n \"shopperInteraction\": \"Ecommerce\",\n \"recurringProcessingModel\": \"Subscription\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/payments/details",
+                "description": "Submits details for a payment created using `/payments`. This step is only needed when no final state has been reached on the `/payments` request, for example when the shopper was redirected to another page to complete the payment.  ",
+                 "item": [
+                            {
+                                "name": "Submit 3D Secure 2 authentication result",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"details\": {\n \"threeDSResult\": \"eyJ0cmFuc1N0YXR1cyI6IlkifQ==\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments/details",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments",
+                                            "details"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Submits details for a payment created using `/payments`. This step is only needed when no final state has been reached on the `/payments` request, for example when the shopper was redirected to another page to complete the payment.  "
+                                }
+                            },
+                            {
+                                "name": "Submit the redirect result",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"details\": {\n \"redirectResult\": \"X6XtfGC3!Y...\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments/details",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments",
+                                            "details"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Submits details for a payment created using `/payments`. This step is only needed when no final state has been reached on the `/payments` request, for example when the shopper was redirected to another page to complete the payment.  "
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/sessions",
+                "description": "Creates a payment session for [Web Drop-in](https://docs.adyen.com/online-payments/web-drop-in) and [Web Components](https://docs.adyen.com/online-payments/web-components) integrations.  The response contains encrypted payment session data. The front end then uses the session data to make any required server-side calls for the payment flow.  You get the payment outcome asynchronously, in an [AUTHORISATION](https://docs.adyen.com/api-explorer/#/Webhooks/latest/post/AUTHORISATION) webhook.",
+                 "item": [
+                            {
+                                "name": "Create a payment session",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"amount\": {\n \"value\": 100,\n \"currency\": \"EUR\"\n},\n \"returnUrl\": \"https: //your-company.com/checkout?shopperOrder=12xy..\",\n \"reference\": \"YOUR_PAYMENT_REFERENCE\",\n \"countryCode\": \"NL\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/sessions",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "sessions"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment session for [Web Drop-in](https://docs.adyen.com/online-payments/web-drop-in) and [Web Components](https://docs.adyen.com/online-payments/web-components) integrations.  The response contains encrypted payment session data. The front end then uses the session data to make any required server-side calls for the payment flow.  You get the payment outcome asynchronously, in an [AUTHORISATION](https://docs.adyen.com/api-explorer/#/Webhooks/latest/post/AUTHORISATION) webhook."
+                                }
+                            },
+                            {
+                                "name": "Create a payment session including Klarna fields",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"YOUR_ORDER_REFERENCE\",\n \"amount\": {\n \"currency\": \"SEK\",\n \"value\": 1000\n},\n \"shopperLocale\": \"en_US\",\n \"countryCode\": \"SE\",\n \"telephoneNumber\": \"+46 840 839 298\",\n \"shopperEmail\": \"youremail@email.com\",\n \"shopperName\": {\n \"firstName\": \"Testperson-se\",\n \"gender\": \"UNKNOWN\",\n \"lastName\": \"Approved\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"billingAddress\": {\n \"city\": \"Ankeborg\",\n \"country\": \"SE\",\n \"houseNumberOrName\": \"1\",\n \"postalCode\": \"12345\",\n \"street\": \"Stargatan\"\n},\n \"deliveryAddress\": {\n \"city\": \"Ankeborg\",\n \"country\": \"SE\",\n \"houseNumberOrName\": \"1\",\n \"postalCode\": \"12345\",\n \"street\": \"Stargatan\"\n},\n \"dateOfBirth\": \"1996-09-04\",\n \"socialSecurityNumber\": \"0108\",\n \"returnUrl\": \"https: //example.org\",\n \"lineItems\": [{\n \"quantity\": 1,\n \"amountExcludingTax\": 331,\n \"taxPercentage\": 2100,\n \"description\": \"Shoes\",\n \"id\": \"Item #1\",\n \"taxAmount\": 69,\n \"amountIncludingTax\": 400,\n \"productUrl\": \"URL_TO_PURCHASED_ITEM\",\n \"imageUrl\": \"URL_TO_PICTURE_OF_PURCHASED_ITEM\"\n},\n {\n \"quantity\": 2,\n \"amountExcludingTax\": 248,\n \"taxPercentage\": 2100,\n \"description\": \"Socks\",\n \"id\": \"Item #2\",\n \"taxAmount\": 52,\n \"amountIncludingTax\": 300,\n \"productUrl\": \"URL_TO_PURCHASED_ITEM\",\n \"imageUrl\": \"URL_TO_PICTURE_OF_PURCHASED_ITEM\"\n}]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/sessions",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "sessions"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment session for [Web Drop-in](https://docs.adyen.com/online-payments/web-drop-in) and [Web Components](https://docs.adyen.com/online-payments/web-components) integrations.  The response contains encrypted payment session data. The front end then uses the session data to make any required server-side calls for the payment flow.  You get the payment outcome asynchronously, in an [AUTHORISATION](https://docs.adyen.com/api-explorer/#/Webhooks/latest/post/AUTHORISATION) webhook."
+                                }
+                            },
+                            {
+                                "name": "Tokenize card details for one-off payments",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"TestMerchantCheckout\",\n \"amount\": {\n \"value\": 100,\n \"currency\": \"EUR\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"returnUrl\": \"https: //your-company.com/checkout?shopperOrder=12xy..\",\n \"reference\": \"YOUR_PAYMENT_REFERENCE\",\n \"countryCode\": \"NL\",\n \"storePaymentMethod\": true,\n \"shopperInteraction\": \"Ecommerce\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/sessions",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "sessions"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment session for [Web Drop-in](https://docs.adyen.com/online-payments/web-drop-in) and [Web Components](https://docs.adyen.com/online-payments/web-components) integrations.  The response contains encrypted payment session data. The front end then uses the session data to make any required server-side calls for the payment flow.  You get the payment outcome asynchronously, in an [AUTHORISATION](https://docs.adyen.com/api-explorer/#/Webhooks/latest/post/AUTHORISATION) webhook."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Payment links",
+	            "item": [
+	                        {
+    "name": "/paymentLinks/{{linkId}}",
+                "description": "Retrieves the payment link details using the payment link `id`.",
+                 "item": [
+                            {
+                                "name": "Get a payment link",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentLinks/{{linkId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentLinks",
+                                            "{{linkId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "linkId",
+                                                "value": "",
+                                                "description": "Unique identifier of the payment link."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Retrieves the payment link details using the payment link `id`."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/paymentLinks/{{linkId}}",
+                "description": "Updates the status of a payment link. Use this endpoint to [force the expiry of a payment link](https://docs.adyen.com/online-payments/pay-by-link#update-payment-link-status).",
+                 "item": [
+                            {
+                                "name": "Update the status of a payment link",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"status\": \"expired\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentLinks/{{linkId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentLinks",
+                                            "{{linkId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "linkId",
+                                                "value": "",
+                                                "description": "Unique identifier of the payment link."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates the status of a payment link. Use this endpoint to [force the expiry of a payment link](https://docs.adyen.com/online-payments/pay-by-link#update-payment-link-status)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/paymentLinks",
+                "description": "Creates a payment link to our hosted payment form where shoppers can pay. The list of payment methods presented to the shopper depends on the `currency` and `country` parameters sent in the request.  For more information, refer to [Pay by Link documentation](https://docs.adyen.com/online-payments/pay-by-link#create-payment-links-through-api).",
+                 "item": [
+                            {
+                                "name": "Create a payment link",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"reference\": \"{{$guid}}\",\n \"amount\": {\n \"value\": 1250,\n \"currency\": \"BRL\"\n},\n \"countryCode\": \"BR\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"shopperEmail\": \"test@email.com\",\n \"shopperLocale\": \"pt-BR\",\n \"billingAddress\": {\n \"street\": \"Roque Petroni Jr\",\n \"postalCode\": \"59000060\",\n \"city\": \"São Paulo\",\n \"houseNumberOrName\": \"999\",\n \"country\": \"BR\",\n \"stateOrProvince\": \"SP\"\n},\n \"deliveryAddress\": {\n \"street\": \"Roque Petroni Jr\",\n \"postalCode\": \"59000060\",\n \"city\": \"São Paulo\",\n \"houseNumberOrName\": \"999\",\n \"country\": \"BR\",\n \"stateOrProvince\": \"SP\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentLinks",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentLinks"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment link to our hosted payment form where shoppers can pay. The list of payment methods presented to the shopper depends on the `currency` and `country` parameters sent in the request.  For more information, refer to [Pay by Link documentation](https://docs.adyen.com/online-payments/pay-by-link#create-payment-links-through-api)."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    "auth": {
+    		"type": "apikey",
+    		"apikey": [
+    			{
+    				"key": "value",
+    				"value": "{{X-API-Key}}",
+    				"type": "string"
+    			},
+    			{
+    				"key": "key",
+    				"value": "X-API-Key",
+    				"type": "string"
+    			}
+    		]
+    	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://checkout-test.adyen.com/v69",
+			"type": "string"
+        },
+        {
+            "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        },
+		{
+			"key": "paymentPspReference",
+			"value": "paymentPspReference_example",
+			"type": "string"
+		},
+		{
+			"key": "linkId",
+			"value": "linkId_example",
+			"type": "string"
+		},
+		{
+			"key": "YOUR_MERCHANT_ACCOUNT",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
+

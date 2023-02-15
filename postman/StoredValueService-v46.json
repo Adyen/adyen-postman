@@ -1,0 +1,316 @@
+{
+	"info": {
+		"name": "Adyen Stored Value API (v46)",
+		"description": {
+		    "content": "A set of API endpoints to manage stored value products.",
+		    "type": "text/markdown"
+		},
+		"version": "46",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "General",
+	            "item": [
+	                        {
+    "name": "/changeStatus",
+                "description": "Changes the status of the provided payment method to the specified status.",
+                 "item": [
+                            {
+                                "name": "Changes the status of the payment method.",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"paymentMethod\": \"<string>\",\n \"recurringDetailReference\": \"<string>\",\n \"reference\": \"<string>\",\n \"shopperInteraction\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"status\": \"<string>\",\n \"store\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/changeStatus",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "changeStatus"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Changes the status of the provided payment method to the specified status."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/checkBalance",
+                "description": "Checks the balance of the provided payment method.",
+                 "item": [
+                            {
+                                "name": "Checks the balance.",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"paymentMethod\": \"<string>\",\n \"recurringDetailReference\": \"<string>\",\n \"reference\": \"<string>\",\n \"shopperInteraction\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"store\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/checkBalance",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "checkBalance"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Checks the balance of the provided payment method."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/issue",
+                "description": "Issues a new card of the given payment method.",
+                 "item": [
+                            {
+                                "name": "Issues a new card.",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"paymentMethod\": \"<string>\",\n \"recurringDetailReference\": \"<string>\",\n \"reference\": \"<string>\",\n \"shopperInteraction\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"store\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/issue",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "issue"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Issues a new card of the given payment method."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/load",
+                "description": "Loads the payment method with the specified funds.",
+                 "item": [
+                            {
+                                "name": "Loads the payment method.",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": \"<string>\",\n \"loadType\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"paymentMethod\": \"<string>\",\n \"recurringDetailReference\": \"<string>\",\n \"reference\": \"<string>\",\n \"shopperInteraction\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"store\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/load",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "load"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Loads the payment method with the specified funds."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/mergeBalance",
+                "description": "Increases the balance of the paymentmethod by the full amount left on the source paymentmethod",
+                 "item": [
+                            {
+                                "name": "Merge the balance of two cards.",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"amount\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"paymentMethod\": \"<string>\",\n \"recurringDetailReference\": \"<string>\",\n \"reference\": \"<string>\",\n \"shopperInteraction\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"sourcePaymentMethod\": \"<string>\",\n \"store\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/mergeBalance",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "mergeBalance"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Increases the balance of the paymentmethod by the full amount left on the source paymentmethod"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/voidTransaction",
+                "description": "Voids the referenced stored value transaction.",
+                 "item": [
+                            {
+                                "name": "Voids a transaction.",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"originalReference\": \"<string>\",\n \"reference\": \"<string>\",\n \"store\": \"<string>\",\n \"tenderReference\": \"<string>\",\n \"uniqueTerminalId\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/voidTransaction",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "voidTransaction"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Voids the referenced stored value transaction."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    "auth": {
+    		"type": "apikey",
+    		"apikey": [
+    			{
+    				"key": "value",
+    				"value": "{{X-API-Key}}",
+    				"type": "string"
+    			},
+    			{
+    				"key": "key",
+    				"value": "X-API-Key",
+    				"type": "string"
+    			}
+    		]
+    	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://pal-test.adyen.com/pal/servlet/StoredValue/v46",
+			"type": "string"
+        },
+        {
+            "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        }
+	]
+}
+

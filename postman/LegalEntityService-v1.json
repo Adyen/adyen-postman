@@ -1,0 +1,1332 @@
+{
+	"info": {
+		"name": "Legal Entity Management API (v1)",
+		"description": {
+		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification. \n## Authentication\nTo connect to the Legal Entity Management API, you must use the basic authentication credentials of your web service user. If you don't have one, contact the [Adyen Support Team](https://www.adyen.help/hc/en-us/requests/new). Use the web service user credentials to authenticate your request, for example:\n\n```\ncurl\n-U \"ws12345@Scope.BalancePlatform_YourBalancePlatform\":\"YourWsPassword\" \\n-H \"Content-Type: application/json\" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nThe Legal Entity Management API supports versioning of its endpoints through a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v1/legalEntities\n```\n## Going live\nWhen going live, your Adyen contact will provide your API credential for the live environment. You can then use the username and password to send requests to `https://kyc-live.adyen.com/lem/v1`.\n\n",
+		    "type": "text/markdown"
+		},
+		"version": "1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "Legal entities",
+	            "item": [
+	                        {
+    "name": "/legalEntities/{{id}}",
+                "description": "Returns a legal entity.",
+                 "item": [
+                            {
+                                "name": "Get a legal entity",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns a legal entity."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}/businessLines",
+                "description": "Returns the business lines owned by a legal entity.",
+                 "item": [
+                            {
+                                "name": "Get all business lines under a legal entity",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/businessLines",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "businessLines"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the business lines owned by a legal entity."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}",
+                "description": "Updates a legal entity.   >To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.",
+                 "item": [
+                            {
+                                "name": "Add entity associations to an organization",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE322KH223222F5GV2SL953Z3\",\n \"type\": \"uboThroughControl\"\n}]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates a legal entity.   >To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities",
+                "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   ",
+                 "item": [
+                            {
+                                "name": "Create a legal entity for an individual residing in the Netherlands",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                }
+                            },
+                            {
+                                "name": "Create a legal entity for an individual residing in the US",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n},\n \"phone\": {\n \"number\": \"+14153671502\",\n \"type\": \"mobile\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                }
+                            },
+                            {
+                                "name": "Create a legal entity for a Dutch organization",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in NL\",\n \"doingBusinessAs\": \"API Company Trading\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"registrationNumber\": \"34179503\",\n \"email\": \"organization@example.com\"\n},\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\",\n \"type\": \"signatory\"\n}]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                }
+                            },
+                            {
+                                "name": "Create a legal entity for an organization in the US",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in US\",\n \"registrationNumber\": \"101002749\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Hosted Onboarding",
+	            "item": [
+	                        {
+    "name": "/themes",
+                "description": "Returns a list of hosted onboarding page themes.",
+                 "item": [
+                            {
+                                "name": "Get a list of hosted onboarding page themes",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/themes",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "themes"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns a list of hosted onboarding page themes."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/themes/{{id}}",
+                "description": "Returns the details of the theme identified in the path.",
+                 "item": [
+                            {
+                                "name": "Get an onboarding link theme",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/themes/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "themes",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the theme"
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the details of the theme identified in the path."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}/onboardingLinks",
+                "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.",
+                 "item": [
+                            {
+                                "name": "Create a hosted onboarding link",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"redirectUrl\": \"https: //your.redirect-url.com/\",\n \"locale\": \"nl-NL\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/onboardingLinks",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "onboardingLinks"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity"
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Business lines",
+	            "item": [
+	                        {
+    "name": "/businessLines/{{id}}",
+                "description": "Deletes a business line.   >\"If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.",
+                 "item": [
+                            {
+                                "name": "Delete a business line",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/businessLines/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "businessLines",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the business line."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Deletes a business line.   >\"If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/businessLines/{{id}}",
+                "description": "Returns the detail of a business line.",
+                 "item": [
+                            {
+                                "name": "Get a business line",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/businessLines/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "businessLines",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the business line."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the detail of a business line."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/businessLines",
+                "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.",
+                 "item": [
+                            {
+                                "name": "Create a business line for a business account",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"capability\": \"issueBankAccount\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https: //www.adyen.com\"\n}],\n \"legalEntityId\": \"LE322JV223222D5FZ9N74BSGM\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"adyenProcessedFunds\": \"false\",\n \"description\": \"Funds from my flower shop business\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/businessLines",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "businessLines"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses."
+                                }
+                            },
+                            {
+                                "name": "Create a business line for receiving payments",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"capability\": \"receivePayments\",\n \"salesChannels\": [\"eCommerce\",\n \"ecomMoto\"],\n \"industryCode\": \"339E\",\n \"legalEntityId\": \"LE322JV223222D5FZ9N74BSGM\",\n \"webData\": [{\n \"webAddress\": \"https: //yoururl.com\"\n}]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/businessLines",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "businessLines"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Documents",
+	            "item": [
+	                        {
+    "name": "/documents/{{id}}",
+                "description": "Deletes a document.",
+                 "item": [
+                            {
+                                "name": "Delete a document",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/documents/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "documents",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the document to be deleted."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Deletes a document."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/documents/{{id}}",
+                "description": "Returns a document.",
+                 "item": [
+                            {
+                                "name": "Get a document",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/documents/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "documents",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the document."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns a document."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/documents/{{id}}",
+                "description": "Updates a document.",
+                 "item": [
+                            {
+                                "name": "Update a document",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"proofOfIndustry\",\n \"description\": \"Proof of industry doc for Example Company\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/documents/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "documents",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the document to be updated."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates a document."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/documents",
+                "description": "Uploads a document for verification checks.   Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents.   You should only upload documents when Adyen requests additional information for the legal entity. ",
+                 "item": [
+                            {
+                                "name": "Upload a document",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"registrationDocument\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC...==\"\n}],\n \"description\": \"Registration doc for Example Company\",\n \"owner\": {\n \"id\": \"LE322KH223222D5GG4C9J83RN\",\n \"type\": \"legalEntity\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/documents",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "documents"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Uploads a document for verification checks.   Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents.   You should only upload documents when Adyen requests additional information for the legal entity. "
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Terms of Service",
+	            "item": [
+	                        {
+    "name": "/legalEntities/{{id}}/termsOfServiceAcceptanceInfos",
+                "description": "Returns Terms of Service information for a legal entity.",
+                 "item": [
+                            {
+                                "name": "Get Terms of Service information for a legal entity",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfServiceAcceptanceInfos",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "termsOfServiceAcceptanceInfos"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns Terms of Service information for a legal entity."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}/termsOfServiceStatus",
+                "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity.",
+                 "item": [
+                            {
+                                "name": "Get Terms of Service status",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfServiceStatus",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "termsOfServiceStatus"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}/termsOfService/{{termsofservicedocumentid}}",
+                "description": "Accepts Terms of Service.",
+                 "item": [
+                            {
+                                "name": "Accept Terms of Service",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"acceptedBy\": \"<string>\",\n \"ipAddress\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfService/{{termsofservicedocumentid}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "termsOfService",
+                                            "{{termsofservicedocumentid}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            },
+                                            {
+                                                "key": "termsofservicedocumentid",
+                                                "value": "",
+                                                "description": "The unique identifier of the Terms of Service document."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Accepts Terms of Service."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}/termsOfService",
+                "description": "Returns the Terms of Service document for a legal entity.",
+                 "item": [
+                            {
+                                "name": "Get the Terms of Service document",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"adyenIssuing\",\n \"language\": \"en\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfService",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "termsOfService"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the Terms of Service document for a legal entity."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Transfer instruments",
+	            "item": [
+	                        {
+    "name": "/transferInstruments/{{id}}",
+                "description": "Deletes a transfer instrument.",
+                 "item": [
+                            {
+                                "name": "Delete a transfer instrument",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/transferInstruments/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "transferInstruments",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the transfer instrument to be deleted."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Deletes a transfer instrument."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/transferInstruments/{{id}}",
+                "description": "Returns the details of a transfer instrument.",
+                 "item": [
+                            {
+                                "name": "Get a transfer instrument",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/transferInstruments/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "transferInstruments",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the transfer instrument."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the details of a transfer instrument."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/transferInstruments/{{id}}",
+                "description": "Updates a transfer instrument.",
+                 "item": [
+                            {
+                                "name": "Update a transfer instrument",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"bankAccount\": \"<string>\",\n \"legalEntityId\": \"<string>\",\n \"type\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/transferInstruments/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "transferInstruments",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the transfer instrument."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates a transfer instrument."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/transferInstruments",
+                "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).",
+                 "item": [
+                            {
+                                "name": "Add a EUR bank account",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"legalEntityId\": \"LE322KH223222D5GG4C9J83RN\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"NL\",\n \"currencyCode\": \"EUR\",\n \"iban\": \"NL62ABNA0000000123\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/transferInstruments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "transferInstruments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+                                }
+                            },
+                            {
+                                "name": "Add a USD bank account",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"legalEntityId\": \"LE322JV223222D5GGMHPC2FPL\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"US\",\n \"currencyCode\": \"USD\",\n \"accountNumber\": \"0000000123\",\n \"branchCode\": \"121202211\",\n \"accountType\": \"checking\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/transferInstruments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "transferInstruments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    "auth": {
+    		"type": "apikey",
+    		"apikey": [
+    			{
+    				"key": "value",
+    				"value": "{{X-API-Key}}",
+    				"type": "string"
+    			},
+    			{
+    				"key": "key",
+    				"value": "X-API-Key",
+    				"type": "string"
+    			}
+    		]
+    	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://kyc-test.adyen.com/lem/v1",
+			"type": "string"
+        },
+        {
+            "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        },
+		{
+			"key": "termsofservicedocumentid",
+			"value": "termsofservicedocumentid_example",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "id_example",
+			"type": "string"
+		}
+	]
+}
+

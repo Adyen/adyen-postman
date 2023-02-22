@@ -11,9 +11,24 @@ jobs:
     name: "Dummy action"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          repository: 'Adyen/adyen-openapi'
+          fetch-depth: 0
+      - name: Get changed files in the yaml folder
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v35
+        with:
+          files: yaml/*.yaml
+      - name: Run nothing if no file in the yaml folder has changed
+        if: steps.changed-files-specific.outputs.any_changed == 'false'
+        run: |
+          echo "No changes detected in the yaml folder. Nothing to do!"
+      - name: Files have changed in the YAML folder, we create an issue
       - uses: JasonEtco/create-an-issue@v2
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILENAMES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
         with:
           filename: .github/ISSUE_TEMPLATE/openapi-changes.yml

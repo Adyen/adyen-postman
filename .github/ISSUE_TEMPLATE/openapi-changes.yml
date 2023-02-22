@@ -1,10 +1,14 @@
 ---
-name: OpenAPI changes
-about: Files need to be generated again
+name: OpenAPI changes {{tools.context.sha}}
 title: New changes in adyen-openapi
 labels: enhancement
 assignees: jlengrand, gcatanese
 
 ---
 
-See [adyen-openapi](https://github.com/adyen/adyen-openapi)
+See the diff here -> https://github.com/Adyen/adyen-openapi/commit/{{tools.context.sha}}.
+
+The list of changed files is the following ->
+  {{env.FILENAMES}}
+
+See [adyen-openapi](https://github.com/adyen/adyen-openapi) for more details.

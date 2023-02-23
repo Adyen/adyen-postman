@@ -14,23 +14,22 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
+          path: 'adyen-postman'
       - uses: actions/checkout@v3
         with:
           repository: 'Adyen/adyen-openapi'
-          path: 'adyen-openapi'
           fetch-depth: 0
       - name: Get changed files in the yaml folder
         id: changed-files-specific
         uses: tj-actions/changed-files@v35
         with:
-          files: adyen-openapi/yaml/*.yaml
+          files: yaml/*.yaml
       - uses: JasonEtco/create-an-issue@v2
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FILENAMES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
         with:
-          filename: .github/ISSUE_TEMPLATE/openapi-changes.yml
+          filename: adyen-postman/.github/ISSUE_TEMPLATE/openapi-changes.yml
   generate:
     name: "Generate latest definitions files"
     runs-on: ubuntu-latest

@@ -21,7 +21,9 @@ jobs:
           fetch-depth: 0
       - run: ls
       - run: echo "$$$$$$$$$$"
-      - run: ls adyen-openapi
+      - run: ls adyen-openapi/yaml
+      - run: echo "$$$$$$$$$$"
+      - run: pwd
       - name: Get changed files in the yaml folder
         id: changed-files-specific
         uses: tj-actions/changed-files@v35

@@ -27,7 +27,6 @@ jobs:
         with:
           filename: .github/ISSUE_TEMPLATE/openapi-changes.yml
 
-
 #  generate:
 #    name: "Generate latest definitions files"
 #    runs-on: ubuntu-latest

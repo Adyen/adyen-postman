@@ -18,18 +18,17 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: 'Adyen/adyen-openapi'
-          path: 'adyen-openapi'
           fetch-depth: 0
       - run: ls
       - run: echo "$$$$$$$$$$"
-      - run: ls adyen-openapi/yaml
+      - run: ls yaml
       - run: echo "$$$$$$$$$$"
       - run: pwd
       - name: Get changed files in the yaml folder
         id: changed-files-specific
         uses: tj-actions/changed-files@v35
         with:
-          files: adyen-openapi/yaml/*.yaml
+          files:yaml/*.yaml
       - uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -28,7 +28,7 @@ jobs:
         id: changed-files-specific
         uses: tj-actions/changed-files@v35
         with:
-          files: {{github.workspace}}/adyen-openapi/yaml/*.yaml
+          files: adyen-openapi/yaml/*.yaml
       - uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

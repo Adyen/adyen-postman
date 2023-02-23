@@ -25,6 +25,7 @@ jobs:
         with:
           files: adyen-openapi/yaml/*.yaml
       - uses: JasonEtco/create-an-issue@v2
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FILENAMES: ${{ steps.changed-files-specific.outputs.all_changed_files }}

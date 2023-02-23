@@ -109,8 +109,53 @@
                         },
 	                        {
     "name": "/legalEntities/{{id}}",
-                "description": "Updates a legal entity.   >To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.",
+                "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.",
                  "item": [
+                            {
+                                "name": "Change a legal entity from an organization to an individual",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"individual\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+                                }
+                            },
                             {
                                 "name": "Add entity associations to an organization",
                                 "request": {
@@ -153,7 +198,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Updates a legal entity.   >To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+                                    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
                                 }
                             }
                             ]
@@ -506,7 +551,7 @@
                                             {
                                                 "key": "id",
                                                 "value": "",
-                                                "description": "The unique identifier of the business line."
+                                                "description": "The unique identifier of the business line to be deleted."
                                             }
                                         ],
                                         "query": [

@@ -347,7 +347,7 @@
 	            "name": "Classic Checkout SDK",
 	            "item": [
 	                        {
-    "name": "/paymentSession",
+    "name": "/paymentSession (DEPRECATED)",
                 "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks).",
                  "item": [
                             {
@@ -568,7 +568,7 @@
                             ]
                         },
 	                        {
-    "name": "/payments/result",
+    "name": "/payments/result (DEPRECATED)",
                 "description": "Verifies the payment result using the payload returned from the Checkout SDK.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks).",
                  "item": [
                             {
@@ -1083,7 +1083,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8415718415172200\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1310,7 +1310,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"{{$guid}}\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4917610000000000\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"additionalData\": {\n \"allow3DS2\": true\n},\n \"accountInfo\": {\n \"accountCreationDate\": \"2019-01-17T13: 42: 40+01: 00\"\n},\n \"billingAddress\": {\n \"country\": \"US\",\n \"city\": \"New York\",\n \"street\": \"Redwood Block\",\n \"houseNumberOrName\": \"37C\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"10039\"\n},\n \"shopperEmail\": \"s.hopper@test.com\",\n \"shopperIP\": \"192.0.2.1\",\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\",\n \"language\": \"nl-NL\",\n \"colorDepth\": 24,\n \"screenHeight\": 723,\n \"screenWidth\": 1536,\n \"timeZoneOffset\": 0,\n \"javaEnabled\": true\n},\n \"channel\": \"web\",\n \"origin\": \"https: //your-company.com\",\n \"returnUrl\": \"https: //your-company.com/checkout/\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"{{$guid}}\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4917610000000000\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"additionalData\": {\n \"allow3DS2\": \"true\"\n},\n \"accountInfo\": {\n \"accountCreationDate\": \"2019-01-17T13: 42: 40+01: 00\"\n},\n \"billingAddress\": {\n \"country\": \"US\",\n \"city\": \"New York\",\n \"street\": \"Redwood Block\",\n \"houseNumberOrName\": \"37C\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"10039\"\n},\n \"shopperEmail\": \"s.hopper@test.com\",\n \"shopperIP\": \"192.0.2.1\",\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\",\n \"language\": \"nl-NL\",\n \"colorDepth\": 24,\n \"screenHeight\": 723,\n \"screenWidth\": 1536,\n \"timeZoneOffset\": 0,\n \"javaEnabled\": true\n},\n \"channel\": \"Web\",\n \"origin\": \"https: //your-company.com\",\n \"returnUrl\": \"https: //your-company.com/checkout/\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1353,7 +1353,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4212345678901237\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv: 1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4212345678901237\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv: 1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\",\n \"javaEnabled\": true,\n \"colorDepth\": 10,\n \"screenHeight\": 2000,\n \"screenWidth\": 3000,\n \"timeZoneOffset\": 5,\n \"language\": \"en\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1396,7 +1396,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4212345678901237\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\",\n \"holderName\": \"John Smith\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv: 1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4212345678901237\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\",\n \"holderName\": \"John Smith\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv: 1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\",\n \"javaEnabled\": true,\n \"colorDepth\": 10,\n \"screenHeight\": 2000,\n \"screenWidth\": 3000,\n \"timeZoneOffset\": 5,\n \"language\": \"en\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1740,7 +1740,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"YOUR_ORDER_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"klarna\"\n},\n \"amount\": {\n \"currency\": \"SEK\",\n \"value\": \"1000\"\n},\n \"shopperLocale\": \"en_US\",\n \"countryCode\": \"SE\",\n \"telephoneNumber\": \"+46 840 839 298\",\n \"shopperEmail\": \"youremail@email.com\",\n \"shopperName\": {\n \"firstName\": \"Testperson-se\",\n \"gender\": \"UNKNOWN\",\n \"lastName\": \"Approved\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"billingAddress\": {\n \"city\": \"Ankeborg\",\n \"country\": \"SE\",\n \"houseNumberOrName\": \"1\",\n \"postalCode\": \"12345\",\n \"street\": \"Stargatan\"\n},\n \"deliveryAddress\": {\n \"city\": \"Ankeborg\",\n \"country\": \"SE\",\n \"houseNumberOrName\": \"1\",\n \"postalCode\": \"12345\",\n \"street\": \"Stargatan\"\n},\n \"returnUrl\": \"https: //www.your-company.com/...\",\n \"lineItems\": [{\n \"quantity\": \"1\",\n \"amountExcludingTax\": \"331\",\n \"taxPercentage\": \"2100\",\n \"description\": \"Shoes\",\n \"id\": \"Item #1\",\n \"taxAmount\": \"69\",\n \"amountIncludingTax\": \"400\",\n \"productUrl\": \"URL_TO_PURCHASED_ITEM\",\n \"imageUrl\": \"URL_TO_PICTURE_OF_PURCHASED_ITEM\"\n},\n {\n \"quantity\": \"2\",\n \"amountExcludingTax\": \"248\",\n \"taxPercentage\": \"2100\",\n \"description\": \"Socks\",\n \"id\": \"Item #2\",\n \"taxAmount\": \"52\",\n \"amountIncludingTax\": \"300\",\n \"productUrl\": \"URL_TO_PURCHASED_ITEM\",\n \"imageUrl\": \"URL_TO_PICTURE_OF_PURCHASED_ITEM\"\n}]\n}",
+                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"YOUR_ORDER_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"klarna\"\n},\n \"amount\": {\n \"currency\": \"SEK\",\n \"value\": 1000\n},\n \"shopperLocale\": \"en_US\",\n \"countryCode\": \"SE\",\n \"telephoneNumber\": \"+46 840 839 298\",\n \"shopperEmail\": \"youremail@email.com\",\n \"shopperName\": {\n \"firstName\": \"Testperson-se\",\n \"gender\": \"UNKNOWN\",\n \"lastName\": \"Approved\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"billingAddress\": {\n \"city\": \"Ankeborg\",\n \"country\": \"SE\",\n \"houseNumberOrName\": \"1\",\n \"postalCode\": \"12345\",\n \"street\": \"Stargatan\"\n},\n \"deliveryAddress\": {\n \"city\": \"Ankeborg\",\n \"country\": \"SE\",\n \"houseNumberOrName\": \"1\",\n \"postalCode\": \"12345\",\n \"street\": \"Stargatan\"\n},\n \"returnUrl\": \"https: //www.your-company.com/...\",\n \"lineItems\": [{\n \"quantity\": 1,\n \"amountExcludingTax\": 331,\n \"taxPercentage\": 2100,\n \"description\": \"Shoes\",\n \"id\": \"Item #1\",\n \"taxAmount\": 69,\n \"amountIncludingTax\": 400,\n \"productUrl\": \"URL_TO_PURCHASED_ITEM\",\n \"imageUrl\": \"URL_TO_PICTURE_OF_PURCHASED_ITEM\"\n},\n {\n \"quantity\": 2,\n \"amountExcludingTax\": 248,\n \"taxPercentage\": 2100,\n \"description\": \"Socks\",\n \"id\": \"Item #2\",\n \"taxAmount\": 52,\n \"amountIncludingTax\": 300,\n \"productUrl\": \"URL_TO_PURCHASED_ITEM\",\n \"imageUrl\": \"URL_TO_PICTURE_OF_PURCHASED_ITEM\"\n}]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1783,7 +1783,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8416038790273850\",\n \"cardDetails.cvc\": \"737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8416038790273850\",\n \"cvc\": \"737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1869,7 +1869,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"storedPaymentMethodId\": \"8316038796685850\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_IOfW3subscription\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\",\n \"recurringProcessingModel\": \"Subscription\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8316038796685850\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_IOfW3subscription\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\",\n \"recurringProcessingModel\": \"Subscription\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

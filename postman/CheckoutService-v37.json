@@ -347,7 +347,7 @@
 	            "name": "Classic Checkout SDK",
 	            "item": [
 	                        {
-    "name": "/paymentSession",
+    "name": "/paymentSession (DEPRECATED)",
                 "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks).",
                  "item": [
                             {
@@ -525,7 +525,7 @@
                             ]
                         },
 	                        {
-    "name": "/payments/result",
+    "name": "/payments/result (DEPRECATED)",
                 "description": "Verifies the payment result using the payload returned from the Checkout SDK.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks).",
                  "item": [
                             {
@@ -1040,7 +1040,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8415718415172200\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1267,7 +1267,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4212345678901237\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv: 1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\"\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4212345678901237\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv: 1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\",\n \"javaEnabled\": true\n},\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1439,7 +1439,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"8416038790273850\",\n \"cardDetails.cvc\": \"737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"8416038790273850\",\n \"cvc\": \"737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

@@ -1,11 +1,11 @@
 {
 	"info": {
-		"name": "Legal Entity Management API (v2)",
+		"name": "Legal Entity Management API (v3)",
 		"description": {
-		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification. \n## Authentication\nTo connect to the Legal Entity Management API, you must use the basic authentication credentials of your web service user. If you don't have one, contact the [Adyen Support Team](https://www.adyen.help/hc/en-us/requests/new). Use the web service user credentials to authenticate your request, for example:\n\n```\ncurl\n-U \"ws12345@Scope.BalancePlatform_YourBalancePlatform\":\"YourWsPassword\" \\n-H \"Content-Type: application/json\" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nThe Legal Entity Management API supports versioning of its endpoints through a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v2/legalEntities\n```\n## Going live\nWhen going live, your Adyen contact will provide your API credential for the live environment. You can then use the username and password to send requests to `https://kyc-live.adyen.com/lem/v2`.\n\n",
+		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification. \n## Authentication\nTo connect to the Legal Entity Management API, you must use the basic authentication credentials of your web service user. If you don't have one, contact the [Adyen Support Team](https://www.adyen.help/hc/en-us/requests/new). Use the web service user credentials to authenticate your request, for example:\n\n```\ncurl\n-U \"ws12345@Scope.BalancePlatform_YourBalancePlatform\":\"YourWsPassword\" \\n-H \"Content-Type: application/json\" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nThe Legal Entity Management API supports versioning of its endpoints through a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v3/legalEntities\n```\n## Going live\nWhen going live, your Adyen contact will provide your API credential for the live environment. You can then use the username and password to send requests to `https://kyc-live.adyen.com/lem/v3`.\n\n",
 		    "type": "text/markdown"
 		},
-		"version": "2",
+		"version": "3",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -487,6 +487,54 @@
                                 }
                             }
                             ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}/checkVerificationErrors",
+                "description": "Returns the verification errors for a legal entity and its supporting entities.",
+                 "item": [
+                            {
+                                "name": "Check a legal entity&#39;s verification errors",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/checkVerificationErrors",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "checkVerificationErrors"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the verification errors for a legal entity and its supporting entities."
+                                }
+                            }
+                            ]
                         }
 	                    ]
 	        },
@@ -803,7 +851,46 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"capability\": \"issueBankAccount\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https: //www.adyen.com\"\n}],\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
+                                        "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https: //www.adyen.com\"\n}],\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/businessLines",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "businessLines"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses."
+                                }
+                            },
+                            {
+                                "name": "Create a business line for receiving payments",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"service\": \"paymentProcessing\",\n \"industryCode\": \"339E\",\n \"salesChannels\": [\"eCommerce\",\n \"ecomMoto\"],\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"webData\": [{\n \"webAddress\": \"https: //yoururl.com\"\n}]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1404,7 +1491,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"NL\",\n \"currencyCode\": \"EUR\",\n \"iban\": \"NL62ABNA0000000123\"\n}\n}",
+                                        "raw": "{\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL62ABNA0000000123\"\n}\n}\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1443,7 +1530,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"US\",\n \"currencyCode\": \"USD\",\n \"accountNumber\": \"0000000123\",\n \"branchCode\": \"121202211\",\n \"accountType\": \"checking\"\n}\n}",
+                                        "raw": "{\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"0000000123\",\n \"routingNumber\": \"121202211\"\n}\n}\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1489,7 +1576,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://kyc-test.adyen.com/lem/v2",
+			"value": "https://kyc-test.adyen.com/lem/v3",
 			"type": "string"
         },
         {

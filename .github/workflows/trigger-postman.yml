@@ -26,9 +26,10 @@ jobs:
           files: yaml/*.yaml
           path: 'adyen-openapi'
       - uses: JasonEtco/create-an-issue@v2
+        if: ${{ steps.changed-files-specific.outputs.added_files != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FILENAMES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
+          FILENAMES: ${{ steps.changed-files-specific.outputs.added_files }}
         with:
           filename: .github/ISSUE_TEMPLATE/openapi-changes.yml
   generate:

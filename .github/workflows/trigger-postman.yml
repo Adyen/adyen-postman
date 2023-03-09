@@ -65,4 +65,4 @@ jobs:
         with:
           postman-key: ${{ secrets.POSTMAN_API_KEY }}
           workspace-id: ${{ secrets.POSTMAN_WORKSPACE_ID }}
-          files-changed: ${{ steps.changed-files-specific.outputs.all_changed_files }}
+          files-changed: ${{ steps.changed-files-specific.outputs.added_files }}

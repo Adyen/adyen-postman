@@ -53,16 +53,10 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Update latest definitions files"
-      - name: Get changed files
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v35
-        with:
-          files: yaml/*.yaml
-          path: 'adyen-openapi'
       - name: push-adyen-collections-to-postman-javascript-action
         id: process
         uses: jlengrand/push-adyen-collections-to-postman-javascript-action@main
         with:
           postman-key: ${{ secrets.POSTMAN_API_KEY }}
           workspace-id: ${{ secrets.POSTMAN_WORKSPACE_ID }}
-          files-changed: ${{ steps.changed-files-specific.outputs.added_files }}
+          path-to-process: "./postman"

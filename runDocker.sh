@@ -1,4 +1,4 @@
-#!/bin/sh
+  #!/bin/sh
 
 if [ ! -d /adyen-openapi ]; then
   git clone https://github.com/Adyen/adyen-openapi.git

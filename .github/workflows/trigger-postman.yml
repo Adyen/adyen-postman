@@ -26,9 +26,10 @@ jobs:
           files: yaml/*.yaml
           path: 'adyen-openapi'
       - uses: JasonEtco/create-an-issue@v2
+        if: ${{ steps.changed-files-specific.outputs.added_files != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FILENAMES: ${{ steps.changed-files-specific.outputs.all_changed_files }}
+          FILENAMES: ${{ steps.changed-files-specific.outputs.added_files }}
         with:
           filename: .github/ISSUE_TEMPLATE/openapi-changes.yml
   generate:
@@ -52,3 +53,10 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Update latest definitions files"
+      - name: push-adyen-collections-to-postman-javascript-action
+        id: process
+        uses: jlengrand/push-adyen-collections-to-postman-javascript-action@main
+        with:
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          workspace-id: ${{ secrets.POSTMAN_WORKSPACE_ID }}
+          path-to-process: "./postman"

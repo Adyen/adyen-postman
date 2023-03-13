@@ -5,8 +5,7 @@ __NOTE : This part is meant for the authors of that repository and you probably 
 ## Setup
 
 Most of the magic here resides in the [trigger-postman.yml](./.github/workflows/trigger-postman.yml) workflow.
-This workflow can either be triggered [directly from the UI](![Variables to set in my collection](./images/collection-variables.png).
-), though typically it is automatically triggered every time the [adyen-openapi](https://github.com/Adyen/adyen-openapi/blob/main/.github/workflows/notify.yml) repository is updated.
+This workflow can either be triggered [directly from the UI](https://github.com/Adyen/adyen-postman/actions/workflows/trigger-postman.yml), though typically it is automatically triggered every time the [adyen-openapi](https://github.com/Adyen/adyen-openapi/blob/main/.github/workflows/notify.yml) repository is updated.
 
 
 It relies on two different custom actions : 

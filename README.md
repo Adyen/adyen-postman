@@ -18,7 +18,7 @@ This way you will be notified of new versions and changes per email and in the U
 
 ## Importing the JSON files
 
-However, in case you want to experiment, want to keep your experiments private or want to use an older version of any of our APIS, you can also take any of the json files in this repository and upload them yourself.
+However, in case you want to experiment, want to keep your experiments, want to use an older version of any of our APIs or if you're using a postman alternative like [Insomnia](https://docs.insomnia.rest/insomnia/import-export-data), you can also take any of the json files in this repository and upload them yourself.
 
 ![Importing a json file as a Postman collection](./images/import-postman.gif)
 
@@ -31,7 +31,10 @@ Notably, you will find those in the `Authorization` as well as the `Variables` t
 
 Instead of directly modifying them there, we recommend you instead to create [Environments](https://learning.postman.com/docs/sending-requests/managing-environments/). This way, you can switch from test to production without much hassle when running your API calls. Environments are also nice to protect secret values, like your API Keys. 
 
-To do this, create a new environment using the corresponding left tab in the Postman UI, and override the variables there.
+To do this, you can either :
+
+* Fork the [Adyen APIs](https://www.postman.com/adyendev/workspace/adyen-apis/overview) environment we provide, and override the variables there.
+* Create a new environment from scratch using the corresponding left tab in the Postman UI, and override the variables there.
 
 ![An example of environment](./images/environment.png).
 

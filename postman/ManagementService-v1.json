@@ -761,7 +761,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"associatedMerchantAccounts\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
+                                        "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"associatedMerchantAccounts\": \"<string>\",\n \"authnAppsToAdd\": \"<string>\",\n \"authnAppsToRemove\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1797,7 +1797,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"standard\",\n \"url\": \"YOUR_WEBHOOK_URL\",\n \"username\": \"YOUR_USER\",\n \"password\": \"YOUR_PASSWORD\",\n \"active\": \"true\",\n \"sslVersion\": \"TLSv1.2\",\n \"communicationFormat\": \"json\",\n \"acceptsExpiredCertificate\": \"false\",\n \"acceptsSelfSignedCertificate\": \"true\",\n \"acceptsUntrustedRootCertificate\": \"true\",\n \"populateSoapActionHeader\": \"false\"\n}",
+                                        "raw": "{\n \"type\": \"standard\",\n \"url\": \"YOUR_WEBHOOK_URL\",\n \"username\": \"YOUR_USER\",\n \"password\": \"YOUR_PASSWORD\",\n \"active\": true,\n \"sslVersion\": \"TLSv1.2\",\n \"communicationFormat\": \"json\",\n \"acceptsExpiredCertificate\": false,\n \"acceptsSelfSignedCertificate\": true,\n \"acceptsUntrustedRootCertificate\": true,\n \"populateSoapActionHeader\": false\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2943,7 +2943,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"active\": \"true\"\n}",
+                                        "raw": "{\n \"active\": true\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -3172,7 +3172,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
+                                        "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"authnAppsToAdd\": \"<string>\",\n \"authnAppsToRemove\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -3695,7 +3695,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"countries\": \"<string>\",\n \"currencies\": \"<string>\",\n \"customRoutingFlags\": \"<string>\",\n \"enabled\": \"<string>\",\n \"shopperStatement\": \"<string>\"\n}",
+                                        "raw": "{\n \"countries\": \"<string>\",\n \"currencies\": \"<string>\",\n \"customRoutingFlags\": \"<string>\",\n \"enabled\": \"<string>\",\n \"shopperStatement\": \"<string>\",\n \"storeIds\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -4436,7 +4436,7 @@
 	            "item": [
 	                        {
     "name": "/terminals",
-                "description": "Returns the payment terminals that the API credential has access to and that match the query parameters.  When using `searchQuery`, other query parameters are ignored.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * POS Terminal Management API * Management API—Terminal settings read",
+                "description": "Returns the payment terminals that the API credential has access to and that match the query parameters.  When using `searchQuery`, other query parameters are ignored.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API — Terminal actions read",
                  "item": [
                             {
                                 "name": "Get a list of terminals",
@@ -4498,7 +4498,7 @@
                                             }
                                         ]
                                     },
-                                    "description": "Returns the payment terminals that the API credential has access to and that match the query parameters.  When using `searchQuery`, other query parameters are ignored.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * POS Terminal Management API * Management API—Terminal settings read"
+                                    "description": "Returns the payment terminals that the API credential has access to and that match the query parameters.  When using `searchQuery`, other query parameters are ignored.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API — Terminal actions read"
                                 }
                             }
                             ]
@@ -4750,7 +4750,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"standard\",\n \"url\": \"YOUR_WEBHOOK_URL\",\n \"username\": \"YOUR_USER\",\n \"password\": \"YOUR_PASSWORD\",\n \"active\": \"true\",\n \"sslVersion\": \"TLSv1.2\",\n \"communicationFormat\": \"soap\",\n \"acceptsExpiredCertificate\": \"false\",\n \"acceptsSelfSignedCertificate\": \"true\",\n \"acceptsUntrustedRootCertificate\": \"true\",\n \"populateSoapActionHeader\": \"false\",\n \"filterMerchantAccountType\": \"includeAccounts\",\n \"filterMerchantAccounts\": [\"{{YOUR_MERCHANT_ACCOUNT}}\"]\n}",
+                                        "raw": "{\n \"type\": \"standard\",\n \"url\": \"YOUR_WEBHOOK_URL\",\n \"username\": \"YOUR_USER\",\n \"password\": \"YOUR_PASSWORD\",\n \"active\": true,\n \"sslVersion\": \"TLSv1.2\",\n \"communicationFormat\": \"soap\",\n \"acceptsExpiredCertificate\": false,\n \"acceptsSelfSignedCertificate\": true,\n \"acceptsUntrustedRootCertificate\": true,\n \"populateSoapActionHeader\": false,\n \"filterMerchantAccountType\": \"includeAccounts\",\n \"filterMerchantAccounts\": [\"{{YOUR_MERCHANT_ACCOUNT}}\"]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -5769,7 +5769,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"active\": \"true\"\n}",
+                                        "raw": "{\n \"active\": true\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

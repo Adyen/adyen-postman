@@ -562,6 +562,54 @@
                             ]
                         },
 	                        {
+    "name": "/paymentInstruments/{{id}}/reveal",
+                "description": "Returns the reveal information of a payment instrument.",
+                 "item": [
+                            {
+                                "name": "Get the reveal information of a payment instrument",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentInstruments/{{id}}/reveal",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentInstruments",
+                                            "{{id}}",
+                                            "reveal"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the payment instrument."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the reveal information of a payment instrument."
+                                }
+                            }
+                            ]
+                        },
+	                        {
     "name": "/paymentInstruments/{{id}}/transactionRules",
                 "description": "Returns a list of transaction rules associated with a payment instrument.",
                  "item": [
@@ -710,7 +758,7 @@
                 "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts).",
                  "item": [
                             {
-                                "name": "Create a business account",
+                                "name": "Create a business account in NL",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -749,6 +797,45 @@
                                 }
                             },
                             {
+                                "name": "Create a business account in the US",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentInstruments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentInstruments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+                                }
+                            },
+                            {
                                 "name": "Create a physical card",
                                 "request": {
                                     "method": "POST",
@@ -764,7 +851,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"card\",\n \"issuingCountryCode\": \"NL\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S.Hopper - Main card\",\n \"status\": \"Inactive\",\n \"card\": {\n \"formFactor\": \"physical\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"deliveryContact\": {\n \"address\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"stateOrProvince\": \"NH\",\n \"line1\": \"Brannan Street\",\n \"line2\": \"274\",\n \"postalCode\": \"1020CD\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n}\n}",
+                                        "raw": "{\n \"type\": \"card\",\n \"issuingCountryCode\": \"NL\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S.Hopper - Main card\",\n \"status\": \"inactive\",\n \"card\": {\n \"formFactor\": \"physical\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"deliveryContact\": {\n \"address\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"stateOrProvince\": \"NH\",\n \"line1\": \"Brannan Street\",\n \"line2\": \"274\",\n \"postalCode\": \"1020CD\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n}\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -803,7 +890,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"card\",\n \"description\": \"S. Hopper - Main card\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"issuingCountryCode\": \"NL\",\n \"card\": {\n \"cardholderName\": \"Sam Hopper\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"formFactor\": \"virtual\"\n}\n}",
+                                        "raw": "{\n \"type\": \"card\",\n \"description\": \"My test card\",\n \"balanceAccountId\": \"BA3227C223222B5FG88S28BGN\",\n \"issuingCountryCode\": \"NL\",\n \"card\": {\n \"cardholderName\": \"Simon Hopper\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"formFactor\": \"virtual\"\n}\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -824,6 +911,95 @@
                                         ]
                                     },
                                     "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Bank account validation",
+	            "item": [
+	                        {
+    "name": "/validateBankAccountIdentification",
+                "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments).",
+                 "item": [
+                            {
+                                "name": "Validate an IBAN",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"1001001234\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/validateBankAccountIdentification",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "validateBankAccountIdentification"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
+                                }
+                            },
+                            {
+                                "name": "Validate a US bank account",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"12345JHDhjkf67890\",\n \"routingNumber\": \"121000cxhgjhzxg248\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/validateBankAccountIdentification",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "validateBankAccountIdentification"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
                                 }
                             }
                             ]
@@ -999,7 +1175,7 @@
                         },
 	                        {
     "name": "/balanceAccounts/{{id}}",
-                "description": "Returns a balance account.",
+                "description": "Returns a balance account and its balances for the default currency and other currencies with a non-zero balance.",
                  "item": [
                             {
                                 "name": "Get a balance account",
@@ -1039,7 +1215,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Returns a balance account."
+                                    "description": "Returns a balance account and its balances for the default currency and other currencies with a non-zero balance."
                                 }
                             }
                             ]
@@ -1229,7 +1405,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"accountHolderId\": \"AH32272223222B59K6ZKBBFNQ\",\n \"description\": \"S.Hopper - Main balance account\"\n}",
+                                        "raw": "{\n \"accountHolderId\": \"AH32272223222C5GXTD343TKP\",\n \"description\": \"S.Hopper - Main balance account\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1522,7 +1698,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"description\": \"Allow only point-of-sale transactions\",\n \"reference\": \"{{$guid}}_4F7346\",\n \"entityKey\": {\n \"entityType\": \"paymentInstrument\",\n \"entityReference\": \"PI3227C223222B5BPCMFXD2XG\"\n},\n \"status\": \"active\",\n \"interval\": {\n \"type\": \"perTransaction\"\n},\n \"ruleRestrictions\": {\n \"processingTypes\": {\n \"operation\": \"noneMatch\",\n \"value\": [\"pos\"]\n}\n},\n \"type\": \"blockList\"\n}",
+                                        "raw": "{\n \"description\": \"Allow only point-of-sale transactions\",\n \"reference\": \"{{$guid}}_4F7346\",\n \"entityKey\": {\n \"entityType\": \"paymentInstrument\",\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\"\n},\n \"status\": \"active\",\n \"interval\": {\n \"type\": \"perTransaction\"\n},\n \"ruleRestrictions\": {\n \"processingTypes\": {\n \"operation\": \"noneMatch\",\n \"value\": [\"pos\"]\n}\n},\n \"type\": \"blockList\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1561,7 +1737,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"description\": \"Assign score if more than 500 EUR in 2 hours\",\n \"entityKey\": {\n \"entityReference\": \"PI3227C223222B5FN65FN5NS9\",\n \"entityType\": \"paymentInstrument\"\n},\n \"interval\": {\n \"type\": \"sliding\",\n \"duration\": {\n \"value\": 2,\n \"unit\": \"hours\"\n}\n},\n \"outcomeType\": \"scoreBased\",\n \"reference\": \"myRule11789\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n}\n}\n},\n \"score\": 20,\n \"type\": \"velocity\"\n}",
+                                        "raw": "{\n \"description\": \"Assign score if more than 500 EUR in 2 hours\",\n \"entityKey\": {\n \"entityType\": \"paymentInstrument\",\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\"\n},\n \"interval\": {\n \"type\": \"sliding\",\n \"duration\": {\n \"value\": 2,\n \"unit\": \"hours\"\n}\n},\n \"outcomeType\": \"scoreBased\",\n \"reference\": \"myRule11789\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n}\n}\n},\n \"score\": 20,\n \"type\": \"velocity\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1600,7 +1776,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"description\": \"Up to 1000 EUR per card for the last 12 hours\",\n \"reference\": \"{{$guid}}_2918A\",\n \"status\": \"active\",\n \"entityKey\": {\n \"entityReference\": \"BA3227C223222B5FN65355NR3\",\n \"entityType\": \"balanceAccount\"\n},\n \"aggregationLevel\": \"paymentInstrument\",\n \"interval\": {\n \"type\": \"sliding\",\n \"duration\": {\n \"value\": \"12\",\n \"unit\": \"hours\"\n}\n},\n \"outcomeType\": \"hardBlock\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"value\": 100000,\n \"currency\": \"EUR\"\n}\n}\n},\n \"type\": \"velocity\"\n}",
+                                        "raw": "{\n \"description\": \"Up to 1000 EUR per card for the last 12 hours\",\n \"reference\": \"{{$guid}}_2918A\",\n \"status\": \"active\",\n \"entityKey\": {\n \"entityReference\": \"BA3227C223222B5FN65355NR3\",\n \"entityType\": \"balanceAccount\"\n},\n \"aggregationLevel\": \"paymentInstrument\",\n \"interval\": {\n \"type\": \"sliding\",\n \"duration\": {\n \"value\": 12,\n \"unit\": \"hours\"\n}\n},\n \"outcomeType\": \"hardBlock\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"value\": 100000,\n \"currency\": \"EUR\"\n}\n}\n},\n \"type\": \"velocity\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

@@ -563,10 +563,10 @@
                         },
 	                        {
     "name": "/paymentInstruments/{{id}}/reveal",
-                "description": "Returns the reveal information of a payment instrument.",
+                "description": "Returns the primary account number (PAN) of a payment instrument.  To make this request, your API credential must have the following [role](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service#api-permissions):  * Balance Platform BCL PCI role",
                  "item": [
                             {
-                                "name": "Get the reveal information of a payment instrument",
+                                "name": "Get the PAN of a payment instrument",
                                 "request": {
                                     "method": "GET",
                                     "header": [
@@ -604,7 +604,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Returns the reveal information of a payment instrument."
+                                    "description": "Returns the primary account number (PAN) of a payment instrument.  To make this request, your API credential must have the following [role](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service#api-permissions):  * Balance Platform BCL PCI role"
                                 }
                             }
                             ]
@@ -1497,6 +1497,52 @@
                                     "body": {
                                         "mode": "raw",
                                         "raw": "{\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/balanceAccounts/{{balanceAccountId}}/sweeps",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "balanceAccounts",
+                                            "{{balanceAccountId}}",
+                                            "sweeps"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "balanceAccountId",
+                                                "value": "",
+                                                "description": "The unique identifier of the balance account."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
+                                }
+                            },
+                            {
+                                "name": "Create a sweep to push funds out of a balance account with set priorities",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\",\n \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

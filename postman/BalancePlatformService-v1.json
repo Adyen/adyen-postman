@@ -1068,10 +1068,10 @@
                         },
 	                        {
     "name": "/paymentInstruments/{{id}}/reveal",
-                "description": "Returns the reveal information of a payment instrument.",
+                "description": "Returns the primary account number (PAN) of a payment instrument.  To make this request, your API credential must have the following [role](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service#api-permissions):  * Balance Platform BCL PCI role",
                  "item": [
                             {
-                                "name": "Get the reveal information of a payment instrument",
+                                "name": "Get the PAN of a payment instrument",
                                 "request": {
                                     "method": "GET",
                                     "header": [
@@ -1109,7 +1109,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Returns the reveal information of a payment instrument."
+                                    "description": "Returns the primary account number (PAN) of a payment instrument.  To make this request, your API credential must have the following [role](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service#api-permissions):  * Balance Platform BCL PCI role"
                                 }
                             }
                             ]
@@ -1263,7 +1263,7 @@
                 "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts).",
                  "item": [
                             {
-                                "name": "Create a business account",
+                                "name": "Create a business account in NL",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1302,6 +1302,45 @@
                                 }
                             },
                             {
+                                "name": "Create a business account in the US",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentInstruments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentInstruments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+                                }
+                            },
+                            {
                                 "name": "Create a physical card",
                                 "request": {
                                     "method": "POST",
@@ -1317,7 +1356,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"card\",\n \"issuingCountryCode\": \"NL\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S.Hopper - Main card\",\n \"status\": \"Inactive\",\n \"card\": {\n \"formFactor\": \"physical\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"deliveryContact\": {\n \"address\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"stateOrProvince\": \"NH\",\n \"line1\": \"Brannan Street\",\n \"line2\": \"274\",\n \"postalCode\": \"1020CD\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n}\n}",
+                                        "raw": "{\n \"type\": \"card\",\n \"issuingCountryCode\": \"NL\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S.Hopper - Main card\",\n \"status\": \"Inactive\",\n \"card\": {\n \"formFactor\": \"physical\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"deliveryContact\": {\n \"address\": {\n \"houseNumberOrName\": \"64\",\n \"street\": \"Brannan Street\",\n \"postalCode\": \"1020CD\",\n \"city\": \"Amsterdam\",\n \"country\": \"NL\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n}\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1391,7 +1430,7 @@
                 "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments).",
                  "item": [
                             {
-                                "name": "Validate a bank account",
+                                "name": "Validate an IBAN",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1406,7 +1445,46 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"accountIdentification\": \"<string>\"\n}",
+                                        "raw": "{\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"1001001234\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/validateBankAccountIdentification",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "validateBankAccountIdentification"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
+                                }
+                            },
+                            {
+                                "name": "Validate a US bank account",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"12345JHDhjkf67890\",\n \"routingNumber\": \"121000cxhgjhzxg248\"\n}\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

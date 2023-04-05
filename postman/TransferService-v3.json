@@ -142,7 +142,7 @@
                 "description": "Starts a request to transfer funds to [balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts), [transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments), or third-party bank accounts. Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint, you need an additional role for your API credential and transfers must be enabled for the source balance account. Your Adyen contact will set these up for you.",
                  "item": [
                             {
-                                "name": "Make a cross border transfer",
+                                "name": "Make a cross-border transfer",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -157,7 +157,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\",\n \"address\": {\n \"city\": \"San Francisco\",\n \"country\": \"US\",\n \"postalCode\": \"94678\",\n \"stateOrProvince\": \"CA\",\n \"street\": \"Brannan Street\",\n \"street2\": \"274\"\n}\n}\n},\n \"accountIdentification\": {\n \"type\": \"numberAndBic\",\n \"accountNumber\": \"123456789\",\n \"bic\": \"BOFAUS3NXXX\"\n}\n},\n \"priority\": \"wire\",\n \"referenceForBeneficiary\": \"Your reference sent to the beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\",\n \"address\": {\n \"city\": \"San Francisco\",\n \"country\": \"US\",\n \"postalCode\": \"94678\",\n \"stateOrProvince\": \"CA\",\n \"street\": \"Brannan Street\",\n \"street2\": \"274\"\n}\n},\n \"accountIdentification\": {\n \"type\": \"numberAndBic\",\n \"accountNumber\": \"123456789\",\n \"bic\": \"BOFAUS3NXXX\"\n}\n}\n},\n \"priority\": \"crossBorder\",\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -196,7 +196,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\"\n},\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL91ABNA0417164300\"\n}\n}\n},\n \"priority\": \"regular\",\n \"referenceForBeneficiary\": \"Your reference sent to the beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\"\n},\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL91ABNA0417164300\"\n}\n}\n},\n \"priority\": \"regular\",\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -235,7 +235,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"USD\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\"\n},\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"123456789\",\n \"routingNumber\": \"011000138\"\n}\n}\n},\n \"priority\": \"regular\",\n \"referenceForBeneficiary\": \"Your reference sent to the beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"USD\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\"\n},\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"123456789\",\n \"routingNumber\": \"011000138\"\n}\n}\n},\n \"priority\": \"regular\",\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -274,7 +274,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"value\": 10000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"internal\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5LPRFDW7J9G\"\n},\n \"referenceForBeneficiary\": \"Your reference sent to the beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"value\": 10000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"internal\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5LPRFDW7J9G\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -313,7 +313,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"value\": 80000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"transferInstrumentId\": \"SE1234567890ABC1234567890\"\n},\n \"priority\": \"regular\",\n \"referenceForBeneficiary\": \"Your reference sent to the beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
+                                        "raw": "{\n \"amount\": {\n \"value\": 80000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"transferInstrumentId\": \"SE1234567890ABC1234567890\"\n},\n \"priority\": \"regular\",\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

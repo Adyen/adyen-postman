@@ -118,6 +118,103 @@
 	                    ]
 	        },
 	        {
+	            "name": "Grant offers",
+	            "item": [
+	                        {
+    "name": "/grantOffers",
+                "description": "Returns a list of all [grant offers](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter.",
+                 "item": [
+                            {
+                                "name": "Get all available grant offers",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/grantOffers",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "grantOffers"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "accountHolderId",
+                                                "value": "accountHolderId_example"
+                                            }
+                                        ]
+                                    },
+                                    "description": "Returns a list of all [grant offers](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/grantOffers/{{grantOfferId}}",
+                "description": "Returns the details of a single grant offer.",
+                 "item": [
+                            {
+                                "name": "Get a grant offer",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/grantOffers/{{grantOfferId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "grantOffers",
+                                            "{{grantOfferId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "grantOfferId",
+                                                "value": "",
+                                                "description": "The unique identifier of the grant offer."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the details of a single grant offer."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Payment instrument groups",
 	            "item": [
 	                        {
@@ -1000,6 +1097,58 @@
                                         ]
                                     },
                                     "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Grant accounts",
+	            "item": [
+	                        {
+    "name": "/grantAccounts/{{id}}",
+                "description": "Returns the details of the [grant account](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-account).",
+                 "item": [
+                            {
+                                "name": "Get a grant account",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/grantAccounts/{{id}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "grantAccounts",
+                                            "{{id}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the grant account."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the details of the [grant account](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-account)."
                                 }
                             }
                             ]
@@ -1918,6 +2067,11 @@
 		{
 			"key": "YOUR_BALANCE_PLATFORM",
 			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "grantOfferId",
+			"value": "grantOfferId_example",
 			"type": "string"
 		},
 		{

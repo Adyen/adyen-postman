@@ -688,7 +688,7 @@
 	            "item": [
 	                        {
     "name": "/businessLines/{{id}}",
-                "description": "Deletes a business line.   >\"If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.",
+                "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.",
                  "item": [
                             {
                                 "name": "Delete a business line",
@@ -728,7 +728,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Deletes a business line.   >\"If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts."
+                                    "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts."
                                 }
                             }
                             ]
@@ -1164,54 +1164,6 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}/termsOfServiceStatus",
-                "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity.",
-                 "item": [
-                            {
-                                "name": "Get Terms of Service status",
-                                "request": {
-                                    "method": "GET",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json"
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfServiceStatus",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "legalEntities",
-                                            "{{id}}",
-                                            "termsOfServiceStatus"
-                                        ],
-                                        "variable": [
-                                            {
-                                                "key": "id",
-                                                "value": "",
-                                                "description": "The unique identifier of the legal entity."
-                                            }
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity."
-                                }
-                            }
-                            ]
-                        },
-	                        {
     "name": "/legalEntities/{{id}}/termsOfService/{{termsofservicedocumentid}}",
                 "description": "Accepts Terms of Service.",
                  "item": [
@@ -1556,6 +1508,219 @@
                             ]
                         }
 	                    ]
+	        },
+	        {
+	            "name": "PCI questionnaires",
+	            "item": [
+	                        {
+    "name": "/legalEntities/{{id}}/pciQuestionnaires",
+                "description": "Get a list of signed PCI questionnaires.",
+                 "item": [
+                            {
+                                "name": "Get PCI questionnaire details",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/pciQuestionnaires",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "pciQuestionnaires"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity to get PCI questionnaire information."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Get a list of signed PCI questionnaires."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}/pciQuestionnaires/{{pciid}}",
+                "description": "Returns the signed PCI questionnaire.",
+                 "item": [
+                            {
+                                "name": "Get PCI questionnaire",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/pciQuestionnaires/{{pciid}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "pciQuestionnaires",
+                                            "{{pciid}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The legal entity ID of the individual who signed the PCI questionnaire."
+                                            },
+                                            {
+                                                "key": "pciid",
+                                                "value": "",
+                                                "description": "The unique identifier of the signed PCI questionnaire."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the signed PCI questionnaire."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}/pciQuestionnaires/generatePciTemplates",
+                "description": "Generates the required PCI questionnaire based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels). If multiple questionnaires are required, this request creates a single consodilated document to be signed.",
+                 "item": [
+                            {
+                                "name": "Generate the PCI questionnaire",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"language\": \"fr\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/pciQuestionnaires/generatePciTemplates",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "pciQuestionnaires",
+                                            "generatePciTemplates"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The legal entity ID of the individual who will sign the PCI questionnaire."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Generates the required PCI questionnaire based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels). If multiple questionnaires are required, this request creates a single consodilated document to be signed."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{{id}}/pciQuestionnaires/signPciTemplates",
+                "description": "Signs the required PCI questionnaire.",
+                 "item": [
+                            {
+                                "name": "Sign the PCI questionnaires",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"signedBy\": \"LE00000000000000000000002\",\n \"pciTemplateReferences\": [\"PCIT-T7KC6VGL\",\n \"PCIT-PKB6DKS4\"]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/pciQuestionnaires/signPciTemplates",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "pciQuestionnaires",
+                                            "signPciTemplates"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The legal entity ID of the individual who signed the PCI questionnaire."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Signs the required PCI questionnaire."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
 	        }
     ],
     "auth": {
@@ -1587,6 +1752,11 @@
 		{
 			"key": "termsofservicedocumentid",
 			"value": "termsofservicedocumentid_example",
+			"type": "string"
+		},
+		{
+			"key": "pciid",
+			"value": "pciid_example",
 			"type": "string"
 		},
 		{

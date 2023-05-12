@@ -59,10 +59,12 @@ Two repository secrets are necessary to successfully run this action :
 
 The repository includes multiple scripts:
 
-* `generateAll.sh` generates all postman API collection files for all versions of the OpenAPI definitions and places them in the postman folder. It is meant to run inside the [dedicated docker image](https://github.com/gcatanese/openapi-generator-postman-v2/).
+* `generateAll.sh` (*) generates all postman API collection files for all versions of the OpenAPI definitions and places them in the postman folder. It is meant to run inside the [dedicated docker image](https://github.com/gcatanese/openapi-generator-postman-v2/).
 * `runDocker.sh` is the script that actually runs `generateAll.sh` inside the docker image. 
-* `generateSingleFile.sh` generates the postman API collection for a given OpenAPI file and places it in the postman folder. It is meant to run inside the [dedicated docker image](https://github.com/gcatanese/openapi-generator-postman-v2/).
+* `generateSingleFile.sh` (*) generates the postman API collection for a given OpenAPI file and places it in the postman folder. It is meant to run inside the [dedicated docker image](https://github.com/gcatanese/openapi-generator-postman-v2/).
 * `runDockerSingleFile.sh` is the script that actually runs `generateSingleFile.sh` inside the docker image. 
+
+(*) those scripts should be made executable (`chmod +x filename.sh`) as they are run by the GitHub action
 
 ## Running locally
 

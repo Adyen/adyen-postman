@@ -761,7 +761,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"associatedMerchantAccounts\": \"<string>\",\n \"authnAppsToAdd\": \"<string>\",\n \"authnAppsToRemove\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
+                                        "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"associatedMerchantAccounts\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1904,7 +1904,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": \"10\",\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
+                                        "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -3172,7 +3172,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"authnAppsToAdd\": \"<string>\",\n \"authnAppsToRemove\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
+                                        "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -3695,7 +3695,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"countries\": \"<string>\",\n \"currencies\": \"<string>\",\n \"customRoutingFlags\": \"<string>\",\n \"enabled\": \"<string>\",\n \"shopperStatement\": \"<string>\",\n \"storeIds\": \"<string>\"\n}",
+                                        "raw": "{\n \"bcmc\": \"<string>\",\n \"cartesBancaires\": \"<string>\",\n \"countries\": \"<string>\",\n \"currencies\": \"<string>\",\n \"enabled\": \"<string>\",\n \"storeIds\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -4857,7 +4857,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": \"20\",\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
+                                        "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 2000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -5174,6 +5174,58 @@
                                     },
                                     "description": "Updates the store identified in the path. You can only update some store parameters.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Stores read and write"
                                 }
+                            },
+                            {
+                                "name": "Add split configuration to store",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"splitConfiguration\": {\n \"balanceAccountId\": \"BA3227C223222H5HQ2XX77VVH\",\n \"splitConfigurationId\": \"SCNF4224P22322585HPCX384JV6JGX\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/stores/{{storeId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "stores",
+                                            "{{storeId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            },
+                                            {
+                                                "key": "storeId",
+                                                "value": "",
+                                                "description": "The unique identifier of the store."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates the store identified in the path. You can only update some store parameters.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Stores read and write"
+                                }
                             }
                             ]
                         },
@@ -5198,6 +5250,51 @@
                                     "body": {
                                         "mode": "raw",
                                         "raw": "{\n \"address\": {\n \"line1\": \"1776 West Pinewood Avenue\",\n \"line2\": \"Heartland Building\",\n \"line3\": \"\",\n \"postalCode\": \"20251\"\n}\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/stores/{{storeId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "stores",
+                                            "{{storeId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "storeId",
+                                                "value": "",
+                                                "description": "The unique identifier of the store."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates the store identified in the path. You can only update some store parameters.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Stores read and write"
+                                }
+                            },
+                            {
+                                "name": "Add split configuration to store",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"splitConfiguration\": {\n \"balanceAccountId\": \"BA3227C223222H5HQ2XX77VVH\",\n \"splitConfigurationId\": \"SCNF4224P22322585HPCX384JV6JGX\"\n}\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

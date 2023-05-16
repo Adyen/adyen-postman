@@ -1893,7 +1893,7 @@
                                 }
                             },
                             {
-                                "name": "Split a payment between a sub-merchant and a platform account",
+                                "name": "Split a payment between balance accounts",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1912,7 +1912,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 6200,\n \"currency\": \"EUR\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 6000\n},\n \"type\": \"MarketPlace\",\n \"account\": \"151272963\",\n \"reference\": \"6124145\",\n \"description\": \"Porcelain Doll:  Eliza (20cm)\"\n},\n {\n \"amount\": {\n \"value\": 200\n},\n \"type\": \"Commission\",\n \"reference\": \"6124146\"\n}]\n}",
+                                        "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 40000,\n \"currency\": \"USD\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"platformChargebackLogic\": {\n \"behavior\": \"deductFromOneBalanceAccount\",\n \"targetAccount\": \"BA00000000000000000000001\"\n},\n \"splits\": [{\n \"amount\": {\n \"value\": 39600\n},\n \"type\": \"BalanceAcocount\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the sale amount\",\n \"description\": \"Your description for the sale amount\"\n},\n {\n \"amount\": {\n \"value\": 400\n},\n \"type\": \"Commission\",\n \"reference\": \"Your reference for the commission\",\n \"description\": \"Your description for the commission\"\n},\n {\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the fees\",\n \"description\": \"Your description for the fees\",\n \"type\": \"PaymentFee\"\n}]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2185,6 +2185,49 @@
                                     "body": {
                                         "mode": "raw",
                                         "raw": "{\n \"merchantAccount\": \"TestMerchantCheckout\",\n \"amount\": {\n \"value\": 100,\n \"currency\": \"EUR\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"returnUrl\": \"https: //your-company.com/checkout?shopperOrder=12xy..\",\n \"reference\": \"YOUR_PAYMENT_REFERENCE\",\n \"countryCode\": \"NL\",\n \"storePaymentMethod\": true,\n \"shopperInteraction\": \"Ecommerce\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/sessions",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "sessions"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment session for [Web Drop-in](https://docs.adyen.com/online-payments/web-drop-in) and [Web Components](https://docs.adyen.com/online-payments/web-components) integrations.  The response contains encrypted payment session data. The front end then uses the session data to make any required server-side calls for the payment flow.  You get the payment outcome asynchronously, in an [AUTHORISATION](https://docs.adyen.com/api-explorer/#/Webhooks/latest/post/AUTHORISATION) webhook."
+                                }
+                            },
+                            {
+                                "name": "Split a payment between balance accounts",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "idempotencyKey",
+                                            "value": "null"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 40000,\n \"currency\": \"USD\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https: //your-company.com/...\",\n \"platformChargebackLogic\": {\n \"behavior\": \"deductFromOneBalanceAccount\",\n \"targetAccount\": \"BA00000000000000000000001\"\n},\n \"splits\": [{\n \"amount\": {\n \"value\": 39600\n},\n \"type\": \"BalanceAccount\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the sale amount\",\n \"description\": \"Your description for the sale amount\"\n},\n {\n \"amount\": {\n \"value\": 400\n},\n \"type\": \"Commission\",\n \"reference\": \"Your reference for the commission\",\n \"description\": \"Your description for the commission\"\n},\n {\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the fees\",\n \"description\": \"Your description for the fees\",\n \"type\": \"PaymentFee\"\n}]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

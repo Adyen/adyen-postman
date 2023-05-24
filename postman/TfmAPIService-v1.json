@@ -32,7 +32,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"terminals\": [\"P400Plus-275479597\"]\n}",
+                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -71,7 +71,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"merchantInventory\": true,\n \"terminals\": [\"P400Plus-275479597\"]\n}",
+                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantInventory\" : true,\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -110,7 +110,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"store\": \"YOUR_STORE\",\n \"terminals\": [\"P400Plus-275479597\"]\n}",
+                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -155,7 +155,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"terminal\": \"M400-401972715\"\n}",
+                                        "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -200,7 +200,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -239,7 +239,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -284,7 +284,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"terminal\": \"M400-401972715\"\n}",
+                                        "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -329,7 +329,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -368,7 +368,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -407,7 +407,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"store\": \"YOUR_STORE\"\n}",
+                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

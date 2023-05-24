@@ -32,7 +32,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"recurringDetailReference\": \"8314442372419167\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"recurringDetailReference\" : \"8314442372419167\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -77,7 +77,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"recurring\": {\n \"contract\": \"RECURRING\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"recurring\" : {\n    \"contract\" : \"RECURRING\"\n  },\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -122,7 +122,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"storedPaymentMethodId\": \"8415995487234100\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"amount\": {\n \"currency\": \"INR\",\n \"value\": 1000\n},\n \"billingDate\": \"2021-03-16\",\n \"reference\": \"Example reference\",\n \"displayedReference\": \"exampleDisplayedReference\"\n}",
+                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"storedPaymentMethodId\" : \"8415995487234100\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"amount\" : {\n    \"currency\" : \"INR\",\n    \"value\" : 1000\n  },\n  \"billingDate\" : \"2021-03-16\",\n  \"reference\" : \"Example reference\",\n  \"displayedReference\" : \"exampleDisplayedReference\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -167,7 +167,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"{{$guid}}\",\n \"card\": {\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"Adyen Test\",\n \"number\": \"4111111111111111\"\n}\n}",
+                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"{{$guid}}\",\n  \"card\" : {\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"Adyen Test\",\n    \"number\" : \"4111111111111111\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -206,7 +206,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"{{$guid}}\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"selectedRecurringDetailReference\": \"8814232895168272\"\n}",
+                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"{{$guid}}\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"selectedRecurringDetailReference\" : \"8814232895168272\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

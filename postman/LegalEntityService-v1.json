@@ -127,7 +127,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"individual\"\n}",
+                                        "raw": "{\n  \"type\" : \"individual\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -172,7 +172,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY_1\",\n \"type\": \"uboThroughControl\"\n}]\n}",
+                                        "raw": "{\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"YOUR_LEGAL_ENTITY_1\",\n    \"type\" : \"uboThroughControl\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -223,7 +223,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
+                                        "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -262,7 +262,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n},\n \"phone\": {\n \"number\": \"+14153671502\",\n \"type\": \"mobile\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
+                                        "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    },\n    \"phone\" : {\n      \"number\" : \"+14153671502\",\n      \"type\" : \"mobile\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -301,7 +301,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in NL\",\n \"doingBusinessAs\": \"API Company Trading\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"registrationNumber\": \"34179503\",\n \"email\": \"organization@example.com\"\n},\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY_1\",\n \"type\": \"signatory\"\n}]\n}",
+                                        "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in NL\",\n    \"doingBusinessAs\" : \"API Company Trading\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"34179503\",\n    \"email\" : \"organization@example.com\"\n  },\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"YOUR_LEGAL_ENTITY_1\",\n    \"type\" : \"signatory\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -340,7 +340,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in US\",\n \"registrationNumber\": \"101002749\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n}\n}",
+                                        "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in US\",\n    \"registrationNumber\" : \"101002749\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -478,7 +478,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"redirectUrl\": \"https: //your.redirect-url.com/\",\n \"locale\": \"nl-NL\"\n}",
+                                        "raw": "{\n  \"redirectUrl\" : \"https://your.redirect-url.com/\",\n  \"locale\" : \"nl-NL\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -629,7 +629,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"capability\": \"issueBankAccount\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https: //www.adyen.com\"\n}],\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
+                                        "raw": "{\n  \"capability\" : \"issueBankAccount\",\n  \"industryCode\" : \"4531\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://www.adyen.com\"\n  } ],\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"sourceOfFunds\" : {\n    \"type\" : \"business\",\n    \"adyenProcessedFunds\" : false,\n    \"description\" : \"Funds from my flower shop business\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -668,7 +668,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"capability\": \"receivePayments\",\n \"salesChannels\": [\"eCommerce\",\n \"ecomMoto\"],\n \"industryCode\": \"339E\",\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"webData\": [{\n \"webAddress\": \"https: //yoururl.com\"\n}]\n}",
+                                        "raw": "{\n  \"capability\" : \"receivePayments\",\n  \"salesChannels\" : [ \"eCommerce\", \"ecomMoto\" ],\n  \"industryCode\" : \"339E\",\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://yoururl.com\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -812,7 +812,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"proofOfIndustry\",\n \"description\": \"Proof of industry doc for Example Company\"\n}",
+                                        "raw": "{\n  \"type\" : \"proofOfIndustry\",\n  \"description\" : \"Proof of industry doc for Example Company\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -863,7 +863,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"registrationDocument\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n}],\n \"description\": \"Registration doc for Example Company\",\n \"owner\": {\n \"id\": \"YOUR_LEGAL_ENTITY\",\n \"type\": \"legalEntity\"\n}\n}",
+                                        "raw": "{\n  \"type\" : \"registrationDocument\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n  } ],\n  \"description\" : \"Registration doc for Example Company\",\n  \"owner\" : {\n    \"id\" : \"YOUR_LEGAL_ENTITY\",\n    \"type\" : \"legalEntity\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1019,7 +1019,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"type\": \"adyenIssuing\",\n \"language\": \"en\"\n}",
+                                        "raw": "{\n  \"type\" : \"adyenIssuing\",\n  \"language\" : \"en\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1221,7 +1221,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"NL\",\n \"currencyCode\": \"EUR\",\n \"iban\": \"NL62ABNA0000000123\"\n}\n}",
+                                        "raw": "{\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1260,7 +1260,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"legalEntityId\": \"YOUR_LEGAL_ENTITY\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"US\",\n \"currencyCode\": \"USD\",\n \"accountNumber\": \"0000000123\",\n \"branchCode\": \"121202211\",\n \"accountType\": \"checking\"\n}\n}",
+                                        "raw": "{\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"US\",\n    \"currencyCode\" : \"USD\",\n    \"accountNumber\" : \"0000000123\",\n    \"branchCode\" : \"121202211\",\n    \"accountType\" : \"checking\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1412,7 +1412,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"language\": \"fr\"\n}",
+                                        "raw": "{\n  \"language\" : \"fr\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1465,7 +1465,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"signedBy\": \"LE00000000000000000000002\",\n \"pciTemplateReferences\": [\"PCIT-T7KC6VGL\",\n \"PCIT-PKB6DKS4\"]\n}",
+                                        "raw": "{\n  \"signedBy\" : \"LE00000000000000000000002\",\n  \"pciTemplateReferences\" : [ \"PCIT-T7KC6VGL\", \"PCIT-PKB6DKS4\" ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

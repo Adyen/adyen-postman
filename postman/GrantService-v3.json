@@ -124,7 +124,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"grantAccountId\": \"CG00000000000000000000001\",\n \"grantOfferId\": \"0000000000000001\",\n \"counterparty\": {\n \"accountHolderId\": \"AH00000000000000000000001\",\n \"balanceAccountId\": \"BA00000000000000000000001\"\n}\n}",
+                                        "raw": "{\n  \"grantAccountId\" : \"CG00000000000000000000001\",\n  \"grantOfferId\" : \"0000000000000001\",\n  \"counterparty\" : {\n    \"accountHolderId\" : \"AH00000000000000000000001\",\n    \"balanceAccountId\" : \"BA00000000000000000000001\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

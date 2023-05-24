@@ -157,7 +157,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"source\": {\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n},\n \"destination\": {\n \"balanceAccountId\": \"BAB1234567890ABC123456789\"\n},\n \"amount\": {\n \"value\": 10000,\n \"currency\": \"EUR\"\n},\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description\"\n}",
+                                        "raw": "{\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"balanceAccountId\" : \"BAB1234567890ABC123456789\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -196,7 +196,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"source\": {\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n},\n \"destination\": {\n \"transferInstrumentId\": \"SE1234567890ABC1234567890\"\n},\n \"amount\": {\n \"value\": 10000,\n \"currency\": \"EUR\"\n},\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description\"\n}",
+                                        "raw": "{\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"transferInstrumentId\" : \"SE1234567890ABC1234567890\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

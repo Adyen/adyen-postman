@@ -32,7 +32,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"value\": 50000,\n \"currency\": \"EUR\"\n},\n \"description\": \"Your description for the transfer\",\n \"fromMerchant\": \"MerchantAccount_NL\",\n \"toMerchant\": \"MerchantAccount_DE\",\n \"type\": \"debit\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"value\" : 50000,\n    \"currency\" : \"EUR\"\n  },\n  \"description\" : \"Your description for the transfer\",\n  \"fromMerchant\" : \"MerchantAccount_NL\",\n  \"toMerchant\" : \"MerchantAccount_DE\",\n  \"type\" : \"debit\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

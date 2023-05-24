@@ -157,7 +157,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"counterparty\": {\n \"bankAccount\": {\n \"iban\": \"NL13TEST0123456789\",\n \"ownerName\": {\n \"fullName\": \"A. Klaassen\"\n}\n}\n},\n \"bank\": {\n \"priority\": \"regular\"\n},\n \"referenceForBeneficiary\": \"Your reference sent to the beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"value\" : 110000,\n    \"currency\" : \"EUR\"\n  },\n  \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n  \"counterparty\" : {\n    \"bankAccount\" : {\n      \"iban\" : \"NL13TEST0123456789\",\n      \"ownerName\" : {\n        \"fullName\" : \"A. Klaassen\"\n      }\n    }\n  },\n  \"bank\" : {\n    \"priority\" : \"regular\"\n  },\n  \"referenceForBeneficiary\" : \"Your reference sent to the beneficiary\",\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -196,7 +196,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"counterparty\": {\n \"balanceAccountId\": \"BAB1234567890ABC123456789\"\n},\n \"amount\": {\n \"value\": 10000,\n \"currency\": \"EUR\"\n},\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description\"\n}",
+                                        "raw": "{\n  \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n  \"counterparty\" : {\n    \"balanceAccountId\" : \"BAB1234567890ABC123456789\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -235,7 +235,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": {\n \"value\": 80000,\n \"currency\": \"EUR\"\n},\n \"balanceAccountId\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"counterparty\": {\n \"transferInstrumentId\": \"SE1234567890ABC1234567890\"\n},\n \"bank\": {\n \"priority\": \"regular\"\n},\n \"referenceForBeneficiary\": \"Your reference sent to the beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"value\" : 80000,\n    \"currency\" : \"EUR\"\n  },\n  \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n  \"counterparty\" : {\n    \"transferInstrumentId\" : \"SE1234567890ABC1234567890\"\n  },\n  \"bank\" : {\n    \"priority\" : \"regular\"\n  },\n  \"referenceForBeneficiary\" : \"Your reference sent to the beneficiary\",\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

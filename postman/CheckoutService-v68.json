@@ -1218,7 +1218,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"countryCode\" : \"NL\",\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
+                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"countryCode\" : \"NL\",\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

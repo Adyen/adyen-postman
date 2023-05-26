@@ -1076,7 +1076,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"usLocal\",\n    \"accountNumber\" : \"12345JHDhjkf67890\",\n    \"routingNumber\" : \"121000cxhgjhzxg248\"\n  }\n}",
+                                        "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"usLocal\",\n    \"accountNumber\" : \"12345JHDhjkf67890\",\n    \"accountType\" : \"checking\",\n    \"routingNumber\" : \"121000567\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1503,7 +1503,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"accountHolderId\": \"<string>\",\n \"defaultCurrencyCode\": \"<string>\",\n \"description\": \"<string>\",\n \"reference\": \"<string>\",\n \"status\": \"<string>\",\n \"timeZone\": \"<string>\"\n}",
+                                        "raw": "{\n \"accountHolderId\": \"<string>\",\n \"defaultCurrencyCode\": \"<string>\",\n \"description\": \"<string>\",\n \"metadata\": \"<string>\",\n \"reference\": \"<string>\",\n \"status\": \"<string>\",\n \"timeZone\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

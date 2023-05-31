@@ -683,7 +683,7 @@
                 "description": "Retrieves the balance remaining on a shopper's gift card. To check a gift card's balance, make a POST `/paymentMethods/balance` call and include the gift card's details inside a `paymentMethod` object.",
                  "item": [
                             {
-                                "name": "Retrieve gift card balance",
+                                "name": "Get gift card balance specifying amount of 10 EUR",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -702,7 +702,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"givex\",\n    \"number\" : \"4126491073027401\",\n    \"cvc\" : \"737\"\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"givex\",\n    \"number\" : \"4126491073027401\",\n    \"cvc\" : \"737\"\n  },\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -727,7 +727,7 @@
                                 }
                             },
                             {
-                                "name": "Retrieve gift card balance",
+                                "name": "Get gift card balance specifying amount of 100 EUR",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -746,7 +746,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"plastix\",\n    \"number\" : \"4010100000000000000\",\n    \"cvc\" : \"73737\",\n    \"holderName\" : \"BALANCE EUR 888\"\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"givex\",\n    \"number\" : \"4126491073027401\",\n    \"cvc\" : \"737\"\n  },\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 10000\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

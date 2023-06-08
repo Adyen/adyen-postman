@@ -264,6 +264,472 @@
 	                    ]
 	        },
 	        {
+	            "name": "Split configuration - merchant level",
+	            "item": [
+	                        {
+    "name": "/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}",
+                "description": "Deletes the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                 "item": [
+                            {
+                                "name": "Delete a split configuration",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "splitConfigurations",
+                                            "{{splitConfigurationId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            },
+                                            {
+                                                "key": "splitConfigurationId",
+                                                "value": "",
+                                                "description": "The unique identifier of the split configuration."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Deletes the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/{{merchantId}}/splitConfigurations",
+                "description": "Returns the list of split configurations for the merchant account.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                 "item": [
+                            {
+                                "name": "Get a list of split configurations",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "splitConfigurations"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the list of split configurations for the merchant account.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}",
+                "description": "Returns the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                 "item": [
+                            {
+                                "name": "Get a split configuration",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "splitConfigurations",
+                                            "{{splitConfigurationId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            },
+                                            {
+                                                "key": "splitConfigurationId",
+                                                "value": "",
+                                                "description": "The unique identifier of the split configuration."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}",
+                "description": "Changes the description of the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                 "item": [
+                            {
+                                "name": "Update split configuration description",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"description\" : \"Updated description for the split configuration\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "splitConfigurations",
+                                            "{{splitConfigurationId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            },
+                                            {
+                                                "key": "splitConfigurationId",
+                                                "value": "",
+                                                "description": "The unique identifier of the split configuration."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Changes the description of the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}/rules/{{ruleId}}",
+                "description": "Changes the conditions of the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                 "item": [
+                            {
+                                "name": "Update the conditions in split configuration rule",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"currency\" : \"EUR\",\n  \"fundingSource\" : \"ANY\",\n  \"paymentMethod\" : \"visa\",\n  \"shopperInteraction\" : \"ANY\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}/rules/{{ruleId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "splitConfigurations",
+                                            "{{splitConfigurationId}}",
+                                            "rules",
+                                            "{{ruleId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            },
+                                            {
+                                                "key": "splitConfigurationId",
+                                                "value": "",
+                                                "description": "The identifier of the split configuration."
+                                            },
+                                            {
+                                                "key": "ruleId",
+                                                "value": "",
+                                                "description": "The unique identifier of the split configuration rule."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Changes the conditions of the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}/rules/{{ruleId}}/splitLogic/{{splitLogicId}}",
+                "description": "Changes the split logic specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                 "item": [
+                            {
+                                "name": "Update the split logic",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"additionalCommission\" : {\n    \"fixedAmount\" : 100,\n    \"variablePercentage\" : 0,\n    \"balanceAccountId\" : \"BA3227C223222H5HQ2XX77VVH\"\n  },\n  \"chargeback\" : \"deductFromLiableAccount\",\n  \"commission\" : {\n    \"fixedAmount\" : 100,\n    \"variablePercentage\" : 100\n  },\n  \"paymentFee\" : \"deductFromLiableAccount\",\n  \"remainder\" : \"addToLiableAccount\",\n  \"tip\" : \"addToLiableAccount\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}/rules/{{ruleId}}/splitLogic/{{splitLogicId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "splitConfigurations",
+                                            "{{splitConfigurationId}}",
+                                            "rules",
+                                            "{{ruleId}}",
+                                            "splitLogic",
+                                            "{{splitLogicId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            },
+                                            {
+                                                "key": "splitConfigurationId",
+                                                "value": "",
+                                                "description": "The unique identifier of the split configuration."
+                                            },
+                                            {
+                                                "key": "ruleId",
+                                                "value": "",
+                                                "description": "The unique identifier of the split configuration rule."
+                                            },
+                                            {
+                                                "key": "splitLogicId",
+                                                "value": "",
+                                                "description": "The unique identifier of the split configuration split."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Changes the split logic specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/{{merchantId}}/splitConfigurations",
+                "description": "Creates a split configuration for the merchant account specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                 "item": [
+                            {
+                                "name": "Create a split configuration",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"description\" : \"Your description for the split configuration\",\n  \"rules\" : [ {\n    \"paymentMethod\" : \"ANY\",\n    \"shopperInteraction\" : \"ANY\",\n    \"fundingSource\" : \"ANY\",\n    \"currency\" : \"ANY\",\n    \"splitLogic\" : {\n      \"paymentFee\" : \"deductFromLiableAccount\",\n      \"chargeback\" : \"deductFromLiableAccount\",\n      \"tip\" : \"addToOneBalanceAccount\",\n      \"remainder\" : \"addToOneBalanceAccount\",\n      \"commission\" : {\n        \"fixedAmount\" : 10,\n        \"variablePercentage\" : 100\n      },\n      \"additionalCommission\" : {\n        \"fixedAmount\" : 10,\n        \"variablePercentage\" : 50,\n        \"balanceAccountId\" : \"BA3227C223222H5HQ2XX77VVH\"\n      }\n    }\n  } ]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "splitConfigurations"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a split configuration for the merchant account specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}",
+                "description": "Creates a rule in the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                 "item": [
+                            {
+                                "name": "Add rule to a split configuration",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"paymentMethod\" : \"visa\",\n  \"shopperInteraction\" : \"POS\",\n  \"fundingSource\" : \"ANY\",\n  \"currency\" : \"USD\",\n  \"splitLogic\" : {\n    \"paymentFee\" : \"deductFromLiableAccount\",\n    \"chargeback\" : \"deductFromLiableAccount\",\n    \"tip\" : \"addToOneBalanceAccount\",\n    \"remainder\" : \"addToLiableAccount\",\n    \"commission\" : {\n      \"fixedAmount\" : 10,\n      \"variablePercentage\" : 100\n    },\n    \"additionalCommission\" : {\n      \"fixedAmount\" : 10,\n      \"variablePercentage\" : 50,\n      \"balanceAccountId\" : \"BA3227C223222H5HQ2XX77VVH\"\n    }\n  }\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "splitConfigurations",
+                                            "{{splitConfigurationId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            },
+                                            {
+                                                "key": "splitConfigurationId",
+                                                "value": "",
+                                                "description": "The unique identifier of the split configuration."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a rule in the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Allowed origins - company level",
 	            "item": [
 	                        {
@@ -3315,6 +3781,14 @@
                                             {
                                                 "key": "pageSize",
                                                 "value": "56"
+                                            },
+                                            {
+                                                "key": "packageName",
+                                                "value": "packageName_example"
+                                            },
+                                            {
+                                                "key": "versionCode",
+                                                "value": "56"
                                             }
                                         ]
                                     },
@@ -3371,6 +3845,10 @@
                                             {
                                                 "key": "pageSize",
                                                 "value": "56"
+                                            },
+                                            {
+                                                "key": "certificateName",
+                                                "value": "certificateName_example"
                                             }
                                         ]
                                     },
@@ -7392,6 +7870,11 @@
 			"type": "string"
 		},
 		{
+			"key": "splitLogicId",
+			"value": "splitLogicId_example",
+			"type": "string"
+		},
+		{
 			"key": "reference",
 			"value": "reference_example",
 			"type": "string"
@@ -7432,8 +7915,18 @@
 			"type": "string"
 		},
 		{
+			"key": "splitConfigurationId",
+			"value": "splitConfigurationId_example",
+			"type": "string"
+		},
+		{
 			"key": "companyId",
 			"value": "companyId_example",
+			"type": "string"
+		},
+		{
+			"key": "ruleId",
+			"value": "ruleId_example",
 			"type": "string"
 		}
 	]

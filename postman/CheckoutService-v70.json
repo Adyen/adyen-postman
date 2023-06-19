@@ -17,7 +17,7 @@
                 "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**TECHNICAL_CANCEL** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment using the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/payments/{paymentPspReference}/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel).",
                  "item": [
                             {
-                                "name": "Cancel an authorised payment",
+                                "name": "Cancel a payment using your own reference",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -36,7 +36,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"paymentReference\": \"<string>\",\n \"reference\": \"<string>\"\n}",
+                                        "raw": "{\n  \"paymentReference\" : \"YOUR_UNIQUE_REFERENCE_FOR_THE_PAYMENT\",\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE_FOR_THE_CANCELLATION\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -66,7 +66,7 @@
                 "description": "Increases or decreases the authorised payment amount and returns a unique reference for this request. You get the outcome of the request asynchronously, in an [**AUTHORISATION_ADJUSTMENT** webhook](https://docs.adyen.com/development-resources/webhooks/understand-notifications#event-codes).  You can only update authorised amounts that have not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures).  The amount you specify in the request is the updated amount, which is larger or smaller than the initial authorised amount.  For more information, refer to [Authorisation adjustment](https://docs.adyen.com/online-payments/adjust-authorisation#use-cases).",
                  "item": [
                             {
-                                "name": "Update an authorised amount",
+                                "name": "Update the amount of an authorised payment",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -85,7 +85,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": \"<string>\",\n \"industryUsage\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\",\n \"splits\": \"<string>\"\n}",
+                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 2500\n  },\n  \"reason\" : \"delayedCharge\",\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -122,7 +122,7 @@
                 "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/paymentPspReference/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel).",
                  "item": [
                             {
-                                "name": "Cancel an authorised payment",
+                                "name": "Cancel payment using a PSP reference",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -141,7 +141,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\"\n}",
+                                        "raw": "{\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -197,7 +197,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": \"<string>\",\n \"lineItems\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\",\n \"splits\": \"<string>\"\n}",
+                                        "raw": "{\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"amount\" : {\n    \"value\" : 2000,\n    \"currency\" : \"EUR\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -234,7 +234,7 @@
                 "description": "Refunds a payment that has been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**REFUND** webhook](https://docs.adyen.com/online-payments/refund#refund-webhook).  You can refund either the full captured amount or a part of the captured amount. You can also perform multiple partial refunds, as long as their sum doesn't exceed the captured amount.  > Some payment methods do not support partial refunds. To learn if a payment method supports partial refunds, refer to the payment method page such as [cards](https://docs.adyen.com/payment-methods/cards#supported-cards), [iDEAL](https://docs.adyen.com/payment-methods/ideal), or [Klarna](https://docs.adyen.com/payment-methods/klarna).   If you want to refund a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Refund](https://docs.adyen.com/online-payments/refund).",
                  "item": [
                             {
-                                "name": "Refund a captured payment",
+                                "name": "Refund a payment",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -253,7 +253,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": \"<string>\",\n \"lineItems\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"merchantRefundReason\": \"<string>\",\n \"reference\": \"<string>\",\n \"splits\": \"<string>\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 2500\n  },\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -290,7 +290,7 @@
                 "description": "[Refunds](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/refunds) a payment if it has already been captured, and [cancels](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) a payment if it has not yet been captured. Returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCEL_OR_REFUND** webhook](https://docs.adyen.com/online-payments/reverse#cancel-or-refund-webhook).  The reversed amount is always the full payment amount. > Do not use this request for payments that involve multiple partial captures.  For more information, refer to [Reversal](https://docs.adyen.com/online-payments/reversal).",
                  "item": [
                             {
-                                "name": "Refund or cancel a payment",
+                                "name": "Reverse (cancel or refund) a payment",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -309,7 +309,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\"\n}",
+                                        "raw": "{\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2094,7 +2094,7 @@
                 "description": "Submits details for a payment created using `/payments`. This step is only needed when no final state has been reached on the `/payments` request, for example when the shopper was redirected to another page to complete the payment.  ",
                  "item": [
                             {
-                                "name": "Submit 3D Secure 2 authentication result",
+                                "name": "Submit the redirect result",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -2113,7 +2113,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"details\" : {\n    \"threeDSResult\" : \"eyJ0cmFuc1N0YXR1cyI6IlkifQ==\"\n  }\n}",
+                                        "raw": "{\n  \"details\" : {\n    \"redirectResult\" : \"X6XtfGC3!Y...\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2138,7 +2138,7 @@
                                 }
                             },
                             {
-                                "name": "Submit the redirect result",
+                                "name": "Submit 3D Secure 2 authentication result",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -2157,7 +2157,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"details\" : {\n    \"redirectResult\" : \"X6XtfGC3!Y...\"\n  }\n}",
+                                        "raw": "{\n  \"details\" : {\n    \"threeDSResult\" : \"eyJ0cmFuc1N0YXR1cyI6IlkifQ==\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

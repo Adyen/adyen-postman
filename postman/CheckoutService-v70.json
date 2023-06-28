@@ -30,7 +30,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -79,7 +79,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -135,7 +135,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -191,7 +191,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -247,7 +247,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -303,7 +303,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -364,7 +364,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -407,7 +407,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -450,7 +450,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -493,7 +493,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -536,7 +536,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -585,7 +585,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -640,7 +640,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -689,7 +689,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -739,7 +739,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -783,7 +783,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -838,7 +838,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -888,7 +888,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1051,7 +1051,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1094,7 +1094,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1143,7 +1143,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1186,7 +1186,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1235,7 +1235,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1278,7 +1278,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1321,7 +1321,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1370,7 +1370,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1400,7 +1400,7 @@
                                 }
                             },
                             {
-                                "name": "Make a card payment with 3D Secure 2 native authentication",
+                                "name": "Make a card payment with 3D Secure 2 native authentication, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1413,7 +1413,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1456,7 +1456,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1499,7 +1499,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1529,7 +1529,7 @@
                                 }
                             },
                             {
-                                "name": "Make a card payment (using encrypted card details)",
+                                "name": "Make a card payment using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1542,7 +1542,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1572,7 +1572,7 @@
                                 }
                             },
                             {
-                                "name": "Tokenize card details for one-off payments (using encrypted card details)",
+                                "name": "Tokenize card details for one-off payments, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1585,7 +1585,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1628,7 +1628,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1671,7 +1671,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1714,7 +1714,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1757,7 +1757,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1800,7 +1800,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1843,7 +1843,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1873,7 +1873,7 @@
                                 }
                             },
                             {
-                                "name": "Make a one-off payment with a token and CVV (using encrypted card details)",
+                                "name": "Make a one-off payment with a token and CVV, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1886,7 +1886,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1929,7 +1929,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -1972,7 +1972,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -2015,7 +2015,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -2058,7 +2058,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -2107,7 +2107,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -2151,7 +2151,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -2201,7 +2201,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -2244,7 +2244,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -2287,7 +2287,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -2330,7 +2330,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],
@@ -2482,7 +2482,7 @@
                                             "value": "application/json"
                                         },
                                         {
-                                            "key": "idempotencyKey",
+                                            "key": "Idempotency-Key",
                                             "value": "null"
                                         }
                                     ],

@@ -942,6 +942,54 @@
                             ]
                         },
 	                        {
+    "name": "/legalEntities/{{id}}/termsOfServiceStatus",
+                "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity.",
+                 "item": [
+                            {
+                                "name": "Get Terms of Service status",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfServiceStatus",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{{id}}",
+                                            "termsOfServiceStatus"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity."
+                                }
+                            }
+                            ]
+                        },
+	                        {
     "name": "/legalEntities/{{id}}/termsOfService/{{termsofservicedocumentid}}",
                 "description": "Accepts Terms of Service.",
                  "item": [

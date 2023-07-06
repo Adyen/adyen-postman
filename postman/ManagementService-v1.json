@@ -321,6 +321,67 @@
                             ]
                         },
 	                        {
+    "name": "/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}/rules/{{ruleId}}",
+                "description": "Deletes the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                 "item": [
+                            {
+                                "name": "Delete a split configuration rule",
+                                "request": {
+                                    "method": "DELETE",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}/rules/{{ruleId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            "{{merchantId}}",
+                                            "splitConfigurations",
+                                            "{{splitConfigurationId}}",
+                                            "rules",
+                                            "{{ruleId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "",
+                                                "description": "The unique identifier of the merchant account."
+                                            },
+                                            {
+                                                "key": "splitConfigurationId",
+                                                "value": "",
+                                                "description": "The unique identifier of the split configuration."
+                                            },
+                                            {
+                                                "key": "ruleId",
+                                                "value": "",
+                                                "description": ""
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Deletes the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
     "name": "/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}/rules/{{splitConfigurationRuleId}}",
                 "description": "Deletes the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
@@ -4975,7 +5036,7 @@
 	            "item": [
 	                        {
     "name": "/terminals",
-                "description": "Returns the payment terminals that the API credential has access to and that match the query parameters.  When using `searchQuery`, other query parameters are ignored.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API — Terminal actions read",
+                "description": "Returns the payment terminals that the API credential has access to and that match the query parameters.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API — Terminal actions read",
                  "item": [
                             {
                                 "name": "Get a list of terminals",
@@ -5012,6 +5073,10 @@
                                                 "value": "searchQuery_example"
                                             },
                                             {
+                                                "key": "otpQuery",
+                                                "value": "otpQuery_example"
+                                            },
+                                            {
                                                 "key": "countries",
                                                 "value": "countries_example"
                                             },
@@ -5037,7 +5102,7 @@
                                             }
                                         ]
                                     },
-                                    "description": "Returns the payment terminals that the API credential has access to and that match the query parameters.  When using `searchQuery`, other query parameters are ignored.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API — Terminal actions read"
+                                    "description": "Returns the payment terminals that the API credential has access to and that match the query parameters.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API — Terminal actions read"
                                 }
                             }
                             ]

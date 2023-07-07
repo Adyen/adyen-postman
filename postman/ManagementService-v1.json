@@ -23,7 +23,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -83,7 +84,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -132,7 +134,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -179,11 +182,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -224,7 +229,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -277,7 +283,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -331,7 +338,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -382,67 +390,6 @@
                             ]
                         },
 	                        {
-    "name": "/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}/rules/{{splitConfigurationRuleId}}",
-                "description": "Deletes the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
-                 "item": [
-                            {
-                                "name": "Delete a split configuration rule",
-                                "request": {
-                                    "method": "DELETE",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json"
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/merchants/{{merchantId}}/splitConfigurations/{{splitConfigurationId}}/rules/{{splitConfigurationRuleId}}",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "merchants",
-                                            "{{merchantId}}",
-                                            "splitConfigurations",
-                                            "{{splitConfigurationId}}",
-                                            "rules",
-                                            "{{splitConfigurationRuleId}}"
-                                        ],
-                                        "variable": [
-                                            {
-                                                "key": "merchantId",
-                                                "value": "",
-                                                "description": "The unique identifier of the merchant account."
-                                            },
-                                            {
-                                                "key": "splitConfigurationId",
-                                                "value": "",
-                                                "description": "The unique identifier of the split configuration."
-                                            },
-                                            {
-                                                "key": "splitConfigurationRuleId",
-                                                "value": "",
-                                                "description": ""
-                                            }
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Deletes the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
-                                }
-                            }
-                            ]
-                        },
-	                        {
     "name": "/merchants/{{merchantId}}/splitConfigurations",
                 "description": "Returns the list of split configurations for the merchant account.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
@@ -453,7 +400,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -501,7 +449,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -555,11 +504,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -613,11 +564,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -678,11 +631,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -750,11 +705,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -802,11 +759,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -865,7 +824,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -926,7 +886,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -981,7 +942,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1042,11 +1004,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1106,7 +1070,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1166,7 +1131,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1226,7 +1192,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1286,7 +1253,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1340,11 +1308,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1398,11 +1368,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1455,11 +1427,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1495,11 +1469,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1535,11 +1511,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1586,7 +1564,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1634,7 +1613,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1682,11 +1662,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1728,11 +1710,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1780,11 +1764,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1826,11 +1812,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1883,7 +1871,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1937,7 +1926,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -1985,7 +1975,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2039,11 +2030,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2097,11 +2090,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2154,7 +2149,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2208,7 +2204,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2264,7 +2261,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2318,11 +2316,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2376,11 +2376,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2428,7 +2430,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2483,11 +2486,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2547,7 +2552,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2607,7 +2613,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2668,7 +2675,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2723,7 +2731,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2784,11 +2793,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2848,7 +2859,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2900,7 +2912,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -2960,7 +2973,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3008,7 +3022,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3072,7 +3087,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3126,7 +3142,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3190,11 +3207,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3248,11 +3267,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3300,11 +3321,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3352,7 +3375,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3412,7 +3436,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3468,7 +3493,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3522,11 +3548,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3580,11 +3608,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3637,7 +3667,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3697,7 +3728,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3751,11 +3783,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3809,11 +3843,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3866,7 +3902,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3930,7 +3967,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -3990,7 +4028,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4054,7 +4093,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4113,7 +4153,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4177,7 +4218,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4231,7 +4273,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4286,11 +4329,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4344,11 +4389,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4390,11 +4437,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4442,11 +4491,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4506,7 +4557,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4554,7 +4606,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4595,7 +4648,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4637,7 +4691,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4685,11 +4740,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4736,7 +4793,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4788,7 +4846,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4836,11 +4895,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4886,11 +4947,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4942,11 +5005,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -4988,11 +5053,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5045,7 +5112,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5123,7 +5191,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5177,7 +5246,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5233,7 +5303,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5287,11 +5358,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5345,11 +5418,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5397,7 +5472,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5452,11 +5528,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5516,7 +5594,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5576,7 +5655,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5630,7 +5710,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5687,7 +5768,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5734,11 +5816,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5786,11 +5870,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5844,11 +5930,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5889,11 +5977,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5940,11 +6030,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -5992,11 +6084,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6042,7 +6136,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6094,7 +6189,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6142,11 +6238,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6192,11 +6290,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6248,11 +6348,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6294,11 +6396,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6351,7 +6455,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6407,7 +6512,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6461,11 +6567,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6519,11 +6627,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6576,7 +6686,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6628,7 +6739,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6688,7 +6800,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6736,7 +6849,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6800,7 +6914,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6854,7 +6969,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6918,11 +7034,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -6976,11 +7094,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7028,11 +7148,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7080,7 +7202,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7140,7 +7263,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7189,7 +7313,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7236,7 +7361,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7297,7 +7423,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7356,7 +7483,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7411,7 +7539,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7463,7 +7592,8 @@
                                     "header": [
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7511,11 +7641,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7568,11 +7700,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7631,11 +7765,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7684,11 +7820,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7743,11 +7881,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7793,11 +7933,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7849,11 +7991,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7895,11 +8039,13 @@
                                     "header": [
                                         {
                                             "key": "Content-Type",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         },
                                         {
                                             "key": "Accept",
-                                            "value": "application/json"
+                                            "value": "application/json",
+                                            "disabled": false
                                         }
                                     ],
                                     "body": {
@@ -7967,67 +8113,62 @@
         },
 		{
 			"key": "webhookId",
-			"value": "webhookId_example",
-			"type": "string"
-		},
-		{
-			"key": "splitConfigurationRuleId",
-			"value": "splitConfigurationRuleId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "payoutSettingsId",
-			"value": "payoutSettingsId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "orderId",
-			"value": "orderId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "terminalId",
-			"value": "terminalId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "storeId",
-			"value": "storeId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "userId",
-			"value": "userId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "splitLogicId",
-			"value": "splitLogicId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "reference",
-			"value": "reference_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "originId",
-			"value": "originId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "apiCredentialId",
-			"value": "apiCredentialId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "merchantId",
-			"value": "merchantId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "paymentMethodId",
-			"value": "paymentMethodId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
@@ -8037,7 +8178,7 @@
 		},
 		{
 			"key": "actionId",
-			"value": "actionId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
@@ -8047,17 +8188,17 @@
 		},
 		{
 			"key": "splitConfigurationId",
-			"value": "splitConfigurationId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "companyId",
-			"value": "companyId_example",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "ruleId",
-			"value": "ruleId_example",
+			"value": "",
 			"type": "string"
 		}
 	]

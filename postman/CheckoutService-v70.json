@@ -1090,6 +1090,58 @@
 	            "name": "Payments",
 	            "item": [
 	                        {
+    "name": "/sessions/{{sessionId}}",
+                "description": "Get a synchronous result of a payment session given a sessionResult.",
+                 "item": [
+                            {
+                                "name": "Get a synchronous result of a payment session",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/sessions/{{sessionId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "sessions",
+                                            "{{sessionId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "sessionId",
+                                                "value": "",
+                                                "description": "A unique identifier of the session."
+                                            }
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "sessionResult",
+                                                "value": "sessionResult_example"
+                                            }
+                                        ]
+                                    },
+                                    "description": "Get a synchronous result of a payment session given a sessionResult."
+                                }
+                            }
+                            ]
+                        },
+	                        {
     "name": "/cardDetails",
                 "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  ",
                  "item": [
@@ -2706,6 +2758,11 @@
 		},
 		{
 			"key": "YOUR_MERCHANT_ACCOUNT",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "sessionId",
 			"value": "",
 			"type": "string"
 		},

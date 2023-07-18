@@ -1967,7 +1967,7 @@
                                 }
                             },
                             {
-                                "name": "Split a payment between between accounts",
+                                "name": "Split a payment between a sub-merchant and a platform account",
                                 "request": {
                                     "method": "POST",
                                     "header": [

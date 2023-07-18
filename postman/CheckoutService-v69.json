@@ -980,10 +980,10 @@
 	            "item": [
 	                        {
     "name": "/sessions/{{sessionId}}",
-                "description": "Get a synchronous result of a payment session given a sessionResult.",
+                "description": "Returns the status of the payment session with the `sessionId` and `sessionResult` specified in the path.",
                  "item": [
                             {
-                                "name": "Get a synchronous result of a payment session",
+                                "name": "Get the result of a payment session",
                                 "request": {
                                     "method": "GET",
                                     "header": [
@@ -1025,7 +1025,7 @@
                                             }
                                         ]
                                     },
-                                    "description": "Get a synchronous result of a payment session given a sessionResult."
+                                    "description": "Returns the status of the payment session with the `sessionId` and `sessionResult` specified in the path."
                                 }
                             }
                             ]

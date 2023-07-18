@@ -1323,7 +1323,7 @@
                                 }
                             },
                             {
-                                "name": "Make card payment with 3D Secure redirect authentication",
+                                "name": "Make a card payment with 3D Secure redirect authentication",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1369,7 +1369,7 @@
                                 }
                             },
                             {
-                                "name": "Make a payment with 3D Secure 2 native authentication",
+                                "name": "Make a payment with 3D Secure 2 native authentication, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1461,7 +1461,7 @@
                                 }
                             },
                             {
-                                "name": "Make a card payment (using encrypted card details)",
+                                "name": "Make a card payment using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1553,7 +1553,7 @@
                                 }
                             },
                             {
-                                "name": "Make a one-off payment with a token and CVV (using encrypted card details)",
+                                "name": "Make a one-off payment with a token and CVV, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [

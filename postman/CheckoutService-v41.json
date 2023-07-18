@@ -1415,7 +1415,7 @@
                                 }
                             },
                             {
-                                "name": "Make card payment with 3D Secure redirect authentication",
+                                "name": "Make a card payment with 3D Secure redirect authentication",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1437,7 +1437,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4212345678901237\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\",\n    \"cvc\" : \"737\"\n  },\n  \"browserInfo\" : {\n    \"userAgent\" : \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9) Gecko/2008052912 Firefox/3.0\",\n    \"acceptHeader\" : \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\",\n    \"javaEnabled\" : true,\n    \"colorDepth\" : 10,\n    \"screenHeight\" : 2000,\n    \"screenWidth\" : 3000,\n    \"timeZoneOffset\" : 5,\n    \"language\" : \"en\"\n  },\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4212345678901237\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\",\n    \"cvc\" : \"737\"\n  },\n  \"browserInfo\" : {\n    \"userAgent\" : \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9) Gecko/2008052912 Firefox/3.0\",\n    \"acceptHeader\" : \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\",\n    \"javaEnabled\" : true\n  },\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1461,7 +1461,7 @@
                                 }
                             },
                             {
-                                "name": "Make a payment with 3D Secure 2 native authentication",
+                                "name": "Make a payment with 3D Secure 2 native authentication, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1483,7 +1483,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"encryptedCardNumber\" : \"test_4212345678901237\",\n    \"encryptedExpiryMonth\" : \"test_03\",\n    \"encryptedExpiryYear\" : \"test_2030\",\n    \"encryptedSecurityCode\" : \"test_737\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"browserInfo\" : {\n    \"userAgent\" : \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9) Gecko/2008052912 Firefox/3.0\",\n    \"acceptHeader\" : \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\",\n    \"javaEnabled\" : true,\n    \"colorDepth\" : 10,\n    \"screenHeight\" : 2000,\n    \"screenWidth\" : 3000,\n    \"timeZoneOffset\" : 5,\n    \"language\" : \"en\"\n  },\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"encryptedCardNumber\" : \"test_4212345678901237\",\n    \"encryptedExpiryMonth\" : \"test_03\",\n    \"encryptedExpiryYear\" : \"test_2030\",\n    \"encryptedSecurityCode\" : \"test_737\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1553,7 +1553,7 @@
                                 }
                             },
                             {
-                                "name": "Make a card payment (using encrypted card details)",
+                                "name": "Make a card payment using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1599,7 +1599,7 @@
                                 }
                             },
                             {
-                                "name": "Tokenize card details for one-off payments (using encrypted card details)",
+                                "name": "Tokenize card details for one-off payments, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1921,7 +1921,7 @@
                                 }
                             },
                             {
-                                "name": "Make a one-off payment with a token and CVV (using encrypted card details)",
+                                "name": "Make a one-off payment with a token and CVV, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [

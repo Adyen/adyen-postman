@@ -979,7 +979,7 @@
 	            "name": "Recurring",
 	            "item": [
 	                        {
-    "name": "/storedPaymentMethods/{{recurringId}}",
+    "name": "/storedPaymentMethods/{{storedPaymentMethodId}}",
                 "description": "Deletes the token identified in the path. The token can no longer be used with payment requests.",
                  "item": [
                             {
@@ -1003,17 +1003,17 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/storedPaymentMethods/{{recurringId}}",
+                                        "raw": "{{baseUrl}}/storedPaymentMethods/{{storedPaymentMethodId}}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "storedPaymentMethods",
-                                            "{{recurringId}}"
+                                            "{{storedPaymentMethodId}}"
                                         ],
                                         "variable": [
                                             {
-                                                "key": "recurringId",
+                                                "key": "storedPaymentMethodId",
                                                 "value": "",
                                                 "description": "The unique identifier of the token."
                                             }
@@ -2198,7 +2198,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4111111111111111\",\n    \"cvc\" : \"737\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"amount\" : {\n    \"value\" : 40000,\n    \"currency\" : \"USD\"\n  },\n  \"reference\" : \"{{$guid}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"platformChargebackLogic\" : {\n    \"behavior\" : \"deductFromOneBalanceAccount\",\n    \"targetAccount\" : \"BA00000000000000000000001\",\n    \"costAllocationAccount\" : \"BA00000000000000000000001\"\n  },\n  \"splits\" : [ {\n    \"amount\" : {\n      \"value\" : 39600\n    },\n    \"type\" : \"BalanceAccount\",\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the sale amount\",\n    \"description\" : \"Your description for the sale amount\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"type\" : \"Commission\",\n    \"reference\" : \"Your reference for the commission\",\n    \"description\" : \"Your description for the commission\"\n  }, {\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the fees\",\n    \"description\" : \"Your description for the fees\",\n    \"type\" : \"PaymentFee\"\n  } ]\n}",
+                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4111111111111111\",\n    \"cvc\" : \"737\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"amount\" : {\n    \"value\" : 40000,\n    \"currency\" : \"USD\"\n  },\n  \"reference\" : \"{{$guid}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"platformChargebackLogic\" : {\n    \"behavior\" : \"deductFromOneBalanceAccount\",\n    \"targetAccount\" : \"BA00000000000000000000001\",\n    \"costAllocationAccount\" : \"BA00000000000000000000001\"\n  },\n  \"splits\" : [ {\n    \"amount\" : {\n      \"value\" : 39200\n    },\n    \"type\" : \"BalanceAccount\",\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the sale amount\",\n    \"description\" : \"Your description for the sale amount\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"type\" : \"Commission\",\n    \"reference\" : \"Your reference for the commission\",\n    \"description\" : \"Your description for the commission\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the fees\",\n    \"description\" : \"Your description for the fees\",\n    \"type\" : \"PaymentFee\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2534,7 +2534,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"value\" : 40000,\n    \"currency\" : \"USD\"\n  },\n  \"reference\" : \"{{$guid}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"splits\" : [ {\n    \"amount\" : {\n      \"value\" : 39600\n    },\n    \"type\" : \"BalanceAccount\",\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the sale amount\",\n    \"description\" : \"Your description for the sale amount\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"type\" : \"Commission\",\n    \"reference\" : \"Your reference for the commission\",\n    \"description\" : \"Your description for the commission\"\n  }, {\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the fees\",\n    \"description\" : \"Your description for the fees\",\n    \"type\" : \"PaymentFee\"\n  } ]\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"value\" : 40000,\n    \"currency\" : \"USD\"\n  },\n  \"reference\" : \"{{$guid}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"splits\" : [ {\n    \"amount\" : {\n      \"value\" : 39200\n    },\n    \"type\" : \"BalanceAccount\",\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the sale amount\",\n    \"description\" : \"Your description for the sale amount\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"type\" : \"Commission\",\n    \"reference\" : \"Your reference for the commission\",\n    \"description\" : \"Your description for the commission\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the fees\",\n    \"description\" : \"Your description for the fees\",\n    \"type\" : \"PaymentFee\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2757,17 +2757,17 @@
 			"type": "string"
 		},
 		{
+			"key": "storedPaymentMethodId",
+			"value": "",
+			"type": "string"
+		},
+		{
 			"key": "YOUR_MERCHANT_ACCOUNT",
 			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "sessionId",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "recurringId",
 			"value": "",
 			"type": "string"
 		}

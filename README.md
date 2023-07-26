@@ -18,7 +18,7 @@ This way you will be notified of new versions and changes per email and in the U
 
 ## Importing the JSON files
 
-However, in case you want to experiment, want to keep your experiments, want to use an older version of any of our APIs or if you're using a postman alternative like [Insomnia](https://docs.insomnia.rest/insomnia/import-export-data), you can also take any of the json files in this repository and upload them yourself.
+However, in case you want to experiment, want to keep your experiments, want to use an older version of any of our APIs or if you're using a postman alternative like [Insomnia](https://docs.insomnia.rest/insomnia/import-export-data) or [Hoppscotch](https://hoppscotch.io/), you can also take any of the json files in this repository and upload them yourself.
 
 ![Importing a json file as a Postman collection](./images/import-postman.gif)
 

@@ -368,6 +368,112 @@
 	                    ]
 	        },
 	        {
+	            "name": "Network tokens",
+	            "item": [
+	                        {
+    "name": "/networkTokens/{{networkTokenId}}",
+                "description": "Returns the details of a network token.",
+                 "item": [
+                            {
+                                "name": "Get a network token",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/networkTokens/{{networkTokenId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "networkTokens",
+                                            "{{networkTokenId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "networkTokenId",
+                                                "value": "",
+                                                "description": "The unique identifier of the network token."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the details of a network token."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/networkTokens/{{networkTokenId}}",
+                "description": "Updates the status of the network token.",
+                 "item": [
+                            {
+                                "name": "Update a network token",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"status\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/networkTokens/{{networkTokenId}}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "networkTokens",
+                                            "{{networkTokenId}}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "networkTokenId",
+                                                "value": "",
+                                                "description": "The unique identifier of the network token."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates the status of the network token."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Account holders",
 	            "item": [
 	                        {
@@ -671,6 +777,55 @@
                                         ]
                                     },
                                     "description": "Returns the details of a payment instrument."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/paymentInstruments/{{id}}/networkTokens",
+                "description": "List the network tokens connected to a payment instrument.",
+                 "item": [
+                            {
+                                "name": "List network tokens",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentInstruments/{{id}}/networkTokens",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentInstruments",
+                                            "{{id}}",
+                                            "networkTokens"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the payment instrument."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "List the network tokens connected to a payment instrument."
                                 }
                             }
                             ]
@@ -1531,7 +1686,7 @@
                 "description": "Updates a balance account.",
                  "item": [
                             {
-                                "name": "Update a balance account",
+                                "name": "Update the time zone of a balance account",
                                 "request": {
                                     "method": "PATCH",
                                     "header": [
@@ -1548,7 +1703,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"accountHolderId\": \"<string>\",\n \"defaultCurrencyCode\": \"<string>\",\n \"description\": \"<string>\",\n \"metadata\": \"<string>\",\n \"reference\": \"<string>\",\n \"status\": \"<string>\",\n \"timeZone\": \"<string>\"\n}",
+                                        "raw": "{\n  \"timeZone\" : \"Europe/Amsterdam\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1882,7 +2037,7 @@
                 "description": "Updates a transaction rule.   * To update only the status of a transaction rule, send only the `status` parameter. All other parameters not provided in the request are left unchanged.  * When updating any other parameter, you need to send all existing resource parameters. If you omit a parameter in the request, that parameter is removed from the resource.",
                  "item": [
                             {
-                                "name": "Update the status of transaction rule",
+                                "name": "Update the interval of transaction rule",
                                 "request": {
                                     "method": "PATCH",
                                     "header": [
@@ -1899,7 +2054,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"status\" : \"inactive\"\n}",
+                                        "raw": "{\n  \"description\" : \"Allow only point-of-sale transactions\",\n  \"reference\" : \"{{$guid}}_4F7346\",\n  \"entityKey\" : {\n    \"entityType\" : \"paymentInstrument\",\n    \"entityReference\" : \"PI3227C223222B5FG88SB8BHR\"\n  },\n  \"status\" : \"inactive\",\n  \"interval\" : {\n    \"type\" : \"weekly\"\n  },\n  \"ruleRestrictions\" : {\n    \"processingTypes\" : {\n      \"operation\" : \"noneMatch\",\n      \"value\" : [ \"pos\" ]\n    }\n  },\n  \"type\" : \"blockList\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2131,6 +2286,11 @@
         },
 		{
 			"key": "YOUR_BALANCE_PLATFORM",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "networkTokenId",
 			"value": "",
 			"type": "string"
 		},

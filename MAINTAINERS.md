@@ -7,10 +7,12 @@ __NOTE : This part is meant for the authors of that repository and you probably 
 Most of the magic here resides in the [trigger-postman.yml](./.github/workflows/trigger-postman.yml) workflow.
 This workflow can either be triggered [directly from the UI](https://github.com/Adyen/adyen-postman/actions/workflows/trigger-postman.yml), though typically it is automatically triggered every time the [adyen-openapi](https://github.com/Adyen/adyen-openapi/blob/main/.github/workflows/notify.yml) repository is updated.
 
-An additional workflow [trigger-postman-single-file.yml](./.github/workflows/trigger-postman-single-file.yml) is provided to run the generation for a specific OpenAPI file that can be passed as parameter.
+Two othew workflows are provided for 'ad-hoc' operations:
+* [create-collection.yml](./.github/workflows/create-collection.yml) is provided to create a new collection from a given OpenAPI file
+* [update-collection.yml](./.github/workflows/update-collection.yml) is provided to update an existing collection from a given OpenAPI file
 
 
-Both workflow use two different custom actions : 
+The workflows rely on different custom actions : 
 
 * The [openapi-generator-postman-v2](https://github.com/gcatanese/openapi-generator-postman-v2) which is used to transform OpenAPI specifications into a Postman compatible format.
 * The [push-adyen-collections-to-postman-javascript-action](https://github.com/jlengrand/push-adyen-collections-to-postman-javascript-action/) which uses the Postman API to push those files to the [Postman AdyenDev workspace](https://www.postman.com/adyendev/workspace/adyen-apis/overview).
@@ -34,19 +36,29 @@ When the workflow gets triggered :
         * If a new API is detected, uploads it to the AdyenDev workspace as a new collection
         * If a newer version of an existing API is detected, patches the existing collection to the newer version
 
-## Workflow trigger-postman-single-file (see [trigger-postman-single-file.yml](./.github/workflows/trigger-postman-single-file.yml))
+## Workflow create-collection (see [create-collection.yml](./.github/workflows/create-collection.yml))
 
-When the workflow runs :
+It requires 2 input variables: **file** (OpenAPI file path within the `adyen-openapi` repository) and **workspaceId** (Postman workspace ID where the collection will be created).
+
+The workflow can be executed manually (on-demand) and will perform the following:
 
 * The `generate` job will be fired
     * This job first runs a script relying on [openapi-generator-postman-v2](https://github.com/gcatanese/openapi-generator-postman-v2). This script will take the file passed as parameter (ie `adyen-openapi/yaml/CheckoutService-v70.yaml) and generate a corresponding Postman compatible version.
-        *  The `generateSingleFile.sh` script contains a list of `postmanVariables` and `generatedVariables` that are needed to create the variables in the Postman format.
+        *  The `createCollection.sh` script contains a list of `postmanVariables` and `generatedVariables` that are needed to create the variables in the Postman format.
+        * The Postman collection is pushed (POST) to Postman.
     * The generated JSON file when it has changed (been modified, or added) is committed to the repository. 
-    * Then, the [push-adyen-collections-to-postman-javascript-action](https://github.com/jlengrand/push-adyen-collections-to-postman-javascript-action/) action will be run. This action : 
-        * Takes all Postman files in the repository
-        * Finds the highest version of each file for each API 
-        * If a new API is detected, uploads it to the AdyenDev workspace as a new collection
-        * If a newer version of an existing API is detected, patches the existing collection to the newer version
+
+## Workflow update-collection (see [update-collection.yml](./.github/workflows/update-collection.yml))
+
+It requires 2 input variables: **file** (OpenAPI file path within the `adyen-openapi` repository) and **collectionId** (ID of the Postman collection to be updated).
+
+The workflow can be executed manually (on-demand) and will perform the following:
+
+* The `generate` job will be fired
+    * This job first runs a script relying on [openapi-generator-postman-v2](https://github.com/gcatanese/openapi-generator-postman-v2). This script will take the file passed as parameter (ie `adyen-openapi/yaml/CheckoutService-v70.yaml) and generate a corresponding Postman compatible version.
+        *  The `updateCollection.sh` script contains a list of `postmanVariables` and `generatedVariables` that are needed to create the variables in the Postman format.
+        * The Postman collection is pushed (PUT) to Postman.
+    * The generated JSON file when it has changed (been modified, or added) is committed to the repository. 
 
 ## Repository secrets
  
@@ -61,16 +73,16 @@ The repository includes multiple scripts:
 
 * `generateAll.sh` (*) generates all postman API collection files for all versions of the OpenAPI definitions and places them in the postman folder. It is meant to run inside the [dedicated docker image](https://github.com/gcatanese/openapi-generator-postman-v2/).
 * `runDocker.sh` is the script that actually runs `generateAll.sh` inside the docker image. 
-* `generateSingleFile.sh` (*) generates the postman API collection for a given OpenAPI file and places it in the postman folder. It is meant to run inside the [dedicated docker image](https://github.com/gcatanese/openapi-generator-postman-v2/).
-* `runDockerSingleFile.sh` is the script that actually runs `generateSingleFile.sh` inside the docker image. 
+* `createCollection.sh` (*) generates the postman API collection for a given OpenAPI file and creates a new collection in Postman.
+* `updateCollection.sh` (*) generates the postman API collection for a given OpenAPI file and updates an existing collection in Postman.
 
-(*) those scripts should be made executable (`chmod +x filename.sh`) as they are run by the GitHub action
+(*) all scripts should be made executable (`chmod +x filename.sh`) as they are run by the GitHub action
 
 ## Running locally
 
-If necessary, the scripts can be run locally to achieve the same results. 
+If necessary, the `generateAll.sh` script can be run locally to achieve the same results. 
 
-* To generate Postman JSON files, one can run the `runDocker.sh` or `runDockerSingleFile.sh` script. (Docker needs to be installed and started). 
+* To generate Postman JSON files, one can run the `runDocker.sh` script. (Docker needs to be installed and started). 
     * Once the generation is done, the updated file(s) can be committed.
 * To push the collections to Postman, see the documentation of [push-adyen-collections-to-postman-javascript-action/](https://github.com/jlengrand/push-adyen-collections-to-postman-javascript-action/).
 

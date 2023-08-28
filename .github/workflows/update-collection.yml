@@ -1,5 +1,4 @@
-name: "Generate single file"
-
+name: "Update collection"
 
 on:
   workflow_dispatch:
@@ -8,6 +7,9 @@ on:
         description: 'OpenAPI filepath'     
         required: true
         default: 'adyen-openapi/yaml/CheckoutService-v70.yaml'
+      collectionId:
+        description: 'Postman collection ID'     
+        required: true
 jobs:
   generate:
     name: "Generate Postman Collection"
@@ -18,7 +20,7 @@ jobs:
           fetch-depth: 2
       - uses: actions/checkout@v3
         with:
-          repository: 'Adyen/adyen-openapi'
+          repository: 'adyen/adyen-openapi'
           fetch-depth: 0
           path: 'adyen-openapi'
       - uses: addnab/docker-run-action@v3
@@ -26,14 +28,7 @@ jobs:
           image: gcatanese/openapi-generator-postman-v2
           options: -v ${{ github.workspace }}:/usr/src/app
           run: |
-            /usr/src/app/generateSingleFile.sh ${{ github.event.inputs.file }}
+            /usr/src/app/updateCollection.sh ${{ github.event.inputs.file }} ${{ secrets.POSTMAN_API_KEY }} ${{ github.event.inputs.collectionId }} 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Manual generation"
-      - name: push-adyen-collections-to-postman-javascript-action
-        id: process
-        uses: jlengrand/push-adyen-collections-to-postman-javascript-action@main
-        with:
-          postman-key: ${{ secrets.POSTMAN_API_KEY }}
-          workspace-id: ${{ secrets.POSTMAN_WORKSPACE_ID }}
-          path-to-process: "./postman"
+          commit_message: "Manual generation"            

@@ -13,7 +13,7 @@
 	            "name": "Legal entities",
 	            "item": [
 	                        {
-    "name": "/legalEntities/{{id}}",
+    "name": "/legalEntities/{id}",
                 "description": "Returns a legal entity.",
                  "item": [
                             {
@@ -37,13 +37,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -61,7 +61,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}/businessLines",
+    "name": "/legalEntities/{id}/businessLines",
                 "description": "Returns the business lines owned by a legal entity.",
                  "item": [
                             {
@@ -85,13 +85,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/businessLines",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/businessLines",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "businessLines"
                                         ],
                                         "variable": [
@@ -110,7 +110,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}",
+    "name": "/legalEntities/{id}",
                 "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.",
                  "item": [
                             {
@@ -139,13 +139,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -186,13 +186,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -447,7 +447,7 @@
                             ]
                         },
 	                        {
-    "name": "/themes/{{id}}",
+    "name": "/themes/{id}",
                 "description": "Returns the details of the theme identified in the path.>If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  ",
                  "item": [
                             {
@@ -471,13 +471,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/themes/{{id}}",
+                                        "raw": "{{baseUrl}}/themes/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "themes",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -495,7 +495,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}/onboardingLinks",
+    "name": "/legalEntities/{id}/onboardingLinks",
                 "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.  >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  ",
                  "item": [
                             {
@@ -524,13 +524,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/onboardingLinks",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/onboardingLinks",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "onboardingLinks"
                                         ],
                                         "variable": [
@@ -554,7 +554,7 @@
 	            "name": "Business lines",
 	            "item": [
 	                        {
-    "name": "/businessLines/{{id}}",
+    "name": "/businessLines/{id}",
                 "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.",
                  "item": [
                             {
@@ -578,13 +578,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/businessLines/{{id}}",
+                                        "raw": "{{baseUrl}}/businessLines/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "businessLines",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -602,7 +602,7 @@
                             ]
                         },
 	                        {
-    "name": "/businessLines/{{id}}",
+    "name": "/businessLines/{id}",
                 "description": "Returns the detail of a business line.",
                  "item": [
                             {
@@ -626,13 +626,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/businessLines/{{id}}",
+                                        "raw": "{{baseUrl}}/businessLines/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "businessLines",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -743,7 +743,7 @@
 	            "name": "Documents",
 	            "item": [
 	                        {
-    "name": "/documents/{{id}}",
+    "name": "/documents/{id}",
                 "description": "Deletes a document.",
                  "item": [
                             {
@@ -767,13 +767,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/documents/{{id}}",
+                                        "raw": "{{baseUrl}}/documents/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "documents",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -791,7 +791,7 @@
                             ]
                         },
 	                        {
-    "name": "/documents/{{id}}",
+    "name": "/documents/{id}",
                 "description": "Returns a document.",
                  "item": [
                             {
@@ -815,13 +815,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/documents/{{id}}",
+                                        "raw": "{{baseUrl}}/documents/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "documents",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -839,7 +839,7 @@
                             ]
                         },
 	                        {
-    "name": "/documents/{{id}}",
+    "name": "/documents/{id}",
                 "description": "Updates a document.",
                  "item": [
                             {
@@ -868,13 +868,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/documents/{{id}}",
+                                        "raw": "{{baseUrl}}/documents/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "documents",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -949,7 +949,7 @@
 	            "name": "Terms of Service",
 	            "item": [
 	                        {
-    "name": "/legalEntities/{{id}}/termsOfServiceAcceptanceInfos",
+    "name": "/legalEntities/{id}/termsOfServiceAcceptanceInfos",
                 "description": "Returns Terms of Service information for a legal entity.",
                  "item": [
                             {
@@ -973,13 +973,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfServiceAcceptanceInfos",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/termsOfServiceAcceptanceInfos",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "termsOfServiceAcceptanceInfos"
                                         ],
                                         "variable": [
@@ -998,7 +998,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}/termsOfServiceStatus",
+    "name": "/legalEntities/{id}/termsOfServiceStatus",
                 "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity.",
                  "item": [
                             {
@@ -1022,13 +1022,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfServiceStatus",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/termsOfServiceStatus",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "termsOfServiceStatus"
                                         ],
                                         "variable": [
@@ -1047,7 +1047,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}/termsOfService/{{termsofservicedocumentid}}",
+    "name": "/legalEntities/{id}/termsOfService/{termsofservicedocumentid}",
                 "description": "Accepts Terms of Service.",
                  "item": [
                             {
@@ -1076,15 +1076,15 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfService/{{termsofservicedocumentid}}",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/termsOfService/{termsofservicedocumentid}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "termsOfService",
-                                            "{{termsofservicedocumentid}}"
+                                            "{termsofservicedocumentid}"
                                         ],
                                         "variable": [
                                             {
@@ -1107,7 +1107,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}/termsOfService",
+    "name": "/legalEntities/{id}/termsOfService",
                 "description": "Returns the Terms of Service document for a legal entity.",
                  "item": [
                             {
@@ -1136,13 +1136,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/termsOfService",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/termsOfService",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "termsOfService"
                                         ],
                                         "variable": [
@@ -1166,7 +1166,7 @@
 	            "name": "Transfer instruments",
 	            "item": [
 	                        {
-    "name": "/transferInstruments/{{id}}",
+    "name": "/transferInstruments/{id}",
                 "description": "Deletes a transfer instrument.",
                  "item": [
                             {
@@ -1190,13 +1190,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transferInstruments/{{id}}",
+                                        "raw": "{{baseUrl}}/transferInstruments/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transferInstruments",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1214,7 +1214,7 @@
                             ]
                         },
 	                        {
-    "name": "/transferInstruments/{{id}}",
+    "name": "/transferInstruments/{id}",
                 "description": "Returns the details of a transfer instrument.",
                  "item": [
                             {
@@ -1238,13 +1238,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transferInstruments/{{id}}",
+                                        "raw": "{{baseUrl}}/transferInstruments/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transferInstruments",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1262,7 +1262,7 @@
                             ]
                         },
 	                        {
-    "name": "/transferInstruments/{{id}}",
+    "name": "/transferInstruments/{id}",
                 "description": "Updates a transfer instrument.",
                  "item": [
                             {
@@ -1291,13 +1291,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transferInstruments/{{id}}",
+                                        "raw": "{{baseUrl}}/transferInstruments/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transferInstruments",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1418,7 +1418,7 @@
 	            "name": "PCI questionnaires",
 	            "item": [
 	                        {
-    "name": "/legalEntities/{{id}}/pciQuestionnaires",
+    "name": "/legalEntities/{id}/pciQuestionnaires",
                 "description": "Get a list of signed PCI questionnaires.",
                  "item": [
                             {
@@ -1442,13 +1442,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/pciQuestionnaires",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/pciQuestionnaires",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "pciQuestionnaires"
                                         ],
                                         "variable": [
@@ -1467,7 +1467,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}/pciQuestionnaires/{{pciid}}",
+    "name": "/legalEntities/{id}/pciQuestionnaires/{pciid}",
                 "description": "Returns the signed PCI questionnaire.",
                  "item": [
                             {
@@ -1491,15 +1491,15 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/pciQuestionnaires/{{pciid}}",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/pciQuestionnaires/{pciid}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "pciQuestionnaires",
-                                            "{{pciid}}"
+                                            "{pciid}"
                                         ],
                                         "variable": [
                                             {
@@ -1522,7 +1522,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}/pciQuestionnaires/generatePciTemplates",
+    "name": "/legalEntities/{id}/pciQuestionnaires/generatePciTemplates",
                 "description": "Generates the required PCI questionnaire based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels). If multiple questionnaires are required, this request creates a single consodilated document to be signed.",
                  "item": [
                             {
@@ -1551,13 +1551,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/pciQuestionnaires/generatePciTemplates",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/pciQuestionnaires/generatePciTemplates",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "pciQuestionnaires",
                                             "generatePciTemplates"
                                         ],
@@ -1577,7 +1577,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}/pciQuestionnaires/signPciTemplates",
+    "name": "/legalEntities/{id}/pciQuestionnaires/signPciTemplates",
                 "description": "Signs the required PCI questionnaire.",
                  "item": [
                             {
@@ -1606,13 +1606,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}/pciQuestionnaires/signPciTemplates",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/pciQuestionnaires/signPciTemplates",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}",
+                                            "{id}",
                                             "pciQuestionnaires",
                                             "signPciTemplates"
                                         ],
@@ -1659,22 +1659,7 @@
             "key": "X-API-Key",
             "value": "",
             "type": "string"
-        },
-		{
-			"key": "termsofservicedocumentid",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "pciid",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "id",
-			"value": "",
-			"type": "string"
-		}
+        }
 	]
 }
 

@@ -87,7 +87,7 @@
                             ]
                         },
 	                        {
-    "name": "/transactions/{{id}}",
+    "name": "/transactions/{id}",
                 "description": "Returns a transaction.",
                  "item": [
                             {
@@ -111,13 +111,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transactions/{{id}}",
+                                        "raw": "{{baseUrl}}/transactions/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transactions",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -296,12 +296,7 @@
             "key": "X-API-Key",
             "value": "",
             "type": "string"
-        },
-		{
-			"key": "id",
-			"value": "",
-			"type": "string"
-		}
+        }
 	]
 }
 

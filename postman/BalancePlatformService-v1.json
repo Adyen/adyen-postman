@@ -13,7 +13,7 @@
 	            "name": "Legal entities",
 	            "item": [
 	                        {
-    "name": "/legalEntities/{{id}}",
+    "name": "/legalEntities/{id}",
                 "description": "Returns a legal entity.",
                  "item": [
                             {
@@ -37,13 +37,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -61,7 +61,7 @@
                             ]
                         },
 	                        {
-    "name": "/legalEntities/{{id}}",
+    "name": "/legalEntities/{id}",
                 "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.",
                  "item": [
                             {
@@ -90,13 +90,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -137,13 +137,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/{{id}}",
+                                        "raw": "{{baseUrl}}/legalEntities/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "legalEntities",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -336,7 +336,7 @@
 	            "name": "Platform",
 	            "item": [
 	                        {
-    "name": "/balancePlatforms/{{id}}",
+    "name": "/balancePlatforms/{id}",
                 "description": "Returns a balance platform.",
                  "item": [
                             {
@@ -360,13 +360,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/balancePlatforms/{{id}}",
+                                        "raw": "{{baseUrl}}/balancePlatforms/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "balancePlatforms",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -384,7 +384,7 @@
                             ]
                         },
 	                        {
-    "name": "/balancePlatforms/{{id}}/accountHolders",
+    "name": "/balancePlatforms/{id}/accountHolders",
                 "description": "Returns a paginated list of all the account holders that belong to the balance platform. To fetch multiple pages, use the query parameters.   For example, to limit the page to 5 account holders and to skip the first 20, use `/balancePlatforms/{id}/accountHolders?limit=5&offset=20`.",
                  "item": [
                             {
@@ -408,13 +408,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/balancePlatforms/{{id}}/accountHolders",
+                                        "raw": "{{baseUrl}}/balancePlatforms/{id}/accountHolders",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "balancePlatforms",
-                                            "{{id}}",
+                                            "{id}",
                                             "accountHolders"
                                         ],
                                         "variable": [
@@ -446,7 +446,7 @@
 	            "name": "Payment instrument groups",
 	            "item": [
 	                        {
-    "name": "/paymentInstrumentGroups/{{id}}",
+    "name": "/paymentInstrumentGroups/{id}",
                 "description": "Returns the details of a payment instrument group.",
                  "item": [
                             {
@@ -470,13 +470,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/paymentInstrumentGroups/{{id}}",
+                                        "raw": "{{baseUrl}}/paymentInstrumentGroups/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "paymentInstrumentGroups",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -494,7 +494,7 @@
                             ]
                         },
 	                        {
-    "name": "/paymentInstrumentGroups/{{id}}/transactionRules",
+    "name": "/paymentInstrumentGroups/{id}/transactionRules",
                 "description": "Returns a list of all the transaction rules associated with a payment instrument group.",
                  "item": [
                             {
@@ -518,13 +518,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/paymentInstrumentGroups/{{id}}/transactionRules",
+                                        "raw": "{{baseUrl}}/paymentInstrumentGroups/{id}/transactionRules",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "paymentInstrumentGroups",
-                                            "{{id}}",
+                                            "{id}",
                                             "transactionRules"
                                         ],
                                         "variable": [
@@ -595,7 +595,7 @@
 	            "name": "Documents",
 	            "item": [
 	                        {
-    "name": "/documents/{{id}}",
+    "name": "/documents/{id}",
                 "description": "Deletes a document.",
                  "item": [
                             {
@@ -619,13 +619,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/documents/{{id}}",
+                                        "raw": "{{baseUrl}}/documents/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "documents",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -643,7 +643,7 @@
                             ]
                         },
 	                        {
-    "name": "/documents/{{id}}",
+    "name": "/documents/{id}",
                 "description": "Returns a document.",
                  "item": [
                             {
@@ -667,13 +667,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/documents/{{id}}",
+                                        "raw": "{{baseUrl}}/documents/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "documents",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -691,7 +691,7 @@
                             ]
                         },
 	                        {
-    "name": "/documents/{{id}}",
+    "name": "/documents/{id}",
                 "description": "Updates a document.",
                  "item": [
                             {
@@ -720,13 +720,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/documents/{{id}}",
+                                        "raw": "{{baseUrl}}/documents/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "documents",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -796,7 +796,7 @@
 	            "name": "Account holders",
 	            "item": [
 	                        {
-    "name": "/accountHolders/{{id}}",
+    "name": "/accountHolders/{id}",
                 "description": "Returns an account holder.",
                  "item": [
                             {
@@ -820,13 +820,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/accountHolders/{{id}}",
+                                        "raw": "{{baseUrl}}/accountHolders/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "accountHolders",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -844,7 +844,7 @@
                             ]
                         },
 	                        {
-    "name": "/accountHolders/{{id}}/balanceAccounts",
+    "name": "/accountHolders/{id}/balanceAccounts",
                 "description": "Returns a paginated list of the balance accounts associated with an account holder. To fetch multiple pages, use the query parameters.   For example, to limit the page to 5 balance accounts and skip the first 10, use `/accountHolders/{id}/balanceAccounts?limit=5&offset=10`.",
                  "item": [
                             {
@@ -868,13 +868,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/accountHolders/{{id}}/balanceAccounts",
+                                        "raw": "{{baseUrl}}/accountHolders/{id}/balanceAccounts",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "accountHolders",
-                                            "{{id}}",
+                                            "{id}",
                                             "balanceAccounts"
                                         ],
                                         "variable": [
@@ -901,7 +901,7 @@
                             ]
                         },
 	                        {
-    "name": "/accountHolders/{{id}}",
+    "name": "/accountHolders/{id}",
                 "description": "Updates an account holder. When updating an account holder resource, if a parameter is not provided in the request, it is left unchanged.",
                  "item": [
                             {
@@ -930,13 +930,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/accountHolders/{{id}}",
+                                        "raw": "{{baseUrl}}/accountHolders/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "accountHolders",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -977,13 +977,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/accountHolders/{{id}}",
+                                        "raw": "{{baseUrl}}/accountHolders/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "accountHolders",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1053,7 +1053,7 @@
 	            "name": "Payment instruments",
 	            "item": [
 	                        {
-    "name": "/paymentInstruments/{{id}}",
+    "name": "/paymentInstruments/{id}",
                 "description": "Returns the details of a payment instrument.",
                  "item": [
                             {
@@ -1077,13 +1077,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/paymentInstruments/{{id}}",
+                                        "raw": "{{baseUrl}}/paymentInstruments/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "paymentInstruments",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1101,7 +1101,7 @@
                             ]
                         },
 	                        {
-    "name": "/paymentInstruments/{{id}}/reveal",
+    "name": "/paymentInstruments/{id}/reveal",
                 "description": "Returns the primary account number (PAN) of a payment instrument.  To make this request, your API credential must have the following [role](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service#api-permissions):  * Balance Platform BCL PCI role",
                  "item": [
                             {
@@ -1125,13 +1125,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/paymentInstruments/{{id}}/reveal",
+                                        "raw": "{{baseUrl}}/paymentInstruments/{id}/reveal",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "paymentInstruments",
-                                            "{{id}}",
+                                            "{id}",
                                             "reveal"
                                         ],
                                         "variable": [
@@ -1150,7 +1150,7 @@
                             ]
                         },
 	                        {
-    "name": "/paymentInstruments/{{id}}/transactionRules",
+    "name": "/paymentInstruments/{id}/transactionRules",
                 "description": "Returns a list of transaction rules associated with a payment instrument.",
                  "item": [
                             {
@@ -1174,13 +1174,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/paymentInstruments/{{id}}/transactionRules",
+                                        "raw": "{{baseUrl}}/paymentInstruments/{id}/transactionRules",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "paymentInstruments",
-                                            "{{id}}",
+                                            "{id}",
                                             "transactionRules"
                                         ],
                                         "variable": [
@@ -1199,7 +1199,7 @@
                             ]
                         },
 	                        {
-    "name": "/paymentInstruments/{{id}}",
+    "name": "/paymentInstruments/{id}",
                 "description": "Updates a payment instrument. Once a payment instrument is already active, you can only update its status. However, for cards created with **inactive** status, you can still update the balance account associated with the card.",
                  "item": [
                             {
@@ -1228,13 +1228,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/paymentInstruments/{{id}}",
+                                        "raw": "{{baseUrl}}/paymentInstruments/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "paymentInstruments",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1275,13 +1275,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/paymentInstruments/{{id}}",
+                                        "raw": "{{baseUrl}}/paymentInstruments/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "paymentInstruments",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1567,7 +1567,7 @@
 	            "name": "Transfer instruments",
 	            "item": [
 	                        {
-    "name": "/transferInstruments/{{id}}",
+    "name": "/transferInstruments/{id}",
                 "description": "Deletes a transfer instrument.",
                  "item": [
                             {
@@ -1591,13 +1591,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transferInstruments/{{id}}",
+                                        "raw": "{{baseUrl}}/transferInstruments/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transferInstruments",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1615,7 +1615,7 @@
                             ]
                         },
 	                        {
-    "name": "/transferInstruments/{{id}}",
+    "name": "/transferInstruments/{id}",
                 "description": "Returns the details of a transfer instrument.",
                  "item": [
                             {
@@ -1639,13 +1639,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transferInstruments/{{id}}",
+                                        "raw": "{{baseUrl}}/transferInstruments/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transferInstruments",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1663,7 +1663,7 @@
                             ]
                         },
 	                        {
-    "name": "/transferInstruments/{{id}}",
+    "name": "/transferInstruments/{id}",
                 "description": "Updates a transfer instrument.",
                  "item": [
                             {
@@ -1692,13 +1692,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transferInstruments/{{id}}",
+                                        "raw": "{{baseUrl}}/transferInstruments/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transferInstruments",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1809,7 +1809,7 @@
 	            "name": "Balance accounts",
 	            "item": [
 	                        {
-    "name": "/balanceAccounts/{{id}}",
+    "name": "/balanceAccounts/{id}",
                 "description": "Returns a balance account and its balances for the default currency and other currencies with a non-zero balance.",
                  "item": [
                             {
@@ -1833,13 +1833,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/balanceAccounts/{{id}}",
+                                        "raw": "{{baseUrl}}/balanceAccounts/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "balanceAccounts",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -1857,7 +1857,7 @@
                             ]
                         },
 	                        {
-    "name": "/balanceAccounts/{{id}}/paymentInstruments",
+    "name": "/balanceAccounts/{id}/paymentInstruments",
                 "description": "Returns a paginated list of the payment instruments associated with a balance account.   To fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6`.",
                  "item": [
                             {
@@ -1881,13 +1881,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/balanceAccounts/{{id}}/paymentInstruments",
+                                        "raw": "{{baseUrl}}/balanceAccounts/{id}/paymentInstruments",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "balanceAccounts",
-                                            "{{id}}",
+                                            "{id}",
                                             "paymentInstruments"
                                         ],
                                         "variable": [
@@ -1914,7 +1914,7 @@
                             ]
                         },
 	                        {
-    "name": "/balanceAccounts/{{id}}",
+    "name": "/balanceAccounts/{id}",
                 "description": "Updates a balance account.",
                  "item": [
                             {
@@ -1943,13 +1943,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/balanceAccounts/{{id}}",
+                                        "raw": "{{baseUrl}}/balanceAccounts/{id}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "balanceAccounts",
-                                            "{{id}}"
+                                            "{id}"
                                         ],
                                         "variable": [
                                             {
@@ -2019,7 +2019,7 @@
 	            "name": "Transaction rules",
 	            "item": [
 	                        {
-    "name": "/transactionRules/{{transactionRuleId}}",
+    "name": "/transactionRules/{transactionRuleId}",
                 "description": "Deletes a transaction rule.",
                  "item": [
                             {
@@ -2043,13 +2043,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transactionRules/{{transactionRuleId}}",
+                                        "raw": "{{baseUrl}}/transactionRules/{transactionRuleId}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transactionRules",
-                                            "{{transactionRuleId}}"
+                                            "{transactionRuleId}"
                                         ],
                                         "variable": [
                                             {
@@ -2067,7 +2067,7 @@
                             ]
                         },
 	                        {
-    "name": "/transactionRules/{{transactionRuleId}}",
+    "name": "/transactionRules/{transactionRuleId}",
                 "description": "Returns the details of a transaction rule.",
                  "item": [
                             {
@@ -2091,13 +2091,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transactionRules/{{transactionRuleId}}",
+                                        "raw": "{{baseUrl}}/transactionRules/{transactionRuleId}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transactionRules",
-                                            "{{transactionRuleId}}"
+                                            "{transactionRuleId}"
                                         ],
                                         "variable": [
                                             {
@@ -2115,7 +2115,7 @@
                             ]
                         },
 	                        {
-    "name": "/transactionRules/{{transactionRuleId}}",
+    "name": "/transactionRules/{transactionRuleId}",
                 "description": "Updates a transaction rule.   * To update only the status of a transaction rule, send only the `status` parameter. All other parameters not provided in the request are left unchanged.  * When updating any other parameter, you need to send all existing resource parameters. If you omit a parameter in the request, that parameter is removed from the resource.",
                  "item": [
                             {
@@ -2144,13 +2144,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transactionRules/{{transactionRuleId}}",
+                                        "raw": "{{baseUrl}}/transactionRules/{transactionRuleId}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transactionRules",
-                                            "{{transactionRuleId}}"
+                                            "{transactionRuleId}"
                                         ],
                                         "variable": [
                                             {
@@ -2245,16 +2245,6 @@
         },
 		{
 			"key": "YOUR_BALANCE_PLATFORM",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "transactionRuleId",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "id",
 			"value": "",
 			"type": "string"
 		}

@@ -65,7 +65,7 @@
                             ]
                         },
 	                        {
-    "name": "/payments/{{paymentPspReference}}/amountUpdates",
+    "name": "/payments/{paymentPspReference}/amountUpdates",
                 "description": "Increases or decreases the authorised payment amount and returns a unique reference for this request. You get the outcome of the request asynchronously, in an [**AUTHORISATION_ADJUSTMENT** webhook](https://docs.adyen.com/development-resources/webhooks/understand-notifications#event-codes).  You can only update authorised amounts that have not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures).  The amount you specify in the request is the updated amount, which is larger or smaller than the initial authorised amount.  For more information, refer to [Authorisation adjustment](https://docs.adyen.com/online-payments/adjust-authorisation#use-cases).",
                  "item": [
                             {
@@ -99,13 +99,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/amountUpdates",
+                                        "raw": "{{baseUrl}}/payments/{paymentPspReference}/amountUpdates",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "payments",
-                                            "{{paymentPspReference}}",
+                                            "{paymentPspReference}",
                                             "amountUpdates"
                                         ],
                                         "variable": [
@@ -124,7 +124,7 @@
                             ]
                         },
 	                        {
-    "name": "/payments/{{paymentPspReference}}/cancels",
+    "name": "/payments/{paymentPspReference}/cancels",
                 "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/paymentPspReference/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel).",
                  "item": [
                             {
@@ -158,13 +158,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/cancels",
+                                        "raw": "{{baseUrl}}/payments/{paymentPspReference}/cancels",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "payments",
-                                            "{{paymentPspReference}}",
+                                            "{paymentPspReference}",
                                             "cancels"
                                         ],
                                         "variable": [
@@ -183,7 +183,7 @@
                             ]
                         },
 	                        {
-    "name": "/payments/{{paymentPspReference}}/captures",
+    "name": "/payments/{paymentPspReference}/captures",
                 "description": " Captures an authorised payment and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CAPTURE** webhook](https://docs.adyen.com/online-payments/capture#capture-notification).  You can capture either the full authorised amount or a part of the authorised amount. By default, any unclaimed amount after a partial capture gets cancelled. This does not apply if you enabled multiple partial captures on your account and the payment method supports multiple partial captures.   [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture) is the default setting for most payment methods. In these cases, you don't need to make capture requests. However, making capture requests for payments that are captured automatically does not result in double charges.  For more information, refer to [Capture](https://docs.adyen.com/online-payments/capture).",
                  "item": [
                             {
@@ -217,13 +217,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/captures",
+                                        "raw": "{{baseUrl}}/payments/{paymentPspReference}/captures",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "payments",
-                                            "{{paymentPspReference}}",
+                                            "{paymentPspReference}",
                                             "captures"
                                         ],
                                         "variable": [
@@ -242,7 +242,7 @@
                             ]
                         },
 	                        {
-    "name": "/payments/{{paymentPspReference}}/refunds",
+    "name": "/payments/{paymentPspReference}/refunds",
                 "description": "Refunds a payment that has been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**REFUND** webhook](https://docs.adyen.com/online-payments/refund#refund-webhook).  You can refund either the full captured amount or a part of the captured amount. You can also perform multiple partial refunds, as long as their sum doesn't exceed the captured amount.  > Some payment methods do not support partial refunds. To learn if a payment method supports partial refunds, refer to the payment method page such as [cards](https://docs.adyen.com/payment-methods/cards#supported-cards), [iDEAL](https://docs.adyen.com/payment-methods/ideal), or [Klarna](https://docs.adyen.com/payment-methods/klarna).   If you want to refund a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Refund](https://docs.adyen.com/online-payments/refund).",
                  "item": [
                             {
@@ -276,13 +276,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/refunds",
+                                        "raw": "{{baseUrl}}/payments/{paymentPspReference}/refunds",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "payments",
-                                            "{{paymentPspReference}}",
+                                            "{paymentPspReference}",
                                             "refunds"
                                         ],
                                         "variable": [
@@ -301,7 +301,7 @@
                             ]
                         },
 	                        {
-    "name": "/payments/{{paymentPspReference}}/reversals",
+    "name": "/payments/{paymentPspReference}/reversals",
                 "description": "[Refunds](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/refunds) a payment if it has already been captured, and [cancels](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) a payment if it has not yet been captured. Returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCEL_OR_REFUND** webhook](https://docs.adyen.com/online-payments/reverse#cancel-or-refund-webhook).  The reversed amount is always the full payment amount. > Do not use this request for payments that involve multiple partial captures.  For more information, refer to [Reversal](https://docs.adyen.com/online-payments/reversal).",
                  "item": [
                             {
@@ -335,13 +335,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/payments/{{paymentPspReference}}/reversals",
+                                        "raw": "{{baseUrl}}/payments/{paymentPspReference}/reversals",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "payments",
-                                            "{{paymentPspReference}}",
+                                            "{paymentPspReference}",
                                             "reversals"
                                         ],
                                         "variable": [
@@ -2212,7 +2212,7 @@
 	            "name": "Payment links",
 	            "item": [
 	                        {
-    "name": "/paymentLinks/{{linkId}}",
+    "name": "/paymentLinks/{linkId}",
                 "description": "Retrieves the payment link details using the payment link `id`.",
                  "item": [
                             {
@@ -2236,13 +2236,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/paymentLinks/{{linkId}}",
+                                        "raw": "{{baseUrl}}/paymentLinks/{linkId}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "paymentLinks",
-                                            "{{linkId}}"
+                                            "{linkId}"
                                         ],
                                         "variable": [
                                             {
@@ -2260,7 +2260,7 @@
                             ]
                         },
 	                        {
-    "name": "/paymentLinks/{{linkId}}",
+    "name": "/paymentLinks/{linkId}",
                 "description": "Updates the status of a payment link. Use this endpoint to [force the expiry of a payment link](https://docs.adyen.com/online-payments/pay-by-link#update-payment-link-status).",
                  "item": [
                             {
@@ -2289,13 +2289,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/paymentLinks/{{linkId}}",
+                                        "raw": "{{baseUrl}}/paymentLinks/{linkId}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "paymentLinks",
-                                            "{{linkId}}"
+                                            "{linkId}"
                                         ],
                                         "variable": [
                                             {
@@ -2393,16 +2393,6 @@
             "value": "",
             "type": "string"
         },
-		{
-			"key": "paymentPspReference",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "linkId",
-			"value": "",
-			"type": "string"
-		},
 		{
 			"key": "YOUR_MERCHANT_ACCOUNT",
 			"value": "",

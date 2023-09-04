@@ -220,7 +220,7 @@
                         },
 	                        {
     "name": "/merchants/{merchantId}/activate",
-                "description": "Sends a request to activate the merchant account identified in the path.  You get the result of the activation asychronously through a [`merchant.updated`](https://docs.adyen.com/api-explorer/ManagementNotification/latest/post/merchant.updated) webhook. Once the merchant account is activated, you can start using it to accept payments and payouts.  Use this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Accounts read and write",
+                "description": "Sends a request to activate the merchant account identified in the path.  You get the result of the activation asynchronously through a [`merchant.updated`](https://docs.adyen.com/api-explorer/ManagementNotification/latest/post/merchant.updated) webhook. Once the merchant account is activated, you can start using it to accept payments and payouts.  Use this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Accounts read and write",
                  "item": [
                             {
                                 "name": "Request to activate a merchant account",
@@ -262,7 +262,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Sends a request to activate the merchant account identified in the path.  You get the result of the activation asychronously through a [`merchant.updated`](https://docs.adyen.com/api-explorer/ManagementNotification/latest/post/merchant.updated) webhook. Once the merchant account is activated, you can start using it to accept payments and payouts.  Use this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Accounts read and write"
+                                    "description": "Sends a request to activate the merchant account identified in the path.  You get the result of the activation asynchronously through a [`merchant.updated`](https://docs.adyen.com/api-explorer/ManagementNotification/latest/post/merchant.updated) webhook. Once the merchant account is activated, you can start using it to accept payments and payouts.  Use this endpoint if your integration requires it, such as Adyen for Platforms Manage. Your Adyen contact will set up your access.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Accounts read and write"
                                 }
                             }
                             ]
@@ -3892,132 +3892,6 @@
 	            "name": "Terminal actions - company level",
 	            "item": [
 	                        {
-    "name": "/companies/{companyId}/androidApps",
-                "description": "Returns a list of the Android apps that are available for the company identified in the path.  These apps have been uploaded to Adyen and can be installed or uninstalled on Android payment terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal actions read * Management API—Terminal actions read and write",
-                 "item": [
-                            {
-                                "name": "Get a list of Android apps",
-                                "request": {
-                                    "method": "GET",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/companies/{companyId}/androidApps",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "companies",
-                                            "{companyId}",
-                                            "androidApps"
-                                        ],
-                                        "variable": [
-                                            {
-                                                "key": "companyId",
-                                                "value": "",
-                                                "description": "The unique identifier of the company account."
-                                            }
-                                        ],
-                                        "query": [
-                                            {
-                                                "key": "pageNumber",
-                                                "value": "56"
-                                            },
-                                            {
-                                                "key": "pageSize",
-                                                "value": "56"
-                                            },
-                                            {
-                                                "key": "packageName",
-                                                "value": "packageName_example"
-                                            },
-                                            {
-                                                "key": "versionCode",
-                                                "value": "56"
-                                            }
-                                        ]
-                                    },
-                                    "description": "Returns a list of the Android apps that are available for the company identified in the path.  These apps have been uploaded to Adyen and can be installed or uninstalled on Android payment terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal actions read * Management API—Terminal actions read and write"
-                                }
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/companies/{companyId}/androidCertificates",
-                "description": "Returns a list of the Android certificates that are available for the company identified in the path. Typically, these certificates enable running apps on Android payment terminals. The certifcates in the list have been uploaded to Adyen and can be installed or uninstalled on Android terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal actions read * Management API—Terminal actions read and write",
-                 "item": [
-                            {
-                                "name": "Get a list of Android certificates",
-                                "request": {
-                                    "method": "GET",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/companies/{companyId}/androidCertificates",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "companies",
-                                            "{companyId}",
-                                            "androidCertificates"
-                                        ],
-                                        "variable": [
-                                            {
-                                                "key": "companyId",
-                                                "value": "",
-                                                "description": "The unique identifier of the company account."
-                                            }
-                                        ],
-                                        "query": [
-                                            {
-                                                "key": "pageNumber",
-                                                "value": "56"
-                                            },
-                                            {
-                                                "key": "pageSize",
-                                                "value": "56"
-                                            },
-                                            {
-                                                "key": "certificateName",
-                                                "value": "certificateName_example"
-                                            }
-                                        ]
-                                    },
-                                    "description": "Returns a list of the Android certificates that are available for the company identified in the path. Typically, these certificates enable running apps on Android payment terminals. The certifcates in the list have been uploaded to Adyen and can be installed or uninstalled on Android terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal actions read * Management API—Terminal actions read and write"
-                                }
-                            }
-                            ]
-                        },
-	                        {
     "name": "/companies/{companyId}/terminalActions",
                 "description": "Returns the [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api) that have been scheduled for the company identified in the path.The response doesn't include actions that are scheduled by Adyen. To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal actions read * Management API—Terminal actions read and write",
                  "item": [
@@ -4340,7 +4214,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"bcmc\": \"<string>\",\n \"cartesBancaires\": \"<string>\",\n \"countries\": \"<string>\",\n \"currencies\": \"<string>\",\n \"enabled\": \"<string>\",\n \"storeIds\": \"<string>\"\n}",
+                                        "raw": "{\n \"bcmc\": \"<string>\",\n \"cartesBancaires\": \"<string>\",\n \"countries\": \"<string>\",\n \"cup\": \"<string>\",\n \"currencies\": \"<string>\",\n \"diners\": \"<string>\",\n \"discover\": \"<string>\",\n \"eftpos_australia\": \"<string>\",\n \"enabled\": \"<string>\",\n \"girocard\": \"<string>\",\n \"ideal\": \"<string>\",\n \"interac_card\": \"<string>\",\n \"jcb\": \"<string>\",\n \"maestro\": \"<string>\",\n \"mc\": \"<string>\",\n \"storeIds\": \"<string>\",\n \"visa\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -6116,6 +5990,192 @@
                                         ]
                                     },
                                     "description": "Creates a store for the merchant account specified in the request.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Stores read and write"
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Android files - company level",
+	            "item": [
+	                        {
+    "name": "/companies/{companyId}/androidApps",
+                "description": "Returns a list of the Android apps that are available for the company identified in the path.  These apps have been uploaded to Adyen and can be installed or uninstalled on Android payment terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write * Management API—Terminal actions read * Management API—Terminal actions read and write",
+                 "item": [
+                            {
+                                "name": "Get a list of Android apps",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/companies/{companyId}/androidApps",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "companies",
+                                            "{companyId}",
+                                            "androidApps"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "companyId",
+                                                "value": "",
+                                                "description": "The unique identifier of the company account."
+                                            }
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "pageNumber",
+                                                "value": "56"
+                                            },
+                                            {
+                                                "key": "pageSize",
+                                                "value": "56"
+                                            },
+                                            {
+                                                "key": "packageName",
+                                                "value": "packageName_example"
+                                            },
+                                            {
+                                                "key": "versionCode",
+                                                "value": "56"
+                                            }
+                                        ]
+                                    },
+                                    "description": "Returns a list of the Android apps that are available for the company identified in the path.  These apps have been uploaded to Adyen and can be installed or uninstalled on Android payment terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write * Management API—Terminal actions read * Management API—Terminal actions read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/{companyId}/androidApps/{id}",
+                "description": "Returns the details of the Android app identified in the path.  These apps have been uploaded to Adyen and can be installed or uninstalled on Android payment terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write",
+                 "item": [
+                            {
+                                "name": "Get Android app",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/companies/{companyId}/androidApps/{id}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "companies",
+                                            "{companyId}",
+                                            "androidApps",
+                                            "{id}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "companyId",
+                                                "value": "",
+                                                "description": "The unique identifier of the company account."
+                                            },
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the app."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the details of the Android app identified in the path.  These apps have been uploaded to Adyen and can be installed or uninstalled on Android payment terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write"
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/{companyId}/androidCertificates",
+                "description": "Returns a list of the Android certificates that are available for the company identified in the path. Typically, these certificates enable running apps on Android payment terminals. The certifcates in the list have been uploaded to Adyen and can be installed or uninstalled on Android terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write * Management API—Terminal actions read * Management API—Terminal actions read and write",
+                 "item": [
+                            {
+                                "name": "Get a list of Android certificates",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/companies/{companyId}/androidCertificates",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "companies",
+                                            "{companyId}",
+                                            "androidCertificates"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "companyId",
+                                                "value": "",
+                                                "description": "The unique identifier of the company account."
+                                            }
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "pageNumber",
+                                                "value": "56"
+                                            },
+                                            {
+                                                "key": "pageSize",
+                                                "value": "56"
+                                            },
+                                            {
+                                                "key": "certificateName",
+                                                "value": "certificateName_example"
+                                            }
+                                        ]
+                                    },
+                                    "description": "Returns a list of the Android certificates that are available for the company identified in the path. Typically, these certificates enable running apps on Android payment terminals. The certifcates in the list have been uploaded to Adyen and can be installed or uninstalled on Android terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write * Management API—Terminal actions read * Management API—Terminal actions read and write"
                                 }
                             }
                             ]

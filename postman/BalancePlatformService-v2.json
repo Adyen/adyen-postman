@@ -603,7 +603,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"reference\" : \"S.Eller-001\",\n  \"legalEntityId\" : \"LE322JV223222D5GG42KN6869\",\n  \"capabilities\" : {\n    \"receivePayments\" : {\n      \"requested\" : true\n    }\n  }\n}",
+                                        "raw": "{\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"reference\" : \"S.Eller-001\",\n  \"capabilities\" : {\n    \"receivePayments\" : {\n      \"requested\" : true\n    }\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2251,6 +2251,59 @@
                                         ]
                                     },
                                     "description": "Creates a [transaction rule](https://docs.adyen.com/issuing/transaction-rules). When your user makes a transaction with their Adyen-issued card, the transaction is allowed or declined based on the conditions and outcome defined in the transaction rule. You can apply the transaction rule to several cards, such as all the cards in your platform, or to a specific card. For use cases, see [examples](https://docs.adyen.com/issuing/transaction-rules/examples)."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Transfer routes",
+	            "item": [
+	                        {
+    "name": "/transferRoutes/calculate",
+                "description": "Returns available transfer routes based on a combination of transfer `country`, `currency`, `counterparty`, and `priorities`. Use this endpoint to find optimal transfer priorities and associated requirements before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers).",
+                 "item": [
+                            {
+                                "name": "Calculate transfer routes",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"balancePlatform\" : \"{{YOUR_BALANCE_PLATFORM}}\",\n  \"currency\" : \"USD\",\n  \"category\" : \"bank\",\n  \"counterparty\" : {\n    \"bankAccount\" : {\n      \"accountIdentification\" : {\n        \"type\" : \"iban\",\n        \"iban\" : \"NL91ABNA0417164300\"\n      }\n    }\n  }\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/transferRoutes/calculate",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "transferRoutes",
+                                            "calculate"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns available transfer routes based on a combination of transfer `country`, `currency`, `counterparty`, and `priorities`. Use this endpoint to find optimal transfer priorities and associated requirements before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers)."
                                 }
                             }
                             ]

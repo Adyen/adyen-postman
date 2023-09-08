@@ -987,11 +987,6 @@
                                 "request": {
                                     "method": "DELETE",
                                     "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        }
                                     ],
                                     "body": {
                                         "mode": "raw",

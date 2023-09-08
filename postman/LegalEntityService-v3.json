@@ -1549,7 +1549,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"bankAccount\": \"<string>\",\n \"legalEntityId\": \"<string>\",\n \"type\": \"<string>\"\n}",
+                                        "raw": "{\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"iban\",\n      \"iban\" : \"NL02ABNA0123456789\"\n    }\n  },\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"type\" : \"bankAccount\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

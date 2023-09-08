@@ -1,34 +1,30 @@
-name: "Update collection"
+# Update collection on Postman
+
+name: "Update collection (PUT)"
 
 on:
   workflow_dispatch:
     inputs:
       file:
-        description: 'OpenAPI filepath'     
+        description: 'Postman JSON filepath'     
         required: true
-        default: 'adyen-openapi/yaml/CheckoutService-v70.yaml'
+        default: 'postman/CheckoutService-v70.json'
       collectionId:
         description: 'Postman collection ID'     
         required: true
 jobs:
   generate:
-    name: "Generate Postman Collection"
+    name: "Update Postman Collection"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      - uses: actions/checkout@v3
+      - name: push-to-postman-action
+        id: push-to-postman
+        uses: gcatanese/push-to-postman-action@main
         with:
-          repository: 'adyen/adyen-openapi'
-          fetch-depth: 0
-          path: 'adyen-openapi'
-      - uses: addnab/docker-run-action@v3
-        with:
-          image: gcatanese/openapi-generator-postman-v2
-          options: -v ${{ github.workspace }}:/usr/src/app
-          run: |
-            /usr/src/app/updateCollection.sh ${{ github.event.inputs.file }} ${{ secrets.POSTMAN_API_KEY }} ${{ github.event.inputs.collectionId }} 
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Manual generation"            
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: ${{ github.event.inputs.file }}
+          collection-id: ${{ github.event.inputs.collectionId }}

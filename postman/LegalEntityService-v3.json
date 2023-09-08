@@ -719,7 +719,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"redirectUrl\" : \"https://your.redirect-url.com/\",\n  \"locale\" : \"nl-NL\"\n}",
+                                        "raw": "{\n  \"themeId\" : \"YOUR_THEME_ID\",\n  \"redirectUrl\" : \"https://your.redirect-url.com/\",\n  \"locale\" : \"nl-NL\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

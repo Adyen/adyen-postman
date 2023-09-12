@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 2
       - uses: actions/checkout@v3
         with:
-          repository: 'gcatanese/adyen-openapi'
+          repository: 'adyen/adyen-openapi'
           fetch-depth: 0
           path: 'adyen-openapi'
       - uses: addnab/docker-run-action@v3

@@ -1,8 +1,8 @@
 {
 	"info": {
-		"name": "Adyen Checkout API bo (v70)",
+		"name": "Adyen Checkout API (v70)",
 		"description": {
-		    "content": "The powerful Adyen Checkout API provides a simple and flexible way to initiate and authorise online payments. You can use the same integration for payments made with cards (including 3D Secure), mobile wallets, and local payment methods (for example, iDEAL and Sofort).\n\nThis API reference provides information on available endpoints and how to interact with them. To learn more about the API, visit [online payments documentation](https://docs.adyen.com/online-payments).\n\n## Authentication\nEach request to Checkout API must be signed with an API key. For this, [get your API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key) from your Customer Area, and set this key to the `X-API-Key` header value, for example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n## Versioning\nCheckout API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://checkout-test.adyen.com/v70/payments\n```\n\n## Going live\n\nTo access the live endpoints, you need an API key from your live Customer Area.\n\nThe live endpoint URLs contain a prefix which is unique to your company account, for example:\n```\nhttps://{PREFIX}-checkout-live.adyenpayments.com/checkout/v70/payments\n```\n\nGet your `{PREFIX}` from your live Customer Area under **Developers** > **API URLs** > **Prefix**.\n\nWhen preparing to do live transactions with Checkout API, follow the [go-live checklist](https://docs.adyen.com/online-payments/go-live-checklist) to make sure you've got all the required configuration in place.\n\n## Release notes\nHave a look at the [release notes](https://docs.adyen.com/online-payments/release-notes?integration_type=api&version=70) to find out what changed in this version!",
+		    "content": "Adyen Checkout API provides a simple and flexible way to initiate and authorise online payments. You can use the same integration for payments made with cards (including 3D Secure), mobile wallets, and local payment methods (for example, iDEAL and Sofort).\n\nThis API reference provides information on available endpoints and how to interact with them. To learn more about the API, visit [online payments documentation](https://docs.adyen.com/online-payments).\n\n## Authentication\nEach request to Checkout API must be signed with an API key. For this, [get your API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key) from your Customer Area, and set this key to the `X-API-Key` header value, for example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n## Versioning\nCheckout API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://checkout-test.adyen.com/v70/payments\n```\n\n## Going live\n\nTo access the live endpoints, you need an API key from your live Customer Area.\n\nThe live endpoint URLs contain a prefix which is unique to your company account, for example:\n```\nhttps://{PREFIX}-checkout-live.adyenpayments.com/checkout/v70/payments\n```\n\nGet your `{PREFIX}` from your live Customer Area under **Developers** > **API URLs** > **Prefix**.\n\nWhen preparing to do live transactions with Checkout API, follow the [go-live checklist](https://docs.adyen.com/online-payments/go-live-checklist) to make sure you've got all the required configuration in place.\n\n## Release notes\nHave a look at the [release notes](https://docs.adyen.com/online-payments/release-notes?integration_type=api&version=70) to find out what changed in this version!",
 		    "type": "text/markdown"
 		},
 		"version": "70",
@@ -17,7 +17,7 @@
                 "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**TECHNICAL_CANCEL** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment using the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/payments/{paymentPspReference}/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel).",
                  "item": [
                             {
-                                "name": "Cancel an authorised payment",
+                                "name": "Cancel a payment using your own reference",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -39,7 +39,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"paymentReference\": \"<string>\",\n \"reference\": \"<string>\"\n}",
+                                        "raw": "{\n  \"paymentReference\" : \"YOUR_UNIQUE_REFERENCE_FOR_THE_PAYMENT\",\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE_FOR_THE_CANCELLATION\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -69,7 +69,7 @@
                 "description": "Increases or decreases the authorised payment amount and returns a unique reference for this request. You get the outcome of the request asynchronously, in an [**AUTHORISATION_ADJUSTMENT** webhook](https://docs.adyen.com/development-resources/webhooks/understand-notifications#event-codes).  You can only update authorised amounts that have not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures).  The amount you specify in the request is the updated amount, which is larger or smaller than the initial authorised amount.  For more information, refer to [Authorisation adjustment](https://docs.adyen.com/online-payments/adjust-authorisation#use-cases).",
                  "item": [
                             {
-                                "name": "Update an authorised amount",
+                                "name": "Update the amount of an authorised payment",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -91,7 +91,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": \"<string>\",\n \"industryUsage\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\",\n \"splits\": \"<string>\"\n}",
+                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 2500\n  },\n  \"reason\" : \"delayedCharge\",\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -128,7 +128,7 @@
                 "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/paymentPspReference/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel).",
                  "item": [
                             {
-                                "name": "Cancel an authorised payment",
+                                "name": "Cancel payment using a PSP reference",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -150,7 +150,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\"\n}",
+                                        "raw": "{\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -209,7 +209,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": \"<string>\",\n \"lineItems\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\",\n \"splits\": \"<string>\"\n}",
+                                        "raw": "{\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"amount\" : {\n    \"value\" : 2000,\n    \"currency\" : \"EUR\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -246,7 +246,7 @@
                 "description": "Refunds a payment that has been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**REFUND** webhook](https://docs.adyen.com/online-payments/refund#refund-webhook).  You can refund either the full captured amount or a part of the captured amount. You can also perform multiple partial refunds, as long as their sum doesn't exceed the captured amount.  > Some payment methods do not support partial refunds. To learn if a payment method supports partial refunds, refer to the payment method page such as [cards](https://docs.adyen.com/payment-methods/cards#supported-cards), [iDEAL](https://docs.adyen.com/payment-methods/ideal), or [Klarna](https://docs.adyen.com/payment-methods/klarna).   If you want to refund a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Refund](https://docs.adyen.com/online-payments/refund).",
                  "item": [
                             {
-                                "name": "Refund a captured payment",
+                                "name": "Refund a payment",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -268,7 +268,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"amount\": \"<string>\",\n \"lineItems\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"merchantRefundReason\": \"<string>\",\n \"reference\": \"<string>\",\n \"splits\": \"<string>\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 2500\n  },\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -305,7 +305,7 @@
                 "description": "[Refunds](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/refunds) a payment if it has already been captured, and [cancels](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) a payment if it has not yet been captured. Returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCEL_OR_REFUND** webhook](https://docs.adyen.com/online-payments/reverse#cancel-or-refund-webhook).  The reversed amount is always the full payment amount. > Do not use this request for payments that involve multiple partial captures.  For more information, refer to [Reversal](https://docs.adyen.com/online-payments/reversal).",
                  "item": [
                             {
-                                "name": "Refund or cancel a payment",
+                                "name": "Reverse (cancel or refund) a payment",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -327,7 +327,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"reference\": \"<string>\"\n}",
+                                        "raw": "{\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -768,7 +768,7 @@
                 "description": "Retrieves the balance remaining on a shopper's gift card. To check a gift card's balance, make a POST `/paymentMethods/balance` call and include the gift card's details inside a `paymentMethod` object.",
                  "item": [
                             {
-                                "name": "Retrieve gift card balance",
+                                "name": "Get gift card balance specifying amount of 10 EUR",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -790,7 +790,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"givex\",\n    \"number\" : \"4126491073027401\",\n    \"cvc\" : \"737\"\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"givex\",\n    \"number\" : \"4126491073027401\",\n    \"cvc\" : \"737\"\n  },\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -815,7 +815,7 @@
                                 }
                             },
                             {
-                                "name": "Retrieve gift card balance",
+                                "name": "Get gift card balance specifying amount of 100 EUR",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -837,7 +837,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"plastix\",\n    \"number\" : \"4010100000000000000\",\n    \"cvc\" : \"73737\",\n    \"holderName\" : \"BALANCE EUR 888\"\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"givex\",\n    \"number\" : \"4126491073027401\",\n    \"cvc\" : \"737\"\n  },\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 10000\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -979,7 +979,7 @@
 	            "name": "Recurring",
 	            "item": [
 	                        {
-    "name": "/storedPaymentMethods/{recurringId}",
+    "name": "/storedPaymentMethods/{storedPaymentMethodId}",
                 "description": "Deletes the token identified in the path. The token can no longer be used with payment requests.",
                  "item": [
                             {
@@ -987,11 +987,6 @@
                                 "request": {
                                     "method": "DELETE",
                                     "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        }
                                     ],
                                     "body": {
                                         "mode": "raw",
@@ -1003,17 +998,17 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/storedPaymentMethods/{recurringId}",
+                                        "raw": "{{baseUrl}}/storedPaymentMethods/{storedPaymentMethodId}",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "storedPaymentMethods",
-                                            "{recurringId}"
+                                            "{storedPaymentMethodId}"
                                         ],
                                         "variable": [
                                             {
-                                                "key": "recurringId",
+                                                "key": "storedPaymentMethodId",
                                                 "value": "",
                                                 "description": "The unique identifier of the token."
                                             }
@@ -1089,6 +1084,58 @@
 	        {
 	            "name": "Payments",
 	            "item": [
+	                        {
+    "name": "/sessions/{sessionId}",
+                "description": "Returns the status of the payment session with the `sessionId` and `sessionResult` specified in the path.",
+                 "item": [
+                            {
+                                "name": "Get the result of a payment session",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/sessions/{sessionId}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "sessions",
+                                            "{sessionId}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "sessionId",
+                                                "value": "",
+                                                "description": "A unique identifier of the session."
+                                            }
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "sessionResult",
+                                                "value": "sessionResult_example"
+                                            }
+                                        ]
+                                    },
+                                    "description": "Returns the status of the payment session with the `sessionId` and `sessionResult` specified in the path."
+                                }
+                            }
+                            ]
+                        },
 	                        {
     "name": "/cardDetails",
                 "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  ",
@@ -1404,7 +1451,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"countryCode\" : \"NL\",\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
+                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"countryCode\" : \"NL\",\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1480,7 +1527,7 @@
                                 }
                             },
                             {
-                                "name": "Make a card payment with 3D Secure 2 native authentication",
+                                "name": "Make a card payment with 3D Secure 2 native authentication, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1618,7 +1665,7 @@
                                 }
                             },
                             {
-                                "name": "Make a card payment (using encrypted card details)",
+                                "name": "Make a card payment using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1664,7 +1711,7 @@
                                 }
                             },
                             {
-                                "name": "Tokenize card details for one-off payments (using encrypted card details)",
+                                "name": "Tokenize card details for one-off payments, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1986,7 +2033,7 @@
                                 }
                             },
                             {
-                                "name": "Make a one-off payment with a token and CVV (using encrypted card details)",
+                                "name": "Make a one-off payment with a token and CVV, using encrypted card details",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -2124,7 +2171,7 @@
                                 }
                             },
                             {
-                                "name": "Split a payment between a sub-merchant and a platform account",
+                                "name": "Split a payment between balance accounts",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -2146,7 +2193,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4111111111111111\",\n    \"cvc\" : \"737\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"amount\" : {\n    \"value\" : 6200,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"{{$guid}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"splits\" : [ {\n    \"amount\" : {\n      \"value\" : 6000\n    },\n    \"type\" : \"MarketPlace\",\n    \"account\" : \"151272963\",\n    \"reference\" : \"6124145\",\n    \"description\" : \"Porcelain Doll: Eliza (20cm)\"\n  }, {\n    \"amount\" : {\n      \"value\" : 200\n    },\n    \"type\" : \"Commission\",\n    \"reference\" : \"6124146\"\n  } ]\n}",
+                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4111111111111111\",\n    \"cvc\" : \"737\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"amount\" : {\n    \"value\" : 40000,\n    \"currency\" : \"USD\"\n  },\n  \"reference\" : \"{{$guid}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"platformChargebackLogic\" : {\n    \"behavior\" : \"deductFromOneBalanceAccount\",\n    \"targetAccount\" : \"BA00000000000000000000001\",\n    \"costAllocationAccount\" : \"BA00000000000000000000001\"\n  },\n  \"splits\" : [ {\n    \"amount\" : {\n      \"value\" : 39200\n    },\n    \"type\" : \"BalanceAccount\",\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the sale amount\",\n    \"description\" : \"Your description for the sale amount\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"type\" : \"Commission\",\n    \"reference\" : \"Your reference for the commission\",\n    \"description\" : \"Your description for the commission\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the fees\",\n    \"description\" : \"Your description for the fees\",\n    \"type\" : \"PaymentFee\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2222,7 +2269,7 @@
                 "description": "Submits details for a payment created using `/payments`. This step is only needed when no final state has been reached on the `/payments` request, for example when the shopper was redirected to another page to complete the payment.  ",
                  "item": [
                             {
-                                "name": "Submit 3D Secure 2 authentication result",
+                                "name": "Submit the redirect result",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -2244,7 +2291,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"details\" : {\n    \"threeDSResult\" : \"eyJ0cmFuc1N0YXR1cyI6IlkifQ==\"\n  }\n}",
+                                        "raw": "{\n  \"details\" : {\n    \"redirectResult\" : \"X6XtfGC3!Y...\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2269,7 +2316,7 @@
                                 }
                             },
                             {
-                                "name": "Submit the redirect result",
+                                "name": "Submit 3D Secure 2 authentication result",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -2291,7 +2338,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"details\" : {\n    \"redirectResult\" : \"X6XtfGC3!Y...\"\n  }\n}",
+                                        "raw": "{\n  \"details\" : {\n    \"threeDSResult\" : \"eyJ0cmFuc1N0YXR1cyI6IlkifQ==\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2414,7 +2461,7 @@
                                 }
                             },
                             {
-                                "name": "Tokenize card details for one-off payments",
+                                "name": "Tokenize card details for one-off payments without asking shopper",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -2436,7 +2483,53 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"TestMerchantCheckout\",\n  \"amount\" : {\n    \"value\" : 100,\n    \"currency\" : \"EUR\"\n  },\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"returnUrl\" : \"https://your-company.com/checkout?shopperOrder=12xy..\",\n  \"reference\" : \"YOUR_PAYMENT_REFERENCE\",\n  \"countryCode\" : \"NL\",\n  \"storePaymentMethod\" : true,\n  \"shopperInteraction\" : \"Ecommerce\",\n  \"recurringProcessingModel\" : \"CardOnFile\"\n}",
+                                        "raw": "{\n  \"merchantAccount\" : \"TestMerchantCheckout\",\n  \"amount\" : {\n    \"value\" : 100,\n    \"currency\" : \"EUR\"\n  },\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"returnUrl\" : \"https://your-company.com/checkout?shopperOrder=12xy..\",\n  \"reference\" : \"YOUR_PAYMENT_REFERENCE\",\n  \"countryCode\" : \"NL\",\n  \"storePaymentMethodMode\" : \"enabled\",\n  \"shopperInteraction\" : \"Ecommerce\",\n  \"recurringProcessingModel\" : \"CardOnFile\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/sessions",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "sessions"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment session for [Web Drop-in](https://docs.adyen.com/online-payments/web-drop-in) and [Web Components](https://docs.adyen.com/online-payments/web-components) integrations.  The response contains encrypted payment session data. The front end then uses the session data to make any required server-side calls for the payment flow.  You get the payment outcome asynchronously, in an [AUTHORISATION](https://docs.adyen.com/api-explorer/#/Webhooks/latest/post/AUTHORISATION) webhook."
+                                }
+                            },
+                            {
+                                "name": "Split a payment between balance accounts",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Idempotency-Key",
+                                            "value": "",
+                                            "disabled": true
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"amount\" : {\n    \"value\" : 40000,\n    \"currency\" : \"USD\"\n  },\n  \"reference\" : \"{{$guid}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"splits\" : [ {\n    \"amount\" : {\n      \"value\" : 39200\n    },\n    \"type\" : \"BalanceAccount\",\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the sale amount\",\n    \"description\" : \"Your description for the sale amount\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"type\" : \"Commission\",\n    \"reference\" : \"Your reference for the commission\",\n    \"description\" : \"Your description for the commission\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the fees\",\n    \"description\" : \"Your description for the fees\",\n    \"type\" : \"PaymentFee\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

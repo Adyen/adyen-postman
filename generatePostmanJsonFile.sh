@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Create a new Postman collection from a given OpenAPI file
+# Generate a Postman JSON file from an OpenAPI file
 #
-# createCollection.sh <filename> <postman api key> <postman workspace id> 
+# generatePostmanJsonFile.sh <filename> 
 #
 
 # Sets working tools
@@ -13,14 +13,10 @@ fi
 
 DATE=$(date +"%Y-%m-%d")
 
-echo "Creating Postman Collection..."
+echo "Generating Postman Collection..."
 FILENAME=$1
-POSTMAN_API_KEY=$2
-POSTMAN_WORKSPACE_ID=$3
 
 echo "FILENAME: $FILENAME"
-echo "POSTMAN_API_KEY: #####"
-echo "POSTMAN_WORKSPACE_ID: $POSTMAN_WORKSPACE_ID"
 
 BASE=$(echo "$(basename "${FILENAME%.*}")")
 NAME=$(echo $FILENAME | sed 's/-.*//' | sed 's/.*\///')
@@ -32,8 +28,6 @@ VERSION=$(echo $FILENAME | sed 's/.*-v//' | sed 's/\..*//')
 sed -i.bak "1s/.*/openapi: 3.0.3/" $FILENAME # downgrade version for compat
 sed -i.bak2 "0,/title:.*/{s//title: $REAL_NAME\ (v$VERSION)/}" $FILENAME # Set unique name of API for Postman
 
-# set Postman API key as env variable
-export POSTMAN_API_KEY
 
 /script.sh generate \
     --additional-properties postmanVariables=YOUR_MERCHANT_ACCOUNT-YOUR_COMPANY_ACCOUNT-YOUR_BALANCE_PLATFORM,generatedVariables=YOUR_REFERENCE_NUMBER-YOUR_REFERENCE-YOUR_ORDER_NUMBER-YOUR_ORDER_NUMBER\
@@ -44,13 +38,3 @@ mv postman/$BASE/postman.json postman/$BASE.json
 rm -rf postman/$BASE
 
 echo "Generated postman/$BASE.json"
-
-# push to Postman (POST)
-echo "--> Pushing to Postman"
-
-var=$(cat "postman/$BASE.json")
-
-echo '{"collection": '"$var"' }' | curl -X POST \
---header 'Content-Type: application/json' \
---header 'X-API-Key: '"${POSTMAN_API_KEY}"'' \
--d @- "https://api.getpostman.com/collections?workspace=$POSTMAN_WORKSPACE_ID"

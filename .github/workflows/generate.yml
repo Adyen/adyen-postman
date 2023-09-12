@@ -1,0 +1,31 @@
+name: "Generate Postman json and commit"
+
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 'OpenAPI filepath'     
+        required: true
+        default: 'adyen-openapi/yaml/CheckoutService-v70.yaml'
+jobs:
+  generate:
+    name: "Generate Postman Collection"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - uses: actions/checkout@v3
+        with:
+          repository: 'gcatanese/adyen-openapi'
+          fetch-depth: 0
+          path: 'adyen-openapi'
+      - uses: addnab/docker-run-action@v3
+        with:
+          image: gcatanese/openapi-generator-postman-v2
+          options: -v ${{ github.workspace }}:/usr/src/app
+          run: |
+            /usr/src/app/generatePostmanJsonFile.sh ${{ github.event.inputs.file }} 
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Manual generation"

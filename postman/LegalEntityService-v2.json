@@ -1222,7 +1222,7 @@
                 "description": "Accepts Terms of Service.",
                  "item": [
                             {
-                                "name": "Accept Terms of Service",
+                                "name": "Accept the Terms of Service document",
                                 "request": {
                                     "method": "PATCH",
                                     "header": [
@@ -1239,7 +1239,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"acceptedBy\": \"<string>\",\n \"ipAddress\": \"<string>\"\n}",
+                                        "raw": "{\n  \"acceptedBy\" : \"YOUR_LEGAL_ENTITY\",\n  \"ipAddress\" : \"82.199.87.148\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

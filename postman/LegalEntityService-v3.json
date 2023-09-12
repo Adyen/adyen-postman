@@ -2,7 +2,7 @@
 	"info": {
 		"name": "Legal Entity Management API (v3)",
 		"description": {
-		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification. \n## Authentication\nTo connect to the Legal Entity Management API, you must use the basic authentication credentials of your web service user. If you don't have one, contact the [Adyen Support Team](https://www.adyen.help/hc/en-us/requests/new). Use the web service user credentials to authenticate your request, for example:\n\n```\ncurl\n-U \"ws_123456@Scope.BalancePlatform_YourBalancePlatform\":\"YourWsPassword\" \\n-H \"Content-Type: application/json\" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nThe Legal Entity Management API supports versioning of its endpoints through a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v3/legalEntities\n```\n## Going live\nWhen going live, your Adyen contact will provide your API credential for the live environment. You can then use the username and password to send requests to `https://kyc-live.adyen.com/lem/v3`.\n\n",
+		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification. \n## Authentication\nYour Adyen contact will provide your API credential and an API key. To connect to the API, add an `X-API-Key` header with the API key as the value. For example:\n\n```\ncurl\n-H \"X-API-Key: YOUR_API_KEY\" \\n-H \"Content-Type: application/json\" \\n...\n```\nAlternatively, you can use the username and password of your API credential to connect to the API using basic authentication. For example:\n\n```\ncurl\n-U \"ws_123456@Scope.Company_YOUR_COMPANY_ACCOUNT\":\"YourWsPassword\" \\n-H \"Content-Type: application/json\" \\n...\n```\n## Versioning\nThe Legal Entity Management API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v3/legalEntities\n```\n>If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.\n\n## Going live\nWhen going live, your Adyen contact will provide your API credential for the live environment. You can then use the API key or the username and password to send requests to `https://kyc-live.adyen.com/lem/v3`.\n\n",
 		    "type": "text/markdown"
 		},
 		"version": "3",
@@ -127,6 +127,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -174,6 +179,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -221,6 +231,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -258,7 +273,7 @@
                         },
 	                        {
     "name": "/legalEntities",
-                "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   ",
+                "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  ",
                  "item": [
                             {
                                 "name": "Create a legal entity for an individual residing in the Netherlands",
@@ -274,6 +289,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -298,7 +318,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             },
                             {
@@ -315,6 +335,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -339,7 +364,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             },
                             {
@@ -356,6 +381,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -380,7 +410,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             },
                             {
@@ -397,6 +427,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -421,7 +456,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             },
                             {
@@ -438,6 +473,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -462,7 +502,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             },
                             {
@@ -479,6 +519,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -503,7 +548,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             }
                             ]
@@ -564,7 +609,7 @@
 	            "item": [
 	                        {
     "name": "/themes",
-                "description": "Returns a list of hosted onboarding page themes.",
+                "description": "Returns a list of hosted onboarding page themes.  >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  ",
                  "item": [
                             {
                                 "name": "Get a list of hosted onboarding page themes",
@@ -599,14 +644,14 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Returns a list of hosted onboarding page themes."
+                                    "description": "Returns a list of hosted onboarding page themes.  >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             }
                             ]
                         },
 	                        {
     "name": "/themes/{id}",
-                "description": "Returns the details of the theme identified in the path.",
+                "description": "Returns the details of the theme identified in the path.>If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  ",
                  "item": [
                             {
                                 "name": "Get an onboarding link theme",
@@ -647,14 +692,14 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Returns the details of the theme identified in the path."
+                                    "description": "Returns the details of the theme identified in the path.>If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             }
                             ]
                         },
 	                        {
     "name": "/legalEntities/{id}/onboardingLinks",
-                "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.",
+                "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.  >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  ",
                  "item": [
                             {
                                 "name": "Create a hosted onboarding link",
@@ -674,7 +719,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"redirectUrl\" : \"https://your.redirect-url.com/\",\n  \"locale\" : \"nl-NL\"\n}",
+                                        "raw": "{\n  \"themeId\" : \"YOUR_THEME_ID\",\n  \"redirectUrl\" : \"https://your.redirect-url.com/\",\n  \"locale\" : \"nl-NL\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -701,7 +746,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user."
+                                    "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.  >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             }
                             ]
@@ -713,7 +758,7 @@
 	            "item": [
 	                        {
     "name": "/businessLines/{id}",
-                "description": "Deletes a business line.   >\"If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.",
+                "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.",
                  "item": [
                             {
                                 "name": "Delete a business line",
@@ -754,7 +799,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Deletes a business line.   >\"If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts."
+                                    "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts."
                                 }
                             }
                             ]
@@ -862,7 +907,7 @@
                         },
 	                        {
     "name": "/businessLines",
-                "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.",
+                "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  ",
                  "item": [
                             {
                                 "name": "Create a business line for a business account",
@@ -902,7 +947,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses."
+                                    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             },
                             {
@@ -943,7 +988,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses."
+                                    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
                                 }
                             }
                             ]
@@ -1067,6 +1112,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -1120,6 +1170,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -1257,7 +1312,7 @@
                 "description": "Accepts Terms of Service.",
                  "item": [
                             {
-                                "name": "Accept Terms of Service",
+                                "name": "Accept the Terms of Service document",
                                 "request": {
                                     "method": "PATCH",
                                     "header": [
@@ -1274,7 +1329,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"acceptedBy\": \"<string>\",\n \"ipAddress\": \"<string>\"\n}",
+                                        "raw": "{\n  \"acceptedBy\" : \"YOUR_LEGAL_ENTITY\",\n  \"ipAddress\" : \"82.199.87.148\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1485,11 +1540,16 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"bankAccount\": \"<string>\",\n \"legalEntityId\": \"<string>\",\n \"type\": \"<string>\"\n}",
+                                        "raw": "{\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"iban\",\n      \"iban\" : \"NL02ABNA0123456789\"\n    }\n  },\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"type\" : \"bankAccount\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1538,6 +1598,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -1579,6 +1644,11 @@
                                             "key": "Accept",
                                             "value": "application/json",
                                             "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
                                         }
                                     ],
                                     "body": {
@@ -1604,6 +1674,225 @@
                                         ]
                                     },
                                     "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "PCI questionnaires",
+	            "item": [
+	                        {
+    "name": "/legalEntities/{id}/pciQuestionnaires",
+                "description": "Get a list of signed PCI questionnaires.",
+                 "item": [
+                            {
+                                "name": "Get PCI questionnaire details",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/pciQuestionnaires",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{id}",
+                                            "pciQuestionnaires"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity to get PCI questionnaire information."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Get a list of signed PCI questionnaires."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{id}/pciQuestionnaires/{pciid}",
+                "description": "Returns the signed PCI questionnaire.",
+                 "item": [
+                            {
+                                "name": "Get PCI questionnaire",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/pciQuestionnaires/{pciid}",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{id}",
+                                            "pciQuestionnaires",
+                                            "{pciid}"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The legal entity ID of the individual who signed the PCI questionnaire."
+                                            },
+                                            {
+                                                "key": "pciid",
+                                                "value": "",
+                                                "description": "The unique identifier of the signed PCI questionnaire."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the signed PCI questionnaire."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{id}/pciQuestionnaires/generatePciTemplates",
+                "description": "Generates the required PCI questionnaire based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels). If multiple questionnaires are required, this request creates a single consodilated document to be signed.",
+                 "item": [
+                            {
+                                "name": "Generate the PCI questionnaire",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"language\" : \"fr\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/pciQuestionnaires/generatePciTemplates",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{id}",
+                                            "pciQuestionnaires",
+                                            "generatePciTemplates"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The legal entity ID of the individual who will sign the PCI questionnaire."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Generates the required PCI questionnaire based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels). If multiple questionnaires are required, this request creates a single consodilated document to be signed."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/{id}/pciQuestionnaires/signPciTemplates",
+                "description": "Signs the required PCI questionnaire.",
+                 "item": [
+                            {
+                                "name": "Sign the PCI questionnaires",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"signedBy\" : \"LE00000000000000000000002\",\n  \"pciTemplateReferences\" : [ \"PCIT-T7KC6VGL\", \"PCIT-PKB6DKS4\" ]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/{id}/pciQuestionnaires/signPciTemplates",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            "{id}",
+                                            "pciQuestionnaires",
+                                            "signPciTemplates"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The legal entity ID of the individual who signed the PCI questionnaire."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Signs the required PCI questionnaire."
                                 }
                             }
                             ]

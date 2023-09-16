@@ -1247,7 +1247,7 @@
                                             {
                                                 "key": "id",
                                                 "value": "",
-                                                "description": "The unique identifier of the legal entity."
+                                                "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
                                             }
                                         ],
                                         "query": [
@@ -1296,7 +1296,7 @@
                                             {
                                                 "key": "id",
                                                 "value": "",
-                                                "description": "The unique identifier of the legal entity."
+                                                "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
                                             }
                                         ],
                                         "query": [
@@ -1351,7 +1351,7 @@
                                             {
                                                 "key": "id",
                                                 "value": "",
-                                                "description": "The unique identifier of the legal entity."
+                                                "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
                                             },
                                             {
                                                 "key": "termsofservicedocumentid",
@@ -1410,7 +1410,7 @@
                                             {
                                                 "key": "id",
                                                 "value": "",
-                                                "description": "The unique identifier of the legal entity."
+                                                "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
                                             }
                                         ],
                                         "query": [
@@ -1831,7 +1831,7 @@
                                             {
                                                 "key": "id",
                                                 "value": "",
-                                                "description": "The legal entity ID of the individual who will sign the PCI questionnaire."
+                                                "description": "The unique identifier of the legal entity to get PCI questionnaire information."
                                             }
                                         ],
                                         "query": [

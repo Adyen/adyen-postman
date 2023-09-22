@@ -209,7 +209,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"amount\" : {\n    \"value\" : 2000,\n    \"currency\" : \"EUR\"\n  }\n}",
+                                        "raw": "{\n  \"reference\" : \"YOUR_UNIQUE_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"amount\" : {\n    \"value\" : 2000,\n    \"currency\" : \"EUR\"\n  },\n  \"platformChargebackLogic\" : {\n    \"behavior\" : \"deductFromOneBalanceAccount\",\n    \"targetAccount\" : \"BA00000000000000000000001\",\n    \"costAllocationAccount\" : \"BA00000000000000000000001\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

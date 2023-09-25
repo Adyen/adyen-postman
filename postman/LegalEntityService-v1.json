@@ -188,7 +188,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"YOUR_LEGAL_ENTITY_1\",\n    \"type\" : \"uboThroughControl\"\n  } ]\n}",
+                                        "raw": "{\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000001\",\n    \"type\" : \"uboThroughControl\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -338,7 +338,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in NL\",\n    \"doingBusinessAs\" : \"API Company Trading\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"34179503\",\n    \"email\" : \"organization@example.com\"\n  },\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"YOUR_LEGAL_ENTITY_1\",\n    \"type\" : \"signatory\"\n  } ]\n}",
+                                        "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in NL\",\n    \"doingBusinessAs\" : \"API Company Trading\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"34179503\",\n    \"email\" : \"organization@example.com\"\n  },\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000001\",\n    \"type\" : \"signatory\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -681,7 +681,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"capability\" : \"issueBankAccount\",\n  \"industryCode\" : \"4531\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://www.adyen.com\"\n  } ],\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"sourceOfFunds\" : {\n    \"type\" : \"business\",\n    \"adyenProcessedFunds\" : false,\n    \"description\" : \"Funds from my flower shop business\"\n  }\n}",
+                                        "raw": "{\n  \"capability\" : \"issueBankAccount\",\n  \"industryCode\" : \"4531\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://www.adyen.com\"\n  } ],\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"sourceOfFunds\" : {\n    \"type\" : \"business\",\n    \"adyenProcessedFunds\" : false,\n    \"description\" : \"Funds from my flower shop business\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -722,7 +722,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"capability\" : \"receivePayments\",\n  \"salesChannels\" : [ \"eCommerce\", \"ecomMoto\" ],\n  \"industryCode\" : \"339E\",\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://yoururl.com\"\n  } ]\n}",
+                                        "raw": "{\n  \"capability\" : \"receivePayments\",\n  \"salesChannels\" : [ \"eCommerce\", \"ecomMoto\" ],\n  \"industryCode\" : \"339E\",\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://yoururl.com\"\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -933,7 +933,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"type\" : \"registrationDocument\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n  } ],\n  \"description\" : \"Registration doc for Example Company\",\n  \"owner\" : {\n    \"id\" : \"YOUR_LEGAL_ENTITY\",\n    \"type\" : \"legalEntity\"\n  }\n}",
+                                        "raw": "{\n  \"type\" : \"registrationDocument\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n  } ],\n  \"description\" : \"Registration doc for Example Company\",\n  \"owner\" : {\n    \"id\" : \"LE00000000000000000000001\",\n    \"type\" : \"legalEntity\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1083,7 +1083,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"acceptedBy\" : \"YOUR_LEGAL_ENTITY\",\n  \"ipAddress\" : \"82.199.87.148\"\n}",
+                                        "raw": "{\n  \"acceptedBy\" : \"LE00000000000000000000002\",\n  \"ipAddress\" : \"82.199.87.148\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1303,7 +1303,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"bankAccount\" : {\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL02ABNA0123456789\"\n  },\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"type\" : \"bankAccount\"\n}",
+                                        "raw": "{\n  \"bankAccount\" : {\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL02ABNA0123456789\"\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1361,7 +1361,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\"\n  }\n}",
+                                        "raw": "{\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1407,7 +1407,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"legalEntityId\" : \"YOUR_LEGAL_ENTITY\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"US\",\n    \"currencyCode\" : \"USD\",\n    \"accountNumber\" : \"0000000123\",\n    \"branchCode\" : \"121202211\",\n    \"accountType\" : \"checking\"\n  }\n}",
+                                        "raw": "{\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"US\",\n    \"currencyCode\" : \"USD\",\n    \"accountNumber\" : \"0000000123\",\n    \"branchCode\" : \"121202211\",\n    \"accountType\" : \"checking\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

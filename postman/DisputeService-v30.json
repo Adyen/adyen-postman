@@ -1,0 +1,333 @@
+{
+	"info": {
+		"name": "Disputes API (v30)",
+		"description": {
+		    "content": "You can use the [Disputes API](https://docs.adyen.com/risk-management/disputes-api) to automate the dispute handling process so that you can respond to disputes and chargebacks as soon as they are initiated. The Disputes API lets you retrieve defense reasons, supply and delete defense documents, and accept or defend disputes.\n\n## Authentication\nEach request to the Disputes API must be signed with an API key. For this, obtain an API Key from your Customer Area, as described in [How to get the API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key). Then set this key to the `X-API-Key` header value, for example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: Your_API_key\" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nDisputes API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://ca-test.adyen.com/ca/services/DisputeService/v30/defendDispute\n```",
+		    "type": "text/markdown"
+		},
+		"version": "30",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "General",
+	            "item": [
+	                        {
+    "name": "/acceptDispute",
+                "description": "Accepts a specific dispute.",
+                 "item": [
+                            {
+                                "name": "Accept a dispute",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/acceptDispute",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "acceptDispute"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Accepts a specific dispute."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/defendDispute",
+                "description": "Defends a specific dispute.",
+                 "item": [
+                            {
+                                "name": "Defend a dispute",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"defenseReasonCode\" : \"SupplyDefenseMaterial\",\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/defendDispute",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "defendDispute"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Defends a specific dispute."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/deleteDisputeDefenseDocument",
+                "description": "Deletes a specific dispute defense document that was supplied earlier.",
+                 "item": [
+                            {
+                                "name": "Delete a dispute defense document",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"defenseDocumentType\" : \"DefenseMaterial\",\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/deleteDisputeDefenseDocument",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "deleteDisputeDefenseDocument"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Deletes a specific dispute defense document that was supplied earlier."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/downloadDisputeDefenseDocument",
+                "description": "Downloads a specific dispute defense document that was supplied earlier.",
+                 "item": [
+                            {
+                                "name": "Download a dispute defense document that was supplied earlier",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"defenseDocumentType\" : \"DefenseMaterial\",\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/downloadDisputeDefenseDocument",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "downloadDisputeDefenseDocument"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Downloads a specific dispute defense document that was supplied earlier."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/retrieveApplicableDefenseReasons",
+                "description": "Returns a list of all applicable defense reasons to defend a specific dispute.",
+                 "item": [
+                            {
+                                "name": "Retrieve applicable defense reasons",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/retrieveApplicableDefenseReasons",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "retrieveApplicableDefenseReasons"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns a list of all applicable defense reasons to defend a specific dispute."
+                                }
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/supplyDefenseDocument",
+                "description": "Supplies a specific dispute defense document.",
+                 "item": [
+                            {
+                                "name": "Supply dispute defense documents",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"defenseDocuments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n    \"contentType\" : \"application/pdf\",\n    \"defenseDocumentTypeCode\" : \"DefenseMaterial\"\n  } ],\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/supplyDefenseDocument",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "supplyDefenseDocument"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Supplies a specific dispute defense document."
+                                }
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    "auth": {
+    		"type": "apikey",
+    		"apikey": [
+    			{
+    				"key": "value",
+    				"value": "{{X-API-Key}}",
+    				"type": "string"
+    			},
+    			{
+    				"key": "key",
+    				"value": "X-API-Key",
+    				"type": "string"
+    			}
+    		]
+    	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://ca-test.adyen.com/ca/services/DisputeService/v30",
+			"type": "string"
+        },
+        {
+            "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        },
+		{
+			"key": "YOUR_MERCHANT_ACCOUNT",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
+

@@ -87,7 +87,7 @@
                             ]
                         },
 	                        {
-    "name": "/transactions/{id}",
+    "name": "/transactions/:id",
                 "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Returns a transaction.",
                  "item": [
                             {
@@ -111,13 +111,13 @@
                                         }
                                     },
                                     "url": {
-                                        "raw": "{{baseUrl}}/transactions/{id}",
+                                        "raw": "{{baseUrl}}/transactions/:id",
                                         "host": [
                                             "{{baseUrl}}"
                                         ],
                                         "path": [
                                             "transactions",
-                                            "{id}"
+                                            ":id"
                                         ],
                                         "variable": [
                                             {

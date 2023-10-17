@@ -1517,7 +1517,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\"\n  }\n}",
+                                        "raw": "{\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\",\n    \"trustedSource\" : false\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

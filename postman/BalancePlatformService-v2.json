@@ -582,6 +582,63 @@
                             ]
                         },
 	                        {
+    "name": "/accountHolders/:id/taxForms",
+                "description": "Generates a tax form for account holders operating in the US. For more information, refer to [Providing tax forms](https://docs.adyen.com/marketplaces-and-platforms/us-tax-forms/).",
+                 "item": [
+                            {
+                                "name": "Get a tax form",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/accountHolders/:id/taxForms",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "accountHolders",
+                                            ":id",
+                                            "taxForms"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the account holder."
+                                            }
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "formType",
+                                                "value": "formType_example"
+                                            },
+                                            {
+                                                "key": "year",
+                                                "value": "56"
+                                            }
+                                        ]
+                                    },
+                                    "description": "Generates a tax form for account holders operating in the US. For more information, refer to [Providing tax forms](https://docs.adyen.com/marketplaces-and-platforms/us-tax-forms/)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
     "name": "/accountHolders/:id",
                 "description": "Updates an account holder. When updating an account holder resource, if a parameter is not provided in the request, it is left unchanged.",
                  "item": [

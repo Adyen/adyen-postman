@@ -1699,10 +1699,10 @@
                         },
 	                        {
     "name": "/legalEntities/:id/pciQuestionnaires/generatePciTemplates",
-                "description": "Generates the required PCI questionnaire based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels). If multiple questionnaires are required, this request creates a single consodilated document to be signed.",
+                "description": "Generates the required PCI questionnaires based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels).",
                  "item": [
                             {
-                                "name": "Generate the PCI questionnaire",
+                                "name": "Generate PCI questionnaires",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -1747,7 +1747,7 @@
                                         "query": [
                                         ]
                                     },
-                                    "description": "Generates the required PCI questionnaire based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels). If multiple questionnaires are required, this request creates a single consodilated document to be signed."
+                                    "description": "Generates the required PCI questionnaires based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels)."
                                 }
                             }
                             ]
@@ -1757,7 +1757,7 @@
                 "description": "Signs the required PCI questionnaire.",
                  "item": [
                             {
-                                "name": "Sign the PCI questionnaires",
+                                "name": "Sign PCI questionnaires",
                                 "request": {
                                     "method": "POST",
                                     "header": [

@@ -4602,6 +4602,49 @@
                                 }
                             }
                             ]
+                        },
+	                        {
+    "name": "/me/generateClientKey",
+                "description": "Returns a new [client key](https://docs.adyen.com/development-resources/client-side-authentication#how-it-works) for the caller - API Credential or OAuth Access Token. You can use the new client key a few minutes after generating it. The old client key stops working 24 hours after generating a new one.To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—API credentials read and write",
+                 "item": [
+                            {
+                                "name": "Generate new client key for self",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/me/generateClientKey",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "me",
+                                            "generateClientKey"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns a new [client key](https://docs.adyen.com/development-resources/client-side-authentication#how-it-works) for the caller - API Credential or OAuth Access Token. You can use the new client key a few minutes after generating it. The old client key stops working 24 hours after generating a new one.To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—API credentials read and write"
+                                }
+                            }
+                            ]
                         }
 	                    ]
 	        },

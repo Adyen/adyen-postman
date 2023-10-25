@@ -391,7 +391,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"channel\" : \"Android\",\n  \"token\" : \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n  \"returnUrl\" : \"app://\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"sessionValidity\" : \"2017-04-06T13:09:13Z\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"channel\" : \"Android\",\n  \"token\" : \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n  \"returnUrl\" : \"app://\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"sessionValidity\" : \"2017-04-06T13:09:13Z\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -437,7 +437,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"enableOneClick\" : true,\n  \"enableRecurring\" : true,\n  \"channel\" : \"Web\",\n  \"html\" : true,\n  \"origin\" : \"https://www.yourwebsite.com\",\n  \"returnUrl\" : \"https://www.yourshop.com/checkout/result\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"sdkVersion\" : \"1.7.0\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"enableOneClick\" : true,\n  \"enableRecurring\" : true,\n  \"channel\" : \"Web\",\n  \"html\" : true,\n  \"origin\" : \"https://www.yourwebsite.com\",\n  \"returnUrl\" : \"https://www.yourshop.com/checkout/result\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"sdkVersion\" : \"1.7.0\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -483,7 +483,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"channel\" : \"iOS\",\n  \"token\" : \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n  \"returnUrl\" : \"app://\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"sessionValidity\" : \"2017-04-06T13:09:13Z\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"channel\" : \"iOS\",\n  \"token\" : \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n  \"returnUrl\" : \"app://\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"sessionValidity\" : \"2017-04-06T13:09:13Z\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -529,7 +529,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 6200\n  },\n  \"additionalData\" : {\n    \"split.api\" : \"1\",\n    \"split.nrOfItems\" : \"2\",\n    \"split.totalAmount\" : \"6200\",\n    \"split.currencyCode\" : \"EUR\",\n    \"split.item1.amount\" : \"6000\",\n    \"split.item1.type\" : \"MarketPlace\",\n    \"split.item1.account\" : \"151272963\",\n    \"split.item1.reference\" : \"6124145\",\n    \"split.item1.description\" : \"Porcelain Doll: Eliza (20cm)\",\n    \"split.item2.amount\" : \"200\",\n    \"split.item2.type\" : \"Commission\",\n    \"split.item2.reference\" : \"6124146\"\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"channel\" : \"Android\",\n  \"token\" : \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n  \"returnUrl\" : \"app://\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"sessionValidity\" : \"2017-04-06T13:09:13Z\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 6200\n  },\n  \"additionalData\" : {\n    \"split.api\" : \"1\",\n    \"split.nrOfItems\" : \"2\",\n    \"split.totalAmount\" : \"6200\",\n    \"split.currencyCode\" : \"EUR\",\n    \"split.item1.amount\" : \"6000\",\n    \"split.item1.type\" : \"MarketPlace\",\n    \"split.item1.account\" : \"151272963\",\n    \"split.item1.reference\" : \"6124145\",\n    \"split.item1.description\" : \"Porcelain Doll: Eliza (20cm)\",\n    \"split.item2.amount\" : \"200\",\n    \"split.item2.type\" : \"Commission\",\n    \"split.item2.reference\" : \"6124146\"\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"channel\" : \"Android\",\n  \"token\" : \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n  \"returnUrl\" : \"app://\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"sessionValidity\" : \"2017-04-06T13:09:13Z\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -575,7 +575,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"channel\" : \"Web\",\n  \"html\" : true,\n  \"origin\" : \"https://www.yourwebsite.com\",\n  \"returnUrl\" : \"https://www.yourshop.com/checkout/result\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"sdkVersion\" : \"1.9.5\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"channel\" : \"Web\",\n  \"html\" : true,\n  \"origin\" : \"https://www.yourwebsite.com\",\n  \"returnUrl\" : \"https://www.yourshop.com/checkout/result\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"sdkVersion\" : \"1.9.5\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1149,7 +1149,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"YOUR_DONATION_REFERENCE\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"recurringDetailReference\" : \"7219687191761347\"\n  },\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"donationAccount\" : \"CHARITY_ACCOUNT\",\n  \"shopperInteraction\" : \"ContAuth\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"recurringProcessingModel\" : \"CardOnFile\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"YOUR_DONATION_REFERENCE\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"recurringDetailReference\" : \"7219687191761347\"\n  },\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"donationAccount\" : \"CHARITY_ACCOUNT\",\n  \"shopperInteraction\" : \"ContAuth\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"recurringProcessingModel\" : \"CardOnFile\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1621,7 +1621,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"encryptedCardNumber\" : \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\",\n    \"encryptedExpiryMonth\" : \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\",\n    \"encryptedExpiryYear\" : \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\",\n    \"encryptedSecurityCode\" : \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\"\n  },\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"encryptedCardNumber\" : \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\",\n    \"encryptedExpiryMonth\" : \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\",\n    \"encryptedExpiryYear\" : \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\",\n    \"encryptedSecurityCode\" : \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\"\n  },\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -1667,7 +1667,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\",\n    \"cvc\" : \"737\"\n  },\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"storePaymentMethod\" : true,\n  \"shopperInteraction\" : \"Ecommerce\",\n  \"recurringProcessingModel\" : \"CardOnFile\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\",\n    \"cvc\" : \"737\"\n  },\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"storePaymentMethod\" : true,\n  \"shopperInteraction\" : \"Ecommerce\",\n  \"recurringProcessingModel\" : \"CardOnFile\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2059,7 +2059,53 @@
                                 }
                             },
                             {
-                                "name": "Split a payment between a sub-merchant and a platform account",
+                                "name": "Split a payment between balance accounts",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Idempotency-Key",
+                                            "value": "",
+                                            "disabled": true
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4111111111111111\",\n    \"cvc\" : \"737\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"amount\" : {\n    \"value\" : 40000,\n    \"currency\" : \"USD\"\n  },\n  \"reference\" : \"{{$guid}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"splits\" : [ {\n    \"amount\" : {\n      \"value\" : 39600\n    },\n    \"type\" : \"BalanceAccount\",\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the sale amount\",\n    \"description\" : \"Your description for the sale amount\"\n  }, {\n    \"amount\" : {\n      \"value\" : 400\n    },\n    \"type\" : \"Commission\",\n    \"reference\" : \"Your reference for the commission\",\n    \"description\" : \"Your description for the commission\"\n  }, {\n    \"type\" : \"PaymentFee\",\n    \"account\" : \"BA00000000000000000000001\",\n    \"reference\" : \"Your reference for the fees\",\n    \"description\" : \"Your description for the fees\"\n  } ]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/payments",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "payments"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+                                }
+                            },
+                            {
+                                "name": "Split a payment in a Classic Platforms integration",
                                 "request": {
                                     "method": "POST",
                                     "header": [
@@ -2127,7 +2173,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\",\n    \"cvc\" : \"737\"\n  },\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"storePaymentMethod\" : true,\n  \"shopperInteraction\" : \"Ecommerce\",\n  \"recurringProcessingModel\" : \"Subscription\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\",\n    \"cvc\" : \"737\"\n  },\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"storePaymentMethod\" : true,\n  \"shopperInteraction\" : \"Ecommerce\",\n  \"recurringProcessingModel\" : \"Subscription\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -2479,7 +2525,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"reference\" : \"{{$guid}}\",\n  \"amount\" : {\n    \"value\" : 1250,\n    \"currency\" : \"BRL\"\n  },\n  \"countryCode\" : \"BR\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"shopperEmail\" : \"test@email.com\",\n  \"shopperLocale\" : \"pt-BR\",\n  \"billingAddress\" : {\n    \"street\" : \"Roque Petroni Jr\",\n    \"postalCode\" : \"59000060\",\n    \"city\" : \"São Paulo\",\n    \"houseNumberOrName\" : \"999\",\n    \"country\" : \"BR\",\n    \"stateOrProvince\" : \"SP\"\n  },\n  \"deliveryAddress\" : {\n    \"street\" : \"Roque Petroni Jr\",\n    \"postalCode\" : \"59000060\",\n    \"city\" : \"São Paulo\",\n    \"houseNumberOrName\" : \"999\",\n    \"country\" : \"BR\",\n    \"stateOrProvince\" : \"SP\"\n  }\n}",
+                                        "raw": "{\n  \"reference\" : \"{{$guid}}\",\n  \"amount\" : {\n    \"value\" : 1250,\n    \"currency\" : \"BRL\"\n  },\n  \"countryCode\" : \"BR\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"shopperEmail\" : \"test@email.com\",\n  \"shopperLocale\" : \"pt-BR\",\n  \"billingAddress\" : {\n    \"street\" : \"Roque Petroni Jr\",\n    \"postalCode\" : \"59000060\",\n    \"city\" : \"São Paulo\",\n    \"houseNumberOrName\" : \"999\",\n    \"country\" : \"BR\",\n    \"stateOrProvince\" : \"SP\"\n  },\n  \"deliveryAddress\" : {\n    \"street\" : \"Roque Petroni Jr\",\n    \"postalCode\" : \"59000060\",\n    \"city\" : \"São Paulo\",\n    \"houseNumberOrName\" : \"999\",\n    \"country\" : \"BR\",\n    \"stateOrProvince\" : \"SP\"\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

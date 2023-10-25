@@ -34,7 +34,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"recurringDetailReference\" : \"8314442372419167\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"recurringDetailReference\" : \"8314442372419167\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -81,7 +81,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"recurring\" : {\n    \"contract\" : \"RECURRING\"\n  },\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+                                        "raw": "{\n  \"recurring\" : {\n    \"contract\" : \"RECURRING\"\n  },\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -216,7 +216,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"{{$guid}}\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"selectedRecurringDetailReference\" : \"8814232895168272\"\n}",
+                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"{{$guid}}\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"selectedRecurringDetailReference\" : \"8814232895168272\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

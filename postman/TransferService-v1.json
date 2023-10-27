@@ -123,7 +123,7 @@
                                             {
                                                 "key": "id",
                                                 "value": "",
-                                                "description": "Unique identifier of the transaction."
+                                                "description": "The unique identifier of the transaction."
                                             }
                                         ],
                                         "query": [

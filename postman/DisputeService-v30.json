@@ -154,53 +154,6 @@
                             ]
                         },
 	                        {
-    "name": "/downloadDisputeDefenseDocument",
-                "description": "Downloads a specific dispute defense document that was supplied earlier.",
-                 "item": [
-                            {
-                                "name": "Download a dispute defense document that was supplied earlier",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"defenseDocumentType\" : \"DefenseMaterial\",\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/downloadDisputeDefenseDocument",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "downloadDisputeDefenseDocument"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Downloads a specific dispute defense document that was supplied earlier."
-                                }
-                            }
-                            ]
-                        },
-	                        {
     "name": "/retrieveApplicableDefenseReasons",
                 "description": "Returns a list of all applicable defense reasons to defend a specific dispute.",
                  "item": [

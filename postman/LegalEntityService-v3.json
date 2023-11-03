@@ -268,6 +268,110 @@
                                     },
                                     "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
                                 }
+                            },
+                            {
+                                "name": "Associate a trust member with a trust",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"entityAssociations\" : [ {\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"protector\"\n  } ]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/:id",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            ":id"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+                                }
+                            },
+                            {
+                                "name": "Associate an exempt settlor with a trust",
+                                "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"entityAssociations\" : [ {\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"settlor\",\n    \"entityType\" : \"individual\",\n    \"settlorExemptionReason\" : [ \"deceased\", \"professionalServiceProvider\" ]\n  } ]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/:id",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            ":id"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+                                }
                             }
                             ]
                         },
@@ -529,6 +633,52 @@
                                     "body": {
                                         "mode": "raw",
                                         "raw": "{\n  \"type\" : \"soleProprietorship\",\n  \"soleProprietorship\" : {\n    \"name\" : \"Shelly Eller Sole Trader\",\n    \"countryOfGoverningLaw\" : \"US\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  }\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  "
+                                }
+                            },
+                            {
+                                "name": "Create a legal entity for a trust in Australia",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "x-requested-verification-code",
+                                            "value": "",
+                                            "disabled": true
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"type\" : \"trust\",\n  \"trust\" : {\n    \"name\" : \"Example Trust\",\n    \"type\" : \"fixedUnitTrust\",\n    \"doingBusinessAs\" : \"West's Store\",\n    \"countryOfGoverningLaw\" : \"AU\",\n    \"taxInformation\" : [ {\n      \"country\" : \"AU\",\n      \"type\" : \"ABN\",\n      \"number\" : \"12345678123\"\n    } ],\n    \"registeredAddress\" : {\n      \"street\" : \"Winfield Avenue\",\n      \"city\" : \"Sydney\",\n      \"postalCode\" : \"1197\",\n      \"stateOrProvince\" : \"NSW\",\n      \"country\" : \"AU\"\n    },\n    \"undefinedBeneficiaryInfo\" : [ {\n      \"description\" : \"My future children\"\n    } ]\n  }\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

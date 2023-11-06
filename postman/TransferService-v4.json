@@ -481,6 +481,53 @@
                             ]
                         },
 	                        {
+    "name": "/grants",
+                "description": "Requests the payout of the selected grant offer.",
+                 "item": [
+                            {
+                                "name": "Request grant payout to a balance account",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"grantAccountId\" : \"CG00000000000000000000001\",\n  \"grantOfferId\" : \"0000000000000001\",\n  \"counterparty\" : {\n    \"accountHolderId\" : \"AH00000000000000000000001\",\n    \"balanceAccountId\" : \"BA00000000000000000000001\"\n  }\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/grants",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "grants"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Requests the payout of the selected grant offer."
+                                }
+                            }
+                            ]
+                        },
+	                        {
     "name": "/grants/:id",
                 "description": "Returns the details of a capital account specified in the path.",
                  "item": [
@@ -524,53 +571,6 @@
                                         ]
                                     },
                                     "description": "Returns the details of a capital account specified in the path."
-                                }
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/grants",
-                "description": "Requests the payout of the selected grant offer.",
-                 "item": [
-                            {
-                                "name": "Request grant payout to a balance account",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"grantAccountId\" : \"CG00000000000000000000001\",\n  \"grantOfferId\" : \"0000000000000001\",\n  \"counterparty\" : {\n    \"accountHolderId\" : \"AH00000000000000000000001\",\n    \"balanceAccountId\" : \"BA00000000000000000000001\"\n  }\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/grants",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "grants"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Requests the payout of the selected grant offer."
                                 }
                             }
                             ]

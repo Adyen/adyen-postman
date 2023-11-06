@@ -1798,6 +1798,58 @@
 	            "name": "Payment links",
 	            "item": [
 	                        {
+    "name": "/paymentLinks",
+                "description": "Creates a payment link to our hosted payment form where shoppers can pay. The list of payment methods presented to the shopper depends on the `currency` and `country` parameters sent in the request.  For more information, refer to [Pay by Link documentation](https://docs.adyen.com/online-payments/pay-by-link#create-payment-links-through-api).",
+                 "item": [
+                            {
+                                "name": "Create a payment link",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Idempotency-Key",
+                                            "value": "",
+                                            "disabled": true
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"reference\" : \"{{$guid}}\",\n  \"amount\" : {\n    \"value\" : 1250,\n    \"currency\" : \"BRL\"\n  },\n  \"countryCode\" : \"BR\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"shopperEmail\" : \"test@email.com\",\n  \"shopperLocale\" : \"pt-BR\",\n  \"billingAddress\" : {\n    \"street\" : \"Roque Petroni Jr\",\n    \"postalCode\" : \"59000060\",\n    \"city\" : \"São Paulo\",\n    \"houseNumberOrName\" : \"999\",\n    \"country\" : \"BR\",\n    \"stateOrProvince\" : \"SP\"\n  },\n  \"deliveryAddress\" : {\n    \"street\" : \"Roque Petroni Jr\",\n    \"postalCode\" : \"59000060\",\n    \"city\" : \"São Paulo\",\n    \"houseNumberOrName\" : \"999\",\n    \"country\" : \"BR\",\n    \"stateOrProvince\" : \"SP\"\n  }\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentLinks",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentLinks"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment link to our hosted payment form where shoppers can pay. The list of payment methods presented to the shopper depends on the `currency` and `country` parameters sent in the request.  For more information, refer to [Pay by Link documentation](https://docs.adyen.com/online-payments/pay-by-link#create-payment-links-through-api)."
+                                }
+                            }
+                            ]
+                        },
+	                        {
     "name": "/paymentLinks/:linkId",
                 "description": "Retrieves the payment link details using the payment link `id`.",
                  "item": [
@@ -1894,58 +1946,6 @@
                                         ]
                                     },
                                     "description": "Updates the status of a payment link. Use this endpoint to [force the expiry of a payment link](https://docs.adyen.com/online-payments/pay-by-link#update-payment-link-status)."
-                                }
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/paymentLinks",
-                "description": "Creates a payment link to our hosted payment form where shoppers can pay. The list of payment methods presented to the shopper depends on the `currency` and `country` parameters sent in the request.  For more information, refer to [Pay by Link documentation](https://docs.adyen.com/online-payments/pay-by-link#create-payment-links-through-api).",
-                 "item": [
-                            {
-                                "name": "Create a payment link",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Idempotency-Key",
-                                            "value": "",
-                                            "disabled": true
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"reference\" : \"{{$guid}}\",\n  \"amount\" : {\n    \"value\" : 1250,\n    \"currency\" : \"BRL\"\n  },\n  \"countryCode\" : \"BR\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"shopperEmail\" : \"test@email.com\",\n  \"shopperLocale\" : \"pt-BR\",\n  \"billingAddress\" : {\n    \"street\" : \"Roque Petroni Jr\",\n    \"postalCode\" : \"59000060\",\n    \"city\" : \"São Paulo\",\n    \"houseNumberOrName\" : \"999\",\n    \"country\" : \"BR\",\n    \"stateOrProvince\" : \"SP\"\n  },\n  \"deliveryAddress\" : {\n    \"street\" : \"Roque Petroni Jr\",\n    \"postalCode\" : \"59000060\",\n    \"city\" : \"São Paulo\",\n    \"houseNumberOrName\" : \"999\",\n    \"country\" : \"BR\",\n    \"stateOrProvince\" : \"SP\"\n  }\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/paymentLinks",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "paymentLinks"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Creates a payment link to our hosted payment form where shoppers can pay. The list of payment methods presented to the shopper depends on the `currency` and `country` parameters sent in the request.  For more information, refer to [Pay by Link documentation](https://docs.adyen.com/online-payments/pay-by-link#create-payment-links-through-api)."
                                 }
                             }
                             ]

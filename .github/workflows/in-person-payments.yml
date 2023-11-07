@@ -1,0 +1,30 @@
+# Update collection on Postman
+
+name: "Update collection (PUT)"
+
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 'Postman JSON filepath'     
+        required: true
+        default: 'postman/CheckoutService-v70.json'
+      collectionId:
+        description: 'Postman collection ID'     
+        required: true
+jobs:
+  generate:
+    name: "Update Postman Collection"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: push-to-postman-action
+        id: push-to-postman
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: ${{ github.event.inputs.file }}
+          collection-id: ${{ github.event.inputs.collectionId }}

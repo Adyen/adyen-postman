@@ -1,19 +1,14 @@
-# Update collection on Postman
+# Update the IPP collection
 
-name: "Update collection (PUT)"
+name: "In-person payments"
 
 on:
-  workflow_dispatch:
-    inputs:
-      file:
-        description: 'Postman JSON filepath'     
-        required: true
-        default: 'postman/CheckoutService-v70.json'
-      collectionId:
-        description: 'Postman collection ID'     
-        required: true
+  push:
+    branches: [ main ]
+    paths:
+      - 'in-person-payments/ipp.json'
 jobs:
-  generate:
+  push:
     name: "Update Postman Collection"
     runs-on: ubuntu-latest
     steps:
@@ -26,5 +21,5 @@ jobs:
         with:
           goal: update
           postman-key: ${{ secrets.POSTMAN_API_KEY }}
-          postman-file: ${{ github.event.inputs.file }}
-          collection-id: ${{ github.event.inputs.collectionId }}
+          postman-file: 'in-person-payments/ipp.json'
+          collection-id: ${{ secrets.POSTMAN_IPP_COLLECTION_ID }}

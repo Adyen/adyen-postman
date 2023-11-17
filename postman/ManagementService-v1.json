@@ -51,7 +51,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -206,7 +206,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -255,7 +255,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -309,7 +309,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -363,7 +363,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -413,7 +413,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -468,7 +468,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -528,7 +528,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -588,7 +588,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -645,7 +645,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -712,7 +712,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -781,7 +781,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -852,7 +852,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -913,7 +913,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -970,7 +970,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -1032,7 +1032,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -1098,7 +1098,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -1159,7 +1159,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -1218,7 +1218,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -1284,7 +1284,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -1334,7 +1334,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -1394,7 +1394,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -1897,7 +1897,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -1951,7 +1951,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -2001,7 +2001,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2056,7 +2056,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2116,7 +2116,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2175,7 +2175,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -2237,7 +2237,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -2287,7 +2287,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2342,7 +2342,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2402,7 +2402,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2458,7 +2458,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2519,7 +2519,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2580,7 +2580,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2641,7 +2641,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2702,7 +2702,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2759,7 +2759,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2821,7 +2821,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -2885,7 +2885,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -2938,7 +2938,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -3004,7 +3004,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -3053,7 +3053,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -3102,7 +3102,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -3172,7 +3172,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -3222,7 +3222,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -3282,7 +3282,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -3338,7 +3338,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -3392,7 +3392,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -3462,7 +3462,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -3524,7 +3524,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -3574,7 +3574,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -3634,7 +3634,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -3693,7 +3693,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "Unique identifier of the merchant."
                                             }
                                         ],
@@ -3759,7 +3759,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "Unique identifier of the merchant."
                                             }
                                         ],
@@ -3809,7 +3809,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "Unique identifier of the merchant."
                                             },
                                             {
@@ -3869,7 +3869,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "Unique identifier of the merchant."
                                             },
                                             {
@@ -3928,7 +3928,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -3994,7 +3994,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -4053,7 +4053,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -4123,7 +4123,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -4171,7 +4171,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -4221,7 +4221,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -4281,7 +4281,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -4342,7 +4342,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -4398,7 +4398,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -4736,7 +4736,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -4794,7 +4794,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -4846,7 +4846,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -4899,7 +4899,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -4953,7 +4953,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -5001,7 +5001,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -5134,7 +5134,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "Unique identifier of the [company account](https://docs.adyen.com/account/account-structure#company-account)."
                                             }
                                         ],
@@ -5196,7 +5196,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "Unique identifier of the [company account](https://docs.adyen.com/account/account-structure#company-account)."
                                             }
                                         ],
@@ -5246,7 +5246,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -5301,7 +5301,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "Unique identifier of the [company account](https://docs.adyen.com/account/account-structure#company-account)."
                                             },
                                             {
@@ -5361,7 +5361,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -5417,7 +5417,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -5478,7 +5478,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -5537,7 +5537,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -5603,7 +5603,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -5653,7 +5653,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -5713,7 +5713,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -5767,7 +5767,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -6079,7 +6079,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6145,7 +6145,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -6199,7 +6199,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6265,7 +6265,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6323,7 +6323,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6375,7 +6375,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6428,7 +6428,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6482,7 +6482,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6530,7 +6530,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6584,7 +6584,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6646,7 +6646,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -6696,7 +6696,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -6756,7 +6756,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             },
                                             {
@@ -6815,7 +6815,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -6868,7 +6868,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -6934,7 +6934,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -6983,7 +6983,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -7032,7 +7032,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": ""
                                             }
                                         ],
@@ -7102,7 +7102,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -7152,7 +7152,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -7212,7 +7212,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -7268,7 +7268,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -7322,7 +7322,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             }
                                         ],
@@ -7441,7 +7441,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -7490,7 +7490,7 @@
                                         "variable": [
                                             {
                                                 "key": "companyId",
-                                                "value": "",
+                                                "value": "{{YOUR_COMPANY_ACCOUNT}}",
                                                 "description": "The unique identifier of the company account."
                                             }
                                         ],
@@ -7554,7 +7554,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -7619,7 +7619,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -7678,7 +7678,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -7738,7 +7738,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -7799,7 +7799,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {
@@ -7854,7 +7854,7 @@
                                         "variable": [
                                             {
                                                 "key": "merchantId",
-                                                "value": "",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
                                                 "description": "The unique identifier of the merchant account."
                                             },
                                             {

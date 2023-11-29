@@ -4086,6 +4086,54 @@
                 "description": "Sends a request to add a new payment method to the merchant account identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write ",
                  "item": [
                             {
+                                "name": "Request to add Visa",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"type\" : \"visa\",\n  \"businessLineId\" : \"BL322KV223222D5F8H2J4BQ6C\",\n  \"storeIds\" : [ \"ST322LJ223223K5F4SQNR9XL5\" ],\n  \"currencies\" : [ \"EUR\" ],\n  \"countries\" : [ \"NL\" ]\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/merchants/:merchantId/paymentMethodSettings",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "merchants",
+                                            ":merchantId",
+                                            "paymentMethodSettings"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "merchantId",
+                                                "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+                                                "description": "The unique identifier of the merchant account."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Sends a request to add a new payment method to the merchant account identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
+                                }
+                            },
+                            {
                                 "name": "Request to add Swish",
                                 "request": {
                                     "method": "POST",

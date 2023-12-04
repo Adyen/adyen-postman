@@ -24,16 +24,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -76,16 +79,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -135,16 +141,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -194,16 +203,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -253,16 +265,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -312,16 +327,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -376,16 +394,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -422,16 +443,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -468,16 +492,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -514,16 +541,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -560,16 +590,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -612,16 +645,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -670,16 +706,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -722,16 +761,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -775,16 +817,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -822,16 +867,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -880,16 +928,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -933,16 +984,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -990,6 +1044,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1015,11 +1070,15 @@
                                         "query": [
                                             {
                                                 "key": "shopperReference",
-                                                "value": "shopperReference_example"
+                                                "value": "shopperReference_example",
+                                                "description": "Your reference to uniquely identify this shopper, for example user ID or account ID. Minimum length: 3 characters. > Your reference must not include personally identifiable information (PII), for example name or email address.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "merchantAccount",
-                                                "value": "merchantAccount_example"
+                                                "value": "merchantAccount_example",
+                                                "description": "Your merchant account.",
+                                                "disabled": true
                                             }
                                         ]
                                     },
@@ -1066,11 +1125,15 @@
                                         "query": [
                                             {
                                                 "key": "shopperReference",
-                                                "value": "shopperReference_example"
+                                                "value": "shopperReference_example",
+                                                "description": "Your reference to uniquely identify this shopper, for example user ID or account ID. Minimum length: 3 characters. > Your reference must not include personally identifiable information (PII), for example name or email address.",
+                                                "disabled": false
                                             },
                                             {
                                                 "key": "merchantAccount",
-                                                "value": "merchantAccount_example"
+                                                "value": "merchantAccount_example",
+                                                "description": "Your merchant account.",
+                                                "disabled": false
                                             }
                                         ]
                                     },
@@ -1096,16 +1159,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1142,16 +1208,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1194,16 +1263,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1240,16 +1312,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1292,16 +1367,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1338,16 +1416,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1384,16 +1465,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1436,16 +1520,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1482,16 +1569,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1528,16 +1618,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1574,16 +1667,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1620,16 +1716,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1666,16 +1765,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1712,16 +1814,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1758,16 +1863,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1804,16 +1912,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1850,16 +1961,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1896,16 +2010,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1942,16 +2059,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -1988,16 +2108,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2034,16 +2157,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2080,16 +2206,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2126,16 +2255,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2172,16 +2304,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2218,16 +2353,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2270,16 +2408,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2317,16 +2458,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2370,16 +2514,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2416,16 +2563,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2462,16 +2612,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2508,16 +2661,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2560,6 +2716,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2591,7 +2748,9 @@
                                         "query": [
                                             {
                                                 "key": "sessionResult",
-                                                "value": "sessionResult_example"
+                                                "value": "sessionResult_example",
+                                                "description": "The `sessionResult` value from the Drop-in or Component.",
+                                                "disabled": false
                                             }
                                         ]
                                     },
@@ -2617,16 +2776,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Idempotency-Key",
                                             "value": "",
+                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
                                             "disabled": true
                                         }
                                     ],
@@ -2669,6 +2831,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2717,11 +2880,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],

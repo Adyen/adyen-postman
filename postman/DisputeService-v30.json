@@ -24,11 +24,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -58,7 +60,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/defendDispute",
                 "description": "Defends a specific dispute.",
@@ -71,11 +74,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -105,7 +110,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/deleteDisputeDefenseDocument",
                 "description": "Deletes a specific dispute defense document that was supplied earlier.",
@@ -118,11 +124,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -152,7 +160,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/retrieveApplicableDefenseReasons",
                 "description": "Returns a list of all applicable defense reasons to defend a specific dispute.",
@@ -165,11 +174,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -199,7 +210,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/supplyDefenseDocument",
                 "description": "Supplies a specific dispute defense document.",
@@ -212,11 +224,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -247,6 +261,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        }
     ],

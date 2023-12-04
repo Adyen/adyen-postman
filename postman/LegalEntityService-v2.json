@@ -24,16 +24,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -70,16 +73,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -116,16 +122,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -162,16 +171,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -208,16 +220,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -254,16 +269,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -300,16 +318,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -339,7 +360,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/legalEntities/:id",
                 "description": "Returns a legal entity.",
@@ -352,6 +374,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -387,7 +410,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/legalEntities/:id",
                 "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.",
@@ -400,16 +424,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use the requested verification code 0_0001 to resolve any suberrors associated with the legal entity. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -452,16 +479,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use the requested verification code 0_0001 to resolve any suberrors associated with the legal entity. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -504,16 +534,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use the requested verification code 0_0001 to resolve any suberrors associated with the legal entity. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -556,16 +589,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use the requested verification code 0_0001 to resolve any suberrors associated with the legal entity. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -608,16 +644,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use the requested verification code 0_0001 to resolve any suberrors associated with the legal entity. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -653,7 +692,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/legalEntities/:id/businessLines",
                 "description": "Returns the business lines owned by a legal entity.",
@@ -666,6 +706,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -703,6 +744,58 @@
                             }
                             ]
                         }
+,
+	                        {
+    "name": "/legalEntities/:id/confirmDataReview",
+                "description": "Confirms that your user has reviewed the data for the legal entity specified in the path. Call this endpoint to inform Adyen that your user reviewed and verified that the data is up-to-date. The endpoint returns the timestamp of when Adyen received the request.",
+                 "item": [
+                            {
+                                "name": "Confirm data review",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/legalEntities/:id/confirmDataReview",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "legalEntities",
+                                            ":id",
+                                            "confirmDataReview"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the legal entity."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Confirms that your user has reviewed the data for the legal entity specified in the path. Call this endpoint to inform Adyen that your user reviewed and verified that the data is up-to-date. The endpoint returns the timestamp of when Adyen received the request."
+                                }
+                            }
+                            ]
+                        }
+
 	                    ]
 	        },
 	        {
@@ -720,11 +813,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -761,7 +856,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/themes",
                 "description": "Returns a list of hosted onboarding page themes.  >If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  ",
@@ -774,6 +870,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -803,7 +900,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/themes/:id",
                 "description": "Returns the details of the theme identified in the path.>If you are using hosted onboarding, [only use v2](https://docs.adyen.com/release-notes/platforms-and-financial-products#releaseNote=2023-05-01-legal-entity-management-api-3) for your API requests.  ",
@@ -816,6 +914,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -852,6 +951,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -869,11 +969,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -903,7 +1005,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/businessLines/:id",
                 "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.",
@@ -916,6 +1019,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -951,7 +1055,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/businessLines/:id",
                 "description": "Returns the detail of a business line.",
@@ -964,6 +1069,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -999,7 +1105,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/businessLines/:id",
                 "description": "Updates a business line.",
@@ -1012,11 +1119,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1053,6 +1162,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -1070,16 +1180,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -1109,7 +1222,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/documents/:id",
                 "description": "Deletes a document.",
@@ -1122,6 +1236,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1157,7 +1272,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/documents/:id",
                 "description": "Returns a document.",
@@ -1170,6 +1286,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1205,7 +1322,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/documents/:id",
                 "description": "Updates a document.   >You can upload a maximum of 15 pages for photo IDs.",
@@ -1218,16 +1336,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use the requested verification code 0_0001 to resolve any suberrors associated with the document. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -1264,6 +1385,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -1281,11 +1403,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1322,7 +1446,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/legalEntities/:id/termsOfService/:termsofservicedocumentid",
                 "description": "Accepts Terms of Service.",
@@ -1335,11 +1460,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1382,7 +1509,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/legalEntities/:id/termsOfServiceAcceptanceInfos",
                 "description": "Returns Terms of Service information for a legal entity.",
@@ -1395,6 +1523,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1431,7 +1560,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/legalEntities/:id/termsOfServiceStatus",
                 "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity.",
@@ -1444,6 +1574,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1481,6 +1612,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -1498,16 +1630,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -1544,16 +1679,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -1583,7 +1721,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transferInstruments/:id",
                 "description": "Deletes a transfer instrument.",
@@ -1596,6 +1735,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1631,7 +1771,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transferInstruments/:id",
                 "description": "Returns the details of a transfer instrument.",
@@ -1644,6 +1785,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1679,7 +1821,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transferInstruments/:id",
                 "description": "Updates a transfer instrument.",
@@ -1692,16 +1835,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "x-requested-verification-code",
                                             "value": "",
+                                            "description": "Use the requested verification code 0_0001 to resolve any suberrors associated with the transfer instrument. Requested verification codes can only be used in your test environment.",
                                             "disabled": true
                                         }
                                     ],
@@ -1738,6 +1884,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -1755,6 +1902,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1791,7 +1939,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/legalEntities/:id/pciQuestionnaires/:pciid",
                 "description": "Returns the signed PCI questionnaire.",
@@ -1804,6 +1953,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1846,7 +1996,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/legalEntities/:id/pciQuestionnaires/generatePciTemplates",
                 "description": "Generates the required PCI questionnaires based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels).",
@@ -1859,11 +2010,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1901,7 +2054,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/legalEntities/:id/pciQuestionnaires/signPciTemplates",
                 "description": "Signs the required PCI questionnaire.",
@@ -1914,11 +2068,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1957,6 +2113,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        }
     ],

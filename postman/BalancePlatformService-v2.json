@@ -24,6 +24,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -59,7 +60,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/balancePlatforms/:id/accountHolders",
                 "description": "Returns a paginated list of all the account holders that belong to the balance platform. To fetch multiple pages, use the query parameters.   For example, to limit the page to 5 account holders and to skip the first 20, use `/balancePlatforms/{id}/accountHolders?limit=5&offset=20`.",
@@ -72,6 +74,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -104,11 +107,15 @@
                                         "query": [
                                             {
                                                 "key": "offset",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The number of items that you want to skip.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "limit",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+                                                "disabled": true
                                             }
                                         ]
                                     },
@@ -117,6 +124,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -134,6 +142,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -159,7 +168,9 @@
                                         "query": [
                                             {
                                                 "key": "accountHolderId",
-                                                "value": "accountHolderId_example"
+                                                "value": "accountHolderId_example",
+                                                "description": "The unique identifier of the grant account.",
+                                                "disabled": false
                                             }
                                         ]
                                     },
@@ -167,7 +178,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/grantOffers/:grantOfferId",
                 "description": "Returns the details of a single grant offer.",
@@ -180,6 +192,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -216,6 +229,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -233,11 +247,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -267,7 +283,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/paymentInstrumentGroups/:id",
                 "description": "Returns the details of a payment instrument group.",
@@ -280,6 +297,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -315,7 +333,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/paymentInstrumentGroups/:id/transactionRules",
                 "description": "Returns a list of all the transaction rules associated with a payment instrument group.",
@@ -328,6 +347,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -365,6 +385,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -382,6 +403,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -417,7 +439,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/networkTokens/:networkTokenId",
                 "description": "Updates the status of the network token.",
@@ -430,11 +453,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -471,6 +496,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -488,11 +514,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -522,7 +550,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/accountHolders/:id",
                 "description": "Returns an account holder.",
@@ -535,6 +564,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -570,7 +600,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/accountHolders/:id",
                 "description": "Updates an account holder. When updating an account holder resource, if a parameter is not provided in the request, it is left unchanged.",
@@ -583,11 +614,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -630,11 +663,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -670,7 +705,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/accountHolders/:id/balanceAccounts",
                 "description": "Returns a paginated list of the balance accounts associated with an account holder. To fetch multiple pages, use the query parameters.   For example, to limit the page to 5 balance accounts and skip the first 10, use `/accountHolders/{id}/balanceAccounts?limit=5&offset=10`.",
@@ -683,6 +719,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -715,11 +752,15 @@
                                         "query": [
                                             {
                                                 "key": "offset",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The number of items that you want to skip.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "limit",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+                                                "disabled": true
                                             }
                                         ]
                                     },
@@ -727,7 +768,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/accountHolders/:id/taxForms",
                 "description": "Generates a tax form for account holders operating in the US. For more information, refer to [Providing tax forms](https://docs.adyen.com/marketplaces-and-platforms/us-tax-forms/).",
@@ -740,6 +782,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -772,11 +815,15 @@
                                         "query": [
                                             {
                                                 "key": "formType",
-                                                "value": "formType_example"
+                                                "value": "formType_example",
+                                                "description": "The type of tax form you want to retrieve. Accepted values are **US1099k** and **US1099nec**",
+                                                "disabled": false
                                             },
                                             {
                                                 "key": "year",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The tax year in YYYY format for the tax form you want to retrieve",
+                                                "disabled": false
                                             }
                                         ]
                                     },
@@ -785,6 +832,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -802,11 +850,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -843,11 +893,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -884,11 +936,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -925,11 +979,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -959,7 +1015,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/paymentInstruments/:id",
                 "description": "Returns the details of a payment instrument.",
@@ -972,6 +1029,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1007,7 +1065,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/paymentInstruments/:id",
                 "description": "Updates a payment instrument. Once a payment instrument is already active, you can only update its status. However, for cards created with **inactive** status, you can still update the balance account associated with the card.",
@@ -1020,11 +1079,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1067,11 +1128,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1107,7 +1170,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/paymentInstruments/:id/networkTokens",
                 "description": "List the network tokens connected to a payment instrument.",
@@ -1120,6 +1184,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1156,7 +1221,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/paymentInstruments/:id/reveal",
                 "description": "Returns the primary account number (PAN) of a payment instrument.  To make this request, your API credential must have the following [role](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service#api-permissions):  * Balance Platform BCL PCI role",
@@ -1169,6 +1235,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1205,7 +1272,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/paymentInstruments/:id/transactionRules",
                 "description": "Returns a list of transaction rules associated with a payment instrument.",
@@ -1218,6 +1286,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1255,6 +1324,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -1272,11 +1342,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1313,11 +1385,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1348,6 +1422,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -1365,6 +1440,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1401,6 +1477,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -1418,11 +1495,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1452,7 +1531,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/balanceAccounts/:balanceAccountId/sweeps",
                 "description": "Returns a list of the sweeps configured for a balance account.  To fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`.",
@@ -1465,6 +1545,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1497,11 +1578,15 @@
                                         "query": [
                                             {
                                                 "key": "offset",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The number of items that you want to skip.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "limit",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+                                                "disabled": true
                                             }
                                         ]
                                     },
@@ -1509,7 +1594,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/balanceAccounts/:balanceAccountId/sweeps",
                 "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination.",
@@ -1522,11 +1608,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1570,11 +1658,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1618,11 +1708,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1659,7 +1751,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
                 "description": "Deletes a sweep for a balance account.",
@@ -1672,6 +1765,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1714,7 +1808,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
                 "description": "Returns a sweep.",
@@ -1727,6 +1822,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1769,7 +1865,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
                 "description": "Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged.",
@@ -1782,11 +1879,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1829,7 +1928,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/balanceAccounts/:id",
                 "description": "Returns a balance account and its balances for the default currency and other currencies with a non-zero balance.",
@@ -1842,6 +1942,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1877,7 +1978,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/balanceAccounts/:id",
                 "description": "Updates a balance account.",
@@ -1890,11 +1992,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1930,7 +2034,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/balanceAccounts/:id/paymentInstruments",
                 "description": "Returns a paginated list of the payment instruments associated with a balance account.   To fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6`.",
@@ -1943,6 +2048,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -1975,11 +2081,15 @@
                                         "query": [
                                             {
                                                 "key": "offset",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The number of items that you want to skip.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "limit",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+                                                "disabled": true
                                             }
                                         ]
                                     },
@@ -1988,6 +2098,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -2005,11 +2116,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2046,11 +2159,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2087,11 +2202,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2128,11 +2245,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2162,7 +2281,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transactionRules/:transactionRuleId",
                 "description": "Deletes a transaction rule.",
@@ -2175,6 +2295,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2210,7 +2331,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transactionRules/:transactionRuleId",
                 "description": "Returns the details of a transaction rule.",
@@ -2223,6 +2345,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2258,7 +2381,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transactionRules/:transactionRuleId",
                 "description": "Updates a transaction rule.   * To update only the status of a transaction rule, send only the `status` parameter. All other parameters not provided in the request are left unchanged.  * When updating any other parameter, you need to send all existing resource parameters. If you omit a parameter in the request, that parameter is removed from the resource.",
@@ -2271,11 +2395,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2312,6 +2438,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -2329,11 +2456,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -2365,6 +2494,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        }
     ],

@@ -24,6 +24,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -49,35 +50,51 @@
                                         "query": [
                                             {
                                                 "key": "balancePlatform",
-                                                "value": "balancePlatform_example"
+                                                "value": "balancePlatform_example",
+                                                "description": "The unique identifier of the [balance platform](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/balancePlatforms/{id}__queryParam_id).  Required if you don't provide a `balanceAccountId` or `accountHolderId`.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "paymentInstrumentId",
-                                                "value": "paymentInstrumentId_example"
+                                                "value": "paymentInstrumentId_example",
+                                                "description": "The unique identifier of the [payment instrument](https://docs.adyen.com/api-explorer/balanceplatform/latest/get/paymentInstruments/_id_).  To use this parameter, you must also provide a `balanceAccountId`, `accountHolderId`, or `balancePlatform`.  The `paymentInstrumentId` must be related to the `balanceAccountId` or `accountHolderId` that you provide.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "accountHolderId",
-                                                "value": "accountHolderId_example"
+                                                "value": "accountHolderId_example",
+                                                "description": "The unique identifier of the [account holder](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/accountHolders/{id}__queryParam_id).  Required if you don't provide a `balanceAccountId` or `balancePlatform`.  If you provide a `balanceAccountId`, the `accountHolderId` must be related to the `balanceAccountId`.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "balanceAccountId",
-                                                "value": "balanceAccountId_example"
+                                                "value": "balanceAccountId_example",
+                                                "description": "The unique identifier of the [balance account](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/balanceAccounts/{id}__queryParam_id).  Required if you don't provide an `accountHolderId` or `balancePlatform`.  If you provide an `accountHolderId`, the `balanceAccountId` must be related to the `accountHolderId`.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "cursor",
-                                                "value": "cursor_example"
+                                                "value": "cursor_example",
+                                                "description": "The `cursor` returned in the links of the previous response.",
+                                                "disabled": true
                                             },
                                             {
                                                 "key": "createdSince",
-                                                "value": "2013-10-20T19:20:30+01:00"
+                                                "value": "2013-10-20T19:20:30+01:00",
+                                                "description": "Only include transactions that have been created on or after this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+                                                "disabled": false
                                             },
                                             {
                                                 "key": "createdUntil",
-                                                "value": "2013-10-20T19:20:30+01:00"
+                                                "value": "2013-10-20T19:20:30+01:00",
+                                                "description": "Only include transactions that have been created on or before this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+                                                "disabled": false
                                             },
                                             {
                                                 "key": "limit",
-                                                "value": "56"
+                                                "value": "56",
+                                                "description": "The number of items returned per page, maximum of 100 items. By default, the response returns 10 items per page.",
+                                                "disabled": true
                                             }
                                         ]
                                     },
@@ -85,7 +102,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transactions/:id",
                 "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Returns a transaction.",
@@ -98,6 +116,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -134,6 +153,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -151,16 +171,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "WWW-Authenticate",
                                             "value": "",
+                                            "description": "Header for authenticating through SCA",
                                             "disabled": true
                                         }
                                     ],
@@ -197,16 +220,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "WWW-Authenticate",
                                             "value": "",
+                                            "description": "Header for authenticating through SCA",
                                             "disabled": true
                                         }
                                     ],
@@ -243,16 +269,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "WWW-Authenticate",
                                             "value": "",
+                                            "description": "Header for authenticating through SCA",
                                             "disabled": true
                                         }
                                     ],
@@ -289,16 +318,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "WWW-Authenticate",
                                             "value": "",
+                                            "description": "Header for authenticating through SCA",
                                             "disabled": true
                                         }
                                     ],
@@ -335,16 +367,19 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "WWW-Authenticate",
                                             "value": "",
+                                            "description": "Header for authenticating through SCA",
                                             "disabled": true
                                         }
                                     ],
@@ -374,7 +409,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transfers/:transferId/returns",
                 "description": "Returns previously transferred funds without creating a new `transferId`.",
@@ -387,11 +423,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -429,6 +467,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -446,6 +485,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -471,7 +511,9 @@
                                         "query": [
                                             {
                                                 "key": "counterpartyAccountHolderId",
-                                                "value": "counterpartyAccountHolderId_example"
+                                                "value": "counterpartyAccountHolderId_example",
+                                                "description": "The counterparty account holder id.",
+                                                "disabled": true
                                             }
                                         ]
                                     },
@@ -479,7 +521,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/grants",
                 "description": "Requests the payout of the selected grant offer.",
@@ -492,11 +535,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -526,7 +571,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/grants/:id",
                 "description": "Returns the details of a capital account specified in the path.",
@@ -539,6 +585,7 @@
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -575,6 +622,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        }
     ],

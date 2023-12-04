@@ -24,11 +24,13 @@
                                         {
                                             "key": "Content-Type",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         },
                                         {
                                             "key": "Accept",
                                             "value": "application/json",
+                                            "description": "",
                                             "disabled": false
                                         }
                                     ],
@@ -59,6 +61,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        }
     ],

@@ -102,7 +102,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transactions/:id",
                 "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Returns a transaction.",
@@ -152,6 +153,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -407,7 +409,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/transfers/:id/returns",
                 "description": "Returns previously transferred funds without creating a new `transferId`.",
@@ -464,6 +467,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        },
 	        {
@@ -517,7 +521,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/grants",
                 "description": "Requests the payout of the selected grant offer.",
@@ -566,7 +571,8 @@
                                 }
                             }
                             ]
-                        },
+                        }
+,
 	                        {
     "name": "/grants/:id",
                 "description": "Returns the details of a capital account specified in the path.",
@@ -616,6 +622,7 @@
                             }
                             ]
                         }
+
 	                    ]
 	        }
     ],

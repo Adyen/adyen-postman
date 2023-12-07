@@ -744,57 +744,6 @@
                             }
                             ]
                         }
-,
-	                        {
-    "name": "/legalEntities/:id/confirmDataReview",
-                "description": "Confirms that your user has reviewed the data for the legal entity specified in the path. Call this endpoint to inform Adyen that your user reviewed and verified that the data is up-to-date. The endpoint returns the timestamp of when Adyen received the request.",
-                 "item": [
-                            {
-                                "name": "Confirm data review",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/legalEntities/:id/confirmDataReview",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "legalEntities",
-                                            ":id",
-                                            "confirmDataReview"
-                                        ],
-                                        "variable": [
-                                            {
-                                                "key": "id",
-                                                "value": "",
-                                                "description": "The unique identifier of the legal entity."
-                                            }
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Confirms that your user has reviewed the data for the legal entity specified in the path. Call this endpoint to inform Adyen that your user reviewed and verified that the data is up-to-date. The endpoint returns the timestamp of when Adyen received the request."
-                                }
-                            }
-                            ]
-                        }
 
 	                    ]
 	        },

@@ -750,7 +750,7 @@
                 "description": "Returns the verification errors for a legal entity and its supporting entities.",
                  "item": [
                             {
-                                "name": "Check a legal entity&#39;s verification errors",
+                                "name": "Check a legal entity's verification errors",
                                 "request": {
                                     "method": "POST",
                                     "header": [

@@ -9,7 +9,7 @@ This page contains the **Release Notes** of the following resources:
 
 ## Adyen APIs
 
-All Adyen APIs with documentation, variables and examples. See on [Postman](https://www.postman.com/adyendev/workspace/adyen-apis/overview).
+> All Adyen APIs with documentation, variables and examples. See on [Postman](https://www.postman.com/adyendev/workspace/adyen-apis/overview).
 
 ### Nov 2023
 - The path variables are defined using the Postman conventions, for example `/paymentLinks/:linkId`. This allows to set the value of the path parameter without editing the URL.  
@@ -21,14 +21,20 @@ All Adyen APIs with documentation, variables and examples. See on [Postman](http
 ### Feb 2023
 - First release: creation of the workspace and all Postman collections.
 
+---
+
 ## Adyen in-person payments
 
-Build a feature-rich point-of-sale integration with the Adyen in-person payments solution. See on [Postman](https://www.postman.com/adyendev/workspace/adyen-in-person-payments/overview).
+> Build a feature-rich point-of-sale integration with the Adyen in-person payments solution. See on [Postman].(https://www.postman.com/adyendev/workspace/adyen-in-person-payments/overview).
 
 ### Nov 2023
 - First release: creation of the workspace and the "Adyen Terminal API" collection.
 
+---
 ## Adyen Postman Flows
+> Design workflows with the Adyen APIs. See on [Postman](https://www.postman.com/adyendev?tab=flows).
 
 ### Dec 2023
-- First release: create Giving, Create webhook and Afp (Hosted) Onboarding flows. See on [Postman](https://www.postman.com/adyendev?tab=flows).
+- First release: create Giving, Create webhook and Afp (Hosted) Onboarding flows.
+
+

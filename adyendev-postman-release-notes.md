@@ -25,7 +25,7 @@ This page contains the **Release Notes** of the following resources:
 
 ## Adyen in-person payments
 
-> Build a feature-rich point-of-sale integration with the Adyen in-person payments solution. See on [Postman].(https://www.postman.com/adyendev/workspace/adyen-in-person-payments/overview).
+> Accept payments at the point of sale with our Terminal API and payment terminals. See on [Postman](https://www.postman.com/adyendev/workspace/adyen-in-person-payments/overview).
 
 ### Nov 2023
 - First release: creation of the workspace and the "Adyen Terminal API" collection.

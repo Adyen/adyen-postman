@@ -341,6 +341,11 @@
             "key": "X-API-Key",
             "value": "",
             "type": "string"
+        },
+        {
+            "key": "clientKey",
+            "value": "",
+            "type": "string"
         }
 	]
 }

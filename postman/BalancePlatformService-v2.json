@@ -10,6 +10,170 @@
 	},
 	"item": [
 	        {
+	            "name": "PIN functionality",
+	            "item": [
+	                        {
+    "name": "/pins/change",
+                "description": "Change Pin",
+                 "item": [
+                            {
+                                "name": "Change Pin",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"encryptedKey\": \"<string>\",\n \"encryptedPinBlock\": \"<string>\",\n \"paymentInstrumentId\": \"<string>\",\n \"token\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/pins/change",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "pins",
+                                            "change"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Change Pin"
+                                }
+                            }
+                            ]
+                        }
+,
+	                        {
+    "name": "/pins/publicKey",
+                "description": "Get RSA publicKey",
+                 "item": [
+                            {
+                                "name": "Get RSA publicKey",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/pins/publicKey",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "pins",
+                                            "publicKey"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "purpose",
+                                                "value": "purpose_example",
+                                                "description": "Purpose of publicKey.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "format",
+                                                "value": "format_example",
+                                                "description": "Format of publicKey.",
+                                                "disabled": true
+                                            }
+                                        ]
+                                    },
+                                    "description": "Get RSA publicKey"
+                                }
+                            }
+                            ]
+                        }
+,
+	                        {
+    "name": "/pins/reveal",
+                "description": "Reveal Pin",
+                 "item": [
+                            {
+                                "name": "Reveal Pin",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"encryptedKey\": \"<string>\",\n \"paymentInstrumentId\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/pins/reveal",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "pins",
+                                            "reveal"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Reveal Pin"
+                                }
+                            }
+                            ]
+                        }
+
+	                    ]
+	        },
+	        {
 	            "name": "Platform",
 	            "item": [
 	                        {
@@ -225,162 +389,6 @@
                                         ]
                                     },
                                     "description": "Returns the details of a single grant offer."
-                                }
-                            }
-                            ]
-                        }
-
-	                    ]
-	        },
-	        {
-	            "name": "Payment instrument groups",
-	            "item": [
-	                        {
-    "name": "/paymentInstrumentGroups",
-                "description": "Creates a payment instrument group to associate and group payment instrument resources together. You can apply a transaction rule to a payment instrument group.",
-                 "item": [
-                            {
-                                "name": "Create a payment instrument group",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"balancePlatform\" : \"{{YOUR_BALANCE_PLATFORM}}\",\n  \"txVariant\" : \"mc\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/paymentInstrumentGroups",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "paymentInstrumentGroups"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Creates a payment instrument group to associate and group payment instrument resources together. You can apply a transaction rule to a payment instrument group."
-                                }
-                            }
-                            ]
-                        }
-,
-	                        {
-    "name": "/paymentInstrumentGroups/:id",
-                "description": "Returns the details of a payment instrument group.",
-                 "item": [
-                            {
-                                "name": "Get a payment instrument group",
-                                "request": {
-                                    "method": "GET",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/paymentInstrumentGroups/:id",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "paymentInstrumentGroups",
-                                            ":id"
-                                        ],
-                                        "variable": [
-                                            {
-                                                "key": "id",
-                                                "value": "",
-                                                "description": "The unique identifier of the payment instrument group."
-                                            }
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns the details of a payment instrument group."
-                                }
-                            }
-                            ]
-                        }
-,
-	                        {
-    "name": "/paymentInstrumentGroups/:id/transactionRules",
-                "description": "Returns a list of all the transaction rules associated with a payment instrument group.",
-                 "item": [
-                            {
-                                "name": "Get all transaction rules for a payment instrument group",
-                                "request": {
-                                    "method": "GET",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/paymentInstrumentGroups/:id/transactionRules",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "paymentInstrumentGroups",
-                                            ":id",
-                                            "transactionRules"
-                                        ],
-                                        "variable": [
-                                            {
-                                                "key": "id",
-                                                "value": "",
-                                                "description": "The unique identifier of the payment instrument group."
-                                            }
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns a list of all the transaction rules associated with a payment instrument group."
                                 }
                             }
                             ]
@@ -1328,104 +1336,6 @@
 	                    ]
 	        },
 	        {
-	            "name": "Bank account validation",
-	            "item": [
-	                        {
-    "name": "/validateBankAccountIdentification",
-                "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments).",
-                 "item": [
-                            {
-                                "name": "Validate an IBAN",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"iban\",\n    \"iban\" : \"1001001234\"\n  }\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/validateBankAccountIdentification",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "validateBankAccountIdentification"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
-                                }
-                            },
-                            {
-                                "name": "Validate a US bank account",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"usLocal\",\n    \"accountNumber\" : \"12345JHDhjkf67890\",\n    \"accountType\" : \"checking\",\n    \"routingNumber\" : \"121000567\"\n  }\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/validateBankAccountIdentification",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "validateBankAccountIdentification"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
-                                }
-                            }
-                            ]
-                        }
-
-	                    ]
-	        },
-	        {
 	            "name": "Grant accounts",
 	            "item": [
 	                        {
@@ -2038,10 +1948,10 @@
 ,
 	                        {
     "name": "/balanceAccounts/:id/paymentInstruments",
-                "description": "Returns a paginated list of the payment instruments associated with a balance account.   To fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6`.",
+                "description": "Returns a paginated list of the payment instruments associated with a balance account.   To fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments which are in active status and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6&status=active`.",
                  "item": [
                             {
-                                "name": "Get all payment instruments for a balance account",
+                                "name": "Get payment instruments linked to a balance account",
                                 "request": {
                                     "method": "GET",
                                     "header": [
@@ -2090,10 +2000,16 @@
                                                 "value": "56",
                                                 "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
                                                 "disabled": true
+                                            },
+                                            {
+                                                "key": "status",
+                                                "value": "status_example",
+                                                "description": "The status of the payment instruments that you want to get. By default, the response includes payment instruments with any status.",
+                                                "disabled": true
                                             }
                                         ]
                                     },
-                                    "description": "Returns a paginated list of the payment instruments associated with a balance account.   To fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6`."
+                                    "description": "Returns a paginated list of the payment instruments associated with a balance account.   To fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments which are in active status and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6&status=active`."
                                 }
                             }
                             ]
@@ -2442,6 +2358,438 @@
 	                    ]
 	        },
 	        {
+	            "name": "Card orders",
+	            "item": [
+	                        {
+    "name": "/cardorders",
+                "description": "Returns a paginated list of card orders.",
+                 "item": [
+                            {
+                                "name": "Get a list of card orders",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/cardorders",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "cardorders"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "id",
+                                                "value": "id_example",
+                                                "description": "The unique identifier of the card order. ",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "cardManufacturingProfileId",
+                                                "value": "cardManufacturingProfileId_example",
+                                                "description": "The unique identifier of the card manufacturer profile.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "status",
+                                                "value": "status_example",
+                                                "description": "The status of the card order.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "txVariantCode",
+                                                "value": "txVariantCode_example",
+                                                "description": "The unique code of the card manufacturer profile.  Possible values: **mcmaestro**, **mc**, **visa**, **mcdebit**. ",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "createdSince",
+                                                "value": "2013-10-20T19:20:30+01:00",
+                                                "description": "Only include card orders that have been created on or after this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "createdUntil",
+                                                "value": "2013-10-20T19:20:30+01:00",
+                                                "description": "Only include card orders that have been created on or before this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "lockedSince",
+                                                "value": "2013-10-20T19:20:30+01:00",
+                                                "description": "Only include card orders that have been locked on or after this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "lockedUntil",
+                                                "value": "2013-10-20T19:20:30+01:00",
+                                                "description": "Only include card orders that have been locked on or before this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "serviceCenter",
+                                                "value": "serviceCenter_example",
+                                                "description": "The service center at which the card is issued. The value is case-sensitive. ",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "offset",
+                                                "value": "56",
+                                                "description": "Specifies the position of an element in a list of card orders. The response includes a list of card orders that starts at the specified offset.  **Default:** 0, which means that the response contains all the elements in the list of card orders.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "limit",
+                                                "value": "56",
+                                                "description": "The number of card orders returned per page. **Default:** 10.",
+                                                "disabled": true
+                                            }
+                                        ]
+                                    },
+                                    "description": "Returns a paginated list of card orders."
+                                }
+                            }
+                            ]
+                        }
+,
+	                        {
+    "name": "/cardorders/:id/items",
+                "description": "Returns the item list of a specific card order.",
+                 "item": [
+                            {
+                                "name": "Get card order items",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/cardorders/:id/items",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "cardorders",
+                                            ":id",
+                                            "items"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the card order."
+                                            }
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "offset",
+                                                "value": "56",
+                                                "description": "Specifies the position of an element in a list of card orders. The response includes a list of card order items that starts at the specified offset.  **Default:** 0, which means that the response contains all the elements in the list of card order items.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "limit",
+                                                "value": "56",
+                                                "description": "The number of card order items returned per page. **Default:** 10.",
+                                                "disabled": true
+                                            }
+                                        ]
+                                    },
+                                    "description": "Returns the item list of a specific card order."
+                                }
+                            }
+                            ]
+                        }
+
+	                    ]
+	        },
+	        {
+	            "name": "Payment instrument groups",
+	            "item": [
+	                        {
+    "name": "/paymentInstrumentGroups",
+                "description": "Creates a payment instrument group to associate and group payment instrument resources together. You can apply a transaction rule to a payment instrument group.",
+                 "item": [
+                            {
+                                "name": "Create a payment instrument group",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"balancePlatform\" : \"{{YOUR_BALANCE_PLATFORM}}\",\n  \"txVariant\" : \"mc\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentInstrumentGroups",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentInstrumentGroups"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Creates a payment instrument group to associate and group payment instrument resources together. You can apply a transaction rule to a payment instrument group."
+                                }
+                            }
+                            ]
+                        }
+,
+	                        {
+    "name": "/paymentInstrumentGroups/:id",
+                "description": "Returns the details of a payment instrument group.",
+                 "item": [
+                            {
+                                "name": "Get a payment instrument group",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentInstrumentGroups/:id",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentInstrumentGroups",
+                                            ":id"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the payment instrument group."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the details of a payment instrument group."
+                                }
+                            }
+                            ]
+                        }
+,
+	                        {
+    "name": "/paymentInstrumentGroups/:id/transactionRules",
+                "description": "Returns a list of all the transaction rules associated with a payment instrument group.",
+                 "item": [
+                            {
+                                "name": "Get all transaction rules for a payment instrument group",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentInstrumentGroups/:id/transactionRules",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentInstrumentGroups",
+                                            ":id",
+                                            "transactionRules"
+                                        ],
+                                        "variable": [
+                                            {
+                                                "key": "id",
+                                                "value": "",
+                                                "description": "The unique identifier of the payment instrument group."
+                                            }
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns a list of all the transaction rules associated with a payment instrument group."
+                                }
+                            }
+                            ]
+                        }
+
+	                    ]
+	        },
+	        {
+	            "name": "Bank account validation",
+	            "item": [
+	                        {
+    "name": "/validateBankAccountIdentification",
+                "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments).",
+                 "item": [
+                            {
+                                "name": "Validate an IBAN",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"iban\",\n    \"iban\" : \"1001001234\"\n  }\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/validateBankAccountIdentification",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "validateBankAccountIdentification"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
+                                }
+                            },
+                            {
+                                "name": "Validate a US bank account",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"usLocal\",\n    \"accountNumber\" : \"12345JHDhjkf67890\",\n    \"accountType\" : \"checking\",\n    \"routingNumber\" : \"121000567\"\n  }\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/validateBankAccountIdentification",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "validateBankAccountIdentification"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
+                                }
+                            }
+                            ]
+                        }
+
+	                    ]
+	        },
+	        {
 	            "name": "Transfer routes",
 	            "item": [
 	                        {
@@ -2521,6 +2869,11 @@
         },
         {
             "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "clientKey",
             "value": "",
             "type": "string"
         },

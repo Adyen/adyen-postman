@@ -1830,55 +1830,6 @@
                                 }
                             },
                             {
-                                "name": "Make a giropay payment",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Idempotency-Key",
-                                            "value": "",
-                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-                                            "disabled": true
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"giropay\"\n  },\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/payments",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "payments"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
-                                }
-                            },
-                            {
                                 "name": "Make a Google Pay payment",
                                 "request": {
                                     "method": "POST",
@@ -2101,55 +2052,6 @@
                                     "body": {
                                         "mode": "raw",
                                         "raw": "{\n  \"amount\" : {\n    \"currency\" : \"USD\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"scheme\",\n    \"storedPaymentMethodId\" : \"8316038796685850\"\n  },\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID_IOfW3subscription\",\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"shopperInteraction\" : \"ContAuth\",\n  \"recurringProcessingModel\" : \"Subscription\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/payments",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "payments"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
-                                }
-                            },
-                            {
-                                "name": "Make a Sofort payment",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Idempotency-Key",
-                                            "value": "",
-                                            "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-                                            "disabled": true
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"Your order number\",\n  \"paymentMethod\" : {\n    \"type\" : \"directEbanking\"\n  },\n  \"returnUrl\" : \"https://your-company.com/...\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

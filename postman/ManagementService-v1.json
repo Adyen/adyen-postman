@@ -4500,7 +4500,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n \"bcmc\": \"<string>\",\n \"cartesBancaires\": \"<string>\",\n \"countries\": \"<string>\",\n \"cup\": \"<string>\",\n \"currencies\": \"<string>\",\n \"diners\": \"<string>\",\n \"discover\": \"<string>\",\n \"eftpos_australia\": \"<string>\",\n \"enabled\": \"<string>\",\n \"girocard\": \"<string>\",\n \"ideal\": \"<string>\",\n \"interac_card\": \"<string>\",\n \"jcb\": \"<string>\",\n \"maestro\": \"<string>\",\n \"mc\": \"<string>\",\n \"storeIds\": \"<string>\",\n \"visa\": \"<string>\"\n}",
+                                        "raw": "{\n \"bcmc\": \"<string>\",\n \"cartesBancaires\": \"<string>\",\n \"countries\": \"<string>\",\n \"cup\": \"<string>\",\n \"currencies\": \"<string>\",\n \"customRoutingFlags\": \"<string>\",\n \"diners\": \"<string>\",\n \"discover\": \"<string>\",\n \"eftpos_australia\": \"<string>\",\n \"enabled\": \"<string>\",\n \"girocard\": \"<string>\",\n \"ideal\": \"<string>\",\n \"interac_card\": \"<string>\",\n \"jcb\": \"<string>\",\n \"maestro\": \"<string>\",\n \"mc\": \"<string>\",\n \"storeIds\": \"<string>\",\n \"visa\": \"<string>\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

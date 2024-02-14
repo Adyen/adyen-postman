@@ -467,7 +467,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"enableOneClick\" : true,\n  \"enableRecurring\" : true,\n  \"channel\" : \"Web\",\n  \"html\" : true,\n  \"origin\" : \"https://www.yourwebsite.com\",\n  \"returnUrl\" : \"https://www.yourshop.com/checkout/result\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"sdkVersion\" : \"1.7.0\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"enableOneClick\" : true,\n  \"enableRecurring\" : true,\n  \"channel\" : \"Web\",\n  \"origin\" : \"https://www.yourwebsite.com\",\n  \"returnUrl\" : \"https://www.yourshop.com/checkout/result\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"sdkVersion\" : \"1.7.0\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -614,7 +614,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"channel\" : \"Web\",\n  \"html\" : true,\n  \"origin\" : \"https://www.yourwebsite.com\",\n  \"returnUrl\" : \"https://www.yourshop.com/checkout/result\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"sdkVersion\" : \"1.9.5\"\n}",
+                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 17408\n  },\n  \"reference\" : \"Your order number\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"channel\" : \"Web\",\n  \"origin\" : \"https://www.yourwebsite.com\",\n  \"returnUrl\" : \"https://www.yourshop.com/checkout/result\",\n  \"countryCode\" : \"NL\",\n  \"shopperLocale\" : \"nl_NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"sdkVersion\" : \"1.9.5\"\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

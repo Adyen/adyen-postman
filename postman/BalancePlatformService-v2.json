@@ -10,170 +10,6 @@
 	},
 	"item": [
 	        {
-	            "name": "PIN functionality",
-	            "item": [
-	                        {
-    "name": "/pins/change",
-                "description": "Change Pin",
-                 "item": [
-                            {
-                                "name": "Change Pin",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n \"encryptedKey\": \"<string>\",\n \"encryptedPinBlock\": \"<string>\",\n \"paymentInstrumentId\": \"<string>\",\n \"token\": \"<string>\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/pins/change",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "pins",
-                                            "change"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Change Pin"
-                                }
-                            }
-                            ]
-                        }
-,
-	                        {
-    "name": "/pins/publicKey",
-                "description": "Get RSA publicKey",
-                 "item": [
-                            {
-                                "name": "Get RSA publicKey",
-                                "request": {
-                                    "method": "GET",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/pins/publicKey",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "pins",
-                                            "publicKey"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                            {
-                                                "key": "purpose",
-                                                "value": "purpose_example",
-                                                "description": "Purpose of publicKey.",
-                                                "disabled": true
-                                            },
-                                            {
-                                                "key": "format",
-                                                "value": "format_example",
-                                                "description": "Format of publicKey.",
-                                                "disabled": true
-                                            }
-                                        ]
-                                    },
-                                    "description": "Get RSA publicKey"
-                                }
-                            }
-                            ]
-                        }
-,
-	                        {
-    "name": "/pins/reveal",
-                "description": "Reveal Pin",
-                 "item": [
-                            {
-                                "name": "Reveal Pin",
-                                "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n \"encryptedKey\": \"<string>\",\n \"paymentInstrumentId\": \"<string>\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/pins/reveal",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "pins",
-                                            "reveal"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Reveal Pin"
-                                }
-                            }
-                            ]
-                        }
-
-	                    ]
-	        },
-	        {
 	            "name": "Platform",
 	            "item": [
 	                        {
@@ -1328,6 +1164,57 @@
                                         ]
                                     },
                                     "description": "Returns a list of transaction rules associated with a payment instrument."
+                                }
+                            }
+                            ]
+                        }
+,
+	                        {
+    "name": "/paymentInstruments/reveal",
+                "description": "Returns the encrypted data of a specified payment instrument. These data include:  - The primary account number (PAN) - The card verification code (CVC) - The expiry date  You can decrypt the data to reveal it in your user interface.  To make this request, your API credential must have the following role: * Bank Issuing PAN Reveal Webservice role",
+                 "item": [
+                            {
+                                "name": "Reveal the data of a payment instrument",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n \"encryptedKey\": \"<string>\",\n \"paymentInstrumentId\": \"<string>\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/paymentInstruments/reveal",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "paymentInstruments",
+                                            "reveal"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns the encrypted data of a specified payment instrument. These data include:  - The primary account number (PAN) - The card verification code (CVC) - The expiry date  You can decrypt the data to reveal it in your user interface.  To make this request, your API credential must have the following role: * Bank Issuing PAN Reveal Webservice role"
                                 }
                             }
                             ]
@@ -2782,6 +2669,169 @@
                                         ]
                                     },
                                     "description": "Validates bank account identification details. You can use this endpoint to validate bank account details before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers) or [create a transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments)."
+                                }
+                            }
+                            ]
+                        }
+
+	                    ]
+	        },
+	        {
+	            "name": "Manage card PIN",
+	            "item": [
+	                        {
+    "name": "/pins/change",
+                "description": "Changes the personal identification number (PIN) of a specified card.  To make this request, your API credential must have the following role: * Bank Issuing PIN Change Webservice role",
+                 "item": [
+                            {
+                                "name": "Request a PIN change",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"paymentInstrumentId\" : \"PI6789678967896789\",\n  \"encryptedKey\" : \"75989E8881284D10153ABACF022EEA09F5...\",\n  \"encryptedPinBlock\" : \"63E5060591EF65F48DD1D4FECD0FECD5\",\n  \"token\" : \"5555341244441115\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/pins/change",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "pins",
+                                            "change"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Changes the personal identification number (PIN) of a specified card.  To make this request, your API credential must have the following role: * Bank Issuing PIN Change Webservice role"
+                                }
+                            }
+                            ]
+                        }
+,
+	                        {
+    "name": "/pins/reveal",
+                "description": "Returns an encrypted PIN block that contains the PIN of a specified card. You can use the decrypted data to reveal the PIN in your user interface.  To make this request, your API credential must have the following role: * Bank Issuing PIN Reveal Webservice role",
+                 "item": [
+                            {
+                                "name": "Request a PIN block",
+                                "request": {
+                                    "method": "POST",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "{\n  \"paymentInstrumentId\" : \"PI3227C223222B5BPCMFXD2XG\",\n  \"encryptedKey\" : \"75989E8881284D10153ABACF022EEA09F5...\"\n}",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/pins/reveal",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "pins",
+                                            "reveal"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                        ]
+                                    },
+                                    "description": "Returns an encrypted PIN block that contains the PIN of a specified card. You can use the decrypted data to reveal the PIN in your user interface.  To make this request, your API credential must have the following role: * Bank Issuing PIN Reveal Webservice role"
+                                }
+                            }
+                            ]
+                        }
+,
+	                        {
+    "name": "/publicKey",
+                "description": "Get an [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) public key to encrypt or decrypt card data.   You need the RSA public key to generate the `encryptedKey` required to: - [Change a PIN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/pins/change). - [Reveal a PIN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/pins/reveal). - [Reveal a PAN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/paymentInstruments/reveal).",
+                 "item": [
+                            {
+                                "name": "Get an RSA public key",
+                                "request": {
+                                    "method": "GET",
+                                    "header": [
+                                        {
+                                            "key": "Accept",
+                                            "value": "application/json",
+                                            "description": "",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "body": {
+                                        "mode": "raw",
+                                        "raw": "",
+                                        "options": {
+                                            "raw": {
+                                                "language": "json"
+                                            }
+                                        }
+                                    },
+                                    "url": {
+                                        "raw": "{{baseUrl}}/publicKey",
+                                        "host": [
+                                            "{{baseUrl}}"
+                                        ],
+                                        "path": [
+                                            "publicKey"
+                                        ],
+                                        "variable": [
+                                        ],
+                                        "query": [
+                                            {
+                                                "key": "purpose",
+                                                "value": "purpose_example",
+                                                "description": "The purpose of the public key.  Possible values: **pinChange**, **pinReveal**, **panReveal**.  Default value: **pinReveal**.",
+                                                "disabled": true
+                                            },
+                                            {
+                                                "key": "format",
+                                                "value": "format_example",
+                                                "description": "The encoding format of public key.  Possible values: **jwk**, **pem**.  Default value: **pem**.",
+                                                "disabled": true
+                                            }
+                                        ]
+                                    },
+                                    "description": "Get an [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) public key to encrypt or decrypt card data.   You need the RSA public key to generate the `encryptedKey` required to: - [Change a PIN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/pins/change). - [Reveal a PIN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/pins/reveal). - [Reveal a PAN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/paymentInstruments/reveal)."
                                 }
                             }
                             ]

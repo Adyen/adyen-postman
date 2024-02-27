@@ -3427,7 +3427,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"shippingLocation\" : \"S2-7973536B20662642215526704F302044452F714622375D476169\",\n  \"items\" : [ {\n    \"id\" : \"TBOX-V400m-684-EU\",\n    \"name\" : \"V400m Package\",\n    \"quantity\" : 1\n  }, {\n    \"id\" : \"PART-175746-EU\",\n    \"name\" : \"Adyen Test Card\",\n    \"quantity\" : 1\n  }, {\n    \"id\" : \"PART-620222-EU\",\n    \"name\" : \"Receipt Roll\",\n    \"quantity\" : 5\n  } ]\n}",
+                                        "raw": "{\n  \"items\" : [ {\n    \"id\" : \"TBOX-V400m-684-EU\",\n    \"name\" : \"V400m Package\",\n    \"quantity\" : 1\n  }, {\n    \"id\" : \"PART-175746-EU\",\n    \"name\" : \"Adyen Test Card\",\n    \"quantity\" : 1\n  }, {\n    \"id\" : \"PART-620222-EU\",\n    \"name\" : \"Receipt Roll\",\n    \"quantity\" : 5\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -3942,7 +3942,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"name\" : {\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Smith\"\n  },\n  \"username\" : \"johnsmith\",\n  \"email\" : \"john.smith@example.com\",\n  \"timeZoneCode\" : \"Europe/Amsterdam\",\n  \"roles\" : [ \"Merchant standard role\" ],\n  \"associatedMerchantAccounts\" : [ \"{{YOUR_MERCHANT_ACCOUNT}}\" ]\n}",
+                                        "raw": "{\n  \"name\" : {\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Smith\"\n  },\n  \"username\" : \"johnsmith\",\n  \"email\" : \"john.smith@example.com\",\n  \"timeZoneCode\" : \"Europe/Amsterdam\",\n  \"roles\" : [ \"Merchant standard role\" ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"
@@ -7635,7 +7635,7 @@
                                     ],
                                     "body": {
                                         "mode": "raw",
-                                        "raw": "{\n  \"shippingLocation\" : \"S2-73536B20665526704F30792642212044452F714622375D477270\",\n  \"items\" : [ {\n    \"id\" : \"TBOX-V400m-684-EU\",\n    \"name\" : \"V400m Package\",\n    \"quantity\" : 1\n  }, {\n    \"id\" : \"PART-287001-EU\",\n    \"name\" : \"Bluetooth Charging Base - V400m\",\n    \"quantity\" : 2\n  }, {\n    \"id\" : \"PART-620222-EU\",\n    \"name\" : \"Receipt Roll\",\n    \"quantity\" : 20\n  } ]\n}",
+                                        "raw": "{\n  \"items\" : [ {\n    \"id\" : \"TBOX-V400m-684-EU\",\n    \"name\" : \"V400m Package\",\n    \"quantity\" : 1\n  }, {\n    \"id\" : \"PART-287001-EU\",\n    \"name\" : \"Bluetooth Charging Base - V400m\",\n    \"quantity\" : 2\n  }, {\n    \"id\" : \"PART-620222-EU\",\n    \"name\" : \"Receipt Roll\",\n    \"quantity\" : 20\n  } ]\n}",
                                         "options": {
                                             "raw": {
                                                 "language": "json"

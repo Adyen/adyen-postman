@@ -1265,6 +1265,12 @@
                                             }
                                         ],
                                         "query": [
+                                            {
+                                                "key": "skipContent",
+                                                "value": "true",
+                                                "description": "Do not load document content while fetching the document.",
+                                                "disabled": true
+                                            }
                                         ]
                                     },
                                     "description": "Returns a document."

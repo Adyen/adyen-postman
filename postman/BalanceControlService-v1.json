@@ -19,49 +19,101 @@
                             {
                                 "name": "Transfer balances between merchant accounts",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"value\" : 50000,\n    \"currency\" : \"EUR\"\n  },\n  \"description\" : \"Your description for the transfer\",\n  \"fromMerchant\" : \"MerchantAccount_NL\",\n  \"toMerchant\" : \"MerchantAccount_DE\",\n  \"type\" : \"debit\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceTransfer",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceTransfer"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Starts a balance transfer request between merchant accounts. The following conditions must be met before you can successfully transfer balances:  * The source and destination merchant accounts must be under the same company account and legal entity.  * The source merchant account must have sufficient funds.  * The source and destination merchant accounts must have at least one common processing currency.  When sending multiple API requests with the same source and destination merchant accounts, send the requests sequentially and *not* in parallel. Some requests may not be processed if the requests are sent in parallel. "
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"amount\" : {\n    \"value\" : 50000,\n    \"currency\" : \"EUR\"\n  },\n  \"createdAt\" : \"2022-01-24T14:59:11+01:00\",\n  \"description\" : \"Your description for the transfer\",\n  \"fromMerchant\" : \"MerchantAccount_NL\",\n  \"toMerchant\" : \"MerchantAccount_DE\",\n  \"type\" : \"debit\",\n  \"reference\" : \"Unique reference for the transfer\",\n  \"pspReference\" : \"8816080397613514\",\n  \"status\" : \"transferred\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"value\" : 50000,\n    \"currency\" : \"EUR\"\n  },\n  \"description\" : \"Your description for the transfer\",\n  \"fromMerchant\" : \"MerchantAccount_NL\",\n  \"toMerchant\" : \"MerchantAccount_DE\",\n  \"type\" : \"debit\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceTransfer",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceTransfer"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Starts a balance transfer request between merchant accounts. The following conditions must be met before you can successfully transfer balances:  * The source and destination merchant accounts must be under the same company account and legal entity.  * The source merchant account must have sufficient funds.  * The source and destination merchant accounts must have at least one common processing currency.  When sending multiple API requests with the same source and destination merchant accounts, send the requests sequentially and *not* in parallel. Some requests may not be processed if the requests are sent in parallel. "
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"value\" : 50000,\n    \"currency\" : \"EUR\"\n  },\n  \"description\" : \"Your description for the transfer\",\n  \"fromMerchant\" : \"MerchantAccount_NL\",\n  \"toMerchant\" : \"MerchantAccount_DE\",\n  \"type\" : \"debit\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/balanceTransfer",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "balanceTransfer"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Starts a balance transfer request between merchant accounts. The following conditions must be met before you can successfully transfer balances:  * The source and destination merchant accounts must be under the same company account and legal entity.  * The source merchant account must have sufficient funds.  * The source and destination merchant accounts must have at least one common processing currency.  When sending multiple API requests with the same source and destination merchant accounts, send the requests sequentially and *not* in parallel. Some requests may not be processed if the requests are sent in parallel. "
-                                }
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        }
     ],

@@ -19,135 +19,293 @@
                             {
                                 "name": "Assign a terminal to the company inventory",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/assignTerminals",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "assignTerminals"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"results\" : {\n    \"P400Plus-275479597\" : \"RemoveConfigScheduled\"\n  }\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/assignTerminals",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "assignTerminals"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/assignTerminals",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "assignTerminals"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
-                                }
+                                ]
                             },
                             {
                                 "name": "Assign a terminal to the inventory of a merchant account",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantInventory\" : true,\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/assignTerminals",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "assignTerminals"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"results\" : {\n    \"P400Plus-275479597\" : \"RemoveConfigScheduled\"\n  }\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantInventory\" : true,\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/assignTerminals",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "assignTerminals"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantInventory\" : true,\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/assignTerminals",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "assignTerminals"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
-                                }
+                                ]
                             },
                             {
                                 "name": "Assign a terminal to a store",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/assignTerminals",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "assignTerminals"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"results\" : {\n    \"P400Plus-275479597\" : \"RemoveConfigScheduled\"\n  }\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/assignTerminals",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "assignTerminals"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/assignTerminals",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "assignTerminals"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
-                                }
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/findTerminal",
                 "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to.",
@@ -155,49 +313,101 @@
                             {
                                 "name": "Find where a terminal is assigned to",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/findTerminal",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "findTerminal"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n  \"merchantInventory\" : false,\n  \"store\" : \"YOUR_STORE\",\n  \"terminal\" : \"M400-401972715\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/findTerminal",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "findTerminal"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/findTerminal",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "findTerminal"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to."
-                                }
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/getStoresUnderAccount",
                 "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store.",
@@ -205,92 +415,197 @@
                             {
                                 "name": "Get all the stores under a company",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getStoresUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getStoresUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"stores\" : [ {\n    \"store\" : \"YOUR_STORE\",\n    \"description\" : \"YOUR_STORE\",\n    \"address\" : {\n      \"city\" : \"The City\",\n      \"countryCode\" : \"NL\",\n      \"postalCode\" : \"1234\",\n      \"streetAddress\" : \"The Street\"\n    },\n    \"status\" : \"Active\",\n    \"merchantAccountCode\" : \"YOUR_MERCHANT_ACCOUNT\"\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getStoresUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getStoresUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/getStoresUnderAccount",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "getStoresUnderAccount"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
-                                }
+                                ]
                             },
                             {
                                 "name": "Get all the stores under a merchant account",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getStoresUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getStoresUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"stores\" : [ {\n    \"store\" : \"YOUR_STORE\",\n    \"description\" : \"YOUR_STORE\",\n    \"address\" : {\n      \"city\" : \"The City\",\n      \"countryCode\" : \"NL\",\n      \"postalCode\" : \"1234\",\n      \"streetAddress\" : \"The Street\"\n    },\n    \"status\" : \"Active\",\n    \"merchantAccountCode\" : \"YOUR_MERCHANT_ACCOUNT\"\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getStoresUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getStoresUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/getStoresUnderAccount",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "getStoresUnderAccount"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
-                                }
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/getTerminalDetails",
                 "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report.",
@@ -298,49 +613,101 @@
                             {
                                 "name": "Get information about a specific terminal",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getTerminalDetails",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getTerminalDetails"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n  \"merchantInventory\" : false,\n  \"store\" : \"YOUR_STORE\",\n  \"terminal\" : \"M400-401972715\",\n  \"deviceModel\" : \"M400\",\n  \"serialNumber\" : \"401-972-715\",\n  \"permanentTerminalId\" : \"88912016\",\n  \"terminalStatus\" : \"SwitchedOff\",\n  \"firmwareVersion\" : \"Verifone_VOS 1.57.6\",\n  \"country\" : \"NETHERLANDS\",\n  \"storeDetails\" : {\n    \"store\" : \"YOUR_STORE\",\n    \"description\" : \"TestStore\",\n    \"address\" : {\n      \"city\" : \"The City\",\n      \"countryCode\" : \"NL\",\n      \"postalCode\" : \"1234\",\n      \"streetAddress\" : \"The Street\"\n    }\n  },\n  \"ethernetMac\" : \"60:c7:98:5a:69:cd\",\n  \"ethernetIp\" : \"192.168.2.11\",\n  \"wifiMac\" : \"c4:ac:59:47:f3:71\",\n  \"wifiIp\" : \"192.168.2.12\",\n  \"dhcpEnabled\" : false\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getTerminalDetails",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getTerminalDetails"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/getTerminalDetails",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "getTerminalDetails"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report."
-                                }
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/getTerminalsUnderAccount",
                 "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded).",
@@ -348,135 +715,293 @@
                             {
                                 "name": "Get all the terminals under a company account",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getTerminalsUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getTerminalsUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccounts\" : [ {\n    \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n    \"inStoreTerminals\" : [ \"P400Plus-275479597\" ],\n    \"stores\" : [ {\n      \"store\" : \"YOUR_STORE\",\n      \"inStoreTerminals\" : [ \"M400-401972715\" ]\n    } ]\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getTerminalsUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getTerminalsUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/getTerminalsUnderAccount",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "getTerminalsUnderAccount"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
-                                }
+                                ]
                             },
                             {
                                 "name": "Get all the terminals under a merchant account",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getTerminalsUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getTerminalsUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccounts\" : [ {\n    \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n    \"inStoreTerminals\" : [ \"P400Plus-275479597\" ],\n    \"stores\" : [ {\n      \"store\" : \"YOUR_STORE\",\n      \"inStoreTerminals\" : [ \"M400-401972715\" ]\n    } ]\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getTerminalsUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getTerminalsUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/getTerminalsUnderAccount",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "getTerminalsUnderAccount"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
-                                }
+                                ]
                             },
                             {
                                 "name": "Get all the terminals assigned to a store",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getTerminalsUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getTerminalsUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccounts\" : [ {\n    \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n    \"stores\" : [ {\n      \"store\" : \"YOUR_STORE\",\n      \"inStoreTerminals\" : [ \"M400-401972715\" ]\n    } ]\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/getTerminalsUnderAccount",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "getTerminalsUnderAccount"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/getTerminalsUnderAccount",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "getTerminalsUnderAccount"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
-                                }
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        }
     ],

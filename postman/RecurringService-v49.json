@@ -19,49 +19,50 @@
                             {
                                 "name": "Create new permits linked to a recurring contract.",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n \"merchantAccount\": \"<string>\",\n \"permits\": \"<string>\",\n \"recurringDetailReference\": \"<string>\",\n \"shopperReference\": \"<string>\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/createPermit",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "createPermit"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Create permits for a recurring contract, including support for defining restrictions."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantAccount\": \"<string>\",\n \"permits\": \"<string>\",\n \"recurringDetailReference\": \"<string>\",\n \"shopperReference\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/createPermit",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "createPermit"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Create permits for a recurring contract, including support for defining restrictions."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/disable",
                 "description": "Disables stored payment details to stop charging a shopper with this particular recurring detail ID.  For more information, refer to [Disable stored details](https://docs.adyen.com/classic-integration/recurring-payments/disable-stored-details/).",
@@ -69,49 +70,50 @@
                             {
                                 "name": "Disable a recurring contract",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"recurringDetailReference\" : \"8314442372419167\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/disable",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "disable"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Disables stored payment details to stop charging a shopper with this particular recurring detail ID.  For more information, refer to [Disable stored details](https://docs.adyen.com/classic-integration/recurring-payments/disable-stored-details/)."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"recurringDetailReference\" : \"8314442372419167\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/disable",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "disable"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Disables stored payment details to stop charging a shopper with this particular recurring detail ID.  For more information, refer to [Disable stored details](https://docs.adyen.com/classic-integration/recurring-payments/disable-stored-details/)."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/listRecurringDetails",
                 "description": "Lists the stored payment details for a shopper, if there are any available. The recurring detail ID can be used with a regular authorisation request to charge the shopper. A summary of the payment detail is returned for presentation to the shopper.  For more information, refer to [Retrieve stored details](https://docs.adyen.com/classic-integration/recurring-payments/retrieve-stored-details/).",
@@ -119,49 +121,50 @@
                             {
                                 "name": "List recurring details of the specified contract value",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"recurring\" : {\n    \"contract\" : \"RECURRING\"\n  },\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/listRecurringDetails",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "listRecurringDetails"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Lists the stored payment details for a shopper, if there are any available. The recurring detail ID can be used with a regular authorisation request to charge the shopper. A summary of the payment detail is returned for presentation to the shopper.  For more information, refer to [Retrieve stored details](https://docs.adyen.com/classic-integration/recurring-payments/retrieve-stored-details/)."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"recurring\" : {\n    \"contract\" : \"RECURRING\"\n  },\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/listRecurringDetails",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "listRecurringDetails"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Lists the stored payment details for a shopper, if there are any available. The recurring detail ID can be used with a regular authorisation request to charge the shopper. A summary of the payment detail is returned for presentation to the shopper.  For more information, refer to [Retrieve stored details](https://docs.adyen.com/classic-integration/recurring-payments/retrieve-stored-details/)."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/notifyShopper",
                 "description": "Sends a request to the issuer so they can inform the shopper about the upcoming recurring payment. This endpoint is used only for local acquiring in India. For more information, refer to [Recurring card payments in India](https://docs.adyen.com/payment-methods/cards/cards-recurring-india).",
@@ -169,49 +172,101 @@
                             {
                                 "name": "Request issuer to notify shopper of upcoming recurring payment",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"storedPaymentMethodId\" : \"8415995487234100\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"amount\" : {\n    \"currency\" : \"INR\",\n    \"value\" : 1000\n  },\n  \"billingDate\" : \"2021-03-16\",\n  \"reference\" : \"Example reference\",\n  \"displayedReference\" : \"exampleDisplayedReference\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/notifyShopper",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "notifyShopper"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends a request to the issuer so they can inform the shopper about the upcoming recurring payment. This endpoint is used only for local acquiring in India. For more information, refer to [Recurring card payments in India](https://docs.adyen.com/payment-methods/cards/cards-recurring-india)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"message\" : \"Request Processed Successfully\",\n  \"resultCode\" : \"Success\",\n  \"shopperNotificationReference\" : \"9915003646742627\",\n  \"storedPaymentMethodId\" : \"8415995487234100\",\n  \"pspReference\" : \"M5N7TQ4TG5PFWR50\",\n  \"reference\" : \"Example reference\",\n  \"displayedReference\" : \"exampleDisplayedReference\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"storedPaymentMethodId\" : \"8415995487234100\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"amount\" : {\n    \"currency\" : \"INR\",\n    \"value\" : 1000\n  },\n  \"billingDate\" : \"2021-03-16\",\n  \"reference\" : \"Example reference\",\n  \"displayedReference\" : \"exampleDisplayedReference\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/notifyShopper",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "notifyShopper"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends a request to the issuer so they can inform the shopper about the upcoming recurring payment. This endpoint is used only for local acquiring in India. For more information, refer to [Recurring card payments in India](https://docs.adyen.com/payment-methods/cards/cards-recurring-india)."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"storedPaymentMethodId\" : \"8415995487234100\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"amount\" : {\n    \"currency\" : \"INR\",\n    \"value\" : 1000\n  },\n  \"billingDate\" : \"2021-03-16\",\n  \"reference\" : \"Example reference\",\n  \"displayedReference\" : \"exampleDisplayedReference\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/notifyShopper",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "notifyShopper"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Sends a request to the issuer so they can inform the shopper about the upcoming recurring payment. This endpoint is used only for local acquiring in India. For more information, refer to [Recurring card payments in India](https://docs.adyen.com/payment-methods/cards/cards-recurring-india)."
-                                }
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/scheduleAccountUpdater",
                 "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory.",
@@ -219,92 +274,95 @@
                             {
                                 "name": "Schedule AccountUpdater with card data",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"{{$guid}}\",\n  \"card\" : {\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"Adyen Test\",\n    \"number\" : \"4111111111111111\"\n  }\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/scheduleAccountUpdater",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "scheduleAccountUpdater"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"{{$guid}}\",\n  \"card\" : {\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"Adyen Test\",\n    \"number\" : \"4111111111111111\"\n  }\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scheduleAccountUpdater",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scheduleAccountUpdater"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
+}
+                                ,"response": [
+                                ]
                             },
                             {
                                 "name": "Schedule AccountUpdater with token data",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"{{$guid}}\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"selectedRecurringDetailReference\" : \"8814232895168272\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/scheduleAccountUpdater",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "scheduleAccountUpdater"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"{{$guid}}\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"selectedRecurringDetailReference\" : \"8814232895168272\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scheduleAccountUpdater",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scheduleAccountUpdater"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        }
     ],

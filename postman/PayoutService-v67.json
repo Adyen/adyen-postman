@@ -19,49 +19,101 @@
                             {
                                 "name": "Store payout details",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"bank\" : {\n    \"bankName\" : \"AbnAmro\",\n    \"bic\" : \"ABNANL2A\",\n    \"countryCode\" : \"NL\",\n    \"iban\" : \"NL32ABNA0515071439\",\n    \"ownerName\" : \"Adyen\",\n    \"bankCity\" : \"Amsterdam\",\n    \"taxId\" : \"bankTaxId\"\n  },\n  \"shopperEmail\" : \"shopper@email.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\",\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"17\",\n    \"street\" : \"Teststreet 1\",\n    \"city\" : \"Amsterdam\",\n    \"stateOrProvince\" : \"NY\",\n    \"country\" : \"US\",\n    \"postalCode\" : \"12345\"\n  }\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/storeDetail",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "storeDetail"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Stores payment details under the `PAYOUT` recurring contract. These payment details can be used later to submit a payout via the `/submitThirdParty` call."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"pspReference\" : \"991617894326362D\",\n  \"recurringDetailReference\" : \"9916178936754752\",\n  \"resultCode\" : \"Success\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"bank\" : {\n    \"bankName\" : \"AbnAmro\",\n    \"bic\" : \"ABNANL2A\",\n    \"countryCode\" : \"NL\",\n    \"iban\" : \"NL32ABNA0515071439\",\n    \"ownerName\" : \"Adyen\",\n    \"bankCity\" : \"Amsterdam\",\n    \"taxId\" : \"bankTaxId\"\n  },\n  \"shopperEmail\" : \"shopper@email.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\",\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"17\",\n    \"street\" : \"Teststreet 1\",\n    \"city\" : \"Amsterdam\",\n    \"stateOrProvince\" : \"NY\",\n    \"country\" : \"US\",\n    \"postalCode\" : \"12345\"\n  }\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/storeDetail",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "storeDetail"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Stores payment details under the `PAYOUT` recurring contract. These payment details can be used later to submit a payout via the `/submitThirdParty` call."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"bank\" : {\n    \"bankName\" : \"AbnAmro\",\n    \"bic\" : \"ABNANL2A\",\n    \"countryCode\" : \"NL\",\n    \"iban\" : \"NL32ABNA0515071439\",\n    \"ownerName\" : \"Adyen\",\n    \"bankCity\" : \"Amsterdam\",\n    \"taxId\" : \"bankTaxId\"\n  },\n  \"shopperEmail\" : \"shopper@email.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\",\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"17\",\n    \"street\" : \"Teststreet 1\",\n    \"city\" : \"Amsterdam\",\n    \"stateOrProvince\" : \"NY\",\n    \"country\" : \"US\",\n    \"postalCode\" : \"12345\"\n  }\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/storeDetail",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "storeDetail"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Stores payment details under the `PAYOUT` recurring contract. These payment details can be used later to submit a payout via the `/submitThirdParty` call."
-                                }
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/storeDetailAndSubmitThirdParty",
                 "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls.",
@@ -69,221 +121,230 @@
                             {
                                 "name": "Submit a payout and stores details",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"amount\" : {\n    \"value\" : 2000,\n    \"currency\" : \"EUR\"\n  },\n  \"bank\" : {\n    \"bankName\" : \"Commerzbank\",\n    \"iban\" : \"DE87123456781234567890\",\n    \"countryCode\" : \"DE\",\n    \"ownerName\" : \"Simon Hopper\"\n  },\n  \"reference\" : \"Your Reference\",\n  \"shopperEmail\" : \"s.hopper@test.com\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "storeDetailAndSubmitThirdParty"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"amount\" : {\n    \"value\" : 2000,\n    \"currency\" : \"EUR\"\n  },\n  \"bank\" : {\n    \"bankName\" : \"Commerzbank\",\n    \"iban\" : \"DE87123456781234567890\",\n    \"countryCode\" : \"DE\",\n    \"ownerName\" : \"Simon Hopper\"\n  },\n  \"reference\" : \"Your Reference\",\n  \"shopperEmail\" : \"s.hopper@test.com\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "storeDetailAndSubmitThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
+}
+                                ,"response": [
+                                ]
                             },
                             {
                                 "name": "Submit a payout to Neteller",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 100\n  },\n  \"selectedBrand\" : \"neteller\",\n  \"additionalData\" : {\n    \"tokenDataType\" : \"Neteller\",\n    \"account\" : \"myNetellerAccount\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "storeDetailAndSubmitThirdParty"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 100\n  },\n  \"selectedBrand\" : \"neteller\",\n  \"additionalData\" : {\n    \"tokenDataType\" : \"Neteller\",\n    \"account\" : \"myNetellerAccount\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "storeDetailAndSubmitThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
+}
+                                ,"response": [
+                                ]
                             },
                             {
                                 "name": "Submit a payout to PayPal",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1750\n  },\n  \"selectedBrand\" : \"paypal\",\n  \"additionalData\" : {\n    \"tokenDataType\" : \"PayPal\",\n    \"emailId\" : \"EmailUsedForPayPalAccount@example.com\",\n    \"paypal.payerId\" : \"AK5HCWWRUV2KL\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "storeDetailAndSubmitThirdParty"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1750\n  },\n  \"selectedBrand\" : \"paypal\",\n  \"additionalData\" : {\n    \"tokenDataType\" : \"PayPal\",\n    \"emailId\" : \"EmailUsedForPayPalAccount@example.com\",\n    \"paypal.payerId\" : \"AK5HCWWRUV2KL\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "storeDetailAndSubmitThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
+}
+                                ,"response": [
+                                ]
                             },
                             {
                                 "name": "Submit a payout to Paysafecard",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"selectedBrand\" : \"paysafecard\",\n  \"additionalData\" : {\n    \"emailId\" : \"EmailUsedForPaysafecardAccount@example.com\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "storeDetailAndSubmitThirdParty"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"selectedBrand\" : \"paysafecard\",\n  \"additionalData\" : {\n    \"emailId\" : \"EmailUsedForPaysafecardAccount@example.com\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "storeDetailAndSubmitThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
+}
+                                ,"response": [
+                                ]
                             },
                             {
                                 "name": "Submit a payout to Skrill",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 100\n  },\n  \"selectedBrand\" : \"moneybookers\",\n  \"additionalData\" : {\n    \"tokenDataType\" : \"MoneyBookers\",\n    \"email\" : \"name@adyen.com\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "storeDetailAndSubmitThirdParty"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 100\n  },\n  \"selectedBrand\" : \"moneybookers\",\n  \"additionalData\" : {\n    \"tokenDataType\" : \"MoneyBookers\",\n    \"email\" : \"name@adyen.com\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/storeDetailAndSubmitThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "storeDetailAndSubmitThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Submits a payout and stores its details for subsequent payouts.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/submitThirdParty",
                 "description": "Submits a payout using the previously stored payment details. To store payment details, use the `/storeDetail` API call.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls.",
@@ -291,49 +352,50 @@
                             {
                                 "name": "Submit a payout",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"PayoutPayment-0001\",\n  \"shopperEmail\" : \"shopper@email.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\",\n  \"selectedRecurringDetailReference\" : \"LATEST\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/submitThirdParty",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "submitThirdParty"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Submits a payout using the previously stored payment details. To store payment details, use the `/storeDetail` API call.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"PayoutPayment-0001\",\n  \"shopperEmail\" : \"shopper@email.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\",\n  \"selectedRecurringDetailReference\" : \"LATEST\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/submitThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "submitThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Submits a payout using the previously stored payment details. To store payment details, use the `/storeDetail` API call.  The submitted payout must be confirmed or declined either by a reviewer or via `/confirmThirdParty` or `/declineThirdParty` calls."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        },
 	        {
@@ -346,92 +408,95 @@
                             {
                                 "name": "Instant card payout (B2C)",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"value\" : 2500,\n    \"currency\" : \"USD\"\n  },\n  \"card\" : {\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"121\",\n    \"street\" : \"Brannan Street\",\n    \"city\" : \"Beverly Hills\",\n    \"postalCode\" : \"90210\",\n    \"stateOrProvince\" : \"CA\",\n    \"country\" : \"US\"\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"P9999999999999999\",\n  \"shopperName\" : {\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Smith\"\n  },\n  \"nationality\" : \"NL\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/payout",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "payout"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "With this call, you can pay out to your customers, and funds will be made available within 30 minutes on the cardholder's bank account (this is dependent on whether the issuer supports this functionality). Instant card payouts are only supported for Visa and Mastercard cards."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"value\" : 2500,\n    \"currency\" : \"USD\"\n  },\n  \"card\" : {\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"121\",\n    \"street\" : \"Brannan Street\",\n    \"city\" : \"Beverly Hills\",\n    \"postalCode\" : \"90210\",\n    \"stateOrProvince\" : \"CA\",\n    \"country\" : \"US\"\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"P9999999999999999\",\n  \"shopperName\" : {\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Smith\"\n  },\n  \"nationality\" : \"NL\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payout",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payout"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "With this call, you can pay out to your customers, and funds will be made available within 30 minutes on the cardholder's bank account (this is dependent on whether the issuer supports this functionality). Instant card payouts are only supported for Visa and Mastercard cards."
+}
+                                ,"response": [
+                                ]
                             },
                             {
                                 "name": "Instant card payout (P2P)",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"amount\" : {\n    \"value\" : 2500,\n    \"currency\" : \"USD\"\n  },\n  \"card\" : {\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"121\",\n    \"street\" : \"Brannan Street\",\n    \"city\" : \"Beverly Hills\",\n    \"postalCode\" : \"90210\",\n    \"stateOrProvince\" : \"CA\",\n    \"country\" : \"US\"\n  },\n  \"fundSource\" : {\n    \"additionalData\" : {\n      \"fundingSource\" : \"DEBIT\"\n    },\n    \"billingAddress\" : {\n      \"houseNumberOrName\" : \"121\",\n      \"street\" : \"Brannan Street\",\n      \"city\" : \"Beverly Hills\",\n      \"postalCode\" : \"90210\",\n      \"stateOrProvince\" : \"CA\",\n      \"country\" : \"US\"\n    },\n    \"card\" : {\n      \"expiryMonth\" : \"03\",\n      \"expiryYear\" : \"2030\",\n      \"holderName\" : \"Payer Name\",\n      \"number\" : \"4400000000000008\"\n    },\n    \"shopperName\" : {\n      \"firstName\" : \"Payer\",\n      \"lastName\" : \"Name\"\n    }\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"P9999999999999999\",\n  \"shopperName\" : {\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Smith\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"nationality\" : \"NL\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/payout",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "payout"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "With this call, you can pay out to your customers, and funds will be made available within 30 minutes on the cardholder's bank account (this is dependent on whether the issuer supports this functionality). Instant card payouts are only supported for Visa and Mastercard cards."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"value\" : 2500,\n    \"currency\" : \"USD\"\n  },\n  \"card\" : {\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"121\",\n    \"street\" : \"Brannan Street\",\n    \"city\" : \"Beverly Hills\",\n    \"postalCode\" : \"90210\",\n    \"stateOrProvince\" : \"CA\",\n    \"country\" : \"US\"\n  },\n  \"fundSource\" : {\n    \"additionalData\" : {\n      \"fundingSource\" : \"DEBIT\"\n    },\n    \"billingAddress\" : {\n      \"houseNumberOrName\" : \"121\",\n      \"street\" : \"Brannan Street\",\n      \"city\" : \"Beverly Hills\",\n      \"postalCode\" : \"90210\",\n      \"stateOrProvince\" : \"CA\",\n      \"country\" : \"US\"\n    },\n    \"card\" : {\n      \"expiryMonth\" : \"03\",\n      \"expiryYear\" : \"2030\",\n      \"holderName\" : \"Payer Name\",\n      \"number\" : \"4400000000000008\"\n    },\n    \"shopperName\" : {\n      \"firstName\" : \"Payer\",\n      \"lastName\" : \"Name\"\n    }\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"P9999999999999999\",\n  \"shopperName\" : {\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Smith\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"nationality\" : \"NL\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payout",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payout"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "With this call, you can pay out to your customers, and funds will be made available within 30 minutes on the cardholder's bank account (this is dependent on whether the issuer supports this functionality). Instant card payouts are only supported for Visa and Mastercard cards."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        },
 	        {
@@ -444,49 +509,101 @@
                             {
                                 "name": "Confirm a payout",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/confirmThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "confirmThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Confirms a previously submitted payout.  To cancel a payout, use the `/declineThirdParty` endpoint."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"pspReference\" : \"991617894325358C\",\n  \"response\" : \"[payout-confirm-received]\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/confirmThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "confirmThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Confirms a previously submitted payout.  To cancel a payout, use the `/declineThirdParty` endpoint."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/confirmThirdParty",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "confirmThirdParty"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Confirms a previously submitted payout.  To cancel a payout, use the `/declineThirdParty` endpoint."
-                                }
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/declineThirdParty",
                 "description": "Cancels a previously submitted payout.  To confirm and send a payout, use the `/confirmThirdParty` endpoint.",
@@ -494,49 +611,101 @@
                             {
                                 "name": "Cancel a payout",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/declineThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "declineThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Cancels a previously submitted payout.  To confirm and send a payout, use the `/confirmThirdParty` endpoint."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"pspReference\" : \"991617894325360J\",\n  \"response\" : \"[payout-decline-received]\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/declineThirdParty",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "declineThirdParty"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Cancels a previously submitted payout.  To confirm and send a payout, use the `/confirmThirdParty` endpoint."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/declineThirdParty",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "declineThirdParty"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Cancels a previously submitted payout.  To confirm and send a payout, use the `/confirmThirdParty` endpoint."
-                                }
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        }
     ],

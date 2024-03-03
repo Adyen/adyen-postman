@@ -19,91 +19,92 @@
                             {
                                 "name": "Get all transactions",
                                 "request": {
-                                    "method": "GET",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/transactions",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "transactions"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                            {
-                                                "key": "balancePlatform",
-                                                "value": "balancePlatform_example",
-                                                "description": "The unique identifier of the [balance platform](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/balancePlatforms/{id}__queryParam_id).  Required if you don't provide a `balanceAccountId` or `accountHolderId`.",
-                                                "disabled": true
-                                            },
-                                            {
-                                                "key": "paymentInstrumentId",
-                                                "value": "paymentInstrumentId_example",
-                                                "description": "The unique identifier of the [payment instrument](https://docs.adyen.com/api-explorer/balanceplatform/latest/get/paymentInstruments/_id_).  To use this parameter, you must also provide a `balanceAccountId`, `accountHolderId`, or `balancePlatform`.  The `paymentInstrumentId` must be related to the `balanceAccountId` or `accountHolderId` that you provide.",
-                                                "disabled": true
-                                            },
-                                            {
-                                                "key": "accountHolderId",
-                                                "value": "accountHolderId_example",
-                                                "description": "The unique identifier of the [account holder](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/accountHolders/{id}__queryParam_id).  Required if you don't provide a `balanceAccountId` or `balancePlatform`.  If you provide a `balanceAccountId`, the `accountHolderId` must be related to the `balanceAccountId`.",
-                                                "disabled": true
-                                            },
-                                            {
-                                                "key": "balanceAccountId",
-                                                "value": "balanceAccountId_example",
-                                                "description": "The unique identifier of the [balance account](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/balanceAccounts/{id}__queryParam_id).  Required if you don't provide an `accountHolderId` or `balancePlatform`.  If you provide an `accountHolderId`, the `balanceAccountId` must be related to the `accountHolderId`.",
-                                                "disabled": true
-                                            },
-                                            {
-                                                "key": "cursor",
-                                                "value": "cursor_example",
-                                                "description": "The `cursor` returned in the links of the previous response.",
-                                                "disabled": true
-                                            },
-                                            {
-                                                "key": "createdSince",
-                                                "value": "2013-10-20T19:20:30+01:00",
-                                                "description": "Only include transactions that have been created on or after this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
-                                                "disabled": false
-                                            },
-                                            {
-                                                "key": "createdUntil",
-                                                "value": "2013-10-20T19:20:30+01:00",
-                                                "description": "Only include transactions that have been created on or before this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
-                                                "disabled": false
-                                            },
-                                            {
-                                                "key": "limit",
-                                                "value": "56",
-                                                "description": "The number of items returned per page, maximum of 100 items. By default, the response returns 10 items per page.",
-                                                "disabled": true
-                                            }
-                                        ]
-                                    },
-                                    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Returns all the transactions related to a balance account, account holder, or balance platform.  When making this request, you must include at least one of the following: - `balanceAccountId` - `accountHolderId` - `balancePlatform`.  This endpoint supports cursor-based pagination. The response returns the first page of results, and returns links to the next and previous pages when applicable. You can use the links to page through the results.  "
-                                }
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transactions",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transactions"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "balancePlatform",
+        "value": "balancePlatform_example",
+        "description": "The unique identifier of the [balance platform](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/balancePlatforms/{id}__queryParam_id).  Required if you don't provide a `balanceAccountId` or `accountHolderId`.",
+        "disabled": true
+        },
+        {
+        "key": "paymentInstrumentId",
+        "value": "paymentInstrumentId_example",
+        "description": "The unique identifier of the [payment instrument](https://docs.adyen.com/api-explorer/balanceplatform/latest/get/paymentInstruments/_id_).  To use this parameter, you must also provide a `balanceAccountId`, `accountHolderId`, or `balancePlatform`.  The `paymentInstrumentId` must be related to the `balanceAccountId` or `accountHolderId` that you provide.",
+        "disabled": true
+        },
+        {
+        "key": "accountHolderId",
+        "value": "accountHolderId_example",
+        "description": "The unique identifier of the [account holder](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/accountHolders/{id}__queryParam_id).  Required if you don't provide a `balanceAccountId` or `balancePlatform`.  If you provide a `balanceAccountId`, the `accountHolderId` must be related to the `balanceAccountId`.",
+        "disabled": true
+        },
+        {
+        "key": "balanceAccountId",
+        "value": "balanceAccountId_example",
+        "description": "The unique identifier of the [balance account](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/get/balanceAccounts/{id}__queryParam_id).  Required if you don't provide an `accountHolderId` or `balancePlatform`.  If you provide an `accountHolderId`, the `balanceAccountId` must be related to the `accountHolderId`.",
+        "disabled": true
+        },
+        {
+        "key": "cursor",
+        "value": "cursor_example",
+        "description": "The `cursor` returned in the links of the previous response.",
+        "disabled": true
+        },
+        {
+        "key": "createdSince",
+        "value": "2013-10-20T19:20:30+01:00",
+        "description": "Only include transactions that have been created on or after this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+        "disabled": false
+        },
+        {
+        "key": "createdUntil",
+        "value": "2013-10-20T19:20:30+01:00",
+        "description": "Only include transactions that have been created on or before this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+        "disabled": false
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page, maximum of 100 items. By default, the response returns 10 items per page.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Returns all the transactions related to a balance account, account holder, or balance platform.  When making this request, you must include at least one of the following: - `balanceAccountId` - `accountHolderId` - `balancePlatform`.  This endpoint supports cursor-based pagination. The response returns the first page of results, and returns links to the next and previous pages when applicable. You can use the links to page through the results.  "
+}
+                                ,"response": [
+                                ]
                             }
                             ]
-                        }
-,
+                        },
 	                        {
     "name": "/transactions/:id",
                 "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Returns a transaction.",
@@ -111,49 +112,50 @@
                             {
                                 "name": "Get a transaction",
                                 "request": {
-                                    "method": "GET",
-                                    "header": [
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/transactions/:id",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "transactions",
-                                            ":id"
-                                        ],
-                                        "variable": [
-                                            {
-                                                "key": "id",
-                                                "value": "",
-                                                "description": "The unique identifier of the transaction."
-                                            }
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Returns a transaction."
-                                }
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transactions/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transactions",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the transaction."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Returns a transaction."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        },
 	        {
@@ -166,104 +168,221 @@
                             {
                                 "name": "Transfer funds to another balance account",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "WWW-Authenticate",
-                                            "value": "",
-                                            "description": "Header for authenticating through SCA",
-                                            "disabled": true
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "WWW-Authenticate",
+        "value": "",
+        "description": "Header for authenticating through SCA",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"balanceAccountId\" : \"BAB1234567890ABC123456789\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transfers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transfers"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a transfer request to move funds within your balance platform, or send funds to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/v1/post/transferInstruments). Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint, you need an additional role for your API credential and transfers must be enabled for the source balance account. Your Adyen contact will set these up for you."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"id\" : \"1W1UG35U8A9J5ZLG\",\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"balanceAccountId\" : \"BAB1234567890ABC123456789\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"resultCode\" : \"Authorised\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "WWW-Authenticate",
+        "value": "",
+        "description": "Header for authenticating through SCA",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"balanceAccountId\" : \"BAB1234567890ABC123456789\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transfers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transfers"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a transfer request to move funds within your balance platform, or send funds to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/v1/post/transferInstruments). Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint, you need an additional role for your API credential and transfers must be enabled for the source balance account. Your Adyen contact will set these up for you."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"balanceAccountId\" : \"BAB1234567890ABC123456789\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/transfers",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "transfers"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a transfer request to move funds within your balance platform, or send funds to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/v1/post/transferInstruments). Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint, you need an additional role for your API credential and transfers must be enabled for the source balance account. Your Adyen contact will set these up for you."
-                                }
+                                ]
                             },
                             {
                                 "name": "Pay out to a transfer instrument",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "WWW-Authenticate",
-                                            "value": "",
-                                            "description": "Header for authenticating through SCA",
-                                            "disabled": true
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "WWW-Authenticate",
+        "value": "",
+        "description": "Header for authenticating through SCA",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"transferInstrumentId\" : \"SE1234567890ABC1234567890\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transfers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transfers"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a transfer request to move funds within your balance platform, or send funds to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/v1/post/transferInstruments). Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint, you need an additional role for your API credential and transfers must be enabled for the source balance account. Your Adyen contact will set these up for you."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"id\" : \"1W1UG35U8A9J5ZLG\",\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"transferInstrumentId\" : \"SE1234567890ABC1234567890\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"resultCode\" : \"Authorised\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "WWW-Authenticate",
+        "value": "",
+        "description": "Header for authenticating through SCA",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"transferInstrumentId\" : \"SE1234567890ABC1234567890\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transfers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transfers"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a transfer request to move funds within your balance platform, or send funds to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/v1/post/transferInstruments). Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint, you need an additional role for your API credential and transfers must be enabled for the source balance account. Your Adyen contact will set these up for you."
+}
                                         }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n  \"source\" : {\n    \"balanceAccountId\" : \"BAB8B2C3D4E5F6G7H8D9J6GD4\"\n  },\n  \"destination\" : {\n    \"transferInstrumentId\" : \"SE1234567890ABC1234567890\"\n  },\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"reference\" : \"Your internal reference for the transfer\",\n  \"description\" : \"Your description\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/transfers",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "transfers"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a transfer request to move funds within your balance platform, or send funds to a [transfer instrument](https://docs.adyen.com/api-explorer/#/legalentity/v1/post/transferInstruments). Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint, you need an additional role for your API credential and transfers must be enabled for the source balance account. Your Adyen contact will set these up for you."
-                                }
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        }
     ],

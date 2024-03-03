@@ -19,49 +19,50 @@
                             {
                                 "name": "Creates one or more test card ranges.",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n \"accountCode\": \"<string>\",\n \"accountTypeCode\": \"<string>\",\n \"testCardRanges\": \"<string>\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/createTestCardRanges",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "createTestCardRanges"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Creates one or more test card ranges."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountCode\": \"<string>\",\n \"accountTypeCode\": \"<string>\",\n \"testCardRanges\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/createTestCardRanges",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "createTestCardRanges"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates one or more test card ranges."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        }
     ],

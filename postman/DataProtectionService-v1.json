@@ -19,49 +19,50 @@
                             {
                                 "name": "Submit a Subject Erasure Request.",
                                 "request": {
-                                    "method": "POST",
-                                    "header": [
-                                        {
-                                            "key": "Content-Type",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        },
-                                        {
-                                            "key": "Accept",
-                                            "value": "application/json",
-                                            "description": "",
-                                            "disabled": false
-                                        }
-                                    ],
-                                    "body": {
-                                        "mode": "raw",
-                                        "raw": "{\n \"forceErasure\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"pspReference\": \"<string>\"\n}",
-                                        "options": {
-                                            "raw": {
-                                                "language": "json"
-                                            }
-                                        }
-                                    },
-                                    "url": {
-                                        "raw": "{{baseUrl}}/requestSubjectErasure",
-                                        "host": [
-                                            "{{baseUrl}}"
-                                        ],
-                                        "path": [
-                                            "requestSubjectErasure"
-                                        ],
-                                        "variable": [
-                                        ],
-                                        "query": [
-                                        ]
-                                    },
-                                    "description": "Sends the PSP reference containing the shopper data that should be deleted."
-                                }
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"forceErasure\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"pspReference\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/requestSubjectErasure",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "requestSubjectErasure"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends the PSP reference containing the shopper data that should be deleted."
+}
+                                ,"response": [
+                                ]
                             }
                             ]
                         }
-
 	                    ]
 	        }
     ],

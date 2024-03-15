@@ -1013,7 +1013,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"entityAssociations\" : [ {\n    \"associatorId\" : \"LE00000000000000000000001\",\n    \"entityType\" : \"individual\",\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"name\" : \"Simone Hopper\",\n    \"type\" : \"uboThroughControl\"\n  } ],\n  \"organization\" : {\n    \"email\" : \"john.doe@adyen.com\",\n    \"phone\" : {\n      \"countryCode\" : \"NL\",\n      \"number\" : \"646467363\",\n      \"type\" : \"mobile\"\n    },\n    \"description\" : \"FinTech\",\n    \"doingBusinessAs\" : \"Adyen BV\",\n    \"legalName\" : \"Adyen BV\",\n    \"registeredAddress\" : {\n      \"city\" : \"AMS\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1234EE\",\n      \"stateOrProvince\" : \"NH\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"\",\n    \"stockData\" : {\n      \"marketIdentifier\" : \"ADYN\",\n      \"stockNumber\" : \"NL012345ABC4\",\n      \"tickerSymbol\" : \"ADYN.M\"\n    },\n    \"type\" : \"listedPublicCompany\"\n  },\n  \"type\" : \"organization\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n  \"entityAssociations\" : [ {\n    \"associatorId\" : \"LE00000000000000000000001\",\n    \"entityType\" : \"individual\",\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"name\" : \"Simone Hopper\",\n    \"type\" : \"uboThroughControl\"\n  } ],\n  \"organization\" : {\n    \"email\" : \"john.doe@adyen.com\",\n    \"phone\" : {\n      \"number\" : \"646467363\",\n      \"type\" : \"mobile\"\n    },\n    \"description\" : \"FinTech\",\n    \"doingBusinessAs\" : \"Adyen BV\",\n    \"legalName\" : \"Adyen BV\",\n    \"registeredAddress\" : {\n      \"city\" : \"AMS\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1234EE\",\n      \"stateOrProvince\" : \"NH\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"\",\n    \"stockData\" : {\n      \"marketIdentifier\" : \"ADYN\",\n      \"stockNumber\" : \"NL012345ABC4\",\n      \"tickerSymbol\" : \"ADYN.M\"\n    },\n    \"type\" : \"listedPublicCompany\"\n  },\n  \"type\" : \"organization\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -2796,7 +2796,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\",\n    \"trustedSource\" : false\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"capabilities\" : {\n    \"sendToTransferInstrument\" : {\n      \"allowed\" : false,\n      \"requested\" : true,\n      \"verificationStatus\" : \"pending\"\n    }\n  },\n  \"id\" : \"SE322KH223222F5GXZFNM3BGP\"\n}",
+                                        "body" : "{\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\",\n    \"trustedSource\" : false\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"id\" : \"SE322KH223222F5GXZFNM3BGP\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2904,7 +2904,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"bankAccount\" : {\n    \"accountNumber\" : \"0000000123\",\n    \"accountType\" : \"checking\",\n    \"branchCode\" : \"121202211\",\n    \"countryCode\" : \"US\",\n    \"currencyCode\" : \"USD\",\n    \"trustedSource\" : false\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"capabilities\" : {\n    \"sendToTransferInstrument\" : {\n      \"allowed\" : false,\n      \"requested\" : true,\n      \"verificationStatus\" : \"pending\"\n    }\n  },\n  \"id\" : \"SE322JV223222F5GJVKHH8DTC\"\n}",
+                                        "body" : "{\n  \"bankAccount\" : {\n    \"accountNumber\" : \"0000000123\",\n    \"accountType\" : \"checking\",\n    \"branchCode\" : \"121202211\",\n    \"countryCode\" : \"US\",\n    \"currencyCode\" : \"USD\",\n    \"trustedSource\" : false\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"id\" : \"SE322JV223222F5GJVKHH8DTC\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [

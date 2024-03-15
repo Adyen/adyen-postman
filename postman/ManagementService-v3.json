@@ -6030,7 +6030,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"businessLineId\" : \"BL322KV223222D5F8H2J4BQ6C\",\n  \"storeId\" : \"ST322LJ223223K5F4SQNR9XL5\",\n  \"type\" : \"swish\",\n  \"swish\" : {\n    \"swishNumber\" : \"1231111111\"\n  },\n  \"currencies\" : [ \"SEK\" ],\n  \"countries\" : [ \"SE\" ]\n}",
+    "raw": "{\n  \"businessLineId\" : \"BL322KV223222D5F8H2J4BQ6C\",\n  \"type\" : \"swish\",\n  \"swish\" : {\n    \"swishNumber\" : \"1231111111\"\n  },\n  \"currencies\" : [ \"SEK\" ],\n  \"countries\" : [ \"SE\" ]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -6069,7 +6069,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"id\" : \"PM3227C223224K5FH84M8CBNH\",\n  \"businessLineId\" : \"BL322KV223222D5F8H2J4BQ6C\",\n  \"storeId\" : \"ST322LJ223223K5F4SQNR9XL5\",\n  \"type\" : \"swish\",\n  \"countries\" : [ \"SE\" ],\n  \"currencies\" : [ \"SEK\" ],\n  \"swish\" : {\n    \"swishNumber\" : \"1231111111\"\n  }\n}",
+                                        "body" : "{\n  \"id\" : \"PM3227C223224K5FH84M8CBNH\",\n  \"businessLineId\" : \"BL322KV223222D5F8H2J4BQ6C\",\n  \"type\" : \"swish\",\n  \"countries\" : [ \"SE\" ],\n  \"currencies\" : [ \"SEK\" ],\n  \"swish\" : {\n    \"swishNumber\" : \"1231111111\"\n  }\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -6088,7 +6088,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"businessLineId\" : \"BL322KV223222D5F8H2J4BQ6C\",\n  \"storeId\" : \"ST322LJ223223K5F4SQNR9XL5\",\n  \"type\" : \"swish\",\n  \"swish\" : {\n    \"swishNumber\" : \"1231111111\"\n  },\n  \"currencies\" : [ \"SEK\" ],\n  \"countries\" : [ \"SE\" ]\n}",
+    "raw": "{\n  \"businessLineId\" : \"BL322KV223222D5F8H2J4BQ6C\",\n  \"type\" : \"swish\",\n  \"swish\" : {\n    \"swishNumber\" : \"1231111111\"\n  },\n  \"currencies\" : [ \"SEK\" ],\n  \"countries\" : [ \"SE\" ]\n}",
     "options": {
     "raw": {
     "language": "json"

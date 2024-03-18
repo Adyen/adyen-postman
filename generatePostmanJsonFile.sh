@@ -25,7 +25,6 @@ VERSION=$(echo $FILENAME | sed 's/.*-v//' | sed 's/\..*//')
 
 #  echo "Generating $FILENAME $BASE $NAME $REAL_NAME $VERSION $DATE"
 
-sed -i.bak "1s/.*/openapi: 3.0.3/" $FILENAME # downgrade version for compat
 sed -i.bak2 "0,/title:.*/{s//title: $REAL_NAME\ (v$VERSION)/}" $FILENAME # Set unique name of API for Postman
 
 

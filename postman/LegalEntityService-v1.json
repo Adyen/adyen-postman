@@ -2854,11 +2854,16 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://kyc-test.adyen.com/lem/v1",
+			"value": "https://balanceplatform-api-test.adyen.com/lem/v1",
 			"type": "string"
         },
         {
             "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "clientKey",
             "value": "",
             "type": "string"
         }

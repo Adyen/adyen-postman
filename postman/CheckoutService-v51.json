@@ -2025,7 +2025,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"id\" : \"UNIQUE_RESOURCE_ID\",\n  \"status\" : \"completed\",\n  \"donationAccount\" : \"CHARITY_ACCOUNT\",\n  \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"YOUR_DONATION_REFERENCE\",\n  \"payment\" : {\n    \"pspReference\" : \"8535762347980628\",\n    \"resultCode\" : \"Authorised\",\n    \"merchantReference\" : \"YOUR_DONATION_REFERENCE\"\n  }\n}",
+                                        "body" : "{\n  \"id\" : \"UNIQUE_RESOURCE_ID\",\n  \"status\" : \"completed\",\n  \"donationAccount\" : \"CHARITY_ACCOUNT\",\n  \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"reference\" : \"YOUR_DONATION_REFERENCE\",\n  \"payment\" : {\n    \"pspReference\" : \"8535762347980628\",\n    \"resultCode\" : \"Authorised\",\n    \"additionalData\" : {\n      \"merchantReference\" : \"YOUR_DONATION_REFERENCE\"\n    }\n  }\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [

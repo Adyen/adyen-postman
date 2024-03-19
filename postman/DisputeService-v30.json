@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Disputes API (v30)",
+		"name": "Disputes API",
 		"description": {
 		    "content": "You can use the [Disputes API](https://docs.adyen.com/risk-management/disputes-api) to automate the dispute handling process so that you can respond to disputes and chargebacks as soon as they are initiated. The Disputes API lets you retrieve defense reasons, supply and delete defense documents, and accept or defend disputes.\n\n## Authentication\nEach request to the Disputes API must be signed with an API key. For this, obtain an API Key from your Customer Area, as described in [How to get the API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key). Then set this key to the `X-API-Key` header value, for example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: Your_API_key\" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nDisputes API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://ca-test.adyen.com/ca/services/DisputeService/v30/defendDispute\n```",
 		    "type": "text/markdown"
@@ -36,7 +36,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -68,7 +68,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"disputeServiceResult\" : {\n    \"success\" : true\n  }\n}",
+                                        "body" : "{\n \"disputeServiceResult\": {\n \"success\": true\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -87,7 +87,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -138,7 +138,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"defenseReasonCode\" : \"SupplyDefenseMaterial\",\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"defenseReasonCode\": \"SupplyDefenseMaterial\",\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -170,7 +170,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"disputeServiceResult\" : {\n    \"success\" : true\n  }\n}",
+                                        "body" : "{\n \"disputeServiceResult\": {\n \"success\": true\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -189,7 +189,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"defenseReasonCode\" : \"SupplyDefenseMaterial\",\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"defenseReasonCode\": \"SupplyDefenseMaterial\",\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -240,7 +240,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"defenseDocumentType\" : \"DefenseMaterial\",\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"defenseDocumentType\": \"DefenseMaterial\",\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -272,7 +272,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"disputeServiceResult\" : {\n    \"success\" : true\n  }\n}",
+                                        "body" : "{\n \"disputeServiceResult\": {\n \"success\": true\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -291,7 +291,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"defenseDocumentType\" : \"DefenseMaterial\",\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"defenseDocumentType\": \"DefenseMaterial\",\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -342,7 +342,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -374,7 +374,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"defenseReasons\" : [ {\n    \"defenseDocumentTypes\" : [ {\n      \"available\" : false,\n      \"defenseDocumentTypeCode\" : \"TIDorInvoice\",\n      \"requirementLevel\" : \"Optional\"\n    }, {\n      \"available\" : false,\n      \"defenseDocumentTypeCode\" : \"GoodsNotReturned\",\n      \"requirementLevel\" : \"Required\"\n    } ],\n    \"defenseReasonCode\" : \"GoodsNotReturned\",\n    \"satisfied\" : false\n  }, {\n    \"defenseDocumentTypes\" : [ {\n      \"available\" : false,\n      \"defenseDocumentTypeCode\" : \"TIDorInvoice\",\n      \"requirementLevel\" : \"Optional\"\n    }, {\n      \"available\" : false,\n      \"defenseDocumentTypeCode\" : \"GoodsRepairedOrReplaced\",\n      \"requirementLevel\" : \"Required\"\n    } ],\n    \"defenseReasonCode\" : \"GoodsRepairedOrReplaced\",\n    \"satisfied\" : false\n  }, {\n    \"defenseDocumentTypes\" : [ {\n      \"available\" : false,\n      \"defenseDocumentTypeCode\" : \"GoodsWereAsDescribed\",\n      \"requirementLevel\" : \"Required\"\n    }, {\n      \"available\" : false,\n      \"defenseDocumentTypeCode\" : \"TIDorInvoice\",\n      \"requirementLevel\" : \"Required\"\n    } ],\n    \"defenseReasonCode\" : \"GoodsWereAsDescribed\",\n    \"satisfied\" : false\n  }, {\n    \"defenseDocumentTypes\" : [ {\n      \"available\" : false,\n      \"defenseDocumentTypeCode\" : \"TIDorInvoice\",\n      \"requirementLevel\" : \"Optional\"\n    }, {\n      \"available\" : false,\n      \"defenseDocumentTypeCode\" : \"DefenseMaterial\",\n      \"requirementLevel\" : \"Required\"\n    } ],\n    \"defenseReasonCode\" : \"SupplyDefenseMaterial\",\n    \"satisfied\" : false\n  } ],\n  \"disputeServiceResult\" : {\n    \"success\" : true\n  }\n}",
+                                        "body" : "{\n \"defenseReasons\": [{\n \"defenseDocumentTypes\": [{\n \"available\": false,\n \"defenseDocumentTypeCode\": \"TIDorInvoice\",\n \"requirementLevel\": \"Optional\"\n}, {\n \"available\": false,\n \"defenseDocumentTypeCode\": \"GoodsNotReturned\",\n \"requirementLevel\": \"Required\"\n}],\n \"defenseReasonCode\": \"GoodsNotReturned\",\n \"satisfied\": false\n}, {\n \"defenseDocumentTypes\": [{\n \"available\": false,\n \"defenseDocumentTypeCode\": \"TIDorInvoice\",\n \"requirementLevel\": \"Optional\"\n}, {\n \"available\": false,\n \"defenseDocumentTypeCode\": \"GoodsRepairedOrReplaced\",\n \"requirementLevel\": \"Required\"\n}],\n \"defenseReasonCode\": \"GoodsRepairedOrReplaced\",\n \"satisfied\": false\n}, {\n \"defenseDocumentTypes\": [{\n \"available\": false,\n \"defenseDocumentTypeCode\": \"GoodsWereAsDescribed\",\n \"requirementLevel\": \"Required\"\n}, {\n \"available\": false,\n \"defenseDocumentTypeCode\": \"TIDorInvoice\",\n \"requirementLevel\": \"Required\"\n}],\n \"defenseReasonCode\": \"GoodsWereAsDescribed\",\n \"satisfied\": false\n}, {\n \"defenseDocumentTypes\": [{\n \"available\": false,\n \"defenseDocumentTypeCode\": \"TIDorInvoice\",\n \"requirementLevel\": \"Optional\"\n}, {\n \"available\": false,\n \"defenseDocumentTypeCode\": \"DefenseMaterial\",\n \"requirementLevel\": \"Required\"\n}],\n \"defenseReasonCode\": \"SupplyDefenseMaterial\",\n \"satisfied\": false\n}],\n \"disputeServiceResult\": {\n \"success\": true\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -393,7 +393,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -444,7 +444,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"defenseDocuments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n    \"contentType\" : \"application/pdf\",\n    \"defenseDocumentTypeCode\" : \"DefenseMaterial\"\n  } ],\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"defenseDocuments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n \"contentType\": \"application/pdf\",\n \"defenseDocumentTypeCode\": \"DefenseMaterial\"\n}],\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -476,7 +476,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"disputeServiceResult\" : {\n    \"success\" : true\n  }\n}",
+                                        "body" : "{\n \"disputeServiceResult\": {\n \"success\": true\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -495,7 +495,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"defenseDocuments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n    \"contentType\" : \"application/pdf\",\n    \"defenseDocumentTypeCode\" : \"DefenseMaterial\"\n  } ],\n  \"disputePspReference\" : \"DZ4DPSHB4WD2WN82\",\n  \"merchantAccountCode\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"defenseDocuments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n \"contentType\": \"application/pdf\",\n \"defenseDocumentTypeCode\": \"DefenseMaterial\"\n}],\n \"disputePspReference\": \"DZ4DPSHB4WD2WN82\",\n \"merchantAccountCode\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"

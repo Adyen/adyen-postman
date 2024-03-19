@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Adyen BinLookup API (v50)",
+		"name": "Adyen BinLookup API",
 		"description": {
 		    "content": "The BIN Lookup API provides endpoints for retrieving information, such as cost estimates, and 3D Secure supported version based on a given BIN.\n\n## Authentication\nYou need an [API credential](https://docs.adyen.com/development-resources/api-credentials) to authenticate to the API.\n\nIf using an API key, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\nAlternatively, you can use the username and password to connect to the API using basic authentication, for example:\n\n```\ncurl\n-U \"ws@Company.YOUR_COMPANY_ACCOUNT\":\"YOUR_BASIC_AUTHENTICATION_PASSWORD\" \\n-H \"Content-Type: application/json\" \\n...\n```\n\n## Versioning\nThe BinLookup API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://pal-test.adyen.com/pal/servlet/BinLookup/v50/get3dsAvailability\n```## Going live\n\nTo authneticate to the live endpoints, you need an [API credential](https://docs.adyen.com/development-resources/api-credentials) from your live Customer Area.\n\nThe live endpoint URLs contain a prefix which is unique to your company account:\n```\n\nhttps://{PREFIX}-pal-live.adyenpayments.com/pal/servlet/BinLookup/v50/get3dsAvailability\n```\n\nGet your `{PREFIX}` from your live Customer Area under **Developers** > **API URLs** > **Prefix**.",
 		    "type": "text/markdown"
@@ -36,7 +36,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"cardNumber\" : \"4111111111111111\"\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"cardNumber\": \"4111111111111111\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -68,7 +68,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"threeDS1Supported\" : true,\n  \"threeDS2CardRangeDetails\" : [ ],\n  \"threeDS2supported\" : false\n}",
+                                        "body" : "{\n \"threeDS1Supported\": true,\n \"threeDS2CardRangeDetails\": [],\n \"threeDS2supported\": false\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -87,7 +87,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"cardNumber\" : \"4111111111111111\"\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"cardNumber\": \"4111111111111111\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -138,7 +138,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 1234,\n    \"currency\" : \"EUR\"\n  },\n  \"assumptions\" : {\n    \"assumeLevel3Data\" : true,\n    \"assume3DSecureAuthenticated\" : true\n  },\n  \"cardNumber\" : \"5101180000000007\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantDetails\" : {\n    \"countryCode\" : \"NL\",\n    \"mcc\" : \"7411\",\n    \"enrolledIn3DSecure\" : true\n  },\n  \"shopperInteraction\" : \"Ecommerce\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 1234,\n \"currency\": \"EUR\"\n},\n \"assumptions\": {\n \"assumeLevel3Data\": true,\n \"assume3DSecureAuthenticated\": true\n},\n \"cardNumber\": \"5101180000000007\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"merchantDetails\": {\n \"countryCode\": \"NL\",\n \"mcc\": \"7411\",\n \"enrolledIn3DSecure\": true\n},\n \"shopperInteraction\": \"Ecommerce\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -170,7 +170,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"costEstimateAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 12\n  },\n  \"resultCode\" : \"Success\",\n  \"surchargeType\" : \"PASSTHROUGH\"\n}",
+                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\",\n \"surchargeType\": \"PASSTHROUGH\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -189,7 +189,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 1234,\n    \"currency\" : \"EUR\"\n  },\n  \"assumptions\" : {\n    \"assumeLevel3Data\" : true,\n    \"assume3DSecureAuthenticated\" : true\n  },\n  \"cardNumber\" : \"5101180000000007\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantDetails\" : {\n    \"countryCode\" : \"NL\",\n    \"mcc\" : \"7411\",\n    \"enrolledIn3DSecure\" : true\n  },\n  \"shopperInteraction\" : \"Ecommerce\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 1234,\n \"currency\": \"EUR\"\n},\n \"assumptions\": {\n \"assumeLevel3Data\": true,\n \"assume3DSecureAuthenticated\": true\n},\n \"cardNumber\": \"5101180000000007\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"merchantDetails\": {\n \"countryCode\": \"NL\",\n \"mcc\": \"7411\",\n \"enrolledIn3DSecure\": true\n},\n \"shopperInteraction\": \"Ecommerce\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -234,7 +234,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 1234,\n    \"currency\" : \"EUR\"\n  },\n  \"assumptions\" : {\n    \"assumeLevel3Data\" : true,\n    \"assume3DSecureAuthenticated\" : true\n  },\n  \"encryptedCardNumber\" : \"test_5101180000000007\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantDetails\" : {\n    \"countryCode\" : \"NL\",\n    \"mcc\" : \"7411\",\n    \"enrolledIn3DSecure\" : true\n  },\n  \"shopperInteraction\" : \"Ecommerce\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 1234,\n \"currency\": \"EUR\"\n},\n \"assumptions\": {\n \"assumeLevel3Data\": true,\n \"assume3DSecureAuthenticated\": true\n},\n \"encryptedCardNumber\": \"test_5101180000000007\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"merchantDetails\": {\n \"countryCode\": \"NL\",\n \"mcc\": \"7411\",\n \"enrolledIn3DSecure\": true\n},\n \"shopperInteraction\": \"Ecommerce\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -266,7 +266,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"costEstimateAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 12\n  },\n  \"resultCode\" : \"Success\",\n  \"surchargeType\" : \"PASSTHROUGH\"\n}",
+                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\",\n \"surchargeType\": \"PASSTHROUGH\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -285,7 +285,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 1234,\n    \"currency\" : \"EUR\"\n  },\n  \"assumptions\" : {\n    \"assumeLevel3Data\" : true,\n    \"assume3DSecureAuthenticated\" : true\n  },\n  \"encryptedCardNumber\" : \"test_5101180000000007\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantDetails\" : {\n    \"countryCode\" : \"NL\",\n    \"mcc\" : \"7411\",\n    \"enrolledIn3DSecure\" : true\n  },\n  \"shopperInteraction\" : \"Ecommerce\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 1234,\n \"currency\": \"EUR\"\n},\n \"assumptions\": {\n \"assumeLevel3Data\": true,\n \"assume3DSecureAuthenticated\": true\n},\n \"encryptedCardNumber\": \"test_5101180000000007\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"merchantDetails\": {\n \"countryCode\": \"NL\",\n \"mcc\": \"7411\",\n \"enrolledIn3DSecure\": true\n},\n \"shopperInteraction\": \"Ecommerce\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -330,7 +330,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 1234,\n    \"currency\" : \"EUR\"\n  },\n  \"cardNumber\" : \"5101180000000007\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 1234,\n \"currency\": \"EUR\"\n},\n \"cardNumber\": \"5101180000000007\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -362,7 +362,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"costEstimateAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 12\n  },\n  \"resultCode\" : \"Success\",\n  \"surchargeType\" : \"PASSTHROUGH\"\n}",
+                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\",\n \"surchargeType\": \"PASSTHROUGH\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -381,7 +381,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 1234,\n    \"currency\" : \"EUR\"\n  },\n  \"cardNumber\" : \"5101180000000007\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 1234,\n \"currency\": \"EUR\"\n},\n \"cardNumber\": \"5101180000000007\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -426,7 +426,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 1234,\n    \"currency\" : \"EUR\"\n  },\n  \"assumptions\" : {\n    \"assumeLevel3Data\" : true,\n    \"assume3DSecureAuthenticated\" : true\n  },\n  \"cardNumber\" : \"5101180000000007\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 1234,\n \"currency\": \"EUR\"\n},\n \"assumptions\": {\n \"assumeLevel3Data\": true,\n \"assume3DSecureAuthenticated\": true\n},\n \"cardNumber\": \"5101180000000007\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -458,7 +458,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"costEstimateAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 12\n  },\n  \"resultCode\" : \"Success\",\n  \"surchargeType\" : \"PASSTHROUGH\"\n}",
+                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\",\n \"surchargeType\": \"PASSTHROUGH\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -477,7 +477,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 1234,\n    \"currency\" : \"EUR\"\n  },\n  \"assumptions\" : {\n    \"assumeLevel3Data\" : true,\n    \"assume3DSecureAuthenticated\" : true\n  },\n  \"cardNumber\" : \"5101180000000007\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 1234,\n \"currency\": \"EUR\"\n},\n \"assumptions\": {\n \"assumeLevel3Data\": true,\n \"assume3DSecureAuthenticated\": true\n},\n \"cardNumber\": \"5101180000000007\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -522,7 +522,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 1234,\n    \"currency\" : \"EUR\"\n  },\n  \"assumptions\" : {\n    \"assumeLevel3Data\" : true,\n    \"assume3DSecureAuthenticated\" : true\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantDetails\" : {\n    \"countryCode\" : \"NL\",\n    \"mcc\" : \"7411\",\n    \"enrolledIn3DSecure\" : true\n  },\n  \"selectedRecurringDetailReference\" : \"1234567890123456\",\n  \"shopperInteraction\" : \"Ecommerce\",\n  \"shopperReference\" : \"123456\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 1234,\n \"currency\": \"EUR\"\n},\n \"assumptions\": {\n \"assumeLevel3Data\": true,\n \"assume3DSecureAuthenticated\": true\n},\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"merchantDetails\": {\n \"countryCode\": \"NL\",\n \"mcc\": \"7411\",\n \"enrolledIn3DSecure\": true\n},\n \"selectedRecurringDetailReference\": \"1234567890123456\",\n \"shopperInteraction\": \"Ecommerce\",\n \"shopperReference\": \"123456\"\n}",
     "options": {
     "raw": {
     "language": "json"

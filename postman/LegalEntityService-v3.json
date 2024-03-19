@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Legal Entity Management API (v3)",
+		"name": "Legal Entity Management API",
 		"description": {
 		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification. \n## Authentication\nYour Adyen contact will provide your API credential and an API key. To connect to the API, add an `X-API-Key` header with the API key as the value. For example:\n\n```\ncurl\n-H \"X-API-Key: YOUR_API_KEY\" \\n-H \"Content-Type: application/json\" \\n...\n```\nAlternatively, you can use the username and password of your API credential to connect to the API using basic authentication. For example:\n\n```\ncurl\n-U \"ws_123456@Scope.Company_YOUR_COMPANY_ACCOUNT\":\"YourWsPassword\" \\n-H \"Content-Type: application/json\" \\n...\n```\n## Versioning\nThe Legal Entity Management API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v3/legalEntities\n```\n## Going live\nWhen going live, your Adyen contact will provide your API credential for the live environment. You can then use the API key or the username and password to send requests to `https://kyc-live.adyen.com/lem/v3`.\n\n",
 		    "type": "text/markdown"
@@ -42,7 +42,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -74,7 +74,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"individual\" : {\n    \"email\" : \"s.eller@example.com\",\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"residentialAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    }\n  },\n  \"type\" : \"individual\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"individual\": {\n \"email\": \"s.eller@example.com\",\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -99,7 +99,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -150,7 +150,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    },\n    \"phone\" : {\n      \"number\" : \"+14153671502\",\n      \"type\" : \"mobile\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n},\n \"phone\": {\n \"number\": \"+14153671502\",\n \"type\": \"mobile\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -182,7 +182,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"individual\" : {\n    \"email\" : \"s.eller@example.com\",\n    \"phone\" : {\n      \"number\" : \"+14153671502\",\n      \"type\" : \"mobile\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"residentialAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  },\n  \"type\" : \"individual\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"individual\": {\n \"email\": \"s.eller@example.com\",\n \"phone\": {\n \"number\": \"+14153671502\",\n \"type\": \"mobile\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"residentialAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -207,7 +207,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    },\n    \"phone\" : {\n      \"number\" : \"+14153671502\",\n      \"type\" : \"mobile\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n},\n \"phone\": {\n \"number\": \"+14153671502\",\n \"type\": \"mobile\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -258,7 +258,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in NL\",\n    \"doingBusinessAs\" : \"API Company Trading\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"34179503\",\n    \"email\" : \"organization@example.com\"\n  },\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000001\",\n    \"type\" : \"signatory\"\n  } ]\n}",
+    "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in NL\",\n \"doingBusinessAs\": \"API Company Trading\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"registrationNumber\": \"34179503\",\n \"email\": \"organization@example.com\"\n},\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"signatory\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -290,7 +290,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"entityAssociations\" : [ {\n    \"associatorId\" : \"LE00000000000000000000002\",\n    \"entityType\" : \"individual\",\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000001\",\n    \"name\" : \"Simone Hopper\",\n    \"type\" : \"signatory\"\n  } ],\n  \"organization\" : {\n    \"email\" : \"organization@example.com\",\n    \"doingBusinessAs\" : \"API Company Trading\",\n    \"legalName\" : \"Explorer Company based in NL\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"34179503\",\n    \"type\" : \"privateCompany\"\n  },\n  \"type\" : \"organization\",\n  \"id\" : \"LE00000000000000000000002\"\n}",
+                                        "body" : "{\n \"entityAssociations\": [{\n \"associatorId\": \"LE00000000000000000000002\",\n \"entityType\": \"individual\",\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"name\": \"Simone Hopper\",\n \"type\": \"signatory\"\n}],\n \"organization\": {\n \"email\": \"organization@example.com\",\n \"doingBusinessAs\": \"API Company Trading\",\n \"legalName\": \"Explorer Company based in NL\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"registrationNumber\": \"34179503\",\n \"type\": \"privateCompany\"\n},\n \"type\": \"organization\",\n \"id\": \"LE00000000000000000000002\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -315,7 +315,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in NL\",\n    \"doingBusinessAs\" : \"API Company Trading\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"34179503\",\n    \"email\" : \"organization@example.com\"\n  },\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000001\",\n    \"type\" : \"signatory\"\n  } ]\n}",
+    "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in NL\",\n \"doingBusinessAs\": \"API Company Trading\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"registrationNumber\": \"34179503\",\n \"email\": \"organization@example.com\"\n},\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"signatory\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -366,7 +366,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in US\",\n    \"registrationNumber\" : \"101002749\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in US\",\n \"registrationNumber\": \"101002749\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -398,7 +398,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in US\",\n    \"registrationNumber\" : \"101002749\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    },\n    \"type\" : \"privateCompany\"\n  },\n  \"type\" : \"organization\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"organization\": {\n \"legalName\": \"Explorer Company based in US\",\n \"registrationNumber\": \"101002749\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n},\n \"type\": \"privateCompany\"\n},\n \"type\": \"organization\",\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -423,7 +423,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in US\",\n    \"registrationNumber\" : \"101002749\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in US\",\n \"registrationNumber\": \"101002749\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -474,7 +474,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"soleProprietorship\",\n  \"soleProprietorship\" : {\n    \"name\" : \"Shelly Seller Sole Trader\",\n    \"countryOfGoverningLaw\" : \"NL\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"soleProprietorship\",\n \"soleProprietorship\": {\n \"name\": \"Shelly Seller Sole Trader\",\n \"countryOfGoverningLaw\": \"NL\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -506,7 +506,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"type\" : \"soleProprietorship\",\n  \"soleProprietorship\" : {\n    \"name\" : \"Shelly Seller Sole Trader\",\n    \"countryOfGoverningLaw\" : \"NL\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    }\n  },\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"type\": \"soleProprietorship\",\n \"soleProprietorship\": {\n \"name\": \"Shelly Seller Sole Trader\",\n \"countryOfGoverningLaw\": \"NL\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n}\n},\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -531,7 +531,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"soleProprietorship\",\n  \"soleProprietorship\" : {\n    \"name\" : \"Shelly Seller Sole Trader\",\n    \"countryOfGoverningLaw\" : \"NL\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"soleProprietorship\",\n \"soleProprietorship\": {\n \"name\": \"Shelly Seller Sole Trader\",\n \"countryOfGoverningLaw\": \"NL\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -582,7 +582,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"soleProprietorship\",\n  \"soleProprietorship\" : {\n    \"name\" : \"Shelly Eller Sole Trader\",\n    \"countryOfGoverningLaw\" : \"US\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"soleProprietorship\",\n \"soleProprietorship\": {\n \"name\": \"Shelly Eller Sole Trader\",\n \"countryOfGoverningLaw\": \"US\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -614,7 +614,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"type\" : \"soleProprietorship\",\n  \"soleProprietorship\" : {\n    \"name\" : \"Shelly Eller Sole Trader\",\n    \"countryOfGoverningLaw\" : \"US\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  },\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"type\": \"soleProprietorship\",\n \"soleProprietorship\": {\n \"name\": \"Shelly Eller Sole Trader\",\n \"countryOfGoverningLaw\": \"US\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n},\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -639,7 +639,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"soleProprietorship\",\n  \"soleProprietorship\" : {\n    \"name\" : \"Shelly Eller Sole Trader\",\n    \"countryOfGoverningLaw\" : \"US\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"soleProprietorship\",\n \"soleProprietorship\": {\n \"name\": \"Shelly Eller Sole Trader\",\n \"countryOfGoverningLaw\": \"US\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -690,7 +690,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"trust\",\n  \"trust\" : {\n    \"name\" : \"Example Trust\",\n    \"type\" : \"fixedUnitTrust\",\n    \"doingBusinessAs\" : \"West's Store\",\n    \"countryOfGoverningLaw\" : \"AU\",\n    \"taxInformation\" : [ {\n      \"country\" : \"AU\",\n      \"type\" : \"ABN\",\n      \"number\" : \"12345678123\"\n    } ],\n    \"registeredAddress\" : {\n      \"street\" : \"Winfield Avenue\",\n      \"city\" : \"Sydney\",\n      \"postalCode\" : \"1197\",\n      \"stateOrProvince\" : \"NSW\",\n      \"country\" : \"AU\"\n    },\n    \"undefinedBeneficiaryInfo\" : [ {\n      \"description\" : \"My future children\"\n    } ]\n  }\n}",
+    "raw": "{\n \"type\": \"trust\",\n \"trust\": {\n \"name\": \"Example Trust\",\n \"type\": \"fixedUnitTrust\",\n \"doingBusinessAs\": \"West's Store\",\n \"countryOfGoverningLaw\": \"AU\",\n \"taxInformation\": [{\n \"country\": \"AU\",\n \"type\": \"ABN\",\n \"number\": \"12345678123\"\n}],\n \"registeredAddress\": {\n \"street\": \"Winfield Avenue\",\n \"city\": \"Sydney\",\n \"postalCode\": \"1197\",\n \"stateOrProvince\": \"NSW\",\n \"country\": \"AU\"\n},\n \"undefinedBeneficiaryInfo\": [{\n \"description\": \"My future children\"\n}]\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -722,7 +722,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"trust\" : {\n    \"countryOfGoverningLaw\" : \"AU\",\n    \"doingBusinessAs\" : \"West's Store\",\n    \"name\" : \"Example Trust\",\n    \"registeredAddress\" : {\n      \"city\" : \"Sydney\",\n      \"country\" : \"AU\",\n      \"postalCode\" : \"1197\",\n      \"stateOrProvince\" : \"NSW\",\n      \"street\" : \"Winfield Avenue\"\n    },\n    \"taxInformation\" : [ {\n      \"country\" : \"AU\",\n      \"number\" : \"12345678901\",\n      \"type\" : \"ABN\"\n    } ],\n    \"type\" : \"fixedUnitTrust\",\n    \"undefinedBeneficiaryInfo\" : [ {\n      \"description\" : \"My future children\",\n      \"reference\" : \"SE322KH223222J5HJ6JRB75HQ\"\n    } ]\n  },\n  \"type\" : \"trust\",\n  \"id\" : \"LE322KH223222J5HJ6JRB75C5\"\n}",
+                                        "body" : "{\n \"trust\": {\n \"countryOfGoverningLaw\": \"AU\",\n \"doingBusinessAs\": \"West's Store\",\n \"name\": \"Example Trust\",\n \"registeredAddress\": {\n \"city\": \"Sydney\",\n \"country\": \"AU\",\n \"postalCode\": \"1197\",\n \"stateOrProvince\": \"NSW\",\n \"street\": \"Winfield Avenue\"\n},\n \"taxInformation\": [{\n \"country\": \"AU\",\n \"number\": \"12345678901\",\n \"type\": \"ABN\"\n}],\n \"type\": \"fixedUnitTrust\",\n \"undefinedBeneficiaryInfo\": [{\n \"description\": \"My future children\",\n \"reference\": \"SE322KH223222J5HJ6JRB75HQ\"\n}]\n},\n \"type\": \"trust\",\n \"id\": \"LE322KH223222J5HJ6JRB75C5\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -747,7 +747,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"trust\",\n  \"trust\" : {\n    \"name\" : \"Example Trust\",\n    \"type\" : \"fixedUnitTrust\",\n    \"doingBusinessAs\" : \"West's Store\",\n    \"countryOfGoverningLaw\" : \"AU\",\n    \"taxInformation\" : [ {\n      \"country\" : \"AU\",\n      \"type\" : \"ABN\",\n      \"number\" : \"12345678123\"\n    } ],\n    \"registeredAddress\" : {\n      \"street\" : \"Winfield Avenue\",\n      \"city\" : \"Sydney\",\n      \"postalCode\" : \"1197\",\n      \"stateOrProvince\" : \"NSW\",\n      \"country\" : \"AU\"\n    },\n    \"undefinedBeneficiaryInfo\" : [ {\n      \"description\" : \"My future children\"\n    } ]\n  }\n}",
+    "raw": "{\n \"type\": \"trust\",\n \"trust\": {\n \"name\": \"Example Trust\",\n \"type\": \"fixedUnitTrust\",\n \"doingBusinessAs\": \"West's Store\",\n \"countryOfGoverningLaw\": \"AU\",\n \"taxInformation\": [{\n \"country\": \"AU\",\n \"type\": \"ABN\",\n \"number\": \"12345678123\"\n}],\n \"registeredAddress\": {\n \"street\": \"Winfield Avenue\",\n \"city\": \"Sydney\",\n \"postalCode\": \"1197\",\n \"stateOrProvince\": \"NSW\",\n \"country\": \"AU\"\n},\n \"undefinedBeneficiaryInfo\": [{\n \"description\": \"My future children\"\n}]\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -855,7 +855,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\"\n}",
+    "raw": "{\n \"type\": \"individual\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -893,7 +893,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"individual\" : {\n    \"name\" : {\n      \"firstName\" : \"Explorer\",\n      \"lastName\" : \"Company based in US\"\n    },\n    \"residentialAddress\" : {\n      \"country\" : \"US\"\n    }\n  },\n  \"type\" : \"individual\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"individual\": {\n \"name\": {\n \"firstName\": \"Explorer\",\n \"lastName\": \"Company based in US\"\n},\n \"residentialAddress\": {\n \"country\": \"US\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -918,7 +918,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\"\n}",
+    "raw": "{\n \"type\": \"individual\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -975,7 +975,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"uboThroughControl\"\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"uboThroughControl\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1013,7 +1013,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"entityAssociations\" : [ {\n    \"associatorId\" : \"LE00000000000000000000001\",\n    \"entityType\" : \"individual\",\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"name\" : \"Simone Hopper\",\n    \"type\" : \"uboThroughControl\"\n  } ],\n  \"organization\" : {\n    \"email\" : \"john.doe@adyen.com\",\n    \"phone\" : {\n      \"number\" : \"646467363\",\n      \"type\" : \"mobile\"\n    },\n    \"description\" : \"FinTech\",\n    \"doingBusinessAs\" : \"Adyen BV\",\n    \"legalName\" : \"Adyen BV\",\n    \"registeredAddress\" : {\n      \"city\" : \"AMS\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1234EE\",\n      \"stateOrProvince\" : \"NH\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"\",\n    \"stockData\" : {\n      \"marketIdentifier\" : \"ADYN\",\n      \"stockNumber\" : \"NL012345ABC4\",\n      \"tickerSymbol\" : \"ADYN.M\"\n    },\n    \"type\" : \"listedPublicCompany\"\n  },\n  \"type\" : \"organization\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"entityAssociations\": [{\n \"associatorId\": \"LE00000000000000000000001\",\n \"entityType\": \"individual\",\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"name\": \"Simone Hopper\",\n \"type\": \"uboThroughControl\"\n}],\n \"organization\": {\n \"email\": \"john.doe@adyen.com\",\n \"phone\": {\n \"number\": \"646467363\",\n \"type\": \"mobile\"\n},\n \"description\": \"FinTech\",\n \"doingBusinessAs\": \"Adyen BV\",\n \"legalName\": \"Adyen BV\",\n \"registeredAddress\": {\n \"city\": \"AMS\",\n \"country\": \"NL\",\n \"postalCode\": \"1234EE\",\n \"stateOrProvince\": \"NH\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"registrationNumber\": \"\",\n \"stockData\": {\n \"marketIdentifier\": \"ADYN\",\n \"stockNumber\": \"NL012345ABC4\",\n \"tickerSymbol\": \"ADYN.M\"\n},\n \"type\": \"listedPublicCompany\"\n},\n \"type\": \"organization\",\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -1038,7 +1038,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"uboThroughControl\"\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"uboThroughControl\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1095,7 +1095,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"soleProprietorship\"\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"soleProprietorship\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1133,7 +1133,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"entityAssociations\" : [ {\n    \"associatorId\" : \"LE00000000000000000000001\",\n    \"entityType\" : \"soleProprietorship\",\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"soleProprietorship\"\n  } ],\n  \"individual\" : {\n    \"email\" : \"s.eller@example.com\",\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"residentialAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    }\n  },\n  \"type\" : \"individual\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"entityAssociations\": [{\n \"associatorId\": \"LE00000000000000000000001\",\n \"entityType\": \"soleProprietorship\",\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"soleProprietorship\"\n}],\n \"individual\": {\n \"email\": \"s.eller@example.com\",\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -1158,7 +1158,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"soleProprietorship\"\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"soleProprietorship\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1215,7 +1215,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"protector\"\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"protector\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1253,7 +1253,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"entityAssociations\" : [ {\n    \"associatorId\" : \"LE00000000000000000000001\",\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"name\" : \"Simone Hopper\",\n    \"type\" : \"protector\"\n  } ],\n  \"trust\" : {\n    \"name\" : \"Example Trust\",\n    \"type\" : \"fixedUnitTrust\",\n    \"doingBusinessAs\" : \"West's Store\",\n    \"countryOfGoverningLaw\" : \"AU\",\n    \"taxInformation\" : [ {\n      \"country\" : \"AU\",\n      \"type\" : \"ABN\",\n      \"number\" : \"12345678901\"\n    } ],\n    \"registeredAddress\" : {\n      \"street\" : \"Winfield Avenue\",\n      \"city\" : \"Sydney\",\n      \"postalCode\" : \"1197\",\n      \"stateOrProvince\" : \"NSW\",\n      \"country\" : \"AU\"\n    },\n    \"undefinedBeneficiaryInfo\" : [ {\n      \"description\" : \"My future children\"\n    } ]\n  },\n  \"type\" : \"trust\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"entityAssociations\": [{\n \"associatorId\": \"LE00000000000000000000001\",\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"name\": \"Simone Hopper\",\n \"type\": \"protector\"\n}],\n \"trust\": {\n \"name\": \"Example Trust\",\n \"type\": \"fixedUnitTrust\",\n \"doingBusinessAs\": \"West's Store\",\n \"countryOfGoverningLaw\": \"AU\",\n \"taxInformation\": [{\n \"country\": \"AU\",\n \"type\": \"ABN\",\n \"number\": \"12345678901\"\n}],\n \"registeredAddress\": {\n \"street\": \"Winfield Avenue\",\n \"city\": \"Sydney\",\n \"postalCode\": \"1197\",\n \"stateOrProvince\": \"NSW\",\n \"country\": \"AU\"\n},\n \"undefinedBeneficiaryInfo\": [{\n \"description\": \"My future children\"\n}]\n},\n \"type\": \"trust\",\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -1278,7 +1278,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"protector\"\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"protector\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1335,7 +1335,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"settlor\",\n    \"entityType\" : \"individual\",\n    \"settlorExemptionReason\" : [ \"deceased\", \"professionalServiceProvider\" ]\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"settlor\",\n \"entityType\": \"individual\",\n \"settlorExemptionReason\": [\"deceased\", \"professionalServiceProvider\"]\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1373,7 +1373,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"entityAssociations\" : [ {\n    \"associatorId\" : \"LE00000000000000000000001\",\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"settlor\",\n    \"entityType\" : \"individual\",\n    \"settlorExemptionReason\" : [ \"deceased\", \"professionalServiceProvider\" ]\n  } ],\n  \"trust\" : {\n    \"name\" : \"Example Trust\",\n    \"type\" : \"fixedUnitTrust\",\n    \"doingBusinessAs\" : \"West's Store\",\n    \"countryOfGoverningLaw\" : \"AU\",\n    \"taxInformation\" : [ {\n      \"country\" : \"AU\",\n      \"type\" : \"ABN\",\n      \"number\" : \"12345678901\"\n    } ],\n    \"registeredAddress\" : {\n      \"street\" : \"Winfield Avenue\",\n      \"city\" : \"Sydney\",\n      \"postalCode\" : \"1197\",\n      \"stateOrProvince\" : \"NSW\",\n      \"country\" : \"AU\"\n    },\n    \"undefinedBeneficiaryInfo\" : [ {\n      \"description\" : \"My future children\"\n    } ]\n  },\n  \"type\" : \"trust\",\n  \"id\" : \"LE00000000000000000000001\"\n}",
+                                        "body" : "{\n \"entityAssociations\": [{\n \"associatorId\": \"LE00000000000000000000001\",\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"settlor\",\n \"entityType\": \"individual\",\n \"settlorExemptionReason\": [\"deceased\", \"professionalServiceProvider\"]\n}],\n \"trust\": {\n \"name\": \"Example Trust\",\n \"type\": \"fixedUnitTrust\",\n \"doingBusinessAs\": \"West's Store\",\n \"countryOfGoverningLaw\": \"AU\",\n \"taxInformation\": [{\n \"country\": \"AU\",\n \"type\": \"ABN\",\n \"number\": \"12345678901\"\n}],\n \"registeredAddress\": {\n \"street\": \"Winfield Avenue\",\n \"city\": \"Sydney\",\n \"postalCode\": \"1197\",\n \"stateOrProvince\": \"NSW\",\n \"country\": \"AU\"\n},\n \"undefinedBeneficiaryInfo\": [{\n \"description\": \"My future children\"\n}]\n},\n \"type\": \"trust\",\n \"id\": \"LE00000000000000000000001\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -1398,7 +1398,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"legalEntityId\" : \"LE00000000000000000000002\",\n    \"type\" : \"settlor\",\n    \"entityType\" : \"individual\",\n    \"settlorExemptionReason\" : [ \"deceased\", \"professionalServiceProvider\" ]\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"type\": \"settlor\",\n \"entityType\": \"individual\",\n \"settlorExemptionReason\": [\"deceased\", \"professionalServiceProvider\"]\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1616,7 +1616,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"themeId\" : \"YOUR_THEME_ID\",\n  \"redirectUrl\" : \"https://your.redirect-url.com/\",\n  \"locale\" : \"nl-NL\"\n}",
+    "raw": "{\n \"themeId\": \"YOUR_THEME_ID\",\n \"redirectUrl\": \"https://your.redirect-url.com/\",\n \"locale\": \"nl-NL\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1655,7 +1655,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"url\" : \"https://balanceplatform-test.adyen.com/balanceplatform/uo/form/xtl-...?signature=..&cd=..&redirectUrl=https%3A%2F%2Fyour.redirect-url.com%2F&expiry=1667226404807&locale=nl-NL\"\n}",
+                                        "body" : "{\n \"url\": \"https://balanceplatform-test.adyen.com/balanceplatform/uo/form/xtl-...?signature=..&cd=..&redirectUrl=https%3A%2F%2Fyour.redirect-url.com%2F&expiry=1667226404807&locale=nl-NL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1674,7 +1674,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"themeId\" : \"YOUR_THEME_ID\",\n  \"redirectUrl\" : \"https://your.redirect-url.com/\",\n  \"locale\" : \"nl-NL\"\n}",
+    "raw": "{\n \"themeId\": \"YOUR_THEME_ID\",\n \"redirectUrl\": \"https://your.redirect-url.com/\",\n \"locale\": \"nl-NL\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1833,7 +1833,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"service\" : \"banking\",\n  \"industryCode\" : \"4531\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://www.adyen.com\"\n  } ],\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"sourceOfFunds\" : {\n    \"type\" : \"business\",\n    \"adyenProcessedFunds\" : false,\n    \"description\" : \"Funds from my flower shop business\"\n  }\n}",
+    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1865,7 +1865,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"industryCode\" : \"4531\",\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"service\" : \"banking\",\n  \"sourceOfFunds\" : {\n    \"adyenProcessedFunds\" : false,\n    \"description\" : \"Funds from my flower shop business\",\n    \"type\" : \"business\"\n  },\n  \"webData\" : [ {\n    \"webAddress\" : \"https://www.adyen.com\",\n    \"webAddressId\" : \"SE322JV223222F5H4CQGS77V4\"\n  } ],\n  \"id\" : \"SE322KT223222D5FJ7TJN2986\"\n}",
+                                        "body" : "{\n \"industryCode\": \"4531\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"service\": \"banking\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\",\n \"type\": \"business\"\n},\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\",\n \"webAddressId\": \"SE322JV223222F5H4CQGS77V4\"\n}],\n \"id\": \"SE322KT223222D5FJ7TJN2986\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1884,7 +1884,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"service\" : \"banking\",\n  \"industryCode\" : \"4531\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://www.adyen.com\"\n  } ],\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"sourceOfFunds\" : {\n    \"type\" : \"business\",\n    \"adyenProcessedFunds\" : false,\n    \"description\" : \"Funds from my flower shop business\"\n  }\n}",
+    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1929,7 +1929,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"service\" : \"paymentProcessing\",\n  \"industryCode\" : \"339E\",\n  \"salesChannels\" : [ \"eCommerce\", \"ecomMoto\" ],\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://yoururl.com\"\n  } ]\n}",
+    "raw": "{\n \"service\": \"paymentProcessing\",\n \"industryCode\": \"339E\",\n \"salesChannels\": [\"eCommerce\", \"ecomMoto\"],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"webData\": [{\n \"webAddress\": \"https://yoururl.com\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1961,7 +1961,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"service\" : \"paymentProcessing\",\n  \"industryCode\" : \"339E\",\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"salesChannels\" : [ \"eCommerce\", \"ecomMoto\" ],\n  \"webData\" : [ {\n    \"webAddress\" : \"https://yoururl.com\",\n    \"webAddressId\" : \"SE654AC923222F5H4CQGS77V4\"\n  } ],\n  \"id\" : \"SE322KT223222D5FJ7TJN2986\"\n}",
+                                        "body" : "{\n \"service\": \"paymentProcessing\",\n \"industryCode\": \"339E\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"salesChannels\": [\"eCommerce\", \"ecomMoto\"],\n \"webData\": [{\n \"webAddress\": \"https://yoururl.com\",\n \"webAddressId\": \"SE654AC923222F5H4CQGS77V4\"\n}],\n \"id\": \"SE322KT223222D5FJ7TJN2986\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1980,7 +1980,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"service\" : \"paymentProcessing\",\n  \"industryCode\" : \"339E\",\n  \"salesChannels\" : [ \"eCommerce\", \"ecomMoto\" ],\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://yoururl.com\"\n  } ]\n}",
+    "raw": "{\n \"service\": \"paymentProcessing\",\n \"industryCode\": \"339E\",\n \"salesChannels\": [\"eCommerce\", \"ecomMoto\"],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"webData\": [{\n \"webAddress\": \"https://yoururl.com\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2133,7 +2133,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"industryCode\" : \"55\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://www.example.com\"\n  } ]\n}",
+    "raw": "{\n \"industryCode\": \"55\",\n \"webData\": [{\n \"webAddress\": \"https://www.example.com\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2171,7 +2171,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"service\" : \"banking\",\n  \"industryCode\" : \"55\",\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"sourceOfFunds\" : {\n    \"adyenProcessedFunds\" : false,\n    \"description\" : \"Funds from my flower shop business\",\n    \"type\" : \"business\"\n  },\n  \"webData\" : [ {\n    \"webAddress\" : \"https://www.example.com\",\n    \"webAddressId\" : \"SE966LI345672J5H8V87B3FGH\"\n  } ],\n  \"id\" : \"SE322JV223222F5GVGMLNB83F\"\n}",
+                                        "body" : "{\n \"service\": \"banking\",\n \"industryCode\": \"55\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\",\n \"type\": \"business\"\n},\n \"webData\": [{\n \"webAddress\": \"https://www.example.com\",\n \"webAddressId\": \"SE966LI345672J5H8V87B3FGH\"\n}],\n \"id\": \"SE322JV223222F5GVGMLNB83F\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -2190,7 +2190,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"industryCode\" : \"55\",\n  \"webData\" : [ {\n    \"webAddress\" : \"https://www.example.com\"\n  } ]\n}",
+    "raw": "{\n \"industryCode\": \"55\",\n \"webData\": [{\n \"webAddress\": \"https://www.example.com\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2258,7 +2258,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"registrationDocument\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n  } ],\n  \"description\" : \"Registration doc for Example Company\",\n  \"owner\" : {\n    \"id\" : \"LE00000000000000000000001\",\n    \"type\" : \"legalEntity\"\n  }\n}",
+    "raw": "{\n \"type\": \"registrationDocument\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n}],\n \"description\": \"Registration doc for Example Company\",\n \"owner\": {\n \"id\": \"LE00000000000000000000001\",\n \"type\": \"legalEntity\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2290,7 +2290,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"type\" : \"registrationDocument\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n  } ],\n  \"description\" : \"Registration doc for Example Company\",\n  \"fileName\" : \"Registration doc for Example Company\",\n  \"owner\" : {\n    \"id\" : \"LE00000000000000000000001\",\n    \"type\" : \"legalEntity\"\n  },\n  \"id\" : \"SE322JV223222F5GV2N9L8GDK\"\n}",
+                                        "body" : "{\n \"type\": \"registrationDocument\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n}],\n \"description\": \"Registration doc for Example Company\",\n \"fileName\": \"Registration doc for Example Company\",\n \"owner\": {\n \"id\": \"LE00000000000000000000001\",\n \"type\": \"legalEntity\"\n},\n \"id\": \"SE322JV223222F5GV2N9L8GDK\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2315,7 +2315,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"registrationDocument\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n  } ],\n  \"description\" : \"Registration doc for Example Company\",\n  \"owner\" : {\n    \"id\" : \"LE00000000000000000000001\",\n    \"type\" : \"legalEntity\"\n  }\n}",
+    "raw": "{\n \"type\": \"registrationDocument\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n}],\n \"description\": \"Registration doc for Example Company\",\n \"owner\": {\n \"id\": \"LE00000000000000000000001\",\n \"type\": \"legalEntity\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2480,7 +2480,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"proofOfIndustry\",\n  \"description\" : \"Proof of industry doc for Example Company\"\n}",
+    "raw": "{\n \"type\": \"proofOfIndustry\",\n \"description\": \"Proof of industry doc for Example Company\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2518,7 +2518,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"type\" : \"proofOfIndustry\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n  } ],\n  \"description\" : \"Proof of industry for Example Company\",\n  \"fileName\" : \"Proof of industry for Example Company\",\n  \"owner\" : {\n    \"id\" : \"LE00000000000000000000001\",\n    \"type\" : \"legalEntity\"\n  },\n  \"id\" : \"SE322JV223222F5GV2N9L8GDK\"\n}",
+                                        "body" : "{\n \"type\": \"proofOfIndustry\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n}],\n \"description\": \"Proof of industry for Example Company\",\n \"fileName\": \"Proof of industry for Example Company\",\n \"owner\": {\n \"id\": \"LE00000000000000000000001\",\n \"type\": \"legalEntity\"\n},\n \"id\": \"SE322JV223222F5GV2N9L8GDK\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -2543,7 +2543,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"proofOfIndustry\",\n  \"description\" : \"Proof of industry doc for Example Company\"\n}",
+    "raw": "{\n \"type\": \"proofOfIndustry\",\n \"description\": \"Proof of industry doc for Example Company\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2605,7 +2605,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"adyenIssuing\",\n  \"language\" : \"en\"\n}",
+    "raw": "{\n \"type\": \"adyenIssuing\",\n \"language\": \"en\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2644,7 +2644,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"id\" : \"LE00000000000000000000001\",\n  \"type\" : \"adyenIssuing\",\n  \"language\" : \"en\",\n  \"document\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n  \"termsOfServiceDocumentId\" : \"abc123\"\n}",
+                                        "body" : "{\n \"id\": \"LE00000000000000000000001\",\n \"type\": \"adyenIssuing\",\n \"language\": \"en\",\n \"document\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n \"termsOfServiceDocumentId\": \"abc123\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2663,7 +2663,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"adyenIssuing\",\n  \"language\" : \"en\"\n}",
+    "raw": "{\n \"type\": \"adyenIssuing\",\n \"language\": \"en\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2721,7 +2721,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"acceptedBy\" : \"LE00000000000000000000002\"\n}",
+    "raw": "{\n \"acceptedBy\": \"LE00000000000000000000002\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2766,7 +2766,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"acceptedBy\" : \"LE00000000000000000000002\",\n  \"id\" : \"TOSA000AB00000000B2AAAB2BA0AA0\",\n  \"language\" : \"en\",\n  \"termsOfServiceDocumentId\" : \"abc123\",\n  \"type\" : \"adyenIssuing\"\n}",
+                                        "body" : "{\n \"acceptedBy\": \"LE00000000000000000000002\",\n \"id\": \"TOSA000AB00000000B2AAAB2BA0AA0\",\n \"language\": \"en\",\n \"termsOfServiceDocumentId\": \"abc123\",\n \"type\": \"adyenIssuing\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -2785,7 +2785,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"acceptedBy\" : \"LE00000000000000000000002\"\n}",
+    "raw": "{\n \"acceptedBy\": \"LE00000000000000000000002\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2964,7 +2964,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"iban\",\n      \"iban\" : \"NL62ABNA0000000123\"\n    }\n  }\n}",
+    "raw": "{\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL62ABNA0000000123\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2996,7 +2996,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"iban\",\n      \"iban\" : \"NL62ABNA0000000123\"\n    },\n    \"countryCode\" : \"NL\",\n    \"trustedSource\" : false\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"capabilities\" : {\n    \"sendToTransferInstrument\" : {\n      \"allowed\" : false,\n      \"requested\" : true,\n      \"verificationStatus\" : \"pending\"\n    }\n  },\n  \"id\" : \"SE322KH223222F5GXZFNM3BGP\"\n}",
+                                        "body" : "{\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL62ABNA0000000123\"\n},\n \"countryCode\": \"NL\",\n \"trustedSource\": false\n},\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"capabilities\": {\n \"sendToTransferInstrument\": {\n \"allowed\": false,\n \"requested\": true,\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"SE322KH223222F5GXZFNM3BGP\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3021,7 +3021,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"iban\",\n      \"iban\" : \"NL62ABNA0000000123\"\n    }\n  }\n}",
+    "raw": "{\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL62ABNA0000000123\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3072,7 +3072,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"usLocal\",\n      \"accountNumber\" : \"0000000123\",\n      \"routingNumber\" : \"121202211\"\n    }\n  }\n}",
+    "raw": "{\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"0000000123\",\n \"routingNumber\": \"121202211\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3104,7 +3104,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"usLocal\",\n      \"accountNumber\" : \"0000000123\",\n      \"accountType\" : \"checking\",\n      \"routingNumber\" : \"121202211\"\n    },\n    \"countryCode\" : \"US\",\n    \"trustedSource\" : false\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"capabilities\" : {\n    \"sendToTransferInstrument\" : {\n      \"allowed\" : false,\n      \"requested\" : true,\n      \"verificationStatus\" : \"pending\"\n    }\n  },\n  \"id\" : \"SE322JV223222F5GJVKHH8DTC\"\n}",
+                                        "body" : "{\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"0000000123\",\n \"accountType\": \"checking\",\n \"routingNumber\": \"121202211\"\n},\n \"countryCode\": \"US\",\n \"trustedSource\": false\n},\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"capabilities\": {\n \"sendToTransferInstrument\": {\n \"allowed\": false,\n \"requested\": true,\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"SE322JV223222F5GJVKHH8DTC\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3129,7 +3129,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"usLocal\",\n      \"accountNumber\" : \"0000000123\",\n      \"routingNumber\" : \"121202211\"\n    }\n  }\n}",
+    "raw": "{\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"0000000123\",\n \"routingNumber\": \"121202211\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3288,7 +3288,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"iban\",\n      \"iban\" : \"NL02ABNA0123456789\"\n    }\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\"\n}",
+    "raw": "{\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL02ABNA0123456789\"\n}\n},\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3326,7 +3326,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"iban\",\n      \"iban\" : \"NL02ABNA0123456789\"\n    },\n    \"countryCode\" : \"NL\"\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\",\n  \"id\" : \"SE322KH223222F5GXZFNM3BGP\"\n}",
+                                        "body" : "{\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL02ABNA0123456789\"\n},\n \"countryCode\": \"NL\"\n},\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"id\": \"SE322KH223222F5GXZFNM3BGP\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -3351,7 +3351,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"bankAccount\" : {\n    \"accountIdentification\" : {\n      \"type\" : \"iban\",\n      \"iban\" : \"NL02ABNA0123456789\"\n    }\n  },\n  \"legalEntityId\" : \"LE00000000000000000000001\",\n  \"type\" : \"bankAccount\"\n}",
+    "raw": "{\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL02ABNA0123456789\"\n}\n},\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3523,7 +3523,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"language\" : \"fr\"\n}",
+    "raw": "{\n \"language\": \"fr\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3563,7 +3563,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n  \"language\" : \"fr\",\n  \"pciTemplateReferences\" : [ \"PCIT-T7KC6VGL\", \"PCIT-PKB6DKS4\" ]\n}",
+                                        "body" : "{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n \"language\": \"fr\",\n \"pciTemplateReferences\": [\"PCIT-T7KC6VGL\", \"PCIT-PKB6DKS4\"]\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3582,7 +3582,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"language\" : \"fr\"\n}",
+    "raw": "{\n \"language\": \"fr\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3641,7 +3641,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"signedBy\" : \"LE00000000000000000000002\",\n  \"pciTemplateReferences\" : [ \"PCIT-T7KC6VGL\", \"PCIT-PKB6DKS4\" ]\n}",
+    "raw": "{\n \"signedBy\": \"LE00000000000000000000002\",\n \"pciTemplateReferences\": [\"PCIT-T7KC6VGL\", \"PCIT-PKB6DKS4\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3681,7 +3681,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"pciQuestionnaireIds\" : [ \"PCID422GZ22322565HHMH48CW63CPH\", \"PCID422GZ22322565HHMH49CW75Z9H\" ]\n}",
+                                        "body" : "{\n \"pciQuestionnaireIds\": [\"PCID422GZ22322565HHMH48CW63CPH\", \"PCID422GZ22322565HHMH49CW75Z9H\"]\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3700,7 +3700,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"signedBy\" : \"LE00000000000000000000002\",\n  \"pciTemplateReferences\" : [ \"PCIT-T7KC6VGL\", \"PCIT-PKB6DKS4\" ]\n}",
+    "raw": "{\n \"signedBy\": \"LE00000000000000000000002\",\n \"pciTemplateReferences\": [\"PCIT-T7KC6VGL\", \"PCIT-PKB6DKS4\"]\n}",
     "options": {
     "raw": {
     "language": "json"

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Adyen Balance Control API (v1)",
+		"name": "Adyen Balance Control API",
 		"description": {
 		    "content": "The Balance Control API lets you transfer funds between merchant accounts that belong to the same legal entity and are under the same company account.\n\n## Authentication\nTo connect to the Balance Control API, you must authenticate your requests with an [API key or basic auth username and password](https://docs.adyen.com/development-resources/api-authentication). To learn how you can generate these, see [API credentials](https://docs.adyen.com/development-resources/api-credentials).Here is an example of authenticating a request with an API key:\n\n```\ncurl\n-H \"X-API-Key: Your_API_key\" \\n-H \"Content-Type: application/json\" \\n...\n```\nNote that when going live, you need to generate API credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nThe Balance Control API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n\n```\nhttps://pal-test.adyen.com/pal/servlet/BalanceControl/v1/balanceTransfer\n```\n",
 		    "type": "text/markdown"
@@ -36,7 +36,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 50000,\n    \"currency\" : \"EUR\"\n  },\n  \"description\" : \"Your description for the transfer\",\n  \"fromMerchant\" : \"MerchantAccount_NL\",\n  \"toMerchant\" : \"MerchantAccount_DE\",\n  \"type\" : \"debit\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 50000,\n \"currency\": \"EUR\"\n},\n \"description\": \"Your description for the transfer\",\n \"fromMerchant\": \"MerchantAccount_NL\",\n \"toMerchant\": \"MerchantAccount_DE\",\n \"type\": \"debit\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -68,7 +68,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"amount\" : {\n    \"value\" : 50000,\n    \"currency\" : \"EUR\"\n  },\n  \"createdAt\" : \"2022-01-24T14:59:11+01:00\",\n  \"description\" : \"Your description for the transfer\",\n  \"fromMerchant\" : \"MerchantAccount_NL\",\n  \"toMerchant\" : \"MerchantAccount_DE\",\n  \"type\" : \"debit\",\n  \"reference\" : \"Unique reference for the transfer\",\n  \"pspReference\" : \"8816080397613514\",\n  \"status\" : \"transferred\"\n}",
+                                        "body" : "{\n \"amount\": {\n \"value\": 50000,\n \"currency\": \"EUR\"\n},\n \"createdAt\": \"2022-01-24T14:59:11+01:00\",\n \"description\": \"Your description for the transfer\",\n \"fromMerchant\": \"MerchantAccount_NL\",\n \"toMerchant\": \"MerchantAccount_DE\",\n \"type\": \"debit\",\n \"reference\": \"Unique reference for the transfer\",\n \"pspReference\": \"8816080397613514\",\n \"status\": \"transferred\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -87,7 +87,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 50000,\n    \"currency\" : \"EUR\"\n  },\n  \"description\" : \"Your description for the transfer\",\n  \"fromMerchant\" : \"MerchantAccount_NL\",\n  \"toMerchant\" : \"MerchantAccount_DE\",\n  \"type\" : \"debit\"\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 50000,\n \"currency\": \"EUR\"\n},\n \"description\": \"Your description for the transfer\",\n \"fromMerchant\": \"MerchantAccount_NL\",\n \"toMerchant\": \"MerchantAccount_DE\",\n \"type\": \"debit\"\n}",
     "options": {
     "raw": {
     "language": "json"

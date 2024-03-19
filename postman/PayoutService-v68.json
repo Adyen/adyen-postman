@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Adyen Payout API (v68)",
+		"name": "Adyen Payout API",
 		"description": {
 		    "content": "A set of API endpoints that allow you to store payout details, confirm, or decline a payout.\n\nFor more information, refer to [Online payouts](https://docs.adyen.com/online-payments/online-payouts).\n## Authentication\nTo use the Payout API, you need to have [two API credentials](https://docs.adyen.com/online-payments/online-payouts#payouts-to-bank-accounts-and-wallets): one for storing payout details and submitting payouts, and another one for confirming or declining payouts. If you don't have the required API credentials, contact our [Support Team](https://www.adyen.help/hc/en-us/requests/new).\n\nIf using an API key, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\nAlternatively, you can use the username and password to connect to the API using [basic authentication](https://docs.adyen.com/development-resources/api-credentials#basic-authentication).\n\nThe following example shows how to authenticate your request with basic authentication when submitting a payout:\n\n```\ncurl\n-U \"storePayout@Company.YOUR_COMPANY_ACCOUNT\":\"YOUR_BASIC_AUTHENTICATION_PASSWORD\" \\n-H \"Content-Type: application/json\" \\n...\n```\n\n## Versioning\nPayments API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://pal-test.adyen.com/pal/servlet/Payout/v68/payout\n```\n\n## Going live\n\nTo authenticate to the live endpoints, you need [API credentials](https://docs.adyen.com/development-resources/api-credentials) from your live Customer Area.\n\nThe live endpoint URLs contain a prefix which is unique to your company account:\n```\n\nhttps://{PREFIX}-pal-live.adyenpayments.com/pal/servlet/Payout/v68/payout\n```\n\nGet your `{PREFIX}` from your live Customer Area under **Developers** > **API URLs** > **Prefix**.",
 		    "type": "text/markdown"
@@ -36,7 +36,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"bank\" : {\n    \"bankName\" : \"AbnAmro\",\n    \"bic\" : \"ABNANL2A\",\n    \"countryCode\" : \"NL\",\n    \"iban\" : \"NL32ABNA0515071439\",\n    \"ownerName\" : \"Adyen\",\n    \"bankCity\" : \"Amsterdam\",\n    \"taxId\" : \"bankTaxId\"\n  },\n  \"shopperEmail\" : \"shopper@email.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\",\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"17\",\n    \"street\" : \"Teststreet 1\",\n    \"city\" : \"Amsterdam\",\n    \"stateOrProvince\" : \"NY\",\n    \"country\" : \"US\",\n    \"postalCode\" : \"12345\"\n  }\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"recurring\": {\n \"contract\": \"PAYOUT\"\n},\n \"bank\": {\n \"bankName\": \"AbnAmro\",\n \"bic\": \"ABNANL2A\",\n \"countryCode\": \"NL\",\n \"iban\": \"NL32ABNA0515071439\",\n \"ownerName\": \"Adyen\",\n \"bankCity\": \"Amsterdam\",\n \"taxId\": \"bankTaxId\"\n},\n \"shopperEmail\": \"shopper@email.com\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"shopperName\": {\n \"firstName\": \"Adyen\",\n \"lastName\": \"Test\"\n},\n \"dateOfBirth\": \"1990-01-01\",\n \"entityType\": \"Company\",\n \"nationality\": \"NL\",\n \"billingAddress\": {\n \"houseNumberOrName\": \"17\",\n \"street\": \"Teststreet 1\",\n \"city\": \"Amsterdam\",\n \"stateOrProvince\": \"NY\",\n \"country\": \"US\",\n \"postalCode\": \"12345\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -68,7 +68,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"pspReference\" : \"991617894326362D\",\n  \"recurringDetailReference\" : \"9916178936754752\",\n  \"resultCode\" : \"Success\"\n}",
+                                        "body" : "{\n \"pspReference\": \"991617894326362D\",\n \"recurringDetailReference\": \"9916178936754752\",\n \"resultCode\": \"Success\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -87,7 +87,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"bank\" : {\n    \"bankName\" : \"AbnAmro\",\n    \"bic\" : \"ABNANL2A\",\n    \"countryCode\" : \"NL\",\n    \"iban\" : \"NL32ABNA0515071439\",\n    \"ownerName\" : \"Adyen\",\n    \"bankCity\" : \"Amsterdam\",\n    \"taxId\" : \"bankTaxId\"\n  },\n  \"shopperEmail\" : \"shopper@email.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\",\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"17\",\n    \"street\" : \"Teststreet 1\",\n    \"city\" : \"Amsterdam\",\n    \"stateOrProvince\" : \"NY\",\n    \"country\" : \"US\",\n    \"postalCode\" : \"12345\"\n  }\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"recurring\": {\n \"contract\": \"PAYOUT\"\n},\n \"bank\": {\n \"bankName\": \"AbnAmro\",\n \"bic\": \"ABNANL2A\",\n \"countryCode\": \"NL\",\n \"iban\": \"NL32ABNA0515071439\",\n \"ownerName\": \"Adyen\",\n \"bankCity\": \"Amsterdam\",\n \"taxId\": \"bankTaxId\"\n},\n \"shopperEmail\": \"shopper@email.com\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"shopperName\": {\n \"firstName\": \"Adyen\",\n \"lastName\": \"Test\"\n},\n \"dateOfBirth\": \"1990-01-01\",\n \"entityType\": \"Company\",\n \"nationality\": \"NL\",\n \"billingAddress\": {\n \"houseNumberOrName\": \"17\",\n \"street\": \"Teststreet 1\",\n \"city\": \"Amsterdam\",\n \"stateOrProvince\": \"NY\",\n \"country\": \"US\",\n \"postalCode\": \"12345\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -138,7 +138,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"amount\" : {\n    \"value\" : 2000,\n    \"currency\" : \"EUR\"\n  },\n  \"bank\" : {\n    \"bankName\" : \"Commerzbank\",\n    \"iban\" : \"DE87123456781234567890\",\n    \"countryCode\" : \"DE\",\n    \"ownerName\" : \"Simon Hopper\"\n  },\n  \"reference\" : \"Your Reference\",\n  \"shopperEmail\" : \"s.hopper@test.com\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\"\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"recurring\": {\n \"contract\": \"PAYOUT\"\n},\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"EUR\"\n},\n \"bank\": {\n \"bankName\": \"Commerzbank\",\n \"iban\": \"DE87123456781234567890\",\n \"countryCode\": \"DE\",\n \"ownerName\": \"Simon Hopper\"\n},\n \"reference\": \"Your Reference\",\n \"shopperEmail\": \"s.hopper@test.com\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"shopperName\": {\n \"firstName\": \"Adyen\",\n \"lastName\": \"Test\"\n},\n \"dateOfBirth\": \"1990-01-01\",\n \"entityType\": \"Company\",\n \"nationality\": \"NL\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -183,7 +183,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 100\n  },\n  \"selectedBrand\" : \"neteller\",\n  \"additionalData\" : {\n    \"tokenDataType\" : \"Neteller\",\n    \"account\" : \"myNetellerAccount\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_SHOPPER_REFERENCE\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 100\n},\n \"selectedBrand\": \"neteller\",\n \"additionalData\": {\n \"tokenDataType\": \"Neteller\",\n \"account\": \"myNetellerAccount\"\n},\n \"shopperName\": {\n \"firstName\": \"Test\",\n \"lastName\": \"Test2\"\n},\n \"dateOfBirth\": \"1982-07-17\",\n \"entityType\": \"NaturalPerson\",\n \"nationality\": \"NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"recurring\": {\n \"contract\": \"PAYOUT\"\n},\n \"reference\": \"Test Payout\",\n \"shopperEmail\": \"test@company.com\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -228,7 +228,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1750\n  },\n  \"selectedBrand\" : \"paypal\",\n  \"additionalData\" : {\n    \"tokenDataType\" : \"PayPal\",\n    \"emailId\" : \"EmailUsedForPayPalAccount@example.com\",\n    \"paypal.payerId\" : \"AK5HCWWRUV2KL\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1750\n},\n \"selectedBrand\": \"paypal\",\n \"additionalData\": {\n \"tokenDataType\": \"PayPal\",\n \"emailId\": \"EmailUsedForPayPalAccount@example.com\",\n \"paypal.payerId\": \"AK5HCWWRUV2KL\"\n},\n \"shopperName\": {\n \"firstName\": \"Test\",\n \"lastName\": \"Test2\"\n},\n \"dateOfBirth\": \"1982-07-17\",\n \"entityType\": \"NaturalPerson\",\n \"nationality\": \"NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"recurring\": {\n \"contract\": \"PAYOUT\"\n},\n \"reference\": \"Test Payout\",\n \"shopperEmail\": \"test@company.com\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -273,7 +273,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"selectedBrand\" : \"paysafecard\",\n  \"additionalData\" : {\n    \"emailId\" : \"EmailUsedForPaysafecardAccount@example.com\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"selectedBrand\": \"paysafecard\",\n \"additionalData\": {\n \"emailId\": \"EmailUsedForPaysafecardAccount@example.com\"\n},\n \"shopperName\": {\n \"firstName\": \"Test\",\n \"lastName\": \"Test2\"\n},\n \"dateOfBirth\": \"1982-07-17\",\n \"entityType\": \"NaturalPerson\",\n \"nationality\": \"NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"recurring\": {\n \"contract\": \"PAYOUT\"\n},\n \"reference\": \"Test Payout\",\n \"shopperEmail\": \"test@company.com\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -318,7 +318,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 100\n  },\n  \"selectedBrand\" : \"moneybookers\",\n  \"additionalData\" : {\n    \"tokenDataType\" : \"MoneyBookers\",\n    \"email\" : \"name@adyen.com\"\n  },\n  \"shopperName\" : {\n    \"firstName\" : \"Test\",\n    \"lastName\" : \"Test2\"\n  },\n  \"dateOfBirth\" : \"1982-07-17\",\n  \"entityType\" : \"NaturalPerson\",\n  \"nationality\" : \"NL\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"Test Payout\",\n  \"shopperEmail\" : \"test@company.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 100\n},\n \"selectedBrand\": \"moneybookers\",\n \"additionalData\": {\n \"tokenDataType\": \"MoneyBookers\",\n \"email\": \"name@adyen.com\"\n},\n \"shopperName\": {\n \"firstName\": \"Test\",\n \"lastName\": \"Test2\"\n},\n \"dateOfBirth\": \"1982-07-17\",\n \"entityType\": \"NaturalPerson\",\n \"nationality\": \"NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"recurring\": {\n \"contract\": \"PAYOUT\"\n},\n \"reference\": \"Test Payout\",\n \"shopperEmail\": \"test@company.com\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -369,7 +369,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 1000\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"recurring\" : {\n    \"contract\" : \"PAYOUT\"\n  },\n  \"reference\" : \"PayoutPayment-0001\",\n  \"shopperEmail\" : \"shopper@email.com\",\n  \"shopperReference\" : \"YOUR_UNIQUE_SHOPPER_ID\",\n  \"shopperName\" : {\n    \"firstName\" : \"Adyen\",\n    \"lastName\" : \"Test\"\n  },\n  \"dateOfBirth\" : \"1990-01-01\",\n  \"entityType\" : \"Company\",\n  \"nationality\" : \"NL\",\n  \"selectedRecurringDetailReference\" : \"LATEST\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"recurring\": {\n \"contract\": \"PAYOUT\"\n},\n \"reference\": \"PayoutPayment-0001\",\n \"shopperEmail\": \"shopper@email.com\",\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"shopperName\": {\n \"firstName\": \"Adyen\",\n \"lastName\": \"Test\"\n},\n \"dateOfBirth\": \"1990-01-01\",\n \"entityType\": \"Company\",\n \"nationality\": \"NL\",\n \"selectedRecurringDetailReference\": \"LATEST\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -425,7 +425,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 2500,\n    \"currency\" : \"USD\"\n  },\n  \"card\" : {\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"121\",\n    \"street\" : \"Brannan Street\",\n    \"city\" : \"Beverly Hills\",\n    \"postalCode\" : \"90210\",\n    \"stateOrProvince\" : \"CA\",\n    \"country\" : \"US\"\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"P9999999999999999\",\n  \"shopperName\" : {\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Smith\"\n  }\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 2500,\n \"currency\": \"USD\"\n},\n \"card\": {\n \"number\": \"4111111111111111\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"billingAddress\": {\n \"houseNumberOrName\": \"121\",\n \"street\": \"Brannan Street\",\n \"city\": \"Beverly Hills\",\n \"postalCode\": \"90210\",\n \"stateOrProvince\": \"CA\",\n \"country\": \"US\"\n},\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"P9999999999999999\",\n \"shopperName\": {\n \"firstName\": \"John\",\n \"lastName\": \"Smith\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -470,7 +470,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"amount\" : {\n    \"value\" : 2500,\n    \"currency\" : \"USD\"\n  },\n  \"card\" : {\n    \"number\" : \"4111111111111111\",\n    \"expiryMonth\" : \"03\",\n    \"expiryYear\" : \"2030\",\n    \"holderName\" : \"John Smith\"\n  },\n  \"billingAddress\" : {\n    \"houseNumberOrName\" : \"121\",\n    \"street\" : \"Brannan Street\",\n    \"city\" : \"Beverly Hills\",\n    \"postalCode\" : \"90210\",\n    \"stateOrProvince\" : \"CA\",\n    \"country\" : \"US\"\n  },\n  \"fundSource\" : {\n    \"additionalData\" : {\n      \"fundingSource\" : \"DEBIT\"\n    },\n    \"billingAddress\" : {\n      \"houseNumberOrName\" : \"121\",\n      \"street\" : \"Brannan Street\",\n      \"city\" : \"Beverly Hills\",\n      \"postalCode\" : \"90210\",\n      \"stateOrProvince\" : \"CA\",\n      \"country\" : \"US\"\n    },\n    \"card\" : {\n      \"expiryMonth\" : \"03\",\n      \"expiryYear\" : \"2030\",\n      \"holderName\" : \"Payer Name\",\n      \"number\" : \"4400000000000008\"\n    },\n    \"shopperName\" : {\n      \"firstName\" : \"Payer\",\n      \"lastName\" : \"Name\"\n    }\n  },\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"reference\" : \"P9999999999999999\",\n  \"shopperName\" : {\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Smith\"\n  }\n}",
+    "raw": "{\n \"amount\": {\n \"value\": 2500,\n \"currency\": \"USD\"\n},\n \"card\": {\n \"number\": \"4111111111111111\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"billingAddress\": {\n \"houseNumberOrName\": \"121\",\n \"street\": \"Brannan Street\",\n \"city\": \"Beverly Hills\",\n \"postalCode\": \"90210\",\n \"stateOrProvince\": \"CA\",\n \"country\": \"US\"\n},\n \"fundSource\": {\n \"additionalData\": {\n \"fundingSource\": \"DEBIT\"\n},\n \"billingAddress\": {\n \"houseNumberOrName\": \"121\",\n \"street\": \"Brannan Street\",\n \"city\": \"Beverly Hills\",\n \"postalCode\": \"90210\",\n \"stateOrProvince\": \"CA\",\n \"country\": \"US\"\n},\n \"card\": {\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"Payer Name\",\n \"number\": \"4400000000000008\"\n},\n \"shopperName\": {\n \"firstName\": \"Payer\",\n \"lastName\": \"Name\"\n}\n},\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"P9999999999999999\",\n \"shopperName\": {\n \"firstName\": \"John\",\n \"lastName\": \"Smith\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -526,7 +526,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"originalReference\": \"9913140798220028\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -558,7 +558,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"pspReference\" : \"991617894325358C\",\n  \"response\" : \"[payout-confirm-received]\"\n}",
+                                        "body" : "{\n \"pspReference\": \"991617894325358C\",\n \"response\": \"[payout-confirm-received]\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -577,7 +577,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"originalReference\": \"9913140798220028\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -628,7 +628,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"originalReference\": \"9913140798220028\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -660,7 +660,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"pspReference\" : \"991617894325360J\",\n  \"response\" : \"[payout-decline-received]\"\n}",
+                                        "body" : "{\n \"pspReference\": \"991617894325360J\",\n \"response\": \"[payout-decline-received]\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -679,7 +679,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"originalReference\" : \"9913140798220028\"\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"originalReference\": \"9913140798220028\"\n}",
     "options": {
     "raw": {
     "language": "json"

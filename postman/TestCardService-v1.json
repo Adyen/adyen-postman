@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Adyen Test Cards API (v1)",
+		"name": "Adyen Test Cards API",
 		"description": {
 		    "content": "The Test Cards API provides endpoints for generating custom test card numbers. For more information, refer to [Custom test cards](https://docs.adyen.com/development-resources/testing/create-test-cards) documentation.",
 		    "type": "text/markdown"

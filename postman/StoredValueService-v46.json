@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Adyen Stored Value API (v46)",
+		"name": "Adyen Stored Value API",
 		"description": {
 		    "content": "A set of API endpoints to manage stored value products.",
 		    "type": "text/markdown"

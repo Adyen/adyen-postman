@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "POS Terminal Management API (v1)",
+		"name": "POS Terminal Management API",
 		"description": {
 		    "content": "This API provides endpoints for managing your point-of-sale (POS) payment terminals. You can use the API to obtain information about a specific terminal, retrieve overviews of your terminals and stores, and assign terminals to a merchant account or store.\n\nFor more information, refer to [Assign terminals](https://docs.adyen.com/point-of-sale/automating-terminal-management/assign-terminals-api).\n\n## Authentication\nEach request to the Terminal Management API must be signed with an API key. For this, obtain an API Key from your Customer Area, as described in [How to get the API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key). Then set this key to the `X-API-Key` header value, for example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: Your_API_key\" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Versioning\nTerminal Management API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://postfmapi-test.adyen.com/postfmapi/terminal/v1/getTerminalsUnderAccount\n```\nWhen using versioned endpoints, Boolean response values are returned in string format: `\"true\"` or `\"false\"`.\nIf you omit the version from the endpoint URL, Boolean response values are returned like this: `true` or `false`.",
 		    "type": "text/markdown"
@@ -36,7 +36,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"terminals\": [\"P400Plus-275479597\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -68,7 +68,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"results\" : {\n    \"P400Plus-275479597\" : \"RemoveConfigScheduled\"\n  }\n}",
+                                        "body" : "{\n \"results\": {\n \"P400Plus-275479597\": \"RemoveConfigScheduled\"\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -87,7 +87,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"terminals\": [\"P400Plus-275479597\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -132,7 +132,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantInventory\" : true,\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"merchantInventory\": true,\n \"terminals\": [\"P400Plus-275479597\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -164,7 +164,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"results\" : {\n    \"P400Plus-275479597\" : \"RemoveConfigScheduled\"\n  }\n}",
+                                        "body" : "{\n \"results\": {\n \"P400Plus-275479597\": \"RemoveConfigScheduled\"\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -183,7 +183,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"merchantInventory\" : true,\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"merchantInventory\": true,\n \"terminals\": [\"P400Plus-275479597\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -228,7 +228,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"store\": \"YOUR_STORE\",\n \"terminals\": [\"P400Plus-275479597\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -260,7 +260,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"results\" : {\n    \"P400Plus-275479597\" : \"RemoveConfigScheduled\"\n  }\n}",
+                                        "body" : "{\n \"results\": {\n \"P400Plus-275479597\": \"RemoveConfigScheduled\"\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -279,7 +279,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\",\n  \"terminals\" : [ \"P400Plus-275479597\" ]\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"store\": \"YOUR_STORE\",\n \"terminals\": [\"P400Plus-275479597\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -330,7 +330,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
+    "raw": "{\n \"terminal\": \"M400-401972715\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -362,7 +362,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n  \"merchantInventory\" : false,\n  \"store\" : \"YOUR_STORE\",\n  \"terminal\" : \"M400-401972715\"\n}",
+                                        "body" : "{\n \"companyAccount\": \"YOUR_COMPANY_ACCOUNT\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"merchantInventory\": false,\n \"store\": \"YOUR_STORE\",\n \"terminal\": \"M400-401972715\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -381,7 +381,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
+    "raw": "{\n \"terminal\": \"M400-401972715\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -432,7 +432,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -464,7 +464,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"stores\" : [ {\n    \"store\" : \"YOUR_STORE\",\n    \"description\" : \"YOUR_STORE\",\n    \"address\" : {\n      \"city\" : \"The City\",\n      \"countryCode\" : \"NL\",\n      \"postalCode\" : \"1234\",\n      \"streetAddress\" : \"The Street\"\n    },\n    \"status\" : \"Active\",\n    \"merchantAccountCode\" : \"YOUR_MERCHANT_ACCOUNT\"\n  } ]\n}",
+                                        "body" : "{\n \"stores\": [{\n \"store\": \"YOUR_STORE\",\n \"description\": \"YOUR_STORE\",\n \"address\": {\n \"city\": \"The City\",\n \"countryCode\": \"NL\",\n \"postalCode\": \"1234\",\n \"streetAddress\": \"The Street\"\n},\n \"status\": \"Active\",\n \"merchantAccountCode\": \"YOUR_MERCHANT_ACCOUNT\"\n}]\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -483,7 +483,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -528,7 +528,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -560,7 +560,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"stores\" : [ {\n    \"store\" : \"YOUR_STORE\",\n    \"description\" : \"YOUR_STORE\",\n    \"address\" : {\n      \"city\" : \"The City\",\n      \"countryCode\" : \"NL\",\n      \"postalCode\" : \"1234\",\n      \"streetAddress\" : \"The Street\"\n    },\n    \"status\" : \"Active\",\n    \"merchantAccountCode\" : \"YOUR_MERCHANT_ACCOUNT\"\n  } ]\n}",
+                                        "body" : "{\n \"stores\": [{\n \"store\": \"YOUR_STORE\",\n \"description\": \"YOUR_STORE\",\n \"address\": {\n \"city\": \"The City\",\n \"countryCode\": \"NL\",\n \"postalCode\": \"1234\",\n \"streetAddress\": \"The Street\"\n},\n \"status\": \"Active\",\n \"merchantAccountCode\": \"YOUR_MERCHANT_ACCOUNT\"\n}]\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -579,7 +579,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -630,7 +630,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
+    "raw": "{\n \"terminal\": \"M400-401972715\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -662,7 +662,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n  \"merchantInventory\" : false,\n  \"store\" : \"YOUR_STORE\",\n  \"terminal\" : \"M400-401972715\",\n  \"deviceModel\" : \"M400\",\n  \"serialNumber\" : \"401-972-715\",\n  \"permanentTerminalId\" : \"88912016\",\n  \"terminalStatus\" : \"SwitchedOff\",\n  \"firmwareVersion\" : \"Verifone_VOS 1.57.6\",\n  \"country\" : \"NETHERLANDS\",\n  \"storeDetails\" : {\n    \"store\" : \"YOUR_STORE\",\n    \"description\" : \"TestStore\",\n    \"address\" : {\n      \"city\" : \"The City\",\n      \"countryCode\" : \"NL\",\n      \"postalCode\" : \"1234\",\n      \"streetAddress\" : \"The Street\"\n    }\n  },\n  \"ethernetMac\" : \"60:c7:98:5a:69:cd\",\n  \"ethernetIp\" : \"192.168.2.11\",\n  \"wifiMac\" : \"c4:ac:59:47:f3:71\",\n  \"wifiIp\" : \"192.168.2.12\",\n  \"dhcpEnabled\" : false\n}",
+                                        "body" : "{\n \"companyAccount\": \"YOUR_COMPANY_ACCOUNT\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"merchantInventory\": false,\n \"store\": \"YOUR_STORE\",\n \"terminal\": \"M400-401972715\",\n \"deviceModel\": \"M400\",\n \"serialNumber\": \"401-972-715\",\n \"permanentTerminalId\": \"88912016\",\n \"terminalStatus\": \"SwitchedOff\",\n \"firmwareVersion\": \"Verifone_VOS 1.57.6\",\n \"country\": \"NETHERLANDS\",\n \"storeDetails\": {\n \"store\": \"YOUR_STORE\",\n \"description\": \"TestStore\",\n \"address\": {\n \"city\": \"The City\",\n \"countryCode\": \"NL\",\n \"postalCode\": \"1234\",\n \"streetAddress\": \"The Street\"\n}\n},\n \"ethernetMac\": \"60:c7:98:5a:69:cd\",\n \"ethernetIp\": \"192.168.2.11\",\n \"wifiMac\": \"c4:ac:59:47:f3:71\",\n \"wifiIp\": \"192.168.2.12\",\n \"dhcpEnabled\": false\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -681,7 +681,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"terminal\" : \"M400-401972715\"\n}",
+    "raw": "{\n \"terminal\": \"M400-401972715\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -732,7 +732,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -764,7 +764,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccounts\" : [ {\n    \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n    \"inStoreTerminals\" : [ \"P400Plus-275479597\" ],\n    \"stores\" : [ {\n      \"store\" : \"YOUR_STORE\",\n      \"inStoreTerminals\" : [ \"M400-401972715\" ]\n    } ]\n  } ]\n}",
+                                        "body" : "{\n \"companyAccount\": \"YOUR_COMPANY_ACCOUNT\",\n \"merchantAccounts\": [{\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"inStoreTerminals\": [\"P400Plus-275479597\"],\n \"stores\": [{\n \"store\": \"YOUR_STORE\",\n \"inStoreTerminals\": [\"M400-401972715\"]\n}]\n}]\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -783,7 +783,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -828,7 +828,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -860,7 +860,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccounts\" : [ {\n    \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n    \"inStoreTerminals\" : [ \"P400Plus-275479597\" ],\n    \"stores\" : [ {\n      \"store\" : \"YOUR_STORE\",\n      \"inStoreTerminals\" : [ \"M400-401972715\" ]\n    } ]\n  } ]\n}",
+                                        "body" : "{\n \"companyAccount\": \"YOUR_COMPANY_ACCOUNT\",\n \"merchantAccounts\": [{\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"inStoreTerminals\": [\"P400Plus-275479597\"],\n \"stores\": [{\n \"store\": \"YOUR_STORE\",\n \"inStoreTerminals\": [\"M400-401972715\"]\n}]\n}]\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -879,7 +879,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -924,7 +924,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"store\": \"YOUR_STORE\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -956,7 +956,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"companyAccount\" : \"YOUR_COMPANY_ACCOUNT\",\n  \"merchantAccounts\" : [ {\n    \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\",\n    \"stores\" : [ {\n      \"store\" : \"YOUR_STORE\",\n      \"inStoreTerminals\" : [ \"M400-401972715\" ]\n    } ]\n  } ]\n}",
+                                        "body" : "{\n \"companyAccount\": \"YOUR_COMPANY_ACCOUNT\",\n \"merchantAccounts\": [{\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"stores\": [{\n \"store\": \"YOUR_STORE\",\n \"inStoreTerminals\": [\"M400-401972715\"]\n}]\n}]\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -975,7 +975,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"companyAccount\" : \"{{YOUR_COMPANY_ACCOUNT}}\",\n  \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\",\n  \"store\" : \"YOUR_STORE\"\n}",
+    "raw": "{\n \"companyAccount\": \"{{YOUR_COMPANY_ACCOUNT}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"store\": \"YOUR_STORE\"\n}",
     "options": {
     "raw": {
     "language": "json"

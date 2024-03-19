@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Configuration API (v1)",
+		"name": "Configuration API",
 		"description": {
 		    "content": "The Configuration API enables you to create a platform where you can onboard your users as account holders and create balance accounts, cards, and business accounts.\n\n## Authentication\nYour Adyen contact will provide your API credential and an API key. To connect to the API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\nAlternatively, you can use the username and password to connect to the API using basic authentication. For example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-U \"ws@BalancePlatform.YOUR_BALANCE_PLATFORM\":\"YOUR_WS_PASSWORD\" \\n...\n```\n## Versioning\nThe Configuration API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://balanceplatform-api-test.adyen.com/bcl/v1/accountHolders\n```\n## Going live\nWhen going live, your Adyen contact will provide your API credential for the live environment. You can then use the API key or the username and password to send requests to `https://balanceplatform-api-live.adyen.com/bcl/v1`.",
 		    "type": "text/markdown"
@@ -36,7 +36,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -68,7 +68,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"individual\" : {\n    \"email\" : \"s.eller@example.com\",\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"residentialAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    }\n  },\n  \"type\" : \"individual\",\n  \"id\" : \"LE322JV223222D5GG42KN6869\"\n}",
+                                        "body" : "{\n \"individual\": {\n \"email\": \"s.eller@example.com\",\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE322JV223222D5GG42KN6869\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -87,7 +87,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -132,7 +132,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    },\n    \"phone\" : {\n      \"number\" : \"+14153671502\",\n      \"type\" : \"mobile\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n},\n \"phone\": {\n \"number\": \"+14153671502\",\n \"type\": \"mobile\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -164,7 +164,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"individual\" : {\n    \"email\" : \"s.eller@example.com\",\n    \"phone\" : {\n      \"number\" : \"+14153671502\",\n      \"type\" : \"mobile\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"residentialAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  },\n  \"type\" : \"individual\",\n  \"id\" : \"LE322JV223222D5GGMHPC2FPL\"\n}",
+                                        "body" : "{\n \"individual\": {\n \"email\": \"s.eller@example.com\",\n \"phone\": {\n \"number\": \"+14153671502\",\n \"type\": \"mobile\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"residentialAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE322JV223222D5GGMHPC2FPL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -183,7 +183,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\",\n  \"individual\" : {\n    \"residentialAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    },\n    \"phone\" : {\n      \"number\" : \"+14153671502\",\n      \"type\" : \"mobile\"\n    },\n    \"name\" : {\n      \"firstName\" : \"Shelly\",\n      \"lastName\" : \"Eller\"\n    },\n    \"birthData\" : {\n      \"dateOfBirth\" : \"1990-06-21\"\n    },\n    \"email\" : \"s.eller@example.com\"\n  }\n}",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n},\n \"phone\": {\n \"number\": \"+14153671502\",\n \"type\": \"mobile\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"email\": \"s.eller@example.com\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -228,7 +228,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in NL\",\n    \"doingBusinessAs\" : \"API Company Trading\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"34179503\",\n    \"email\" : \"organization@example.com\"\n  },\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE322JV223222D5GG42KN6869\",\n    \"type\" : \"signatory\"\n  } ]\n}",
+    "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in NL\",\n \"doingBusinessAs\": \"API Company Trading\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"registrationNumber\": \"34179503\",\n \"email\": \"organization@example.com\"\n},\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\",\n \"type\": \"signatory\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -260,7 +260,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in NL\",\n    \"doingBusinessAs\" : \"API Company Trading\",\n    \"registrationNumber\" : \"34179503\",\n    \"email\" : \"organization@example.com\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"taxExempt\" : false,\n    \"type\" : \"privateCompany\"\n  },\n  \"type\" : \"organization\",\n  \"id\" : \"LE322JV223222D5FZ9N74BSGM\"\n}",
+                                        "body" : "{\n \"organization\": {\n \"legalName\": \"Explorer Company based in NL\",\n \"doingBusinessAs\": \"API Company Trading\",\n \"registrationNumber\": \"34179503\",\n \"email\": \"organization@example.com\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"taxExempt\": false,\n \"type\": \"privateCompany\"\n},\n \"type\": \"organization\",\n \"id\": \"LE322JV223222D5FZ9N74BSGM\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -279,7 +279,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in NL\",\n    \"doingBusinessAs\" : \"API Company Trading\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"Amsterdam\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1011DJ\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"34179503\",\n    \"email\" : \"organization@example.com\"\n  },\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE322JV223222D5GG42KN6869\",\n    \"type\" : \"signatory\"\n  } ]\n}",
+    "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in NL\",\n \"doingBusinessAs\": \"API Company Trading\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"registrationNumber\": \"34179503\",\n \"email\": \"organization@example.com\"\n},\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\",\n \"type\": \"signatory\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -324,7 +324,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in US\",\n    \"registrationNumber\" : \"101002749\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in US\",\n \"registrationNumber\": \"101002749\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -356,7 +356,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in US\",\n    \"registrationNumber\" : \"101002749\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    },\n    \"taxExempt\" : false,\n    \"type\" : \"privateCompany\"\n  },\n  \"type\" : \"organization\",\n  \"id\" : \"LE322JV223222D5FZ9N74BSGM\"\n}",
+                                        "body" : "{\n \"organization\": {\n \"legalName\": \"Explorer Company based in US\",\n \"registrationNumber\": \"101002749\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n},\n \"taxExempt\": false,\n \"type\": \"privateCompany\"\n},\n \"type\": \"organization\",\n \"id\": \"LE322JV223222D5FZ9N74BSGM\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -375,7 +375,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"organization\",\n  \"organization\" : {\n    \"legalName\" : \"Explorer Company based in US\",\n    \"registrationNumber\" : \"101002749\",\n    \"type\" : \"privateCompany\",\n    \"registeredAddress\" : {\n      \"city\" : \"New York\",\n      \"country\" : \"US\",\n      \"postalCode\" : \"10003\",\n      \"stateOrProvince\" : \"NY\",\n      \"street\" : \"71 5th Avenue\",\n      \"street2\" : \"11th floor\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"organization\",\n \"organization\": {\n \"legalName\": \"Explorer Company based in US\",\n \"registrationNumber\": \"101002749\",\n \"type\": \"privateCompany\",\n \"registeredAddress\": {\n \"city\": \"New York\",\n \"country\": \"US\",\n \"postalCode\": \"10003\",\n \"stateOrProvince\": \"NY\",\n \"street\": \"71 5th Avenue\",\n \"street2\": \"11th floor\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -477,7 +477,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\"\n}",
+    "raw": "{\n \"type\": \"individual\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -515,7 +515,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"individual\" : {\n    \"name\" : {\n      \"firstName\" : \"Explorer\",\n      \"lastName\" : \"Company based in US\"\n    },\n    \"residentialAddress\" : {\n      \"country\" : \"US\"\n    }\n  },\n  \"type\" : \"individual\",\n  \"id\" : \"LE322JV223222J5HD8HZS2C8B\"\n}",
+                                        "body" : "{\n \"individual\": {\n \"name\": {\n \"firstName\": \"Explorer\",\n \"lastName\": \"Company based in US\"\n},\n \"residentialAddress\": {\n \"country\": \"US\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE322JV223222J5HD8HZS2C8B\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -534,7 +534,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"individual\"\n}",
+    "raw": "{\n \"type\": \"individual\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -585,7 +585,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE322KH223222F5GV2SL953Z3\",\n    \"type\" : \"uboThroughControl\"\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE322KH223222F5GV2SL953Z3\",\n \"type\": \"uboThroughControl\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -623,7 +623,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"entityAssociations\" : [ {\n    \"associatorId\" : \"LE322KH223222F5GVGNMJ3XC5\",\n    \"entityType\" : \"individual\",\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE322KH223222F5GV2SL953Z3\",\n    \"name\" : \"Simone Hopper\",\n    \"type\" : \"uboThroughControl\"\n  } ],\n  \"organization\" : {\n    \"email\" : \"john.doe@adyen.com\",\n    \"phone\" : {\n      \"countryCode\" : \"NL\",\n      \"number\" : \"646467363\",\n      \"type\" : \"mobile\"\n    },\n    \"description\" : \"FinTech\",\n    \"doingBusinessAs\" : \"Adyen BV\",\n    \"legalName\" : \"Adyen BV\",\n    \"registeredAddress\" : {\n      \"city\" : \"AMS\",\n      \"country\" : \"NL\",\n      \"postalCode\" : \"1234EE\",\n      \"stateOrProvince\" : \"NH\",\n      \"street\" : \"Simon Carmiggeltstraat 6 - 50\"\n    },\n    \"registrationNumber\" : \"\",\n    \"stockData\" : {\n      \"marketIdentifier\" : \"ADYN\",\n      \"stockNumber\" : \"NL012345ABC4\",\n      \"tickerSymbol\" : \"ADYN.M\"\n    },\n    \"taxExempt\" : \"false\",\n    \"type\" : \"listedPublicCompany\"\n  },\n  \"type\" : \"organization\",\n  \"id\" : \"LE322KH223222F5GVGNMJ3XC5\"\n}",
+                                        "body" : "{\n \"entityAssociations\": [{\n \"associatorId\": \"LE322KH223222F5GVGNMJ3XC5\",\n \"entityType\": \"individual\",\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE322KH223222F5GV2SL953Z3\",\n \"name\": \"Simone Hopper\",\n \"type\": \"uboThroughControl\"\n}],\n \"organization\": {\n \"email\": \"john.doe@adyen.com\",\n \"phone\": {\n \"countryCode\": \"NL\",\n \"number\": \"646467363\",\n \"type\": \"mobile\"\n},\n \"description\": \"FinTech\",\n \"doingBusinessAs\": \"Adyen BV\",\n \"legalName\": \"Adyen BV\",\n \"registeredAddress\": {\n \"city\": \"AMS\",\n \"country\": \"NL\",\n \"postalCode\": \"1234EE\",\n \"stateOrProvince\": \"NH\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n},\n \"registrationNumber\": \"\",\n \"stockData\": {\n \"marketIdentifier\": \"ADYN\",\n \"stockNumber\": \"NL012345ABC4\",\n \"tickerSymbol\": \"ADYN.M\"\n},\n \"taxExempt\": \"false\",\n \"type\": \"listedPublicCompany\"\n},\n \"type\": \"organization\",\n \"id\": \"LE322KH223222F5GVGNMJ3XC5\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -642,7 +642,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"entityAssociations\" : [ {\n    \"jobTitle\" : \"CEO\",\n    \"legalEntityId\" : \"LE322KH223222F5GV2SL953Z3\",\n    \"type\" : \"uboThroughControl\"\n  } ]\n}",
+    "raw": "{\n \"entityAssociations\": [{\n \"jobTitle\": \"CEO\",\n \"legalEntityId\": \"LE322KH223222F5GV2SL953Z3\",\n \"type\": \"uboThroughControl\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -824,7 +824,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"balancePlatform\" : \"{{YOUR_BALANCE_PLATFORM}}\",\n  \"txVariant\" : \"mc\"\n}",
+    "raw": "{\n \"balancePlatform\": \"{{YOUR_BALANCE_PLATFORM}}\",\n \"txVariant\": \"mc\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -983,7 +983,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"registrationDocument\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC...==\"\n  } ],\n  \"description\" : \"Registration doc for Example Company\",\n  \"owner\" : {\n    \"id\" : \"LE322KH223222D5GG4C9J83RN\",\n    \"type\" : \"legalEntity\"\n  }\n}",
+    "raw": "{\n \"type\": \"registrationDocument\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC...==\"\n}],\n \"description\": \"Registration doc for Example Company\",\n \"owner\": {\n \"id\": \"LE322KH223222D5GG4C9J83RN\",\n \"type\": \"legalEntity\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1015,7 +1015,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"type\" : \"registrationDocument\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC...==\"\n  } ],\n  \"description\" : \"Registration doc for Example Company\",\n  \"fileName\" : \"Registration doc for Example Company\",\n  \"owner\" : {\n    \"id\" : \"LE322KH223222D5GG4C9J83RN\",\n    \"type\" : \"legalEntity\"\n  },\n  \"id\" : \"SE322JV223222F5GV2N9L8GDK\"\n}",
+                                        "body" : "{\n \"type\": \"registrationDocument\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC...==\"\n}],\n \"description\": \"Registration doc for Example Company\",\n \"fileName\": \"Registration doc for Example Company\",\n \"owner\": {\n \"id\": \"LE322KH223222D5GG4C9J83RN\",\n \"type\": \"legalEntity\"\n},\n \"id\": \"SE322JV223222F5GV2N9L8GDK\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1034,7 +1034,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"registrationDocument\",\n  \"attachments\" : [ {\n    \"content\" : \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC...==\"\n  } ],\n  \"description\" : \"Registration doc for Example Company\",\n  \"owner\" : {\n    \"id\" : \"LE322KH223222D5GG4C9J83RN\",\n    \"type\" : \"legalEntity\"\n  }\n}",
+    "raw": "{\n \"type\": \"registrationDocument\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC...==\"\n}],\n \"description\": \"Registration doc for Example Company\",\n \"owner\": {\n \"id\": \"LE322KH223222D5GG4C9J83RN\",\n \"type\": \"legalEntity\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1187,7 +1187,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"proofOfIndustry\",\n  \"description\" : \"Proof of industry doc for Example Company\"\n}",
+    "raw": "{\n \"type\": \"proofOfIndustry\",\n \"description\": \"Proof of industry doc for Example Company\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1249,7 +1249,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"reference\" : \"S.Eller-001\",\n  \"legalEntityId\" : \"LE322JV223222D5GG42KN6869\"\n}",
+    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1351,7 +1351,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"reference\" : \"S.Eller-001\",\n  \"legalEntityId\" : \"LE322JV223222D5GG42KN6869\",\n  \"capabilities\" : {\n    \"receivePayments\" : {\n      \"requested\" : true\n    }\n  }\n}",
+    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\",\n \"capabilities\": {\n \"receivePayments\": {\n \"requested\": true\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1389,7 +1389,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balancePlatform\" : \"APIExplorer\",\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"legalEntityId\" : \"LE322JV223222F5GKQZZ9DS99\",\n  \"reference\" : \"S.Eller-001\",\n  \"capabilities\" : {\n    \"receivePayments\" : {\n      \"enabled\" : false,\n      \"requested\" : true,\n      \"allowed\" : false,\n      \"verificationStatus\" : \"pending\"\n    }\n  },\n  \"id\" : \"AH3227C223222C5GKR23686TF\",\n  \"status\" : \"Active\"\n}",
+                                        "body" : "{\n \"balancePlatform\": \"APIExplorer\",\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222F5GKQZZ9DS99\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"enabled\": false,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"AH3227C223222C5GKR23686TF\",\n \"status\": \"Active\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -1408,7 +1408,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"reference\" : \"S.Eller-001\",\n  \"legalEntityId\" : \"LE322JV223222D5GG42KN6869\",\n  \"capabilities\" : {\n    \"receivePayments\" : {\n      \"requested\" : true\n    }\n  }\n}",
+    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\",\n \"capabilities\": {\n \"receivePayments\": {\n \"requested\": true\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1459,7 +1459,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"Closed\"\n}",
+    "raw": "{\n \"status\": \"Closed\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1497,7 +1497,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balancePlatform\" : \"APIExplorer\",\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"legalEntityId\" : \"LE322JV223222F5GKQZZ9DS99\",\n  \"reference\" : \"S.Eller-001\",\n  \"id\" : \"AH3227C223222C5GKR23686TF\",\n  \"status\" : \"Closed\"\n}",
+                                        "body" : "{\n \"balancePlatform\": \"APIExplorer\",\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222F5GKQZZ9DS99\",\n \"reference\": \"S.Eller-001\",\n \"id\": \"AH3227C223222C5GKR23686TF\",\n \"status\": \"Closed\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -1516,7 +1516,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"Closed\"\n}",
+    "raw": "{\n \"status\": \"Closed\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1642,7 +1642,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"NL\"\n}",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"NL\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1674,7 +1674,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"NL\",\n  \"status\" : \"Active\",\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"bankAccount\" : {\n    \"iban\" : \"NL20ADYB2017000035\"\n  },\n  \"id\" : \"PI322LJ223222B5DJS7CD9LWL\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"NL\",\n \"status\": \"Active\",\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"bankAccount\": {\n \"iban\": \"NL20ADYB2017000035\"\n},\n \"id\": \"PI322LJ223222B5DJS7CD9LWL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1693,7 +1693,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"NL\"\n}",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"NL\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1738,7 +1738,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"US\"\n}",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1770,7 +1770,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"US\",\n  \"status\" : \"Active\",\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"bankAccount\" : {\n    \"accountNumber\" : \"333720756\",\n    \"routingNumber\" : \"21000021\",\n    \"accountType\" : \"checking\"\n  },\n  \"id\" : \"PI322LJ223222B5DJS7CD9LWL\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\",\n \"status\": \"Active\",\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"bankAccount\": {\n \"accountNumber\": \"333720756\",\n \"routingNumber\": \"21000021\",\n \"accountType\": \"checking\"\n},\n \"id\": \"PI322LJ223222B5DJS7CD9LWL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1789,7 +1789,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"US\"\n}",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1834,7 +1834,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"card\",\n  \"issuingCountryCode\" : \"NL\",\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"description\" : \"S.Hopper - Main card\",\n  \"status\" : \"Inactive\",\n  \"card\" : {\n    \"formFactor\" : \"physical\",\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Sam Hopper\",\n    \"deliveryContact\" : {\n      \"address\" : {\n        \"houseNumberOrName\" : \"64\",\n        \"street\" : \"Brannan Street\",\n        \"postalCode\" : \"1020CD\",\n        \"city\" : \"Amsterdam\",\n        \"country\" : \"NL\"\n      },\n      \"name\" : {\n        \"firstName\" : \"Sam\",\n        \"lastName\" : \"Hopper\"\n      }\n    },\n    \"configuration\" : {\n      \"configurationProfileId\" : \"CP123AB45678C91ABCD2ABCDE\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"card\",\n \"issuingCountryCode\": \"NL\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S.Hopper - Main card\",\n \"status\": \"Inactive\",\n \"card\": {\n \"formFactor\": \"physical\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"deliveryContact\": {\n \"address\": {\n \"houseNumberOrName\": \"64\",\n \"street\": \"Brannan Street\",\n \"postalCode\": \"1020CD\",\n \"city\": \"Amsterdam\",\n \"country\": \"NL\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1866,7 +1866,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"description\" : \"S. Hopper - Main card\",\n  \"issuingCountryCode\" : \"NL\",\n  \"status\" : \"Inactive\",\n  \"type\" : \"card\",\n  \"card\" : {\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Sam Hopper\",\n    \"formFactor\" : \"physical\",\n    \"number\" : \"************5785\",\n    \"bin\" : \"555544\",\n    \"expiration\" : {\n      \"month\" : \"08\",\n      \"year\" : \"2024\"\n    },\n    \"lastFour\" : \"2765\",\n    \"authentication\" : {\n      \"password\" : \"******\",\n      \"phone\" : {\n        \"number\" : \"+123456789\",\n        \"type\" : \"mobile\"\n      }\n    },\n    \"deliveryContact\" : {\n      \"address\" : {\n        \"houseNumberOrName\" : \"64\",\n        \"street\" : \"Brannan Street\",\n        \"postalCode\" : \"1020CD\",\n        \"city\" : \"Amsterdam\",\n        \"country\" : \"NL\"\n      },\n      \"name\" : {\n        \"firstName\" : \"Sam\",\n        \"lastName\" : \"Hopper\"\n      }\n    },\n    \"configuration\" : {\n      \"configurationProfileId\" : \"CP123AB45678C91ABCD2ABCDE\"\n    }\n  },\n  \"id\" : \"PI3227C223222B5BPCMFXD2XG\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S. Hopper - Main card\",\n \"issuingCountryCode\": \"NL\",\n \"status\": \"Inactive\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"formFactor\": \"physical\",\n \"number\": \"************5785\",\n \"bin\": \"555544\",\n \"expiration\": {\n \"month\": \"08\",\n \"year\": \"2024\"\n},\n \"lastFour\": \"2765\",\n \"authentication\": {\n \"password\": \"******\",\n \"phone\": {\n \"number\": \"+123456789\",\n \"type\": \"mobile\"\n}\n},\n \"deliveryContact\": {\n \"address\": {\n \"houseNumberOrName\": \"64\",\n \"street\": \"Brannan Street\",\n \"postalCode\": \"1020CD\",\n \"city\": \"Amsterdam\",\n \"country\": \"NL\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n},\n \"id\": \"PI3227C223222B5BPCMFXD2XG\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1885,7 +1885,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"card\",\n  \"issuingCountryCode\" : \"NL\",\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"description\" : \"S.Hopper - Main card\",\n  \"status\" : \"Inactive\",\n  \"card\" : {\n    \"formFactor\" : \"physical\",\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Sam Hopper\",\n    \"deliveryContact\" : {\n      \"address\" : {\n        \"houseNumberOrName\" : \"64\",\n        \"street\" : \"Brannan Street\",\n        \"postalCode\" : \"1020CD\",\n        \"city\" : \"Amsterdam\",\n        \"country\" : \"NL\"\n      },\n      \"name\" : {\n        \"firstName\" : \"Sam\",\n        \"lastName\" : \"Hopper\"\n      }\n    },\n    \"configuration\" : {\n      \"configurationProfileId\" : \"CP123AB45678C91ABCD2ABCDE\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"card\",\n \"issuingCountryCode\": \"NL\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S.Hopper - Main card\",\n \"status\": \"Inactive\",\n \"card\": {\n \"formFactor\": \"physical\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"deliveryContact\": {\n \"address\": {\n \"houseNumberOrName\": \"64\",\n \"street\": \"Brannan Street\",\n \"postalCode\": \"1020CD\",\n \"city\": \"Amsterdam\",\n \"country\": \"NL\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1930,7 +1930,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"card\",\n  \"description\" : \"S. Hopper - Main card\",\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"issuingCountryCode\" : \"NL\",\n  \"card\" : {\n    \"cardholderName\" : \"Sam Hopper\",\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"formFactor\" : \"virtual\"\n  }\n}",
+    "raw": "{\n \"type\": \"card\",\n \"description\": \"S. Hopper - Main card\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"issuingCountryCode\": \"NL\",\n \"card\": {\n \"cardholderName\": \"Sam Hopper\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"formFactor\": \"virtual\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1962,7 +1962,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"description\" : \"S.Hopper - Virtual card\",\n  \"issuingCountryCode\" : \"NL\",\n  \"status\" : \"Active\",\n  \"type\" : \"card\",\n  \"card\" : {\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Sam Hopper\",\n    \"formFactor\" : \"virtual\",\n    \"bin\" : \"555544\",\n    \"cvc\" : \"613\",\n    \"expiration\" : {\n      \"month\" : \"03\",\n      \"year\" : \"2025\"\n    },\n    \"lastFour\" : \"9883\",\n    \"number\" : \"5555444411209883\"\n  },\n  \"id\" : \"PI32272223222B5FR7Z5CFDW4\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S.Hopper - Virtual card\",\n \"issuingCountryCode\": \"NL\",\n \"status\": \"Active\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"formFactor\": \"virtual\",\n \"bin\": \"555544\",\n \"cvc\": \"613\",\n \"expiration\": {\n \"month\": \"03\",\n \"year\": \"2025\"\n},\n \"lastFour\": \"9883\",\n \"number\": \"5555444411209883\"\n},\n \"id\": \"PI32272223222B5FR7Z5CFDW4\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1981,7 +1981,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"card\",\n  \"description\" : \"S. Hopper - Main card\",\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"issuingCountryCode\" : \"NL\",\n  \"card\" : {\n    \"cardholderName\" : \"Sam Hopper\",\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"formFactor\" : \"virtual\"\n  }\n}",
+    "raw": "{\n \"type\": \"card\",\n \"description\": \"S. Hopper - Main card\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"issuingCountryCode\": \"NL\",\n \"card\": {\n \"cardholderName\": \"Sam Hopper\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"formFactor\": \"virtual\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2083,7 +2083,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"balanceAccountId\" : \"BA32272223222B5CM82WL892M\"\n}",
+    "raw": "{\n \"balanceAccountId\": \"BA32272223222B5CM82WL892M\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2121,7 +2121,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA32272223222B5CM82WL892M\",\n  \"description\" : \"S. Hopper - Main card\",\n  \"issuingCountryCode\" : \"GB\",\n  \"status\" : \"Inactive\",\n  \"type\" : \"card\",\n  \"card\" : {\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Simon Hopper\",\n    \"formFactor\" : \"virtual\",\n    \"bin\" : \"555544\",\n    \"expiration\" : {\n      \"month\" : \"01\",\n      \"year\" : \"2024\"\n    },\n    \"lastFour\" : \"5785\",\n    \"number\" : \"************5785\"\n  },\n  \"id\" : \"PI3227C223222B5CMD278FKGS\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA32272223222B5CM82WL892M\",\n \"description\": \"S. Hopper - Main card\",\n \"issuingCountryCode\": \"GB\",\n \"status\": \"Inactive\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Simon Hopper\",\n \"formFactor\": \"virtual\",\n \"bin\": \"555544\",\n \"expiration\": {\n \"month\": \"01\",\n \"year\": \"2024\"\n},\n \"lastFour\": \"5785\",\n \"number\": \"************5785\"\n},\n \"id\": \"PI3227C223222B5CMD278FKGS\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -2140,7 +2140,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"balanceAccountId\" : \"BA32272223222B5CM82WL892M\"\n}",
+    "raw": "{\n \"balanceAccountId\": \"BA32272223222B5CM82WL892M\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2191,7 +2191,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"Suspended\"\n}",
+    "raw": "{\n \"status\": \"Suspended\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2229,7 +2229,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"description\" : \"S. Hopper - Main card\",\n  \"issuingCountryCode\" : \"GB\",\n  \"status\" : \"Suspended\",\n  \"type\" : \"card\",\n  \"card\" : {\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Simon Hopper\",\n    \"formFactor\" : \"virtual\",\n    \"bin\" : \"555544\",\n    \"expiration\" : {\n      \"month\" : \"01\",\n      \"year\" : \"2024\"\n    },\n    \"lastFour\" : \"5785\",\n    \"number\" : \"************5785\"\n  },\n  \"id\" : \"PI3227C223222B5CMD278FKGS\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S. Hopper - Main card\",\n \"issuingCountryCode\": \"GB\",\n \"status\": \"Suspended\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Simon Hopper\",\n \"formFactor\": \"virtual\",\n \"bin\": \"555544\",\n \"expiration\": {\n \"month\": \"01\",\n \"year\": \"2024\"\n},\n \"lastFour\": \"5785\",\n \"number\": \"************5785\"\n},\n \"id\": \"PI3227C223222B5CMD278FKGS\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -2248,7 +2248,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"Suspended\"\n}",
+    "raw": "{\n \"status\": \"Suspended\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2414,7 +2414,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"iban\",\n    \"iban\" : \"1001001234\"\n  }\n}",
+    "raw": "{\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"1001001234\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2446,7 +2446,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"type\" : \"https://docs.adyen.com/errors/validation\",\n  \"title\" : \"Invalid bank account identification details provided\",\n  \"status\" : 422,\n  \"invalidFields\" : [ {\n    \"name\" : \"iban\",\n    \"message\" : \"Invalid IBAN.\"\n  } ],\n  \"errorCode\" : \"33_01\"\n}",
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/validation\",\n \"title\": \"Invalid bank account identification details provided\",\n \"status\": 422,\n \"invalidFields\": [{\n \"name\": \"iban\",\n \"message\": \"Invalid IBAN.\"\n}],\n \"errorCode\": \"33_01\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2465,7 +2465,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"iban\",\n    \"iban\" : \"1001001234\"\n  }\n}",
+    "raw": "{\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"1001001234\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2510,7 +2510,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"usLocal\",\n    \"accountNumber\" : \"12345JHDhjkf67890\",\n    \"routingNumber\" : \"121000cxhgjhzxg248\"\n  }\n}",
+    "raw": "{\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"12345JHDhjkf67890\",\n \"routingNumber\": \"121000cxhgjhzxg248\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2542,7 +2542,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"type\" : \"https://docs.adyen.com/errors/validation\",\n  \"title\" : \"Invalid bank account identification details provided\",\n  \"status\" : 422,\n  \"invalidFields\" : [ {\n    \"name\" : \"accountNumber\",\n    \"message\" : \"Invalid account number.\"\n  }, {\n    \"name\" : \"routingNumber\",\n    \"message\" : \"Invalid routing number.\"\n  } ],\n  \"errorCode\" : \"33_01\"\n}",
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/validation\",\n \"title\": \"Invalid bank account identification details provided\",\n \"status\": 422,\n \"invalidFields\": [{\n \"name\": \"accountNumber\",\n \"message\": \"Invalid account number.\"\n}, {\n \"name\": \"routingNumber\",\n \"message\": \"Invalid routing number.\"\n}],\n \"errorCode\": \"33_01\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2561,7 +2561,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"usLocal\",\n    \"accountNumber\" : \"12345JHDhjkf67890\",\n    \"routingNumber\" : \"121000cxhgjhzxg248\"\n  }\n}",
+    "raw": "{\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"12345JHDhjkf67890\",\n \"routingNumber\": \"121000cxhgjhzxg248\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2617,7 +2617,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"legalEntityId\" : \"LE322KH223222D5GG4C9J83RN\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\"\n  }\n}",
+    "raw": "{\n \"legalEntityId\": \"LE322KH223222D5GG4C9J83RN\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"NL\",\n \"currencyCode\": \"EUR\",\n \"iban\": \"NL62ABNA0000000123\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2649,7 +2649,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\"\n  },\n  \"legalEntityId\" : \"LE322KH223222D5GG4C9J83RN\",\n  \"type\" : \"bankAccount\",\n  \"id\" : \"SE576BH223222F5GJVKHH6BDT\"\n}",
+                                        "body" : "{\n \"bankAccount\": {\n \"countryCode\": \"NL\",\n \"currencyCode\": \"EUR\",\n \"iban\": \"NL62ABNA0000000123\"\n},\n \"legalEntityId\": \"LE322KH223222D5GG4C9J83RN\",\n \"type\": \"bankAccount\",\n \"id\": \"SE576BH223222F5GJVKHH6BDT\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2668,7 +2668,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"legalEntityId\" : \"LE322KH223222D5GG4C9J83RN\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"NL\",\n    \"currencyCode\" : \"EUR\",\n    \"iban\" : \"NL62ABNA0000000123\"\n  }\n}",
+    "raw": "{\n \"legalEntityId\": \"LE322KH223222D5GG4C9J83RN\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"NL\",\n \"currencyCode\": \"EUR\",\n \"iban\": \"NL62ABNA0000000123\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2713,7 +2713,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"legalEntityId\" : \"LE322JV223222D5GGMHPC2FPL\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"US\",\n    \"currencyCode\" : \"USD\",\n    \"accountNumber\" : \"0000000123\",\n    \"branchCode\" : \"121202211\",\n    \"accountType\" : \"checking\"\n  }\n}",
+    "raw": "{\n \"legalEntityId\": \"LE322JV223222D5GGMHPC2FPL\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"US\",\n \"currencyCode\": \"USD\",\n \"accountNumber\": \"0000000123\",\n \"branchCode\": \"121202211\",\n \"accountType\": \"checking\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2745,7 +2745,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"bankAccount\" : {\n    \"accountNumber\" : \"0000000123\",\n    \"accountType\" : \"checking\",\n    \"branchCode\" : \"121202211\",\n    \"countryCode\" : \"US\",\n    \"currencyCode\" : \"USD\"\n  },\n  \"legalEntityId\" : \"LE322JV223222D5GGMHPC2FPL\",\n  \"type\" : \"bankAccount\",\n  \"id\" : \"SE322JV223222F5GJVKHH8DTC\"\n}",
+                                        "body" : "{\n \"bankAccount\": {\n \"accountNumber\": \"0000000123\",\n \"accountType\": \"checking\",\n \"branchCode\": \"121202211\",\n \"countryCode\": \"US\",\n \"currencyCode\": \"USD\"\n},\n \"legalEntityId\": \"LE322JV223222D5GGMHPC2FPL\",\n \"type\": \"bankAccount\",\n \"id\": \"SE322JV223222F5GJVKHH8DTC\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2764,7 +2764,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"legalEntityId\" : \"LE322JV223222D5GGMHPC2FPL\",\n  \"type\" : \"bankAccount\",\n  \"bankAccount\" : {\n    \"countryCode\" : \"US\",\n    \"currencyCode\" : \"USD\",\n    \"accountNumber\" : \"0000000123\",\n    \"branchCode\" : \"121202211\",\n    \"accountType\" : \"checking\"\n  }\n}",
+    "raw": "{\n \"legalEntityId\": \"LE322JV223222D5GGMHPC2FPL\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"countryCode\": \"US\",\n \"currencyCode\": \"USD\",\n \"accountNumber\": \"0000000123\",\n \"branchCode\": \"121202211\",\n \"accountType\": \"checking\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2979,7 +2979,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountHolderId\" : \"AH32272223222C5GXTD343TKP\",\n  \"description\" : \"S.Hopper - Main balance account\"\n}",
+    "raw": "{\n \"accountHolderId\": \"AH32272223222C5GXTD343TKP\",\n \"description\": \"S.Hopper - Main balance account\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3207,7 +3207,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Allow transactions only from NL\",\n  \"reference\" : \"{{$guid}}_1738A\",\n  \"paymentInstrumentId\" : \"PI32272223222B5FN64HK3KLM\",\n  \"type\" : \"allowList\",\n  \"countries\" : [ \"NL\" ],\n  \"status\" : \"active\",\n  \"interval\" : {\n    \"type\" : \"perTransaction\"\n  }\n}",
+    "raw": "{\n \"description\": \"Allow transactions only from NL\",\n \"reference\": \"{{$guid}}_1738A\",\n \"paymentInstrumentId\": \"PI32272223222B5FN64HK3KLM\",\n \"type\": \"allowList\",\n \"countries\": [\"NL\"],\n \"status\": \"active\",\n \"interval\": {\n \"type\": \"perTransaction\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3360,7 +3360,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"inactive\"\n}",
+    "raw": "{\n \"status\": \"inactive\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3398,7 +3398,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"description\" : \"Allow 5 transactions per month\",\n  \"interval\" : {\n    \"type\" : \"monthly\"\n  },\n  \"maxTransactions\" : 5,\n  \"paymentInstrumentId\" : \"PI3227C223222B59KGTXP884R\",\n  \"reference\" : \"myRule12345\",\n  \"startDate\" : \"2021-01-21T12:46:35\",\n  \"status\" : \"inactive\",\n  \"type\" : \"velocity\",\n  \"id\" : \"TR3227C223222B5B85CDV4DRS\"\n}",
+                                        "body" : "{\n \"description\": \"Allow 5 transactions per month\",\n \"interval\": {\n \"type\": \"monthly\"\n},\n \"maxTransactions\": 5,\n \"paymentInstrumentId\": \"PI3227C223222B59KGTXP884R\",\n \"reference\": \"myRule12345\",\n \"startDate\": \"2021-01-21T12:46:35\",\n \"status\": \"inactive\",\n \"type\": \"velocity\",\n \"id\": \"TR3227C223222B5B85CDV4DRS\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -3417,7 +3417,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"inactive\"\n}",
+    "raw": "{\n \"status\": \"inactive\"\n}",
     "options": {
     "raw": {
     "language": "json"

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Configuration API (v2)",
+		"name": "Configuration API",
 		"description": {
 		    "content": "The Configuration API enables you to create a platform where you can onboard your users as account holders and create balance accounts, cards, and business accounts.\n\n## Authentication\nYour Adyen contact will provide your API credential and an API key. To connect to the API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\nAlternatively, you can use the username and password to connect to the API using basic authentication. For example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-U \"ws@BalancePlatform.YOUR_BALANCE_PLATFORM\":\"YOUR_WS_PASSWORD\" \\n...\n```\n## Versioning\nThe Configuration API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://balanceplatform-api-test.adyen.com/bcl/v2/accountHolders\n```\n## Going live\nWhen going live, your Adyen contact will provide your API credential for the live environment. You can then use the API key or the username and password to send requests to `https://balanceplatform-api-live.adyen.com/bcl/v2`.",
 		    "type": "text/markdown"
@@ -376,7 +376,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"reference\" : \"S.Eller-001\",\n  \"legalEntityId\" : \"LE322JV223222D5GG42KN6869\"\n}",
+    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -408,7 +408,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balancePlatform\" : \"YOUR_BALANCE_PLATFORM\",\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"legalEntityId\" : \"LE322JV223222D5GG42KN6869\",\n  \"reference\" : \"S.Eller-001\",\n  \"capabilities\" : {\n    \"receiveFromPlatformPayments\" : {\n      \"enabled\" : true,\n      \"requested\" : true,\n      \"allowed\" : false,\n      \"verificationStatus\" : \"pending\"\n    },\n    \"receiveFromBalanceAccount\" : {\n      \"enabled\" : true,\n      \"requested\" : true,\n      \"allowed\" : false,\n      \"verificationStatus\" : \"pending\"\n    },\n    \"sendToBalanceAccount\" : {\n      \"enabled\" : true,\n      \"requested\" : true,\n      \"allowed\" : false,\n      \"verificationStatus\" : \"pending\"\n    },\n    \"sendToTransferInstrument\" : {\n      \"enabled\" : true,\n      \"requested\" : true,\n      \"allowed\" : false,\n      \"requestedSettings\" : {\n        \"interval\" : \"daily\",\n        \"maxAmount\" : {\n          \"currency\" : \"EUR\",\n          \"value\" : 0\n        }\n      },\n      \"verificationStatus\" : \"pending\"\n    }\n  },\n  \"id\" : \"AH3227C223222H5J4DCLW9VBV\",\n  \"status\" : \"active\"\n}",
+                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receiveFromPlatformPayments\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"receiveFromBalanceAccount\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"sendToBalanceAccount\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"sendToTransferInstrument\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"requestedSettings\": {\n \"interval\": \"daily\",\n \"maxAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n}\n},\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"AH3227C223222H5J4DCLW9VBV\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -427,7 +427,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"reference\" : \"S.Eller-001\",\n  \"legalEntityId\" : \"LE322JV223222D5GG42KN6869\"\n}",
+    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -529,7 +529,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"reference\" : \"S.Eller-001\",\n  \"capabilities\" : {\n    \"receivePayments\" : {\n      \"requested\" : true\n    }\n  }\n}",
+    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"requested\": true\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -567,7 +567,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balancePlatform\" : \"YOUR_BALANCE_PLATFORM\",\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"legalEntityId\" : \"LE322JV223222F5GKQZZ9DS99\",\n  \"reference\" : \"S.Eller-001\",\n  \"capabilities\" : {\n    \"receivePayments\" : {\n      \"enabled\" : false,\n      \"requested\" : true,\n      \"allowed\" : false,\n      \"verificationStatus\" : \"pending\"\n    }\n  },\n  \"id\" : \"AH3227C223222C5GKR23686TF\",\n  \"status\" : \"active\"\n}",
+                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222F5GKQZZ9DS99\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"enabled\": false,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"AH3227C223222C5GKR23686TF\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -586,7 +586,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"reference\" : \"S.Eller-001\",\n  \"capabilities\" : {\n    \"receivePayments\" : {\n      \"requested\" : true\n    }\n  }\n}",
+    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"requested\": true\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -637,7 +637,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"closed\"\n}",
+    "raw": "{\n \"status\": \"closed\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -675,7 +675,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balancePlatform\" : \"YOUR_BALANCE_PLATFORM\",\n  \"description\" : \"Liable account holder used for international payments and payouts\",\n  \"legalEntityId\" : \"LE322JV223222F5GKQZZ9DS99\",\n  \"reference\" : \"S.Eller-001\",\n  \"id\" : \"AH3227C223222C5GKR23686TF\",\n  \"status\" : \"closed\"\n}",
+                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222F5GKQZZ9DS99\",\n \"reference\": \"S.Eller-001\",\n \"id\": \"AH3227C223222C5GKR23686TF\",\n \"status\": \"closed\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -694,7 +694,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"closed\"\n}",
+    "raw": "{\n \"status\": \"closed\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -884,7 +884,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"NL\"\n}",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"NL\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -916,7 +916,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"NL\",\n  \"status\" : \"active\",\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"bankAccount\" : {\n    \"type\" : \"iban\",\n    \"iban\" : \"NL20ADYB2017000035\"\n  },\n  \"id\" : \"PI322LJ223222B5DJS7CD9LWL\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"NL\",\n \"status\": \"active\",\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"bankAccount\": {\n \"type\": \"iban\",\n \"iban\": \"NL20ADYB2017000035\"\n},\n \"id\": \"PI322LJ223222B5DJS7CD9LWL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -935,7 +935,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"NL\"\n}",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"NL\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -980,7 +980,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"US\"\n}",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1012,7 +1012,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"US\",\n  \"status\" : \"active\",\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"bankAccount\" : {\n    \"type\" : \"usLocal\",\n    \"accountNumber\" : \"333720756\",\n    \"routingNumber\" : \"210000210\",\n    \"accountType\" : \"checking\"\n  },\n  \"id\" : \"PI322LJ223222B5DJS7CD9LWL\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\",\n \"status\": \"active\",\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"bankAccount\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"333720756\",\n \"routingNumber\": \"210000210\",\n \"accountType\": \"checking\"\n},\n \"id\": \"PI322LJ223222B5DJS7CD9LWL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1031,7 +1031,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"bankAccount\",\n  \"description\" : \"YOUR_DESCRIPTION\",\n  \"balanceAccountId\" : \"BA3227C223222B5CTBLR8BWJB\",\n  \"issuingCountryCode\" : \"US\"\n}",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1076,7 +1076,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"card\",\n  \"issuingCountryCode\" : \"NL\",\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"description\" : \"S.Hopper - Main card\",\n  \"status\" : \"inactive\",\n  \"card\" : {\n    \"formFactor\" : \"physical\",\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Sam Hopper\",\n    \"deliveryContact\" : {\n      \"address\" : {\n        \"city\" : \"Amsterdam\",\n        \"country\" : \"NL\",\n        \"stateOrProvince\" : \"NH\",\n        \"line1\" : \"Brannan Street\",\n        \"line2\" : \"274\",\n        \"postalCode\" : \"1020CD\"\n      },\n      \"name\" : {\n        \"firstName\" : \"Sam\",\n        \"lastName\" : \"Hopper\"\n      }\n    },\n    \"configuration\" : {\n      \"configurationProfileId\" : \"CP123AB45678C91ABCD2ABCDE\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"card\",\n \"issuingCountryCode\": \"NL\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S.Hopper - Main card\",\n \"status\": \"inactive\",\n \"card\": {\n \"formFactor\": \"physical\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"deliveryContact\": {\n \"address\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"stateOrProvince\": \"NH\",\n \"line1\": \"Brannan Street\",\n \"line2\": \"274\",\n \"postalCode\": \"1020CD\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1108,7 +1108,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"description\" : \"S. Hopper - Main card\",\n  \"issuingCountryCode\" : \"NL\",\n  \"status\" : \"inactive\",\n  \"type\" : \"card\",\n  \"card\" : {\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Sam Hopper\",\n    \"formFactor\" : \"physical\",\n    \"number\" : \"************5785\",\n    \"bin\" : \"555544\",\n    \"expiration\" : {\n      \"month\" : \"08\",\n      \"year\" : \"2024\"\n    },\n    \"lastFour\" : \"2765\",\n    \"authentication\" : {\n      \"password\" : \"******\",\n      \"phone\" : {\n        \"number\" : \"+123456789\",\n        \"type\" : \"mobile\"\n      }\n    },\n    \"deliveryContact\" : {\n      \"address\" : {\n        \"city\" : \"Amsterdam\",\n        \"country\" : \"NL\",\n        \"stateOrProvince\" : \"NH\",\n        \"line1\" : \"Brannan Street\",\n        \"line2\" : \"274\",\n        \"postalCode\" : \"1020CD\"\n      },\n      \"name\" : {\n        \"firstName\" : \"Sam\",\n        \"lastName\" : \"Hopper\"\n      }\n    },\n    \"configuration\" : {\n      \"configurationProfileId\" : \"CP123AB45678C91ABCD2ABCDE\"\n    }\n  },\n  \"id\" : \"PI3227C223222B5BPCMFXD2XG\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S. Hopper - Main card\",\n \"issuingCountryCode\": \"NL\",\n \"status\": \"inactive\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"formFactor\": \"physical\",\n \"number\": \"************5785\",\n \"bin\": \"555544\",\n \"expiration\": {\n \"month\": \"08\",\n \"year\": \"2024\"\n},\n \"lastFour\": \"2765\",\n \"authentication\": {\n \"password\": \"******\",\n \"phone\": {\n \"number\": \"+123456789\",\n \"type\": \"mobile\"\n}\n},\n \"deliveryContact\": {\n \"address\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"stateOrProvince\": \"NH\",\n \"line1\": \"Brannan Street\",\n \"line2\": \"274\",\n \"postalCode\": \"1020CD\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n},\n \"id\": \"PI3227C223222B5BPCMFXD2XG\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1127,7 +1127,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"card\",\n  \"issuingCountryCode\" : \"NL\",\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"description\" : \"S.Hopper - Main card\",\n  \"status\" : \"inactive\",\n  \"card\" : {\n    \"formFactor\" : \"physical\",\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Sam Hopper\",\n    \"deliveryContact\" : {\n      \"address\" : {\n        \"city\" : \"Amsterdam\",\n        \"country\" : \"NL\",\n        \"stateOrProvince\" : \"NH\",\n        \"line1\" : \"Brannan Street\",\n        \"line2\" : \"274\",\n        \"postalCode\" : \"1020CD\"\n      },\n      \"name\" : {\n        \"firstName\" : \"Sam\",\n        \"lastName\" : \"Hopper\"\n      }\n    },\n    \"configuration\" : {\n      \"configurationProfileId\" : \"CP123AB45678C91ABCD2ABCDE\"\n    }\n  }\n}",
+    "raw": "{\n \"type\": \"card\",\n \"issuingCountryCode\": \"NL\",\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S.Hopper - Main card\",\n \"status\": \"inactive\",\n \"card\": {\n \"formFactor\": \"physical\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Sam Hopper\",\n \"deliveryContact\": {\n \"address\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"stateOrProvince\": \"NH\",\n \"line1\": \"Brannan Street\",\n \"line2\": \"274\",\n \"postalCode\": \"1020CD\"\n},\n \"name\": {\n \"firstName\": \"Sam\",\n \"lastName\": \"Hopper\"\n}\n},\n \"configuration\": {\n \"configurationProfileId\": \"CP123AB45678C91ABCD2ABCDE\"\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1172,7 +1172,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"card\",\n  \"description\" : \"My test card\",\n  \"balanceAccountId\" : \"BA3227C223222B5FG88S28BGN\",\n  \"issuingCountryCode\" : \"NL\",\n  \"card\" : {\n    \"cardholderName\" : \"Simon Hopper\",\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"formFactor\" : \"virtual\"\n  }\n}",
+    "raw": "{\n \"type\": \"card\",\n \"description\": \"My test card\",\n \"balanceAccountId\": \"BA3227C223222B5FG88S28BGN\",\n \"issuingCountryCode\": \"NL\",\n \"card\": {\n \"cardholderName\": \"Simon Hopper\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"formFactor\": \"virtual\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1204,7 +1204,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA3227C223222B5FG88S28BGN\",\n  \"description\" : \"My test card\",\n  \"issuingCountryCode\" : \"NL\",\n  \"status\" : \"active\",\n  \"type\" : \"card\",\n  \"card\" : {\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Simon Hopper\",\n    \"formFactor\" : \"virtual\",\n    \"bin\" : \"555544\",\n    \"cvc\" : \"136\",\n    \"expiration\" : {\n      \"month\" : \"11\",\n      \"year\" : \"2025\"\n    },\n    \"lastFour\" : \"3703\",\n    \"number\" : \"5555444411213703\"\n  },\n  \"id\" : \"PI32272223222C5GXTDWH3TTN\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5FG88S28BGN\",\n \"description\": \"My test card\",\n \"issuingCountryCode\": \"NL\",\n \"status\": \"active\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Simon Hopper\",\n \"formFactor\": \"virtual\",\n \"bin\": \"555544\",\n \"cvc\": \"136\",\n \"expiration\": {\n \"month\": \"11\",\n \"year\": \"2025\"\n},\n \"lastFour\": \"3703\",\n \"number\": \"5555444411213703\"\n},\n \"id\": \"PI32272223222C5GXTDWH3TTN\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1223,7 +1223,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"type\" : \"card\",\n  \"description\" : \"My test card\",\n  \"balanceAccountId\" : \"BA3227C223222B5FG88S28BGN\",\n  \"issuingCountryCode\" : \"NL\",\n  \"card\" : {\n    \"cardholderName\" : \"Simon Hopper\",\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"formFactor\" : \"virtual\"\n  }\n}",
+    "raw": "{\n \"type\": \"card\",\n \"description\": \"My test card\",\n \"balanceAccountId\": \"BA3227C223222B5FG88S28BGN\",\n \"issuingCountryCode\": \"NL\",\n \"card\": {\n \"cardholderName\": \"Simon Hopper\",\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"formFactor\": \"virtual\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1325,7 +1325,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"balanceAccountId\" : \"BA32272223222B5CM82WL892M\"\n}",
+    "raw": "{\n \"balanceAccountId\": \"BA32272223222B5CM82WL892M\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1363,7 +1363,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA32272223222B5CM82WL892M\",\n  \"description\" : \"S. Hopper - Main card\",\n  \"issuingCountryCode\" : \"GB\",\n  \"status\" : \"inactive\",\n  \"type\" : \"card\",\n  \"card\" : {\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Simon Hopper\",\n    \"formFactor\" : \"virtual\",\n    \"bin\" : \"555544\",\n    \"expiration\" : {\n      \"month\" : \"01\",\n      \"year\" : \"2024\"\n    },\n    \"lastFour\" : \"5785\",\n    \"number\" : \"************5785\"\n  },\n  \"id\" : \"PI3227C223222B5CMD278FKGS\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA32272223222B5CM82WL892M\",\n \"description\": \"S. Hopper - Main card\",\n \"issuingCountryCode\": \"GB\",\n \"status\": \"inactive\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Simon Hopper\",\n \"formFactor\": \"virtual\",\n \"bin\": \"555544\",\n \"expiration\": {\n \"month\": \"01\",\n \"year\": \"2024\"\n},\n \"lastFour\": \"5785\",\n \"number\": \"************5785\"\n},\n \"id\": \"PI3227C223222B5CMD278FKGS\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -1382,7 +1382,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"balanceAccountId\" : \"BA32272223222B5CM82WL892M\"\n}",
+    "raw": "{\n \"balanceAccountId\": \"BA32272223222B5CM82WL892M\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1433,7 +1433,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"suspended\"\n}",
+    "raw": "{\n \"status\": \"suspended\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1471,7 +1471,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balanceAccountId\" : \"BA32272223222B59CZ3T52DKZ\",\n  \"description\" : \"S. Hopper - Main card\",\n  \"issuingCountryCode\" : \"GB\",\n  \"status\" : \"suspended\",\n  \"type\" : \"card\",\n  \"card\" : {\n    \"brand\" : \"mc\",\n    \"brandVariant\" : \"mcdebit\",\n    \"cardholderName\" : \"Simon Hopper\",\n    \"formFactor\" : \"virtual\",\n    \"bin\" : \"555544\",\n    \"expiration\" : {\n      \"month\" : \"01\",\n      \"year\" : \"2024\"\n    },\n    \"lastFour\" : \"5785\",\n    \"number\" : \"************5785\"\n  },\n  \"id\" : \"PI3227C223222B5CMD278FKGS\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S. Hopper - Main card\",\n \"issuingCountryCode\": \"GB\",\n \"status\": \"suspended\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Simon Hopper\",\n \"formFactor\": \"virtual\",\n \"bin\": \"555544\",\n \"expiration\": {\n \"month\": \"01\",\n \"year\": \"2024\"\n},\n \"lastFour\": \"5785\",\n \"number\": \"************5785\"\n},\n \"id\": \"PI3227C223222B5CMD278FKGS\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -1490,7 +1490,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"suspended\"\n}",
+    "raw": "{\n \"status\": \"suspended\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1816,7 +1816,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountHolderId\" : \"AH32272223222C5GXTD343TKP\",\n  \"description\" : \"S.Hopper - Main balance account\"\n}",
+    "raw": "{\n \"accountHolderId\": \"AH32272223222C5GXTD343TKP\",\n \"description\": \"S.Hopper - Main balance account\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1848,7 +1848,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"accountHolderId\" : \"AH32272223222C5GXTD343TKP\",\n  \"defaultCurrencyCode\" : \"EUR\",\n  \"description\" : \"S.Hopper - Main balance account\",\n  \"timeZone\" : \"Europe/Amsterdam\",\n  \"balances\" : [ {\n    \"available\" : 0,\n    \"balance\" : 0,\n    \"currency\" : \"EUR\",\n    \"reserved\" : 0\n  } ],\n  \"id\" : \"BA3227C223222H5J4DCGQ9V9L\",\n  \"status\" : \"active\"\n}",
+                                        "body" : "{\n \"accountHolderId\": \"AH32272223222C5GXTD343TKP\",\n \"defaultCurrencyCode\": \"EUR\",\n \"description\": \"S.Hopper - Main balance account\",\n \"timeZone\": \"Europe/Amsterdam\",\n \"balances\": [{\n \"available\": 0,\n \"balance\": 0,\n \"currency\": \"EUR\",\n \"reserved\": 0\n}],\n \"id\": \"BA3227C223222H5J4DCGQ9V9L\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1867,7 +1867,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountHolderId\" : \"AH32272223222C5GXTD343TKP\",\n  \"description\" : \"S.Hopper - Main balance account\"\n}",
+    "raw": "{\n \"accountHolderId\": \"AH32272223222C5GXTD343TKP\",\n \"description\": \"S.Hopper - Main balance account\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1982,7 +1982,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"counterparty\" : {\n    \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"schedule\" : {\n    \"type\" : \"balance\"\n  },\n  \"type\" : \"pull\",\n  \"status\" : \"active\"\n}",
+    "raw": "{\n \"counterparty\": {\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"active\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2021,7 +2021,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"id\" : \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n  \"counterparty\" : {\n    \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"schedule\" : {\n    \"type\" : \"balance\"\n  },\n  \"type\" : \"pull\",\n  \"status\" : \"active\"\n}",
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"counterparty\": {\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2040,7 +2040,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"counterparty\" : {\n    \"merchantAccount\" : \"{{YOUR_MERCHANT_ACCOUNT}}\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"schedule\" : {\n    \"type\" : \"balance\"\n  },\n  \"type\" : \"pull\",\n  \"status\" : \"active\"\n}",
+    "raw": "{\n \"counterparty\": {\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"active\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2092,7 +2092,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"counterparty\" : {\n    \"balanceAccountId\" : \"BA32278887611B5FTD2KR6TJD\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"schedule\" : {\n    \"type\" : \"weekly\"\n  },\n  \"type\" : \"push\",\n  \"status\" : \"active\"\n}",
+    "raw": "{\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2131,7 +2131,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"id\" : \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n  \"counterparty\" : {\n    \"balanceAccountId\" : \"BA32278887611B5FTD2KR6TJD\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"schedule\" : {\n    \"type\" : \"weekly\"\n  },\n  \"type\" : \"push\",\n  \"status\" : \"active\"\n}",
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2150,7 +2150,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"counterparty\" : {\n    \"balanceAccountId\" : \"BA32278887611B5FTD2KR6TJD\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"schedule\" : {\n    \"type\" : \"weekly\"\n  },\n  \"type\" : \"push\",\n  \"status\" : \"active\"\n}",
+    "raw": "{\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2202,7 +2202,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"counterparty\" : {\n    \"transferInstrumentId\" : \"SE322JV223222J5HGLCGF2WDV\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"priorities\" : [ \"fast\", \"instant\" ],\n  \"category\" : \"bank\",\n  \"schedule\" : {\n    \"type\" : \"weekly\"\n  },\n  \"type\" : \"push\",\n  \"status\" : \"active\"\n}",
+    "raw": "{\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\", \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2241,7 +2241,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"id\" : \"SWPC4227C224555B5FTD2NT2JV4WN9\",\n  \"counterparty\" : {\n    \"transferInstrumentId\" : \"SE322JV223222J5HGLCGF2WDV\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"priorities\" : [ \"fast\", \"instant\" ],\n  \"category\" : \"bank\",\n  \"schedule\" : {\n    \"type\" : \"weekly\"\n  },\n  \"type\" : \"push\",\n  \"status\" : \"active\"\n}",
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN9\",\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\", \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2260,7 +2260,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"counterparty\" : {\n    \"transferInstrumentId\" : \"SE322JV223222J5HGLCGF2WDV\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"priorities\" : [ \"fast\", \"instant\" ],\n  \"category\" : \"bank\",\n  \"schedule\" : {\n    \"type\" : \"weekly\"\n  },\n  \"type\" : \"push\",\n  \"status\" : \"active\"\n}",
+    "raw": "{\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\", \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2434,7 +2434,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"inactive\"\n}",
+    "raw": "{\n \"status\": \"inactive\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2479,7 +2479,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"id\" : \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n  \"counterparty\" : {\n    \"merchantAccount\" : \"YOUR_MERCHANT_ACCOUNT\"\n  },\n  \"triggerAmount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"currency\" : \"EUR\",\n  \"schedule\" : {\n    \"type\" : \"balance\"\n  },\n  \"type\" : \"pull\",\n  \"status\" : \"inactive\"\n}",
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"counterparty\": {\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"inactive\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -2498,7 +2498,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"status\" : \"inactive\"\n}",
+    "raw": "{\n \"status\": \"inactive\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2613,7 +2613,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"timeZone\" : \"Europe/Amsterdam\"\n}",
+    "raw": "{\n \"timeZone\": \"Europe/Amsterdam\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2651,7 +2651,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"accountHolderId\" : \"AH32272223222B5GFSNVGFFM7\",\n  \"defaultCurrencyCode\" : \"EUR\",\n  \"timeZone\" : \"Europe/Amsterdam\",\n  \"balances\" : [ {\n    \"available\" : 0,\n    \"balance\" : 0,\n    \"currency\" : \"EUR\",\n    \"reserved\" : 0\n  } ],\n  \"id\" : \"BA32272223222B59K6ZXHBFN6\",\n  \"status\" : \"active\"\n}",
+                                        "body" : "{\n \"accountHolderId\": \"AH32272223222B5GFSNVGFFM7\",\n \"defaultCurrencyCode\": \"EUR\",\n \"timeZone\": \"Europe/Amsterdam\",\n \"balances\": [{\n \"available\": 0,\n \"balance\": 0,\n \"currency\": \"EUR\",\n \"reserved\": 0\n}],\n \"id\": \"BA32272223222B59K6ZXHBFN6\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -2670,7 +2670,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"timeZone\" : \"Europe/Amsterdam\"\n}",
+    "raw": "{\n \"timeZone\": \"Europe/Amsterdam\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2802,7 +2802,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Allow only point-of-sale transactions\",\n  \"reference\" : \"{{$guid}}_4F7346\",\n  \"entityKey\" : {\n    \"entityType\" : \"paymentInstrument\",\n    \"entityReference\" : \"PI3227C223222B5FG88SB8BHR\"\n  },\n  \"status\" : \"active\",\n  \"interval\" : {\n    \"type\" : \"perTransaction\"\n  },\n  \"ruleRestrictions\" : {\n    \"processingTypes\" : {\n      \"operation\" : \"noneMatch\",\n      \"value\" : [ \"pos\" ]\n    }\n  },\n  \"type\" : \"blockList\"\n}",
+    "raw": "{\n \"description\": \"Allow only point-of-sale transactions\",\n \"reference\": \"{{$guid}}_4F7346\",\n \"entityKey\": {\n \"entityType\": \"paymentInstrument\",\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\"\n},\n \"status\": \"active\",\n \"interval\": {\n \"type\": \"perTransaction\"\n},\n \"ruleRestrictions\": {\n \"processingTypes\": {\n \"operation\": \"noneMatch\",\n \"value\": [\"pos\"]\n}\n},\n \"type\": \"blockList\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2834,7 +2834,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"description\" : \"Allow only point-of-sale transactions\",\n  \"entityKey\" : {\n    \"entityReference\" : \"PI3227C223222B5FG88SB8BHR\",\n    \"entityType\" : \"paymentInstrument\"\n  },\n  \"interval\" : {\n    \"timeZone\" : \"UTC\",\n    \"type\" : \"perTransaction\"\n  },\n  \"outcomeType\" : \"hardBlock\",\n  \"reference\" : \"YOUR_REFERENCE_4F7346\",\n  \"requestType\" : \"authorization\",\n  \"ruleRestrictions\" : {\n    \"processingTypes\" : {\n      \"operation\" : \"noneMatch\",\n      \"value\" : [ \"pos\" ]\n    }\n  },\n  \"startDate\" : \"2023-06-29T22:34:36.173226192+02:00\",\n  \"status\" : \"active\",\n  \"type\" : \"blockList\",\n  \"id\" : \"TR3227C223222H5J4D9ML9V4D\"\n}",
+                                        "body" : "{\n \"description\": \"Allow only point-of-sale transactions\",\n \"entityKey\": {\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\",\n \"entityType\": \"paymentInstrument\"\n},\n \"interval\": {\n \"timeZone\": \"UTC\",\n \"type\": \"perTransaction\"\n},\n \"outcomeType\": \"hardBlock\",\n \"reference\": \"YOUR_REFERENCE_4F7346\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"processingTypes\": {\n \"operation\": \"noneMatch\",\n \"value\": [\"pos\"]\n}\n},\n \"startDate\": \"2023-06-29T22:34:36.173226192+02:00\",\n \"status\": \"active\",\n \"type\": \"blockList\",\n \"id\": \"TR3227C223222H5J4D9ML9V4D\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2853,7 +2853,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Allow only point-of-sale transactions\",\n  \"reference\" : \"{{$guid}}_4F7346\",\n  \"entityKey\" : {\n    \"entityType\" : \"paymentInstrument\",\n    \"entityReference\" : \"PI3227C223222B5FG88SB8BHR\"\n  },\n  \"status\" : \"active\",\n  \"interval\" : {\n    \"type\" : \"perTransaction\"\n  },\n  \"ruleRestrictions\" : {\n    \"processingTypes\" : {\n      \"operation\" : \"noneMatch\",\n      \"value\" : [ \"pos\" ]\n    }\n  },\n  \"type\" : \"blockList\"\n}",
+    "raw": "{\n \"description\": \"Allow only point-of-sale transactions\",\n \"reference\": \"{{$guid}}_4F7346\",\n \"entityKey\": {\n \"entityType\": \"paymentInstrument\",\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\"\n},\n \"status\": \"active\",\n \"interval\": {\n \"type\": \"perTransaction\"\n},\n \"ruleRestrictions\": {\n \"processingTypes\": {\n \"operation\": \"noneMatch\",\n \"value\": [\"pos\"]\n}\n},\n \"type\": \"blockList\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2898,7 +2898,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Assign score if more than 500 EUR in 2 hours\",\n  \"entityKey\" : {\n    \"entityType\" : \"paymentInstrument\",\n    \"entityReference\" : \"PI3227C223222B5FG88SB8BHR\"\n  },\n  \"interval\" : {\n    \"type\" : \"sliding\",\n    \"duration\" : {\n      \"value\" : 2,\n      \"unit\" : \"hours\"\n    }\n  },\n  \"outcomeType\" : \"scoreBased\",\n  \"reference\" : \"myRule11789\",\n  \"ruleRestrictions\" : {\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"currency\" : \"EUR\",\n        \"value\" : 50000\n      }\n    }\n  },\n  \"score\" : 20,\n  \"type\" : \"velocity\"\n}",
+    "raw": "{\n \"description\": \"Assign score if more than 500 EUR in 2 hours\",\n \"entityKey\": {\n \"entityType\": \"paymentInstrument\",\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\"\n},\n \"interval\": {\n \"type\": \"sliding\",\n \"duration\": {\n \"value\": 2,\n \"unit\": \"hours\"\n}\n},\n \"outcomeType\": \"scoreBased\",\n \"reference\": \"myRule11789\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n}\n}\n},\n \"score\": 20,\n \"type\": \"velocity\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2930,7 +2930,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"description\" : \"Assign score if more than 500 EUR in 2 hours\",\n  \"entityKey\" : {\n    \"entityReference\" : \"PI3227C223222B5FG88SB8BHR\",\n    \"entityType\" : \"paymentInstrument\"\n  },\n  \"interval\" : {\n    \"duration\" : {\n      \"unit\" : \"hours\",\n      \"value\" : 2\n    },\n    \"timeZone\" : \"UTC\",\n    \"type\" : \"sliding\"\n  },\n  \"outcomeType\" : \"scoreBased\",\n  \"reference\" : \"myRule11789\",\n  \"requestType\" : \"authorization\",\n  \"ruleRestrictions\" : {\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"currency\" : \"EUR\",\n        \"value\" : 50000\n      }\n    }\n  },\n  \"score\" : 20,\n  \"status\" : \"inactive\",\n  \"type\" : \"velocity\",\n  \"id\" : \"TR3227C223222H5J4D9S39V59\"\n}",
+                                        "body" : "{\n \"description\": \"Assign score if more than 500 EUR in 2 hours\",\n \"entityKey\": {\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\",\n \"entityType\": \"paymentInstrument\"\n},\n \"interval\": {\n \"duration\": {\n \"unit\": \"hours\",\n \"value\": 2\n},\n \"timeZone\": \"UTC\",\n \"type\": \"sliding\"\n},\n \"outcomeType\": \"scoreBased\",\n \"reference\": \"myRule11789\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n}\n}\n},\n \"score\": 20,\n \"status\": \"inactive\",\n \"type\": \"velocity\",\n \"id\": \"TR3227C223222H5J4D9S39V59\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2949,7 +2949,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Assign score if more than 500 EUR in 2 hours\",\n  \"entityKey\" : {\n    \"entityType\" : \"paymentInstrument\",\n    \"entityReference\" : \"PI3227C223222B5FG88SB8BHR\"\n  },\n  \"interval\" : {\n    \"type\" : \"sliding\",\n    \"duration\" : {\n      \"value\" : 2,\n      \"unit\" : \"hours\"\n    }\n  },\n  \"outcomeType\" : \"scoreBased\",\n  \"reference\" : \"myRule11789\",\n  \"ruleRestrictions\" : {\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"currency\" : \"EUR\",\n        \"value\" : 50000\n      }\n    }\n  },\n  \"score\" : 20,\n  \"type\" : \"velocity\"\n}",
+    "raw": "{\n \"description\": \"Assign score if more than 500 EUR in 2 hours\",\n \"entityKey\": {\n \"entityType\": \"paymentInstrument\",\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\"\n},\n \"interval\": {\n \"type\": \"sliding\",\n \"duration\": {\n \"value\": 2,\n \"unit\": \"hours\"\n}\n},\n \"outcomeType\": \"scoreBased\",\n \"reference\": \"myRule11789\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n}\n}\n},\n \"score\": 20,\n \"type\": \"velocity\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2994,7 +2994,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Up to 1000 EUR per card for the last 12 hours\",\n  \"reference\" : \"{{$guid}}_2918A\",\n  \"status\" : \"active\",\n  \"entityKey\" : {\n    \"entityReference\" : \"BA3227C223222B5FN65355NR3\",\n    \"entityType\" : \"balanceAccount\"\n  },\n  \"aggregationLevel\" : \"paymentInstrument\",\n  \"interval\" : {\n    \"type\" : \"sliding\",\n    \"duration\" : {\n      \"value\" : 12,\n      \"unit\" : \"hours\"\n    }\n  },\n  \"outcomeType\" : \"hardBlock\",\n  \"ruleRestrictions\" : {\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"value\" : 100000,\n        \"currency\" : \"EUR\"\n      }\n    }\n  },\n  \"type\" : \"velocity\"\n}",
+    "raw": "{\n \"description\": \"Up to 1000 EUR per card for the last 12 hours\",\n \"reference\": \"{{$guid}}_2918A\",\n \"status\": \"active\",\n \"entityKey\": {\n \"entityReference\": \"BA3227C223222B5FN65355NR3\",\n \"entityType\": \"balanceAccount\"\n},\n \"aggregationLevel\": \"paymentInstrument\",\n \"interval\": {\n \"type\": \"sliding\",\n \"duration\": {\n \"value\": 12,\n \"unit\": \"hours\"\n}\n},\n \"outcomeType\": \"hardBlock\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"value\": 100000,\n \"currency\": \"EUR\"\n}\n}\n},\n \"type\": \"velocity\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3026,7 +3026,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"aggregationLevel\" : \"paymentInstrument\",\n  \"description\" : \"Up to 1000 EUR per card for the last 12 hours\",\n  \"entityKey\" : {\n    \"entityReference\" : \"BA3227C223222B5FN65355NR3\",\n    \"entityType\" : \"balanceAccount\"\n  },\n  \"interval\" : {\n    \"duration\" : {\n      \"unit\" : \"hours\",\n      \"value\" : 12\n    },\n    \"timeZone\" : \"UTC\",\n    \"type\" : \"sliding\"\n  },\n  \"outcomeType\" : \"hardBlock\",\n  \"reference\" : \"YOUR_REFERENCE_2918A\",\n  \"requestType\" : \"authorization\",\n  \"ruleRestrictions\" : {\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"currency\" : \"EUR\",\n        \"value\" : 100000\n      }\n    }\n  },\n  \"startDate\" : \"2023-06-29T22:39:06.887628679+02:00\",\n  \"status\" : \"active\",\n  \"type\" : \"velocity\",\n  \"id\" : \"TR32272223222H5J4D9Z8C97H\"\n}",
+                                        "body" : "{\n \"aggregationLevel\": \"paymentInstrument\",\n \"description\": \"Up to 1000 EUR per card for the last 12 hours\",\n \"entityKey\": {\n \"entityReference\": \"BA3227C223222B5FN65355NR3\",\n \"entityType\": \"balanceAccount\"\n},\n \"interval\": {\n \"duration\": {\n \"unit\": \"hours\",\n \"value\": 12\n},\n \"timeZone\": \"UTC\",\n \"type\": \"sliding\"\n},\n \"outcomeType\": \"hardBlock\",\n \"reference\": \"YOUR_REFERENCE_2918A\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 100000\n}\n}\n},\n \"startDate\": \"2023-06-29T22:39:06.887628679+02:00\",\n \"status\": \"active\",\n \"type\": \"velocity\",\n \"id\": \"TR32272223222H5J4D9Z8C97H\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3045,7 +3045,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Up to 1000 EUR per card for the last 12 hours\",\n  \"reference\" : \"{{$guid}}_2918A\",\n  \"status\" : \"active\",\n  \"entityKey\" : {\n    \"entityReference\" : \"BA3227C223222B5FN65355NR3\",\n    \"entityType\" : \"balanceAccount\"\n  },\n  \"aggregationLevel\" : \"paymentInstrument\",\n  \"interval\" : {\n    \"type\" : \"sliding\",\n    \"duration\" : {\n      \"value\" : 12,\n      \"unit\" : \"hours\"\n    }\n  },\n  \"outcomeType\" : \"hardBlock\",\n  \"ruleRestrictions\" : {\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"value\" : 100000,\n        \"currency\" : \"EUR\"\n      }\n    }\n  },\n  \"type\" : \"velocity\"\n}",
+    "raw": "{\n \"description\": \"Up to 1000 EUR per card for the last 12 hours\",\n \"reference\": \"{{$guid}}_2918A\",\n \"status\": \"active\",\n \"entityKey\": {\n \"entityReference\": \"BA3227C223222B5FN65355NR3\",\n \"entityType\": \"balanceAccount\"\n},\n \"aggregationLevel\": \"paymentInstrument\",\n \"interval\": {\n \"type\": \"sliding\",\n \"duration\": {\n \"value\": 12,\n \"unit\": \"hours\"\n}\n},\n \"outcomeType\": \"hardBlock\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"value\": 100000,\n \"currency\": \"EUR\"\n}\n}\n},\n \"type\": \"velocity\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3090,7 +3090,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Up to 50 EUR international transactions\",\n  \"reference\" : \"{{$guid}}_B2634\",\n  \"status\" : \"active\",\n  \"entityKey\" : {\n    \"entityType\" : \"balanceAccount\",\n    \"entityReference\" : \"BA3227C223222B5FN65355NR3\"\n  },\n  \"interval\" : {\n    \"type\" : \"daily\"\n  },\n  \"outcomeType\" : \"hardBlock\",\n  \"ruleRestrictions\" : {\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"currency\" : \"EUR\",\n        \"value\" : 5000\n      }\n    },\n    \"internationalTransaction\" : {\n      \"operation\" : \"equals\",\n      \"value\" : true\n    }\n  },\n  \"type\" : \"velocity\"\n}",
+    "raw": "{\n \"description\": \"Up to 50 EUR international transactions\",\n \"reference\": \"{{$guid}}_B2634\",\n \"status\": \"active\",\n \"entityKey\": {\n \"entityType\": \"balanceAccount\",\n \"entityReference\": \"BA3227C223222B5FN65355NR3\"\n},\n \"interval\": {\n \"type\": \"daily\"\n},\n \"outcomeType\": \"hardBlock\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 5000\n}\n},\n \"internationalTransaction\": {\n \"operation\": \"equals\",\n \"value\": true\n}\n},\n \"type\": \"velocity\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3122,7 +3122,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"description\" : \"Up to 50 EUR international transactions\",\n  \"entityKey\" : {\n    \"entityReference\" : \"BA3227C223222B5FN65355NR3\",\n    \"entityType\" : \"balanceAccount\"\n  },\n  \"interval\" : {\n    \"timeOfDay\" : \"00:00:00\",\n    \"timeZone\" : \"UTC\",\n    \"type\" : \"daily\"\n  },\n  \"outcomeType\" : \"hardBlock\",\n  \"reference\" : \"YOUR_REFERENCE_B2634\",\n  \"requestType\" : \"authorization\",\n  \"ruleRestrictions\" : {\n    \"internationalTransaction\" : {\n      \"operation\" : \"equals\",\n      \"value\" : true\n    },\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"currency\" : \"EUR\",\n        \"value\" : 5000\n      }\n    }\n  },\n  \"startDate\" : \"2023-06-29T22:39:54.068487152+02:00\",\n  \"status\" : \"active\",\n  \"type\" : \"velocity\",\n  \"id\" : \"TR3227C223222H5J4DB2X9V65\"\n}",
+                                        "body" : "{\n \"description\": \"Up to 50 EUR international transactions\",\n \"entityKey\": {\n \"entityReference\": \"BA3227C223222B5FN65355NR3\",\n \"entityType\": \"balanceAccount\"\n},\n \"interval\": {\n \"timeOfDay\": \"00:00:00\",\n \"timeZone\": \"UTC\",\n \"type\": \"daily\"\n},\n \"outcomeType\": \"hardBlock\",\n \"reference\": \"YOUR_REFERENCE_B2634\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"internationalTransaction\": {\n \"operation\": \"equals\",\n \"value\": true\n},\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 5000\n}\n}\n},\n \"startDate\": \"2023-06-29T22:39:54.068487152+02:00\",\n \"status\": \"active\",\n \"type\": \"velocity\",\n \"id\": \"TR3227C223222H5J4DB2X9V65\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3141,7 +3141,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Up to 50 EUR international transactions\",\n  \"reference\" : \"{{$guid}}_B2634\",\n  \"status\" : \"active\",\n  \"entityKey\" : {\n    \"entityType\" : \"balanceAccount\",\n    \"entityReference\" : \"BA3227C223222B5FN65355NR3\"\n  },\n  \"interval\" : {\n    \"type\" : \"daily\"\n  },\n  \"outcomeType\" : \"hardBlock\",\n  \"ruleRestrictions\" : {\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"currency\" : \"EUR\",\n        \"value\" : 5000\n      }\n    },\n    \"internationalTransaction\" : {\n      \"operation\" : \"equals\",\n      \"value\" : true\n    }\n  },\n  \"type\" : \"velocity\"\n}",
+    "raw": "{\n \"description\": \"Up to 50 EUR international transactions\",\n \"reference\": \"{{$guid}}_B2634\",\n \"status\": \"active\",\n \"entityKey\": {\n \"entityType\": \"balanceAccount\",\n \"entityReference\": \"BA3227C223222B5FN65355NR3\"\n},\n \"interval\": {\n \"type\": \"daily\"\n},\n \"outcomeType\": \"hardBlock\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 5000\n}\n},\n \"internationalTransaction\": {\n \"operation\": \"equals\",\n \"value\": true\n}\n},\n \"type\": \"velocity\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3294,7 +3294,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Allow only point-of-sale transactions\",\n  \"reference\" : \"{{$guid}}_4F7346\",\n  \"entityKey\" : {\n    \"entityType\" : \"paymentInstrument\",\n    \"entityReference\" : \"PI3227C223222B5FG88SB8BHR\"\n  },\n  \"status\" : \"inactive\",\n  \"interval\" : {\n    \"type\" : \"weekly\"\n  },\n  \"ruleRestrictions\" : {\n    \"processingTypes\" : {\n      \"operation\" : \"noneMatch\",\n      \"value\" : [ \"pos\" ]\n    }\n  },\n  \"type\" : \"blockList\"\n}",
+    "raw": "{\n \"description\": \"Allow only point-of-sale transactions\",\n \"reference\": \"{{$guid}}_4F7346\",\n \"entityKey\": {\n \"entityType\": \"paymentInstrument\",\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\"\n},\n \"status\": \"inactive\",\n \"interval\": {\n \"type\": \"weekly\"\n},\n \"ruleRestrictions\": {\n \"processingTypes\": {\n \"operation\": \"noneMatch\",\n \"value\": [\"pos\"]\n}\n},\n \"type\": \"blockList\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3332,7 +3332,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"aggregationLevel\" : \"paymentInstrument\",\n  \"description\" : \"Up to 1000 EUR per card for the last 12 hours\",\n  \"entityKey\" : {\n    \"entityReference\" : \"PG3227C223222C5GXR3M5592Q\",\n    \"entityType\" : \"paymentInstrumentGroup\"\n  },\n  \"interval\" : {\n    \"duration\" : {\n      \"unit\" : \"hours\",\n      \"value\" : 12\n    },\n    \"timeZone\" : \"UTC\",\n    \"type\" : \"sliding\"\n  },\n  \"outcomeType\" : \"hardBlock\",\n  \"reference\" : \"YOUR_REFERENCE_2918A\",\n  \"requestType\" : \"authorization\",\n  \"ruleRestrictions\" : {\n    \"totalAmount\" : {\n      \"operation\" : \"greaterThan\",\n      \"value\" : {\n        \"currency\" : \"EUR\",\n        \"value\" : 100000\n      }\n    }\n  },\n  \"startDate\" : \"2022-11-17T00:07:09.10057663+01:00\",\n  \"status\" : \"inactive\",\n  \"type\" : \"velocity\",\n  \"id\" : \"TR3227C223222C5GXR3XP596N\"\n}",
+                                        "body" : "{\n \"aggregationLevel\": \"paymentInstrument\",\n \"description\": \"Up to 1000 EUR per card for the last 12 hours\",\n \"entityKey\": {\n \"entityReference\": \"PG3227C223222C5GXR3M5592Q\",\n \"entityType\": \"paymentInstrumentGroup\"\n},\n \"interval\": {\n \"duration\": {\n \"unit\": \"hours\",\n \"value\": 12\n},\n \"timeZone\": \"UTC\",\n \"type\": \"sliding\"\n},\n \"outcomeType\": \"hardBlock\",\n \"reference\": \"YOUR_REFERENCE_2918A\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 100000\n}\n}\n},\n \"startDate\": \"2022-11-17T00:07:09.10057663+01:00\",\n \"status\": \"inactive\",\n \"type\": \"velocity\",\n \"id\": \"TR3227C223222C5GXR3XP596N\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -3351,7 +3351,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"description\" : \"Allow only point-of-sale transactions\",\n  \"reference\" : \"{{$guid}}_4F7346\",\n  \"entityKey\" : {\n    \"entityType\" : \"paymentInstrument\",\n    \"entityReference\" : \"PI3227C223222B5FG88SB8BHR\"\n  },\n  \"status\" : \"inactive\",\n  \"interval\" : {\n    \"type\" : \"weekly\"\n  },\n  \"ruleRestrictions\" : {\n    \"processingTypes\" : {\n      \"operation\" : \"noneMatch\",\n      \"value\" : [ \"pos\" ]\n    }\n  },\n  \"type\" : \"blockList\"\n}",
+    "raw": "{\n \"description\": \"Allow only point-of-sale transactions\",\n \"reference\": \"{{$guid}}_4F7346\",\n \"entityKey\": {\n \"entityType\": \"paymentInstrument\",\n \"entityReference\": \"PI3227C223222B5FG88SB8BHR\"\n},\n \"status\": \"inactive\",\n \"interval\": {\n \"type\": \"weekly\"\n},\n \"ruleRestrictions\": {\n \"processingTypes\": {\n \"operation\": \"noneMatch\",\n \"value\": [\"pos\"]\n}\n},\n \"type\": \"blockList\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3593,7 +3593,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"balancePlatform\" : \"{{YOUR_BALANCE_PLATFORM}}\",\n  \"txVariant\" : \"mc\"\n}",
+    "raw": "{\n \"balancePlatform\": \"{{YOUR_BALANCE_PLATFORM}}\",\n \"txVariant\": \"mc\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3625,7 +3625,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"balancePlatform\" : \"YOUR_BALANCE_PLATFORM\",\n  \"txVariant\" : \"mc\",\n  \"id\" : \"PG32272223222H5J4DCRVC9DH\"\n}",
+                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"txVariant\": \"mc\",\n \"id\": \"PG32272223222H5J4DCRVC9DH\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3644,7 +3644,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"balancePlatform\" : \"{{YOUR_BALANCE_PLATFORM}}\",\n  \"txVariant\" : \"mc\"\n}",
+    "raw": "{\n \"balancePlatform\": \"{{YOUR_BALANCE_PLATFORM}}\",\n \"txVariant\": \"mc\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3803,7 +3803,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"iban\",\n    \"iban\" : \"1001001234\"\n  }\n}",
+    "raw": "{\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"1001001234\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3835,7 +3835,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"type\" : \"https://docs.adyen.com/errors/validation\",\n  \"title\" : \"Invalid bank account identification details provided\",\n  \"detail\" : \"Provided IBAN is incorrect\",\n  \"status\" : 422,\n  \"invalidFields\" : [ {\n    \"name\" : \"iban\",\n    \"value\" : \"1001001234\",\n    \"message\" : \"Invalid IBAN.\"\n  } ],\n  \"errorCode\" : \"33_01\"\n}",
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/validation\",\n \"title\": \"Invalid bank account identification details provided\",\n \"detail\": \"Provided IBAN is incorrect\",\n \"status\": 422,\n \"invalidFields\": [{\n \"name\": \"iban\",\n \"value\": \"1001001234\",\n \"message\": \"Invalid IBAN.\"\n}],\n \"errorCode\": \"33_01\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3854,7 +3854,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"iban\",\n    \"iban\" : \"1001001234\"\n  }\n}",
+    "raw": "{\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"1001001234\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3899,7 +3899,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"usLocal\",\n    \"accountNumber\" : \"12345JHDhjkf67890\",\n    \"accountType\" : \"checking\",\n    \"routingNumber\" : \"121000567\"\n  }\n}",
+    "raw": "{\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"12345JHDhjkf67890\",\n \"accountType\": \"checking\",\n \"routingNumber\": \"121000567\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3931,7 +3931,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"type\" : \"https://docs.adyen.com/errors/validation\",\n  \"title\" : \"Invalid bank account identification details provided\",\n  \"detail\" : \"Provided account number and the routing number are incorrect\",\n  \"status\" : 422,\n  \"invalidFields\" : [ {\n    \"name\" : \"accountNumber\",\n    \"value\" : \"12345JHDhjkf67890\",\n    \"message\" : \"Invalid account number.\"\n  }, {\n    \"name\" : \"routingNumber\",\n    \"value\" : \"121000567\",\n    \"message\" : \"Invalid routing number.\"\n  } ],\n  \"errorCode\" : \"33_01\"\n}",
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/validation\",\n \"title\": \"Invalid bank account identification details provided\",\n \"detail\": \"Provided account number and the routing number are incorrect\",\n \"status\": 422,\n \"invalidFields\": [{\n \"name\": \"accountNumber\",\n \"value\": \"12345JHDhjkf67890\",\n \"message\": \"Invalid account number.\"\n}, {\n \"name\": \"routingNumber\",\n \"value\": \"121000567\",\n \"message\": \"Invalid routing number.\"\n}],\n \"errorCode\": \"33_01\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3950,7 +3950,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"accountIdentification\" : {\n    \"type\" : \"usLocal\",\n    \"accountNumber\" : \"12345JHDhjkf67890\",\n    \"accountType\" : \"checking\",\n    \"routingNumber\" : \"121000567\"\n  }\n}",
+    "raw": "{\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"12345JHDhjkf67890\",\n \"accountType\": \"checking\",\n \"routingNumber\": \"121000567\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -4006,7 +4006,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"paymentInstrumentId\" : \"PI6789678967896789\",\n  \"encryptedKey\" : \"75989E8881284D10153ABACF022EEA09F5...\",\n  \"encryptedPinBlock\" : \"63E5060591EF65F48DD1D4FECD0FECD5\",\n  \"token\" : \"5555341244441115\"\n}",
+    "raw": "{\n \"paymentInstrumentId\": \"PI6789678967896789\",\n \"encryptedKey\": \"75989E8881284D10153ABACF022EEA09F5...\",\n \"encryptedPinBlock\": \"63E5060591EF65F48DD1D4FECD0FECD5\",\n \"token\": \"5555341244441115\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -4039,7 +4039,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"status\" : \"completed\"\n}",
+                                        "body" : "{\n \"status\": \"completed\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -4058,7 +4058,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"paymentInstrumentId\" : \"PI6789678967896789\",\n  \"encryptedKey\" : \"75989E8881284D10153ABACF022EEA09F5...\",\n  \"encryptedPinBlock\" : \"63E5060591EF65F48DD1D4FECD0FECD5\",\n  \"token\" : \"5555341244441115\"\n}",
+    "raw": "{\n \"paymentInstrumentId\": \"PI6789678967896789\",\n \"encryptedKey\": \"75989E8881284D10153ABACF022EEA09F5...\",\n \"encryptedPinBlock\": \"63E5060591EF65F48DD1D4FECD0FECD5\",\n \"token\": \"5555341244441115\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -4110,7 +4110,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"paymentInstrumentId\" : \"PI3227C223222B5BPCMFXD2XG\",\n  \"encryptedKey\" : \"75989E8881284D10153ABACF022EEA09F5...\"\n}",
+    "raw": "{\n \"paymentInstrumentId\": \"PI3227C223222B5BPCMFXD2XG\",\n \"encryptedKey\": \"75989E8881284D10153ABACF022EEA09F5...\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -4143,7 +4143,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"encryptedPinBlock\" : \"63E5060591EF65F48DD1D4FECD0FECD5\",\n  \"token\" : \"5555341244441115\"\n}",
+                                        "body" : "{\n \"encryptedPinBlock\": \"63E5060591EF65F48DD1D4FECD0FECD5\",\n \"token\": \"5555341244441115\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -4162,7 +4162,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"paymentInstrumentId\" : \"PI3227C223222B5BPCMFXD2XG\",\n  \"encryptedKey\" : \"75989E8881284D10153ABACF022EEA09F5...\"\n}",
+    "raw": "{\n \"paymentInstrumentId\": \"PI3227C223222B5BPCMFXD2XG\",\n \"encryptedKey\": \"75989E8881284D10153ABACF022EEA09F5...\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -4276,7 +4276,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"balancePlatform\" : \"{{YOUR_BALANCE_PLATFORM}}\",\n  \"currency\" : \"USD\",\n  \"category\" : \"bank\",\n  \"counterparty\" : {\n    \"bankAccount\" : {\n      \"accountIdentification\" : {\n        \"type\" : \"iban\",\n        \"iban\" : \"NL91ABNA0417164300\"\n      }\n    }\n  }\n}",
+    "raw": "{\n \"balancePlatform\": \"{{YOUR_BALANCE_PLATFORM}}\",\n \"currency\": \"USD\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL91ABNA0417164300\"\n}\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -4309,7 +4309,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n  \"transferRoutes\" : [ {\n    \"country\" : \"NL\",\n    \"currency\" : \"USD\",\n    \"priority\" : \"crossBorder\",\n    \"requirements\" : [ {\n      \"description\" : \"Amount of transfer must be at least 100, and no greater than 99999999999\",\n      \"max\" : 99999999999,\n      \"min\" : 100,\n      \"type\" : \"amountMinMaxRequirement\"\n    }, {\n      \"description\" : \"Country, street and city is required.\",\n      \"requiredAddressFields\" : [ \"line1\", \"city\", \"country\" ],\n      \"type\" : \"addressRequirement\"\n    }, {\n      \"description\" : \"Bank account identification type must be iban or numberAndBic\",\n      \"bankAccountIdentificationTypes\" : [ \"iban\", \"numberAndBic\" ],\n      \"type\" : \"bankAccountIdentificationTypeRequirement\"\n    }, {\n      \"issuingCountryCode\" : \"NL\",\n      \"paymentInstrumentType\" : \"BankAccount\",\n      \"type\" : \"paymentInstrumentRequirement\"\n    } ]\n  }, {\n    \"country\" : \"NL\",\n    \"currency\" : \"USD\",\n    \"priority\" : \"wire\",\n    \"requirements\" : [ {\n      \"description\" : \"Amount of transfer must be at least 100, and no greater than 99999999999\",\n      \"max\" : 99999999999,\n      \"min\" : 100,\n      \"type\" : \"amountMinMaxRequirement\"\n    }, {\n      \"description\" : \"Country, street and city is required.\",\n      \"requiredAddressFields\" : [ \"line1\", \"city\", \"country\" ],\n      \"type\" : \"addressRequirement\"\n    }, {\n      \"description\" : \"Bank account identification type must be iban or numberAndBic\",\n      \"bankAccountIdentificationTypes\" : [ \"iban\", \"numberAndBic\" ],\n      \"type\" : \"bankAccountIdentificationTypeRequirement\"\n    }, {\n      \"issuingCountryCode\" : \"NL\",\n      \"paymentInstrumentType\" : \"BankAccount\",\n      \"type\" : \"paymentInstrumentRequirement\"\n    } ]\n  } ]\n}",
+                                        "body" : "{\n \"transferRoutes\": [{\n \"country\": \"NL\",\n \"currency\": \"USD\",\n \"priority\": \"crossBorder\",\n \"requirements\": [{\n \"description\": \"Amount of transfer must be at least 100, and no greater than 99999999999\",\n ,\n \"min\": 100,\n \"type\": \"amountMinMaxRequirement\"\n}, {\n \"description\": \"Country, street and city is required.\",\n \"requiredAddressFields\": [\"line1\", \"city\", \"country\"],\n \"type\": \"addressRequirement\"\n}, {\n \"description\": \"Bank account identification type must be iban or numberAndBic\",\n \"bankAccountIdentificationTypes\": [\"iban\", \"numberAndBic\"],\n \"type\": \"bankAccountIdentificationTypeRequirement\"\n}, {\n \"issuingCountryCode\": \"NL\",\n \"paymentInstrumentType\": \"BankAccount\",\n \"type\": \"paymentInstrumentRequirement\"\n}]\n}, {\n \"country\": \"NL\",\n \"currency\": \"USD\",\n \"priority\": \"wire\",\n \"requirements\": [{\n \"description\": \"Amount of transfer must be at least 100, and no greater than 99999999999\",\n ,\n \"min\": 100,\n \"type\": \"amountMinMaxRequirement\"\n}, {\n \"description\": \"Country, street and city is required.\",\n \"requiredAddressFields\": [\"line1\", \"city\", \"country\"],\n \"type\": \"addressRequirement\"\n}, {\n \"description\": \"Bank account identification type must be iban or numberAndBic\",\n \"bankAccountIdentificationTypes\": [\"iban\", \"numberAndBic\"],\n \"type\": \"bankAccountIdentificationTypeRequirement\"\n}, {\n \"issuingCountryCode\": \"NL\",\n \"paymentInstrumentType\": \"BankAccount\",\n \"type\": \"paymentInstrumentRequirement\"\n}]\n}]\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -4328,7 +4328,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n  \"balancePlatform\" : \"{{YOUR_BALANCE_PLATFORM}}\",\n  \"currency\" : \"USD\",\n  \"category\" : \"bank\",\n  \"counterparty\" : {\n    \"bankAccount\" : {\n      \"accountIdentification\" : {\n        \"type\" : \"iban\",\n        \"iban\" : \"NL91ABNA0417164300\"\n      }\n    }\n  }\n}",
+    "raw": "{\n \"balancePlatform\": \"{{YOUR_BALANCE_PLATFORM}}\",\n \"currency\": \"USD\",\n \"category\": \"bank\",\n \"counterparty\": {\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL91ABNA0417164300\"\n}\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"

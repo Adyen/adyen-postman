@@ -19,11 +19,11 @@ jobs:
           repository: 'Adyen/adyen-openapi'
           path: 'adyen-openapi'
           fetch-depth: 0
-      - name: Get changed files in the yaml folder
+      - name: Get changed files in the json folder
         id: changed-files-specific
         uses: tj-actions/changed-files@v35
         with:
-          files: yaml/*.yaml
+          files: json/*.json
           path: 'adyen-openapi'
       - uses: JasonEtco/create-an-issue@v2
         if: ${{ steps.changed-files-specific.outputs.added_files != '' }}

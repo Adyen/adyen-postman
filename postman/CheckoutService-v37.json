@@ -1853,6 +1853,68 @@
 	                    ]
 	        },
 	        {
+	            "name": "Recurring",
+	            "item": [
+	                        {
+    "name": "/storedPaymentMethods",
+                "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.",
+                 "item": [
+                            {
+                                "name": "Create a token to store payment details",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantAccount\": \"<string>\",\n \"paymentMethod\": \"<string>\",\n \"shopperEmail\": \"<string>\",\n \"shopperIP\": \"<string>\",\n \"shopperReference\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/storedPaymentMethods",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "storedPaymentMethods"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Donations",
 	            "item": [
 	                        {

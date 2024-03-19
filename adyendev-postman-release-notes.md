@@ -11,6 +11,10 @@ This page contains the **Release Notes** of the following resources:
 
 > All Adyen APIs with documentation, variables and examples. See on [Postman](https://www.postman.com/adyendev/workspace/adyen-apis/overview).
 
+### Mar 2024
+- Examples are updated to provide, next to the request, the expected response (to let developers view the response payload before executing a request).
+- AfP Configuration API has been updated to include the latest features (Card orders, Bank Account validation, Payment Instrument Groups, etc..).  
+
 ### Nov 2023
 - The path variables are defined using the Postman conventions, for example `/paymentLinks/:linkId`. This allows to set the value of the path parameter without editing the URL.  
 - The endpoints within a folder are ordered alphabetically.  

@@ -8,9 +8,9 @@ fi
 
 DATE=$(date +"%Y-%m-%d")
 # We allow only non classic, non webhook APIs
-ALLOW_LIST="BalanceControlService|BalancePlatformService|BinLookupService|CheckoutService|DataProtectionService|DisputeService|GrantService|LegalEntityService|ManagementService|PayoutService|RecurringService|StoredValueService|TestCardService|TfmAPIService|TransferService"
+ALLOW_LIST="BalanceControlService|BalancePlatformService|BinLookupService|CheckoutService|DataProtectionService|DisputeService|GrantService|LegalEntityService|PayoutService|RecurringService|StoredValueService|TestCardService|TfmAPIService|TransferService"
 
-for entry in "adyen-openapi/json"/*
+for entry in "adyen-openapi/yaml"/*
 do
   echo "Processing $entry"
   if echo "$entry" | grep -q -E "$ALLOW_LIST"; then

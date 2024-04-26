@@ -134,7 +134,7 @@
 	            "item": [
 	                        {
     "name": "/grantOffers",
-                "description": "Returns a list of all [grant offers](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter.",
+                "description": "Returns a list of all [grant offers](https://docs.adyen.com/platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter.",
                  "item": [
                             {
                                 "name": "Get all available grant offers",
@@ -176,7 +176,7 @@
         }
     ]
     },
-    "description": "Returns a list of all [grant offers](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter."
+    "description": "Returns a list of all [grant offers](https://docs.adyen.com/platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter."
 }
                                 ,"response": [
                                 ]
@@ -793,7 +793,7 @@
                         },
 	                        {
     "name": "/accountHolders/:id/taxForms",
-                "description": "Generates a tax form for account holders operating in the US. For more information, refer to [Providing tax forms](https://docs.adyen.com/marketplaces-and-platforms/us-tax-forms/).",
+                "description": "Generates a tax form for account holders operating in the US. For more information, refer to US tax forms for [marketplaces](https://docs.adyen.com/marketplaces/us-tax-forms/) or [platforms](https://docs.adyen.com/platforms/us-tax-forms/) .",
                  "item": [
                             {
                                 "name": "Get a tax form",
@@ -848,7 +848,7 @@
         }
     ]
     },
-    "description": "Generates a tax form for account holders operating in the US. For more information, refer to [Providing tax forms](https://docs.adyen.com/marketplaces-and-platforms/us-tax-forms/)."
+    "description": "Generates a tax form for account holders operating in the US. For more information, refer to US tax forms for [marketplaces](https://docs.adyen.com/marketplaces/us-tax-forms/) or [platforms](https://docs.adyen.com/platforms/us-tax-forms/) ."
 }
                                 ,"response": [
                                 ]
@@ -862,7 +862,7 @@
 	            "item": [
 	                        {
     "name": "/paymentInstruments",
-                "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts).",
+                "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts).",
                  "item": [
                             {
                                 "name": "Create a business account in NL",
@@ -904,7 +904,7 @@
     "query": [
     ]
     },
-    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -955,7 +955,7 @@
     "query": [
     ]
     },
-    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
 }
                                         }
                                 ]
@@ -1000,7 +1000,7 @@
     "query": [
     ]
     },
-    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1051,7 +1051,7 @@
     "query": [
     ]
     },
-    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
 }
                                         }
                                 ]
@@ -1096,7 +1096,7 @@
     "query": [
     ]
     },
-    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1147,7 +1147,7 @@
     "query": [
     ]
     },
-    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
 }
                                         }
                                 ]
@@ -1192,7 +1192,7 @@
     "query": [
     ]
     },
-    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1243,7 +1243,7 @@
     "query": [
     ]
     },
-    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts)."
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
 }
                                         }
                                 ]
@@ -1738,7 +1738,7 @@
 	            "item": [
 	                        {
     "name": "/grantAccounts/:id",
-                "description": "Returns the details of the [grant account](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-account).",
+                "description": "Returns the details of the [grant account](https://docs.adyen.com/platforms/capital#grant-account).",
                  "item": [
                             {
                                 "name": "Get a grant account",
@@ -1780,7 +1780,7 @@
     "query": [
     ]
     },
-    "description": "Returns the details of the [grant account](https://docs.adyen.com/marketplaces-and-platforms/capital#grant-account)."
+    "description": "Returns the details of the [grant account](https://docs.adyen.com/platforms/capital#grant-account)."
 }
                                 ,"response": [
                                 ]
@@ -4352,6 +4352,239 @@
     "description": "Returns available transfer routes based on a combination of transfer `country`, `currency`, `counterparty`, and `priorities`. Use this endpoint to find optimal transfer priorities and associated requirements before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers)."
 }
                                         }
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Manage SCA devices",
+	            "item": [
+	                        {
+    "name": "/registeredDevices",
+                "description": "Get a paginated list of the SCA devices you have currently registered for a specific payment instrument.",
+                 "item": [
+                            {
+                                "name": "Get a list of registered SCA devices",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/registeredDevices",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "registeredDevices"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "paymentInstrumentId",
+        "value": "paymentInstrumentId_example",
+        "description": "The unique identifier of a payment instrument. It limits the returned list to SCA devices associated to this payment instrument.",
+        "disabled": false
+        },
+        {
+        "key": "pageNumber",
+        "value": "56",
+        "description": "The index of the page to retrieve. The index of the first page is 0 (zero).  Default: 0.",
+        "disabled": true
+        },
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of items to have on a page.  Default: 20. Maximum: 100.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Get a paginated list of the SCA devices you have currently registered for a specific payment instrument."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/registeredDevices",
+                "description": "Initiates the registration of a user's device for Strong Customer Authentication (SCA). You can register SCA devices for [business accounts](https://docs.adyen.com/platforms/business-accounts/sca/register-devices) or [Adyen-issued cards](https://docs.adyen.com/issuing/3d-secure/oob-auth-sdk/register-devices).  For a successful request, the device must be eligible for SCA.",
+                 "item": [
+                            {
+                                "name": "Initiate the registration of an SCA device",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"paymentInstrumentId\": \"<string>\",\n \"strongCustomerAuthentication\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/registeredDevices",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "registeredDevices"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Initiates the registration of a user's device for Strong Customer Authentication (SCA). You can register SCA devices for [business accounts](https://docs.adyen.com/platforms/business-accounts/sca/register-devices) or [Adyen-issued cards](https://docs.adyen.com/issuing/3d-secure/oob-auth-sdk/register-devices).  For a successful request, the device must be eligible for SCA."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/registeredDevices/:id",
+                "description": "Deletes an SCA device from the list of registered devices of a specific payment instrument.",
+                 "item": [
+                            {
+                                "name": "Delete a registration of an SCA device",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/registeredDevices/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "registeredDevices",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the SCA device."
+        }
+    ],
+    "query": [
+        {
+        "key": "paymentInstrumentId",
+        "value": "paymentInstrumentId_example",
+        "description": "The unique identifier of the payment instrument linked to the SCA device.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Deletes an SCA device from the list of registered devices of a specific payment instrument."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/registeredDevices/:id",
+                "description": "Completes the registration of an SCA device by validating the authentication data of the device. You can register SCA devices for [business accounts](https://docs.adyen.com/platforms/business-accounts/sca) or [Adyen-issued cards](https://docs.adyen.com/issuing/3d-secure/oob-auth-sdk).  ",
+                 "item": [
+                            {
+                                "name": "Complete the registration of an SCA device",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"paymentInstrumentId\": \"<string>\",\n \"strongCustomerAuthentication\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/registeredDevices/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "registeredDevices",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the SCA device. You obtain this `id` in the response of a POST&nbsp;[/registeredDevices](https://docs.adyen.com/api-explorer/balanceplatform/2/post/registeredDevices#responses-200-id) request."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Completes the registration of an SCA device by validating the authentication data of the device. You can register SCA devices for [business accounts](https://docs.adyen.com/platforms/business-accounts/sca) or [Adyen-issued cards](https://docs.adyen.com/issuing/3d-secure/oob-auth-sdk).  "
+}
+                                ,"response": [
                                 ]
                             }
                             ]

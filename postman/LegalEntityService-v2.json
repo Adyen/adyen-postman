@@ -2426,7 +2426,7 @@
         {
         "key": "id",
         "value": "",
-        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
         }
     ],
     "query": [
@@ -2484,7 +2484,7 @@
         {
         "key": "id",
         "value": "",
-        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
         }
     ],
     "query": [
@@ -2543,7 +2543,7 @@
         {
         "key": "id",
         "value": "",
-        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
         },
         {
         "key": "termsofservicedocumentid",
@@ -2607,7 +2607,7 @@
         {
         "key": "id",
         "value": "",
-        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
         },
         {
         "key": "termsofservicedocumentid",
@@ -2664,7 +2664,7 @@
         {
         "key": "id",
         "value": "",
-        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
         }
     ],
     "query": [
@@ -2716,7 +2716,7 @@
         {
         "key": "id",
         "value": "",
-        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner."
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
         }
     ],
     "query": [

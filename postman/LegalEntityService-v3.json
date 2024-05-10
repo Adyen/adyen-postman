@@ -17,6 +17,114 @@
                 "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   ",
                  "item": [
                             {
+                                "name": "Create a legal entity for an individual residing in Australia",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"Sydney\",\n \"country\": \"AU\",\n \"postalCode\": \"1122\",\n \"stateOrProvince\": \"NSW\",\n \"street\": \"Winfield Avenue\",\n \"street2\": \"12\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"identificationData\": {\n \"issuerState\": \"NSW\",\n \"number\": \"1234567891\",\n \"type\": \"driversLicense\",\n \"cardNumber\": \"112327\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1991-01-01\"\n},\n \"email\": \"s.hopper@example.com\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"individual\": {\n \"email\": \"s.hopper@example.com\",\n \"birthData\": {\n \"dateOfBirth\": \"1991-01-01\"\n},\n \"identificationData\": {\n \"cardNumber\": \"112327\",\n \"issuerState\": \"NSW\",\n \"number\": \"1234567891\",\n \"type\": \"driversLicense\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"residentialAddress\": {\n \"city\": \"Sydney\",\n \"country\": \"AU\",\n \"postalCode\": \"1122\",\n \"stateOrProvince\": \"NSW\",\n \"street\": \"Winfield Avenue\",\n \"street2\": \"12\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE00000000000000000000001\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"city\": \"Sydney\",\n \"country\": \"AU\",\n \"postalCode\": \"1122\",\n \"stateOrProvince\": \"NSW\",\n \"street\": \"Winfield Avenue\",\n \"street2\": \"12\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"identificationData\": {\n \"issuerState\": \"NSW\",\n \"number\": \"1234567891\",\n \"type\": \"driversLicense\",\n \"cardNumber\": \"112327\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1991-01-01\"\n},\n \"email\": \"s.hopper@example.com\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+}
+                                        }
+                                ]
+                            },
+                            {
                                 "name": "Create a legal entity for an individual residing in the Netherlands",
                                 "request": {
     "method": "POST",

@@ -256,7 +256,7 @@
                         },
 	                        {
     "name": "/payments/:paymentPspReference/cancels",
-                "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/paymentPspReference/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel).",
+                "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel).",
                  "item": [
                             {
                                 "name": "Cancel payment using a PSP reference",
@@ -311,7 +311,7 @@
     "query": [
     ]
     },
-    "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/paymentPspReference/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel)."
+    "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel)."
 }
                                 ,"response": [
                                         {"name": "Created - the request has been fulfilled and has resulted in one or more new resources being created.",
@@ -375,7 +375,7 @@
     "query": [
     ]
     },
-    "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/paymentPspReference/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel)."
+    "description": "Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCELLATION** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).  If you want to cancel a payment but don't have the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cancels) endpoint instead.  If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.  For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel)."
 }
                                         }
                                 ]
@@ -1963,7 +1963,7 @@
                 "description": "Updates the order for PayPal Express Checkout. This can be used to update the PayPal lightbox with an updated amount and delivery methods based on the delivery address.",
                  "item": [
                             {
-                                "name": "Updates the order for PayPal Express Checkout",
+                                "name": "Update a PayPal order with delivery methods in an Advanced flow integration",
                                 "request": {
     "method": "POST",
     "header": [
@@ -1988,7 +1988,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": \"<string>\",\n \"deliveryMethods\": \"<string>\",\n \"paymentData\": \"<string>\",\n \"pspReference\": \"<string>\",\n \"sessionId\": \"<string>\"\n}",
+    "raw": "{\n \"pspReference\": \"DZ4DPSHB4WD2WN82\",\n \"paymentData\": \"po7XZ...\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 12000\n},\n \"deliveryMethods\": [{\n \"reference\": \"1\",\n \"description\": \"Express Shipping\",\n \"type\": \"Shipping\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"selected\": true\n}, {\n \"reference\": \"2\",\n \"description\": \"Standard Ground\",\n \"type\": \"Shipping\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"selected\": false\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2012,6 +2012,394 @@
     "description": "Updates the order for PayPal Express Checkout. This can be used to update the PayPal lightbox with an updated amount and delivery methods based on the delivery address."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"paymentData\": \"po7XZ...\",\n \"status\": \"success\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"pspReference\": \"DZ4DPSHB4WD2WN82\",\n \"paymentData\": \"po7XZ...\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 12000\n},\n \"deliveryMethods\": [{\n \"reference\": \"1\",\n \"description\": \"Express Shipping\",\n \"type\": \"Shipping\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"selected\": true\n}, {\n \"reference\": \"2\",\n \"description\": \"Standard Ground\",\n \"type\": \"Shipping\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"selected\": false\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paypal/updateOrder",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paypal",
+        "updateOrder"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the order for PayPal Express Checkout. This can be used to update the PayPal lightbox with an updated amount and delivery methods based on the delivery address."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Update a PayPal order in an Advanced flow integration",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"pspReference\": \"HWL5D5BDLSGLNK82\",\n \"paymentData\": \"kly45P...\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1200\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paypal/updateOrder",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paypal",
+        "updateOrder"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the order for PayPal Express Checkout. This can be used to update the PayPal lightbox with an updated amount and delivery methods based on the delivery address."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"paymentData\": \"kly45P...\",\n \"status\": \"success\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"pspReference\": \"HWL5D5BDLSGLNK82\",\n \"paymentData\": \"kly45P...\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1200\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paypal/updateOrder",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paypal",
+        "updateOrder"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the order for PayPal Express Checkout. This can be used to update the PayPal lightbox with an updated amount and delivery methods based on the delivery address."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Update a PayPal order with delivery methods in a Sessions flow integration",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"sessionId\": \"CS12345679\",\n \"paymentData\": \"ey4YZ...\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 12000\n},\n \"deliveryMethods\": [{\n \"reference\": \"1\",\n \"description\": \"Express Shipping\",\n \"type\": \"Shipping\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"selected\": true\n}, {\n \"reference\": \"2\",\n \"description\": \"Standard Ground\",\n \"type\": \"Shipping\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"selected\": false\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paypal/updateOrder",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paypal",
+        "updateOrder"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the order for PayPal Express Checkout. This can be used to update the PayPal lightbox with an updated amount and delivery methods based on the delivery address."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"paymentData\": \"ey4YZ...\",\n \"status\": \"success\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"sessionId\": \"CS12345679\",\n \"paymentData\": \"ey4YZ...\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 12000\n},\n \"deliveryMethods\": [{\n \"reference\": \"1\",\n \"description\": \"Express Shipping\",\n \"type\": \"Shipping\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"selected\": true\n}, {\n \"reference\": \"2\",\n \"description\": \"Standard Ground\",\n \"type\": \"Shipping\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"selected\": false\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paypal/updateOrder",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paypal",
+        "updateOrder"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the order for PayPal Express Checkout. This can be used to update the PayPal lightbox with an updated amount and delivery methods based on the delivery address."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Update a PayPal order in a Sessions flow integration",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"sessionId\": \"CS12345679\",\n \"paymentData\": \"em9YZ...\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 8700\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paypal/updateOrder",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paypal",
+        "updateOrder"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the order for PayPal Express Checkout. This can be used to update the PayPal lightbox with an updated amount and delivery methods based on the delivery address."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"paymentData\": \"em9YZ...\",\n \"status\": \"success\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"sessionId\": \"CS12345679\",\n \"paymentData\": \"em9YZ...\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 8700\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paypal/updateOrder",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paypal",
+        "updateOrder"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the order for PayPal Express Checkout. This can be used to update the PayPal lightbox with an updated amount and delivery methods based on the delivery address."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2244,6 +2632,120 @@
     "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation for the donation account specified in the request.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"payment\": {\n \"pspReference\": \"FJM726V375BV9D82\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n},\n \"reference\": \"1412563167350061\",\n \"status\": \"completed\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/donations",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "donations"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation for the donation account specified in the request.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
+}
+                                        },
+                                        {"name": "Unprocessable Entity - a request validation error.",
+                                        "code": 422,
+                                        "status": "Unprocessable Entity",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"status\": 422,\n \"errorCode\": \"187\",\n \"message\": \"Field 'additionalData.donationAccount' is not valid.\",\n \"errorType\": \"validation\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/donations",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "donations"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation for the donation account specified in the request.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2258,7 +2760,7 @@
                 "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  ",
                  "item": [
                             {
-                                "name": "Get a list of brands on a card",
+                                "name": "Get a list of brands on a card with the unencrypted card number",
                                 "request": {
     "method": "POST",
     "header": [

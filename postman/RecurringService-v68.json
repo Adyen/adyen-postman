@@ -166,6 +166,57 @@
                             ]
                         },
 	                        {
+    "name": "/forward",
+                "description": "Validates a forward request with RDR and sends the specified request to the 3rd party processor so they can send the response back.",
+                 "item": [
+                            {
+                                "name": "Ask 3rd party processor to process the request and send back the response",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"baseUrl\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"request\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"storedPaymentMethodId\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/forward",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "forward"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Validates a forward request with RDR and sends the specified request to the 3rd party processor so they can send the response back."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
     "name": "/listRecurringDetails",
                 "description": "Lists the stored payment details for a shopper, if there are any available. The recurring detail ID can be used with a regular authorisation request to charge the shopper. A summary of the payment detail is returned for presentation to the shopper.  For more information, refer to [Retrieve stored details](https://docs.adyen.com/classic-integration/recurring-payments/retrieve-stored-details/).",
                  "item": [
@@ -365,6 +416,57 @@
     "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"pspReference\": \"QFQTPCQ8HXSKGK82\",\n \"result\": \"Success\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"{{$guid}}\",\n \"card\": {\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"Adyen Test\",\n \"number\": \"4111111111111111\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scheduleAccountUpdater",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scheduleAccountUpdater"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
+}
+                                        }
                                 ]
                             },
                             {
@@ -410,6 +512,108 @@
     "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"pspReference\": \"JLCMPCQ8HXSKGK82\",\n \"result\": \"Success\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"{{$guid}}\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"selectedRecurringDetailReference\": \"8814232895168272\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scheduleAccountUpdater",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scheduleAccountUpdater"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
+}
+                                        },
+                                        {"name": "Unprocessable Entity - a request validation error.",
+                                        "code": 422,
+                                        "status": "Unprocessable Entity",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"status\": 422,\n \"errorCode\": \"000\",\n \"message\": \"RecurringShopper not found\",\n \"errorType\": \"validation\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"reference\": \"{{$guid}}\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"selectedRecurringDetailReference\": \"8814232895168272\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scheduleAccountUpdater",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scheduleAccountUpdater"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "When making the API call, you can submit either the credit card information, or the recurring detail reference and the shopper reference: * If the card information is provided, all the sub-fields for `card` are mandatory. * If the recurring detail reference is provided, the fields for `shopperReference` and `selectedRecurringDetailReference` are mandatory."
+}
+                                        }
                                 ]
                             }
                             ]

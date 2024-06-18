@@ -166,57 +166,6 @@
                             ]
                         },
 	                        {
-    "name": "/forward",
-                "description": "Validates a forward request with RDR and sends the specified request to the 3rd party processor so they can send the response back.",
-                 "item": [
-                            {
-                                "name": "Ask 3rd party processor to process the request and send back the response",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"baseUrl\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"request\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"storedPaymentMethodId\": \"<string>\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/forward",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "forward"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Validates a forward request with RDR and sends the specified request to the 3rd party processor so they can send the response back."
-}
-                                ,"response": [
-                                ]
-                            }
-                            ]
-                        },
-	                        {
     "name": "/listRecurringDetails",
                 "description": "Lists the stored payment details for a shopper, if there are any available. The recurring detail ID can be used with a regular authorisation request to charge the shopper. A summary of the payment detail is returned for presentation to the shopper.  For more information, refer to [Retrieve stored details](https://docs.adyen.com/classic-integration/recurring-payments/retrieve-stored-details/).",
                  "item": [

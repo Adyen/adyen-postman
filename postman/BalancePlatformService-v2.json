@@ -916,7 +916,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"NL\",\n \"status\": \"active\",\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"bankAccount\": {\n \"type\": \"iban\",\n \"iban\": \"NL20ADYB2017000035\"\n},\n \"id\": \"PI322LJ223222B5DJS7CD9LWL\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"NL\",\n \"status\": \"active\",\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"bankAccount\": {\n \"formFactor\": \"physical\",\n \"type\": \"iban\",\n \"iban\": \"NL20ADYB2017000035\"\n},\n \"id\": \"PI322LJ223222B5DJS7CD9LWL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -936,6 +936,294 @@
     "body": {
     "mode": "raw",
     "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"NL\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Create a local IBAN in DE (first create an NL business account)",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"DE\",\n \"bankAccount\": {\n \"formFactor\": \"virtual\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"issuingCountryCode\": \"DE\",\n \"status\": \"active\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"type\": \"iban\",\n \"iban\": \"DE20100190002300001206\",\n \"formFactor\": \"virtual\"\n},\n \"id\": \"PI3227C223226C5JW49ZHBQMS\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"DE\",\n \"bankAccount\": {\n \"formFactor\": \"virtual\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Create a local IBAN in FR (first create an NL business account)",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"FR\",\n \"bankAccount\": {\n \"formFactor\": \"virtual\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"issuingCountryCode\": \"FR\",\n \"status\": \"active\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"type\": \"iban\",\n \"iban\": \"FR7621733712350230000110741\",\n \"formFactor\": \"virtual\"\n},\n \"id\": \"PI3227C223226C5JW49ZAHSYD\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"FR\",\n \"bankAccount\": {\n \"formFactor\": \"virtual\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Create a business account in the UK",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA328R4223227F5KMH9NJB2S4\",\n \"issuingCountryCode\": \"GB\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"balanceAccountId\": \"BA328R4223227F5KMH9NJB2S4\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"issuingCountryCode\": \"GB\",\n \"status\": \"active\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"accountNumber\": \"20010731\",\n \"formFactor\": \"physical\",\n \"iban\": \"GB68ADYX04295720010731\",\n \"sortCode\": \"042957\",\n \"type\": \"ukLocal\"\n},\n \"id\": \"PI328Q9223227F5KMH9P92MDG\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"balanceAccountId\": \"BA328R4223227F5KMH9NJB2S4\",\n \"issuingCountryCode\": \"GB\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1012,7 +1300,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\",\n \"status\": \"active\",\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"bankAccount\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"333720756\",\n \"routingNumber\": \"210000210\",\n \"accountType\": \"checking\"\n},\n \"id\": \"PI322LJ223222B5DJS7CD9LWL\"\n}",
+                                        "body" : "{\n \"balanceAccountId\": \"BA3227C223222B5CTBLR8BWJB\",\n \"issuingCountryCode\": \"US\",\n \"status\": \"active\",\n \"type\": \"bankAccount\",\n \"description\": \"YOUR_DESCRIPTION\",\n \"bankAccount\": {\n \"accountNumber\": \"333720756\",\n \"accountType\": \"checking\",\n \"formFactor\": \"physical\",\n \"routingNumber\": \"210000210\",\n \"type\": \"usLocal\"\n},\n \"id\": \"PI322LJ223222B5DJS7CD9LWL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [

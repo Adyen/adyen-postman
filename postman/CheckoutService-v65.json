@@ -2501,7 +2501,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2533,7 +2533,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"status\": \"completed\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"payment\": {\n \"pspReference\": \"8535762347980628\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n}\n}",
+                                        "body" : "{\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"status\": \"completed\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"payment\": {\n \"pspReference\": \"8535762347980628\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2558,7 +2558,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2609,7 +2609,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2641,7 +2641,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"payment\": {\n \"pspReference\": \"FJM726V375BV9D82\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n},\n \"reference\": \"1412563167350061\",\n \"status\": \"completed\"\n}",
+                                        "body" : "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"payment\": {\n \"pspReference\": \"FJM726V375BV9D82\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n},\n \"reference\": \"1412563167350061\",\n \"status\": \"completed\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2666,7 +2666,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2723,7 +2723,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"

@@ -2472,6 +2472,120 @@
 	            "name": "Donations",
 	            "item": [
 	                        {
+    "name": "/donationCampaigns",
+                "description": "Queries the available donation campaigns for a donation based on the donation context (like merchant account, currency, and locale). The response contains active donation campaigns.",
+                 "item": [
+                            {
+                                "name": "Get a list of active donation campaigns",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"currency\": \"EUR\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/donationCampaigns",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "donationCampaigns"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Queries the available donation campaigns for a donation based on the donation context (like merchant account, currency, and locale). The response contains active donation campaigns."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"donationCampaigns\": [{\n \"id\": \"DONATION_CAMPAIGN_ID\",\n \"campaignName\": \"DONATION_CAMPAIGN_NAME\",\n \"donation\": {\n \"currency\": \"EUR\",\n \"donationType\": \"fixedAmounts\",\n \"values\": []\n},\n \"nonprofitName\": \"NONPROFIT_NAME\",\n \"causeName\": \"NONPROFIT_CAUSE\",\n \"nonprofitDescription\": \"NONPROFIT_DESCRIPTION.\",\n \"nonprofitUrl\": \"NONPROFIT_WEBSITE_URL\",\n \"logoUrl\": \"NONPROFIT_LOGO_URL\",\n \"bannerUrl\": \"NONPROFIT_BANNER_URL\",\n \"termsAndConditionsUrl\": \"NONPROFIT_TERMS_AND_CONDITIONS_URL\"\n}, {\n \"id\": \"DONATION_CAMPAIGN_ID\",\n \"campaignName\": \"DONATION_CAMPAIGN_NAME\",\n \"donation\": {\n \"currency\": \"EUR\",\n \"donationType\": \"roundup\",\n \"maxRoundupAmount\": 100\n},\n \"nonprofitName\": \"NONPROFIT_NAME\",\n \"causeName\": \"NONPROFIT_CAUSE\",\n \"nonprofitDescription\": \"NONPROFIT_DESCRIPTION.\",\n \"nonprofitUrl\": \"NONPROFIT_WEBSITE_URL\",\n \"logoUrl\": \"NONPROFIT_LOGO_URL\",\n \"bannerUrl\": \"NONPROFIT_BANNER_URL\",\n \"termsAndConditionsUrl\": \"NONPROFIT_TERMS_AND_CONDITIONS_URL\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"currency\": \"EUR\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/donationCampaigns",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "donationCampaigns"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Queries the available donation campaigns for a donation based on the donation context (like merchant account, currency, and locale). The response contains active donation campaigns."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
     "name": "/donations",
                 "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation for the donation account specified in the request.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations).",
                  "item": [
@@ -2501,7 +2615,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2533,7 +2647,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"status\": \"completed\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"payment\": {\n \"pspReference\": \"8535762347980628\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n}\n}",
+                                        "body" : "{\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"status\": \"completed\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"payment\": {\n \"pspReference\": \"8535762347980628\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2558,7 +2672,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2609,7 +2723,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2641,7 +2755,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"payment\": {\n \"pspReference\": \"FJM726V375BV9D82\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n},\n \"reference\": \"1412563167350061\",\n \"status\": \"completed\"\n}",
+                                        "body" : "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"payment\": {\n \"pspReference\": \"FJM726V375BV9D82\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n},\n \"reference\": \"1412563167350061\",\n \"status\": \"completed\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2666,7 +2780,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2723,7 +2837,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"

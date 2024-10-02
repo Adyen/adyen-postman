@@ -2834,6 +2834,121 @@
                             ]
                         }
 	                    ]
+	        },
+	        {
+	            "name": "Tax eDelivery consent",
+	            "item": [
+	                        {
+    "name": "/legalEntities/:id/checkTaxElectronicDeliveryConsent",
+                "description": "Returns the consent status for electronic delivery of tax forms.",
+                 "item": [
+                            {
+                                "name": "Check the status of consent for electronic delivery of tax forms",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/checkTaxElectronicDeliveryConsent",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "checkTaxElectronicDeliveryConsent"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the consent status for electronic delivery of tax forms."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/:id/setTaxElectronicDeliveryConsent",
+                "description": "Set the consent status for electronic delivery of tax forms.",
+                 "item": [
+                            {
+                                "name": "Set the consent status for electronic delivery of tax forms",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"US1099k\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/setTaxElectronicDeliveryConsent",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "setTaxElectronicDeliveryConsent"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Set the consent status for electronic delivery of tax forms."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
 	        }
     ],
     "auth": {

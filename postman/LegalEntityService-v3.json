@@ -1298,6 +1298,126 @@
                                 ]
                             },
                             {
+                                "name": "Associate a legal representative with a minor user",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use the requested verification code 0_0001 to resolve any suberrors associated with the legal entity. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"entityAssociations\": [{\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"relationship\": \"parent\",\n \"type\": \"legalRepresentative\"\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"entityAssociations\": [{\n \"associatorId\": \"LE00000000000000000000001\",\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"name\": \"Simone Hopper\",\n \"type\": \"legalRepresentative\"\n}],\n \"individual\": {\n \"email\": \"s.eller@example.com\",\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"name\": {\n \"firstName\": \"Shelly\",\n \"lastName\": \"Eller\"\n},\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE00000000000000000000001\"\n}",
+                                        "originalRequest": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use the requested verification code 0_0001 to resolve any suberrors associated with the legal entity. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"entityAssociations\": [{\n \"legalEntityId\": \"LE00000000000000000000002\",\n \"relationship\": \"parent\",\n \"type\": \"legalRepresentative\"\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+}
+                                        }
+                                ]
+                            },
+                            {
                                 "name": "Associate a trust member with a trust",
                                 "request": {
     "method": "PATCH",

@@ -412,7 +412,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"EUR\"\n},\n \"platformChargebackLogic\": {\n \"behavior\": \"deductFromOneBalanceAccount\",\n \"targetAccount\": \"BA00000000000000000000001\",\n \"costAllocationAccount\": \"BA00000000000000000000001\"\n}\n}",
+    "raw": "{\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"EUR\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -451,7 +451,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"paymentPspReference\": \"993617894903480A\",\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"pspReference\": \"993617894906488A\",\n \"status\": \"received\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"EUR\"\n},\n \"platformChargebackLogic\": {\n \"behavior\": \"deductFromOneBalanceAccount\",\n \"targetAccount\": \"BA00000000000000000000001\",\n \"costAllocationAccount\": \"BA00000000000000000000001\"\n}\n}",
+                                        "body" : "{\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"paymentPspReference\": \"993617894903480A\",\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"pspReference\": \"993617894906488A\",\n \"status\": \"received\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"EUR\"\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -476,7 +476,251 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"EUR\"\n},\n \"platformChargebackLogic\": {\n \"behavior\": \"deductFromOneBalanceAccount\",\n \"targetAccount\": \"BA00000000000000000000001\",\n \"costAllocationAccount\": \"BA00000000000000000000001\"\n}\n}",
+    "raw": "{\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"EUR\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payments/:paymentPspReference/captures",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payments",
+        ":paymentPspReference",
+        "captures"
+    ],
+    "variable": [
+        {
+        "key": "paymentPspReference",
+        "value": "",
+        "description": "The [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference) of the payment that you want to capture."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": " Captures an authorised payment and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CAPTURE** webhook](https://docs.adyen.com/online-payments/capture#capture-notification).  You can capture either the full authorised amount or a part of the authorised amount. By default, any unclaimed amount after a partial capture gets cancelled. This does not apply if you enabled multiple partial captures on your account and the payment method supports multiple partial captures.   [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture) is the default setting for most payment methods. In these cases, you don't need to make capture requests. However, making capture requests for payments that are captured automatically does not result in double charges.  For more information, refer to [Capture](https://docs.adyen.com/online-payments/capture)."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Capture and split an authorised payment between balance accounts",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"USD\"\n},\n \"platformChargebackLogic\": {\n \"behavior\": \"deductFromOneBalanceAccount\",\n \"targetAccount\": \"BA00000000000000000000001\",\n \"costAllocationAccount\": \"BA00000000000000000000001\"\n},\n \"splits\": [{\n \"amount\": {\n \"value\": 1500\n},\n \"type\": \"BalanceAccount\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the sale amount\",\n \"description\": \"Your description for the sale amount\"\n}, {\n \"amount\": {\n \"value\": 500\n},\n \"type\": \"Commission\",\n \"reference\": \"Your reference for the commission\",\n \"description\": \"Your description for the commission\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the fees\",\n \"description\": \"Your description for the fees\"\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payments/:paymentPspReference/captures",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payments",
+        ":paymentPspReference",
+        "captures"
+    ],
+    "variable": [
+        {
+        "key": "paymentPspReference",
+        "value": "",
+        "description": "The [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference) of the payment that you want to capture."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": " Captures an authorised payment and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CAPTURE** webhook](https://docs.adyen.com/online-payments/capture#capture-notification).  You can capture either the full authorised amount or a part of the authorised amount. By default, any unclaimed amount after a partial capture gets cancelled. This does not apply if you enabled multiple partial captures on your account and the payment method supports multiple partial captures.   [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture) is the default setting for most payment methods. In these cases, you don't need to make capture requests. However, making capture requests for payments that are captured automatically does not result in double charges.  For more information, refer to [Capture](https://docs.adyen.com/online-payments/capture)."
+}
+                                ,"response": [
+                                        {"name": "Created - the request has been fulfilled and has resulted in one or more new resources being created.",
+                                        "code": 201,
+                                        "status": "Created",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"paymentPspReference\": \"993617894903480A\",\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"pspReference\": \"993617894906488A\",\n \"status\": \"received\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"USD\"\n},\n \"platformChargebackLogic\": {\n \"behavior\": \"deductFromOneBalanceAccount\",\n \"costAllocationAccount\": \"BA00000000000000000000001\",\n \"targetAccount\": \"BA00000000000000000000001\"\n},\n \"splits\": [{\n \"amount\": {\n \"value\": 1500\n},\n \"type\": \"BalanceAccount\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the sale amount\",\n \"description\": \"Your description for the sale amount\"\n}, {\n \"amount\": {\n \"value\": 500\n},\n \"type\": \"Commission\",\n \"reference\": \"Your reference for the commission\",\n \"description\": \"Your description for the commission\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the fees\",\n \"description\": \"Your description for the fees\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"USD\"\n},\n \"platformChargebackLogic\": {\n \"behavior\": \"deductFromOneBalanceAccount\",\n \"targetAccount\": \"BA00000000000000000000001\",\n \"costAllocationAccount\": \"BA00000000000000000000001\"\n},\n \"splits\": [{\n \"amount\": {\n \"value\": 1500\n},\n \"type\": \"BalanceAccount\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the sale amount\",\n \"description\": \"Your description for the sale amount\"\n}, {\n \"amount\": {\n \"value\": 500\n},\n \"type\": \"Commission\",\n \"reference\": \"Your reference for the commission\",\n \"description\": \"Your description for the commission\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the fees\",\n \"description\": \"Your description for the fees\"\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payments/:paymentPspReference/captures",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payments",
+        ":paymentPspReference",
+        "captures"
+    ],
+    "variable": [
+        {
+        "key": "paymentPspReference",
+        "value": "",
+        "description": "The [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference) of the payment that you want to capture."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": " Captures an authorised payment and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CAPTURE** webhook](https://docs.adyen.com/online-payments/capture#capture-notification).  You can capture either the full authorised amount or a part of the authorised amount. By default, any unclaimed amount after a partial capture gets cancelled. This does not apply if you enabled multiple partial captures on your account and the payment method supports multiple partial captures.   [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture) is the default setting for most payment methods. In these cases, you don't need to make capture requests. However, making capture requests for payments that are captured automatically does not result in double charges.  For more information, refer to [Capture](https://docs.adyen.com/online-payments/capture)."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Capture and split an authorised payment in the Classic Platforms integration",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"USD\"\n},\n \"splits\": [{\n \"account\": \"8816080397613514\",\n \"amount\": {\n \"value\": 1500\n},\n \"reference\": \"Your reference for the sale amount.\",\n \"type\": \"MarketPlace\"\n}, {\n \"amount\": {\n \"value\": 500\n},\n \"reference\": \"Your reference for the commission.\",\n \"type\": \"Commission\"\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payments/:paymentPspReference/captures",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payments",
+        ":paymentPspReference",
+        "captures"
+    ],
+    "variable": [
+        {
+        "key": "paymentPspReference",
+        "value": "",
+        "description": "The [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference) of the payment that you want to capture."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": " Captures an authorised payment and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CAPTURE** webhook](https://docs.adyen.com/online-payments/capture#capture-notification).  You can capture either the full authorised amount or a part of the authorised amount. By default, any unclaimed amount after a partial capture gets cancelled. This does not apply if you enabled multiple partial captures on your account and the payment method supports multiple partial captures.   [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture) is the default setting for most payment methods. In these cases, you don't need to make capture requests. However, making capture requests for payments that are captured automatically does not result in double charges.  For more information, refer to [Capture](https://docs.adyen.com/online-payments/capture)."
+}
+                                ,"response": [
+                                        {"name": "Created - the request has been fulfilled and has resulted in one or more new resources being created.",
+                                        "code": 201,
+                                        "status": "Created",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"paymentPspReference\": \"993617894903480A\",\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"pspReference\": \"993617894906488A\",\n \"status\": \"received\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"USD\"\n},\n \"splits\": [{\n \"account\": \"8816080397613514\",\n \"amount\": {\n \"value\": 1500\n},\n \"reference\": \"Your reference for the sale amount.\",\n \"type\": \"MarketPlace\"\n}, {\n \"amount\": {\n \"value\": 500\n},\n \"reference\": \"Your reference for the commission.\",\n \"type\": \"Commission\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"reference\": \"YOUR_UNIQUE_REFERENCE\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"amount\": {\n \"value\": 2000,\n \"currency\": \"USD\"\n},\n \"splits\": [{\n \"account\": \"8816080397613514\",\n \"amount\": {\n \"value\": 1500\n},\n \"reference\": \"Your reference for the sale amount.\",\n \"type\": \"MarketPlace\"\n}, {\n \"amount\": {\n \"value\": 500\n},\n \"reference\": \"Your reference for the commission.\",\n \"type\": \"Commission\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"

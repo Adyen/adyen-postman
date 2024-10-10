@@ -2,7 +2,7 @@
 	"info": {
 		"name": "Configuration API (v2)",
 		"description": {
-		    "content": "The Configuration API enables you to create a platform where you can onboard your users as account holders and create balance accounts, cards, and business accounts.\n\n## Authentication\nYour Adyen contact will provide your API credential and an API key. To connect to the API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\nAlternatively, you can use the username and password to connect to the API using basic authentication. For example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-U \"ws@BalancePlatform.YOUR_BALANCE_PLATFORM\":\"YOUR_WS_PASSWORD\" \\n...\n```\n## Versioning\nThe Configuration API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://balanceplatform-api-test.adyen.com/bcl/v2/accountHolders\n```\n## Going live\nWhen going live, your Adyen contact will provide your API credential for the live environment. You can then use the API key or the username and password to send requests to `https://balanceplatform-api-live.adyen.com/bcl/v2`.",
+		    "content": "The Configuration API allows you to manage your balance platform where you can create account holders, balance accounts, cards, and business accounts.\n\n## Authentication\nEach request to the Configuration API must be signed with an API key. Generate an API key in your Customer Area if you have a [platform setup](https://docs.adyen.com/platforms/manage-access/api-credentials-web-service/#generate-api-key) or [marketplace setup](https://docs.adyen.com/marketplaces/manage-access/api-credentials-web-service/#generate-api-key).\n\n If you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your Balance Platform Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\n## Versioning\nThe Configuration API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://balanceplatform-api-test.adyen.com/bcl/v2/accountHolders\n```\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/) if you have an Adyen for Platforms integration or [live Balance Platform Customer Area](https://balanceplatform-live.adyen.com/balanceplatform/) if you have an Adyen Issuing integration.You can then use the API key to send requests to `https://balanceplatform-api-live.adyen.com/bcl/v2`.",
 		    "type": "text/markdown"
 		},
 		"version": "2",
@@ -4736,7 +4736,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"paymentInstrumentId\": \"<string>\",\n \"strongCustomerAuthentication\": \"<string>\"\n}",
+    "raw": "{\n \"name\": \"<string>\",\n \"paymentInstrumentId\": \"<string>\",\n \"strongCustomerAuthentication\": \"<string>\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -4844,7 +4844,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"paymentInstrumentId\": \"<string>\",\n \"strongCustomerAuthentication\": \"<string>\"\n}",
+    "raw": "{\n \"name\": \"<string>\",\n \"paymentInstrumentId\": \"<string>\",\n \"strongCustomerAuthentication\": \"<string>\"\n}",
     "options": {
     "raw": {
     "language": "json"

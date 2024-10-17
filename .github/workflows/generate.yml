@@ -22,7 +22,7 @@ jobs:
           path: 'adyen-openapi'
       - uses: addnab/docker-run-action@v3
         with:
-          image: gcatanese/openapi-generator-postman-v2
+          image: ghcr.io/adyen-examples/openapi-generator-postman-v2:main
           options: -v ${{ github.workspace }}:/usr/src/app
           run: |
             /usr/src/app/generatePostmanJsonFile.sh ${{ github.event.inputs.file }} 

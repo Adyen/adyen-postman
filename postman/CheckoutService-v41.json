@@ -131,7 +131,7 @@
                 "description": "Increases or decreases the authorised payment amount and returns a unique reference for this request. You get the outcome of the request asynchronously, in an [**AUTHORISATION_ADJUSTMENT** webhook](https://docs.adyen.com/development-resources/webhooks/understand-notifications#event-codes).  You can only update authorised amounts that have not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures).  The amount you specify in the request is the updated amount, which is larger or smaller than the initial authorised amount.  For more information, refer to [Authorisation adjustment](https://docs.adyen.com/online-payments/adjust-authorisation#use-cases).",
                  "item": [
                             {
-                                "name": "Update the amount of an authorised payment",
+                                "name": "Update the amount of an authorized payment",
                                 "request": {
     "method": "POST",
     "header": [
@@ -387,7 +387,7 @@
                 "description": " Captures an authorised payment and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CAPTURE** webhook](https://docs.adyen.com/online-payments/capture#capture-notification).  You can capture either the full authorised amount or a part of the authorised amount. By default, any unclaimed amount after a partial capture gets cancelled. This does not apply if you enabled multiple partial captures on your account and the payment method supports multiple partial captures.   [Automatic capture](https://docs.adyen.com/online-payments/capture#automatic-capture) is the default setting for most payment methods. In these cases, you don't need to make capture requests. However, making capture requests for payments that are captured automatically does not result in double charges.  For more information, refer to [Capture](https://docs.adyen.com/online-payments/capture).",
                  "item": [
                             {
-                                "name": "Capture an authorised payment",
+                                "name": "Capture an authorized payment",
                                 "request": {
     "method": "POST",
     "header": [
@@ -509,7 +509,7 @@
                                 ]
                             },
                             {
-                                "name": "Capture and split an authorised payment between balance accounts",
+                                "name": "Capture and split an authorized payment between balance accounts",
                                 "request": {
     "method": "POST",
     "header": [
@@ -631,7 +631,7 @@
                                 ]
                             },
                             {
-                                "name": "Capture and split an authorised payment in the Classic Platforms integration",
+                                "name": "Capture and split an authorized payment in the Classic Platforms integration",
                                 "request": {
     "method": "POST",
     "header": [
@@ -1004,502 +1004,6 @@
     ]
     },
     "description": "[Refunds](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/refunds) a payment if it has already been captured, and [cancels](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) a payment if it has not yet been captured. Returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**CANCEL_OR_REFUND** webhook](https://docs.adyen.com/online-payments/reverse#cancel-or-refund-webhook).  The reversed amount is always the full payment amount. > Do not use this request for payments that involve multiple partial captures.  For more information, refer to [Reversal](https://docs.adyen.com/online-payments/reversal)."
-}
-                                        }
-                                ]
-                            }
-                            ]
-                        }
-	                    ]
-	        },
-	        {
-	            "name": "Classic Checkout SDK",
-	            "item": [
-	                        {
-    "name": "/paymentSession (DEPRECATED)",
-                "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks).",
-                 "item": [
-                            {
-                                "name": "Set up a payment session (Android)",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"channel\": \"Android\",\n \"token\": \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n \"returnUrl\": \"app://\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"sessionValidity\": \"2017-04-06T13:09:13Z\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/paymentSession",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "paymentSession"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
-}
-                                ,"response": [
-                                ]
-                            },
-                            {
-                                "name": "Set up a payment session with the option to store card details",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"enableOneClick\": true,\n \"enableRecurring\": true,\n \"channel\": \"Web\",\n \"origin\": \"https://www.yourwebsite.com\",\n \"returnUrl\": \"https://www.yourshop.com/checkout/result\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"sdkVersion\": \"1.7.0\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/paymentSession",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "paymentSession"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"paymentSession\": \"eyJjaGVja291dHNob3BwZXJCYXN...\"\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"enableOneClick\": true,\n \"enableRecurring\": true,\n \"channel\": \"Web\",\n \"origin\": \"https://www.yourwebsite.com\",\n \"returnUrl\": \"https://www.yourshop.com/checkout/result\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"sdkVersion\": \"1.7.0\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/paymentSession",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "paymentSession"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
-}
-                                        }
-                                ]
-                            },
-                            {
-                                "name": "Set up a payment session (iOS)",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"channel\": \"iOS\",\n \"token\": \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n \"returnUrl\": \"app://\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"sessionValidity\": \"2017-04-06T13:09:13Z\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/paymentSession",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "paymentSession"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
-}
-                                ,"response": [
-                                ]
-                            },
-                            {
-                                "name": "Split a payment between a sub-merchant and a platform account",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 6200\n},\n \"additionalData\": {\n \"split.api\": \"1\",\n \"split.nrOfItems\": \"2\",\n \"split.totalAmount\": \"6200\",\n \"split.currencyCode\": \"EUR\",\n \"split.item1.amount\": \"6000\",\n \"split.item1.type\": \"MarketPlace\",\n \"split.item1.account\": \"151272963\",\n \"split.item1.reference\": \"6124145\",\n \"split.item1.description\": \"Porcelain Doll: Eliza (20cm)\",\n \"split.item2.amount\": \"200\",\n \"split.item2.type\": \"Commission\",\n \"split.item2.reference\": \"6124146\"\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"channel\": \"Android\",\n \"token\": \"TOKEN_YOU_GET_FROM_CHECKOUT_SDK\",\n \"returnUrl\": \"app://\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"sessionValidity\": \"2017-04-06T13:09:13Z\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/paymentSession",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "paymentSession"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
-}
-                                ,"response": [
-                                ]
-                            },
-                            {
-                                "name": "Set up a payment session (Web)",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"channel\": \"Web\",\n \"origin\": \"https://www.yourwebsite.com\",\n \"returnUrl\": \"https://www.yourshop.com/checkout/result\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"sdkVersion\": \"1.9.5\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/paymentSession",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "paymentSession"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"paymentSession\": \"eyJjaGVja291dHNob3BwZXJCYXN...\"\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 17408\n},\n \"reference\": \"Your order number\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"channel\": \"Web\",\n \"origin\": \"https://www.yourwebsite.com\",\n \"returnUrl\": \"https://www.yourshop.com/checkout/result\",\n \"countryCode\": \"NL\",\n \"shopperLocale\": \"nl_NL\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"sdkVersion\": \"1.9.5\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/paymentSession",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "paymentSession"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
-}
-                                        }
-                                ]
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/payments/result (DEPRECATED)",
-                "description": "Verifies the payment result using the payload returned from the Checkout SDK.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks).",
-                 "item": [
-                            {
-                                "name": "Verify payment results",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"payload\": \"VALUE_YOU_GET_FROM_CHECKOUT_SDK\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/payments/result",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "payments",
-        "result"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Verifies the payment result using the payload returned from the Checkout SDK.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"pspReference\": \"V4HZ4RBFJGXXGN82\",\n \"merchantReference\": \"Your order number\",\n \"shopperLocale\": \"nl_NL\",\n \"paymentMethod\": \"ideal\"\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"payload\": \"VALUE_YOU_GET_FROM_CHECKOUT_SDK\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/payments/result",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "payments",
-        "result"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Verifies the payment result using the payload returned from the Checkout SDK.  For more information, refer to [How it works](https://docs.adyen.com/online-payments#howitworks)."
 }
                                         }
                                 ]
@@ -2745,7 +2249,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2777,7 +2281,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"status\": \"completed\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"payment\": {\n \"pspReference\": \"8535762347980628\",\n \"resultCode\": \"Authorised\",\n \"additionalData\": {\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n}\n}\n}",
+                                        "body" : "{\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"status\": \"completed\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"payment\": {\n \"pspReference\": \"8535762347980628\",\n \"resultCode\": \"Authorised\",\n \"additionalData\": {\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n}\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2802,7 +2306,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2853,7 +2357,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2885,7 +2389,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"payment\": {\n \"pspReference\": \"FJM726V375BV9D82\",\n \"resultCode\": \"Authorised\"\n},\n \"reference\": \"1412563167350061\",\n \"status\": \"completed\"\n}",
+                                        "body" : "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"payment\": {\n \"pspReference\": \"FJM726V375BV9D82\",\n \"resultCode\": \"Authorised\"\n},\n \"reference\": \"1412563167350061\",\n \"status\": \"completed\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2910,7 +2414,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2967,7 +2471,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"CHARITY_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3442,7 +2946,7 @@
                                 ]
                             },
                             {
-                                "name": "Get payment methods including stored card details",
+                                "name": "Get payment methods, including stored payment details",
                                 "request": {
     "method": "POST",
     "header": [

@@ -183,6 +183,12 @@
         "disabled": false
         },
         {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        },
+        {
         "key": "WWW-Authenticate",
         "value": "",
         "description": "Header for authenticating through SCA",
@@ -240,6 +246,12 @@
         "disabled": false
         },
         {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        },
+        {
         "key": "WWW-Authenticate",
         "value": "",
         "description": "Header for authenticating through SCA",
@@ -289,6 +301,12 @@
         "value": "application/json",
         "description": "",
         "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
         },
         {
         "key": "WWW-Authenticate",
@@ -348,6 +366,12 @@
         "disabled": false
         },
         {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        },
+        {
         "key": "WWW-Authenticate",
         "value": "",
         "description": "Header for authenticating through SCA",
@@ -397,6 +421,12 @@
         "value": "application/json",
         "description": "",
         "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
         },
         {
         "key": "WWW-Authenticate",
@@ -456,6 +486,12 @@
         "disabled": false
         },
         {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        },
+        {
         "key": "WWW-Authenticate",
         "value": "",
         "description": "Header for authenticating through SCA",
@@ -505,6 +541,12 @@
         "value": "application/json",
         "description": "",
         "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
         },
         {
         "key": "WWW-Authenticate",
@@ -564,6 +606,12 @@
         "disabled": false
         },
         {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        },
+        {
         "key": "WWW-Authenticate",
         "value": "",
         "description": "Header for authenticating through SCA",
@@ -613,6 +661,12 @@
         "value": "application/json",
         "description": "",
         "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
         },
         {
         "key": "WWW-Authenticate",
@@ -672,6 +726,12 @@
         "disabled": false
         },
         {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        },
+        {
         "key": "WWW-Authenticate",
         "value": "",
         "description": "Header for authenticating through SCA",
@@ -727,6 +787,12 @@
         "value": "application/json",
         "description": "",
         "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
         }
     ],
     "body": {
@@ -787,6 +853,12 @@
         "disabled": false
         },
         {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        },
+        {
         "key": "WWW-Authenticate",
         "value": "",
         "description": "Header for authenticating through SCA",
@@ -843,6 +915,12 @@
         "value": "application/json",
         "description": "",
         "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
         }
     ],
     "body": {
@@ -951,6 +1029,12 @@
         "value": "application/json",
         "description": "",
         "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
         }
     ],
     "body": {
@@ -1002,6 +1086,12 @@
         "value": "application/json",
         "description": "",
         "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
         }
     ],
     "body": {

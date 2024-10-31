@@ -53,10 +53,3 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Update latest definitions files"
-      - name: push-adyen-collections-to-postman-javascript-action
-        id: process
-        uses: jlengrand/push-adyen-collections-to-postman-javascript-action@main
-        with:
-          postman-key: ${{ secrets.POSTMAN_API_KEY }}
-          workspace-id: ${{ secrets.POSTMAN_WORKSPACE_ID }}
-          path-to-process: "./postman"

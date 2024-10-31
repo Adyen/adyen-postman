@@ -1,0 +1,113 @@
+# Weekly synch of the AdyenDev Postman collections
+
+name: "Sync Postman collections"
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: '0 9 * * 1'  # mon h09:00
+  
+jobs:
+  update-collections:
+    name: "Sync Postman collections"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: update-balance-control
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/BalanceControlService-v1.json'
+          collection-id: '25716737-22369f71-e335-4adb-8cff-8636b2787a16'  
+      - name: update-binlookup
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/BinLookupService-v54.json'
+          collection-id: '25716737-677c7679-a695-4ebb-91da-68b4e7c9228a'  
+      - name: update-checkout
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/CheckoutService-v71.json'
+          collection-id: '25716737-46ad970e-dc9e-4246-bac2-769c6083e7b5'
+      - name: update-data-protection
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/DataProtectionService-v1.json'
+          collection-id: '25716737-275cf778-08ab-46c1-8889-9982f2975aad'
+      - name: update-payout
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/PayoutService-v68.json'
+          collection-id: '25716737-20c00c42-289e-4c5e-90fe-fc6a40ad6e85'
+      - name: update-recurring
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/RecurringService-v68.json'
+          collection-id: '25716737-0d1ef0da-f5a1-4004-b24a-c5152c51dc7b'
+      - name: update-stored-value
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/StoredValueService-v46.json'
+          collection-id: '25716737-fad89288-f194-4741-ba52-225bc26c47c9'
+      - name: update-test-cards
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/TestCardService-v1.json'
+          collection-id: '25716737-3cd585cc-f367-4ef9-9499-84aeae2be303'
+      - name: update-configuration
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/BalancePlatformService-v2.json'
+          collection-id: '25716737-ffee4bcf-ac49-46ac-8963-e29f01f67a31'
+      - name: update-disputes
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/DisputeService-v30.json'
+          collection-id: '25716836-fc91c173-3f67-433f-a4d7-9a0cfac0457c'
+      - name: update-lem
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/LegalEntityService-v3.json'
+          collection-id: '25716737-0a4fc86d-e9c9-4d5d-a6d5-b4167d276005'
+      - name: update-management
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/ManagementService-v3.json'
+          collection-id: '25716737-00d5d4da-fec7-4c1a-a63f-76fcd6c1532d'   
+      - name: update-pos-terminal-management
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/TfmAPIService-v1.json'
+          collection-id: '25716737-a577321c-a48f-4972-a25d-64bf6da5d9dc'   
+      - name: update-transfers
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/TransferService-v4.json'
+          collection-id: '25716737-365bdd3d-6ba6-44f5-8d93-dbcf3a075ef6'   

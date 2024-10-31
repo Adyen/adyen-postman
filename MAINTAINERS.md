@@ -16,7 +16,6 @@ Othew workflows are provided for 'ad-hoc' operations:
 The workflows rely on different custom actions : 
 
 * The [openapi-generator-postman-v2](https://github.com/gcatanese/openapi-generator-postman-v2) which is used to transform OpenAPI specifications into a Postman compatible format.
-* The [push-adyen-collections-to-postman-javascript-action](https://github.com/jlengrand/push-adyen-collections-to-postman-javascript-action/) which uses the Postman API to push those files to the [Postman AdyenDev workspace](https://www.postman.com/adyendev/workspace/adyen-apis/overview).
 * The [push-to-postman-action](https://github.com/gcatanese/push-to-postman-action) that pushes a single file to Postman.com.
 
 
@@ -32,11 +31,10 @@ When the workflow gets triggered :
         * The `generateAll.sh` script contains an `ALLOW_LIST` that lists all APIs that should **NOT** be ignored. Everything else (classic, webhooks, newer APIs), is ignored by default.
         *  The `generateAll.sh` script also contains a list of `postmanVariables` and `generatedVariables` that are needed to create the variables in the Postman format.
     * All files which have changed (been modified, or added) are then committed to the repository. 
-    * Then, the [push-adyen-collections-to-postman-javascript-action](https://github.com/jlengrand/push-adyen-collections-to-postman-javascript-action/) action will be run. This action : 
-        * Takes all Postman files in the repository
-        * Finds the highest version of each file for each API 
-        * If a new API is detected, uploads it to the AdyenDev workspace as a new collection
-        * If a newer version of an existing API is detected, patches the existing collection to the newer version
+
+## Workflow sync-collections (see [sync-collections.yml](./.github/workflows/sync-collections.yml))
+
+It runs weekly and performs an update of each collection. The collections to update (including the Postman json file and the Collection id) are listed sequentially in the workflow file.
 
 ## Workflow generate (see [generate.yml](./.github/workflows/generate.yml))
 
@@ -89,10 +87,6 @@ If necessary, the `generateAll.sh` script can be run locally to achieve the same
 
 * To generate Postman JSON files, one can run the `runDocker.sh` script. (Docker needs to be installed and started). 
     * Once the generation is done, the updated file(s) can be committed.
-* To push the collections to Postman, see the documentation of [push-adyen-collections-to-postman-javascript-action/](https://github.com/jlengrand/push-adyen-collections-to-postman-javascript-action/).
 
 Note that both scripts _should_ be safe to run without issues . The generation can be reversed via git, and you can use a dummy workspace ID for the postman script to push to a safe place for testing.
 
-## Contact
-
-For help, contact @jlengrand or @gcatanese

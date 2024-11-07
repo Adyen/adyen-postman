@@ -17,7 +17,7 @@ jobs:
     name: "Update Postman Collection"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2
       - name: push-to-postman-action

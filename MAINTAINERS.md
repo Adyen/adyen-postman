@@ -23,9 +23,6 @@ The workflows rely on different custom actions :
 
 When the workflow gets triggered :
 
-* The `issue` job will be fired. It is meant to warn us something needs to be checked.
-    * This job checks what new files have been created in the adyen-openapi repository
-    * Creates a [GitHub issue](https://github.com/Adyen/adyen-postman/issues) with the list of those files and assigns it to us. 
 * The `generate` job will be fired
     * This job first runs a script relying on [openapi-generator-postman-v2](https://github.com/gcatanese/openapi-generator-postman-v2). This script will take each yaml file in the adyen-openapi repository and generate a corresponding Postman compatible version from them.
         * The `generateAll.sh` script contains an `ALLOW_LIST` that lists all APIs that should **NOT** be ignored. Everything else (classic, webhooks, newer APIs), is ignored by default.

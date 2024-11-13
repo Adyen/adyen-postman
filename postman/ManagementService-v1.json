@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Management API",
+		"name": "Management API (v1)",
 		"description": {
 		    "content": "Configure and manage your Adyen company and merchant accounts, stores, and payment terminals.\n## Authentication\nEach request to the Management API must be signed with an API key. [Generate your API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key) in the Customer Area and then set this key to the `X-API-Key` header value.\n\nTo access the live endpoints, you need to generate a new API key in your live Customer Area.\n## Versioning\n\nManagement API handles versioning as part of the endpoint URL. For example, to send a request to this version of the `/companies/{companyId}/webhooks` endpoint, use:\n\n```text\nhttps://management-test.adyen.com/v1/companies/{companyId}/webhooks\n```\n\n## Going live\n\nTo access the live endpoints, you need an API key from your live Customer Area. Use this API key to make requests to:\n\n```text\nhttps://management-live.adyen.com/v1\n```\n\n## Release notes\nHave a look at the [release notes](https://docs.adyen.com/release-notes/management-api) to find out what changed in this version!",
 		    "type": "text/markdown"
@@ -1778,6 +1778,110 @@
                 "description": "Creates the user for the `companyId` identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Users read and write ",
                  "item": [
                             {
+                                "name": "Create a user with email as login method",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"name\": {\n \"firstName\": \"John\",\n \"lastName\": \"Smith\"\n},\n \"username\": \"johnsmith\",\n \"email\": \"john.smith@example.com\",\n \"loginMethod\": \"Email\",\n \"timeZoneCode\": \"Europe/Amsterdam\",\n \"roles\": [\"Merchant standard role\", \"Merchant admin\"],\n \"associatedMerchantAccounts\": [\"{{YOUR_MERCHANT_ACCOUNT}}\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/users",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "users"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates the user for the `companyId` identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Users read and write "
+}
+                                ,"response": [
+                                ]
+                            },
+                            {
+                                "name": "Create a user with SSO as login method",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"name\": {\n \"firstName\": \"John\",\n \"lastName\": \"Smith\"\n},\n \"username\": \"johnsmith\",\n \"email\": \"john.smith@example.com\",\n \"loginMethod\": \"SSO\",\n \"timeZoneCode\": \"Europe/Amsterdam\",\n \"roles\": [\"Merchant standard role\", \"Merchant admin\"],\n \"associatedMerchantAccounts\": [\"{{YOUR_MERCHANT_ACCOUNT}}\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/users",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "users"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates the user for the `companyId` identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Users read and write "
+}
+                                ,"response": [
+                                ]
+                            },
+                            {
                                 "name": "Create a user",
                                 "request": {
     "method": "POST",
@@ -1971,7 +2075,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"associatedMerchantAccounts\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
+    "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"associatedMerchantAccounts\": \"<string>\",\n \"email\": \"<string>\",\n \"loginMethod\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3179,7 +3283,7 @@
 	            "item": [
 	                        {
     "name": "/merchants/:merchantId/webhooks",
-                "description": "Lists all webhook configurations for the merchant account.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read * Management API—Webhooks read and write",
+                "description": "Lists all webhook configurations for the merchant account.  > This call does not return webhook configurations for the company account to which the specified merchant account belongs. You can see these in your Customer Area under **Developers** > **Webhooks**.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read * Management API—Webhooks read and write",
                  "item": [
                             {
                                 "name": "List all webhooks",
@@ -3234,7 +3338,7 @@
         }
     ]
     },
-    "description": "Lists all webhook configurations for the merchant account.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read * Management API—Webhooks read and write"
+    "description": "Lists all webhook configurations for the merchant account.  > This call does not return webhook configurations for the company account to which the specified merchant account belongs. You can see these in your Customer Area under **Developers** > **Webhooks**.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read * Management API—Webhooks read and write"
 }
                                 ,"response": [
                                 ]
@@ -3304,7 +3408,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"S2-31433949437F\",\n \"type\": \"standard\",\n \"url\": \"YOUR_WEBHOOK_URL\",\n \"description\": \"Webhook for YOUR_MERCHANT_ACCOUNT - YOUR_MERCHANT_CODE\",\n \"username\": \"myuser\",\n \"hasPassword\": true,\n \"active\": true,\n \"hasError\": false,\n \"sslVersion\": \"TLSv1.2\",\n \"communicationFormat\": \"json\",\n \"acceptsExpiredCertificate\": false,\n \"acceptsSelfSignedCertificate\": true,\n \"acceptsUntrustedRootCertificate\": true,\n \"certificateAlias\": \"signed-test.adyen.com_2023\",\n \"populateSoapActionHeader\": false,\n \"additionalSettings\": {\n \"properties\": {\n \"includePosTerminalInfo\": false,\n \"includeARN\": false,\n \"includePosDetails\": false,\n \"includeCardInfoForRecurringContractNotification\": false,\n \"includeRiskData\": false,\n \"includeRiskExperimentReference\": false,\n \"includeSoapSecurityHeader\": false,\n \"includeContactlessWalletTokenInformation\": false,\n \"includeAcquirerReference\": false,\n \"includeRiskProfileReference\": false,\n \"includeOriginalMerchantReferenceCancelOrRefundNotification\": false,\n \"includeNfcTokenInformation\": false,\n \"includeSubvariant\": false,\n \"includeThreeDSVersion\": false,\n \"includeInstallmentsInfo\": false,\n \"includeAliasInfo\": false,\n \"includeShopperCountry\": false,\n \"includeRawThreeDSecureResult\": false,\n \"includeAirlineData\": false,\n \"includeGrossCurrencyChargebackDetails\": false,\n \"includeThreeDSecureResult\": false,\n \"includeMetadataIn3DSecurePaymentNotification\": false,\n \"includeOriginalReferenceForChargebackReversed\": false,\n \"addAcquirerResult\": false,\n \"includeDeliveryAddress\": false,\n \"includeRetryAttempts\": false,\n \"includeExtraCosts\": false,\n \"includeCardHolderName\": false,\n \"includeShopperDetail\": false,\n \"includeBankAccountDetails\": false,\n \"includeMandateDetails\": false,\n \"includeAuthAmountForDynamicZeroAuth\": false,\n \"includeIssuerCountry\": false,\n \"includeAcquirerErrorDetails\": false,\n \"includeCoBrandedWith\": false,\n \"includeShopperInteraction\": false,\n \"includeDeviceAndBrowserInfo\": false,\n \"addRawAcquirerResult\": false,\n \"includeCardBin\": false,\n \"includeFundingSource\": false,\n \"includeThreeDS2ChallengeInformation\": false,\n \"includeRiskProfile\": false,\n \"includeRealtimeAccountUpdaterStatus\": false,\n \"includeDunningProjectData\": false,\n \"includePaymentResultInOrderClosedNotification\": false,\n \"includeCardBinDetails\": false,\n \"includeNotesInManualReviewNotifications\": false,\n \"includeZeroAuthFlag\": false,\n \"addCaptureReferenceToDisputeNotification\": false,\n \"includePayPalDetails\": false,\n \"includeRawThreeDSecureDetailsResult\": false,\n \"includeBankVerificationResults\": false,\n \"includeCaptureDelayHours\": false,\n \"addPaymentAccountReference\": false,\n \"includePayULatamDetails\": false,\n \"includeStore\": false,\n \"returnAvsData\": false,\n \"includeWeChatPayOpenid\": false,\n \"includeUpiVpa\": false,\n \"includeCustomRoutingFlagging\": false,\n \"includeTokenisedPaymentMetaData\": false\n}\n},\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/merchants/YOUR_MERCHANT_ACCOUNT/webhooks/S2-31433949437F\"\n},\n \"generateHmac\": {\n \"href\": \"https://management-test.adyen.com/v1/merchants/YOUR_MERCHANT_ACCOUNT/webhooks/S2-31433949437F/generateHmac\"\n},\n \"merchant\": {\n \"href\": \"https://management-test.adyen.com/v1/merchants/YOUR_MERCHANT_ACCOUNT\"\n},\n \"testWebhook\": {\n \"href\": \"https://management-test.adyen.com/v1/merchants/YOUR_MERCHANT_ACCOUNT/webhooks/S2-31433949437F/test\"\n}\n}\n}",
+                                        "body" : "{\n \"id\": \"S2-31433949437F\",\n \"type\": \"standard\",\n \"url\": \"YOUR_WEBHOOK_URL\",\n \"description\": \"Webhook for YOUR_MERCHANT_ACCOUNT - YOUR_MERCHANT_CODE\",\n \"username\": \"myuser\",\n \"hasPassword\": true,\n \"active\": true,\n \"hasError\": false,\n \"sslVersion\": \"TLSv1.2\",\n \"communicationFormat\": \"json\",\n \"acceptsExpiredCertificate\": false,\n \"acceptsSelfSignedCertificate\": true,\n \"acceptsUntrustedRootCertificate\": true,\n \"certificateAlias\": \"signed-test.adyen.com_2024\",\n \"populateSoapActionHeader\": false,\n \"additionalSettings\": {\n \"properties\": {\n \"includePosTerminalInfo\": false,\n \"includeARN\": false,\n \"includePosDetails\": false,\n \"includeCardInfoForRecurringContractNotification\": false,\n \"includeRiskData\": false,\n \"includeRiskExperimentReference\": false,\n \"includeSoapSecurityHeader\": false,\n \"includeContactlessWalletTokenInformation\": false,\n \"includeAcquirerReference\": false,\n \"includeRiskProfileReference\": false,\n \"includeOriginalMerchantReferenceCancelOrRefundNotification\": false,\n \"includeNfcTokenInformation\": false,\n \"includeSubvariant\": false,\n \"includeThreeDSVersion\": false,\n \"includeInstallmentsInfo\": false,\n \"includeAliasInfo\": false,\n \"includeShopperCountry\": false,\n \"includeRawThreeDSecureResult\": false,\n \"includeAirlineData\": false,\n \"includeGrossCurrencyChargebackDetails\": false,\n \"includeThreeDSecureResult\": false,\n \"includeMetadataIn3DSecurePaymentNotification\": false,\n \"includeOriginalReferenceForChargebackReversed\": false,\n \"addAcquirerResult\": false,\n \"includeDeliveryAddress\": false,\n \"includeRetryAttempts\": false,\n \"includeExtraCosts\": false,\n \"includeCardHolderName\": false,\n \"includeShopperDetail\": false,\n \"includeBankAccountDetails\": false,\n \"includeMandateDetails\": false,\n \"includeAuthAmountForDynamicZeroAuth\": false,\n \"includeIssuerCountry\": false,\n \"includeAcquirerErrorDetails\": false,\n \"includeCoBrandedWith\": false,\n \"includeShopperInteraction\": false,\n \"includeDeviceAndBrowserInfo\": false,\n \"addRawAcquirerResult\": false,\n \"includeCardBin\": false,\n \"includeFundingSource\": false,\n \"includeThreeDS2ChallengeInformation\": false,\n \"includeRiskProfile\": false,\n \"includeRealtimeAccountUpdaterStatus\": false,\n \"includeDunningProjectData\": false,\n \"includePaymentResultInOrderClosedNotification\": false,\n \"includeCardBinDetails\": false,\n \"includeNotesInManualReviewNotifications\": false,\n \"includeZeroAuthFlag\": false,\n \"addCaptureReferenceToDisputeNotification\": false,\n \"includePayPalDetails\": false,\n \"includeRawThreeDSecureDetailsResult\": false,\n \"includeBankVerificationResults\": false,\n \"includeCaptureDelayHours\": false,\n \"addPaymentAccountReference\": false,\n \"includePayULatamDetails\": false,\n \"includeStore\": false,\n \"returnAvsData\": false,\n \"includeWeChatPayOpenid\": false,\n \"includeUpiVpa\": false,\n \"includeCustomRoutingFlagging\": false,\n \"includeTokenisedPaymentMetaData\": false\n}\n},\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/merchants/YOUR_MERCHANT_ACCOUNT/webhooks/S2-31433949437F\"\n},\n \"generateHmac\": {\n \"href\": \"https://management-test.adyen.com/v1/merchants/YOUR_MERCHANT_ACCOUNT/webhooks/S2-31433949437F/generateHmac\"\n},\n \"merchant\": {\n \"href\": \"https://management-test.adyen.com/v1/merchants/YOUR_MERCHANT_ACCOUNT\"\n},\n \"testWebhook\": {\n \"href\": \"https://management-test.adyen.com/v1/merchants/YOUR_MERCHANT_ACCOUNT/webhooks/S2-31433949437F/test\"\n}\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3665,7 +3769,7 @@
                 "description": "Sends sample notifications to test if the webhook is set up correctly.  We send four test notifications for each event code you choose. They cover success and failure scenarios for the hard-coded currencies EUR and GBP, regardless of the currencies configured in the merchant accounts. For custom notifications, we only send the specified custom notification.  The response describes the result of the test. The `status` field tells you if the test was successful or not. You can use the other fields to troubleshoot unsuccessful tests.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read and write",
                  "item": [
                             {
-                                "name": "Test a webhook notification",
+                                "name": "Test a custom webhook event",
                                 "request": {
     "method": "POST",
     "header": [
@@ -3684,7 +3788,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
+    "raw": "{\n \"types\": [\"AUTHORISATION\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3730,7 +3834,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"data\": [{\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT\",\n \"output\": \"\",\n \"requestSent\": \"{\\\"live\\\":\\\"false\\\",\\\"notificationItems\\\":[{\\\"NotificationRequestItem\\\":{\\\"amount\\\":{\\\"currency\\\":\\\"EUR\\\",\\\"value\\\":100},\\\"eventCode\\\":\\\"AUTHORISATION\\\",\\\"eventDate\\\":\\\"2022-05-10T17:02:03+02:00\\\",\\\"merchantAccountCode\\\":\\\"YOUR_MERCHANT_ACCOUNT\\\",\\\"merchantReference\\\":\\\"4TZLD23Y\\\",\\\"operations\\\":[\\\"CANCEL\\\",\\\"CAPTURE\\\",\\\"REFUND\\\"],\\\"paymentMethod\\\":\\\"visa\\\",\\\"pspReference\\\":\\\"E05WW50L6IOBRGA0\\\",\\\"reason\\\":\\\"\\\",\\\"success\\\":\\\"true\\\"}}]}\",\n \"responseCode\": \"200\",\n \"responseTime\": \"532 ms\",\n \"status\": \"success\"\n}]\n}",
+                                        "body" : "{\n \"data\": [{\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT\",\n \"output\": \"\",\n \"requestSent\": \"{\\\"live\\\":\\\"false\\\",\\\"notificationItems\\\":[{\\\"NotificationRequestItem\\\":{\\\"amount\\\":{\\\"currency\\\":\\\"EUR\\\",\\\"value\\\":21000},\\\"eventCode\\\":\\\"AUTHORISATION\\\",\\\"eventDate\\\":\\\"2022-05-10T17:02:03+02:00\\\",\\\"merchantAccountCode\\\":\\\"YOUR_MERCHANT_ACCOUNT\\\",\\\"merchantReference\\\":\\\"4TZLD23Y\\\",\\\"operations\\\":[\\\"CANCEL\\\",\\\"CAPTURE\\\",\\\"REFUND\\\"],\\\"paymentMethod\\\":\\\"visa\\\",\\\"pspReference\\\":\\\"E05WW50L6IOBRGA0\\\",\\\"reason\\\":\\\"\\\",\\\"success\\\":\\\"true\\\"}}]}\",\n \"responseCode\": \"200\",\n \"responseTime\": \"532 ms\",\n \"status\": \"success\"\n}]\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -3749,7 +3853,131 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
+    "raw": "{\n \"types\": [\"AUTHORISATION\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/webhooks/:webhookId/test",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "webhooks",
+        ":webhookId",
+        "test"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "Unique identifier of the webhook configuration."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends sample notifications to test if the webhook is set up correctly.  We send four test notifications for each event code you choose. They cover success and failure scenarios for the hard-coded currencies EUR and GBP, regardless of the currencies configured in the merchant accounts. For custom notifications, we only send the specified custom notification.  The response describes the result of the test. The `status` field tells you if the test was successful or not. You can use the other fields to troubleshoot unsuccessful tests.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read and write"
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Test a custom webhook event",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"HUF\",\n \"value\": 1000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/webhooks/:webhookId/test",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "webhooks",
+        ":webhookId",
+        "test"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "Unique identifier of the webhook configuration."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends sample notifications to test if the webhook is set up correctly.  We send four test notifications for each event code you choose. They cover success and failure scenarios for the hard-coded currencies EUR and GBP, regardless of the currencies configured in the merchant accounts. For custom notifications, we only send the specified custom notification.  The response describes the result of the test. The `status` field tells you if the test was successful or not. You can use the other fields to troubleshoot unsuccessful tests.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read and write"
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"data\": [{\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT\",\n \"output\": \"\",\n \"requestSent\": \"{\\\"live\\\":\\\"false\\\",\\\"notificationItems\\\":[{\\\"NotificationRequestItem\\\":{\\\"amount\\\":{\\\"currency\\\":\\\"HUF\\\",\\\"value\\\":100},\\\"eventCode\\\":\\\"AUTHORISATION\\\",\\\"eventDate\\\":\\\"2022-05-10T17:02:03+02:00\\\",\\\"merchantAccountCode\\\":\\\"YOUR_MERCHANT_ACCOUNT\\\",\\\"merchantReference\\\":\\\"4TZLD23Y\\\",\\\"operations\\\":[\\\"CANCEL\\\",\\\"CAPTURE\\\",\\\"REFUND\\\"],\\\"paymentMethod\\\":\\\"visa\\\",\\\"pspReference\\\":\\\"E05WW50L6IOBRGA0\\\",\\\"reason\\\":\\\"\\\",\\\"success\\\":\\\"true\\\"}}]}\",\n \"responseCode\": \"200\",\n \"responseTime\": \"532 ms\",\n \"status\": \"success\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"HUF\",\n \"value\": 1000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -5443,6 +5671,110 @@
                 "description": "Creates a user for the `merchantId` specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Users read and write ",
                  "item": [
                             {
+                                "name": "Create a user with email as login method",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"name\": {\n \"firstName\": \"John\",\n \"lastName\": \"Smith\"\n},\n \"username\": \"johnsmith\",\n \"email\": \"john.smith@example.com\",\n \"loginMethod\": \"Email\",\n \"timeZoneCode\": \"Europe/Amsterdam\",\n \"roles\": [\"Merchant standard role\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/users",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "users"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "Unique identifier of the merchant."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a user for the `merchantId` specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Users read and write "
+}
+                                ,"response": [
+                                ]
+                            },
+                            {
+                                "name": "Create a user with SSO as login method",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"name\": {\n \"firstName\": \"John\",\n \"lastName\": \"Smith\"\n},\n \"username\": \"johnsmith\",\n \"email\": \"john.smith@example.com\",\n \"loginMethod\": \"SSO\",\n \"timeZoneCode\": \"Europe/Amsterdam\",\n \"roles\": [\"Merchant standard role\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/users",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "users"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "Unique identifier of the merchant."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a user for the `merchantId` specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Users read and write "
+}
+                                ,"response": [
+                                ]
+                            },
+                            {
                                 "name": "Create a user",
                                 "request": {
     "method": "POST",
@@ -5636,7 +5968,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"email\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
+    "raw": "{\n \"accountGroups\": \"<string>\",\n \"active\": \"<string>\",\n \"email\": \"<string>\",\n \"loginMethod\": \"<string>\",\n \"name\": \"<string>\",\n \"roles\": \"<string>\",\n \"timeZoneCode\": \"<string>\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -6204,7 +6536,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"bcmc\": \"<string>\",\n \"cartesBancaires\": \"<string>\",\n \"countries\": \"<string>\",\n \"cup\": \"<string>\",\n \"currencies\": \"<string>\",\n \"customRoutingFlags\": \"<string>\",\n \"diners\": \"<string>\",\n \"discover\": \"<string>\",\n \"eftpos_australia\": \"<string>\",\n \"enabled\": \"<string>\",\n \"girocard\": \"<string>\",\n \"ideal\": \"<string>\",\n \"interac_card\": \"<string>\",\n \"jcb\": \"<string>\",\n \"maestro\": \"<string>\",\n \"mc\": \"<string>\",\n \"storeIds\": \"<string>\",\n \"visa\": \"<string>\"\n}",
+    "raw": "{\n \"accel\": \"<string>\",\n \"bcmc\": \"<string>\",\n \"cartesBancaires\": \"<string>\",\n \"countries\": \"<string>\",\n \"cup\": \"<string>\",\n \"currencies\": \"<string>\",\n \"customRoutingFlags\": \"<string>\",\n \"diners\": \"<string>\",\n \"discover\": \"<string>\",\n \"eftpos_australia\": \"<string>\",\n \"enabled\": \"<string>\",\n \"girocard\": \"<string>\",\n \"ideal\": \"<string>\",\n \"interac_card\": \"<string>\",\n \"jcb\": \"<string>\",\n \"maestro\": \"<string>\",\n \"mc\": \"<string>\",\n \"nyce\": \"<string>\",\n \"pulse\": \"<string>\",\n \"star\": \"<string>\",\n \"storeIds\": \"<string>\",\n \"visa\": \"<string>\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -7487,7 +7819,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"S2-6933523D2772\",\n \"type\": \"standard\",\n \"url\": \"YOUR_WEBHOOK_URL\",\n \"description\": \"Webhook for YOUR_COMPANY_ACCOUNT - YOUR_COMPANY_CODE\",\n \"filterMerchantAccountType\": \"includeAccounts\",\n \"filterMerchantAccounts\": [\"YOUR_MERCHANT_ACCOUNT\"],\n \"username\": \"myuser\",\n \"hasPassword\": true,\n \"active\": true,\n \"hasError\": false,\n \"sslVersion\": \"TLSv1.2\",\n \"communicationFormat\": \"soap\",\n \"acceptsExpiredCertificate\": false,\n \"acceptsSelfSignedCertificate\": true,\n \"acceptsUntrustedRootCertificate\": true,\n \"certificateAlias\": \"signed-test.adyen.com_2023\",\n \"populateSoapActionHeader\": false,\n \"additionalSettings\": {\n \"properties\": {\n \"includePosTerminalInfo\": false,\n \"includeARN\": false,\n \"includePosDetails\": false,\n \"includeCardInfoForRecurringContractNotification\": false,\n \"includeRiskData\": false,\n \"includeRiskExperimentReference\": false,\n \"includeSoapSecurityHeader\": false,\n \"includeContactlessWalletTokenInformation\": false,\n \"includeAcquirerReference\": false,\n \"includeRiskProfileReference\": false,\n \"includeOriginalMerchantReferenceCancelOrRefundNotification\": false,\n \"includeNfcTokenInformation\": false,\n \"includeSubvariant\": false,\n \"includeThreeDSVersion\": false,\n \"includeInstallmentsInfo\": false,\n \"includeAliasInfo\": false,\n \"includeShopperCountry\": false,\n \"includeRawThreeDSecureResult\": false,\n \"includeAirlineData\": false,\n \"includeGrossCurrencyChargebackDetails\": false,\n \"includeThreeDSecureResult\": false,\n \"includeMetadataIn3DSecurePaymentNotification\": false,\n \"includeOriginalReferenceForChargebackReversed\": false,\n \"addAcquirerResult\": false,\n \"includeDeliveryAddress\": false,\n \"includeRetryAttempts\": false,\n \"includeExtraCosts\": false,\n \"includeCardHolderName\": false,\n \"includeShopperDetail\": false,\n \"includeBankAccountDetails\": false,\n \"includeMandateDetails\": false,\n \"includeAuthAmountForDynamicZeroAuth\": false,\n \"includeIssuerCountry\": false,\n \"includeAcquirerErrorDetails\": false,\n \"includeCoBrandedWith\": false,\n \"includeShopperInteraction\": false,\n \"includeDeviceAndBrowserInfo\": false,\n \"addRawAcquirerResult\": false,\n \"includeCardBin\": false,\n \"includeFundingSource\": false,\n \"includeThreeDS2ChallengeInformation\": false,\n \"includeRiskProfile\": false,\n \"includeRealtimeAccountUpdaterStatus\": false,\n \"includeDunningProjectData\": false,\n \"includePaymentResultInOrderClosedNotification\": false,\n \"includeCardBinDetails\": false,\n \"includeNotesInManualReviewNotifications\": false,\n \"includeZeroAuthFlag\": false,\n \"addCaptureReferenceToDisputeNotification\": false,\n \"includePayPalDetails\": false,\n \"includeRawThreeDSecureDetailsResult\": false,\n \"includeBankVerificationResults\": false,\n \"includeCaptureDelayHours\": false,\n \"addPaymentAccountReference\": false,\n \"includePayULatamDetails\": false,\n \"includeStore\": false,\n \"returnAvsData\": false,\n \"includeWeChatPayOpenid\": false,\n \"includeUpiVpa\": false,\n \"includeCustomRoutingFlagging\": false,\n \"includeTokenisedPaymentMetaData\": false\n}\n},\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/companies/YOUR_COMPANY_ACCOUNT/webhooks/S2-6933523D2772\"\n},\n \"company\": {\n \"href\": \"https://management-test.adyen.com/v1/companies/YOUR_COMPANY_ACCOUNT\"\n},\n \"generateHmac\": {\n \"href\": \"https://management-test.adyen.com/v1/companies/YOUR_COMPANY_ACCOUNT/webhooks/S2-6933523D2772/generateHmac\"\n},\n \"testWebhook\": {\n \"href\": \"https://management-test.adyen.com/v1/companies/YOUR_COMPANY_ACCOUNT/webhooks/S2-6933523D2772/test\"\n}\n}\n}",
+                                        "body" : "{\n \"id\": \"S2-6933523D2772\",\n \"type\": \"standard\",\n \"url\": \"YOUR_WEBHOOK_URL\",\n \"description\": \"Webhook for YOUR_COMPANY_ACCOUNT - YOUR_COMPANY_CODE\",\n \"filterMerchantAccountType\": \"includeAccounts\",\n \"filterMerchantAccounts\": [\"YOUR_MERCHANT_ACCOUNT\"],\n \"username\": \"myuser\",\n \"hasPassword\": true,\n \"active\": true,\n \"hasError\": false,\n \"sslVersion\": \"TLSv1.2\",\n \"communicationFormat\": \"soap\",\n \"acceptsExpiredCertificate\": false,\n \"acceptsSelfSignedCertificate\": true,\n \"acceptsUntrustedRootCertificate\": true,\n \"certificateAlias\": \"signed-test.adyen.com_2024\",\n \"populateSoapActionHeader\": false,\n \"additionalSettings\": {\n \"properties\": {\n \"includePosTerminalInfo\": false,\n \"includeARN\": false,\n \"includePosDetails\": false,\n \"includeCardInfoForRecurringContractNotification\": false,\n \"includeRiskData\": false,\n \"includeRiskExperimentReference\": false,\n \"includeSoapSecurityHeader\": false,\n \"includeContactlessWalletTokenInformation\": false,\n \"includeAcquirerReference\": false,\n \"includeRiskProfileReference\": false,\n \"includeOriginalMerchantReferenceCancelOrRefundNotification\": false,\n \"includeNfcTokenInformation\": false,\n \"includeSubvariant\": false,\n \"includeThreeDSVersion\": false,\n \"includeInstallmentsInfo\": false,\n \"includeAliasInfo\": false,\n \"includeShopperCountry\": false,\n \"includeRawThreeDSecureResult\": false,\n \"includeAirlineData\": false,\n \"includeGrossCurrencyChargebackDetails\": false,\n \"includeThreeDSecureResult\": false,\n \"includeMetadataIn3DSecurePaymentNotification\": false,\n \"includeOriginalReferenceForChargebackReversed\": false,\n \"addAcquirerResult\": false,\n \"includeDeliveryAddress\": false,\n \"includeRetryAttempts\": false,\n \"includeExtraCosts\": false,\n \"includeCardHolderName\": false,\n \"includeShopperDetail\": false,\n \"includeBankAccountDetails\": false,\n \"includeMandateDetails\": false,\n \"includeAuthAmountForDynamicZeroAuth\": false,\n \"includeIssuerCountry\": false,\n \"includeAcquirerErrorDetails\": false,\n \"includeCoBrandedWith\": false,\n \"includeShopperInteraction\": false,\n \"includeDeviceAndBrowserInfo\": false,\n \"addRawAcquirerResult\": false,\n \"includeCardBin\": false,\n \"includeFundingSource\": false,\n \"includeThreeDS2ChallengeInformation\": false,\n \"includeRiskProfile\": false,\n \"includeRealtimeAccountUpdaterStatus\": false,\n \"includeDunningProjectData\": false,\n \"includePaymentResultInOrderClosedNotification\": false,\n \"includeCardBinDetails\": false,\n \"includeNotesInManualReviewNotifications\": false,\n \"includeZeroAuthFlag\": false,\n \"addCaptureReferenceToDisputeNotification\": false,\n \"includePayPalDetails\": false,\n \"includeRawThreeDSecureDetailsResult\": false,\n \"includeBankVerificationResults\": false,\n \"includeCaptureDelayHours\": false,\n \"addPaymentAccountReference\": false,\n \"includePayULatamDetails\": false,\n \"includeStore\": false,\n \"returnAvsData\": false,\n \"includeWeChatPayOpenid\": false,\n \"includeUpiVpa\": false,\n \"includeCustomRoutingFlagging\": false,\n \"includeTokenisedPaymentMetaData\": false\n}\n},\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/companies/YOUR_COMPANY_ACCOUNT/webhooks/S2-6933523D2772\"\n},\n \"company\": {\n \"href\": \"https://management-test.adyen.com/v1/companies/YOUR_COMPANY_ACCOUNT\"\n},\n \"generateHmac\": {\n \"href\": \"https://management-test.adyen.com/v1/companies/YOUR_COMPANY_ACCOUNT/webhooks/S2-6933523D2772/generateHmac\"\n},\n \"testWebhook\": {\n \"href\": \"https://management-test.adyen.com/v1/companies/YOUR_COMPANY_ACCOUNT/webhooks/S2-6933523D2772/test\"\n}\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -7848,7 +8180,7 @@
                 "description": "Sends sample notifications to test if the webhook is set up correctly.  We send sample notifications for maximum 20 of the merchant accounts that the webhook is configured for. If the webhook is configured for more than 20 merchant accounts, use the `merchantIds` array to specify a subset of the merchant accounts for which to send test notifications.  We send four test notifications for each event code you choose. They cover success and failure scenarios for the hard-coded currencies EUR and GBP, regardless of the currencies configured in the merchant accounts. For custom notifications, we only send the specified custom notification.  The response describes the result of the test. The `status` field tells you if the test was successful or not. You can use the other response fields to troubleshoot unsuccessful tests.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read and write",
                  "item": [
                             {
-                                "name": "Test a webhook notification",
+                                "name": "Test a webhook event",
                                 "request": {
     "method": "POST",
     "header": [
@@ -7867,7 +8199,131 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 2000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
+    "raw": "{\n \"merchantIds\": [\"{{YOUR_MERCHANT_ACCOUNT}}\"],\n \"types\": [\"AUTHORISATION\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/webhooks/:webhookId/test",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "webhooks",
+        ":webhookId",
+        "test"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "Unique identifier of the webhook configuration."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends sample notifications to test if the webhook is set up correctly.  We send sample notifications for maximum 20 of the merchant accounts that the webhook is configured for. If the webhook is configured for more than 20 merchant accounts, use the `merchantIds` array to specify a subset of the merchant accounts for which to send test notifications.  We send four test notifications for each event code you choose. They cover success and failure scenarios for the hard-coded currencies EUR and GBP, regardless of the currencies configured in the merchant accounts. For custom notifications, we only send the specified custom notification.  The response describes the result of the test. The `status` field tells you if the test was successful or not. You can use the other response fields to troubleshoot unsuccessful tests.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read and write"
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"data\": [{\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_AU\",\n \"output\": \"\",\n \"requestSent\": \"{\\\"live\\\":\\\"false\\\",\\\"notificationItems\\\":[{\\\"NotificationRequestItem\\\":{\\\"amount\\\":{\\\"currency\\\":\\\"EUR\\\",\\\"value\\\":100},\\\"eventCode\\\":\\\"AUTHORISATION\\\",\\\"eventDate\\\":\\\"2022-05-10T16:57:19+02:00\\\",\\\"merchantAccountCode\\\":\\\"YOUR_MERCHANT_ACCOUNT_AU\\\",\\\"merchantReference\\\":\\\"6GZBF5ML\\\",\\\"operations\\\":[\\\"CANCEL\\\",\\\"CAPTURE\\\",\\\"REFUND\\\"],\\\"paymentMethod\\\":\\\"visa\\\",\\\"pspReference\\\":\\\"KDN7UP7S1JIK6XES\\\",\\\"reason\\\":\\\"\\\",\\\"success\\\":\\\"true\\\"}}]}\",\n \"responseCode\": \"200\",\n \"responseTime\": \"657 ms\",\n \"status\": \"success\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantIds\": [\"{{YOUR_MERCHANT_ACCOUNT}}\"],\n \"types\": [\"AUTHORISATION\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/webhooks/:webhookId/test",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "webhooks",
+        ":webhookId",
+        "test"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "Unique identifier of the webhook configuration."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends sample notifications to test if the webhook is set up correctly.  We send sample notifications for maximum 20 of the merchant accounts that the webhook is configured for. If the webhook is configured for more than 20 merchant accounts, use the `merchantIds` array to specify a subset of the merchant accounts for which to send test notifications.  We send four test notifications for each event code you choose. They cover success and failure scenarios for the hard-coded currencies EUR and GBP, regardless of the currencies configured in the merchant accounts. For custom notifications, we only send the specified custom notification.  The response describes the result of the test. The `status` field tells you if the test was successful or not. You can use the other response fields to troubleshoot unsuccessful tests.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Webhooks read and write"
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Test a custom webhook event",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 2000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"],\n \"merchantIds\": [\"{{YOUR_MERCHANT_ACCOUNT}}_AU\", \"{{YOUR_MERCHANT_ACCOUNT}}_EU\", \"{{YOUR_MERCHANT_ACCOUNT}}_US\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -7932,7 +8388,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 2000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"]\n}",
+    "raw": "{\n \"notification\": {\n \"paymentMethod\": \"visa\",\n \"eventCode\": \"AUTHORISATION\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 2000\n},\n \"reason\": \"Authorize visa payment\",\n \"success\": true\n},\n \"types\": [\"CUSTOM\"],\n \"merchantIds\": [\"{{YOUR_MERCHANT_ACCOUNT}}_AU\", \"{{YOUR_MERCHANT_ACCOUNT}}_EU\", \"{{YOUR_MERCHANT_ACCOUNT}}_US\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -9000,7 +9456,7 @@
                         },
 	                        {
     "name": "/companies/:companyId/androidCertificates",
-                "description": "Returns a list of the Android certificates that are available for the company identified in the path. Typically, these certificates enable running apps on Android payment terminals. The certifcates in the list have been uploaded to Adyen and can be installed or uninstalled on Android terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write * Management API—Terminal actions read * Management API—Terminal actions read and write",
+                "description": "Returns a list of the Android certificates that are available for the company identified in the path. Typically, these certificates enable running apps on Android payment terminals. The certificates in the list have been uploaded to Adyen and can be installed or uninstalled on Android terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write * Management API—Terminal actions read * Management API—Terminal actions read and write",
                  "item": [
                             {
                                 "name": "Get a list of Android certificates",
@@ -9061,7 +9517,7 @@
         }
     ]
     },
-    "description": "Returns a list of the Android certificates that are available for the company identified in the path. Typically, these certificates enable running apps on Android payment terminals. The certifcates in the list have been uploaded to Adyen and can be installed or uninstalled on Android terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write * Management API—Terminal actions read * Management API—Terminal actions read and write"
+    "description": "Returns a list of the Android certificates that are available for the company identified in the path. Typically, these certificates enable running apps on Android payment terminals. The certificates in the list have been uploaded to Adyen and can be installed or uninstalled on Android terminals through [terminal actions](https://docs.adyen.com/point-of-sale/automating-terminal-management/terminal-actions-api).  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Android files read * Management API—Android files read and write * Management API—Terminal actions read * Management API—Terminal actions read and write"
 }
                                 ,"response": [
                                 ]

@@ -126,6 +126,58 @@
                                 ]
                             }
                             ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:id/transactionRules",
+                "description": "Returns a list of transaction rules associated with a balance platform.",
+                 "item": [
+                            {
+                                "name": "Get all transaction rules for a balance platform",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id/transactionRules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id",
+        "transactionRules"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of transaction rules associated with a balance platform."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
                         }
 	                    ]
 	        },
@@ -849,6 +901,58 @@
     ]
     },
     "description": "Generates a tax form for account holders operating in the US. For more information, refer to US tax forms for [marketplaces](https://docs.adyen.com/marketplaces/us-tax-forms/) or [platforms](https://docs.adyen.com/platforms/us-tax-forms/) ."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/accountHolders/:id/transactionRules",
+                "description": "Returns a list of transaction rules associated with an account holder.",
+                 "item": [
+                            {
+                                "name": "Get all transaction rules for an account holder",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/accountHolders/:id/transactionRules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "accountHolders",
+        ":id",
+        "transactionRules"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the account holder."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of transaction rules associated with an account holder."
 }
                                 ,"response": [
                                 ]
@@ -2179,6 +2283,294 @@
 }
                                         }
                                 ]
+                            },
+                            {
+                                "name": "Create a balance account - CAD default currency",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountHolderId\": \"AH0000000000000000000001\",\n \"description\": \"CAD Balance Account\",\n \"defaultCurrencyCode\": \"CAD\",\n \"timeZone\": \"America/Toronto\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a balance account that holds the funds of the associated account holder."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"accountHolderId\": \"AH0000000000000000000001\",\n \"defaultCurrencyCode\": \"CAD\",\n \"description\": \"CAD Balance Account\",\n \"timeZone\": \"America/Toronto\",\n \"balances\": [{\n \"available\": 0,\n \"balance\": 0,\n \"currency\": \"CAD\",\n \"pending\": 0,\n \"reserved\": 0\n}],\n \"id\": \"BA0000000000000000000001\",\n \"status\": \"active\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountHolderId\": \"AH0000000000000000000001\",\n \"description\": \"CAD Balance Account\",\n \"defaultCurrencyCode\": \"CAD\",\n \"timeZone\": \"America/Toronto\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a balance account that holds the funds of the associated account holder."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Create a balance account - GBP default currency",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountHolderId\": \"AH0000000000000000000001\",\n \"description\": \"GBP Balance Account\",\n \"defaultCurrencyCode\": \"GBP\",\n \"timeZone\": \"Europe/London\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a balance account that holds the funds of the associated account holder."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"accountHolderId\": \"AH0000000000000000000001\",\n \"defaultCurrencyCode\": \"GBP\",\n \"description\": \"GBP Balance Account\",\n \"timeZone\": \"Europe/London\",\n \"balances\": [{\n \"available\": 0,\n \"balance\": 0,\n \"currency\": \"GBP\",\n \"pending\": 0,\n \"reserved\": 0\n}],\n \"id\": \"BA0000000000000000000001\",\n \"status\": \"active\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountHolderId\": \"AH0000000000000000000001\",\n \"description\": \"GBP Balance Account\",\n \"defaultCurrencyCode\": \"GBP\",\n \"timeZone\": \"Europe/London\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a balance account that holds the funds of the associated account holder."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Create a balance account - USD default currency",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountHolderId\": \"AH0000000000000000000001\",\n \"description\": \"USD Balance Account\",\n \"defaultCurrencyCode\": \"USD\",\n \"timeZone\": \"America/Chicago\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a balance account that holds the funds of the associated account holder."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"accountHolderId\": \"AH0000000000000000000001\",\n \"defaultCurrencyCode\": \"USD\",\n \"description\": \"USD Balance Account\",\n \"timeZone\": \"America/Chicago\",\n \"balances\": [{\n \"available\": 0,\n \"balance\": 0,\n \"currency\": \"USD\",\n \"pending\": 0,\n \"reserved\": 0\n}],\n \"id\": \"BA0000000000000000000001\",\n \"status\": \"active\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountHolderId\": \"AH0000000000000000000001\",\n \"description\": \"USD Balance Account\",\n \"defaultCurrencyCode\": \"USD\",\n \"timeZone\": \"America/Chicago\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a balance account that holds the funds of the associated account holder."
+}
+                                        }
+                                ]
                             }
                             ]
                         },
@@ -3055,6 +3447,58 @@
     ]
     },
     "description": "Returns a paginated list of the payment instruments associated with a balance account.   To fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments which are in active status and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6&status=active`."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:id/transactionRules",
+                "description": "Returns a list of transaction rules associated with a balance account.",
+                 "item": [
+                            {
+                                "name": "Get all transaction rules for a balance account",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transactionRules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transactionRules"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of transaction rules associated with a balance account."
 }
                                 ,"response": [
                                 ]

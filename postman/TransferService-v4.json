@@ -236,13 +236,13 @@
         {
         "key": "createdSince",
         "value": "2013-10-20T19:20:30+01:00",
-        "description": "Only include transfers that have been created on or after this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+        "description": "Only include transfers that have been created on or after this point in time. The value must be in ISO 8601 format and not earlier than 6 months before the `createdUntil` date. For example, **2021-05-30T15:07:40Z**.",
         "disabled": false
         },
         {
         "key": "createdUntil",
         "value": "2013-10-20T19:20:30+01:00",
-        "description": "Only include transfers that have been created on or before this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+        "description": "Only include transfers that have been created on or before this point in time. The value must be in ISO 8601 format and not later than 6 months after the `createdSince` date. For example, **2021-05-30T15:07:40Z**.",
         "disabled": false
         },
         {

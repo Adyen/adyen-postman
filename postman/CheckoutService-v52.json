@@ -2505,7 +2505,7 @@
 	            "item": [
 	                        {
     "name": "/cardDetails",
-                "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  ",
+                "description": "Use this endpoint to get information about the card or network token that enables you to decideon the routing of the transaction and the eligibility of the card for the type of transaction.  If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified on the card](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  ",
                  "item": [
                             {
                                 "name": "Get a list of brands on a card with the unencrypted card number",
@@ -2553,7 +2553,7 @@
     "query": [
     ]
     },
-    "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
+    "description": "Use this endpoint to get information about the card or network token that enables you to decideon the routing of the transaction and the eligibility of the card for the type of transaction.  If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified on the card](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2565,7 +2565,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"brands\": [{\n \"type\": \"visa\",\n \"supported\": true\n}, {\n \"type\": \"cartebancaire\",\n \"supported\": true\n}]\n}",
+                                        "body" : "{\n \"brands\": [{\n \"type\": \"visa\",\n \"supported\": true\n}, {\n \"type\": \"cartebancaire\",\n \"supported\": true\n}],\n \"fundingSource\": \"CREDIT\",\n \"isCardCommercial\": false,\n \"issuingCountryCode\": \"FR\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2610,7 +2610,7 @@
     "query": [
     ]
     },
-    "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
+    "description": "Use this endpoint to get information about the card or network token that enables you to decideon the routing of the transaction and the eligibility of the card for the type of transaction.  If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified on the card](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
 }
                                         }
                                 ]
@@ -2661,7 +2661,7 @@
     "query": [
     ]
     },
-    "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
+    "description": "Use this endpoint to get information about the card or network token that enables you to decideon the routing of the transaction and the eligibility of the card for the type of transaction.  If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified on the card](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2673,7 +2673,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"brands\": [{\n \"type\": \"visa\",\n \"supported\": true\n}, {\n \"type\": \"cartebancaire\",\n \"supported\": false\n}]\n}",
+                                        "body" : "{\n \"brands\": [{\n \"type\": \"visa\",\n \"supported\": true\n}, {\n \"type\": \"cartebancaire\",\n \"supported\": false\n}],\n \"fundingSource\": \"CREDIT\",\n \"isCardCommercial\": false,\n \"issuingCountryCode\": \"FR\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2718,7 +2718,7 @@
     "query": [
     ]
     },
-    "description": "Send a request with at least the first 6 digits of the card number to get a response with an array of brands on the card. If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
+    "description": "Use this endpoint to get information about the card or network token that enables you to decideon the routing of the transaction and the eligibility of the card for the type of transaction.  If you include [your supported brands](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__reqParam_supportedBrands) in the request, the response also tells you if you support each [brand that was identified on the card](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/cardDetails__resParam_details).  If you have an API-only integration and collect card data, use this endpoint to find out if the shopper's card is co-branded. For co-branded cards, you must let the shopper choose the brand to pay with  if you support both brands.  "
 }
                                         }
                                 ]

@@ -879,6 +879,114 @@
 }
                                         }
                                 ]
+                            },
+                            {
+                                "name": "Create a legal entity for an unincorporated partnership in Australia",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"unincorporatedPartnership\",\n \"unincorporatedPartnership\": {\n \"name\": \"West Family Partnership\",\n \"type\": \"familyPartnership\",\n \"doingBusinessAs\": \"\",\n \"countryOfGoverningLaw\": \"AU\",\n \"taxInformation\": [{\n \"country\": \"AU\",\n \"type\": \"ABN\",\n \"number\": \"12345678901\"\n}],\n \"registeredAddress\": {\n \"street\": \" 53 Winterfield Avenue\",\n \"city\": \"Sydney\",\n \"postalCode\": \"1197\",\n \"stateOrProvince\": \"NSW\",\n \"country\": \"AU\"\n},\n \"principalPlaceOfBusiness\": {\n \"street\": \"East City Street \",\n \"street2\": \"222\",\n \"city\": \"Sydney\",\n \"postalCode\": \"5566\",\n \"stateOrProvince\": \"NSW\",\n \"country\": \"AU\"\n}\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"unincorporatedPartnership\": {\n \"countryOfGoverningLaw\": \"AU\",\n \"doingBusinessAs\": \"\",\n \"name\": \"West Family Partnership\",\n \"registeredAddress\": {\n \"city\": \"Sydney\",\n \"country\": \"AU\",\n \"postalCode\": \"1197\",\n \"stateOrProvince\": \"NSW\",\n \"street\": \"Winterfield Avenue\"\n},\n \"principalPlaceOfBusiness\": {\n \"street\": \"53 Winterfield Avenue\",\n \"city\": \"Sydney\",\n \"postalCode\": \"1197\",\n \"stateOrProvince\": \"NSW\",\n \"country\": \"AU\"\n},\n \"taxInformation\": [{\n \"country\": \"AU\",\n \"number\": \"12345678901\",\n \"type\": \"ABN\"\n}],\n \"type\": \"familyPartnership\"\n},\n \"type\": \"unincorporatedPartnership\",\n \"id\": \"LE322KH223222J5HJ6JRB78K8\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"unincorporatedPartnership\",\n \"unincorporatedPartnership\": {\n \"name\": \"West Family Partnership\",\n \"type\": \"familyPartnership\",\n \"doingBusinessAs\": \"\",\n \"countryOfGoverningLaw\": \"AU\",\n \"taxInformation\": [{\n \"country\": \"AU\",\n \"type\": \"ABN\",\n \"number\": \"12345678901\"\n}],\n \"registeredAddress\": {\n \"street\": \" 53 Winterfield Avenue\",\n \"city\": \"Sydney\",\n \"postalCode\": \"1197\",\n \"stateOrProvince\": \"NSW\",\n \"country\": \"AU\"\n},\n \"principalPlaceOfBusiness\": {\n \"street\": \"East City Street \",\n \"street2\": \"222\",\n \"city\": \"Sydney\",\n \"postalCode\": \"5566\",\n \"stateOrProvince\": \"NSW\",\n \"country\": \"AU\"\n}\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+}
+                                        }
+                                ]
                             }
                             ]
                         },
@@ -4023,6 +4131,65 @@
     "description": "Signs the required PCI questionnaire."
 }
                                         }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/legalEntities/:id/pciQuestionnaires/signingRequired",
+                "description": "Calculate PCI status of a legal entity.",
+                 "item": [
+                            {
+                                "name": "Calculate PCI status of a legal entity",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"additionalSalesChannels\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/pciQuestionnaires/signingRequired",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "pciQuestionnaires",
+        "signingRequired"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity to calculate PCI status."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Calculate PCI status of a legal entity."
+}
+                                ,"response": [
                                 ]
                             }
                             ]

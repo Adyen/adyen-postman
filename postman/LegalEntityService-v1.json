@@ -2832,6 +2832,65 @@
                                 ]
                             }
                             ]
+                        },
+	                        {
+    "name": "/legalEntities/:id/pciQuestionnaires/signingRequired",
+                "description": "Calculate PCI status of a legal entity.",
+                 "item": [
+                            {
+                                "name": "Calculate PCI status of a legal entity",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"additionalSalesChannels\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/pciQuestionnaires/signingRequired",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "pciQuestionnaires",
+        "signingRequired"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity to calculate PCI status."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Calculate PCI status of a legal entity."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
                         }
 	                    ]
 	        },

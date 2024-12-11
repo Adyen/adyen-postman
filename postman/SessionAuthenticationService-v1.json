@@ -1,0 +1,97 @@
+{
+	"info": {
+		"name": "Session authentication API (v1)",
+		"description": {
+		    "content": "The Session authentication API enables you to create and manage the JSON Web Tokens (JWT) required for integrating [components](https://docs.adyen.com/platforms/components-overview).\n## Authentication\nWe recommend that you use an API key to connect to the Session authentication API. Generate an API key in your Customer Area if you have a [platform setup](https://docs.adyen.com/platforms/manage-access/api-credentials-web-service/#generate-api-key) or [marketplace setup](https://docs.adyen.com/marketplaces/manage-access/api-credentials-web-service/#generate-api-key). If you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your Balance Platform Customer Area.\n\nTo connect to the Session authentication API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H 'Content-Type: application/json' \\n-H 'X-API-Key: YOUR_API_KEY' \\n...\n```\n\n## Roles and permissions\nTo create a token, you must meet specific requirements. These requirements vary depending on the type of component. For more information, see the documentation for [Onboarding](https://docs.adyen.com/platforms/onboard-users/components) and [Platform Experience](https://docs.adyen.com/platforms/build-user-dashboards) components.\n\n## Going live\nTo access the live endpoint, generate an API key in your live Customer Area if you have a [platform](https://docs.adyen.com/platforms/) or [marketplace setup](https://docs.adyen.com/marketplaces/). If you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your Balance Platform Customer Area. You can then use the API key to send requests to `https://authe-live.adyen.com/authe/api/v1`.\n\n",
+		    "type": "text/markdown"
+		},
+		"version": "1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "Session authentication",
+	            "item": [
+	                        {
+    "name": "/sessions",
+                "description": "Creates a session token that is required to integrate [components](https://docs.adyen.com/platforms/components-overview).  The response contains encrypted session data. The front end then uses the session data to make the required server-side calls for the component.  To create a token, you must meet specific requirements. These requirements vary depending on the type of component. For more information, see the documentation for [Onboarding](https://docs.adyen.com/platforms/onboard-users/components) and [Platform Experience](https://docs.adyen.com/platforms/build-user-dashboards) components.  ",
+                 "item": [
+                            {
+                                "name": "Create a session token",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"allowOrigin\" : \"https://www.your-website.com\",\n  \"product\" : \"platform\",\n  \"policy\" : {\n    \"resources\" : [ {\n      \"type\" : \"accountHolder\",\n      \"accountHolderId\" : \"AH00000000000000000000001\"\n    } ],\n    \"roles\" : [ \"Transactions Overview Component: View\", \"Payouts Overview Component: View\" ]\n  }\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/sessions",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "sessions"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a session token that is required to integrate [components](https://docs.adyen.com/platforms/components-overview).  The response contains encrypted session data. The front end then uses the session data to make the required server-side calls for the component.  To create a token, you must meet specific requirements. These requirements vary depending on the type of component. For more information, see the documentation for [Onboarding](https://docs.adyen.com/platforms/onboard-users/components) and [Platform Experience](https://docs.adyen.com/platforms/build-user-dashboards) components.  "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    "auth": {
+    		"type": "apikey",
+    		"apikey": [
+    			{
+    				"key": "value",
+    				"value": "{{X-API-Key}}",
+    				"type": "string"
+    			},
+    			{
+    				"key": "key",
+    				"value": "X-API-Key",
+    				"type": "string"
+    			}
+    		]
+    	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://test.adyen.com/authe/api/v1",
+			"type": "string"
+        },
+        {
+            "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        }
+	]
+}
+

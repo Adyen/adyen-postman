@@ -111,3 +111,10 @@ jobs:
           postman-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-file: 'postman/TransferService-v4.json'
           collection-id: '25716737-365bdd3d-6ba6-44f5-8d93-dbcf3a075ef6'   
+      - name: session-authentication
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/SessionAuthenticationService-v1.json'
+          collection-id: '25716737-4e492f80-b208-414a-ab32-7a9fb4db8665'   

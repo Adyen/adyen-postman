@@ -7,8 +7,8 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 fi
 
 DATE=$(date +"%Y-%m-%d")
-# We allow only non classic, non webhook APIs
-ALLOW_LIST="BalanceControlService|BalancePlatformService|BinLookupService|CheckoutService|DataProtectionService|DisputeService|GrantService|LegalEntityService|ManagementService|PayoutService|RecurringService|StoredValueService|TestCardService|TfmAPIService|TransferService"
+# List of APIs to process: we skip (deprecated) classic payments, webhooks
+ALLOW_LIST="BalanceControlService|BalancePlatformService|BinLookupService|CheckoutService|DataProtectionService|DisputeService|GrantService|LegalEntityService|ManagementService|PayoutService|RecurringService|SessionAuthenticationService|StoredValueService|TestCardService|TfmAPIService|TransferService"
 
 for entry in "adyen-openapi/yaml"/*
 do

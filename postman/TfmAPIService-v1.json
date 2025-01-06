@@ -2,7 +2,7 @@
 	"info": {
 		"name": "POS Terminal Management API (v1)",
 		"description": {
-		    "content": "This API provides endpoints for managing your point-of-sale (POS) payment terminals. You can use the API to obtain information about a specific terminal, retrieve overviews of your terminals and stores, and assign terminals to a merchant account or store.\n\nFor more information, refer to [Classic assign terminals](https://docs.adyen.com/point-of-sale/automating-terminal-management/assign-terminals-api/classic-assign-terminals-api/).\n\n>We will deprecate POS Terminal Management API on January 1, 2025 and stop support on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview).\n\n## Authentication\nEach request to the Terminal Management API must be signed with an API key. For this, obtain an API Key from your Customer Area, as described in [How to get the API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key). Then set this key to the `X-API-Key` header value, for example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: Your_API_key\" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Roles and permissions\nTo use the POS Terminal Management API, you need the **POS Terminal Management API role** added to your API credential. Your Adyen contact will set up the roles for you.\n## Versioning\nTerminal Management API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://postfmapi-test.adyen.com/postfmapi/terminal/v1/getTerminalsUnderAccount\n```\nWhen using versioned endpoints, Boolean response values are returned in string format: `\"true\"` or `\"false\"`.\nIf you omit the version from the endpoint URL, Boolean response values are returned like this: `true` or `false`.\n## Going live\nTo access the live endpoints, you need an API key from your live Customer Area.\nUse this API key to make requests to:\n\n```text\nhttps://postfmapi-live.adyen.com/postfmapi/terminal/v1\n```\n\n",
+		    "content": "This API provides endpoints for managing your point-of-sale (POS) payment terminals. You can use the API to obtain information about a specific terminal, retrieve overviews of your terminals and stores, and assign terminals to a merchant account or store.\n\nFor more information, refer to [Classic assign terminals](https://docs.adyen.com/point-of-sale/automating-terminal-management/assign-terminals-api/classic-assign-terminals-api/).\n\n>From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview).\n\n## Authentication\nEach request to the Terminal Management API must be signed with an API key. For this, obtain an API Key from your Customer Area, as described in [How to get the API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key). Then set this key to the `X-API-Key` header value, for example:\n\n```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: Your_API_key\" \\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https://docs.adyen.com/development-resources/live-endpoints).\n\n## Roles and permissions\nTo use the POS Terminal Management API, you need the **POS Terminal Management API role** added to your API credential. Your Adyen contact will set up the roles for you.\n## Versioning\nTerminal Management API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://postfmapi-test.adyen.com/postfmapi/terminal/v1/getTerminalsUnderAccount\n```\nWhen using versioned endpoints, Boolean response values are returned in string format: `\"true\"` or `\"false\"`.\nIf you omit the version from the endpoint URL, Boolean response values are returned like this: `true` or `false`.\n## Going live\nTo access the live endpoints, you need an API key from your live Customer Area.\nUse this API key to make requests to:\n\n```text\nhttps://postfmapi-live.adyen.com/postfmapi/terminal/v1\n```\n\n",
 		    "type": "text/markdown"
 		},
 		"version": "1",
@@ -13,8 +13,8 @@
 	            "name": "General",
 	            "item": [
 	                        {
-    "name": "/assignTerminals",
-                "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory.",
+    "name": "/assignTerminals (DEPRECATED)",
+                "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview).",
                  "item": [
                             {
                                 "name": "Assign a terminal to the company inventory",
@@ -56,7 +56,7 @@
     "query": [
     ]
     },
-    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -107,7 +107,7 @@
     "query": [
     ]
     },
-    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]
@@ -152,7 +152,7 @@
     "query": [
     ]
     },
-    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -203,7 +203,7 @@
     "query": [
     ]
     },
-    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]
@@ -248,7 +248,7 @@
     "query": [
     ]
     },
-    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -299,7 +299,7 @@
     "query": [
     ]
     },
-    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory."
+    "description": "Assigns one or more payment terminals to a merchant account or a store. You can also use this endpoint to reassign terminals between merchant accounts or stores, and to unassign a terminal and return it to company inventory.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]
@@ -307,8 +307,8 @@
                             ]
                         },
 	                        {
-    "name": "/findTerminal",
-                "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to.",
+    "name": "/findTerminal (DEPRECATED)",
+                "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview).",
                  "item": [
                             {
                                 "name": "Find where a terminal is assigned to",
@@ -350,7 +350,7 @@
     "query": [
     ]
     },
-    "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to."
+    "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -401,7 +401,7 @@
     "query": [
     ]
     },
-    "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to."
+    "description": "Returns the company account, merchant account, or store that a payment terminal is assigned to.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]
@@ -409,8 +409,8 @@
                             ]
                         },
 	                        {
-    "name": "/getStoresUnderAccount",
-                "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store.",
+    "name": "/getStoresUnderAccount (DEPRECATED)",
+                "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview).",
                  "item": [
                             {
                                 "name": "Get all the stores under a company",
@@ -452,7 +452,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
+    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -503,7 +503,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
+    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]
@@ -548,7 +548,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
+    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -599,7 +599,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store."
+    "description": "Returns a list of stores associated with a company account or a merchant account, including the status of each store.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]
@@ -607,8 +607,8 @@
                             ]
                         },
 	                        {
-    "name": "/getTerminalDetails",
-                "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report.",
+    "name": "/getTerminalDetails (DEPRECATED)",
+                "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview).",
                  "item": [
                             {
                                 "name": "Get information about a specific terminal",
@@ -650,7 +650,7 @@
     "query": [
     ]
     },
-    "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report."
+    "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -701,7 +701,7 @@
     "query": [
     ]
     },
-    "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report."
+    "description": "Returns the details of a payment terminal, including where the terminal is assigned to. The response returns the same details that are provided in the terminal list in your Customer Area and in the Terminal Fleet report.  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]
@@ -709,8 +709,8 @@
                             ]
                         },
 	                        {
-    "name": "/getTerminalsUnderAccount",
-                "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded).",
+    "name": "/getTerminalsUnderAccount (DEPRECATED)",
+                "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded).  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview).",
                  "item": [
                             {
                                 "name": "Get all the terminals under a company account",
@@ -752,7 +752,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded).  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -803,7 +803,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded).  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]
@@ -848,7 +848,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded).  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -899,7 +899,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded).  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]
@@ -944,7 +944,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded).  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -995,7 +995,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded)."
+    "description": "Returns a list of payment terminals associated with a company account, merchant account, or store. The response shows whether the terminals are in the inventory, or in-store (ready for boarding or already boarded).  >From January 1, 2025 POS Terminal Management API is deprecated and support stops on April 1, 2025. To automate the management of your terminal fleet, use our [Management API](https://docs.adyen.com/api-explorer/Management/latest/overview)."
 }
                                         }
                                 ]

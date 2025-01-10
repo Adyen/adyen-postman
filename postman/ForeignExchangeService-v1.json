@@ -1,0 +1,98 @@
+{
+	"info": {
+		"name": "Foreign Exchange API",
+		"description": {
+		    "content": "The Foreign Exchange API allows you to manage and convert the currencies that are enabled for your integration.\n## Authentication\nWe recommend that you use an API key to connect to the Foreign Exchange API. You can generate an API key in your Customer Area. If you have an Adyen Issuing integration, generate an API key in your Balance Platform Customer Area.\n### Credential format\n* For the `rates/calculate` endpoint: Generate an API key for the credential with the format **ws@BalancePlatform.[YourBalancePlatform]**.\n\n### Header format\nTo connect to the Foreign Exchange API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H 'Content-Type: application/json' \\n-H 'X-API-Key: ADYEN_API_KEY' \\n...\n```\n\n## Versioning\n\nThe Foreign Exchange API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n\nhttps://balanceplatform-api-test.adyen.com/fx/v1/rates/calculate\n\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/). If you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your [live Balance Platform Customer Area](https://balanceplatform-live.adyen.com/balanceplatform/). You can then use the API key to send requests to `https://balanceplatform-api-test.adyen.com/fx/v1`.\n\n",
+		    "type": "text/markdown"
+		},
+		"version": "1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "Rates",
+	            "item": [
+	                        {
+    "name": "/rates/calculate",
+                "description": "Returns the calculated amounts and rates required to convert the currency of a transaction.",
+                 "item": [
+                            {
+                                "name": "Calculate amount in a different currency",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"exchangeCalculations\" : [ {\n    \"type\" : \"splitPayment\",\n    \"sourceAmount\" : {\n      \"currency\" : \"CZK\",\n      \"value\" : 112300\n    },\n    \"targetCurrency\" : \"EUR\",\n    \"exchangeSide\" : \"buy\"\n  }, {\n    \"type\" : \"splitRefund\",\n    \"sourceAmount\" : {\n      \"currency\" : \"CZK\",\n      \"value\" : 24000\n    },\n    \"targetCurrency\" : \"USD\",\n    \"exchangeSide\" : \"sell\"\n  } ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/rates/calculate",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "rates",
+        "calculate"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the calculated amounts and rates required to convert the currency of a transaction."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    "auth": {
+    		"type": "apikey",
+    		"apikey": [
+    			{
+    				"key": "value",
+    				"value": "{{X-API-Key}}",
+    				"type": "string"
+    			},
+    			{
+    				"key": "key",
+    				"value": "X-API-Key",
+    				"type": "string"
+    			}
+    		]
+    	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://balanceplatform-api-live.adyen.com/fx/api/v1",
+			"type": "string"
+        },
+        {
+            "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        }
+	]
+}
+

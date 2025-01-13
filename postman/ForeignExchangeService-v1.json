@@ -17,7 +17,7 @@
                 "description": "Returns the calculated amounts and rates required to convert the currency of a transaction.",
                  "item": [
                             {
-                                "name": "Calculate amount in a different currency",
+                                "name": "Calculate an amount in a different currency",
                                 "request": {
     "method": "POST",
     "header": [
@@ -60,6 +60,58 @@
     "description": "Returns the calculated amounts and rates required to convert the currency of a transaction."
 }
                                 ,"response": [
+                                        {"name": "Successful operation",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"exchangeCalculations\" : [ {\n    \"type\" : \"splitPayment\",\n    \"exchangeSide\" : \"buy\",\n    \"sourceAmount\" : {\n      \"value\" : 112300,\n      \"currency\" : \"CZK\"\n    },\n    \"targetAmount\" : {\n      \"value\" : 4480,\n      \"currency\" : \"EUR\"\n    },\n    \"appliedExchangeRate\" : 0.039893143366\n  }, {\n    \"type\" : \"splitRefund\",\n    \"exchangeSide\" : \"sell\",\n    \"sourceAmount\" : {\n      \"value\" : 24000,\n      \"currency\" : \"CZK\"\n    },\n    \"targetAmount\" : {\n      \"value\" : 992,\n      \"currency\" : \"USD\"\n    },\n    \"appliedExchangeRate\" : 0.0413333333333\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"exchangeCalculations\" : [ {\n    \"type\" : \"splitPayment\",\n    \"sourceAmount\" : {\n      \"currency\" : \"CZK\",\n      \"value\" : 112300\n    },\n    \"targetCurrency\" : \"EUR\",\n    \"exchangeSide\" : \"buy\"\n  }, {\n    \"type\" : \"splitRefund\",\n    \"sourceAmount\" : {\n      \"currency\" : \"CZK\",\n      \"value\" : 24000\n    },\n    \"targetCurrency\" : \"USD\",\n    \"exchangeSide\" : \"sell\"\n  } ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/rates/calculate",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "rates",
+        "calculate"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the calculated amounts and rates required to convert the currency of a transaction."
+}
+                                        }
                                 ]
                             }
                             ]

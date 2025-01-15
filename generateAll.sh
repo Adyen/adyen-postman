@@ -8,7 +8,7 @@ fi
 
 DATE=$(date +"%Y-%m-%d")
 # List of APIs to process: we skip (deprecated) classic payments, webhooks
-ALLOW_LIST="BalanceControlService|BalancePlatformService|BinLookupService|CheckoutService|DataProtectionService|DisputeService|GrantService|LegalEntityService|ManagementService|PayoutService|RecurringService|SessionAuthenticationService|StoredValueService|TestCardService|TfmAPIService|TransferService"
+ALLOW_LIST="BalanceControlService|BalancePlatformService|BinLookupService|CheckoutService|DataProtectionService|DisputeService|ForeignExchangeService|GrantService|LegalEntityService|ManagementService|PayoutService|RecurringService|SessionAuthenticationService|StoredValueService|TestCardService|TfmAPIService|TransferService"
 
 for entry in "adyen-openapi/yaml"/*
 do

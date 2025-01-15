@@ -118,3 +118,10 @@ jobs:
           postman-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-file: 'postman/SessionAuthenticationService-v1.json'
           collection-id: '25716737-4e492f80-b208-414a-ab32-7a9fb4db8665'   
+      - name: foreign-exchange-service
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/ForeignExchangeService-v1.json'
+          collection-id: '25716737-b24abe3f-6d9a-415c-ac0d-f61b56f7eb59'   

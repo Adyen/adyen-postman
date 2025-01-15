@@ -1,6 +1,6 @@
 {
 	"info": {
-		"name": "Foreign Exchange API",
+		"name": "Foreign Exchange API (v1)",
 		"description": {
 		    "content": "The Foreign Exchange API allows you to manage and convert the currencies that are enabled for your integration.\n## Authentication\nWe recommend that you use an API key to connect to the Foreign Exchange API. You can generate an API key in your Customer Area. If you have an Adyen Issuing integration, generate an API key in your Balance Platform Customer Area.\n### Credential format\n* For the `rates/calculate` endpoint: Generate an API key for the credential with the format **ws@BalancePlatform.[YourBalancePlatform]**.\n\n### Header format\nTo connect to the Foreign Exchange API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H 'Content-Type: application/json' \\n-H 'X-API-Key: ADYEN_API_KEY' \\n...\n```\n\n## Versioning\n\nThe Foreign Exchange API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n\nhttps://balanceplatform-api-test.adyen.com/fx/v1/rates/calculate\n\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/). If you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your [live Balance Platform Customer Area](https://balanceplatform-live.adyen.com/balanceplatform/). You can then use the API key to send requests to `https://balanceplatform-api-test.adyen.com/fx/v1`.\n\n",
 		    "type": "text/markdown"
@@ -137,7 +137,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://balanceplatform-api-live.adyen.com/fx/api/v1",
+			"value": "https://balanceplatform-api-test.adyen.com/fx/api/v1",
 			"type": "string"
         },
         {

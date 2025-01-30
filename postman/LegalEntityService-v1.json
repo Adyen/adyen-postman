@@ -1023,7 +1023,7 @@
 	            "item": [
 	                        {
     "name": "/businessLines",
-                "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  ",
+                "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  ",
                  "item": [
                             {
                                 "name": "Create a business line for a business account",
@@ -1065,7 +1065,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1116,7 +1116,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  "
 }
                                         }
                                 ]
@@ -1161,7 +1161,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1212,7 +1212,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  "
 }
                                         }
                                 ]

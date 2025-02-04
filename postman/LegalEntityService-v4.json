@@ -1,11 +1,11 @@
 {
 	"info": {
-		"name": "Legal Entity Management API (v3)",
+		"name": "Legal Entity Management API (v4)",
 		"description": {
-		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification.\n\n>Legal Entity Management v4 is currently in beta version. Please reach out to your Adyen contact for more information.\n\n## Authentication\nEach request to the Legal Entity Management API must be signed with an API key. Generate an API key in your Customer Area if you have a [platform setup](https://docs.adyen.com/platforms/manage-access/api-credentials-web-service/#generate-api-key) or [marketplace setup](https://docs.adyen.com/marketplaces/manage-access/api-credentials-web-service/#generate-api-key).\n\n If you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your Balance Platform Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value. For example:\n\n```\ncurl\n-H \"X-API-Key: YOUR_API_KEY\" \\n-H \"Content-Type: application/json\" \\n...\n```\n## Versioning\nThe Legal Entity Management API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v3/legalEntities\n```\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/) if you have an Adyen for Platforms integration or [live Balance Platform Customer Area](https://balanceplatform-live.adyen.com/balanceplatform/) if you have an Adyen Issuing integration.You can then use the API key to send requests to `https://kyc-live.adyen.com/lem/v3`.\n\n",
+		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification.\n\n>Legal Entity Management v4 is currently in beta version. Please reach out to your Adyen contact for more information.\n\n## Authentication\nEach request to the Legal Entity Management API must be signed with an API key. Generate an API key in your Customer Area if you have a [platform setup](https://docs.adyen.com/platforms/manage-access/api-credentials-web-service/#generate-api-key) or [marketplace setup](https://docs.adyen.com/marketplaces/manage-access/api-credentials-web-service/#generate-api-key).\n\n If you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your Balance Platform Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value. For example:\n\n```\ncurl\n-H \"X-API-Key: YOUR_API_KEY\" \\n-H \"Content-Type: application/json\" \\n...\n```\n## Versioning\nThe Legal Entity Management API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v4/legalEntities\n```\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/) if you have an Adyen for Platforms integration or [live Balance Platform Customer Area](https://balanceplatform-live.adyen.com/balanceplatform/) if you have an Adyen Issuing integration.You can then use the API key to send requests to `https://kyc-live.adyen.com/lem/v4`.\n\n",
 		    "type": "text/markdown"
 		},
-		"version": "3",
+		"version": "4",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -4330,7 +4330,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://kyc-test.adyen.com/lem/v3",
+			"value": "https://kyc-test.adyen.com/lem/v4",
 			"type": "string"
         },
         {

@@ -2,7 +2,7 @@
 	"info": {
 		"name": "Transfers API (v4)",
 		"description": {
-		    "content": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.\n\nThe Transfers API provides endpoints that you can use to transfer funds, whether when paying out to a transfer instrument for [marketplaces](https://docs.adyen.com/marketplaces/payout-to-users/on-demand-payouts) or [platforms](https://docs.adyen.com/platforms/payout-to-users/on-demand-payouts), [sending funds to third parties](https://docs.adyen.com/platforms/business-accounts/send-receive-funds) for users with business bank accounts, or to [request a payout for a grant offer](https://docs.adyen.com/platforms/capital). The API also supports use cases for [getting transactions for business bank accounts](https://docs.adyen.com/platforms/business-accounts/transactions-api) and getting [outstanding balances](https://docs.adyen.com/platforms/capital#get-balances) for one or more grants on your platform. \n\n## Authentication\nEach request to the Transfers API must be signed with an API key. Generate an API key in your Customer Area if you have a [platform setup](https://docs.adyen.com/platforms/manage-access/api-credentials-web-service/#generate-api-key) or [marketplace setup](https://docs.adyen.com/marketplaces/manage-access/api-credentials-web-service/#generate-api-key).\n\nIf you have an Adyen Issuing integration,[generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your Balance Platform Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\n## Roles and permissions\nTo use the Transfers API, you need an additional role for your API credential. Transfers must also be enabled for the source balance account. Your Adyen contact will set up the roles and permissions for you.\n## Versioning\nThe Transfers API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://balanceplatform-api-test.adyen.com/btl/v4/transfers\n```\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/) if you have an Adyen for Platforms integration or [live Balance Platform Customer Area](https://balanceplatform-live.adyen.com/balanceplatform/) if you have an Adyen Issuing integration.You can then use the API key to send requests to `https://balanceplatform-api-live.adyen.com/btl/v4`.\n\n",
+		    "content": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.\n\nThe Transfers API provides endpoints that you can use to transfer funds, whether when paying out to a transfer instrument for [marketplaces](https://docs.adyen.com/marketplaces/payout-to-users/on-demand-payouts) or [platforms](https://docs.adyen.com/platforms/payout-to-users/on-demand-payouts), [sending funds to third parties](https://docs.adyen.com/platforms/business-accounts/send-receive-funds) for users with business bank accounts, or to [request a payout for a grant offer](https://docs.adyen.com/platforms/capital). The API also supports use cases for [getting transactions for business bank accounts](https://docs.adyen.com/platforms/business-accounts/transactions-api) and getting [outstanding balances](https://docs.adyen.com/platforms/capital#get-balances) for one or more grants on your platform. \n\n## Authentication\nEach request to the Transfers API must be signed with an API key. Generate an API key in your Customer Area if you have a [platform setup](https://docs.adyen.com/platforms/manage-access/api-credentials-web-service/#generate-api-key) or [marketplace setup](https://docs.adyen.com/marketplaces/manage-access/api-credentials-web-service/#generate-api-key).\n\nIf you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your Balance Platform Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\n## Roles and permissions\nTo use the Transfers API, you need an additional role for your API credential. Transfers must also be enabled for the source balance account. Your Adyen contact will set up the roles and permissions for you.\n## Versioning\nThe Transfers API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://balanceplatform-api-test.adyen.com/btl/v4/transfers\n```\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/) if you have an Adyen for Platforms integration or [live Balance Platform Customer Area](https://balanceplatform-live.adyen.com/balanceplatform/) if you have an Adyen Issuing integration. You can then use the API key to send requests to `https://balanceplatform-api-live.adyen.com/btl/v4`.\n\n",
 		    "type": "text/markdown"
 		},
 		"version": "4",
@@ -1056,7 +1056,7 @@
                 "description": "Initiates the approval of a list of transfers that triggered an additional [review](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers#request-review). Adyen sends the outcome of the approval request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Approve** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions.",
                  "item": [
                             {
-                                "name": "Approve initiated transfers",
+                                "name": "Approve transfers",
                                 "request": {
     "method": "POST",
     "header": [
@@ -1087,7 +1087,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"transferIds\": \"<string>\"\n}",
+    "raw": "{\n \"transferIds\": [\"APUFHASUDF4AS\", \"407ASFPUAHSFA\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1111,6 +1111,70 @@
     "description": "Initiates the approval of a list of transfers that triggered an additional [review](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers#request-review). Adyen sends the outcome of the approval request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Approve** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
+                                        {"name": "No Content - look at the actual response code for the status of the request. ",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        },
+        {
+        "key": "WWW-Authenticate",
+        "value": "",
+        "description": "Header for authenticating through SCA",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"transferIds\": [\"APUFHASUDF4AS\", \"407ASFPUAHSFA\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transfers/approve",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transfers",
+        "approve"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Initiates the approval of a list of transfers that triggered an additional [review](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers#request-review). Adyen sends the outcome of the approval request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Approve** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -1120,7 +1184,7 @@
                 "description": "Initiates the cancellation of a list of transfers that triggered an additional [review](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers#request-review). Adyen sends the outcome of the cancel request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Approve** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions.",
                  "item": [
                             {
-                                "name": "Cancel initiated transfers",
+                                "name": "Cancel transfers",
                                 "request": {
     "method": "POST",
     "header": [
@@ -1145,7 +1209,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"transferIds\": \"<string>\"\n}",
+    "raw": "{\n \"transferIds\": [\"APUFHASUDF4AS\", \"407ASFPUAHSFA\"]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1169,6 +1233,64 @@
     "description": "Initiates the cancellation of a list of transfers that triggered an additional [review](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers#request-review). Adyen sends the outcome of the cancel request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Approve** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
+                                        {"name": "No Content - look at the actual response code for the status of the request. ",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"transferIds\": [\"APUFHASUDF4AS\", \"407ASFPUAHSFA\"]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transfers/cancel",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transfers",
+        "cancel"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Initiates the cancellation of a list of transfers that triggered an additional [review](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers#request-review). Adyen sends the outcome of the cancel request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Approve** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -1179,7 +1301,7 @@
 	            "name": "Capital",
 	            "item": [
 	                        {
-    "name": "/grants",
+    "name": "/grants (DEPRECATED)",
                 "description": "Returns a list of grants with status and outstanding balances.",
                  "item": [
                             {
@@ -1230,7 +1352,7 @@
                             ]
                         },
 	                        {
-    "name": "/grants",
+    "name": "/grants (DEPRECATED)",
                 "description": "Requests the payout of the selected grant offer.",
                  "item": [
                             {
@@ -1344,7 +1466,7 @@
                             ]
                         },
 	                        {
-    "name": "/grants/:id",
+    "name": "/grants/:id (DEPRECATED)",
                 "description": "Returns the details of a capital account specified in the path.",
                  "item": [
                             {

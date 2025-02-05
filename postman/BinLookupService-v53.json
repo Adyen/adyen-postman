@@ -170,7 +170,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\",\n \"surchargeType\": \"PASSTHROUGH\"\n}",
+                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -266,7 +266,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\",\n \"surchargeType\": \"PASSTHROUGH\"\n}",
+                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -362,7 +362,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\",\n \"surchargeType\": \"PASSTHROUGH\"\n}",
+                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -458,7 +458,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\",\n \"surchargeType\": \"PASSTHROUGH\"\n}",
+                                        "body" : "{\n \"costEstimateAmount\": {\n \"currency\": \"EUR\",\n \"value\": 12\n},\n \"resultCode\": \"Success\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [

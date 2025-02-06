@@ -88,7 +88,7 @@ jobs:
         with:
           goal: update
           postman-key: ${{ secrets.POSTMAN_API_KEY }}
-          postman-file: 'postman/LegalEntityService-v3.json'
+          postman-file: 'postman/LegalEntityService-v4.json'
           collection-id: '25716737-0a4fc86d-e9c9-4d5d-a6d5-b4167d276005'
       - name: update-management
         uses: gcatanese/push-to-postman-action@main

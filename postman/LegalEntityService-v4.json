@@ -2147,7 +2147,7 @@
 	            "item": [
 	                        {
     "name": "/businessLines",
-                "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  ",
+                "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  ",
                  "item": [
                             {
                                 "name": "Create a business line for a business account",
@@ -2169,7 +2169,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
+    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"annualTurnover\": \"123678\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2189,7 +2189,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2201,7 +2201,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"industryCode\": \"4531\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"service\": \"banking\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\",\n \"type\": \"business\"\n},\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\",\n \"webAddressId\": \"SE322JV223222F5H4CQGS77V4\"\n}],\n \"id\": \"SE322KT223222D5FJ7TJN2986\"\n}",
+                                        "body" : "{\n \"industryCode\": \"4531\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"service\": \"banking\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"annualTurnover\": \"123678\",\n \"description\": \"Funds from my flower shop business\",\n \"type\": \"business\"\n},\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\",\n \"webAddressId\": \"SE322JV223222F5H4CQGS77V4\"\n}],\n \"id\": \"SE322KT223222D5FJ7TJN2986\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2220,7 +2220,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
+    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"annualTurnover\": \"123678\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2240,7 +2240,103 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Create a business line for card issuing",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"service\": \"issuing\",\n \"industryCode\": \"45391\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"type\": \"assetSale\",\n \"dateOfSourceEvent\": \"2024-12-03\",\n \"description\": \"Sale of my property at Turfmarkt 654A, Haarlem, 2011CA.\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 600000\n}\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/businessLines",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "businessLines"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"industryCode\": \"45391\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"service\": \"issuing\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 600000\n},\n \"dateOfSourceEvent\": \"2024-12-03\",\n \"description\": \"Sale of my property at Turfmarkt 654A, Haarlem, 2011CA.\",\n \"type\": \"assetSale\"\n},\n \"id\": \"SE3292Q22322695M2KT779RHG\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"service\": \"issuing\",\n \"industryCode\": \"45391\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"type\": \"assetSale\",\n \"dateOfSourceEvent\": \"2024-12-03\",\n \"description\": \"Sale of my property at Turfmarkt 654A, Haarlem, 2011CA.\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 600000\n}\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/businessLines",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "businessLines"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
 }
                                         }
                                 ]
@@ -2285,7 +2381,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2336,7 +2432,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 3 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
 }
                                         }
                                 ]

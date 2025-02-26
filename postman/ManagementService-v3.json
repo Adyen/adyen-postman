@@ -8702,7 +8702,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"description\": \"City centre store\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"1813702551707653\",\n \"reference\": \"Spring_store_2\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n}\n}",
+    "raw": "{\n \"description\": \"City centre store\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"13123456789\",\n \"reference\": \"Spring_store_2\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -8741,7 +8741,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"1813702551707653\",\n \"reference\": \"Spring_store_2\",\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
+                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"13123456789\",\n \"reference\": \"Spring_store_2\",\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -8760,7 +8760,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"description\": \"City centre store\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"1813702551707653\",\n \"reference\": \"Spring_store_2\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n}\n}",
+    "raw": "{\n \"description\": \"City centre store\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"13123456789\",\n \"reference\": \"Spring_store_2\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -8921,7 +8921,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"1776 West Pinewood Avenue\",\n \"line2\": \"Heartland Building\",\n \"line3\": \"\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20251\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+1813702551707653\",\n \"reference\": \"Spring_store_2\",\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
+                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"1776 West Pinewood Avenue\",\n \"line2\": \"Heartland Building\",\n \"line3\": \"\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20251\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+13123456789\",\n \"reference\": \"Spring_store_2\",\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -9043,7 +9043,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"1776 West Pinewood Avenue\",\n \"line2\": \"Heartland Building\",\n \"line3\": \"\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20251\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+1813702551707653\",\n \"reference\": \"Spring_store_2\",\n \"splitConfiguration\": {\n \"balanceAccountId\": \"BA3227C223222H5HQ2XX77VVH\",\n \"splitConfigurationId\": \"SCNF4224P22322585HPCX384JV6JGX\"\n},\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
+                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"1776 West Pinewood Avenue\",\n \"line2\": \"Heartland Building\",\n \"line3\": \"\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20251\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+13123456789\",\n \"reference\": \"Spring_store_2\",\n \"splitConfiguration\": {\n \"balanceAccountId\": \"BA3227C223222H5HQ2XX77VVH\",\n \"splitConfigurationId\": \"SCNF4224P22322585HPCX384JV6JGX\"\n},\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -9195,7 +9195,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"merchantId\": \"{{YOUR_MERCHANT_ACCOUNT}}_ID\",\n \"description\": \"City centre store\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+1813702551707653\",\n \"reference\": \"Spring_store_2\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n}\n}",
+    "raw": "{\n \"merchantId\": \"{{YOUR_MERCHANT_ACCOUNT}}_ID\",\n \"description\": \"City centre store\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+13123456789\",\n \"reference\": \"Spring_store_2\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -9227,7 +9227,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+1813702551707653\",\n \"reference\": \"Spring_store_2\",\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
+                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+13123456789\",\n \"reference\": \"Spring_store_2\",\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -9246,7 +9246,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"merchantId\": \"{{YOUR_MERCHANT_ACCOUNT}}_ID\",\n \"description\": \"City centre store\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+1813702551707653\",\n \"reference\": \"Spring_store_2\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n}\n}",
+    "raw": "{\n \"merchantId\": \"{{YOUR_MERCHANT_ACCOUNT}}_ID\",\n \"description\": \"City centre store\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+13123456789\",\n \"reference\": \"Spring_store_2\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"200 Main Street\",\n \"line2\": \"Building 5A\",\n \"line3\": \"Suite 3\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20250\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -9386,7 +9386,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"1776 West Pinewood Avenue\",\n \"line2\": \"Heartland Building\",\n \"line3\": \"\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20251\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+1813702551707653\",\n \"reference\": \"Spring_store_2\",\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
+                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"1776 West Pinewood Avenue\",\n \"line2\": \"Heartland Building\",\n \"line3\": \"\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20251\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+13123456789\",\n \"reference\": \"Spring_store_2\",\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [

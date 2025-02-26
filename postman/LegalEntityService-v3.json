@@ -1952,7 +1952,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"themeId\": \"YOUR_THEME_ID\",\n \"redirectUrl\": \"https://your.redirect-url.com/\",\n \"locale\": \"nl-NL\"\n}",
+    "raw": "{\n \"themeId\": \"YOUR_THEME_ID\",\n \"redirectUrl\": \"https://your-company.com\",\n \"locale\": \"nl-NL\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -1991,7 +1991,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"url\": \"https://balanceplatform-test.adyen.com/balanceplatform/uo/form/xtl-...?signature=..&cd=..&redirectUrl=https%3A%2F%2Fyour.redirect-url.com%2F&expiry=1667226404807&locale=nl-NL\"\n}",
+                                        "body" : "{\n \"url\": \"https://balanceplatform-test.adyen.com/balanceplatform/uo/form/xtl-...?signature=..&cd=..&redirectUrl=https%3A%2F%2Fyour-company.com%2F&expiry=1667226404807&locale=nl-NL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2010,7 +2010,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"themeId\": \"YOUR_THEME_ID\",\n \"redirectUrl\": \"https://your.redirect-url.com/\",\n \"locale\": \"nl-NL\"\n}",
+    "raw": "{\n \"themeId\": \"YOUR_THEME_ID\",\n \"redirectUrl\": \"https://your-company.com\",\n \"locale\": \"nl-NL\"\n}",
     "options": {
     "raw": {
     "language": "json"

@@ -2249,7 +2249,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2306,7 +2306,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2357,7 +2357,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2414,7 +2414,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2471,7 +2471,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3085,7 +3085,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"applepay\",\n \"applePayToken\": \"VNRWtuNlNEWkRCSm1xWndjMDFFbktkQU...\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"applepay\",\n \"applePayToken\": \"VNRWtuNlNEWkRCSm1xWndjMDFFbktkQU...\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3136,7 +3136,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4212345678901237\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4212345678901237\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3193,7 +3193,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4212345678901237\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4212345678901237\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"browserInfo\": {\n \"userAgent\": \"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9) Gecko/2008052912 Firefox/3.0\",\n \"acceptHeader\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3244,7 +3244,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4212345678901237\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\",\n \"holderName\": \"John Smith\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4212345678901237\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\",\n \"holderName\": \"John Smith\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3301,7 +3301,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4212345678901237\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\",\n \"holderName\": \"John Smith\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4212345678901237\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\",\n \"holderName\": \"John Smith\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3352,7 +3352,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3409,7 +3409,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\",\n \"cvc\": \"737\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3460,7 +3460,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4111111111111111\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4111111111111111\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3517,7 +3517,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4111111111111111\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\"\n},\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4111111111111111\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3568,7 +3568,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"8416038790273850\",\n \"cvc\": \"737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"8416038790273850\",\n \"cvc\": \"737\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3619,7 +3619,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"8416038790273850\",\n \"encryptedSecurityCode\": \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"8416038790273850\",\n \"encryptedSecurityCode\": \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3670,7 +3670,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 40000,\n \"currency\": \"USD\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 39600\n},\n \"type\": \"BalanceAccount\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the sale amount\",\n \"description\": \"Your description for the sale amount\"\n}, {\n \"amount\": {\n \"value\": 400\n},\n \"type\": \"Commission\",\n \"reference\": \"Your reference for the commission\",\n \"description\": \"Your description for the commission\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the fees\",\n \"description\": \"Your description for the fees\"\n}]\n}",
+    "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 40000,\n \"currency\": \"USD\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 39600\n},\n \"type\": \"BalanceAccount\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the sale amount\",\n \"description\": \"Your description for the sale amount\"\n}, {\n \"amount\": {\n \"value\": 400\n},\n \"type\": \"Commission\",\n \"reference\": \"Your reference for the commission\",\n \"description\": \"Your description for the commission\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the fees\",\n \"description\": \"Your description for the fees\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3727,7 +3727,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 40000,\n \"currency\": \"USD\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 39600\n},\n \"type\": \"BalanceAccount\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the sale amount\",\n \"description\": \"Your description for the sale amount\"\n}, {\n \"amount\": {\n \"value\": 400\n},\n \"type\": \"Commission\",\n \"reference\": \"Your reference for the commission\",\n \"description\": \"Your description for the commission\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the fees\",\n \"description\": \"Your description for the fees\"\n}]\n}",
+    "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 40000,\n \"currency\": \"USD\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 39600\n},\n \"type\": \"BalanceAccount\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the sale amount\",\n \"description\": \"Your description for the sale amount\"\n}, {\n \"amount\": {\n \"value\": 400\n},\n \"type\": \"Commission\",\n \"reference\": \"Your reference for the commission\",\n \"description\": \"Your description for the commission\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the fees\",\n \"description\": \"Your description for the fees\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -3778,7 +3778,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 6200,\n \"currency\": \"EUR\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 6000\n},\n \"type\": \"MarketPlace\",\n \"account\": \"151272963\",\n \"reference\": \"6124145\",\n \"description\": \"Porcelain Doll: Eliza (20cm)\"\n}, {\n \"amount\": {\n \"value\": 200\n},\n \"type\": \"Commission\",\n \"reference\": \"6124146\"\n}]\n}",
+    "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 6200,\n \"currency\": \"EUR\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 6000\n},\n \"type\": \"MarketPlace\",\n \"account\": \"151272963\",\n \"reference\": \"6124145\",\n \"description\": \"Porcelain Doll: Eliza (20cm)\"\n}, {\n \"amount\": {\n \"value\": 200\n},\n \"type\": \"Commission\",\n \"reference\": \"6124146\"\n}]\n}",
     "options": {
     "raw": {
     "language": "json"

@@ -2169,7 +2169,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"annualTurnover\": \"123678\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
+    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 600000\n},\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2201,7 +2201,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"industryCode\": \"4531\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"service\": \"banking\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"annualTurnover\": \"123678\",\n \"description\": \"Funds from my flower shop business\",\n \"type\": \"business\"\n},\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\",\n \"webAddressId\": \"SE322JV223222F5H4CQGS77V4\"\n}],\n \"id\": \"SE322KT223222D5FJ7TJN2986\"\n}",
+                                        "body" : "{\n \"industryCode\": \"4531\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"service\": \"banking\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 600000\n},\n \"description\": \"Funds from my flower shop business\",\n \"type\": \"business\"\n},\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\",\n \"webAddressId\": \"SE322JV223222F5H4CQGS77V4\"\n}],\n \"id\": \"SE322KT223222D5FJ7TJN2986\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -2220,7 +2220,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"annualTurnover\": \"123678\",\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
+    "raw": "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\"\n}],\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"type\": \"business\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 600000\n},\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\"\n}\n}",
     "options": {
     "raw": {
     "language": "json"

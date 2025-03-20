@@ -3651,7 +3651,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"additionalData\": {\n \"cvcResult\": \"1 Matches\",\n \"authCode\": \"022966\",\n \"avsResult\": \"4 AVS not supported for this card type\",\n \"recurring.recurringDetailReference\": \"9916178934434753\",\n \"recurringProcessingModel\": \"CardOnFile\",\n \"avsResultRaw\": \"4\",\n \"cvcResultRaw\": \"M\",\n \"refusalReasonRaw\": \"AUTHORISED\",\n \"recurring.shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID\",\n \"acquirerCode\": \"TestPmmAcquirer\",\n \"acquirerReference\": \"8PQMP9T0BB6\"\n},\n \"pspReference\": \"993617894947495G\",\n \"resultCode\": \"Authorised\"\n}",
+                                        "body" : "{\n \"additionalData\": {\n \"cvcResult\": \"1 Matches\",\n \"authCode\": \"022966\",\n \"avsResult\": \"4 AVS not supported for this card type\",\n \"avsResultRaw\": \"4\",\n \"cvcResultRaw\": \"M\",\n \"refusalReasonRaw\": \"AUTHORISED\",\n \"acquirerCode\": \"TestPmmAcquirer\",\n \"acquirerReference\": \"8PQMP9T0BB6\",\n \"tokenization.shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"tokenization.storedPaymentMethodId\": \"M5N7TQ4TG5PFWR50\",\n \"tokenization.store.operationType\": \"created\"\n},\n \"pspReference\": \"993617894947495G\",\n \"resultCode\": \"Authorised\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [

@@ -962,6 +962,608 @@
 	                    ]
 	        },
 	        {
+	            "name": "Balances",
+	            "item": [
+	                        {
+    "name": "/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings",
+                "description": "Returns all settings configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated).",
+                 "item": [
+                            {
+                                "name": "Get webhook settings",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns all settings configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings",
+                "description": "Configures the criteria for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/1/post/balancePlatform.balanceAccount.balance.updated).  Adyen sends balance webhooks to notify you of balance changes in your balance platform. They can be triggered when the balance reaches, exceeds, or drops below a specific value in a specific currency.  You can get notified about balance changes in your entire balance platform, in the balance accounts of a specific user, or a specific balance account. The hierarchy between the webhook settings are based on the following business logic:  * Settings on a higher level apply to all lower level resources (balance platform > account holder > balance acocunt).  * The most granular setting overrides higher level settings (balance account > account holder > balance platform).",
+                 "item": [
+                            {
+                                "name": "Create a webhook setting",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"type\" : \"balance\",\n  \"target\" : {\n    \"type\" : \"balanceAccount\",\n    \"id\" : \"BA00000000000000000LIABLE\"\n  },\n  \"currency\" : \"USD\",\n  \"status\" : \"active\",\n  \"conditions\" : [ {\n    \"balanceType\" : \"available\",\n    \"conditionType\" : \"lessThan\",\n    \"value\" : 500000\n  } ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Configures the criteria for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/1/post/balancePlatform.balanceAccount.balance.updated).  Adyen sends balance webhooks to notify you of balance changes in your balance platform. They can be triggered when the balance reaches, exceeds, or drops below a specific value in a specific currency.  You can get notified about balance changes in your entire balance platform, in the balance accounts of a specific user, or a specific balance account. The hierarchy between the webhook settings are based on the following business logic:  * Settings on a higher level apply to all lower level resources (balance platform > account holder > balance acocunt).  * The most granular setting overrides higher level settings (balance account > account holder > balance platform)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"id\" : \"BWHS00000000000000000000000001\",\n  \"type\" : \"balance\",\n  \"target\" : {\n    \"type\" : \"balanceAccount\",\n    \"id\" : \"BA00000000000000000LIABLE\"\n  },\n  \"currency\" : \"USD\",\n  \"status\" : \"active\",\n  \"conditions\" : [ {\n    \"balanceType\" : \"available\",\n    \"conditionType\" : \"lessThan\",\n    \"value\" : 500000\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"type\" : \"balance\",\n  \"target\" : {\n    \"type\" : \"balanceAccount\",\n    \"id\" : \"BA00000000000000000LIABLE\"\n  },\n  \"currency\" : \"USD\",\n  \"status\" : \"active\",\n  \"conditions\" : [ {\n    \"balanceType\" : \"available\",\n    \"conditionType\" : \"lessThan\",\n    \"value\" : 500000\n  } ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Configures the criteria for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/1/post/balancePlatform.balanceAccount.balance.updated).  Adyen sends balance webhooks to notify you of balance changes in your balance platform. They can be triggered when the balance reaches, exceeds, or drops below a specific value in a specific currency.  You can get notified about balance changes in your entire balance platform, in the balance accounts of a specific user, or a specific balance account. The hierarchy between the webhook settings are based on the following business logic:  * Settings on a higher level apply to all lower level resources (balance platform > account holder > balance acocunt).  * The most granular setting overrides higher level settings (balance account > account holder > balance platform)."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+                "description": "Deletes a setting that contains the conditions for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated).",
+                 "item": [
+                            {
+                                "name": "Delete a webhook setting",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings",
+        ":settingId"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        },
+        {
+        "key": "settingId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook setting."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Deletes a setting that contains the conditions for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+                "description": "Returns the details of a specific balance webhook setting configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated).",
+                 "item": [
+                            {
+                                "name": "Get a webhook setting",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings",
+        ":settingId"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        },
+        {
+        "key": "settingId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook setting."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a specific balance webhook setting configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+                "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated).",
+                 "item": [
+                            {
+                                "name": "Update a webhook setting",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"type\" : \"balance\",\n  \"target\" : {\n    \"type\" : \"balanceAccount\",\n    \"id\" : \"BA00000000000000000LIABLE\"\n  },\n  \"currency\" : \"USD\",\n  \"status\" : \"active\",\n  \"conditions\" : [ {\n    \"balanceType\" : \"available\",\n    \"conditionType\" : \"lessThan\",\n    \"value\" : 500000\n  }, {\n    \"balanceType\" : \"balance\",\n    \"conditionType\" : \"greaterThan\",\n    \"value\" : 1000000\n  } ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings",
+        ":settingId"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        },
+        {
+        "key": "settingId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook setting."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"type\" : \"balance\",\n  \"id\" : \"BWHS00000000000000000000000001\",\n  \"target\" : {\n    \"type\" : \"balanceAccount\",\n    \"id\" : \"BA00000000000000000LIABLE\"\n  },\n  \"currency\" : \"USD\",\n  \"status\" : \"active\",\n  \"conditions\" : [ {\n    \"balanceType\" : \"available\",\n    \"conditionType\" : \"lessThan\",\n    \"value\" : 500000\n  }, {\n    \"balanceType\" : \"balance\",\n    \"conditionType\" : \"greaterThan\",\n    \"value\" : 1000000\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"type\" : \"balance\",\n  \"target\" : {\n    \"type\" : \"balanceAccount\",\n    \"id\" : \"BA00000000000000000LIABLE\"\n  },\n  \"currency\" : \"USD\",\n  \"status\" : \"active\",\n  \"conditions\" : [ {\n    \"balanceType\" : \"available\",\n    \"conditionType\" : \"lessThan\",\n    \"value\" : 500000\n  }, {\n    \"balanceType\" : \"balance\",\n    \"conditionType\" : \"greaterThan\",\n    \"value\" : 1000000\n  } ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings",
+        ":settingId"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        },
+        {
+        "key": "settingId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook setting."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Deactivate a webhook setting",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"type\" : \"balance\",\n  \"status\" : \"inactive\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings",
+        ":settingId"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        },
+        {
+        "key": "settingId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook setting."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"type\" : \"balance\",\n  \"id\" : \"BWHS00000000000000000000000001\",\n  \"target\" : {\n    \"type\" : \"balanceAccount\",\n    \"id\" : \"BA00000000000000000LIABLE\"\n  },\n  \"currency\" : \"USD\",\n  \"status\" : \"inactive\",\n  \"conditions\" : [ {\n    \"balanceType\" : \"available\",\n    \"conditionType\" : \"lessThan\",\n    \"value\" : 500000\n  }, {\n    \"balanceType\" : \"balance\",\n    \"conditionType\" : \"greaterThan\",\n    \"value\" : 1000000\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"type\" : \"balance\",\n  \"status\" : \"inactive\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings",
+        ":settingId"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        },
+        {
+        "key": "settingId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook setting."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Payment instruments",
 	            "item": [
 	                        {

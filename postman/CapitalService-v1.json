@@ -1,0 +1,478 @@
+{
+	"info": {
+		"name": "Capital API (v1)",
+		"description": {
+		    "content": "The Capital API provides endpoints for embedding Adyen Capital into your [marketplace](https://docs.adyen.com/platforms/capital) or [platform](https://docs.adyen.com/platforms/capital). With Capital, you can offer business financing to your users as grants. When a user receives a grant, they must repay the grant amount in a specified term, in addition to paying a fee for using this service.\n\nWith these endpoints, you can:\n- **Get available grant offers**: You can get the grant offers that are available for your users. Adyen configures the financing amount, the fee, and the repayment conditions for each offer. These configurations are based on proactive risk analyses that Adyen performs on your users.\n- **Make requests for grants**: When a user selects a grant offer, you can make a request for the grant on their behalf.\n- **Get information about your grant account**: Your grant account tracks the information of all grants in your marketplace or platform.\n\n## Authentication\nEach request made to the Capital API must be signed with an API key. Generate an API key in your Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\n## Roles and permissions\nTo use the Capital API, your API credential must have the following roles:\n- **Balance_Platform_Capital_Configuration_Role**\n- **Balance_Platform_Capital_Grant_Initiation_Role**\n\nReach out to your Adyen contact to set up these roles.\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca). You can then use the API key to send requests to `https://balanceplatform-api-live.adyen.com/capital/v{version}`.\n\n",
+		    "type": "text/markdown"
+		},
+		"version": "1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "Grant offers",
+	            "item": [
+	                        {
+    "name": "/grantOffers",
+                "description": "Returns a list of all [grant offers](https://docs.adyen.com/platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter.",
+                 "item": [
+                            {
+                                "name": "Get all available grant offers",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grantOffers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grantOffers"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "accountHolderId",
+        "value": "accountHolderId_example",
+        "description": "The unique identifier of the account holder for which you want to get the available grant offers.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of all [grant offers](https://docs.adyen.com/platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/grantOffers/:id",
+                "description": "Returns the details of the specified grant offer.",
+                 "item": [
+                            {
+                                "name": "Get the details of a grant offer",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grantOffers/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grantOffers",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the grant offer."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of the specified grant offer."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Grant accounts",
+	            "item": [
+	                        {
+    "name": "/grantAccounts/:id",
+                "description": "Returns the details of the specified grant account. This account tracks existing grants in your marketplace or platform.",
+                 "item": [
+                            {
+                                "name": "Get the information of your grant account",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grantAccounts/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grantAccounts",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the grant account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of the specified grant account. This account tracks existing grants in your marketplace or platform."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Grants",
+	            "item": [
+	                        {
+    "name": "/grants",
+                "description": "Returns a list of all the grants of a specific account holder.",
+                 "item": [
+                            {
+                                "name": "Get all the grants of an account holder",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "counterpartyAccountHolderId",
+        "value": "counterpartyAccountHolderId_example",
+        "description": "The unique identifier of the account holder that received the grants.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns a list of all the grants of a specific account holder."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/grants",
+                "description": "Make a request for a grant on behalf of an account holder.",
+                 "item": [
+                            {
+                                "name": "Make a request for a grant",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"amount\": \"<string>\",\n \"counterparty\": \"<string>\",\n \"fee\": \"<string>\",\n \"grantAccountId\": \"<string>\",\n \"grantOfferId\": \"<string>\",\n \"repayment\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Make a request for a grant on behalf of an account holder."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/grants/:grantId",
+                "description": "Returns the details of the specified grant.",
+                 "item": [
+                            {
+                                "name": "Get the details of a grant",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants/:grantId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants",
+        ":grantId"
+    ],
+    "variable": [
+        {
+        "key": "grantId",
+        "value": "",
+        "description": "The unique identifier of the grant reference."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of the specified grant."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/grants/:grantId/disbursements",
+                "description": "Returns the disbursements of a specified grant.",
+                 "item": [
+                            {
+                                "name": "Get all the disbursements of a grant",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants/:grantId/disbursements",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants",
+        ":grantId",
+        "disbursements"
+    ],
+    "variable": [
+        {
+        "key": "grantId",
+        "value": "",
+        "description": "The unique identifier of the grant reference."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the disbursements of a specified grant."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/grants/:grantId/disbursements/:disbursementId",
+                "description": "Update the percentage of your user's net income that is deducted for repaying the grant.",
+                 "item": [
+                            {
+                                "name": "Update the repayment configuration of a disbursement",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"repayment\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants/:grantId/disbursements/:disbursementId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants",
+        ":grantId",
+        "disbursements",
+        ":disbursementId"
+    ],
+    "variable": [
+        {
+        "key": "grantId",
+        "value": "",
+        "description": "The unique identifier of the grant reference."
+        },
+        {
+        "key": "disbursementId",
+        "value": "",
+        "description": "The unique identifier of the disbursement."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Update the percentage of your user's net income that is deducted for repaying the grant."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    "auth": {
+    		"type": "apikey",
+    		"apikey": [
+    			{
+    				"key": "value",
+    				"value": "{{X-API-Key}}",
+    				"type": "string"
+    			},
+    			{
+    				"key": "key",
+    				"value": "X-API-Key",
+    				"type": "string"
+    			}
+    		]
+    	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://balanceplatform-api-test.adyen.com/capital/v1",
+			"type": "string"
+        },
+        {
+            "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        }
+	]
+}
+

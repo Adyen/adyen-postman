@@ -125,3 +125,10 @@ jobs:
           postman-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-file: 'postman/ForeignExchangeService-v1.json'
           collection-id: '25716737-b24abe3f-6d9a-415c-ac0d-f61b56f7eb59'   
+      - name: capital-service
+        uses: gcatanese/push-to-postman-action@main
+        with:
+          goal: update
+          postman-key: ${{ secrets.POSTMAN_API_KEY }}
+          postman-file: 'postman/CapitalService-v1.json'
+          collection-id: '25716737-450c128b-0345-47a0-b7f6-e9cb320896c8'   

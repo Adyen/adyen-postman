@@ -3435,7 +3435,7 @@
                 "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).",
                  "item": [
                             {
-                                "name": "Add a EUR bank account",
+                                "name": "Add an EU bank account",
                                 "request": {
     "method": "POST",
     "header": [
@@ -3543,7 +3543,115 @@
                                 ]
                             },
                             {
-                                "name": "Add a USD bank account",
+                                "name": "Add a UK bank account",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"ukLocal\",\n \"accountNumber\": \"00000123\",\n \"sortCode\": \"090102\"\n}\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transferInstruments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transferInstruments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"ukLocal\",\n \"accountNumber\": \"00000123\",\n \"sortCode\": \"090102\"\n},\n \"countryCode\": \"GB\",\n \"trustedSource\": false\n},\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"id\": \"SE3293N223226C5M9TQ9GFBRV\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"ukLocal\",\n \"accountNumber\": \"00000123\",\n \"sortCode\": \"090102\"\n}\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transferInstruments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transferInstruments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Add a US bank account",
                                 "request": {
     "method": "POST",
     "header": [

@@ -2244,7 +2244,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"eyJ0ZW5kZXJPcHRpb24iOiAi...\",\n \"encryptedExpiryMonth\": \"eyJAiQWxsb3dQYXJ0aWF...\",\n \"encryptedExpiryYear\": \"eyJ0aHJlZURTQ29tcEluZCI6ICJZIn0=...\",\n \"encryptedSecurityCode\": \"eyJ0cmFuc1N0YXR1cyI6IlkifQ=...\",\n \"holderName\": \"John Smith\"\n},\n \"recurringProcessingModel\": \"Subscription\",\n \"shopperEmail\": \"s.hopper@test.com\",\n \"shopperIP\": \"192.0.2.1\"\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4111111111111111\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\",\n \"holderName\": \"John Smith\"\n},\n \"recurringProcessingModel\": \"Subscription\",\n \"shopperEmail\": \"s.hopper@test.com\",\n \"shopperIP\": \"192.0.2.1\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2301,7 +2301,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"eyJ0ZW5kZXJPcHRpb24iOiAi...\",\n \"encryptedExpiryMonth\": \"eyJAiQWxsb3dQYXJ0aWF...\",\n \"encryptedExpiryYear\": \"eyJ0aHJlZURTQ29tcEluZCI6ICJZIn0=...\",\n \"encryptedSecurityCode\": \"eyJ0cmFuc1N0YXR1cyI6IlkifQ=...\",\n \"holderName\": \"John Smith\"\n},\n \"recurringProcessingModel\": \"Subscription\",\n \"shopperEmail\": \"s.hopper@test.com\",\n \"shopperIP\": \"192.0.2.1\"\n}",
+    "raw": "{\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"encryptedCardNumber\": \"test_4111111111111111\",\n \"encryptedExpiryMonth\": \"test_03\",\n \"encryptedExpiryYear\": \"test_2030\",\n \"encryptedSecurityCode\": \"test_737\",\n \"holderName\": \"John Smith\"\n},\n \"recurringProcessingModel\": \"Subscription\",\n \"shopperEmail\": \"s.hopper@test.com\",\n \"shopperIP\": \"192.0.2.1\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -2327,7 +2327,7 @@
                                 ]
                             },
                             {
-                                "name": "Store encrypted card details for subscription payments",
+                                "name": "Store unencrypted card details for subscription payments",
                                 "request": {
     "method": "POST",
     "header": [

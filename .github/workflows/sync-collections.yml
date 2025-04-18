@@ -97,13 +97,6 @@ jobs:
           postman-key: ${{ secrets.POSTMAN_API_KEY }}
           postman-file: 'postman/ManagementService-v3.json'
           collection-id: '25716737-00d5d4da-fec7-4c1a-a63f-76fcd6c1532d'   
-      - name: update-pos-terminal-management
-        uses: gcatanese/push-to-postman-action@main
-        with:
-          goal: update
-          postman-key: ${{ secrets.POSTMAN_API_KEY }}
-          postman-file: 'postman/TfmAPIService-v1.json'
-          collection-id: '25716737-a577321c-a48f-4972-a25d-64bf6da5d9dc'   
       - name: update-transfers
         uses: gcatanese/push-to-postman-action@main
         with:

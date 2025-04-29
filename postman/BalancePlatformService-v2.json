@@ -428,7 +428,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\"\n}",
+    "raw": "{\n \"description\": \"Account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -460,7 +460,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receiveFromPlatformPayments\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"receiveFromBalanceAccount\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"sendToBalanceAccount\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"sendToTransferInstrument\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"requestedSettings\": {\n \"interval\": \"daily\",\n \"maxAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n}\n},\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"AH3227C223222H5J4DCLW9VBV\",\n \"status\": \"active\"\n}",
+                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receiveFromPlatformPayments\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"receiveFromBalanceAccount\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"sendToBalanceAccount\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"sendToTransferInstrument\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"requestedSettings\": {\n \"interval\": \"daily\",\n \"maxAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n}\n},\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"AH3227C223222H5J4DCLW9VBV\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -479,7 +479,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\"\n}",
+    "raw": "{\n \"description\": \"Account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\"\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -581,7 +581,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"requested\": true\n}\n}\n}",
+    "raw": "{\n \"description\": \"Account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"requested\": true\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -619,7 +619,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222F5GKQZZ9DS99\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"enabled\": false,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"AH3227C223222C5GKR23686TF\",\n \"status\": \"active\"\n}",
+                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222F5GKQZZ9DS99\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"enabled\": false,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"AH3227C223222C5GKR23686TF\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -638,7 +638,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"requested\": true\n}\n}\n}",
+    "raw": "{\n \"description\": \"Account holder used for international payments and payouts\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receivePayments\": {\n \"requested\": true\n}\n}\n}",
     "options": {
     "raw": {
     "language": "json"
@@ -727,7 +727,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Liable account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222F5GKQZZ9DS99\",\n \"reference\": \"S.Eller-001\",\n \"id\": \"AH3227C223222C5GKR23686TF\",\n \"status\": \"closed\"\n}",
+                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222F5GKQZZ9DS99\",\n \"reference\": \"S.Eller-001\",\n \"id\": \"AH3227C223222C5GKR23686TF\",\n \"status\": \"closed\"\n}",
                                         "originalRequest": {
     "method": "PATCH",
     "header": [
@@ -966,10 +966,10 @@
 	            "item": [
 	                        {
     "name": "/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings",
-                "description": "Returns all settings configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated).",
+                "description": "Returns all balance webhook settings configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated).",
                  "item": [
                             {
-                                "name": "Get webhook settings",
+                                "name": "Get all balance webhook settings",
                                 "request": {
     "method": "GET",
     "header": [
@@ -1016,7 +1016,7 @@
     "query": [
     ]
     },
-    "description": "Returns all settings configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+    "description": "Returns all balance webhook settings configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
 }
                                 ,"response": [
                                 ]
@@ -1155,10 +1155,10 @@
                         },
 	                        {
     "name": "/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
-                "description": "Deletes a setting that contains the conditions for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated).",
+                "description": "Deletes a balance webhook setting that contains the conditions for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated).",
                  "item": [
                             {
-                                "name": "Delete a webhook setting",
+                                "name": "Delete a balance webhook setting by id",
                                 "request": {
     "method": "DELETE",
     "header": [
@@ -1211,7 +1211,7 @@
     "query": [
     ]
     },
-    "description": "Deletes a setting that contains the conditions for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+    "description": "Deletes a balance webhook setting that contains the conditions for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
 }
                                 ,"response": [
                                 ]
@@ -1220,10 +1220,10 @@
                         },
 	                        {
     "name": "/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
-                "description": "Returns the details of a specific balance webhook setting configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated).",
+                "description": "Returns the details of a specific balance webhook setting configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated).",
                  "item": [
                             {
-                                "name": "Get a webhook setting",
+                                "name": "Get a balance webhook setting by id",
                                 "request": {
     "method": "GET",
     "header": [
@@ -1276,7 +1276,7 @@
     "query": [
     ]
     },
-    "description": "Returns the details of a specific balance webhook setting configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+    "description": "Returns the details of a specific balance webhook setting configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
 }
                                 ,"response": [
                                 ]
@@ -1285,7 +1285,7 @@
                         },
 	                        {
     "name": "/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
-                "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated).",
+                "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated).",
                  "item": [
                             {
                                 "name": "Update a webhook setting",
@@ -1347,7 +1347,7 @@
     "query": [
     ]
     },
-    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1418,7 +1418,7 @@
     "query": [
     ]
     },
-    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
 }
                                         }
                                 ]
@@ -1483,7 +1483,7 @@
     "query": [
     ]
     },
-    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1554,7 +1554,7 @@
     "query": [
     ]
     },
-    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balancePlatform.balanceAccount.balance.updated)."
+    "description": "Updates the conditions the balance change needs to meet for Adyen to send a [balance webhook](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
 }
                                         }
                                 ]

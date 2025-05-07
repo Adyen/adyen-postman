@@ -59,6 +59,57 @@
     "description": "Returns a balance platform."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"YOUR_BALANCE_PLATFORM\",\n \"status\": \"Active\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a balance platform."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -123,6 +174,70 @@
     "description": "Returns a paginated list of all the account holders that belong to the balance platform. To fetch multiple pages, use the query parameters.   For example, to limit the page to 5 account holders and to skip the first 20, use `/balancePlatforms/{id}/accountHolders?limit=5&offset=20`."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"accountHolders\": [{\n \"description\": \"Test-305\",\n \"legalEntityId\": \"LE3227C223222D5D8S5S33M4M\",\n \"reference\": \"LegalEntity internal error test\",\n \"id\": \"AH32272223222B5GFSNSXFFL9\",\n \"status\": \"active\"\n}, {\n \"description\": \"Test-751\",\n \"legalEntityId\": \"LE3227C223222D5D8S5TT3SRX\",\n \"reference\": \"LegalEntity internal error test\",\n \"id\": \"AH32272223222B5GFSNVGFFM7\",\n \"status\": \"active\"\n}, {\n \"description\": \"Explorer Holder\",\n \"legalEntityId\": \"LE3227C223222D5D8S5TT3SRX\",\n \"reference\": \"Account from the Explorer Holder\",\n \"id\": \"AH32272223222B5GFWNRFFVR6\",\n \"status\": \"active\"\n}],\n \"hasNext\": true,\n \"hasPrevious\": true\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id/accountHolders",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id",
+        "accountHolders"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "The number of items that you want to skip.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of all the account holders that belong to the balance platform. To fetch multiple pages, use the query parameters.   For example, to limit the page to 5 account holders and to skip the first 20, use `/balancePlatforms/{id}/accountHolders?limit=5&offset=20`."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -175,6 +290,58 @@
     "description": "Returns a list of transaction rules associated with a balance platform."
 }
                                 ,"response": [
+                                        {"name": "Bad Request - a problem reading or understanding the request.",
+                                        "code": 400,
+                                        "status": "Bad Request",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/general/bad-request\",\n \"title\": \"Bad request\",\n \"status\": 400,\n \"detail\": \"Empty input which would have resulted in a null result.\",\n \"errorCode\": \"00_400\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id/transactionRules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id",
+        "transactionRules"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of transaction rules associated with a balance platform."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -231,6 +398,57 @@
     "description": "Returns a list of all [grant offers](https://docs.adyen.com/platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter."
 }
                                 ,"response": [
+                                        {"name": "Bad Request - a problem reading or understanding the request.",
+                                        "code": 400,
+                                        "status": "Bad Request",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/general/bad-request\",\n \"title\": \"Bad request\",\n \"status\": 400,\n \"detail\": \"Empty input which would have resulted in a null result.\",\n \"errorCode\": \"00_400\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grantOffers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grantOffers"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "accountHolderId",
+        "value": "accountHolderId_example",
+        "description": "The unique identifier of the grant account.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns a list of all [grant offers](https://docs.adyen.com/platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -282,6 +500,57 @@
     "description": "Returns the details of a single grant offer."
 }
                                 ,"response": [
+                                        {"name": "Bad Request - a problem reading or understanding the request.",
+                                        "code": 400,
+                                        "status": "Bad Request",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/general/bad-request\",\n \"title\": \"Bad request\",\n \"status\": 400,\n \"detail\": \"Empty input which would have resulted in a null result.\",\n \"errorCode\": \"00_400\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grantOffers/:grantOfferId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grantOffers",
+        ":grantOfferId"
+    ],
+    "variable": [
+        {
+        "key": "grantOfferId",
+        "value": "",
+        "description": "The unique identifier of the grant offer."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a single grant offer."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -338,6 +607,57 @@
     "description": "Returns the details of a network token."
 }
                                 ,"response": [
+                                        {"name": "Unauthorized - authentication required.",
+                                        "code": 401,
+                                        "status": "Unauthorized",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/security/unauthorized\",\n \"title\": \"Unauthorized\",\n \"status\": 401,\n \"detail\": \"Not authorized to access this service.\",\n \"errorCode\": \"00_401\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/networkTokens/:networkTokenId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "networkTokens",
+        ":networkTokenId"
+    ],
+    "variable": [
+        {
+        "key": "networkTokenId",
+        "value": "",
+        "description": "The unique identifier of the network token."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a network token."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -553,6 +873,57 @@
     "description": "Returns an account holder."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"description\": \"Account holder used for international payments and payouts\",\n \"legalEntityId\": \"LE322JV223222D5GG42KN6869\",\n \"reference\": \"S.Eller-001\",\n \"capabilities\": {\n \"receiveFromPlatformPayments\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"receiveFromBalanceAccount\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"sendToBalanceAccount\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"verificationStatus\": \"pending\"\n},\n \"sendToTransferInstrument\": {\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"transferInstruments\": [{\n \"enabled\": true,\n \"requested\": true,\n \"allowed\": false,\n \"id\": \"SE322KH223222F5GXZFNM3BGP\",\n \"verificationStatus\": \"pending\"\n}],\n \"verificationStatus\": \"pending\"\n}\n},\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"status\": \"active\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/accountHolders/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "accountHolders",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the account holder."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns an account holder."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -839,6 +1210,70 @@
     "description": "Returns a paginated list of the balance accounts associated with an account holder. To fetch multiple pages, use the query parameters.   For example, to limit the page to 5 balance accounts and skip the first 10, use `/accountHolders/{id}/balanceAccounts?limit=5&offset=10`."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"balanceAccounts\": [{\n \"accountHolderId\": \"AH32272223222B5CTBMZT6W2V\",\n \"defaultCurrencyCode\": \"EUR\",\n \"description\": \"S. Hopper - Main Account\",\n \"reference\": \"YOUR_REFERENCE-X173L\",\n \"timeZone\": \"Europe/Amsterdam\",\n \"id\": \"BA32272223222B5CTDNB66W2Z\",\n \"status\": \"active\"\n}, {\n \"accountHolderId\": \"AH32272223222B5CTBMZT6W2V\",\n \"defaultCurrencyCode\": \"EUR\",\n \"description\": \"S. Hopper - Main Account\",\n \"reference\": \"YOUR_REFERENCE-X173L\",\n \"timeZone\": \"Europe/Amsterdam\",\n \"id\": \"BA32272223222B5CTDQPM6W2H\",\n \"status\": \"active\"\n}, {\n \"accountHolderId\": \"AH32272223222B5CTBMZT6W2V\",\n \"defaultCurrencyCode\": \"EUR\",\n \"description\": \"S. Hopper - Main Account\",\n \"reference\": \"YOUR_REFERENCE-X173L\",\n \"timeZone\": \"Europe/Amsterdam\",\n \"id\": \"BA32272223222B5CVF5J63LMW\",\n \"status\": \"active\"\n}],\n \"hasNext\": true,\n \"hasPrevious\": false\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/accountHolders/:id/balanceAccounts",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "accountHolders",
+        ":id",
+        "balanceAccounts"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the account holder."
+        }
+    ],
+    "query": [
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "The number of items that you want to skip.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of the balance accounts associated with an account holder. To fetch multiple pages, use the query parameters.   For example, to limit the page to 5 balance accounts and skip the first 10, use `/accountHolders/{id}/balanceAccounts?limit=5&offset=10`."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -903,6 +1338,70 @@
     "description": "Generates a tax form for account holders operating in the US. For more information, refer to US tax forms for [marketplaces](https://docs.adyen.com/marketplaces/us-tax-forms/) or [platforms](https://docs.adyen.com/platforms/us-tax-forms/) ."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"content\": \"JVBERi0xLjcKJcfsj6IKJSVJbnZvY2F0aW9uOiBwYXRoL2dzd2luNjQuZXhlIC1kRGlzcGxh\",\n \"contentType\": \"application/pdf\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/accountHolders/:id/taxForms",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "accountHolders",
+        ":id",
+        "taxForms"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the account holder."
+        }
+    ],
+    "query": [
+        {
+        "key": "formType",
+        "value": "formType_example",
+        "description": "The type of tax form you want to retrieve. Accepted values are **US1099k** and **US1099nec**",
+        "disabled": false
+        },
+        {
+        "key": "year",
+        "value": "56",
+        "description": "The tax year in YYYY format for the tax form you want to retrieve",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Generates a tax form for account holders operating in the US. For more information, refer to US tax forms for [marketplaces](https://docs.adyen.com/marketplaces/us-tax-forms/) or [platforms](https://docs.adyen.com/platforms/us-tax-forms/) ."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -955,6 +1454,58 @@
     "description": "Returns a list of transaction rules associated with an account holder."
 }
                                 ,"response": [
+                                        {"name": "Bad Request - a problem reading or understanding the request.",
+                                        "code": 400,
+                                        "status": "Bad Request",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/general/bad-request\",\n \"title\": \"Bad request\",\n \"status\": 400,\n \"detail\": \"Empty input which would have resulted in a null result.\",\n \"errorCode\": \"00_400\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/accountHolders/:id/transactionRules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "accountHolders",
+        ":id",
+        "transactionRules"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the account holder."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of transaction rules associated with an account holder."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -1019,6 +1570,65 @@
     "description": "Returns all balance webhook settings configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"webhookSettings\" : [ {\n    \"id\" : \"BWHS00000000000000000000000001\",\n    \"type\" : \"balance\",\n    \"target\" : {\n      \"type\" : \"balancePlatform\",\n      \"id\" : \"YOUR_BALANCE_PLATFORM\"\n    },\n    \"currency\" : \"USD\",\n    \"status\" : \"active\",\n    \"conditions\" : [ {\n      \"balanceType\" : \"available\",\n      \"conditionType\" : \"lessThan\",\n      \"value\" : 500000\n    } ]\n  }, {\n    \"id\" : \"BWHS00000000000000000000000002\",\n    \"type\" : \"balance\",\n    \"target\" : {\n      \"type\" : \"balanceAccount\",\n      \"id\" : \"BA00000000000000000LIABLE\"\n    },\n    \"currency\" : \"USD\",\n    \"status\" : \"active\",\n    \"conditions\" : [ {\n      \"balanceType\" : \"available\",\n      \"conditionType\" : \"greaterThan\",\n      \"value\" : 1000000\n    } ]\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns all balance webhook settings configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -1279,6 +1889,71 @@
     "description": "Returns the details of a specific balance webhook setting configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"id\" : \"BWHS00000000000000000000000001\",\n  \"type\" : \"balance\",\n  \"target\" : {\n    \"type\" : \"balancePlatform\",\n    \"id\" : \"YOUR_BALANCE_PLATFORM\"\n  },\n  \"currency\" : \"USD\",\n  \"status\" : \"active\",\n  \"conditions\" : [ {\n    \"balanceType\" : \"available\",\n    \"conditionType\" : \"lessThan\",\n    \"value\" : 500000\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/webhooks/:webhookId/settings/:settingId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "webhooks",
+        ":webhookId",
+        "settings",
+        ":settingId"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "webhookId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook."
+        },
+        {
+        "key": "settingId",
+        "value": "",
+        "description": "The unique identifier of the balance webhook setting."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a specific balance webhook setting configured for triggering [balance webhooks](https://docs.adyen.com/api-explorer/balance-webhooks/latest/post/balanceAccount.balance.updated)."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2291,6 +2966,57 @@
     "description": "Returns the details of a payment instrument."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"description\": \"S. Hopper - Main card\",\n \"issuingCountryCode\": \"GB\",\n \"status\": \"active\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mcdebit\",\n \"cardholderName\": \"Simon Hopper\",\n \"formFactor\": \"virtual\",\n \"bin\": \"555544\",\n \"expiration\": {\n \"month\": \"01\",\n \"year\": \"2024\"\n},\n \"lastFour\": \"3548\",\n \"number\": \"************3548\"\n},\n \"id\": \"PI32272223222B5CMD3MQ3HXX\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payment instrument."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a payment instrument."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2565,6 +3291,58 @@
     "description": "List the network tokens connected to a payment instrument."
 }
                                 ,"response": [
+                                        {"name": "Bad Request - a problem reading or understanding the request.",
+                                        "code": 400,
+                                        "status": "Bad Request",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/general/bad-request\",\n \"title\": \"Bad request\",\n \"status\": 400,\n \"detail\": \"Empty input which would have resulted in a null result.\",\n \"errorCode\": \"00_400\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:id/networkTokens",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":id",
+        "networkTokens"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payment instrument."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "List the network tokens connected to a payment instrument."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2617,6 +3395,58 @@
     "description": "Returns the primary account number (PAN) of a payment instrument.  To make this request, your API credential must have the following [role](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service#api-permissions):  * Balance Platform BCL PCI role"
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"cvc\": \"123\",\n \"expiration\": {\n \"month\": \"02\",\n \"year\": \"2026\"\n},\n \"pan\": \"5555444411209883\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:id/reveal",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":id",
+        "reveal"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payment instrument."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the primary account number (PAN) of a payment instrument.  To make this request, your API credential must have the following [role](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service#api-permissions):  * Balance Platform BCL PCI role"
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2669,6 +3499,58 @@
     "description": "Returns a list of transaction rules associated with a payment instrument."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"transactionRules\": [{\n \"description\": \"Only allow point-of-sale transactions\",\n \"entityKey\": {\n \"entityReference\": \"PI3227C223222B5FN65FN5NS9\",\n \"entityType\": \"paymentInstrument\"\n},\n \"interval\": {\n \"timeZone\": \"UTC\",\n \"type\": \"perTransaction\"\n},\n \"outcomeType\": \"hardBlock\",\n \"reference\": \"YOUR_REFERENCE_4F7346\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"processingTypes\": {\n \"operation\": \"noneMatch\",\n \"value\": [\"pos\"]\n}\n},\n \"startDate\": \"2022-08-02T16:07:00.851374+02:00\",\n \"status\": \"active\",\n \"type\": \"blockList\",\n \"id\": \"TR32272223222B5GFSGFLFCHM\"\n}, {\n \"description\": \"Set the maximum number of active network tokens to one for this card\",\n \"entityKey\": {\n \"entityReference\": \"PI3227C223222B5FN65FN5NS9\",\n \"entityType\": \"paymentInstrument\"\n},\n \"interval\": {\n \"timeZone\": \"UTC\",\n \"type\": \"perTransaction\"\n},\n \"outcomeType\": \"hardBlock\",\n \"reference\": \"myRule123\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"activeNetworkTokens\": {\n \"operation\": \"greaterThanOrEqualTo\",\n \"value\": 1\n}\n},\n \"startDate\": \"2022-10-03T14:48:28.999314+02:00\",\n \"status\": \"active\",\n \"type\": \"blockList\",\n \"id\": \"TR32272223222C5GQJ93L7J8Z\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:id/transactionRules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":id",
+        "transactionRules"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payment instrument."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of transaction rules associated with a payment instrument."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2777,6 +3659,57 @@
     "description": "Returns the details of the [grant account](https://docs.adyen.com/platforms/capital#grant-account)."
 }
                                 ,"response": [
+                                        {"name": "Bad Request - a problem reading or understanding the request.",
+                                        "code": 400,
+                                        "status": "Bad Request",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/general/bad-request\",\n \"title\": \"Bad request\",\n \"status\": 400,\n \"detail\": \"Empty input which would have resulted in a null result.\",\n \"errorCode\": \"00_400\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grantAccounts/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grantAccounts",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the grant account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of the [grant account](https://docs.adyen.com/platforms/capital#grant-account)."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -3236,6 +4169,70 @@
     "description": "Returns a list of the sweeps configured for a balance account.  To fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"hasNext\": false,\n \"hasPrevious\": false,\n \"sweeps\": [{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"schedule\": {\n \"type\": \"daily\"\n},\n \"status\": \"active\",\n \"targetAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"type\": \"push\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5FTD2KR6TJD\"\n},\n \"currency\": \"EUR\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "The number of items that you want to skip.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of the sweeps configured for a balance account.  To fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -3688,6 +4685,64 @@
     "description": "Returns a sweep."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"schedule\": {\n \"type\": \"daily\"\n},\n \"status\": \"active\",\n \"targetAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"type\": \"push\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5FTD2KR6TJD\"\n},\n \"currency\": \"EUR\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps",
+        ":sweepId"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "sweepId",
+        "value": "",
+        "description": "The unique identifier of the sweep."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a sweep."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -3867,6 +4922,57 @@
     "description": "Returns a balance account and its balances for the default currency and other currencies with a non-zero balance."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"accountHolderId\": \"AH32272223222B59K6RTQBFNZ\",\n \"defaultCurrencyCode\": \"EUR\",\n \"timeZone\": \"Europe/Amsterdam\",\n \"balances\": [{\n \"available\": 0,\n \"balance\": 0,\n \"currency\": \"EUR\",\n \"reserved\": 0,\n \"pending\": 0\n}],\n \"id\": \"BA3227C223222B5BLP6JQC3FD\",\n \"status\": \"active\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a balance account and its balances for the default currency and other currencies with a non-zero balance."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -4051,6 +5157,76 @@
     "description": "Returns a paginated list of the payment instruments associated with a balance account.   To fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments which are in active status and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6&status=active`."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"hasNext\": true,\n \"hasPrevious\": false,\n \"paymentInstruments\": [{\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"issuingCountryCode\": \"GB\",\n \"status\": \"active\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mc\",\n \"cardholderName\": \"name\",\n \"formFactor\": \"virtual\",\n \"bin\": \"555544\",\n \"expiration\": {\n \"month\": \"12\",\n \"year\": \"2022\"\n},\n \"lastFour\": \"2357\",\n \"number\": \"************2357\"\n},\n \"id\": \"PI32272223222B59M5TM658DT\"\n}, {\n \"balanceAccountId\": \"BA32272223222B59CZ3T52DKZ\",\n \"issuingCountryCode\": \"GB\",\n \"status\": \"active\",\n \"type\": \"card\",\n \"card\": {\n \"brand\": \"mc\",\n \"brandVariant\": \"mc\",\n \"cardholderName\": \"name\",\n \"formFactor\": \"virtual\",\n \"bin\": \"555544\",\n \"expiration\": {\n \"month\": \"01\",\n \"year\": \"2023\"\n},\n \"lastFour\": \"8331\",\n \"number\": \"************8331\"\n},\n \"id\": \"PI32272223222B59PXDGQDLSF\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/paymentInstruments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "paymentInstruments"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "The number of items that you want to skip.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+        "disabled": true
+        },
+        {
+        "key": "status",
+        "value": "status_example",
+        "description": "The status of the payment instruments that you want to get. By default, the response includes payment instruments with any status.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of the payment instruments associated with a balance account.   To fetch multiple pages, use the query parameters.For example, to limit the page to 3 payment instruments which are in active status and to skip the first 6, use `/balanceAccounts/{id}/paymentInstruments?limit=3&offset=6&status=active`."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -4103,6 +5279,58 @@
     "description": "Returns a list of transaction rules associated with a balance account."
 }
                                 ,"response": [
+                                        {"name": "Bad Request - a problem reading or understanding the request.",
+                                        "code": 400,
+                                        "status": "Bad Request",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/general/bad-request\",\n \"title\": \"Bad request\",\n \"status\": 400,\n \"detail\": \"Empty input which would have resulted in a null result.\",\n \"errorCode\": \"00_400\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transactionRules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transactionRules"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of transaction rules associated with a balance account."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -4600,6 +5828,57 @@
     "description": "Returns the details of a transaction rule."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"transactionRule\": {\n \"description\": \"Only allow point-of-sale transactions\",\n \"entityKey\": {\n \"entityReference\": \"PI3227C223222B5FN65FN5NS9\",\n \"entityType\": \"paymentInstrument\"\n},\n \"interval\": {\n \"timeZone\": \"UTC\",\n \"type\": \"perTransaction\"\n},\n \"outcomeType\": \"hardBlock\",\n \"reference\": \"YOUR_REFERENCE_4F7346\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"processingTypes\": {\n \"operation\": \"noneMatch\",\n \"value\": [\"pos\"]\n}\n},\n \"startDate\": \"2022-08-02T16:07:00.851374+02:00\",\n \"status\": \"active\",\n \"type\": \"blockList\",\n \"id\": \"TR32272223222B5GFSGFLFCHM\"\n}\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transactionRules/:transactionRuleId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transactionRules",
+        ":transactionRuleId"
+    ],
+    "variable": [
+        {
+        "key": "transactionRuleId",
+        "value": "",
+        "description": "The unique identifier of the transaction rule."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a transaction rule."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -4830,6 +6109,117 @@
     "description": "Returns a paginated list of card orders."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"cardOrders\": [{\n \"beginDate\": \"2022-12-05T00:00:00+01:00\",\n \"cardManufacturingProfileId\": \"UNIQUE_CARD_MANUFACTURER_PROFILE_ID\",\n \"endDate\": \"2022-12-06T00:00:00+01:00\",\n \"id\": \"UNIQUE_CARD_ORDER_ID\",\n \"lockDate\": \"2023-04-14T16:43:02+02:00\",\n \"serviceCenter\": \"IDEMIA Sittard\",\n \"status\": \"closed\"\n}],\n \"hasNext\": true,\n \"hasPrevious\": false\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/cardorders",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "cardorders"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "id",
+        "value": "id_example",
+        "description": "The unique identifier of the card order. ",
+        "disabled": true
+        },
+        {
+        "key": "cardManufacturingProfileId",
+        "value": "cardManufacturingProfileId_example",
+        "description": "The unique identifier of the card manufacturer profile.",
+        "disabled": true
+        },
+        {
+        "key": "status",
+        "value": "status_example",
+        "description": "The status of the card order.",
+        "disabled": true
+        },
+        {
+        "key": "txVariantCode",
+        "value": "txVariantCode_example",
+        "description": "The unique code of the card manufacturer profile.  Possible values: **mcmaestro**, **mc**, **visa**, **mcdebit**. ",
+        "disabled": true
+        },
+        {
+        "key": "createdSince",
+        "value": "2013-10-20T19:20:30+01:00",
+        "description": "Only include card orders that have been created on or after this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+        "disabled": true
+        },
+        {
+        "key": "createdUntil",
+        "value": "2013-10-20T19:20:30+01:00",
+        "description": "Only include card orders that have been created on or before this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+        "disabled": true
+        },
+        {
+        "key": "lockedSince",
+        "value": "2013-10-20T19:20:30+01:00",
+        "description": "Only include card orders that have been locked on or after this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+        "disabled": true
+        },
+        {
+        "key": "lockedUntil",
+        "value": "2013-10-20T19:20:30+01:00",
+        "description": "Only include card orders that have been locked on or before this point in time. The value must be in ISO 8601 format. For example, **2021-05-30T15:07:40Z**.",
+        "disabled": true
+        },
+        {
+        "key": "serviceCenter",
+        "value": "serviceCenter_example",
+        "description": "The service center at which the card is issued. The value is case-sensitive. ",
+        "disabled": true
+        },
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "Specifies the position of an element in a list of card orders. The response includes a list of card orders that starts at the specified offset.  **Default:** 0, which means that the response contains all the elements in the list of card orders.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of card orders returned per page. **Default:** 10.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of card orders."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -4894,6 +6284,70 @@
     "description": "Returns the item list of a specific card order."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"data\": [{\n \"card\": {\n \"status\": \"shipped\"\n},\n \"cardOrderItemId\": \"UNIQUE_CARD_ORDER_ITEM_ID\",\n \"paymentInstrumentId\": \"UNIQUE_PAYMENT_INSTRUMENT_ID\",\n \"pin\": {\n \"status\": \"produced\"\n},\n \"shippingMethod\": \"Cardholder Post Basic National\"\n}],\n \"hasNext\": false,\n \"hasPrevious\": false\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/cardorders/:id/items",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "cardorders",
+        ":id",
+        "items"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the card order."
+        }
+    ],
+    "query": [
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "Specifies the position of an element in a list of card orders. The response includes a list of card order items that starts at the specified offset.  **Default:** 0, which means that the response contains all the elements in the list of card order items.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of card order items returned per page. **Default:** 10.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns the item list of a specific card order."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -5052,6 +6506,57 @@
     "description": "Returns the details of a payment instrument group."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"balancePlatform\": \"YOUR_BALANCE_PLATFORM\",\n \"txVariant\": \"mc\",\n \"id\": \"PG3227C223222B5CMD3FJFKGZ\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstrumentGroups/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstrumentGroups",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payment instrument group."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a payment instrument group."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -5104,6 +6609,58 @@
     "description": "Returns a list of all the transaction rules associated with a payment instrument group."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"transactionRules\": [{\n \"aggregationLevel\": \"paymentInstrument\",\n \"description\": \"Up to 1000 EUR per card for the last 12 hours\",\n \"entityKey\": {\n \"entityReference\": \"PG3227C223222C5GXR3M5592Q\",\n \"entityType\": \"paymentInstrumentGroup\"\n},\n \"interval\": {\n \"duration\": {\n \"unit\": \"hours\",\n \"value\": 12\n},\n \"timeZone\": \"UTC\",\n \"type\": \"sliding\"\n},\n \"outcomeType\": \"hardBlock\",\n \"reference\": \"YOUR_REFERENCE_2918A\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 100000\n}\n}\n},\n \"status\": \"inactive\",\n \"type\": \"velocity\",\n \"id\": \"TR3227C223222C5GXR3XP596N\"\n}, {\n \"aggregationLevel\": \"paymentInstrument\",\n \"description\": \"NL only\",\n \"entityKey\": {\n \"entityReference\": \"PG3227C223222C5GXR3M5592Q\",\n \"entityType\": \"paymentInstrumentGroup\"\n},\n \"interval\": {\n \"duration\": {\n \"unit\": \"hours\",\n \"value\": 12\n},\n \"timeZone\": \"UTC\",\n \"type\": \"sliding\"\n},\n \"outcomeType\": \"hardBlock\",\n \"reference\": \"myRule12345\",\n \"requestType\": \"authorization\",\n \"ruleRestrictions\": {\n \"totalAmount\": {\n \"operation\": \"greaterThan\",\n \"value\": {\n \"currency\": \"EUR\",\n \"value\": 100000\n}\n}\n},\n \"status\": \"inactive\",\n \"type\": \"velocity\",\n \"id\": \"TR3227C223222C5GXR3WC595H\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstrumentGroups/:id/transactionRules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstrumentGroups",
+        ":id",
+        "transactionRules"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payment instrument group."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of all the transaction rules associated with a payment instrument group."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -5577,6 +7134,63 @@
     "description": "Get an [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) public key to encrypt or decrypt card data.   You need the RSA public key to generate the `encryptedKey` required to: - [Change a PIN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/pins/change). - [Reveal a PIN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/pins/reveal). - [Reveal a PAN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/paymentInstruments/reveal)."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"publicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMII...\",\n \"publicKeyExpiryDate\": \"2023-12-12\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/publicKey",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "publicKey"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "purpose",
+        "value": "purpose_example",
+        "description": "The purpose of the public key.  Possible values: **pinChange**, **pinReveal**, **panReveal**.  Default value: **pinReveal**.",
+        "disabled": true
+        },
+        {
+        "key": "format",
+        "value": "format_example",
+        "description": "The encoding format of public key.  Possible values: **jwk**, **pem**.  Default value: **pem**.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Get an [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) public key to encrypt or decrypt card data.   You need the RSA public key to generate the `encryptedKey` required to: - [Change a PIN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/pins/change). - [Reveal a PIN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/pins/reveal). - [Reveal a PAN](https://docs.adyen.com/api-explorer/balanceplatform/2/post/paymentInstruments/reveal)."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -5754,6 +7368,69 @@
     "description": "Get a paginated list of the SCA devices you have currently registered for a specific payment instrument."
 }
                                 ,"response": [
+                                        {"name": "Bad Request - a problem reading or understanding the request.",
+                                        "code": 400,
+                                        "status": "Bad Request",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/general/bad-request\",\n \"title\": \"Bad request\",\n \"status\": 400,\n \"detail\": \"Empty input which would have resulted in a null result.\",\n \"errorCode\": \"00_400\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/registeredDevices",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "registeredDevices"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "paymentInstrumentId",
+        "value": "paymentInstrumentId_example",
+        "description": "The unique identifier of a payment instrument. It limits the returned list to SCA devices associated to this payment instrument.",
+        "disabled": false
+        },
+        {
+        "key": "pageNumber",
+        "value": "56",
+        "description": "The index of the page to retrieve. The index of the first page is 0 (zero).  Default: 0.",
+        "disabled": true
+        },
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of items to have on a page.  Default: 20. Maximum: 100.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Get a paginated list of the SCA devices you have currently registered for a specific payment instrument."
+}
+                                        }
                                 ]
                             }
                             ]

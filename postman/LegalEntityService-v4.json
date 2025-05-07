@@ -1037,6 +1037,57 @@
     "description": "Returns a legal entity."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"capabilities\": {\n \"sendToTransferInstrument\": {\n \"allowed\": false,\n \"requested\": true,\n \"transferInstruments\": [{\n \"allowed\": false,\n \"id\": \"SE322KH223222F5GXZFNM3BGP\",\n \"requested\": true,\n \"verificationStatus\": \"pending\"\n}],\n \"verificationStatus\": \"pending\"\n},\n \"receivePayments\": {\n \"allowed\": false,\n \"requested\": true,\n \"verificationStatus\": \"pending\"\n},\n \"sendToBalanceAccount\": {\n \"allowed\": false,\n \"requested\": true,\n \"verificationStatus\": \"pending\"\n},\n \"receiveFromPlatformPayments\": {\n \"allowed\": false,\n \"requested\": true,\n \"verificationStatus\": \"pending\"\n},\n \"receiveFromBalanceAccount\": {\n \"allowed\": false,\n \"requested\": true,\n \"verificationStatus\": \"pending\"\n}\n},\n \"individual\": {\n \"email\": \"s.hopper@example.com\",\n \"birthData\": {\n \"dateOfBirth\": \"1990-06-21\"\n},\n \"name\": {\n \"firstName\": \"Simone\",\n \"lastName\": \"Hopper\"\n},\n \"phone\": {\n \"number\": \"+31858888138\",\n \"phoneCountryCode\": \"NL\",\n \"type\": \"mobile\"\n},\n \"residentialAddress\": {\n \"city\": \"Amsterdam\",\n \"country\": \"NL\",\n \"postalCode\": \"1011DJ\",\n \"street\": \"Simon Carmiggeltstraat 6 - 50\",\n \"street2\": \"274\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"YOUR_LEGAL_ENTITY\",\n \"transferInstruments\": [{\n \"id\": \"SE322KH223222F5GXZFNM3BGP\",\n \"accountIdentifier\": \"NL**ABNA******0123\",\n \"trustedSource\": false\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a legal entity."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -1815,6 +1866,58 @@
     "description": "Returns the business lines owned by a legal entity."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"businessLines\": [{\n \"service\": \"banking\",\n \"industryCode\": \"55\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\",\n \"type\": \"business\"\n},\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\",\n \"webAddressId\": \"SE577HA334222K5H8V87B3BPU\"\n}],\n \"id\": \"SE322JV223222F5GVGMLNB83F\"\n}, {\n \"service\": \"paymentProcessing\",\n \"industryCode\": \"339E\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"salesChannels\": [\"eCommerce\", \"ecomMoto\"],\n \"webData\": [{\n \"webAddress\": \"https://yoururl.com\",\n \"webAddressId\": \"SE908HJ723222F5GVGPNR55YH\"\n}],\n \"id\": \"SE322JV223222F5GVGPNRB9GJ\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/businessLines",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "businessLines"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the business lines owned by a legal entity."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2085,6 +2188,51 @@
     "description": "Returns a list of hosted onboarding page themes.  "
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"themes\": [{\n \"description\": \"Dark colors theme\",\n \"properties\": {\n \"supportPage\": \"https://www.adyen.com/contact\",\n \"logo\": \"ONBA422JV223222D5G8VG2T8JV39GV\",\n \"pageTitle\": \"Example onboarding dark colors\",\n \"backgroundColor\": \"#000000\",\n \"faqPage\": \"https://docs.adyen.com/hosted-onboarding-faqs\",\n \"backgroundImage\": \"ONBA422KH223222D5G8VG2TG9S5ZBH\",\n \"pageLayout\": \"withBackground\"\n},\n \"createdAt\": \"2022-01-20T00:00:00+01:00\",\n \"id\": \"ONBT422JV223222D5FGJ77B9C52WNN\",\n \"updatedAt\": \"2022-08-25T00:00:00+02:00\"\n}, {\n \"description\": \"Light colors theme\",\n \"properties\": {\n \"privacyStatementPage\": \"https://www.adyen.com/legal/terms-and-conditions\",\n \"supportPage\": \"https://www.adyen.com/contact\",\n \"logo\": \"ONBA422JV223222D5FWC4TK25S3DQW\",\n \"pageTitle\": \"Example onboarding light colors\",\n \"backgroundColor\": \"#FFFFFF\",\n \"faqPage\": \"https://docs.adyen.com/hosted-onboarding-faqs\",\n \"backgroundImage\": \"ONBA422JV223222D5G82M96F6P2VTV\",\n \"pageLayout\": \"withBackground\"\n},\n \"createdAt\": \"2022-06-22T00:00:00+02:00\",\n \"id\": \"ONBT422KH223222D5G82M968PB46HR\",\n \"updatedAt\": \"2022-08-25T00:00:00+02:00\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/themes",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "themes"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a list of hosted onboarding page themes.  "
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2136,6 +2284,57 @@
     "description": "Returns the details of the theme identified in the path."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"description\": \"Light colors theme\",\n \"properties\": {\n \"privacyStatementPage\": \"https://www.adyen.com/legal/terms-and-conditions\",\n \"supportPage\": \"https://www.adyen.com/contact\",\n \"logo\": \"ONBA422JV223222D5FWC4TK25S3DQW\",\n \"pageTitle\": \"Example onboarding light colors\",\n \"backgroundColor\": \"#FFFFFF\",\n \"faqPage\": \"https://docs.adyen.com/hosted-onboarding-faqs\",\n \"backgroundImage\": \"ONBA422JV223222D5G82M96F6P2VTV\",\n \"pageLayout\": \"withBackground\"\n},\n \"createdAt\": \"2022-06-22T00:00:00+02:00\",\n \"id\": \"ONBT422KH223222D5G82M968PB46HR\",\n \"updatedAt\": \"2022-08-25T00:00:00+02:00\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/themes/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "themes",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the theme"
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of the theme identified in the path."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2537,6 +2736,57 @@
     "description": "Returns the detail of a business line."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"service\": \"banking\",\n \"industryCode\": \"4531\",\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"sourceOfFunds\": {\n \"adyenProcessedFunds\": false,\n \"description\": \"Funds from my flower shop business\",\n \"type\": \"business\"\n},\n \"webData\": [{\n \"webAddress\": \"https://www.adyen.com\",\n \"webAddressId\": \"SE322JV223222J5H8V87B3DHN\"\n}],\n \"id\": \"SE322KH223222F5GV2SQ924F6\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/businessLines/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "businessLines",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the business line."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the detail of a business line."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -2878,6 +3128,63 @@
     "description": "Returns a document."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"registrationDocument\",\n \"attachments\": [{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\"\n}],\n \"description\": \"Registration doc for Example Company\",\n \"fileName\": \"Registration doc for Example Company\",\n \"owner\": {\n \"id\": \"LE00000000000000000000001\",\n \"type\": \"legalEntity\"\n},\n \"id\": \"SE322JV223222F5GV2N9L8GDK\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/documents/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "documents",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the document."
+        }
+    ],
+    "query": [
+        {
+        "key": "skipContent",
+        "value": "true",
+        "description": "Do not load document content while fetching the document.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a document."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -3369,6 +3676,58 @@
     "description": "Returns Terms of Service information for a legal entity."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"data\": [{\n \"acceptedBy\": \"LE00000000000000000000002\",\n \"acceptedFor\": \"LE00000000000000000000001\",\n \"createdAt\": \"2022-12-05T13:36:58.212253Z\",\n \"id\": \"TOSA000AB00000000B2AAAB2BA0AA0\",\n \"type\": \"adyenIssuing\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/termsOfServiceAcceptanceInfos",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "termsOfServiceAcceptanceInfos"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns Terms of Service information for a legal entity."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -3421,6 +3780,58 @@
     "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"termsOfServiceTypes\": [\"adyenIssuing\"]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/termsOfServiceStatus",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "termsOfServiceStatus"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity. For sole proprietorships, this is the individual legal entity ID of the owner. For organizations, this is the ID of the organization."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -3858,6 +4269,57 @@
     "description": "Returns the details of a transfer instrument."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"bankAccount\": {\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL62ABNA0000000123\"\n},\n \"countryCode\": \"NL\"\n},\n \"legalEntityId\": \"LE00000000000000000000001\",\n \"type\": \"bankAccount\",\n \"id\": \"SE322KH223222F5GXZFNM3BGP\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/transferInstruments/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "transferInstruments",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the transfer instrument."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a transfer instrument."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -4041,6 +4503,58 @@
     "description": "Get a list of signed PCI questionnaires."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"data\": [{\n \"createdAt\": \"2023-03-02T17:54:19.538365Z\",\n \"id\": \"PCID422GZ22322565HHMH48CW63CPH\",\n \"validUntil\": \"2024-03-01T17:54:19.538365Z\"\n}, {\n \"createdAt\": \"2023-03-02T17:54:19.538365Z\",\n \"id\": \"PCID422GZ22322565HHMH49CW75Z9H\",\n \"validUntil\": \"2024-03-01T17:54:19.538365Z\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/pciQuestionnaires",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "pciQuestionnaires"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity to get PCI questionnaire information."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Get a list of signed PCI questionnaires."
+}
+                                        }
                                 ]
                             }
                             ]
@@ -4099,6 +4613,64 @@
     "description": "Returns the signed PCI questionnaire."
 }
                                 ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"content\": \"JVBERi0xLjQKJcOkw7zDtsOfCjIgMCBv+f/ub0j6JPRX+E3EmC==\",\n \"createdAt\": \"2023-03-02T17:54:19.538365Z\",\n \"id\": \"PCID422GZ22322565HHMH48CW63CPH\",\n \"validUntil\": \"2024-03-01T17:54:19.538365Z\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/pciQuestionnaires/:pciid",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "pciQuestionnaires",
+        ":pciid"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The legal entity ID of the individual who signed the PCI questionnaire."
+        },
+        {
+        "key": "pciid",
+        "value": "",
+        "description": "The unique identifier of the signed PCI questionnaire."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the signed PCI questionnaire."
+}
+                                        }
                                 ]
                             }
                             ]

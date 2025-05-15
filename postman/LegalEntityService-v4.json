@@ -1094,7 +1094,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id",
-                "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.",
+                "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.",
                  "item": [
                             {
                                 "name": "Change a legal entity from an organization to an individual",
@@ -1148,7 +1148,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1211,7 +1211,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                         }
                                 ]
@@ -1268,7 +1268,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1331,7 +1331,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                         }
                                 ]
@@ -1388,7 +1388,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1451,7 +1451,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                         }
                                 ]
@@ -1508,7 +1508,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1571,7 +1571,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                         }
                                 ]
@@ -1628,7 +1628,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1691,7 +1691,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                         }
                                 ]
@@ -1748,7 +1748,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1811,7 +1811,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request. To update the `entityAssociations` array, you need to replace the entire array. For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
 }
                                         }
                                 ]

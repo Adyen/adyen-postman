@@ -12,6 +12,10 @@ on:
       workspaceId:
         description: 'Postman workspace ID'     
         required: true
+
+permissions:
+  contents: read  
+  
 jobs:
   generate:
     name: "Create Postman Collection"

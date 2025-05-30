@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
   schedule:
   - cron: '0 9 * * 1'  # mon h09:00
+
+permissions:
+  contents: read  
   
 jobs:
   update-collections:

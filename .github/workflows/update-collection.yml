@@ -12,6 +12,10 @@ on:
       collectionId:
         description: 'Postman collection ID'     
         required: true
+
+permissions:
+  contents: read
+  
 jobs:
   generate:
     name: "Update Postman Collection"

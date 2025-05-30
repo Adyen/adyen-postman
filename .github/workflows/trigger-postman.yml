@@ -6,6 +6,9 @@ env:
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read  
+  
 jobs:
   generate:
     name: "Generate latest definitions files"

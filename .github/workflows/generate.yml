@@ -7,6 +7,10 @@ on:
         description: 'OpenAPI filepath'     
         required: true
         default: 'adyen-openapi/yaml/CheckoutService-v70.yaml'
+
+permissions:
+  contents: write  
+  
 jobs:
   generate:
     name: "Generate Postman Collection"

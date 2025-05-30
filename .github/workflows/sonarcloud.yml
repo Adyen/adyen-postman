@@ -2,6 +2,9 @@ name: "Sonarcloud Analysis"
 
 on: ["pull_request"]
 
+permissions:
+  contents: read  
+  
 jobs:
   sonarcloud-analysis:
 

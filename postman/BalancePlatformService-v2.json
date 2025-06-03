@@ -6668,6 +6668,283 @@
 	                    ]
 	        },
 	        {
+	            "name": "Authorized card users",
+	            "item": [
+	                        {
+    "name": "/paymentInstruments/:paymentInstrumentId/authorisedCardUsers",
+                "description": "Deletes the list of authorized users assigned to a card.",
+                 "item": [
+                            {
+                                "name": "Delete the authorized users for a card.",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:paymentInstrumentId/authorisedCardUsers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":paymentInstrumentId",
+        "authorisedCardUsers"
+    ],
+    "variable": [
+        {
+        "key": "paymentInstrumentId",
+        "value": "",
+        "description": ""
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Deletes the list of authorized users assigned to a card."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/paymentInstruments/:paymentInstrumentId/authorisedCardUsers",
+                "description": "Returns the authorized users for a card.",
+                 "item": [
+                            {
+                                "name": "Get authorized users for a card.",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:paymentInstrumentId/authorisedCardUsers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":paymentInstrumentId",
+        "authorisedCardUsers"
+    ],
+    "variable": [
+        {
+        "key": "paymentInstrumentId",
+        "value": "",
+        "description": ""
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the authorized users for a card."
+}
+                                ,"response": [
+                                        {"name": "Successful operation",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"legalEntityIds\" : [ \"LE328V522322685LV3KTNF35M\", \"LE328SW223226B5LWVWNQ8THN\" ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:paymentInstrumentId/authorisedCardUsers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":paymentInstrumentId",
+        "authorisedCardUsers"
+    ],
+    "variable": [
+        {
+        "key": "paymentInstrumentId",
+        "value": "",
+        "description": ""
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the authorized users for a card."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/paymentInstruments/:paymentInstrumentId/authorisedCardUsers",
+                "description": "Updates the list of authorized users for a card.  >This request replaces all existing authorized users for the card.",
+                 "item": [
+                            {
+                                "name": "Updates authorised users of the payment instrument.",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"legalEntityIds\" : [ \"LE328V522322685LV3KTNF35M\", \"LE328SW223226B5LWVWNQ8THN\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:paymentInstrumentId/authorisedCardUsers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":paymentInstrumentId",
+        "authorisedCardUsers"
+    ],
+    "variable": [
+        {
+        "key": "paymentInstrumentId",
+        "value": "",
+        "description": ""
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the list of authorized users for a card.  >This request replaces all existing authorized users for the card."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/paymentInstruments/:paymentInstrumentId/authorisedCardUsers",
+                "description": "Assigns authorized users to a card. Users must have the **authorisedPaymentInstrumentUser** capability to be able to use the card.",
+                 "item": [
+                            {
+                                "name": "Assigns authorised users to the payment instrument.",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"legalEntityIds\" : [ \"LE328V522322685LV3KTNF35M\", \"LE328SW223226B5LWVWNQ8THN\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:paymentInstrumentId/authorisedCardUsers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":paymentInstrumentId",
+        "authorisedCardUsers"
+    ],
+    "variable": [
+        {
+        "key": "paymentInstrumentId",
+        "value": "",
+        "description": ""
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Assigns authorized users to a card. Users must have the **authorisedPaymentInstrumentUser** capability to be able to use the card."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Bank account validation",
 	            "item": [
 	                        {

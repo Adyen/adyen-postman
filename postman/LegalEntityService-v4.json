@@ -557,6 +557,114 @@
                                 ]
                             },
                             {
+                                "name": "Create an authorized user for an issued card.",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"country\": \"NL\"\n},\n \"name\": {\n \"firstName\": \"John\",\n \"lastName\": \"Test\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-01-01\"\n}\n},\n \"capabilities\": {\n \"authorisedPaymentInstrumentUser\": {\n \"requested\": true,\n \"requestedLevel\": \"notApplicable\"\n}\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"capabilities\": {\n \"authorisedPaymentInstrumentUser\": {\n \"allowed\": false,\n \"requested\": true,\n \"verificationStatus\": \"pending\"\n}\n},\n \"individual\": {\n \"birthData\": {\n \"dateOfBirth\": \"1990-01-01\"\n},\n \"name\": {\n \"firstName\": \"John\",\n \"lastName\": \"Test\"\n},\n \"residentialAddress\": {\n \"country\": \"NL\"\n}\n},\n \"type\": \"individual\",\n \"id\": \"LE32DBK223226C5M7MSG8CPD2\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "x-requested-verification-code",
+        "value": "",
+        "description": "Use a suberror code as your requested verification code. You can include one code at a time in your request header. Requested verification codes can only be used in your test environment.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"type\": \"individual\",\n \"individual\": {\n \"residentialAddress\": {\n \"country\": \"NL\"\n},\n \"name\": {\n \"firstName\": \"John\",\n \"lastName\": \"Test\"\n},\n \"birthData\": {\n \"dateOfBirth\": \"1990-01-01\"\n}\n},\n \"capabilities\": {\n \"authorisedPaymentInstrumentUser\": {\n \"requested\": true,\n \"requestedLevel\": \"notApplicable\"\n}\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+}
+                                        }
+                                ]
+                            },
+                            {
                                 "name": "Create a legal entity for a Dutch sole proprietor",
                                 "request": {
     "method": "POST",

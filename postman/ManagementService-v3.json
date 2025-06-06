@@ -10890,6 +10890,128 @@
 }
                                         }
                                 ]
+                            },
+                            {
+                                "name": "Add sub-merchant data to store",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"subMerchantData\": {\n \"id\": \"12345\",\n \"name\": \"Test Merchant\",\n \"mcc\": \"7999\",\n \"email\": \"test@email.com\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/stores/:storeId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "stores",
+        ":storeId"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "storeId",
+        "value": "",
+        "description": "The unique identifier of the store."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the store identified in the path. You can only update some store parameters.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Stores read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"1776 West Pinewood Avenue\",\n \"line2\": \"Heartland Building\",\n \"line3\": \"\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20251\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+13123456789\",\n \"reference\": \"Spring_store_2\",\n \"subMerchantData\": {\n \"id\": \"12345\",\n \"name\": \"Test Merchant\",\n \"mcc\": \"7999\",\n \"email\": \"test@email.com\"\n},\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
+                                        "originalRequest": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"subMerchantData\": {\n \"id\": \"12345\",\n \"name\": \"Test Merchant\",\n \"mcc\": \"7999\",\n \"email\": \"test@email.com\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/stores/:storeId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "stores",
+        ":storeId"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "storeId",
+        "value": "",
+        "description": "The unique identifier of the store."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the store identified in the path. You can only update some store parameters.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Stores read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment)."
+}
+                                        }
+                                ]
                             }
                             ]
                         },
@@ -11396,6 +11518,114 @@
     "description": "Updates the store identified in the path. You can only update some store parameters.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Stores read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment)."
 }
                                 ,"response": [
+                                ]
+                            },
+                            {
+                                "name": "Add sub-merchant data to store",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"subMerchantData\": {\n \"id\": \"12345\",\n \"name\": \"Test Merchant\",\n \"mcc\": \"7999\",\n \"email\": \"test@email.com\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/stores/:storeId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "stores",
+        ":storeId"
+    ],
+    "variable": [
+        {
+        "key": "storeId",
+        "value": "",
+        "description": "The unique identifier of the store."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the store identified in the path. You can only update some store parameters.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Stores read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment)."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"YOUR_STORE_ID\",\n \"address\": {\n \"country\": \"US\",\n \"line1\": \"1776 West Pinewood Avenue\",\n \"line2\": \"Heartland Building\",\n \"line3\": \"\",\n \"city\": \"Springfield\",\n \"stateOrProvince\": \"NY\",\n \"postalCode\": \"20251\"\n},\n \"description\": \"City centre store\",\n \"merchantId\": \"YOUR_MERCHANT_ACCOUNT_ID\",\n \"shopperStatement\": \"Springfield Shop\",\n \"phoneNumber\": \"+13123456789\",\n \"reference\": \"Spring_store_2\",\n \"subMerchantData\": {\n \"id\": \"12345\",\n \"name\": \"Test Merchant\",\n \"mcc\": \"7999\",\n \"email\": \"test@email.com\"\n},\n \"status\": \"active\",\n \"_links\": {\n \"self\": {\n \"href\": \"https://management-test.adyen.com/v1/stores/YOUR_STORE_ID\"\n}\n}\n}",
+                                        "originalRequest": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"subMerchantData\": {\n \"id\": \"12345\",\n \"name\": \"Test Merchant\",\n \"mcc\": \"7999\",\n \"email\": \"test@email.com\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/stores/:storeId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "stores",
+        ":storeId"
+    ],
+    "variable": [
+        {
+        "key": "storeId",
+        "value": "",
+        "description": "The unique identifier of the store."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the store identified in the path. You can only update some store parameters.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Stores read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment)."
+}
+                                        }
                                 ]
                             }
                             ]

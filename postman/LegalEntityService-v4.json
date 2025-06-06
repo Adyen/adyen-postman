@@ -2,7 +2,7 @@
 	"info": {
 		"name": "Legal Entity Management API (v4)",
 		"description": {
-		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification.\n\n>Legal Entity Management v4 is currently in beta version. Please reach out to your Adyen contact for more information.\n\n## Authentication\nEach request to the Legal Entity Management API must be signed with an API key. Generate an API key in your Customer Area if you have a [platform setup](https://docs.adyen.com/platforms/manage-access/api-credentials-web-service/#generate-api-key) or [marketplace setup](https://docs.adyen.com/marketplaces/manage-access/api-credentials-web-service/#generate-api-key).\n\n If you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your Balance Platform Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value. For example:\n\n```\ncurl\n-H \"X-API-Key: YOUR_API_KEY\" \\n-H \"Content-Type: application/json\" \\n...\n```\n## Versioning\nThe Legal Entity Management API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v4/legalEntities\n```\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/) if you have an Adyen for Platforms integration or [live Balance Platform Customer Area](https://balanceplatform-live.adyen.com/balanceplatform/) if you have an Adyen Issuing integration.You can then use the API key to send requests to `https://kyc-live.adyen.com/lem/v4`.\n\n",
+		    "content": "The Legal Entity Management API enables you to manage legal entities that contain information required for verification.\n\n>Legal Entity Management v4 is currently in beta version. Please reach out to your Adyen contact for more information.\n\n## Authentication\nEach request to the Legal Entity Management API must be signed with an API key. Generate an API key in your Customer Area if you have a [platform setup](https://docs.adyen.com/platforms/manage-access/api-credentials-web-service/#generate-api-key) or [marketplace setup](https://docs.adyen.com/marketplaces/manage-access/api-credentials-web-service/#generate-api-key).\n\n If you have an Adyen Issuing integration, [generate an API key](https://docs.adyen.com/issuing/manage-access/api-credentials-web-service/#generate-api-key) in your Balance Platform Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value. For example:\n\n```\ncurl\n-H \"X-API-Key: YOUR_API_KEY\" \\n-H \"Content-Type: application/json\" \\n...\n```\n## Versioning\nThe Legal Entity Management API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: \"vXX\", where XX is the version number.\n\nFor example:\n```\nhttps://kyc-test.adyen.com/lem/v4/legalEntities\n```\n## Rate limits\nWe enforce rate limits on Legal Entity Management API endpoints. When the number of requests you send exceeds a threshold within a time frame, additional requests are blocked until the time frame ends. Current limits:\n\n- Live environments: 700 requests per 5 seconds.\n\n- Test environments: 200 requests per 5 seconds.\n\n- Failed requests are subject to a limit of 5 failures per 10 seconds.\n\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/) if you have an Adyen for Platforms integration or [live Balance Platform Customer Area](https://balanceplatform-live.adyen.com/balanceplatform/) if you have an Adyen Issuing integration.You can then use the API key to send requests to `https://kyc-live.adyen.com/lem/v4`.\n\n",
 		    "type": "text/markdown"
 		},
 		"version": "4",
@@ -14,7 +14,7 @@
 	            "item": [
 	                        {
     "name": "/legalEntities",
-                "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   ",
+                "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Create a legal entity for an individual residing in Australia",
@@ -62,7 +62,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -119,7 +119,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -170,7 +170,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -227,7 +227,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -278,7 +278,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -335,7 +335,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -386,7 +386,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -443,7 +443,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -494,7 +494,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -551,7 +551,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -602,7 +602,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -659,7 +659,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -710,7 +710,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -767,7 +767,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -818,7 +818,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -875,7 +875,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -926,7 +926,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -983,7 +983,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -1034,7 +1034,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1091,7 +1091,7 @@
     "query": [
     ]
     },
-    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.   "
+    "description": "Creates a legal entity.   This resource contains information about the user that will be onboarded in your platform. Adyen uses this information to perform verification checks as required by payment industry regulations. Adyen informs you of the verification results through webhooks or API responses.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -1100,7 +1100,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id",
-                "description": "Returns a legal entity.",
+                "description": "Returns a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get a legal entity",
@@ -1142,7 +1142,7 @@
     "query": [
     ]
     },
-    "description": "Returns a legal entity."
+    "description": "Returns a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1193,7 +1193,7 @@
     "query": [
     ]
     },
-    "description": "Returns a legal entity."
+    "description": "Returns a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -1202,7 +1202,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id",
-                "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.",
+                "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Change a legal entity from an organization to an individual",
@@ -1256,7 +1256,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1319,7 +1319,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -1376,7 +1376,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1439,7 +1439,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -1496,7 +1496,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1559,7 +1559,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -1616,7 +1616,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1679,7 +1679,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -1736,7 +1736,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1799,7 +1799,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -1856,7 +1856,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1919,7 +1919,7 @@
     "query": [
     ]
     },
-    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries."
+    "description": "Updates a legal entity.   >To change the legal entity type, include only the new `type` in your request.  If you need to update information for the legal entity, make a separate request. To update the `entityAssociations` array, you need to replace the entire array.For example, if the array has 3 entries and you want to remove 1 entry, you need to PATCH the resource with the remaining 2 entries.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -1928,7 +1928,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/businessLines",
-                "description": "Returns the business lines owned by a legal entity.",
+                "description": "Returns the business lines owned by a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get all business lines under a legal entity",
@@ -1971,7 +1971,7 @@
     "query": [
     ]
     },
-    "description": "Returns the business lines owned by a legal entity."
+    "description": "Returns the business lines owned by a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2023,7 +2023,7 @@
     "query": [
     ]
     },
-    "description": "Returns the business lines owned by a legal entity."
+    "description": "Returns the business lines owned by a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -2032,7 +2032,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/checkVerificationErrors",
-                "description": "Returns the verification errors for a legal entity and its supporting entities.",
+                "description": "Returns the verification errors for a legal entity and its supporting entities.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Check a legal entity's verification errors",
@@ -2075,7 +2075,7 @@
     "query": [
     ]
     },
-    "description": "Returns the verification errors for a legal entity and its supporting entities."
+    "description": "Returns the verification errors for a legal entity and its supporting entities.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                 ]
@@ -2084,7 +2084,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/confirmDataReview",
-                "description": "Confirms that your user has reviewed the data for the legal entity specified in the path. Call this endpoint to inform Adyen that your user reviewed and verified that the data is up-to-date. The endpoint returns the timestamp of when Adyen received the request.",
+                "description": "Confirms that your user has reviewed the data for the legal entity specified in the path. Call this endpoint to inform Adyen that your user reviewed and verified that the data is up-to-date. The endpoint returns the timestamp of when Adyen received the request.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Confirm data review",
@@ -2127,7 +2127,7 @@
     "query": [
     ]
     },
-    "description": "Confirms that your user has reviewed the data for the legal entity specified in the path. Call this endpoint to inform Adyen that your user reviewed and verified that the data is up-to-date. The endpoint returns the timestamp of when Adyen received the request."
+    "description": "Confirms that your user has reviewed the data for the legal entity specified in the path. Call this endpoint to inform Adyen that your user reviewed and verified that the data is up-to-date. The endpoint returns the timestamp of when Adyen received the request.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                 ]
@@ -2141,7 +2141,7 @@
 	            "item": [
 	                        {
     "name": "/legalEntities/:id/onboardingLinks",
-                "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.  ",
+                "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Create a hosted onboarding link",
@@ -2190,7 +2190,7 @@
     "query": [
     ]
     },
-    "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.  "
+    "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2248,7 +2248,7 @@
     "query": [
     ]
     },
-    "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.  "
+    "description": "Returns a link to an Adyen-hosted onboarding page where you need to redirect your user.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -2257,7 +2257,7 @@
                         },
 	                        {
     "name": "/themes",
-                "description": "Returns a list of hosted onboarding page themes.  ",
+                "description": "Returns a list of hosted onboarding page themes.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get a list of hosted onboarding page themes",
@@ -2293,7 +2293,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of hosted onboarding page themes.  "
+    "description": "Returns a list of hosted onboarding page themes.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2338,7 +2338,7 @@
     "query": [
     ]
     },
-    "description": "Returns a list of hosted onboarding page themes.  "
+    "description": "Returns a list of hosted onboarding page themes.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -2347,7 +2347,7 @@
                         },
 	                        {
     "name": "/themes/:id",
-                "description": "Returns the details of the theme identified in the path.",
+                "description": "Returns the details of the theme identified in the path.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get an onboarding link theme",
@@ -2389,7 +2389,7 @@
     "query": [
     ]
     },
-    "description": "Returns the details of the theme identified in the path."
+    "description": "Returns the details of the theme identified in the path.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2440,7 +2440,7 @@
     "query": [
     ]
     },
-    "description": "Returns the details of the theme identified in the path."
+    "description": "Returns the details of the theme identified in the path.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -2454,7 +2454,7 @@
 	            "item": [
 	                        {
     "name": "/businessLines",
-                "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  ",
+                "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Create a business line for a business account",
@@ -2496,7 +2496,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2547,7 +2547,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -2592,7 +2592,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2643,7 +2643,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -2688,7 +2688,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2739,7 +2739,7 @@
     "query": [
     ]
     },
-    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  "
+    "description": "Creates a business line.   This resource contains information about your user's line of business, including their industry and their source of funds. Adyen uses this information to verify your users as required by payment industry regulations.Adyen informs you of the verification results through webhooks or API responses.  You can create a maximum of 200 business lines per legal entity for payment processing.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -2748,7 +2748,7 @@
                         },
 	                        {
     "name": "/businessLines/:id",
-                "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.",
+                "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Delete a business line",
@@ -2790,7 +2790,7 @@
     "query": [
     ]
     },
-    "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts."
+    "description": "Deletes a business line.   >If you delete a business line linked to a [payment method](https://docs.adyen.com/development-resources/paymentmethodvariant#management-api), it can affect your merchant account's ability to use the [payment method](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings). The business line is removed from all linked merchant accounts.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                 ]
@@ -2799,7 +2799,7 @@
                         },
 	                        {
     "name": "/businessLines/:id",
-                "description": "Returns the detail of a business line.",
+                "description": "Returns the detail of a business line.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get a business line",
@@ -2841,7 +2841,7 @@
     "query": [
     ]
     },
-    "description": "Returns the detail of a business line."
+    "description": "Returns the detail of a business line.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2892,7 +2892,7 @@
     "query": [
     ]
     },
-    "description": "Returns the detail of a business line."
+    "description": "Returns the detail of a business line.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -2901,7 +2901,7 @@
                         },
 	                        {
     "name": "/businessLines/:id",
-                "description": "Updates a business line.",
+                "description": "Updates a business line.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Update a business line",
@@ -2949,7 +2949,7 @@
     "query": [
     ]
     },
-    "description": "Updates a business line."
+    "description": "Updates a business line.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -3006,7 +3006,7 @@
     "query": [
     ]
     },
-    "description": "Updates a business line."
+    "description": "Updates a business line.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -3020,7 +3020,7 @@
 	            "item": [
 	                        {
     "name": "/documents",
-                "description": "Uploads a document for verification checks.   Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents.   You should only upload documents when Adyen requests additional information for the legal entity.   >You can upload a maximum of 15 pages for photo IDs.",
+                "description": "Uploads a document for verification checks.   Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents.   You should only upload documents when Adyen requests additional information for the legal entity.   >You can upload a maximum of 15 pages for photo IDs.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Upload a document",
@@ -3068,7 +3068,7 @@
     "query": [
     ]
     },
-    "description": "Uploads a document for verification checks.   Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents.   You should only upload documents when Adyen requests additional information for the legal entity.   >You can upload a maximum of 15 pages for photo IDs."
+    "description": "Uploads a document for verification checks.   Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents.   You should only upload documents when Adyen requests additional information for the legal entity.   >You can upload a maximum of 15 pages for photo IDs.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -3125,7 +3125,7 @@
     "query": [
     ]
     },
-    "description": "Uploads a document for verification checks.   Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents.   You should only upload documents when Adyen requests additional information for the legal entity.   >You can upload a maximum of 15 pages for photo IDs."
+    "description": "Uploads a document for verification checks.   Adyen uses the information from the [legal entity](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/legalEntities) to run automated verification checks. If these checks fail, you will be notified to provide additional documents.   You should only upload documents when Adyen requests additional information for the legal entity.   >You can upload a maximum of 15 pages for photo IDs.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -3134,7 +3134,7 @@
                         },
 	                        {
     "name": "/documents/:id",
-                "description": "Deletes a document.",
+                "description": "Deletes a document.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Delete a document",
@@ -3176,7 +3176,7 @@
     "query": [
     ]
     },
-    "description": "Deletes a document."
+    "description": "Deletes a document.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                 ]
@@ -3185,7 +3185,7 @@
                         },
 	                        {
     "name": "/documents/:id",
-                "description": "Returns a document.",
+                "description": "Returns a document.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get a document",
@@ -3233,7 +3233,7 @@
         }
     ]
     },
-    "description": "Returns a document."
+    "description": "Returns a document.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -3290,7 +3290,7 @@
         }
     ]
     },
-    "description": "Returns a document."
+    "description": "Returns a document.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -3299,7 +3299,7 @@
                         },
 	                        {
     "name": "/documents/:id",
-                "description": "Updates a document.   >You can upload a maximum of 15 pages for photo IDs.",
+                "description": "Updates a document.   >You can upload a maximum of 15 pages for photo IDs.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Update a document",
@@ -3353,7 +3353,7 @@
     "query": [
     ]
     },
-    "description": "Updates a document.   >You can upload a maximum of 15 pages for photo IDs."
+    "description": "Updates a document.   >You can upload a maximum of 15 pages for photo IDs.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -3416,7 +3416,7 @@
     "query": [
     ]
     },
-    "description": "Updates a document.   >You can upload a maximum of 15 pages for photo IDs."
+    "description": "Updates a document.   >You can upload a maximum of 15 pages for photo IDs.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -3430,7 +3430,7 @@
 	            "item": [
 	                        {
     "name": "/legalEntities/:id/acceptedTermsOfServiceDocument/:termsofserviceacceptancereference",
-                "description": "Returns the accepted Terms of Service document for a legal entity.",
+                "description": "Returns the accepted Terms of Service document for a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get accepted Terms of Service document",
@@ -3485,7 +3485,7 @@
         }
     ]
     },
-    "description": "Returns the accepted Terms of Service document for a legal entity."
+    "description": "Returns the accepted Terms of Service document for a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                 ]
@@ -3494,7 +3494,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/termsOfService",
-                "description": "Returns the Terms of Service document for a legal entity.",
+                "description": "Returns the Terms of Service document for a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get the Terms of Service document",
@@ -3543,7 +3543,7 @@
     "query": [
     ]
     },
-    "description": "Returns the Terms of Service document for a legal entity."
+    "description": "Returns the Terms of Service document for a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -3601,7 +3601,7 @@
     "query": [
     ]
     },
-    "description": "Returns the Terms of Service document for a legal entity."
+    "description": "Returns the Terms of Service document for a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -3610,7 +3610,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/termsOfService/:termsofservicedocumentid",
-                "description": "Accepts Terms of Service.",
+                "description": "Accepts Terms of Service.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Accept the Terms of Service document",
@@ -3665,7 +3665,7 @@
     "query": [
     ]
     },
-    "description": "Accepts Terms of Service."
+    "description": "Accepts Terms of Service.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -3729,7 +3729,7 @@
     "query": [
     ]
     },
-    "description": "Accepts Terms of Service."
+    "description": "Accepts Terms of Service.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -3738,7 +3738,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/termsOfServiceAcceptanceInfos",
-                "description": "Returns Terms of Service information for a legal entity.",
+                "description": "Returns Terms of Service information for a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get Terms of Service information for a legal entity",
@@ -3781,7 +3781,7 @@
     "query": [
     ]
     },
-    "description": "Returns Terms of Service information for a legal entity."
+    "description": "Returns Terms of Service information for a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -3833,7 +3833,7 @@
     "query": [
     ]
     },
-    "description": "Returns Terms of Service information for a legal entity."
+    "description": "Returns Terms of Service information for a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -3842,7 +3842,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/termsOfServiceStatus",
-                "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity.",
+                "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get Terms of Service status",
@@ -3885,7 +3885,7 @@
     "query": [
     ]
     },
-    "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity."
+    "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -3937,7 +3937,7 @@
     "query": [
     ]
     },
-    "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity."
+    "description": "Returns the required types of Terms of Service that need to be accepted by a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -3951,7 +3951,7 @@
 	            "item": [
 	                        {
     "name": "/transferInstruments",
-                "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).",
+                "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Add an EU bank account",
@@ -3999,7 +3999,7 @@
     "query": [
     ]
     },
-    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -4056,7 +4056,7 @@
     "query": [
     ]
     },
-    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -4107,7 +4107,7 @@
     "query": [
     ]
     },
-    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -4164,7 +4164,7 @@
     "query": [
     ]
     },
-    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -4215,7 +4215,7 @@
     "query": [
     ]
     },
-    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -4272,7 +4272,7 @@
     "query": [
     ]
     },
-    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts)."
+    "description": "Creates a transfer instrument.   A transfer instrument is a bank account that a legal entity owns. Adyen performs verification checks on the transfer instrument as required by payment industry regulations. We inform you of the verification results through webhooks or API responses.  When the transfer instrument passes the verification checks, you can start sending funds from the balance platform to the transfer instrument (such as payouts).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -4281,7 +4281,7 @@
                         },
 	                        {
     "name": "/transferInstruments/:id",
-                "description": "Deletes a transfer instrument.",
+                "description": "Deletes a transfer instrument.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Delete a transfer instrument",
@@ -4323,7 +4323,7 @@
     "query": [
     ]
     },
-    "description": "Deletes a transfer instrument."
+    "description": "Deletes a transfer instrument.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                 ]
@@ -4332,7 +4332,7 @@
                         },
 	                        {
     "name": "/transferInstruments/:id",
-                "description": "Returns the details of a transfer instrument.",
+                "description": "Returns the details of a transfer instrument.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get a transfer instrument",
@@ -4374,7 +4374,7 @@
     "query": [
     ]
     },
-    "description": "Returns the details of a transfer instrument."
+    "description": "Returns the details of a transfer instrument.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -4425,7 +4425,7 @@
     "query": [
     ]
     },
-    "description": "Returns the details of a transfer instrument."
+    "description": "Returns the details of a transfer instrument.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -4434,7 +4434,7 @@
                         },
 	                        {
     "name": "/transferInstruments/:id",
-                "description": "Updates a transfer instrument.",
+                "description": "Updates a transfer instrument.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Update a transfer instrument",
@@ -4488,7 +4488,7 @@
     "query": [
     ]
     },
-    "description": "Updates a transfer instrument."
+    "description": "Updates a transfer instrument.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -4551,7 +4551,7 @@
     "query": [
     ]
     },
-    "description": "Updates a transfer instrument."
+    "description": "Updates a transfer instrument.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -4565,7 +4565,7 @@
 	            "item": [
 	                        {
     "name": "/legalEntities/:id/pciQuestionnaires",
-                "description": "Get a list of signed PCI questionnaires.",
+                "description": "Get a list of signed PCI questionnaires.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get PCI questionnaire details",
@@ -4608,7 +4608,7 @@
     "query": [
     ]
     },
-    "description": "Get a list of signed PCI questionnaires."
+    "description": "Get a list of signed PCI questionnaires.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -4660,7 +4660,7 @@
     "query": [
     ]
     },
-    "description": "Get a list of signed PCI questionnaires."
+    "description": "Get a list of signed PCI questionnaires.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -4669,7 +4669,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/pciQuestionnaires/:pciid",
-                "description": "Returns the signed PCI questionnaire.",
+                "description": "Returns the signed PCI questionnaire.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Get PCI questionnaire",
@@ -4718,7 +4718,7 @@
     "query": [
     ]
     },
-    "description": "Returns the signed PCI questionnaire."
+    "description": "Returns the signed PCI questionnaire.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -4776,7 +4776,7 @@
     "query": [
     ]
     },
-    "description": "Returns the signed PCI questionnaire."
+    "description": "Returns the signed PCI questionnaire.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -4785,7 +4785,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/pciQuestionnaires/generatePciTemplates",
-                "description": "Generates the required PCI questionnaires based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels).",
+                "description": "Generates the required PCI questionnaires based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Generate PCI questionnaires",
@@ -4835,7 +4835,7 @@
     "query": [
     ]
     },
-    "description": "Generates the required PCI questionnaires based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels)."
+    "description": "Generates the required PCI questionnaires based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -4894,7 +4894,7 @@
     "query": [
     ]
     },
-    "description": "Generates the required PCI questionnaires based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels)."
+    "description": "Generates the required PCI questionnaires based on the user's [salesChannel](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/businessLines__reqParam_salesChannels).  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -4903,7 +4903,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/pciQuestionnaires/signPciTemplates",
-                "description": "Signs the required PCI questionnaire.",
+                "description": "Signs the required PCI questionnaire.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Sign PCI questionnaires",
@@ -4953,7 +4953,7 @@
     "query": [
     ]
     },
-    "description": "Signs the required PCI questionnaire."
+    "description": "Signs the required PCI questionnaire.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -5012,7 +5012,7 @@
     "query": [
     ]
     },
-    "description": "Signs the required PCI questionnaire."
+    "description": "Signs the required PCI questionnaire.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                         }
                                 ]
@@ -5021,7 +5021,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/pciQuestionnaires/signingRequired",
-                "description": "Calculate PCI status of a legal entity.",
+                "description": "Calculate PCI status of a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Calculate PCI status of a legal entity",
@@ -5071,7 +5071,7 @@
     "query": [
     ]
     },
-    "description": "Calculate PCI status of a legal entity."
+    "description": "Calculate PCI status of a legal entity.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                 ]
@@ -5085,7 +5085,7 @@
 	            "item": [
 	                        {
     "name": "/legalEntities/:id/checkTaxElectronicDeliveryConsent",
-                "description": "Returns the consent status for electronic delivery of tax forms.",
+                "description": "Returns the consent status for electronic delivery of tax forms.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Check the status of consent for electronic delivery of tax forms",
@@ -5128,7 +5128,7 @@
     "query": [
     ]
     },
-    "description": "Returns the consent status for electronic delivery of tax forms."
+    "description": "Returns the consent status for electronic delivery of tax forms.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                 ]
@@ -5137,7 +5137,7 @@
                         },
 	                        {
     "name": "/legalEntities/:id/setTaxElectronicDeliveryConsent",
-                "description": "Set the consent status for electronic delivery of tax forms.",
+                "description": "Set the consent status for electronic delivery of tax forms.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  ",
                  "item": [
                             {
                                 "name": "Set the consent status for electronic delivery of tax forms",
@@ -5186,7 +5186,7 @@
     "query": [
     ]
     },
-    "description": "Set the consent status for electronic delivery of tax forms."
+    "description": "Set the consent status for electronic delivery of tax forms.  Requests to this endpoint are subject to rate limits:  - Live environments: 700 requests per 5 seconds.  - Test environments: 200 requests per 5 seconds.  - Failed requests are subject to a limit of 5 failures per 10 seconds.  "
 }
                                 ,"response": [
                                 ]

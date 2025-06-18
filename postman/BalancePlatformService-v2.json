@@ -1332,6 +1332,12 @@
         "value": "56",
         "description": "The tax year in YYYY format for the tax form you want to retrieve",
         "disabled": false
+        },
+        {
+        "key": "legalEntityId",
+        "value": "legalEntityId_example",
+        "description": "The legal entity reference whose tax form you want to retrieve",
+        "disabled": true
         }
     ]
     },
@@ -1396,6 +1402,12 @@
         "value": "56",
         "description": "The tax year in YYYY format for the tax form you want to retrieve",
         "disabled": false
+        },
+        {
+        "key": "legalEntityId",
+        "value": "legalEntityId_example",
+        "description": "The legal entity reference whose tax form you want to retrieve",
+        "disabled": true
         }
     ]
     },

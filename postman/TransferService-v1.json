@@ -91,6 +91,12 @@
         "disabled": false
         },
         {
+        "key": "sortOrder",
+        "value": "sortOrder_example",
+        "description": "The transactions sorting order.  Possible values:   - **asc**: Ascending order, from older to most recent.  - **desc**: Descending order, from most recent to older.",
+        "disabled": true
+        },
+        {
         "key": "limit",
         "value": "56",
         "description": "The number of items returned per page, maximum of 100 items. By default, the response returns 10 items per page.",

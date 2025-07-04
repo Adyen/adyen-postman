@@ -3256,6 +3256,168 @@
                             ]
                         },
 	                        {
+    "name": "/paymentInstruments/:id/networkTokenActivationData",
+                "description": "Get network token activation data for a payment instrument.",
+                 "item": [
+                            {
+                                "name": "Get network token activation data",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:id/networkTokenActivationData",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":id",
+        "networkTokenActivationData"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payment instrument."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Get network token activation data for a payment instrument."
+}
+                                ,"response": [
+                                        {"name": "Bad Request - a problem reading or understanding the request.",
+                                        "code": 400,
+                                        "status": "Bad Request",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"type\": \"https://docs.adyen.com/errors/general/bad-request\",\n \"title\": \"Bad request\",\n \"status\": 400,\n \"detail\": \"Empty input which would have resulted in a null result.\",\n \"errorCode\": \"00_400\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:id/networkTokenActivationData",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":id",
+        "networkTokenActivationData"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payment instrument."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Get network token activation data for a payment instrument."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/paymentInstruments/:id/networkTokenActivationData",
+                "description": "Create network token activation data for a payment instrument.",
+                 "item": [
+                            {
+                                "name": "Create network token activation data",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"sdkOutput\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/paymentInstruments/:id/networkTokenActivationData",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "paymentInstruments",
+        ":id",
+        "networkTokenActivationData"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payment instrument."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Create network token activation data for a payment instrument."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
     "name": "/paymentInstruments/:id/networkTokens",
                 "description": "List the network tokens connected to a payment instrument.",
                  "item": [

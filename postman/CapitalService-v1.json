@@ -250,7 +250,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"amount\": \"<string>\",\n \"counterparty\": \"<string>\",\n \"fee\": \"<string>\",\n \"grantAccountId\": \"<string>\",\n \"grantOfferId\": \"<string>\",\n \"repayment\": \"<string>\"\n}",
+    "raw": "{\n \"amount\": \"<string>\",\n \"counterparty\": \"<string>\",\n \"grantAccountId\": \"<string>\",\n \"grantOfferId\": \"<string>\"\n}",
     "options": {
     "raw": {
     "language": "json"

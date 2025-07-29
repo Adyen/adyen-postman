@@ -3257,7 +3257,7 @@
                         },
 	                        {
     "name": "/paymentInstruments/:id/networkTokenActivationData",
-                "description": "Get network token activation data for a payment instrument.",
+                "description": "Get the network token activation data for a payment instrument.",
                  "item": [
                             {
                                 "name": "Get network token activation data",
@@ -3300,7 +3300,7 @@
     "query": [
     ]
     },
-    "description": "Get network token activation data for a payment instrument."
+    "description": "Get the network token activation data for a payment instrument."
 }
                                 ,"response": [
                                         {"name": "Bad Request - a problem reading or understanding the request.",
@@ -3352,7 +3352,7 @@
     "query": [
     ]
     },
-    "description": "Get network token activation data for a payment instrument."
+    "description": "Get the network token activation data for a payment instrument."
 }
                                         }
                                 ]
@@ -3361,10 +3361,10 @@
                         },
 	                        {
     "name": "/paymentInstruments/:id/networkTokenActivationData",
-                "description": "Create network token activation data for a payment instrument.",
+                "description": "Create provisioning data for a network token. Use the provisioning data to add a user's payment instrument to their digital wallet.",
                  "item": [
                             {
-                                "name": "Create network token activation data",
+                                "name": "Create network token provisioning data",
                                 "request": {
     "method": "POST",
     "header": [
@@ -3410,7 +3410,7 @@
     "query": [
     ]
     },
-    "description": "Create network token activation data for a payment instrument."
+    "description": "Create provisioning data for a network token. Use the provisioning data to add a user's payment instrument to their digital wallet."
 }
                                 ,"response": [
                                 ]

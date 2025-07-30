@@ -93,7 +93,7 @@
         {
         "key": "sortOrder",
         "value": "sortOrder_example",
-        "description": "The transactions sorting order.  Possible values:   - **asc**: Ascending order, from older to most recent.  - **desc**: Descending order, from most recent to older.",
+        "description": "Determines the sort order of the returned transactions. The sort order is based on the creation date of the transaction.  Possible values:   - **asc**: Ascending order, from oldest to most recent.  - **desc**: Descending order, from most recent to oldest.  Default value: **asc**.",
         "disabled": true
         },
         {

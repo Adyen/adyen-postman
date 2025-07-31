@@ -2110,7 +2110,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"url\": \"https://balanceplatform-test.adyen.com/balanceplatform/uo/form/xtl-...?signature=..&cd=..&redirectUrl=https%3A%2F%2Fyour-company.com%2F&expiry=1667226404807&locale=nl-NL\"\n}",
+                                        "body" : "{\n \"url\": \"https://balanceplatform-test.adyen.com/balanceplatform/uo/form/xtl-...?signature=..&cd=..&redirectUrl=https%3A%2F%2Fyour-company.example.com%2F&expiry=1667226404807&locale=nl-NL\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [

@@ -382,6 +382,64 @@
                         },
 	                        {
     "name": "/grants/:grantId/disbursements/:disbursementId",
+                "description": "Returns the details of a disbursement specified in the path.",
+                 "item": [
+                            {
+                                "name": "Get disbursement details",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants/:grantId/disbursements/:disbursementId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants",
+        ":grantId",
+        "disbursements",
+        ":disbursementId"
+    ],
+    "variable": [
+        {
+        "key": "grantId",
+        "value": "",
+        "description": "The unique identifier of the grant reference."
+        },
+        {
+        "key": "disbursementId",
+        "value": "",
+        "description": "The unique identifier of the disbursement."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a disbursement specified in the path."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/grants/:grantId/disbursements/:disbursementId",
                 "description": "Update the percentage of your user's net income that is deducted for repaying the grant.",
                  "item": [
                             {

@@ -27,6 +27,6 @@ jobs:
           options: -v ${{ github.workspace }}:/usr/src/app
           run: |
             /usr/src/app/generateAll.sh
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "Update latest definitions files"

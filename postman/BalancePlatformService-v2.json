@@ -558,6 +558,383 @@
 	                    ]
 	        },
 	        {
+	            "name": "Transfer limits - balance platform level",
+	            "item": [
+	                        {
+    "name": "/balancePlatforms/:id/transferLimits",
+                "description": "Filter and view the transfer limits configured for your balance platform using the balance platform's unique `id` and the available query parameters. ",
+                 "item": [
+                            {
+                                "name": "Filter and view the transfer limits",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id/transferLimits",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id",
+        "transferLimits"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+        {
+        "key": "scope",
+        "value": "",
+        "description": "The scope to which the transfer limit applies. Possible values: * **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform. * **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.",
+        "disabled": true
+        },
+        {
+        "key": "transferType",
+        "value": "",
+        "description": "The type of transfer to which the limit applies. Possible values: * **instant**: the limit applies to transfers with an **instant** priority. * **all**: the limit applies to all transfers, regardless of priority.",
+        "disabled": true
+        },
+        {
+        "key": "status",
+        "value": "",
+        "description": "The status of the transfer limit. Possible values:    * **active**: the limit is currently active. * **inactive**: the limit is currently inactive. * **pendingSCA**: the limit is pending until your user performs SCA. * **scheduled**: the limit is scheduled to become active at a future date.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Filter and view the transfer limits configured for your balance platform using the balance platform's unique `id` and the available query parameters. "
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"transferLimits\" : [ {\n    \"amount\" : {\n      \"value\" : 10000,\n      \"currency\" : \"EUR\"\n    },\n    \"id\" : \"TRLI00000000000000000000000001\",\n    \"endsAt\" : \"2026-08-13T23:00:00+01:00\",\n    \"scope\" : \"perTransaction\",\n    \"reference\" : \"Your reference for the transfer limit\",\n    \"scaInformation\" : {\n      \"exemption\" : \"initialLimit\",\n      \"status\" : \"notPerformed\"\n    },\n    \"startsAt\" : \"2025-08-13T23:00:00+01:00\",\n    \"limitStatus\" : \"active\",\n    \"transferType\" : \"instant\"\n  }, {\n    \"amount\" : {\n      \"value\" : 20000,\n      \"currency\" : \"EUR\"\n    },\n    \"id\" : \"TRLI00000000000000000000000002\",\n    \"endsAt\" : \"2026-08-13T23:00:00+01:00\",\n    \"scope\" : \"perTransaction\",\n    \"reference\" : \"Your reference for the transfer limit\",\n    \"scaInformation\" : {\n      \"exemption\" : \"initialLimit\",\n      \"status\" : \"notPerformed\"\n    },\n    \"startsAt\" : \"2025-08-13T23:00:00+01:00\",\n    \"limitStatus\" : \"active\",\n    \"transferType\" : \"all\"\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id/transferLimits",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id",
+        "transferLimits"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+        {
+        "key": "scope",
+        "value": "",
+        "description": "The scope to which the transfer limit applies. Possible values: * **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform. * **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.",
+        "disabled": true
+        },
+        {
+        "key": "transferType",
+        "value": "",
+        "description": "The type of transfer to which the limit applies. Possible values: * **instant**: the limit applies to transfers with an **instant** priority. * **all**: the limit applies to all transfers, regardless of priority.",
+        "disabled": true
+        },
+        {
+        "key": "status",
+        "value": "",
+        "description": "The status of the transfer limit. Possible values:    * **active**: the limit is currently active. * **inactive**: the limit is currently inactive. * **pendingSCA**: the limit is pending until your user performs SCA. * **scheduled**: the limit is scheduled to become active at a future date.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Filter and view the transfer limits configured for your balance platform using the balance platform's unique `id` and the available query parameters. "
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:id/transferLimits",
+                "description": "Create a transfer limit for your balance platform using the unique `id` of your balance platform. ",
+                 "item": [
+                            {
+                                "name": "Create a transfer limit request",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 10000\n},\n \"reference\": \"Your reference for the transfer limit\",\n \"scaInformation\": {\n \"scaOnApproval\": true\n},\n \"scope\": \"perTransaction\",\n \"startsAt\": \"2025-08-15T06:36:20+01:00\",\n \"endsAt\": \"2026-08-14T00:00:00+01:00\",\n \"transferType\": \"all\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id/transferLimits",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id",
+        "transferLimits"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Create a transfer limit for your balance platform using the unique `id` of your balance platform. "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:id/transferLimits/:transferLimitId",
+                "description": "Delete a scheduled or pending transfer limit using its unique `transferLimitId`. You cannot delete an active limit. ",
+                 "item": [
+                            {
+                                "name": "Delete a scheduled or pending transfer limit",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id/transferLimits/:transferLimitId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id",
+        "transferLimits",
+        ":transferLimitId"
+    ],
+    "variable": [
+        {
+        "key": "transferLimitId",
+        "value": "",
+        "description": "The unique identifier of the transfer limit."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Delete a scheduled or pending transfer limit using its unique `transferLimitId`. You cannot delete an active limit. "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:id/transferLimits/:transferLimitId",
+                "description": "Get the details of a transfer limit using its unique `transferLimitId`. ",
+                 "item": [
+                            {
+                                "name": "Get the details of a transfer limit",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id/transferLimits/:transferLimitId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id",
+        "transferLimits",
+        ":transferLimitId"
+    ],
+    "variable": [
+        {
+        "key": "transferLimitId",
+        "value": "",
+        "description": "The unique identifier of the transfer limit."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Get the details of a transfer limit using its unique `transferLimitId`. "
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"id\" : \"TRLI00000000000000000000000001\",\n  \"endsAt\" : \"2026-08-13T23:00:00+01:00\",\n  \"scope\" : \"perTransaction\",\n  \"reference\" : \"Your reference for the transfer limit\",\n  \"scaInformation\" : {\n    \"exemption\" : \"initialLimit\",\n    \"status\" : \"notPerformed\"\n  },\n  \"startsAt\" : \"2025-08-13T23:00:00+01:00\",\n  \"limitStatus\" : \"active\",\n  \"transferType\" : \"all\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:id/transferLimits/:transferLimitId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":id",
+        "transferLimits",
+        ":transferLimitId"
+    ],
+    "variable": [
+        {
+        "key": "transferLimitId",
+        "value": "",
+        "description": "The unique identifier of the transfer limit."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Get the details of a transfer limit using its unique `transferLimitId`. "
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Network tokens",
 	            "item": [
 	                        {
@@ -6833,6 +7210,584 @@
     ]
     },
     "description": "Returns a list of all the transaction rules associated with a payment instrument group."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Transfer limits - balance account level",
+	            "item": [
+	                        {
+    "name": "/balanceAccounts/:id/transferLimits",
+                "description": "Filter and view the transfer limits configured for a balance account using the balance account's unique `id` and the available query parameters. ",
+                 "item": [
+                            {
+                                "name": "Filter and view the transfer limits",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transferLimits",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transferLimits"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "scope",
+        "value": "",
+        "description": "The scope to which the transfer limit applies. Possible values: * **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform. * **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.",
+        "disabled": true
+        },
+        {
+        "key": "transferType",
+        "value": "",
+        "description": "The type of transfer to which the limit applies. Possible values: * **instant**: the limit applies to transfers with an **instant** priority. * **all**: the limit applies to all transfers, regardless of priority.",
+        "disabled": true
+        },
+        {
+        "key": "status",
+        "value": "",
+        "description": "The status of the transfer limit. Possible values:    * **active**: the limit is currently active. * **inactive**: the limit is currently inactive. * **pendingSCA**: the limit is pending until your user performs SCA. * **scheduled**: the limit is scheduled to become active at a future date.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Filter and view the transfer limits configured for a balance account using the balance account's unique `id` and the available query parameters. "
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"transferLimits\" : [ {\n    \"amount\" : {\n      \"value\" : 10000,\n      \"currency\" : \"EUR\"\n    },\n    \"id\" : \"TRLI00000000000000000000000001\",\n    \"endsAt\" : \"2026-08-13T23:00:00+01:00\",\n    \"scope\" : \"perTransaction\",\n    \"reference\" : \"Your reference for the transfer limit\",\n    \"scaInformation\" : {\n      \"exemption\" : \"initialLimit\",\n      \"status\" : \"notPerformed\"\n    },\n    \"startsAt\" : \"2025-08-13T23:00:00+01:00\",\n    \"limitStatus\" : \"active\",\n    \"transferType\" : \"instant\"\n  }, {\n    \"amount\" : {\n      \"value\" : 20000,\n      \"currency\" : \"EUR\"\n    },\n    \"id\" : \"TRLI00000000000000000000000002\",\n    \"endsAt\" : \"2026-08-13T23:00:00+01:00\",\n    \"scope\" : \"perTransaction\",\n    \"reference\" : \"Your reference for the transfer limit\",\n    \"scaInformation\" : {\n      \"exemption\" : \"initialLimit\",\n      \"status\" : \"notPerformed\"\n    },\n    \"startsAt\" : \"2025-08-13T23:00:00+01:00\",\n    \"limitStatus\" : \"active\",\n    \"transferType\" : \"all\"\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transferLimits",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transferLimits"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "scope",
+        "value": "",
+        "description": "The scope to which the transfer limit applies. Possible values: * **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform. * **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.",
+        "disabled": true
+        },
+        {
+        "key": "transferType",
+        "value": "",
+        "description": "The type of transfer to which the limit applies. Possible values: * **instant**: the limit applies to transfers with an **instant** priority. * **all**: the limit applies to all transfers, regardless of priority.",
+        "disabled": true
+        },
+        {
+        "key": "status",
+        "value": "",
+        "description": "The status of the transfer limit. Possible values:    * **active**: the limit is currently active. * **inactive**: the limit is currently inactive. * **pendingSCA**: the limit is pending until your user performs SCA. * **scheduled**: the limit is scheduled to become active at a future date.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Filter and view the transfer limits configured for a balance account using the balance account's unique `id` and the available query parameters. "
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:id/transferLimits",
+                "description": "Create a transfer limit for your balance account using the unique `id` of your balance account. ",
+                 "item": [
+                            {
+                                "name": "Create a transfer limit request",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "WWW-Authenticate",
+        "value": "",
+        "description": "Header for authenticating through SCA",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 10000\n  },\n  \"reference\" : \"Your reference for the transfer limit\",\n  \"scaInformation\" : {\n    \"scaOnApproval\" : true\n  },\n  \"scope\" : \"perTransaction\",\n  \"startsAt\" : \"2025-08-15T06:36:20+01:00\",\n  \"endsAt\" : \"2026-08-14T00:00:00+01:00\",\n  \"transferType\" : \"all\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transferLimits",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transferLimits"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Create a transfer limit for your balance account using the unique `id` of your balance account. "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:id/transferLimits/:transferLimitId",
+                "description": "Delete a scheduled or pending transfer limit using its unique `transferLimitId`. You cannot delete an active limit. ",
+                 "item": [
+                            {
+                                "name": "Delete a scheduled or pending transfer limit",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transferLimits/:transferLimitId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transferLimits",
+        ":transferLimitId"
+    ],
+    "variable": [
+        {
+        "key": "transferLimitId",
+        "value": "",
+        "description": "The unique identifier of the transfer limit."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Delete a scheduled or pending transfer limit using its unique `transferLimitId`. You cannot delete an active limit. "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:id/transferLimits/:transferLimitId",
+                "description": "Get the details of a transfer limit using its unique `transferLimitId`. ",
+                 "item": [
+                            {
+                                "name": "Get the details of a transfer limit",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transferLimits/:transferLimitId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transferLimits",
+        ":transferLimitId"
+    ],
+    "variable": [
+        {
+        "key": "transferLimitId",
+        "value": "",
+        "description": "The unique identifier of the transfer limit."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Get the details of a transfer limit using its unique `transferLimitId`. "
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"amount\" : {\n    \"value\" : 10000,\n    \"currency\" : \"EUR\"\n  },\n  \"id\" : \"TRLI00000000000000000000000001\",\n  \"endsAt\" : \"2026-08-13T23:00:00+01:00\",\n  \"scope\" : \"perTransaction\",\n  \"reference\" : \"Your reference for the transfer limit\",\n  \"scaInformation\" : {\n    \"exemption\" : \"initialLimit\",\n    \"status\" : \"notPerformed\"\n  },\n  \"startsAt\" : \"2025-08-13T23:00:00+01:00\",\n  \"limitStatus\" : \"active\",\n  \"transferType\" : \"all\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transferLimits/:transferLimitId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transferLimits",
+        ":transferLimitId"
+    ],
+    "variable": [
+        {
+        "key": "transferLimitId",
+        "value": "",
+        "description": "The unique identifier of the transfer limit."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Get the details of a transfer limit using its unique `transferLimitId`. "
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:id/transferLimits/approve",
+                "description": "Approve transfer limits that are pending SCA authentication. ",
+                 "item": [
+                            {
+                                "name": "Approve pending transfer limits requests",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "WWW-Authenticate",
+        "value": "",
+        "description": "Header for authenticating using SCA.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"transferLimitIds\" : [ \"TRLI00000000000000000000000001\", \"TRLI00000000000000000000000002\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transferLimits/approve",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transferLimits",
+        "approve"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Approve transfer limits that are pending SCA authentication. "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:id/transferLimits/current",
+                "description": "Get all transfer limits that currently apply to a balance account using the unique `id` of the balance account. ",
+                 "item": [
+                            {
+                                "name": "Get all current transfer limits",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transferLimits/current",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transferLimits",
+        "current"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "scope",
+        "value": "",
+        "description": "The scope to which the transfer limit applies. Possible values: * **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform. * **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.",
+        "disabled": true
+        },
+        {
+        "key": "transferType",
+        "value": "",
+        "description": "The type of transfer to which the limit applies. Possible values: * **instant**: the limit applies to transfers with an **instant** priority. * **all**: the limit applies to all transfers, regardless of priority.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Get all transfer limits that currently apply to a balance account using the unique `id` of the balance account. "
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"transferLimits\" : [ {\n    \"amount\" : {\n      \"value\" : 10000,\n      \"currency\" : \"EUR\"\n    },\n    \"id\" : \"TRLI00000000000000000000000001\",\n    \"endsAt\" : \"2026-08-13T23:00:00+01:00\",\n    \"scope\" : \"perDay\",\n    \"reference\" : \"Your reference for the transfer limit\",\n    \"scaInformation\" : {\n      \"exemption\" : \"initialLimit\",\n      \"status\" : \"notPerformed\"\n    },\n    \"startsAt\" : \"2025-08-13T23:00:00+01:00\",\n    \"limitStatus\" : \"active\",\n    \"transferType\" : \"instant\"\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:id/transferLimits/current",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":id",
+        "transferLimits",
+        "current"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "scope",
+        "value": "",
+        "description": "The scope to which the transfer limit applies. Possible values: * **perTransaction**: you set a maximum amount for each transfer made from the balance account or balance platform. * **perDay**: you set a maximum total amount for all transfers made from the balance account or balance platform in a day.",
+        "disabled": true
+        },
+        {
+        "key": "transferType",
+        "value": "",
+        "description": "The type of transfer to which the limit applies. Possible values: * **instant**: the limit applies to transfers with an **instant** priority. * **all**: the limit applies to all transfers, regardless of priority.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Get all transfer limits that currently apply to a balance account using the unique `id` of the balance account. "
 }
                                         }
                                 ]

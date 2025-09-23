@@ -453,10 +453,10 @@
 	            "item": [
 	                        {
     "name": "/merchants/:merchantId/splitConfigurations",
-                "description": "Returns the list of split configurations for the merchant account.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                "description": "Returns the list of split configuration profiles for the merchant account.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
                             {
-                                "name": "Get a list of split configurations",
+                                "name": "Get a list of split configuration profiles",
                                 "request": {
     "method": "GET",
     "header": [
@@ -496,7 +496,7 @@
     "query": [
     ]
     },
-    "description": "Returns the list of split configurations for the merchant account.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Returns the list of split configuration profiles for the merchant account.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -548,7 +548,7 @@
     "query": [
     ]
     },
-    "description": "Returns the list of split configurations for the merchant account.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Returns the list of split configuration profiles for the merchant account.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                         }
                                 ]
@@ -557,7 +557,7 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/splitConfigurations",
-                "description": "Creates a split configuration for the merchant account specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                "description": "Creates a split configuration profile to [split payments automatically](https://docs.adyen.com/platforms/automatic-split-configuration/). After you [associate it with a store](https://docs.adyen.com/api-explorer/Management/latest/patch/merchants/(merchantId)/stores/(storeId)#request-splitConfiguration) in your merchant account, it splits the funds of all transactions processed through that store between your liable balance account and [your user's balance account](https://docs.adyen.com/api-explorer/Management/latest/patch/merchants/(merchantId)/stores/(storeId)#request-splitConfiguration-balanceAccountId).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
                             {
                                 "name": "Create a split configuration",
@@ -606,7 +606,7 @@
     "query": [
     ]
     },
-    "description": "Creates a split configuration for the merchant account specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Creates a split configuration profile to [split payments automatically](https://docs.adyen.com/platforms/automatic-split-configuration/). After you [associate it with a store](https://docs.adyen.com/api-explorer/Management/latest/patch/merchants/(merchantId)/stores/(storeId)#request-splitConfiguration) in your merchant account, it splits the funds of all transactions processed through that store between your liable balance account and [your user's balance account](https://docs.adyen.com/api-explorer/Management/latest/patch/merchants/(merchantId)/stores/(storeId)#request-splitConfiguration-balanceAccountId).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -664,7 +664,7 @@
     "query": [
     ]
     },
-    "description": "Creates a split configuration for the merchant account specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Creates a split configuration profile to [split payments automatically](https://docs.adyen.com/platforms/automatic-split-configuration/). After you [associate it with a store](https://docs.adyen.com/api-explorer/Management/latest/patch/merchants/(merchantId)/stores/(storeId)#request-splitConfiguration) in your merchant account, it splits the funds of all transactions processed through that store between your liable balance account and [your user's balance account](https://docs.adyen.com/api-explorer/Management/latest/patch/merchants/(merchantId)/stores/(storeId)#request-splitConfiguration-balanceAccountId).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                         }
                                 ]
@@ -673,10 +673,10 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/splitConfigurations/:splitConfigurationId",
-                "description": "Deletes the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                "description": "Deletes the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
                             {
-                                "name": "Delete a split configuration",
+                                "name": "Delete a split configuration profile",
                                 "request": {
     "method": "DELETE",
     "header": [
@@ -722,7 +722,7 @@
     "query": [
     ]
     },
-    "description": "Deletes the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Deletes the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                 ,"response": [
                                 ]
@@ -731,10 +731,10 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/splitConfigurations/:splitConfigurationId",
-                "description": "Returns the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                "description": "Returns the details of the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
                             {
-                                "name": "Get a split configuration",
+                                "name": "Get a split configuration profile",
                                 "request": {
     "method": "GET",
     "header": [
@@ -780,7 +780,7 @@
     "query": [
     ]
     },
-    "description": "Returns the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Returns the details of the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -838,7 +838,7 @@
     "query": [
     ]
     },
-    "description": "Returns the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Returns the details of the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                         }
                                 ]
@@ -847,7 +847,7 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/splitConfigurations/:splitConfigurationId",
-                "description": "Changes the description of the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                "description": "Changes the description of the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
                             {
                                 "name": "Update split configuration description",
@@ -902,7 +902,7 @@
     "query": [
     ]
     },
-    "description": "Changes the description of the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Changes the description of the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -966,7 +966,7 @@
     "query": [
     ]
     },
-    "description": "Changes the description of the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Changes the description of the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                         }
                                 ]
@@ -975,7 +975,7 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/splitConfigurations/:splitConfigurationId",
-                "description": "Creates a rule in the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                "description": "[Creates a rule](https://docs.adyen.com/platforms/automatic-split-configuration/manage-split-configurations/api/#create-rule) in the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
                             {
                                 "name": "Add rule to a split configuration",
@@ -1030,7 +1030,7 @@
     "query": [
     ]
     },
-    "description": "Creates a rule in the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "[Creates a rule](https://docs.adyen.com/platforms/automatic-split-configuration/manage-split-configurations/api/#create-rule) in the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1094,7 +1094,7 @@
     "query": [
     ]
     },
-    "description": "Creates a rule in the split configuration specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "[Creates a rule](https://docs.adyen.com/platforms/automatic-split-configuration/manage-split-configurations/api/#create-rule) in the split configuration profile specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                         }
                                 ]
@@ -1103,10 +1103,10 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/splitConfigurations/:splitConfigurationId/rules/:ruleId",
-                "description": "Deletes the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                "description": "Deletes the rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
                             {
-                                "name": "Delete a split configuration rule",
+                                "name": "Delete a rule",
                                 "request": {
     "method": "DELETE",
     "header": [
@@ -1159,7 +1159,7 @@
     "query": [
     ]
     },
-    "description": "Deletes the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Deletes the rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                 ,"response": [
                                 ]
@@ -1168,7 +1168,7 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/splitConfigurations/:splitConfigurationId/rules/:ruleId",
-                "description": "Changes the conditions of the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                "description": "Changes the [split conditions of the rule](https://docs.adyen.com/platforms/automatic-split-configuration/manage-split-configurations/api/#update-condition) specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
                             {
                                 "name": "Update the conditions in split configuration rule",
@@ -1230,7 +1230,7 @@
     "query": [
     ]
     },
-    "description": "Changes the conditions of the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Changes the [split conditions of the rule](https://docs.adyen.com/platforms/automatic-split-configuration/manage-split-configurations/api/#update-condition) specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1301,7 +1301,7 @@
     "query": [
     ]
     },
-    "description": "Changes the conditions of the split configuration rule specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Changes the [split conditions of the rule](https://docs.adyen.com/platforms/automatic-split-configuration/manage-split-configurations/api/#update-condition) specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                         }
                                 ]
@@ -1310,7 +1310,7 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/splitConfigurations/:splitConfigurationId/rules/:ruleId/splitLogic/:splitLogicId",
-                "description": "Changes the split logic specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
+                "description": "Changes the [split logic](https://docs.adyen.com/platforms/automatic-split-configuration/manage-split-configurations/api/#update-split-logic) specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write",
                  "item": [
                             {
                                 "name": "Update the split logic",
@@ -1379,7 +1379,7 @@
     "query": [
     ]
     },
-    "description": "Changes the split logic specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Changes the [split logic](https://docs.adyen.com/platforms/automatic-split-configuration/manage-split-configurations/api/#update-split-logic) specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -1457,7 +1457,7 @@
     "query": [
     ]
     },
-    "description": "Changes the split logic specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
+    "description": "Changes the [split logic](https://docs.adyen.com/platforms/automatic-split-configuration/manage-split-configurations/api/#update-split-logic) specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - SplitConfiguration read and write"
 }
                                         }
                                 ]
@@ -13218,7 +13218,7 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/terminalModels",
-                "description": "Returns the payment terminal models that merchant account identified in the path has access to. The response includes the terminal model ID, which can be used as a query parameter when getting a list of terminals or a list of products for ordering.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal ordering read * Management API—Terminal ordering read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).",
+                "description": "Returns the payment terminal models that the merchant account identified in the path has access to. The response includes the terminal model ID, which can be used as a query parameter when getting a list of terminals or a list of products for ordering.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal ordering read * Management API—Terminal ordering read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).",
                  "item": [
                             {
                                 "name": "Get a list of terminal models",
@@ -13261,7 +13261,7 @@
     "query": [
     ]
     },
-    "description": "Returns the payment terminal models that merchant account identified in the path has access to. The response includes the terminal model ID, which can be used as a query parameter when getting a list of terminals or a list of products for ordering.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal ordering read * Management API—Terminal ordering read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment)."
+    "description": "Returns the payment terminal models that the merchant account identified in the path has access to. The response includes the terminal model ID, which can be used as a query parameter when getting a list of terminals or a list of products for ordering.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal ordering read * Management API—Terminal ordering read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment)."
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -13313,7 +13313,7 @@
     "query": [
     ]
     },
-    "description": "Returns the payment terminal models that merchant account identified in the path has access to. The response includes the terminal model ID, which can be used as a query parameter when getting a list of terminals or a list of products for ordering.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal ordering read * Management API—Terminal ordering read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment)."
+    "description": "Returns the payment terminal models that the merchant account identified in the path has access to. The response includes the terminal model ID, which can be used as a query parameter when getting a list of terminals or a list of products for ordering.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Terminal ordering read * Management API—Terminal ordering read and write  In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment)."
 }
                                         }
                                 ]

@@ -4161,6 +4161,263 @@
 	                    ]
 	        },
 	        {
+	            "name": "SCA association management",
+	            "item": [
+	                        {
+    "name": "/scaAssociations",
+                "description": "Deletes one or more SCA associations for a device.",
+                 "item": [
+                            {
+                                "name": "Request to remove an SCA association.",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "WWW-Authenticate",
+        "value": "",
+        "description": "The header for authenticating through SCA.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"entityType\" : \"accountHolder\",\n  \"entityId\" : \"AH00000000000000000000001\",\n  \"scaDeviceIds\" : [ \"BSDR42XV3223223S5N6CDQDGH53M8H\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scaAssociations",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scaAssociations"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Deletes one or more SCA associations for a device."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/scaAssociations",
+                "description": "Returns a paginated list of the SCA devices associated with a specific entity.",
+                 "item": [
+                            {
+                                "name": "Get a list of devices associated with an entity",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scaAssociations",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scaAssociations"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "entityType",
+        "value": "",
+        "description": "The type of entity you want to retrieve a list of associations for.   Possible values: **accountHolder** or **paymentInstrument**.",
+        "disabled": false
+        },
+        {
+        "key": "entityId",
+        "value": "entityId_example",
+        "description": "The unique identifier of the entity.",
+        "disabled": false
+        },
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of items to have on a page.   Default: **5**.",
+        "disabled": false
+        },
+        {
+        "key": "pageNumber",
+        "value": "56",
+        "description": "The index of the page to retrieve. The index of the first page is **0** (zero).   Default:  **0**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns a paginated list of the SCA devices associated with a specific entity."
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"_links\" : {\n    \"self\" : {\n      \"href\" : \"https://exampledomain.com/bcl/api/v2/scaAssociations?pageNumber=0&entityType=accountHolder&pageSize=10&entityId=AH3227J223222D5HHM4779X6X\"\n    }\n  },\n  \"itemsTotal\" : 2,\n  \"pagesTotal\" : 1,\n  \"data\" : [ {\n    \"scaDeviceId\" : \"BSDR11111111111A1AAA1AAAAA1AA1\",\n    \"scaDeviceName\" : \"Device 1\",\n    \"scaDeviceType\" : \"ios\",\n    \"entityType\" : \"accountHolder\",\n    \"entityId\" : \"AH00000000000000000000001\",\n    \"status\" : \"active\",\n    \"createdAt\" : \"2025-09-02T14:39:17.232Z\"\n  }, {\n    \"scaDeviceId\" : \"BSDR22222222222B2BBB2BBBBB2BB2\",\n    \"scaDeviceName\" : \"Device 2\",\n    \"scaDeviceType\" : \"ios\",\n    \"entityType\" : \"accountHolder\",\n    \"entityId\" : \"AH00000000000000000000001\",\n    \"status\" : \"pendingApproval\",\n    \"createdAt\" : \"2025-09-02T14:39:17.232Z\"\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scaAssociations",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scaAssociations"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "entityType",
+        "value": "",
+        "description": "The type of entity you want to retrieve a list of associations for.   Possible values: **accountHolder** or **paymentInstrument**.",
+        "disabled": false
+        },
+        {
+        "key": "entityId",
+        "value": "entityId_example",
+        "description": "The unique identifier of the entity.",
+        "disabled": false
+        },
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of items to have on a page.   Default: **5**.",
+        "disabled": false
+        },
+        {
+        "key": "pageNumber",
+        "value": "56",
+        "description": "The index of the page to retrieve. The index of the first page is **0** (zero).   Default:  **0**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns a paginated list of the SCA devices associated with a specific entity."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/scaAssociations",
+                "description": "Approves a previously created association that is in a pending state.",
+                 "item": [
+                            {
+                                "name": "Request to approve a pending SCA association.",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "WWW-Authenticate",
+        "value": "",
+        "description": "The header for authenticating through SCA.",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"status\" : \"active\",\n  \"entityType\" : \"accountHolder\",\n  \"entityId\" : \"AH00000000000000000000001\",\n  \"scaDeviceIds\" : [ \"BSDR42XV3223223S5N6CDQDGH53M8H\" ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scaAssociations",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scaAssociations"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Approves a previously created association that is in a pending state."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Grant accounts",
 	            "item": [
 	                        {
@@ -8706,6 +8963,177 @@
     "description": "Returns available transfer routes based on a combination of transfer `country`, `currency`, `counterparty`, and `priorities`. Use this endpoint to find optimal transfer priorities and associated requirements before you [make a transfer](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers)."
 }
                                         }
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "SCA device management",
+	            "item": [
+	                        {
+    "name": "/scaDevices",
+                "description": "Begins the registration process for a new Strong Customer Authentication (SCA) device.",
+                 "item": [
+                            {
+                                "name": "Request to begin SCA device registration.",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"name\" : \"My Device\",\n  \"sdkOutput\" : \"eyJjaGFsbGVuZ2UiOiJVWEZaTURONGNXWjZUVFExUlhWV2JuaEJPVzVzTm05cVVEUktUbFZtZGtrPSJ9\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scaDevices",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scaDevices"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Begins the registration process for a new Strong Customer Authentication (SCA) device."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/scaDevices/:deviceId",
+                "description": "Finishes the registration process for a new Strong Customer Authentication (SCA) device.",
+                 "item": [
+                            {
+                                "name": "Request to finish SCA device registration.",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"sdkOutput\" : \"eyJjaGFsbGVuZ2UiOiJVWEZaTURONGNXWjZUVFExUlhWV2JuaEJPVzVzTm05cVVEUktUbFZtZGtrPSJ9\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scaDevices/:deviceId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scaDevices",
+        ":deviceId"
+    ],
+    "variable": [
+        {
+        "key": "deviceId",
+        "value": "",
+        "description": "The unique identifier of the SCA device that you are associating with a resource."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Finishes the registration process for a new Strong Customer Authentication (SCA) device."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/scaDevices/:deviceId/scaAssociations",
+                "description": "Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices.",
+                 "item": [
+                            {
+                                "name": "Request to create a new SCA association.",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"entities\" : [ {\n    \"type\" : \"accountHolder\",\n    \"id\" : \"AH00000000000000000000001\"\n  } ]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scaDevices/:deviceId/scaAssociations",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scaDevices",
+        ":deviceId",
+        "scaAssociations"
+    ],
+    "variable": [
+        {
+        "key": "deviceId",
+        "value": "",
+        "description": "The unique identifier of the SCA device that you are associating with a resource."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices."
+}
+                                ,"response": [
                                 ]
                             }
                             ]

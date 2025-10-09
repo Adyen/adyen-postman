@@ -30,6 +30,6 @@ jobs:
           options: -v ${{ github.workspace }}:/usr/src/app
           run: |
             /usr/src/app/generatePostmanJsonFile.sh ${{ github.event.inputs.file }} 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "Manual generation"

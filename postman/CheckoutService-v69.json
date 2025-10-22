@@ -3867,7 +3867,7 @@
                                 ]
                             },
                             {
-                                "name": "Tokenize card details for one-off payments, using encrypted card details",
+                                "name": "Tokenize card details for one-click payments, using encrypted card details",
                                 "request": {
     "method": "POST",
     "header": [
@@ -3975,7 +3975,7 @@
                                 ]
                             },
                             {
-                                "name": "Tokenize card details for one-off payments",
+                                "name": "Tokenize card details for one-click payments",
                                 "request": {
     "method": "POST",
     "header": [
@@ -4293,7 +4293,7 @@
                                 ]
                             },
                             {
-                                "name": "Make a one-off payment with a token and CVV",
+                                "name": "Make a one-click payment with a token and CVV",
                                 "request": {
     "method": "POST",
     "header": [
@@ -4344,7 +4344,7 @@
                                 ]
                             },
                             {
-                                "name": "Make a one-off payment with a token and CVV, using encrypted card details",
+                                "name": "Make a one-click payment with a token and CVV, using encrypted card details",
                                 "request": {
     "method": "POST",
     "header": [
@@ -4370,57 +4370,6 @@
     "body": {
     "mode": "raw",
     "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8416038790273850\",\n \"encryptedSecurityCode\": \"adyenjs_0_1_18$MT6ppy0FAMVMLH...\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_6738oneoff\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/payments",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "payments"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
-}
-                                ,"response": [
-                                ]
-                            },
-                            {
-                                "name": "Make a card payment with a token",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"8316038796685850\"\n},\n \"shopperReference\": \"YOUR_UNIQUE_SHOPPER_ID_IOfW3subscription\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\",\n \"recurringProcessingModel\": \"Subscription\"\n}",
     "options": {
     "raw": {
     "language": "json"

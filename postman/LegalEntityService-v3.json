@@ -2133,6 +2133,58 @@
                                 ]
                             }
                             ]
+                        },
+	                        {
+    "name": "/legalEntities/:id/requestPeriodicReview",
+                "description": "Requests a periodic data review for the legal entity of the user specified in the path.",
+                 "item": [
+                            {
+                                "name": "Request periodic data review.",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/legalEntities/:id/requestPeriodicReview",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "legalEntities",
+        ":id",
+        "requestPeriodicReview"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the legal entity."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Requests a periodic data review for the legal entity of the user specified in the path."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
                         }
 	                    ]
 	        },

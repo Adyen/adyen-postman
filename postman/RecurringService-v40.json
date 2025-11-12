@@ -537,7 +537,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "https://pal-test.adyen.com/pal/servlet/Recurring/v40",
+			"value": "https://paltokenization-test.adyen.com/pal/servlet/Recurring/v40",
 			"type": "string"
         },
         {

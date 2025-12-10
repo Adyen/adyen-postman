@@ -7568,7 +7568,7 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/paymentMethodSettings",
-                "description": "Sends a request to add a new payment method to the merchant account identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write ",
+                "description": "Sends a request to add a new payment method to the merchant account identified in the path. Depending the payment method [`type`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings#request-type), you may need to send an additional object required for the payment method.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write ",
                  "item": [
                             {
                                 "name": "Request a payment method",
@@ -7617,7 +7617,7 @@
     "query": [
     ]
     },
-    "description": "Sends a request to add a new payment method to the merchant account identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
+    "description": "Sends a request to add a new payment method to the merchant account identified in the path. Depending the payment method [`type`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings#request-type), you may need to send an additional object required for the payment method.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -7675,7 +7675,7 @@
     "query": [
     ]
     },
-    "description": "Sends a request to add a new payment method to the merchant account identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
+    "description": "Sends a request to add a new payment method to the merchant account identified in the path. Depending the payment method [`type`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings#request-type), you may need to send an additional object required for the payment method.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
 }
                                         }
                                 ]
@@ -7727,7 +7727,7 @@
     "query": [
     ]
     },
-    "description": "Sends a request to add a new payment method to the merchant account identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
+    "description": "Sends a request to add a new payment method to the merchant account identified in the path. Depending the payment method [`type`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings#request-type), you may need to send an additional object required for the payment method.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -7785,7 +7785,7 @@
     "query": [
     ]
     },
-    "description": "Sends a request to add a new payment method to the merchant account identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
+    "description": "Sends a request to add a new payment method to the merchant account identified in the path. Depending the payment method [`type`](https://docs.adyen.com/api-explorer/Management/latest/post/merchants/_merchantId_/paymentMethodSettings#request-type), you may need to send an additional object required for the payment method.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
 }
                                         }
                                 ]
@@ -7852,7 +7852,7 @@
                         },
 	                        {
     "name": "/merchants/:merchantId/paymentMethodSettings/:paymentMethodId",
-                "description": "Updates payment method details for the merchant account and the payment method identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write ",
+                "description": "Updates payment method details for the merchant account and the payment method identified in the path. Depending the payment method [`type`](https://docs.adyen.com/api-explorer/Management/latest/patch/merchants/_merchantId_/paymentMethodSettings#request-type), you may need to send an additional object required for the payment method.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write ",
                  "item": [
                             {
                                 "name": "Update the currency and country details for a payment method",
@@ -7907,7 +7907,7 @@
     "query": [
     ]
     },
-    "description": "Updates payment method details for the merchant account and the payment method identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
+    "description": "Updates payment method details for the merchant account and the payment method identified in the path. Depending the payment method [`type`](https://docs.adyen.com/api-explorer/Management/latest/patch/merchants/_merchantId_/paymentMethodSettings#request-type), you may need to send an additional object required for the payment method.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -7971,7 +7971,7 @@
     "query": [
     ]
     },
-    "description": "Updates payment method details for the merchant account and the payment method identified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
+    "description": "Updates payment method details for the merchant account and the payment method identified in the path. Depending the payment method [`type`](https://docs.adyen.com/api-explorer/Management/latest/patch/merchants/_merchantId_/paymentMethodSettings#request-type), you may need to send an additional object required for the payment method.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read and write "
 }
                                         }
                                 ]

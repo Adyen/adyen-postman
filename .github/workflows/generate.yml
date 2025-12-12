@@ -29,7 +29,8 @@ jobs:
           image: ghcr.io/adyen-examples/openapi-generator-postman-v2:main
           options: -v ${{ github.workspace }}:/usr/src/app
           run: |
-            /usr/src/app/generatePostmanJsonFile.sh ${{ github.event.inputs.file }} 
+            export FILE_PATH="${{ github.event.inputs.file }}"
+            /usr/src/app/generatePostmanJsonFile.sh "$FILE_PATH" 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Manual generation"

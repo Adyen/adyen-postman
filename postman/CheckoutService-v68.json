@@ -2209,6 +2209,63 @@
 	            "name": "Recurring",
 	            "item": [
 	                        {
+    "name": "/forward",
+                "description": "Forwards the payment details you stored with Adyen to a third-party that you specify and returns the response from the third-party. Supports forwarding stored card details or [network tokens](https://docs.adyen.com/online-payments/network-tokenization). For more information, see [Forward stored payment details](https://docs.adyen.com/online-payments/tokenization/forward-payment-details).",
+                 "item": [
+                            {
+                                "name": "Forward stored payment details",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"baseUrl\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"options\": \"<string>\",\n \"request\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"storedPaymentMethodId\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/forward",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "forward"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Forwards the payment details you stored with Adyen to a third-party that you specify and returns the response from the third-party. Supports forwarding stored card details or [network tokens](https://docs.adyen.com/online-payments/network-tokenization). For more information, see [Forward stored payment details](https://docs.adyen.com/online-payments/tokenization/forward-payment-details)."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
     "name": "/storedPaymentMethods",
                 "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.",
                  "item": [
@@ -4659,6 +4716,57 @@
     "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
 }
                                         }
+                                ]
+                            },
+                            {
+                                "name": "Make a subscription payment with a token",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 1000\n},\n \"reference\": \"Your order number\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"storedPaymentMethodId\": \"M5N7TQ4TG5PFWR50\"\n},\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\",\n \"recurringProcessingModel\": \"Subscription\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+}
+                                ,"response": [
                                 ]
                             }
                             ]

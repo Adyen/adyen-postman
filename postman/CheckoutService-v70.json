@@ -2238,7 +2238,7 @@
     ],
     "body": {
     "mode": "raw",
-    "raw": "{\n \"baseUrl\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"options\": \"<string>\",\n \"request\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"storedPaymentMethodId\": \"<string>\"\n}",
+    "raw": "{\n \"baseUrl\": \"<string>\",\n \"merchantAccount\": \"<string>\",\n \"options\": \"<string>\",\n \"paymentMethod\": \"<string>\",\n \"request\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"storedPaymentMethodId\": \"<string>\"\n}",
     "options": {
     "raw": {
     "language": "json"

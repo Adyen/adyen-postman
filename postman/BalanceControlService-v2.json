@@ -1,0 +1,338 @@
+{
+	"info": {
+		"name": "Balance Control API (v2)",
+		"description": {
+		    "content": "The Balance Control API allows you to view and manage the balances in your company and merchant accounts.\n## Authentication\nWe recommend that you use an API key to connect to the Balance Control API. You can [generate an API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key) in your Customer Area.\n### Header format\nTo connect to the Balance Control API, add an `X-API-Key` header with the API key as the value. For example:\n\n ```\ncurl\n-H 'Content-Type: application/json' \\n-H 'X-API-Key: ADYEN_API_KEY' \\n...\n```\n\n## Versioning\n\nThe Balance Control API handles versioning as part of the endpoint URL. For example, to send a request to version 2 of the `/balanceOverview/companies/{companyId}/balances` endpoint, use:\n\nhttps://balance-control-test.adyen.com/balance-control/api/v2/balanceOverview/companies/{companyId}/balances\n\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca/). You can then use the API key to send requests to `https://balance-control-live.adyen.com/api/v2`.\n\n",
+		    "type": "text/markdown"
+		},
+		"version": "2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+	        {
+	            "name": "Balance transfers",
+	            "item": [
+	                        {
+    "name": "/balanceTransfers",
+                "description": "Performs a balance transfer between merchant accounts. The following conditions must be met before you can successfully transfer balances: * The source and destination merchant accounts must be under the same company account and legal entity. * The source merchant account must have sufficient funds. * The source and destination merchant accounts must have at least one common processing currency.\\n\\n When sending multiple API requests with the same source and destination merchant accounts, send the requests sequentially and *not* in parallel. Some requests may not be processed if the requests are sent in parallel. ",
+                 "item": [
+                            {
+                                "name": "Create balance transfer",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 3000\n  },\n  \"fromMerchant\" : \"SOURCE_MERCHANT_ACCOUNT\",\n  \"reference\" : \"Your reference for the balance transfer.\",\n  \"toMerchant\" : \"DESTINATION_MERCHANT_ACCOUNT\",\n  \"type\" : \"adjustment\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceTransfers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceTransfers"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Performs a balance transfer between merchant accounts. The following conditions must be met before you can successfully transfer balances: * The source and destination merchant accounts must be under the same company account and legal entity. * The source merchant account must have sufficient funds. * The source and destination merchant accounts must have at least one common processing currency.\\n\\n When sending multiple API requests with the same source and destination merchant accounts, send the requests sequentially and *not* in parallel. Some requests may not be processed if the requests are sent in parallel. "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Balances overview",
+	            "item": [
+	                        {
+    "name": "/balanceOverview/companies/:companyAccountCode/balances",
+                "description": "Returns an array with details about the balances available for all merchant accounts under your company account. For each merchant account, the response returns the following:   * **Available funds**: The funds in the merchant account that have been settled and are available for use.   * **Pending balance**: The funds in the merchant account that have not been settled yet.   * **Next payout amount**: The amount that will be settled to your bank account with the next payout.   * **Reserve**: The available amount to cover refunds, payouts, chargebacks, and other operational expenses that cannot be covered by your in-process funds.   * **Deposit**: The amount withheld by Adyen to cover potential losses and liabilities due to payment processing. ",
+                 "item": [
+                            {
+                                "name": "View the available balances for all merchant accounts under your company.",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceOverview/companies/:companyAccountCode/balances",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceOverview",
+        "companies",
+        ":companyAccountCode",
+        "balances"
+    ],
+    "variable": [
+        {
+        "key": "companyAccountCode",
+        "value": "",
+        "description": "The unique identifier of your company account."
+        }
+    ],
+    "query": [
+        {
+        "key": "currency",
+        "value": "currency_example",
+        "description": "The currency for which you want a balances overview.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns an array with details about the balances available for all merchant accounts under your company account. For each merchant account, the response returns the following:   * **Available funds**: The funds in the merchant account that have been settled and are available for use.   * **Pending balance**: The funds in the merchant account that have not been settled yet.   * **Next payout amount**: The amount that will be settled to your bank account with the next payout.   * **Reserve**: The available amount to cover refunds, payouts, chargebacks, and other operational expenses that cannot be covered by your in-process funds.   * **Deposit**: The amount withheld by Adyen to cover potential losses and liabilities due to payment processing. "
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceOverview/companies/:companyAccountCode/balances",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceOverview",
+        "companies",
+        ":companyAccountCode",
+        "balances"
+    ],
+    "variable": [
+        {
+        "key": "companyAccountCode",
+        "value": "",
+        "description": "The unique identifier of your company account."
+        }
+    ],
+    "query": [
+        {
+        "key": "currency",
+        "value": "currency_example",
+        "description": "The currency for which you want a balances overview.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns an array with details about the balances available for all merchant accounts under your company account. For each merchant account, the response returns the following:   * **Available funds**: The funds in the merchant account that have been settled and are available for use.   * **Pending balance**: The funds in the merchant account that have not been settled yet.   * **Next payout amount**: The amount that will be settled to your bank account with the next payout.   * **Reserve**: The available amount to cover refunds, payouts, chargebacks, and other operational expenses that cannot be covered by your in-process funds.   * **Deposit**: The amount withheld by Adyen to cover potential losses and liabilities due to payment processing. "
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceOverview/merchants/:merchantAccountCode/balances",
+                "description": "Returns an overview of the different balances available for the merchant account. This includes details about the following:   * **Available funds**: The funds in the merchant account that have been settled and are available for use.   * **Pending balance**: The funds in the merchant account that have not been settled yet.   * **Next payout amount**: The amount that will be settled to your bank account with the next payout.   * **Reserve**: The available amount to cover refunds, payouts, chargebacks, and other operational expenses that cannot be covered by your in-process funds.   * **Deposit**: The amount withheld by Adyen to cover potential losses and liabilities due to payment processing. ",
+                 "item": [
+                            {
+                                "name": "View all balances available for your merchant account.",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceOverview/merchants/:merchantAccountCode/balances",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceOverview",
+        "merchants",
+        ":merchantAccountCode",
+        "balances"
+    ],
+    "variable": [
+        {
+        "key": "merchantAccountCode",
+        "value": "",
+        "description": "The unique identifier of your merchant account."
+        }
+    ],
+    "query": [
+        {
+        "key": "currency",
+        "value": "currency_example",
+        "description": "The currency for which you want a balances overview.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns an overview of the different balances available for the merchant account. This includes details about the following:   * **Available funds**: The funds in the merchant account that have been settled and are available for use.   * **Pending balance**: The funds in the merchant account that have not been settled yet.   * **Next payout amount**: The amount that will be settled to your bank account with the next payout.   * **Reserve**: The available amount to cover refunds, payouts, chargebacks, and other operational expenses that cannot be covered by your in-process funds.   * **Deposit**: The amount withheld by Adyen to cover potential losses and liabilities due to payment processing. "
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceOverview/merchants/:merchantAccountCode/balances",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceOverview",
+        "merchants",
+        ":merchantAccountCode",
+        "balances"
+    ],
+    "variable": [
+        {
+        "key": "merchantAccountCode",
+        "value": "",
+        "description": "The unique identifier of your merchant account."
+        }
+    ],
+    "query": [
+        {
+        "key": "currency",
+        "value": "currency_example",
+        "description": "The currency for which you want a balances overview.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns an overview of the different balances available for the merchant account. This includes details about the following:   * **Available funds**: The funds in the merchant account that have been settled and are available for use.   * **Pending balance**: The funds in the merchant account that have not been settled yet.   * **Next payout amount**: The amount that will be settled to your bank account with the next payout.   * **Reserve**: The available amount to cover refunds, payouts, chargebacks, and other operational expenses that cannot be covered by your in-process funds.   * **Deposit**: The amount withheld by Adyen to cover potential losses and liabilities due to payment processing. "
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        }
+    ],
+    "auth": {
+    		"type": "apikey",
+    		"apikey": [
+    			{
+    				"key": "value",
+    				"value": "{{X-API-Key}}",
+    				"type": "string"
+    			},
+    			{
+    				"key": "key",
+    				"value": "X-API-Key",
+    				"type": "string"
+    			}
+    		]
+    	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://balance-control-test.adyen.com/balance-control/api/v2",
+			"type": "string"
+        },
+        {
+            "key": "X-API-Key",
+            "value": "",
+            "type": "string"
+        }
+	]
+}
+

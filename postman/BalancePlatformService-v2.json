@@ -1656,6 +1656,122 @@
                             ]
                         },
 	                        {
+    "name": "/accountHolders/:id/taxFormSummary",
+                "description": "Returns a summary of all tax forms for an account holder.",
+                 "item": [
+                            {
+                                "name": "Get summary of tax forms for an account holder",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/accountHolders/:id/taxFormSummary",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "accountHolders",
+        ":id",
+        "taxFormSummary"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the account holder."
+        }
+    ],
+    "query": [
+        {
+        "key": "formType",
+        "value": "formType_example",
+        "description": "The type of tax form you want a summary for. Accepted values are **US1099k** and **US1099nec**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns a summary of all tax forms for an account holder."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"data\" : [ {\n    \"legalEntityId\" : \"LE123\",\n    \"taxYears\" : [ 2023 ]\n  }, {\n    \"legalEntityId\" : \"LE987\",\n    \"taxYears\" : [ 2024, 2025 ]\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/accountHolders/:id/taxFormSummary",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "accountHolders",
+        ":id",
+        "taxFormSummary"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the account holder."
+        }
+    ],
+    "query": [
+        {
+        "key": "formType",
+        "value": "formType_example",
+        "description": "The type of tax form you want a summary for. Accepted values are **US1099k** and **US1099nec**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Returns a summary of all tax forms for an account holder."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
     "name": "/accountHolders/:id/taxForms",
                 "description": "Generates a tax form for account holders operating in the US. For more information, refer to US tax forms for [marketplaces](https://docs.adyen.com/marketplaces/us-tax-forms/) or [platforms](https://docs.adyen.com/platforms/us-tax-forms/) .",
                  "item": [
@@ -1701,19 +1817,19 @@
         {
         "key": "formType",
         "value": "formType_example",
-        "description": "The type of tax form you want to retrieve. Accepted values are **US1099k** and **US1099nec**",
+        "description": "The type of tax form you want to retrieve. Accepted values are **US1099k** and **US1099nec**.",
         "disabled": false
         },
         {
         "key": "year",
         "value": "56",
-        "description": "The tax year in YYYY format for the tax form you want to retrieve",
+        "description": "The tax year in **YYYY** format for the tax form you want to retrieve.",
         "disabled": false
         },
         {
         "key": "legalEntityId",
         "value": "legalEntityId_example",
-        "description": "The legal entity reference whose tax form you want to retrieve",
+        "description": "The legal entity reference whose tax form you want to retrieve.",
         "disabled": true
         }
     ]
@@ -1771,19 +1887,19 @@
         {
         "key": "formType",
         "value": "formType_example",
-        "description": "The type of tax form you want to retrieve. Accepted values are **US1099k** and **US1099nec**",
+        "description": "The type of tax form you want to retrieve. Accepted values are **US1099k** and **US1099nec**.",
         "disabled": false
         },
         {
         "key": "year",
         "value": "56",
-        "description": "The tax year in YYYY format for the tax form you want to retrieve",
+        "description": "The tax year in **YYYY** format for the tax form you want to retrieve.",
         "disabled": false
         },
         {
         "key": "legalEntityId",
         "value": "legalEntityId_example",
-        "description": "The legal entity reference whose tax form you want to retrieve",
+        "description": "The legal entity reference whose tax form you want to retrieve.",
         "disabled": true
         }
     ]

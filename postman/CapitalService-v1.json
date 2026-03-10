@@ -2,7 +2,7 @@
 	"info": {
 		"name": "Capital API (v1)",
 		"description": {
-		    "content": "The Capital API provides endpoints for embedding Adyen Capital into your [marketplace](https://docs.adyen.com/platforms/capital) or [platform](https://docs.adyen.com/platforms/capital). With Capital, you can offer business financing to your users as grants. When a user receives a grant, they must repay the grant amount in a specified term, in addition to paying a fee for using this service.\n\nWith these endpoints, you can:\n- **Get available grant offers**: You can get the grant offers that are available for your users. Adyen configures the financing amount, the fee, and the repayment conditions for each offer. These configurations are based on proactive risk analyses that Adyen performs on your users.\n- **Make requests for grants**: When a user selects a grant offer, you can make a request for the grant on their behalf.\n- **Get information about your grant account**: Your grant account tracks the information of all grants in your marketplace or platform.\n\n## Authentication\nEach request made to the Capital API must be signed with an API key. Generate an API key in your Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\n## Roles and permissions\nTo use the Capital API, your API credential must have the following roles:\n- **Balance_Platform_Capital_Configuration_Role**\n- **Balance_Platform_Capital_Grant_Initiation_Role**\n\nReach out to your Adyen contact to set up these roles.\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca). You can then use the API key to send requests to `https://balanceplatform-api-live.adyen.com/capital/v{version}`.\n\n",
+		    "content": "The Capital API provides endpoints for embedding [Adyen Capital](https://docs.adyen.com/capital) into your marketplace or platform. With Capital, you can offer business financing to your users as grants. When a user receives a grant, they must repay the grant amount in a specified term, in addition to paying a fee for using this service.\n\nWith these endpoints, you can:\n- **Get available financing offers**: You can get a list of offers with fixed amounts or a range of available financing for your users. Adyen configures the financing amount, the fee, and the repayment conditions for each offer. These configurations are based on proactive risk analyses that Adyen performs on your users.\n- **Make requests for grants**: When a user selects a financing offer, you can make a request for the grant on their behalf.\n- **Get information about your grant account**: Your grant account tracks the information of all grants in your marketplace or platform.\n\n## Authentication\nEach request made to the Capital API must be signed with an API key. Generate an API key in your Customer Area.\n\nTo connect to the API, add an `X-API-Key` header with the API key as the value, for example:\n\n ```\ncurl\n-H \"Content-Type: application/json\" \\n-H \"X-API-Key: YOUR_API_KEY\" \\n...\n```\n\n## Roles and permissions\nTo use the Capital API, your API credential must have the following roles:\n- **Balance_Platform_Capital_Configuration_Role**\n- **Balance_Platform_Capital_Grant_Initiation_Role**\n\nReach out to your Adyen contact to set up these roles.\n## Going live\nWhen going live, generate an API key in your [live Customer Area](https://ca-live.adyen.com/ca). You can then use the API key to send requests to `https://balanceplatform-api-live.adyen.com/capital/v{version}`.\n\n",
 		    "type": "text/markdown"
 		},
 		"version": "1",
@@ -14,10 +14,10 @@
 	            "item": [
 	                        {
     "name": "/grantOffers",
-                "description": "Returns a list of all [grant offers](https://docs.adyen.com/platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter.",
+                "description": "Returns a list of all [static offers](https://docs.adyen.com/capital/get-grant-offers/static-offers) available for `accountHolderId` specified as a query parameter. This also includes static offers created for financing amounts that the user selected from [dynamic offers](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/).",
                  "item": [
                             {
-                                "name": "Get all available grant offers",
+                                "name": "Get all available static offers",
                                 "request": {
     "method": "GET",
     "header": [
@@ -51,12 +51,12 @@
         {
         "key": "accountHolderId",
         "value": "accountHolderId_example",
-        "description": "The unique identifier of the account holder for which you want to get the available grant offers.",
+        "description": "The unique identifier of the account holder for which you want to get the available static offers.",
         "disabled": true
         }
     ]
     },
-    "description": "Returns a list of all [grant offers](https://docs.adyen.com/platforms/capital#grant-offers) available for `accountHolderId` specified as a query parameter."
+    "description": "Returns a list of all [static offers](https://docs.adyen.com/capital/get-grant-offers/static-offers) available for `accountHolderId` specified as a query parameter. This also includes static offers created for financing amounts that the user selected from [dynamic offers](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/)."
 }
                                 ,"response": [
                                 ]
@@ -65,10 +65,10 @@
                         },
 	                        {
     "name": "/grantOffers/:id",
-                "description": "Returns the details of the specified grant offer.",
+                "description": "Returns the details of the specified static offer.",
                  "item": [
                             {
-                                "name": "Get the details of a grant offer",
+                                "name": "Get the details of a static offer",
                                 "request": {
     "method": "GET",
     "header": [
@@ -101,13 +101,191 @@
         {
         "key": "id",
         "value": "",
-        "description": "The unique identifier of the grant offer."
+        "description": "The unique identifier of the static offer."
         }
     ],
     "query": [
     ]
     },
-    "description": "Returns the details of the specified grant offer."
+    "description": "Returns the details of the specified static offer."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Dynamic offers",
+	            "item": [
+	                        {
+    "name": "/dynamicOffers",
+                "description": "Returns a list of all [dynamic offers](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/) available for `accountHolderId` specified as a query parameter.",
+                 "item": [
+                            {
+                                "name": "Get all available dynamic offers",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/dynamicOffers",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "dynamicOffers"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "accountHolderId",
+        "value": "accountHolderId_example",
+        "description": "The unique identifier of the account holder that the dynamic offer is for.",
+        "disabled": false
+        },
+        {
+        "key": "financingType",
+        "value": "",
+        "description": "The type of financing that the offer is for. If the value is not specified, returns all available types.  Possible values: **businessFinancing**",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of all [dynamic offers](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/) available for `accountHolderId` specified as a query parameter."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/dynamicOffers/:id/calculate",
+                "description": "Calculates a preliminary offer for the financing amount that the user selected from a [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/). The preliminary offer is for informational purposes only and cannot be used to initiate a grant.  Requests to this endpoint are subject to rate limits:  - Live environments: 120 requests per minute.  - Test environments: 120 requests per minute.  ",
+                 "item": [
+                            {
+                                "name": "Calculate a preliminary offer for a selected financing amount",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"amount\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/dynamicOffers/:id/calculate",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "dynamicOffers",
+        ":id",
+        "calculate"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the dynamic offer from which the user selected the financing amount."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Calculates a preliminary offer for the financing amount that the user selected from a [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/). The preliminary offer is for informational purposes only and cannot be used to initiate a grant.  Requests to this endpoint are subject to rate limits:  - Live environments: 120 requests per minute.  - Test environments: 120 requests per minute.  "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/dynamicOffers/:id/grantOffer",
+                "description": "Creates a static offer for the financing amount that the user selected from the [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/).  Requests to this endpoint are subject to rate limits:  - Live environments: 30 requests per minute.  - Test environments: 30 requests per minute.  ",
+                 "item": [
+                            {
+                                "name": "Create a static offer for a selected financing amount",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"amount\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/dynamicOffers/:id/grantOffer",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "dynamicOffers",
+        ":id",
+        "grantOffer"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the dynamic offer from which the user selected the financing amount."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a static offer for the financing amount that the user selected from the [dynamic offer](https://docs.adyen.com/capital/get-grant-offers/dynamic-offers/).  Requests to this endpoint are subject to rate limits:  - Live environments: 30 requests per minute.  - Test environments: 30 requests per minute.  "
 }
                                 ,"response": [
                                 ]

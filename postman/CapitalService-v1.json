@@ -52,7 +52,7 @@
         "key": "accountHolderId",
         "value": "accountHolderId_example",
         "description": "The unique identifier of the account holder for which you want to get the available static offers.",
-        "disabled": true
+        "disabled": false
         }
     ]
     },

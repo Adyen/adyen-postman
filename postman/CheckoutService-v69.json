@@ -4350,6 +4350,222 @@
                                 ]
                             },
                             {
+                                "name": "Top up your balance account on-demand from your transfer instrument",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"paymentMethod\": {\n \"type\": \"sepadirectdebit\",\n \"transferInstrumentId\": \"SE00000000000000000000001\",\n \"iban\": \"IBAN_OF_TRANSFER_INSTRUMENT\",\n \"ownerName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 10000,\n \"currency\": \"EUR\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 10000\n},\n \"type\": \"TopUp\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the top-up.\",\n \"description\": \"Your description for the top-up.\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the transaction fees.\",\n \"description\": \"Your description for the transaction fees.\"\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"additionalData\": {\n \"sepadirectdebit.dateOfSignature\": \"2024-05-02\",\n \"sepadirectdebit.mandateId\": \"FJM726V375BV9D82\",\n \"sepadirectdebit.sequenceType\": \"Recurring\"\n},\n \"pspReference\": \"QFQTPCQ8HXSKGK82\",\n \"resultCode\": \"Authorised\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"paymentMethod\": {\n \"type\": \"sepadirectdebit\",\n \"transferInstrumentId\": \"SE00000000000000000000001\",\n \"iban\": \"IBAN_OF_TRANSFER_INSTRUMENT\",\n \"ownerName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 10000,\n \"currency\": \"EUR\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 10000\n},\n \"type\": \"TopUp\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the top-up.\",\n \"description\": \"Your description for the top-up.\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the transaction fees.\",\n \"description\": \"Your description for the transaction fees.\"\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Top up your balance account on-demand using a Visa credit card",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 10000,\n \"currency\": \"EUR\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 10000\n},\n \"type\": \"TopUp\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the top-up.\",\n \"description\": \"Your description for the top-up.\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the transaction fees.\",\n \"description\": \"Your description for the transaction fees.\"\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"additionalData\": {\n \"cardBin\": \"411111\",\n \"cardHolderName\": \"John Smith\",\n \"cardIssuingCountry\": \"NL\",\n \"cardIssuingCurrency\": \"EUR\",\n \"cardPaymentMethod\": \"visa\",\n \"cardProductId\": \"A\",\n \"cardSummary\": \"1111\",\n \"issuerBin\": \"41111111\"\n},\n \"pspReference\": \"WNV97K8PPLC52VT5\",\n \"resultCode\": \"Authorised\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"number\": \"4111111111111111\",\n \"cvc\": \"737\",\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"holderName\": \"John Smith\"\n},\n \"amount\": {\n \"value\": 10000,\n \"currency\": \"EUR\"\n},\n \"reference\": \"{{$guid}}\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"splits\": [{\n \"amount\": {\n \"value\": 10000\n},\n \"type\": \"TopUp\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the top-up.\",\n \"description\": \"Your description for the top-up.\"\n}, {\n \"type\": \"PaymentFee\",\n \"account\": \"BA00000000000000000000001\",\n \"reference\": \"Your reference for the transaction fees.\",\n \"description\": \"Your description for the transaction fees.\"\n}]\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/payments",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "payments"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Sends payment parameters (like amount, country, and currency) together with other required input details collected from the shopper. To know more about required parameters for specific payment methods, refer to our [payment method guides](https://docs.adyen.com/payment-methods).  The response depends on the [payment flow](https://docs.adyen.com/payment-methods#payment-flow): * For a direct flow, the response includes a `pspReference` and a `resultCode` with the payment result, for example **Authorised** or **Refused**.  * For a redirect or additional action, the response contains an `action` object. "
+}
+                                        }
+                                ]
+                            },
+                            {
                                 "name": "Make a one-click payment with a token and CVV",
                                 "request": {
     "method": "POST",

@@ -35,7 +35,7 @@ jobs:
         with:
           goal: update
           postman-key: ${{ secrets.POSTMAN_API_KEY }}
-          postman-file: 'postman/CheckoutService-v71.json'
+          postman-file: 'postman/CheckoutService-v72.json'
           collection-id: '25716737-46ad970e-dc9e-4246-bac2-769c6083e7b5'
       - name: update-data-protection
         uses: gcatanese/push-to-postman-action@main

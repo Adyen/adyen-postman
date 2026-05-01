@@ -4375,7 +4375,7 @@
         {
         "key": "entityType",
         "value": "",
-        "description": "The type of entity you want to retrieve a list of associations for.   Possible values: **accountHolder** or **paymentInstrument**.",
+        "description": "The type of entity you want to retrieve a list of associations for.   Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.",
         "disabled": false
         },
         {
@@ -4444,7 +4444,7 @@
         {
         "key": "entityType",
         "value": "",
-        "description": "The type of entity you want to retrieve a list of associations for.   Possible values: **accountHolder** or **paymentInstrument**.",
+        "description": "The type of entity you want to retrieve a list of associations for.   Possible values: **accountHolder**, **legalEntity** or **paymentInstrument**.",
         "disabled": false
         },
         {

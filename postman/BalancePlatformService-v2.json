@@ -10,6 +10,845 @@
 	},
 	"item": [
 	        {
+	            "name": "Managed payout schedules",
+	            "item": [
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/payoutSchedules",
+                "description": "Returns a list of all managed payout schedules that are configured on a balance account. You can use query parameters to filter the elements that are returned in the list.",
+                 "item": [
+                            {
+                                "name": "Get all managed payout schedules on a balance account",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "currency",
+        "value": "currency_example",
+        "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes) of the currency used in the payout schedule.",
+        "disabled": true
+        },
+        {
+        "key": "cursor",
+        "value": "cursor_example",
+        "description": "The `cursor` returned in the links of the previous response.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page, maximum of 100 items. By default, the response returns 10 items per page.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of all managed payout schedules that are configured on a balance account. You can use query parameters to filter the elements that are returned in the list."
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"balanceAccountPayoutSchedules\" : [ {\n    \"id\" : \"PSAC00000000000000000000000001\",\n    \"balancePlatformPayoutScheduleId\" : \"PSPC00000000000000000000000001\",\n    \"balanceAccountId\" : \"BA000000000000000000001\",\n    \"transferInstrumentId\" : \"SE00000000000000000000001\",\n    \"currency\" : \"EUR\",\n    \"reference\" : \"Monthly payout\",\n    \"description\" : \"Scheduled payout to merchant bank account\",\n    \"referenceForBeneficiary\" : \"PAYOUT-REF-001\",\n    \"retainedAmount\" : 10000,\n    \"minPayoutAmount\" : 1000,\n    \"maxPayoutAmount\" : 100000000,\n    \"createdAt\" : \"2024-01-15T10:30:00Z\",\n    \"enabled\" : true,\n    \"frequency\" : \"monthly\",\n    \"frequencyValue\" : 1\n  } ],\n  \"link\" : {\n    \"next\" : {\n      \"href\" : \"/balanceAccounts/BA000000000000000000001/payoutSchedules?limit=10\"\n    }\n  }\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "currency",
+        "value": "currency_example",
+        "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes) of the currency used in the payout schedule.",
+        "disabled": true
+        },
+        {
+        "key": "cursor",
+        "value": "cursor_example",
+        "description": "The `cursor` returned in the links of the previous response.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page, maximum of 100 items. By default, the response returns 10 items per page.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of all managed payout schedules that are configured on a balance account. You can use query parameters to filter the elements that are returned in the list."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/payoutSchedules",
+                "description": "Apply a managed payout schedule to a balance account. This payout schedule is based on an existing payout schedule in your balance platform.",
+                 "item": [
+                            {
+                                "name": "Apply a managed payout schedule to a balance account",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"balancePlatformPayoutScheduleId\" : \"PSPC00000000000000000000000001\",\n  \"transferInstrumentId\" : \"SE00000000000000000000001\",\n  \"currency\" : \"EUR\",\n  \"reference\" : \"Monthly payout\",\n  \"description\" : \"Scheduled payout to merchant bank account\",\n  \"referenceForBeneficiary\" : \"PAYOUT-REF-001\",\n  \"retainedAmount\" : 10000,\n  \"minPayoutAmount\" : 1000,\n  \"maxPayoutAmount\" : 100000000,\n  \"enabled\" : true,\n  \"frequency\" : \"monthly\",\n  \"frequencyValue\" : 1\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Apply a managed payout schedule to a balance account. This payout schedule is based on an existing payout schedule in your balance platform."
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"id\" : \"PSAC00000000000000000000000001\",\n  \"balancePlatformPayoutScheduleId\" : \"PSPC00000000000000000000000001\",\n  \"balanceAccountId\" : \"BA000000000000000000001\",\n  \"transferInstrumentId\" : \"SE00000000000000000000001\",\n  \"currency\" : \"EUR\",\n  \"reference\" : \"Monthly payout\",\n  \"description\" : \"Scheduled payout to merchant bank account\",\n  \"referenceForBeneficiary\" : \"PAYOUT-REF-001\",\n  \"retainedAmount\" : 10000,\n  \"minPayoutAmount\" : 1000,\n  \"maxPayoutAmount\" : 100000000,\n  \"createdAt\" : \"2024-01-15T10:30:00Z\",\n  \"enabled\" : true,\n  \"frequency\" : \"monthly\",\n  \"frequencyValue\" : 1\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"balancePlatformPayoutScheduleId\" : \"PSPC00000000000000000000000001\",\n  \"transferInstrumentId\" : \"SE00000000000000000000001\",\n  \"currency\" : \"EUR\",\n  \"reference\" : \"Monthly payout\",\n  \"description\" : \"Scheduled payout to merchant bank account\",\n  \"referenceForBeneficiary\" : \"PAYOUT-REF-001\",\n  \"retainedAmount\" : 10000,\n  \"minPayoutAmount\" : 1000,\n  \"maxPayoutAmount\" : 100000000,\n  \"enabled\" : true,\n  \"frequency\" : \"monthly\",\n  \"frequencyValue\" : 1\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Apply a managed payout schedule to a balance account. This payout schedule is based on an existing payout schedule in your balance platform."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/payoutSchedules/:id",
+                "description": "Delete a payout schedule applied to a balance account.",
+                 "item": [
+                            {
+                                "name": "Delete a managed payout schedule on a balance account",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payout schedule applied to the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Delete a payout schedule applied to a balance account."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/payoutSchedules/:id",
+                "description": "Returns the specified payout schedule.",
+                 "item": [
+                            {
+                                "name": "Get a specific managed payout schedule on a balance account",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payout schedule for the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the specified payout schedule."
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"id\" : \"PSAC00000000000000000000000001\",\n  \"balancePlatformPayoutScheduleId\" : \"PSPC00000000000000000000000001\",\n  \"balanceAccountId\" : \"BA000000000000000000001\",\n  \"transferInstrumentId\" : \"SE00000000000000000000001\",\n  \"currency\" : \"EUR\",\n  \"reference\" : \"Monthly payout\",\n  \"description\" : \"Scheduled payout to merchant bank account\",\n  \"referenceForBeneficiary\" : \"PAYOUT-REF-001\",\n  \"retainedAmount\" : 10000,\n  \"minPayoutAmount\" : 1000,\n  \"maxPayoutAmount\" : 100000000,\n  \"createdAt\" : \"2024-01-15T10:30:00Z\",\n  \"enabled\" : true,\n  \"frequency\" : \"monthly\",\n  \"frequencyValue\" : 1\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payout schedule for the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the specified payout schedule."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/payoutSchedules/:id",
+                "description": "Update a managed payout schedule applied to a balance account. If an optional parameter is not included in the request, it remains unchanged.",
+                 "item": [
+                            {
+                                "name": "Update a managed payout schedule on a balance account",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"description\" : \"Updated payout description\",\n  \"enabled\" : false,\n  \"retainedAmount\" : 20000\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payout schedule applied to the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Update a managed payout schedule applied to a balance account. If an optional parameter is not included in the request, it remains unchanged."
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"id\" : \"PSAC00000000000000000000000001\",\n  \"balancePlatformPayoutScheduleId\" : \"PSPC00000000000000000000000001\",\n  \"balanceAccountId\" : \"BA000000000000000000001\",\n  \"transferInstrumentId\" : \"SE00000000000000000000001\",\n  \"currency\" : \"EUR\",\n  \"reference\" : \"Monthly payout\",\n  \"description\" : \"Updated payout description\",\n  \"referenceForBeneficiary\" : \"PAYOUT-REF-001\",\n  \"retainedAmount\" : 20000,\n  \"minPayoutAmount\" : 1000,\n  \"maxPayoutAmount\" : 100000000,\n  \"createdAt\" : \"2024-01-15T10:30:00Z\",\n  \"updatedAt\" : \"2024-01-16T14:00:00Z\",\n  \"enabled\" : false,\n  \"frequency\" : \"monthly\",\n  \"frequencyValue\" : 1\n}",
+                                        "originalRequest": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"description\" : \"Updated payout description\",\n  \"enabled\" : false,\n  \"retainedAmount\" : 20000\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payout schedule applied to the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Update a managed payout schedule applied to a balance account. If an optional parameter is not included in the request, it remains unchanged."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/payoutSchedules/:id/executions",
+                "description": "View information about the executions of a managed payout schedule on the specified balance account. An execution is an attempt to make a payout according to the payout schedule. ",
+                 "item": [
+                            {
+                                "name": "View executions of a managed payout schedule",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules/:id/executions",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules",
+        ":id",
+        "executions"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payout schedule on the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "results",
+        "value": "",
+        "description": "Contains a list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.  Possible statuses: - **succeeded**: The payout was sent successfully. - **failed**: The payout was not sent due to an error. - **skipped**: The payout was not triggered as expected.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page.  Default: **10**",
+        "disabled": true
+        },
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "The page number to be returned.  Default: **1**",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "View information about the executions of a managed payout schedule on the specified balance account. An execution is an attempt to make a payout according to the payout schedule. "
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"payoutScheduleExecutions\" : [ {\n    \"id\" : \"PS0000000000001\",\n    \"result\" : \"skipped\",\n    \"triggeredAt\" : \"2026-03-11T08:00:00Z\",\n    \"resultDetails\" : {\n      \"reasonCode\" : \"noBalanceToPayOut\",\n      \"reason\" : \"No balance to pay out\"\n    }\n  }, {\n    \"id\" : \"PS0000000000002\",\n    \"result\" : \"succeeded\",\n    \"triggeredAt\" : \"2026-03-12T08:00:00Z\",\n    \"resultDetails\" : {\n      \"transferId\" : \"A0A0A0A0A0A0A0A0\"\n    }\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/payoutSchedules/:id/executions",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "payoutSchedules",
+        ":id",
+        "executions"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payout schedule on the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "results",
+        "value": "",
+        "description": "Contains a list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.  Possible statuses: - **succeeded**: The payout was sent successfully. - **failed**: The payout was not sent due to an error. - **skipped**: The payout was not triggered as expected.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page.  Default: **10**",
+        "disabled": true
+        },
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "The page number to be returned.  Default: **1**",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "View information about the executions of a managed payout schedule on the specified balance account. An execution is an attempt to make a payout according to the payout schedule. "
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:balancePlatformId/payoutSchedules",
+                "description": "Returns a list of all the payout schedules that are configured for your balance platform. You can use query parameters to filter the elements that are returned in the list.",
+                 "item": [
+                            {
+                                "name": "Get all managed payout schedules on your balance platform",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/payoutSchedules",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "payoutSchedules"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        }
+    ],
+    "query": [
+        {
+        "key": "countryCode",
+        "value": "countryCode_example",
+        "description": "The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the country to which the payout configuration applies.",
+        "disabled": true
+        },
+        {
+        "key": "currency",
+        "value": "currency_example",
+        "description": "The three-character [ISO currency code](https://docs.adyen.com/development-resources/currency-codes) of the currency used in the payout configuration.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of all the payout schedules that are configured for your balance platform. You can use query parameters to filter the elements that are returned in the list."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balancePlatforms/:balancePlatformId/payoutSchedules/:id",
+                "description": "Returns the specified managed payout schedule configured on your balance platform.",
+                 "item": [
+                            {
+                                "name": "Get a specific managed payout schedule on your balance platform",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balancePlatforms/:balancePlatformId/payoutSchedules/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balancePlatforms",
+        ":balancePlatformId",
+        "payoutSchedules",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "balancePlatformId",
+        "value": "",
+        "description": "The unique identifier of the balance platform."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the payout configuration for your balance platform."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the specified managed payout schedule configured on your balance platform."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Platform",
 	            "item": [
 	                        {
@@ -5262,772 +6101,6 @@
                             ]
                         },
 	                        {
-    "name": "/balanceAccounts/:balanceAccountId/sweeps",
-                "description": "Returns a list of the sweeps configured for a balance account.  To fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`.",
-                 "item": [
-                            {
-                                "name": "Get all sweeps for a balance account",
-                                "request": {
-    "method": "GET",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        }
-    ],
-    "query": [
-        {
-        "key": "offset",
-        "value": "56",
-        "description": "The number of items that you want to skip.",
-        "disabled": true
-        },
-        {
-        "key": "limit",
-        "value": "56",
-        "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
-        "disabled": true
-        }
-    ]
-    },
-    "description": "Returns a list of the sweeps configured for a balance account.  To fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"hasNext\": false,\n \"hasPrevious\": false,\n \"sweeps\": [{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"schedule\": {\n \"type\": \"daily\"\n},\n \"status\": \"active\",\n \"targetAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"type\": \"push\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5FTD2KR6TJD\"\n},\n \"currency\": \"EUR\"\n}]\n}",
-                                        "originalRequest": {
-    "method": "GET",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        }
-    ],
-    "query": [
-        {
-        "key": "offset",
-        "value": "56",
-        "description": "The number of items that you want to skip.",
-        "disabled": true
-        },
-        {
-        "key": "limit",
-        "value": "56",
-        "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
-        "disabled": true
-        }
-    ]
-    },
-    "description": "Returns a list of the sweeps configured for a balance account.  To fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`."
-}
-                                        }
-                                ]
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/balanceAccounts/:balanceAccountId/sweeps",
-                "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination.",
-                 "item": [
-                            {
-                                "name": "Create a sweep to pull funds in to a balance account",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"counterparty\": {\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"active\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"counterparty\": {\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"active\"\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"counterparty\": {\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"active\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
-}
-                                        }
-                                ]
-                            },
-                            {
-                                "name": "Create a sweep to push funds out of a balance account",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
-}
-                                        }
-                                ]
-                            },
-                            {
-                                "name": "Create a sweep to push funds out of a balance account with set priorities",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\", \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN9\",\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\", \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\", \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
-}
-                                        }
-                                ]
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
-                "description": "Deletes a sweep for a balance account.",
-                 "item": [
-                            {
-                                "name": "Delete a sweep",
-                                "request": {
-    "method": "DELETE",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps",
-        ":sweepId"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        },
-        {
-        "key": "sweepId",
-        "value": "",
-        "description": "The unique identifier of the sweep."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Deletes a sweep for a balance account."
-}
-                                ,"response": [
-                                ]
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
-                "description": "Returns a sweep.",
-                 "item": [
-                            {
-                                "name": "Get a sweep",
-                                "request": {
-    "method": "GET",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps",
-        ":sweepId"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        },
-        {
-        "key": "sweepId",
-        "value": "",
-        "description": "The unique identifier of the sweep."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Returns a sweep."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"schedule\": {\n \"type\": \"daily\"\n},\n \"status\": \"active\",\n \"targetAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"type\": \"push\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5FTD2KR6TJD\"\n},\n \"currency\": \"EUR\"\n}",
-                                        "originalRequest": {
-    "method": "GET",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps",
-        ":sweepId"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        },
-        {
-        "key": "sweepId",
-        "value": "",
-        "description": "The unique identifier of the sweep."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Returns a sweep."
-}
-                                        }
-                                ]
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
-                "description": "Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged.",
-                 "item": [
-                            {
-                                "name": "Update the status of a sweep",
-                                "request": {
-    "method": "PATCH",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"status\": \"inactive\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps",
-        ":sweepId"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        },
-        {
-        "key": "sweepId",
-        "value": "",
-        "description": "The unique identifier of the sweep."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"counterparty\": {\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"inactive\"\n}",
-                                        "originalRequest": {
-    "method": "PATCH",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"status\": \"inactive\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "balanceAccounts",
-        ":balanceAccountId",
-        "sweeps",
-        ":sweepId"
-    ],
-    "variable": [
-        {
-        "key": "balanceAccountId",
-        "value": "",
-        "description": "The unique identifier of the balance account."
-        },
-        {
-        "key": "sweepId",
-        "value": "",
-        "description": "The unique identifier of the sweep."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged."
-}
-                                        }
-                                ]
-                            }
-                            ]
-                        },
-	                        {
     "name": "/balanceAccounts/:id",
                 "description": "Returns a balance account and its balances for the default currency and other currencies with a non-zero balance.",
                  "item": [
@@ -7498,6 +7571,777 @@
     ]
     },
     "description": "Returns the item list of a specific card order."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Custom payout schedules (sweeps)",
+	            "item": [
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/sweeps",
+                "description": "Returns a list of the sweeps configured for a balance account.  To fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`.",
+                 "item": [
+                            {
+                                "name": "Get all sweeps for a balance account",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "The number of items that you want to skip.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of the sweeps configured for a balance account.  To fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"hasNext\": false,\n \"hasPrevious\": false,\n \"sweeps\": [{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"schedule\": {\n \"type\": \"daily\"\n},\n \"status\": \"active\",\n \"targetAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"type\": \"push\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5FTD2KR6TJD\"\n},\n \"currency\": \"EUR\"\n}]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "offset",
+        "value": "56",
+        "description": "The number of items that you want to skip.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page, maximum 100 items. By default, the response returns 10 items per page.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of the sweeps configured for a balance account.  To fetch multiple pages, use the query parameters. For example, to limit the page to 5 sweeps and to skip the first 10, use `/balanceAccounts/{balanceAccountId}/sweeps?limit=5&offset=10`."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/sweeps",
+                "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination.",
+                 "item": [
+                            {
+                                "name": "Create a sweep to pull funds in to a balance account",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"counterparty\": {\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"active\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"counterparty\": {\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"active\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"counterparty\": {\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"active\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Create a sweep to push funds out of a balance account",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"counterparty\": {\n \"balanceAccountId\": \"BA32278887611B5FTD2KR6TJD\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
+}
+                                        }
+                                ]
+                            },
+                            {
+                                "name": "Create a sweep to push funds out of a balance account with set priorities",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\", \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN9\",\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\", \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"counterparty\": {\n \"transferInstrumentId\": \"SE322JV223222J5HGLCGF2WDV\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"priorities\": [\"fast\", \"instant\"],\n \"category\": \"bank\",\n \"schedule\": {\n \"type\": \"weekly\"\n},\n \"type\": \"push\",\n \"status\": \"active\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a sweep that results in moving funds from or to a balance account.  A sweep pulls in or pushes out funds based on a defined schedule, amount, currency, and a source or a destination."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
+                "description": "Deletes a sweep for a balance account.",
+                 "item": [
+                            {
+                                "name": "Delete a sweep",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps",
+        ":sweepId"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "sweepId",
+        "value": "",
+        "description": "The unique identifier of the sweep."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Deletes a sweep for a balance account."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
+                "description": "Returns a sweep.",
+                 "item": [
+                            {
+                                "name": "Get a sweep",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps",
+        ":sweepId"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "sweepId",
+        "value": "",
+        "description": "The unique identifier of the sweep."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a sweep."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"schedule\": {\n \"type\": \"daily\"\n},\n \"status\": \"active\",\n \"targetAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 0\n},\n \"type\": \"push\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5FTD2KR6TJD\"\n},\n \"currency\": \"EUR\"\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps",
+        ":sweepId"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "sweepId",
+        "value": "",
+        "description": "The unique identifier of the sweep."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns a sweep."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
+                "description": "Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged.",
+                 "item": [
+                            {
+                                "name": "Update the status of a sweep",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"status\": \"inactive\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps",
+        ":sweepId"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "sweepId",
+        "value": "",
+        "description": "The unique identifier of the sweep."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"SWPC4227C224555B5FTD2NT2JV4WN5\",\n \"counterparty\": {\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\"\n},\n \"triggerAmount\": {\n \"currency\": \"EUR\",\n \"value\": 50000\n},\n \"currency\": \"EUR\",\n \"schedule\": {\n \"type\": \"balance\"\n},\n \"type\": \"pull\",\n \"status\": \"inactive\"\n}",
+                                        "originalRequest": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"status\": \"inactive\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps",
+        ":sweepId"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "sweepId",
+        "value": "",
+        "description": "The unique identifier of the sweep."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged."
 }
                                         }
                                 ]

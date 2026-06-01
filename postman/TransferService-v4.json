@@ -315,6 +315,283 @@
 	                    ]
 	        },
 	        {
+	            "name": "Capital (deprecated)",
+	            "item": [
+	                        {
+    "name": "/grants (DEPRECATED)",
+                "description": "Returns a list of grants with status and outstanding balances.",
+                 "item": [
+                            {
+                                "name": "Get a capital account",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants"
+    ],
+    "variable": [
+    ],
+    "query": [
+        {
+        "key": "counterpartyAccountHolderId",
+        "value": "counterpartyAccountHolderId_example",
+        "description": "The counterparty account holder id.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of grants with status and outstanding balances."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/grants (DEPRECATED)",
+                "description": "Requests the payout of the selected grant offer.",
+                 "item": [
+                            {
+                                "name": "Request grant payout to a balance account",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"grantAccountId\": \"CG00000000000000000000001\",\n \"grantOfferId\": \"0000000000000001\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA00000000000000000000001\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Requests the payout of the selected grant offer."
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n \"id\": \"GR00000000000000000000001\",\n \"grantAccountId\": \"CG00000000000000000000001\",\n \"grantOfferId\": \"0000000000000001\",\n \"counterparty\": {\n \"accountHolderId\": \"AH00000000000000000000001\",\n \"balanceAccountId\": \"BA00000000000000000000001\"\n},\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000000\n},\n \"fee\": {\n \"amount\": {\n \"value\": 120000,\n \"currency\": \"EUR\"\n}\n},\n \"balances\": {\n \"currency\": \"EUR\",\n \"fee\": 120000,\n \"principal\": 1000000,\n \"total\": 1120000\n},\n \"repayment\": {\n \"basisPoints\": 1400\n},\n \"status\": \"Pending\"\n}",
+                                        "originalRequest": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Idempotency-Key",
+        "value": "",
+        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
+        "disabled": true
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"grantAccountId\": \"CG00000000000000000000001\",\n \"grantOfferId\": \"0000000000000001\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA00000000000000000000001\"\n}\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Requests the payout of the selected grant offer."
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/grants/:id (DEPRECATED)",
+                "description": "Returns the details of a capital account specified in the path.",
+                 "item": [
+                            {
+                                "name": "Get grant reference details",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/grants/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "grants",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the grant."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of a capital account specified in the path."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "CashOut",
+	            "item": [
+	                        {
+    "name": "/cashouts",
+                "description": "Initiates a cashout request",
+                 "item": [
+                            {
+                                "name": "Initiate a cashout request",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"instructingBalanceAccountId\" : \"BA00000000000000000000001\",\n  \"amount\" : {\n    \"currency\" : \"EUR\",\n    \"value\" : 50000\n  },\n  \"counterparty\" : {\n    \"transferInstrumentId\" : \"SE00000000000000000000001\"\n  },\n  \"description\" : \"Cashout to bank account\",\n  \"referenceForBeneficiary\" : \"CASHOUT-REF-001\",\n  \"fee\" : {\n    \"amount\" : {\n      \"currency\" : \"EUR\",\n      \"value\" : 500\n    }\n  }\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/cashouts",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "cashouts"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Initiates a cashout request"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Transfers",
 	            "item": [
 	                        {
@@ -541,7 +818,7 @@
                         },
 	                        {
     "name": "/transfers",
-                "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions.",
+                "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions.",
                  "item": [
                             {
                                 "name": "Make a third-party cross-border transfer",
@@ -595,10 +872,10 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
-                                        {"name": "Accepted - the request has been accepted for processing, but the processing has not been completed.",
+                                        {"name": "Accepted - The request has been accepted for processing, but has not been completed.",
                                         "code": 202,
                                         "status": "Accepted",
                                         "header": [{
@@ -607,7 +884,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"categoryData\": {\n \"priority\": \"crossBorder\",\n \"type\": \"bank\"\n},\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\",\n \"address\": {\n \"city\": \"San Francisco\",\n \"country\": \"US\",\n \"postalCode\": \"94678\",\n \"stateOrProvince\": \"CA\",\n \"line1\": \"274\",\n \"line2\": \"Brannan Street\"\n}\n},\n \"accountIdentification\": {\n \"type\": \"numberAndBic\",\n \"accountNumber\": \"123456789\",\n \"bic\": \"BOFAUS3NXXX\"\n}\n}\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"approved\",\n \"status\": \"authorised\"\n}",
+                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"categoryData\": {\n \"priority\": \"crossBorder\",\n \"type\": \"bank\"\n},\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\",\n \"address\": {\n \"city\": \"San Francisco\",\n \"country\": \"US\",\n \"postalCode\": \"94678\",\n \"stateOrProvince\": \"CA\",\n \"line1\": \"274\",\n \"line2\": \"Brannan Street\"\n}\n},\n \"accountIdentification\": {\n \"type\": \"numberAndBic\",\n \"accountNumber\": \"123456789\",\n \"bic\": \"BOFAUS3NXXX\"\n}\n}\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"pending\",\n \"status\": \"received\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -658,7 +935,7 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                         }
                                 ]
@@ -715,10 +992,10 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
-                                        {"name": "Accepted - the request has been accepted for processing, but the processing has not been completed.",
+                                        {"name": "Accepted - The request has been accepted for processing, but has not been completed.",
                                         "code": 202,
                                         "status": "Accepted",
                                         "header": [{
@@ -727,7 +1004,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"counterparty\": {\n \"transferInstrumentId\": \"SE1234567890ABC1234567890\"\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"approved\",\n \"status\": \"authorised\"\n}",
+                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"counterparty\": {\n \"transferInstrumentId\": \"SE1234567890ABC1234567890\"\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"pending\",\n \"status\": \"received\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -778,7 +1055,7 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                         }
                                 ]
@@ -835,10 +1112,10 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
-                                        {"name": "Accepted - the request has been accepted for processing, but the processing has not been completed.",
+                                        {"name": "Accepted - The request has been accepted for processing, but has not been completed.",
                                         "code": 202,
                                         "status": "Accepted",
                                         "header": [{
@@ -847,7 +1124,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"categoryData\": {\n \"priority\": \"regular\",\n \"type\": \"bank\"\n},\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\"\n},\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL91ABNA0417164300\"\n}\n}\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"approved\",\n \"status\": \"authorised\"\n}",
+                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"EUR\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"categoryData\": {\n \"priority\": \"regular\",\n \"type\": \"bank\"\n},\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\"\n},\n \"accountIdentification\": {\n \"type\": \"iban\",\n \"iban\": \"NL91ABNA0417164300\"\n}\n}\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"pending\",\n \"status\": \"received\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -898,7 +1175,7 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                         }
                                 ]
@@ -955,10 +1232,10 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
-                                        {"name": "Accepted - the request has been accepted for processing, but the processing has not been completed.",
+                                        {"name": "Accepted - The request has been accepted for processing, but has not been completed.",
                                         "code": 202,
                                         "status": "Accepted",
                                         "header": [{
@@ -967,7 +1244,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"USD\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"categoryData\": {\n \"priority\": \"regular\",\n \"type\": \"bank\"\n},\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\"\n},\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"123456789\",\n \"routingNumber\": \"011000138\"\n}\n}\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"approved\",\n \"status\": \"authorised\"\n}",
+                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 110000,\n \"currency\": \"USD\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"categoryData\": {\n \"priority\": \"regular\",\n \"type\": \"bank\"\n},\n \"counterparty\": {\n \"bankAccount\": {\n \"accountHolder\": {\n \"fullName\": \"A. Klaassen\"\n},\n \"accountIdentification\": {\n \"type\": \"usLocal\",\n \"accountNumber\": \"123456789\",\n \"routingNumber\": \"011000138\"\n}\n}\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"pending\",\n \"status\": \"received\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1018,7 +1295,7 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                         }
                                 ]
@@ -1075,10 +1352,10 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
-                                        {"name": "Accepted - the request has been accepted for processing, but the processing has not been completed.",
+                                        {"name": "Accepted - The request has been accepted for processing, but has not been completed.",
                                         "code": 202,
                                         "status": "Accepted",
                                         "header": [{
@@ -1087,7 +1364,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 10000\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"internal\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5LPRFDW7J9G\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"approved\",\n \"status\": \"authorised\"\n}",
+                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 10000\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"internal\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA32272223222B5LPRFDW7J9G\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"pending\",\n \"status\": \"received\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1138,7 +1415,7 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                         }
                                 ]
@@ -1195,10 +1472,10 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
-                                        {"name": "Accepted - the request has been accepted for processing, but the processing has not been completed.",
+                                        {"name": "Accepted - The request has been accepted for processing, but has not been completed.",
                                         "code": 202,
                                         "status": "Accepted",
                                         "header": [{
@@ -1207,7 +1484,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"creationDate\": \"2023-12-28T15:26:06+01:00\",\n \"id\": \"48POP561F0ZWWLNW\",\n \"accountHolder\": {\n \"description\": \"Your description for the account holder\",\n \"id\": \"AH00000000000000000000001\"\n},\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 10000\n},\n \"balanceAccount\": {\n \"description\": \"Your description for the balance account\",\n \"id\": \"BA00000000000000000000001\"\n},\n \"category\": \"card\",\n \"counterparty\": {\n \"card\": {\n \"cardHolder\": {\n \"address\": {\n \"city\": \"San Francisco\",\n \"country\": \"US\",\n \"postalCode\": \"94107\",\n \"stateOrProvince\": \"CA\",\n \"line1\": \"274\",\n \"line2\": \"Brannan St\"\n},\n \"firstName\": \"Albert\",\n \"lastName\": \"Klaassen\",\n \"type\": \"individual\"\n},\n \"cardIdentification\": {\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"number\": \"432112******8765\"\n}\n}\n},\n \"description\": \"Your internal description of the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"approved\",\n \"reference\": \"Your internal reference for the transfer\",\n \"status\": \"authorised\",\n \"type\": \"cardTransfer\"\n}",
+                                        "body" : "{\n \"creationDate\": \"2023-12-28T15:26:06+01:00\",\n \"id\": \"48POP561F0ZWWLNW\",\n \"accountHolder\": {\n \"description\": \"Your description for the account holder\",\n \"id\": \"AH00000000000000000000001\"\n},\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 10000\n},\n \"balanceAccount\": {\n \"description\": \"Your description for the balance account\",\n \"id\": \"BA00000000000000000000001\"\n},\n \"category\": \"card\",\n \"counterparty\": {\n \"card\": {\n \"cardHolder\": {\n \"address\": {\n \"city\": \"San Francisco\",\n \"country\": \"US\",\n \"postalCode\": \"94107\",\n \"stateOrProvince\": \"CA\",\n \"line1\": \"274\",\n \"line2\": \"Brannan St\"\n},\n \"firstName\": \"Albert\",\n \"lastName\": \"Klaassen\",\n \"type\": \"individual\"\n},\n \"cardIdentification\": {\n \"expiryMonth\": \"03\",\n \"expiryYear\": \"2030\",\n \"number\": \"432112******8765\"\n}\n}\n},\n \"description\": \"Your internal description of the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"pending\",\n \"reference\": \"Your internal reference for the transfer\",\n \"status\": \"received\",\n \"type\": \"cardTransfer\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1258,7 +1535,7 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                         }
                                 ]
@@ -1315,10 +1592,10 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
-                                        {"name": "Accepted - the request has been accepted for processing, but the processing has not been completed.",
+                                        {"name": "Accepted - The request has been accepted for processing, but has not been completed.",
                                         "code": 202,
                                         "status": "Accepted",
                                         "header": [{
@@ -1327,7 +1604,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"creationDate\": \"2024-06-11T16:12:32+02:00\",\n \"id\": \"4VXLNQ638WU0IAN3\",\n \"accountHolder\": {\n \"description\": \"Your description for the account holder\",\n \"id\": \"AH00000000000000000000001\"\n},\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 10000\n},\n \"balanceAccount\": {\n \"description\": \"Your description for the balance account\",\n \"id\": \"BA00000000000000000000001\"\n},\n \"category\": \"card\",\n \"counterparty\": {\n \"card\": {\n \"cardHolder\": {\n \"firstName\": \"Albert\",\n \"lastName\": \"Klaassen\",\n \"reference\": \"Your reference for the cardholder\",\n \"type\": \"individual\",\n \"address\": {\n \"city\": \"San Francisco\",\n \"country\": \"US\",\n \"line1\": \"274\",\n \"line2\": \"Brannan St\",\n \"postalCode\": \"94107\",\n \"stateOrProvince\": \"CA\"\n}\n},\n \"cardIdentification\": {\n \"storedPaymentMethodId\": \"ZMV627QSCQVDKG66\"\n}\n}\n},\n \"description\": \"Your internal description of the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"approved\",\n \"reference\": \"Your internal reference for the transfer\",\n \"status\": \"authorised\",\n \"type\": \"cardTransfer\"\n}",
+                                        "body" : "{\n \"creationDate\": \"2024-06-11T16:12:32+02:00\",\n \"id\": \"4VXLNQ638WU0IAN3\",\n \"accountHolder\": {\n \"description\": \"Your description for the account holder\",\n \"id\": \"AH00000000000000000000001\"\n},\n \"amount\": {\n \"currency\": \"USD\",\n \"value\": 10000\n},\n \"balanceAccount\": {\n \"description\": \"Your description for the balance account\",\n \"id\": \"BA00000000000000000000001\"\n},\n \"category\": \"card\",\n \"counterparty\": {\n \"card\": {\n \"cardHolder\": {\n \"firstName\": \"Albert\",\n \"lastName\": \"Klaassen\",\n \"reference\": \"Your reference for the cardholder\",\n \"type\": \"individual\",\n \"address\": {\n \"city\": \"San Francisco\",\n \"country\": \"US\",\n \"line1\": \"274\",\n \"line2\": \"Brannan St\",\n \"postalCode\": \"94107\",\n \"stateOrProvince\": \"CA\"\n}\n},\n \"cardIdentification\": {\n \"storedPaymentMethodId\": \"ZMV627QSCQVDKG66\"\n}\n}\n},\n \"description\": \"Your internal description of the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"pending\",\n \"reference\": \"Your internal reference for the transfer\",\n \"status\": \"received\",\n \"type\": \"cardTransfer\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1378,7 +1655,7 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                         }
                                 ]
@@ -1435,10 +1712,10 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                 ,"response": [
-                                        {"name": "Accepted - the request has been accepted for processing, but the processing has not been completed.",
+                                        {"name": "Accepted - The request has been accepted for processing, but has not been completed.",
                                         "code": 202,
                                         "status": "Accepted",
                                         "header": [{
@@ -1447,7 +1724,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 80000,\n \"currency\": \"EUR\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"categoryData\": {\n \"priority\": \"regular\",\n \"type\": \"bank\"\n},\n \"counterparty\": {\n \"transferInstrumentId\": \"SE1234567890ABC1234567890\"\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"approved\",\n \"status\": \"authorised\"\n}",
+                                        "body" : "{\n \"id\": \"1W1UG35U8A9J5ZLG\",\n \"accountHolder\": {\n \"description\": \"Your account holder description\",\n \"id\": \"AH3227C223222C5GXQXF658WB\",\n \"reference\": \"Your account holder reference\"\n},\n \"amount\": {\n \"value\": 80000,\n \"currency\": \"EUR\"\n},\n \"balanceAccount\": {\n \"description\": \"Your balance account description\",\n \"id\": \"BAB8B2C3D4E5F6G7H8D9J6GD4\",\n \"reference\": \"Your balance account reference\"\n},\n \"category\": \"bank\",\n \"categoryData\": {\n \"priority\": \"regular\",\n \"type\": \"bank\"\n},\n \"counterparty\": {\n \"transferInstrumentId\": \"SE1234567890ABC1234567890\"\n},\n \"paymentInstrument\": {\n \"description\": \"Your payment instrument description\",\n \"id\": \"PI3222G223222G59347DAA265\",\n \"reference\": \"Your payment instrument reference\"\n},\n \"referenceForBeneficiary\": \"Your-reference-sent-to-the-beneficiary\",\n \"reference\": \"Your internal reference for the transfer\",\n \"description\": \"Your description for the transfer\",\n \"direction\": \"outgoing\",\n \"reason\": \"pending\",\n \"status\": \"received\"\n}",
                                         "originalRequest": {
     "method": "POST",
     "header": [
@@ -1498,7 +1775,7 @@
     "query": [
     ]
     },
-    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/#/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/#/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
+    "description": ">Versions 1 and 2 of the Transfers API are deprecated. If you are just starting your implementation, use the latest version.  Starts a request to transfer funds to: - [Balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts) - [Transfer instruments](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments) - [Third-party bank accounts](https://docs.adyen.com/payouts/payout-service/pay-out-to-bank-accounts) - [Third-party cards](https://docs.adyen.com/payouts/payout-service/pay-out-to-cards)  Adyen sends the outcome of the transfer request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Webservice Initiate** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                         }
                                 ]
@@ -1975,227 +2252,6 @@
     "description": "Initiates the cancellation of a list of transfers that triggered an additional [review](https://docs.adyen.com/api-explorer/transfers/latest/post/transfers#request-review). Adyen sends the outcome of the cancel request through webhooks.  To use this endpoint: - Your API credential must have the **TransferService Approve** [role](https://docs.adyen.com/platforms/manage-access/webservice-roles/?tab=transfers_3). - The account holder must have the required [capabilities](https://docs.adyen.com/platforms/verification-overview/capabilities).  Reach out to your Adyen contact to set up these permissions."
 }
                                         }
-                                ]
-                            }
-                            ]
-                        }
-	                    ]
-	        },
-	        {
-	            "name": "Capital",
-	            "item": [
-	                        {
-    "name": "/grants (DEPRECATED)",
-                "description": "Returns a list of grants with status and outstanding balances.",
-                 "item": [
-                            {
-                                "name": "Get a capital account",
-                                "request": {
-    "method": "GET",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/grants",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "grants"
-    ],
-    "variable": [
-    ],
-    "query": [
-        {
-        "key": "counterpartyAccountHolderId",
-        "value": "counterpartyAccountHolderId_example",
-        "description": "The counterparty account holder id.",
-        "disabled": true
-        }
-    ]
-    },
-    "description": "Returns a list of grants with status and outstanding balances."
-}
-                                ,"response": [
-                                ]
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/grants (DEPRECATED)",
-                "description": "Requests the payout of the selected grant offer.",
-                 "item": [
-                            {
-                                "name": "Request grant payout to a balance account",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"grantAccountId\": \"CG00000000000000000000001\",\n \"grantOfferId\": \"0000000000000001\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA00000000000000000000001\"\n}\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/grants",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "grants"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Requests the payout of the selected grant offer."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"id\": \"GR00000000000000000000001\",\n \"grantAccountId\": \"CG00000000000000000000001\",\n \"grantOfferId\": \"0000000000000001\",\n \"counterparty\": {\n \"accountHolderId\": \"AH00000000000000000000001\",\n \"balanceAccountId\": \"BA00000000000000000000001\"\n},\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000000\n},\n \"fee\": {\n \"amount\": {\n \"value\": 120000,\n \"currency\": \"EUR\"\n}\n},\n \"balances\": {\n \"currency\": \"EUR\",\n \"fee\": 120000,\n \"principal\": 1000000,\n \"total\": 1120000\n},\n \"repayment\": {\n \"basisPoints\": 1400\n},\n \"status\": \"Pending\"\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"grantAccountId\": \"CG00000000000000000000001\",\n \"grantOfferId\": \"0000000000000001\",\n \"counterparty\": {\n \"balanceAccountId\": \"BA00000000000000000000001\"\n}\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/grants",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "grants"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Requests the payout of the selected grant offer."
-}
-                                        }
-                                ]
-                            }
-                            ]
-                        },
-	                        {
-    "name": "/grants/:id (DEPRECATED)",
-                "description": "Returns the details of a capital account specified in the path.",
-                 "item": [
-                            {
-                                "name": "Get grant reference details",
-                                "request": {
-    "method": "GET",
-    "header": [
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/grants/:id",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "grants",
-        ":id"
-    ],
-    "variable": [
-        {
-        "key": "id",
-        "value": "",
-        "description": "The unique identifier of the grant."
-        }
-    ],
-    "query": [
-    ]
-    },
-    "description": "Returns the details of a capital account specified in the path."
-}
-                                ,"response": [
                                 ]
                             }
                             ]

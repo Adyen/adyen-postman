@@ -540,7 +540,7 @@
 	            "item": [
 	                        {
     "name": "/cashouts",
-                "description": "Initiates a cashout request",
+                "description": "Initiates a [cashout](https://docs.adyen.com/platforms/cash-out-instantly) request.",
                  "item": [
                             {
                                 "name": "Initiate a cashout request",
@@ -582,7 +582,7 @@
     "query": [
     ]
     },
-    "description": "Initiates a cashout request"
+    "description": "Initiates a [cashout](https://docs.adyen.com/platforms/cash-out-instantly) request."
 }
                                 ,"response": [
                                 ]

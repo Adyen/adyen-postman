@@ -6156,7 +6156,7 @@
                                         ],
                                         "_postman_previewlanguage": "json",
                                         "cookie": [],
-                                        "body" : "{\n \"accountHolderId\": \"AH32272223222B59K6RTQBFNZ\",\n \"defaultCurrencyCode\": \"EUR\",\n \"timeZone\": \"Europe/Amsterdam\",\n \"balances\": [{\n \"available\": 0,\n \"balance\": 0,\n \"currency\": \"EUR\",\n \"reserved\": 0,\n \"pending\": 0\n}],\n \"id\": \"BA3227C223222B5BLP6JQC3FD\",\n \"status\": \"active\"\n}",
+                                        "body" : "{\n \"accountHolderId\": \"AH32272223222B59K6RTQBFNZ\",\n \"defaultCurrencyCode\": \"EUR\",\n \"timeZone\": \"Europe/Amsterdam\",\n \"balances\": [{\n \"available\": 0,\n \"balance\": 0,\n \"currency\": \"EUR\",\n \"reserved\": 0,\n \"pending\": 0,\n \"pendingAvailable\": 0\n}],\n \"id\": \"BA3227C223222B5BLP6JQC3FD\",\n \"status\": \"active\"\n}",
                                         "originalRequest": {
     "method": "GET",
     "header": [

@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           # Disabling shallow clone to improve relevancy of SonarCloud reporting
           fetch-depth: 0

@@ -4653,6 +4653,415 @@
 	                    ]
 	        },
 	        {
+	            "name": "Donation campaigns",
+	            "item": [
+	                        {
+    "name": "/companies/:companyId/campaignManagement",
+                "description": "Creates a new donation campaign, to give shoppers the option to donate to a nonprofit organization when making a payment. A campaign can be for online payments, in-person payments, or both online and in-person payments.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read and write",
+                 "item": [
+                            {
+                                "name": "Create a donation campaign",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountHolderIds\": \"<string>\",\n \"inPerson\": \"<string>\",\n \"name\": \"<string>\",\n \"nonprofitCauseId\": \"<string>\",\n \"online\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/campaignManagement",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "campaignManagement"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a new donation campaign, to give shoppers the option to donate to a nonprofit organization when making a payment. A campaign can be for online payments, in-person payments, or both online and in-person payments.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/campaignManagement/:donationCampaignId",
+                "description": "Removes the donation campaign specified in the path. This request is only allowed if the campaign has the status **inactive**.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read and write",
+                 "item": [
+                            {
+                                "name": "Delete a donation campaign",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/campaignManagement/:donationCampaignId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "campaignManagement",
+        ":donationCampaignId"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "donationCampaignId",
+        "value": "",
+        "description": "The unique identifier of the donation campaign to be deleted."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Removes the donation campaign specified in the path. This request is only allowed if the campaign has the status **inactive**.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/campaignManagement/:donationCampaignId",
+                "description": "Updates the properties of the donation campaign specified in the path. Note the following restrictions:   * You cannot use a PATCH request to update the campaign status. To activate or end a campaign, make a POST request to the `/campaignManagement/{campaignId}/status/{status}` endpoint. * You get a validation error if you add account holders that are not compatible with the nonprofit.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read and write",
+                 "item": [
+                            {
+                                "name": "Update a donation campaign",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountHolderIds\": \"<string>\",\n \"inPerson\": \"<string>\",\n \"name\": \"<string>\",\n \"online\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/campaignManagement/:donationCampaignId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "campaignManagement",
+        ":donationCampaignId"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "donationCampaignId",
+        "value": "",
+        "description": "The unique identifier of the donation campaign to be updated."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates the properties of the donation campaign specified in the path. Note the following restrictions:   * You cannot use a PATCH request to update the campaign status. To activate or end a campaign, make a POST request to the `/campaignManagement/{campaignId}/status/{status}` endpoint. * You get a validation error if you add account holders that are not compatible with the nonprofit.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/campaignManagement/:donationCampaignId/status/:status",
+                "description": "Starts or stops the donation campaign specified in the path, by providing a path parameter.  Use the path parameter **activate** to start an inactive campaign, or **end** to stop an active campaign. Other status transitions are not allowed.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read and write",
+                 "item": [
+                            {
+                                "name": "Activate or end a donation campaign",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/campaignManagement/:donationCampaignId/status/:status",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "campaignManagement",
+        ":donationCampaignId",
+        "status",
+        ":status"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "donationCampaignId",
+        "value": "",
+        "description": "The unique identifier of the donation campaign to activate or end."
+        },
+        {
+        "key": "status",
+        "value": "",
+        "description": "The desired status change. Possible values: **activate** or **end**."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Starts or stops the donation campaign specified in the path, by providing a path parameter.  Use the path parameter **activate** to start an inactive campaign, or **end** to stop an active campaign. Other status transitions are not allowed.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/campaignManagement/accountHolders/:accountHolderId",
+                "description": "Returns a paginated list of donation campaigns associated with the account holder specified in the path. You can filter the list by campaign status.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read * Management API—Campaign Management read and write",
+                 "item": [
+                            {
+                                "name": "Get the donation campaigns for an account holder",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/campaignManagement/accountHolders/:accountHolderId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "campaignManagement",
+        "accountHolders",
+        ":accountHolderId"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "accountHolderId",
+        "value": "",
+        "description": "The unique identifier of the account holder."
+        }
+    ],
+    "query": [
+        {
+        "key": "status",
+        "value": "status_example",
+        "description": "The campaign status to return campaigns that match. Allowed values: **inactive**, **active**, or **ended**.",
+        "disabled": true
+        },
+        {
+        "key": "pageNumber",
+        "value": "56",
+        "description": "The number of the page to fetch.",
+        "disabled": true
+        },
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of items to have on a page, maximum 100. The default is 10 items on a page.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of donation campaigns associated with the account holder specified in the path. You can filter the list by campaign status.  To make this request, your API credential must have one of the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Campaign Management read * Management API—Campaign Management read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/nonprofits",
+                "description": "Returns a list of supported nonprofit organizations to choose from when creating a donation campaign. The list only contains nonprofits that are compatible with all the account holders specified in the request.",
+                 "item": [
+                            {
+                                "name": "Get a list of nonprofits",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"accountHolderIds\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/nonprofits",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "nonprofits"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        }
+    ],
+    "query": [
+        {
+        "key": "searchTerm",
+        "value": "searchTerm_example",
+        "description": "A query to return nonprofit organizations for, maximum 100 characters. For example, `&searchTerm=clean%20water`.",
+        "disabled": true
+        },
+        {
+        "key": "pageNumber",
+        "value": "56",
+        "description": "The number of the page to fetch.",
+        "disabled": true
+        },
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of items to have on a page, maximum 100. The default is 10 items on a page.",
+        "disabled": true
+        },
+        {
+        "key": "goal",
+        "value": "",
+        "description": "One or more United Nations Sustainable Development Goals to return nonprofit organizations for. Format: `unsdg_<number>`, for example, `&goal=unsdg_6&goal=unsdg_2`.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a list of supported nonprofit organizations to choose from when creating a donation campaign. The list only contains nonprofits that are compatible with all the account holders specified in the request."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Allowed origins - merchant level",
 	            "item": [
 	                        {

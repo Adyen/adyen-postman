@@ -5116,6 +5116,319 @@
 	                    ]
 	        },
 	        {
+	            "name": "Recurring top ups",
+	            "item": [
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/recurringTopUps",
+                "description": "View all recurring top ups configured for a specific `balanceAccountId`.  For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups). ",
+                 "item": [
+                            {
+                                "name": "Get recurring top ups for a specific balanceAccountId",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/recurringTopUps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "recurringTopUps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items to return per page. Value must be between 1 and 100.",
+        "disabled": true
+        },
+        {
+        "key": "cursor",
+        "value": "cursor_example",
+        "description": "The cursor used for pagination. Required if you want to see the next or previous page of results.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "View all recurring top ups configured for a specific `balanceAccountId`.  For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups). "
+}
+                                ,"response": [
+                                        {"name": "OK - the request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"recurringTopUps\" : [ {\n    \"id\" : \"TUPC0000000000000000000001\",\n    \"counterparty\" : {\n      \"transferInstrumentId\" : \"SE000000000000000000000001\"\n    },\n    \"description\" : \"My description\",\n    \"topUpAmount\" : {\n      \"fixed\" : {\n        \"value\" : 1000,\n        \"currency\" : \"EUR\"\n      }\n    },\n    \"trigger\" : {\n      \"schedule\" : {\n        \"type\" : \"weekdays\"\n      },\n      \"threshold\" : {\n        \"value\" : 100,\n        \"currency\" : \"EUR\"\n      }\n    },\n    \"status\" : \"active\"\n  } ],\n  \"link\" : {\n    \"next\" : {\n      \"href\" : \"/balanceAccounts/balanceAccount1/recurringTopUps?limit=10&cursor=nextCursorToken\"\n    },\n    \"previous\" : {\n      \"href\" : \"/balanceAccounts/balanceAccount1/recurringTopUps?limit=10&cursor=previousCursorToken\"\n    }\n  }\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/recurringTopUps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "recurringTopUps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items to return per page. Value must be between 1 and 100.",
+        "disabled": true
+        },
+        {
+        "key": "cursor",
+        "value": "cursor_example",
+        "description": "The cursor used for pagination. Required if you want to see the next or previous page of results.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "View all recurring top ups configured for a specific `balanceAccountId`.  For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups). "
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/recurringTopUps",
+                "description": "Create a recurring top up configuration.  For more information, refer to [Create recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/create-recurring-top-ups). ",
+                 "item": [
+                            {
+                                "name": "Creates recurring topup",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"counterparty\" : {\n    \"transferInstrumentId\" : \"SE000000000000000000000001\"\n  },\n  \"description\" : \"My description\",\n  \"topUpAmount\" : {\n    \"fixed\" : {\n      \"value\" : 1000,\n      \"currency\" : \"EUR\"\n    }\n  },\n  \"trigger\" : {\n    \"schedule\" : {\n      \"type\" : \"weekdays\"\n    },\n    \"threshold\" : {\n      \"value\" : 100,\n      \"currency\" : \"EUR\"\n    }\n  }\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/recurringTopUps",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "recurringTopUps"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Create a recurring top up configuration.  For more information, refer to [Create recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/create-recurring-top-ups). "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/recurringTopUps/:topUpId",
+                "description": "Delete a recurring top up configuration by `topUpId`.  For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups). ",
+                 "item": [
+                            {
+                                "name": "Delete a recurring top up",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/recurringTopUps/:topUpId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "recurringTopUps",
+        ":topUpId"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "topUpId",
+        "value": "",
+        "description": "The unique identifier of the recurring top-up you want to delete."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Delete a recurring top up configuration by `topUpId`.  For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups). "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/recurringTopUps/:topUpId",
+                "description": "Update the configuration of an existing recurring top up.  For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups).",
+                 "item": [
+                            {
+                                "name": "Partially updates the configuration of a recurring Top up",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"description\" : \"new description\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/recurringTopUps/:topUpId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "recurringTopUps",
+        ":topUpId"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "topUpId",
+        "value": "",
+        "description": "The unique identifier of the recurring top-up you want to update."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Update the configuration of an existing recurring top up.  For more information, refer to [Manage recurring top-ups](https://docs.adyen.com/issuing/add-manage-funds/top-ups/manage-recurring-top-ups)."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "SCA association management",
 	            "item": [
 	                        {
@@ -10205,6 +10518,57 @@
     ]
     },
     "description": "Begins the registration process for a new Strong Customer Authentication (SCA) device."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/scaDevices/:deviceId",
+                "description": "Deletes a Strong Customer Authentication (SCA) device.",
+                 "item": [
+                            {
+                                "name": "Delete an SCA device",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/scaDevices/:deviceId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "scaDevices",
+        ":deviceId"
+    ],
+    "variable": [
+        {
+        "key": "deviceId",
+        "value": "",
+        "description": "The unique identifier of the SCA device to delete."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Deletes a Strong Customer Authentication (SCA) device."
 }
                                 ,"response": [
                                 ]

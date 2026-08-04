@@ -5889,6 +5889,63 @@
                                 ]
                             }
                             ]
+                        },
+	                        {
+    "name": "/sessions/:sessionId",
+                "description": "Updates an existing payment session with the `sessionId` specified in the path.  You can update the session's `amount` and `payable` fields. The session can only be updated if it is not yet payable.",
+                 "item": [
+                            {
+                                "name": "Update a payment session",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"amount\": \"<string>\",\n \"payable\": \"<string>\",\n \"sessionData\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/sessions/:sessionId",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "sessions",
+        ":sessionId"
+    ],
+    "variable": [
+        {
+        "key": "sessionId",
+        "value": "",
+        "description": ""
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Updates an existing payment session with the `sessionId` specified in the path.  You can update the session's `amount` and `payable` fields. The session can only be updated if it is not yet payable."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
                         }
 	                    ]
 	        },

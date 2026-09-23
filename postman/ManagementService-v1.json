@@ -4589,6 +4589,785 @@
 	                    ]
 	        },
 	        {
+	            "name": "Terminal themes - company level",
+	            "item": [
+	                        {
+    "name": "/companies/:companyId/terminalThemes",
+                "description": "Returns a paginated list of terminal themes for the company specified in the path and all the associated merchant accounts. The response provides only the metadata of the themes. Assets (images and videos) are not included. To obtain the URLs for the assets of a specific theme, make a GET request to the `/companies/{companyId}/terminalThemes/{id}` endpoint.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "List terminal themes",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        }
+    ],
+    "query": [
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of themes to return per page. If not specified, the list has 10 themes per page.",
+        "disabled": true
+        },
+        {
+        "key": "page",
+        "value": "56",
+        "description": "The number of the page to fetch. If not specified, the list starts from page 1.",
+        "disabled": true
+        },
+        {
+        "key": "search",
+        "value": "search_example",
+        "description": "A search term to filter themes by name. The match is case-insensitive and returns any theme with a name that contains the search term.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of terminal themes for the company specified in the path and all the associated merchant accounts. The response provides only the metadata of the themes. Assets (images and videos) are not included. To obtain the URLs for the assets of a specific theme, make a GET request to the `/companies/{companyId}/terminalThemes/{id}` endpoint.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                        {"name": "OK",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"data\" : [ {\n    \"id\" : \"THEM_001ABC\",\n    \"name\" : \"BrandDark\",\n    \"mode\" : \"dark\"\n  }, {\n    \"id\" : \"THEM_002DEF\",\n    \"name\" : \"BrandLight\",\n    \"mode\" : \"light\"\n  } ],\n  \"hasNextPage\" : false\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        }
+    ],
+    "query": [
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of themes to return per page. If not specified, the list has 10 themes per page.",
+        "disabled": true
+        },
+        {
+        "key": "page",
+        "value": "56",
+        "description": "The number of the page to fetch. If not specified, the list starts from page 1.",
+        "disabled": true
+        },
+        {
+        "key": "search",
+        "value": "search_example",
+        "description": "A search term to filter themes by name. The match is case-insensitive and returns any theme with a name that contains the search term.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of terminal themes for the company specified in the path and all the associated merchant accounts. The response provides only the metadata of the themes. Assets (images and videos) are not included. To obtain the URLs for the assets of a specific theme, make a GET request to the `/companies/{companyId}/terminalThemes/{id}` endpoint.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/terminalThemes",
+                "description": "Creates a terminal theme for the company specified in the path, to customize screens shown on Android payment terminals. This request only creates a basic theme with a name and a dark or light mode. We refer to this as the metadata of the theme.   Next steps are to add terminal model-specific assets (images or videos) to the theme, and to apply (activate) the theme.   The theme name must be unique for the company account; other accounts can have a theme with the same name.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Create a dark theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"name\" : \"MyBrandTheme\",\n  \"mode\" : \"dark\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a terminal theme for the company specified in the path, to customize screens shown on Android payment terminals. This request only creates a basic theme with a name and a dark or light mode. We refer to this as the metadata of the theme.   Next steps are to add terminal model-specific assets (images or videos) to the theme, and to apply (activate) the theme.   The theme name must be unique for the company account; other accounts can have a theme with the same name.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/terminalThemes/:id",
+                "description": "Deletes the terminal theme identified in the path. If the theme is currently in use, you must first deactivate it using a call to the `/companies/{companyId}/terminalThemes/unapply` endpoint before you can delete the theme.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Delete a terminal theme",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Deletes the terminal theme identified in the path. If the theme is currently in use, you must first deactivate it using a call to the `/companies/{companyId}/terminalThemes/unapply` endpoint before you can delete the theme.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/terminalThemes/:id",
+                "description": "Returns the details of the terminal theme specified in the path. The response includes the metadata of the theme and the content delivery network (CDN) URLs for all assets that have been added to the theme.  The URL for the logo of the theme will lead to the Adyen logo if the theme is not associated with the permission to customize terminal logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Get a terminal theme",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of the terminal theme specified in the path. The response includes the metadata of the theme and the content delivery network (CDN) URLs for all assets that have been added to the theme.  The URL for the logo of the theme will lead to the Adyen logo if the theme is not associated with the permission to customize terminal logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                        {"name": "OK",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"id\" : \"THEM_001ABC\",\n  \"name\" : \"MyBrandTheme\",\n  \"mode\" : \"dark\",\n  \"assets\" : [ {\n    \"type\" : \"homeScreen\",\n    \"model\" : \"AMS1\",\n    \"url\" : \"https://cdn.adyen.com/external/TestCompany/themeAssets/abc123.png?token=****************\"\n  }, {\n    \"type\" : \"logo\",\n    \"model\" : \"All\",\n    \"url\" : \"https://cdn.adyen.com/external/default/themeAssets/defaultAdyenLogo.svg?token=****************\"\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of the terminal theme specified in the path. The response includes the metadata of the theme and the content delivery network (CDN) URLs for all assets that have been added to the theme.  The URL for the logo of the theme will lead to the Adyen logo if the theme is not associated with the permission to customize terminal logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/terminalThemes/:id",
+                "description": "Changes the metadata, consisting of the name and dark or light mode, of the terminal theme specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Update theme name and mode",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"name\" : \"ThemeLive\",\n  \"mode\" : \"light\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Changes the metadata, consisting of the name and dark or light mode, of the terminal theme specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/terminalThemes/:id/apply",
+                "description": "Applies the terminal theme specified by its ID to all Android terminals under this company, unless a different theme is applied at a lower level (merchant account, store, or individual terminal).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Apply a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes/:id/apply",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes",
+        ":id",
+        "apply"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Applies the terminal theme specified by its ID to all Android terminals under this company, unless a different theme is applied at a lower level (merchant account, store, or individual terminal).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/terminalThemes/:id/assets",
+                "description": "Deletes a single asset from a terminal theme owned by the company specified in the path. To identify the asset you want to remove, you must use the query parameters `type` and `model`.  When the `type` is **logo**, deleting the asset is blocked if the theme owner is not allowed to edit logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Delete an asset from a terminal theme",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes/:id/assets",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes",
+        ":id",
+        "assets"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+        {
+        "key": "type",
+        "value": "type_example",
+        "description": "The screen type or screen element that the asset is for:  - **logo**: your logo. Only supported if `model` is **All**. - **homeScreen**: the default background screen. - **idleScreen**: a screensaver shown when the terminal is inactive. Only supported if `model` is **SFO1** or **M450**. - **afterPaymentScreen**: a screen shown after the payment is completed. - **shopperEngagementScreen**: a screen shown during a [shopper engagement](https://docs.adyen.com/point-of-sale/shopper-engagement) request. Only supported if `model` is **SFO1** or **M450**.",
+        "disabled": false
+        },
+        {
+        "key": "model",
+        "value": "model_example",
+        "description": "The Android terminal model that the asset is for. Use **All** only if the `type` is **logo**. For every other screen type specify a single Android terminal model such as **AMS1**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Deletes a single asset from a terminal theme owned by the company specified in the path. To identify the asset you want to remove, you must use the query parameters `type` and `model`.  When the `type` is **logo**, deleting the asset is blocked if the theme owner is not allowed to edit logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/terminalThemes/:id/assets",
+                "description": "Adds an image or video (an 'asset') to a terminal theme owned by the company specified in the path. This endpoint is [rate limited](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).  An asset is used for a specific screen type or screen element, and a specific Android terminal model. You must specify this using the query parameters `type` and `model`. The asset binary itself is uploaded as multipart/form-data with a single file part called `file`, which must declare one of the following supported Content-Type values:  - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**. - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**. - **image/jpeg** (or **image/jpg**): for all `model` values except **All**. - **image/png**: for all `model` values except **All**. - **image/gif**: for all `model` values except **SFO1** and **M450**.  The maximum size of the asset depends on the terminal model: 100 MB for `model` **SFO1** and **M450**, or 10 MB for all other `model` values.  If the theme already has an asset for the same combination of `type` and `model`, the request fails and you need to upload the new asset using the `/companies/{companyId}/terminalThemes/{id}/assets/replace` endpoint.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Add an asset to a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "multipart/form-data",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes/:id/assets",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes",
+        ":id",
+        "assets"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+        {
+        "key": "type",
+        "value": "type_example",
+        "description": "The screen type or screen element that the asset is for:  - **logo**: your logo. Only supported if `model` is **All**. - **homeScreen**: the default background screen. - **idleScreen**: a screensaver shown when the terminal is inactive. Only supported if `model` is **SFO1** or **M450**. - **afterPaymentScreen**: a screen shown after the payment is completed. - **shopperEngagementScreen**: a screen shown during a [shopper engagement](https://docs.adyen.com/point-of-sale/shopper-engagement) request. Only supported if `model` is **SFO1** or **M450**.",
+        "disabled": false
+        },
+        {
+        "key": "model",
+        "value": "model_example",
+        "description": "The Android terminal model that the asset is for. Use **All** only if the `type` is **logo**. For every other screen type specify a single Android terminal model such as **AMS1**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Adds an image or video (an 'asset') to a terminal theme owned by the company specified in the path. This endpoint is [rate limited](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).  An asset is used for a specific screen type or screen element, and a specific Android terminal model. You must specify this using the query parameters `type` and `model`. The asset binary itself is uploaded as multipart/form-data with a single file part called `file`, which must declare one of the following supported Content-Type values:  - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**. - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**. - **image/jpeg** (or **image/jpg**): for all `model` values except **All**. - **image/png**: for all `model` values except **All**. - **image/gif**: for all `model` values except **SFO1** and **M450**.  The maximum size of the asset depends on the terminal model: 100 MB for `model` **SFO1** and **M450**, or 10 MB for all other `model` values.  If the theme already has an asset for the same combination of `type` and `model`, the request fails and you need to upload the new asset using the `/companies/{companyId}/terminalThemes/{id}/assets/replace` endpoint.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/terminalThemes/:id/assets/replace",
+                "description": "Replaces an existing image or video (an 'asset') of a terminal theme owned by the company specified in the path. This endpoint is [rate limited](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).\\n\\n\" An asset is used for a specific screen type or screen element, and a specific Android  terminal model. You must specify this using the query parameters `type` and `model`.  The asset binary itself is uploaded as multipart/form-data with a single file part  called `file`, which must declare one of the following supported Content-Type values:  - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**. - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**. - **image/jpeg** (or **image/jpg**): for all `model` values except **All**. - **image/png**: for all `model` values except **All**. - **image/gif**: for all `model` values except **SFO1** and **M450**. The maximum size of the asset depends on the terminal model: 100 MB for `model` **SFO1**  and **M450**, or 10 MB for all other `model` values.  You can upload an asset using this endpoint if the theme already has an asset with the specified combination of `type` and `model`. If that is not the case, the request fails and you need to use the endpoint `/companies/{companyId}/terminalThemes/{id}/assets` instead.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Replace a theme asset",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "multipart/form-data",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes/:id/assets/replace",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes",
+        ":id",
+        "assets",
+        "replace"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+        {
+        "key": "type",
+        "value": "type_example",
+        "description": "The screen type or screen element that the asset is for:  - **logo**: your logo. Only supported if `model` is **All**. - **homeScreen**: the default background screen. - **idleScreen**: a screensaver shown when the terminal is inactive. Only supported if `model` is **SFO1** or **M450**. - **afterPaymentScreen**: a screen shown after the payment is completed. - **shopperEngagementScreen**: a screen shown during a [shopper engagement](https://docs.adyen.com/point-of-sale/shopper-engagement) request. Only supported if `model` is **SFO1** or **M450**.",
+        "disabled": false
+        },
+        {
+        "key": "model",
+        "value": "model_example",
+        "description": "The Android terminal model that the asset is for. Use **All** only if the `type` is **logo**. For every other screen type specify a single Android terminal model such as **AMS1**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Replaces an existing image or video (an 'asset') of a terminal theme owned by the company specified in the path. This endpoint is [rate limited](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).\\n\\n\" An asset is used for a specific screen type or screen element, and a specific Android  terminal model. You must specify this using the query parameters `type` and `model`.  The asset binary itself is uploaded as multipart/form-data with a single file part  called `file`, which must declare one of the following supported Content-Type values:  - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**. - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**. - **image/jpeg** (or **image/jpg**): for all `model` values except **All**. - **image/png**: for all `model` values except **All**. - **image/gif**: for all `model` values except **SFO1** and **M450**. The maximum size of the asset depends on the terminal model: 100 MB for `model` **SFO1**  and **M450**, or 10 MB for all other `model` values.  You can upload an asset using this endpoint if the theme already has an asset with the specified combination of `type` and `model`. If that is not the case, the request fails and you need to use the endpoint `/companies/{companyId}/terminalThemes/{id}/assets` instead.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/terminalThemes/unapply",
+                "description": "Resets the theme assignment for the company specified in the path. The terminals under this company will switch to the default Adyen theme. However, if a custom theme is applied at a lower level (merchant account, store, or individual terminal) those terminals continue to use their current theme.  The theme itself remains unchanged and is not deleted.   If no custom theme is currently applied to the company, this request returns a **200 OK** response without error.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Unapply a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/terminalThemes/unapply",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "terminalThemes",
+        "unapply"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": "The unique identifier of the company account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Resets the theme assignment for the company specified in the path. The terminals under this company will switch to the default Adyen theme. However, if a custom theme is applied at a lower level (merchant account, store, or individual terminal) those terminals continue to use their current theme.  The theme itself remains unchanged and is not deleted.   If no custom theme is currently applied to the company, this request returns a **200 OK** response without error.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Client key - merchant level",
 	            "item": [
 	                        {
@@ -6714,6 +7493,123 @@
 	                    ]
 	        },
 	        {
+	            "name": "Terminal themes - terminal level",
+	            "item": [
+	                        {
+    "name": "/terminals/:terminalId/terminalThemes/:id/apply",
+                "description": "Applies the terminal theme specified by its ID to the specified Android terminal. The terminal must be [deployed or boarded](https://docs.adyen.com/api-explorer/Management/3/get/terminals#responses-200-data-assignment-status).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Apply a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/terminals/:terminalId/terminalThemes/:id/apply",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "terminals",
+        ":terminalId",
+        "terminalThemes",
+        ":id",
+        "apply"
+    ],
+    "variable": [
+        {
+        "key": "terminalId",
+        "value": "",
+        "description": "The unique identifier of the terminal."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Applies the terminal theme specified by its ID to the specified Android terminal. The terminal must be [deployed or boarded](https://docs.adyen.com/api-explorer/Management/3/get/terminals#responses-200-data-assignment-status).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/terminals/:terminalId/terminalThemes/unapply",
+                "description": "Resets the theme assignment for the Android terminal specified in the path. The terminal will switch to the theme from the next higher level where a custom theme is applied (store, merchant account, or company) or the default Adyen theme. The terminal must be [deployed or boarded](https://docs.adyen.com/api-explorer/Management/3/get/terminals#responses-200-data-assignment-status).  The theme itself remains unchanged and is not deleted.   If no custom theme is currently applied to the terminal, this request returns a **200 OK** response without error.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Unapply a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/terminals/:terminalId/terminalThemes/unapply",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "terminals",
+        ":terminalId",
+        "terminalThemes",
+        "unapply"
+    ],
+    "variable": [
+        {
+        "key": "terminalId",
+        "value": "",
+        "description": "The unique identifier of the terminal."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Resets the theme assignment for the Android terminal specified in the path. The terminal will switch to the theme from the next higher level where a custom theme is applied (store, merchant account, or company) or the default Adyen theme. The terminal must be [deployed or boarded](https://docs.adyen.com/api-explorer/Management/3/get/terminals#responses-200-data-assignment-status).  The theme itself remains unchanged and is not deleted.   If no custom theme is currently applied to the terminal, this request returns a **200 OK** response without error.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "API credentials - merchant level",
 	            "item": [
 	                        {
@@ -8505,6 +9401,123 @@
     ]
     },
     "description": "Returns all Apple Pay domains that are registered with the merchant account and the payment method identified in the path. For more information, see [Apple Pay documentation](https://docs.adyen.com/payment-methods/apple-pay/enable-apple-pay#register-merchant-domain).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Payment methods read "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Terminal themes - store level",
+	            "item": [
+	                        {
+    "name": "/stores/:storeId/terminalThemes/:id/apply",
+                "description": "Applies the terminal theme specified by its ID to all Android terminals under this store, unless a different theme is applied to an individual terminal.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Apply a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/stores/:storeId/terminalThemes/:id/apply",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "stores",
+        ":storeId",
+        "terminalThemes",
+        ":id",
+        "apply"
+    ],
+    "variable": [
+        {
+        "key": "storeId",
+        "value": "",
+        "description": "The unique identifier of the store."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Applies the terminal theme specified by its ID to all Android terminals under this store, unless a different theme is applied to an individual terminal.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/stores/:storeId/terminalThemes/unapply",
+                "description": "Resets the theme assignment for the store specified in the path. The Android terminals under this store will switch to the theme from the next higher level where a custom theme is applied (merchant account or company) or the default Adyen theme. However, if a custom theme is applied to individual terminals, those terminals continue to use their current theme.  The theme itself remains unchanged and is not deleted.   If no custom theme is currently applied to the store, this request returns a **200 OK** response without error.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Unapply a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/stores/:storeId/terminalThemes/unapply",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "stores",
+        ":storeId",
+        "terminalThemes",
+        "unapply"
+    ],
+    "variable": [
+        {
+        "key": "storeId",
+        "value": "",
+        "description": "The unique identifier of the store."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Resets the theme assignment for the store specified in the path. The Android terminals under this store will switch to the theme from the next higher level where a custom theme is applied (merchant account or company) or the default Adyen theme. However, if a custom theme is applied to individual terminals, those terminals continue to use their current theme.  The theme itself remains unchanged and is not deleted.   If no custom theme is currently applied to the store, this request returns a **200 OK** response without error.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
 }
                                 ,"response": [
                                 ]
@@ -14455,6 +15468,173 @@
 	                    ]
 	        },
 	        {
+	            "name": "Client certificates - company level",
+	            "item": [
+	                        {
+    "name": "/companies/:companyId/clientCertificates",
+                "description": "Retrieve all previously issued client certificates under this company account which are still valid (neither expired nor revoked).  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - Client certificates read ",
+                 "item": [
+                            {
+                                "name": "Retrieve all valid client certificates for this company ",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/clientCertificates",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "clientCertificates"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": ""
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Retrieve all previously issued client certificates under this company account which are still valid (neither expired nor revoked).  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - Client certificates read "
+}
+                                ,"response": [
+                                        {"name": "OK - All valid client certificates were returned successfully.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"data\" : [ {\n    \"caChain\" : [ \"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\" ],\n    \"id\" : \"CC_28C8D8EA0BA0303D793FD392ECF9D09ED865C6E\",\n    \"leaf\" : \"MIIDBjCCAougAwIBAgIUAoyNjqC6AwPXk/05Ls+dCe2GXG4wCgYIKoZIzj0EAwMwgY8xLDAqBgNVBAMMI0FkeWVuIEV4dGVybmFsIG1UTFMgSXNzdWluZyBDQSBURVNUMREwDwYDVQQLDAhTZWN1cml0eTETMBEGA1UECgwKQWR5ZW4gTi5WLjESMBAGA1UEBwwJQW1zdGVyZGFtMRYwFAYDVQQIDA1Ob29yZC1Ib2xsYW5kMQswCQYDVQQGEwJOTDAeFw0yNjA3MjIyMzI5MzJaFw0yNzA4MjQyMzI5MzFaMIGdMUEwPwYKCZImiZPyLGQBAQwxd3NfMzU2OTUwQENvbXBhbnkuVGVzdENvbXBhbnktQ29tcGFueS5UZXN0Q29tcGFueTE6MDgGA1UEAwwxd3NfMzU2OTUwQENvbXBhbnkuVGVzdENvbXBhbnktQ29tcGFueS5UZXN0Q29tcGFueTEcMBoGA1UECgwTQ29tcGFueS5UZXN0Q29tcGFueTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHKaJ9C6EnANXGCRimjHIeiTwZzs43TP+QbAQo9Lvoj53GlQg9sgPfZJnpbTqTAvIz9q8vjwHMZJDv/mBp+o+72jgbQwgbEwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBRJVVwdmjg6yAUViluQJ+hg9EBr5jA8BgNVHREENTAzgjF3c18zNTY5NTBAQ29tcGFueS5UZXN0Q29tcGFueS1Db21wYW55LlRlc3RDb21wYW55MBMGA1UdJQQMMAoGCCsGAQUFBwMCMB0GA1UdDgQWBBRw7SxtVVblB8ftKYbRgSrtPDdXCTAOBgNVHQ8BAf8EBAMCBeAwCgYIKoZIzj0EAwMDaQAwZgIxAM+H5e9Rum6O4y+zny4iIeIdGqevvv1gx2QbayvwTf7cBVbG12nKygnlhS+bo06i3gIxAI77QLZSHLrbTLS9NlYH5CvytIi8g/VtJRqYQQQDbZaWUafkq/aMa/xCxauQ8ATJsA==\",\n    \"serialNumber\" : \"28C8D8EA0BA0303D793FD392ECF9D09ED865C6E\",\n    \"subjectDN\" : \"UID=ws_356950@Company.TestCompany-Company.TestCompany,CN=ws_356950@Company.TestCompany-Company.TestCompany,O=Company.TestCompany\"\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/clientCertificates",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "clientCertificates"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": ""
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Retrieve all previously issued client certificates under this company account which are still valid (neither expired nor revoked).  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - Client certificates read "
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/companies/:companyId/clientCertificates",
+                "description": "Generates a client certificate for secure communication with Adyen using mutual TLS (mTLS). Provide a certificate signing request (CSR). Adyen signs it and returns the client certificate.  The CSR must be generated by a key pair that meets the following criteria: * Key ownership: the CSR must be signed by the associated private key. * Key type: RSA with a minimum key size of 2048 bits, or ECC with a minimum key size of 224 bits.  A company account can have a maximum of 10 valid client certificates at a time.  The subject distinguished name (`subjectDN`) of the issued certificate is constructed by Adyen from the path `companyId` and the request `apiCredential`. The subject in your CSR is not used. The returned `subjectDN` has the format `UID={apiCredential}-Company.{companyId},CN={apiCredential}-Company.{companyId},O=Company.{companyId}`.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - Client certificates read and write ",
+                 "item": [
+                            {
+                                "name": "Generate a client certificate from a CSR",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n  \"apiCredential\" : \"ws_356950@Company.TestCompany\",\n  \"certificateSigningRequest\" : \"MIIBHzCBxwIBADBlMScwJQYKCZImiZPyLGQBAQwXYXBpLW10bHMtY2xpZW50LW5vbnByb2QxGDAWBgNVBAMMD2FwaS1tdGxzLWNsaWVudDETMBEGA1UECgwKQWR5ZW4gTi5WLjELMAkGA1UEBhMCTkwwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARymifQuhJwDVxgkYpoxyHok8Gc7ON0z/kGwEKPS76I+dxpUIPbID32SZ6W06kwLyM/avL48BzGSQ7/5gafqPu9oAAwCgYIKoZIzj0EAwIDRwAwRAIgbNoZ27xYzp21+lp5KC56zxg260WGqktPauGKa9ZcUC4CIEwuTIiWLmDD1LuDTVApBvcOcyFglUj1+RetgGuDPbVq\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/companies/:companyId/clientCertificates",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "companies",
+        ":companyId",
+        "clientCertificates"
+    ],
+    "variable": [
+        {
+        "key": "companyId",
+        "value": "{{YOUR_COMPANY_ACCOUNT}}",
+        "description": ""
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Generates a client certificate for secure communication with Adyen using mutual TLS (mTLS). Provide a certificate signing request (CSR). Adyen signs it and returns the client certificate.  The CSR must be generated by a key pair that meets the following criteria: * Key ownership: the CSR must be signed by the associated private key. * Key type: RSA with a minimum key size of 2048 bits, or ECC with a minimum key size of 224 bits.  A company account can have a maximum of 10 valid client certificates at a time.  The subject distinguished name (`subjectDN`) of the issued certificate is constructed by Adyen from the path `companyId` and the request `apiCredential`. The subject in your CSR is not used. The returned `subjectDN` has the format `UID={apiCredential}-Company.{companyId},CN={apiCredential}-Company.{companyId},O=Company.{companyId}`.  To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API - Client certificates read and write "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
 	            "name": "Account - company level",
 	            "item": [
 	                        {
@@ -14797,6 +15977,785 @@
     "description": "Returns the list of merchant accounts under the company account specified in the path. The list only includes merchant accounts that your API credential has access to. The list is grouped into pages as defined by the query parameters.   To make this request, your API credential must have the following [roles](https://docs.adyen.com/development-resources/api-credentials#api-permissions): * Management API—Account read"
 }
                                         }
+                                ]
+                            }
+                            ]
+                        }
+	                    ]
+	        },
+	        {
+	            "name": "Terminal themes - merchant level",
+	            "item": [
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes",
+                "description": "Returns a paginated list of terminal themes for the merchant account specified in the path. The response provides only the metadata of the themes. Assets (images and videos) are not included. To get the URLs for the assets of a specific theme, make a GET request to the `/merchants/{merchantId}/terminalThemes/{id}` endpoint   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "List terminal themes",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        }
+    ],
+    "query": [
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of themes to return per page. If not specified, the list has 10 themes per page.",
+        "disabled": true
+        },
+        {
+        "key": "page",
+        "value": "56",
+        "description": "The number of the page to fetch. If not specified, the list starts from page 1.",
+        "disabled": true
+        },
+        {
+        "key": "search",
+        "value": "search_example",
+        "description": "A search term to filter themes by name. The match is case-insensitive and returns any theme with a name that contains the search term.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of terminal themes for the merchant account specified in the path. The response provides only the metadata of the themes. Assets (images and videos) are not included. To get the URLs for the assets of a specific theme, make a GET request to the `/merchants/{merchantId}/terminalThemes/{id}` endpoint   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                        {"name": "OK",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"data\" : [ {\n    \"id\" : \"THEM_001ABC\",\n    \"name\" : \"BrandDark\",\n    \"mode\" : \"dark\"\n  }, {\n    \"id\" : \"THEM_002DEF\",\n    \"name\" : \"BrandLight\",\n    \"mode\" : \"light\"\n  } ],\n  \"hasNextPage\" : false\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        }
+    ],
+    "query": [
+        {
+        "key": "pageSize",
+        "value": "56",
+        "description": "The number of themes to return per page. If not specified, the list has 10 themes per page.",
+        "disabled": true
+        },
+        {
+        "key": "page",
+        "value": "56",
+        "description": "The number of the page to fetch. If not specified, the list starts from page 1.",
+        "disabled": true
+        },
+        {
+        "key": "search",
+        "value": "search_example",
+        "description": "A search term to filter themes by name. The match is case-insensitive and returns any theme with a name that contains the search term.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of terminal themes for the merchant account specified in the path. The response provides only the metadata of the themes. Assets (images and videos) are not included. To get the URLs for the assets of a specific theme, make a GET request to the `/merchants/{merchantId}/terminalThemes/{id}` endpoint   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes",
+                "description": "Creates a terminal theme for the merchant account specified in the path, to customize screens shown on Android payment terminals. This request only creates a basic theme with a name and a dark or light mode. We refer to this as the metadata of the theme.   Next steps are to add terminal model-specific assets (images or videos) to the theme, and to apply (activate) the theme.   The theme name must be unique for the merchant account; other accounts can have a theme with the same name.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Create a dark theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"name\": \"MyBrandTheme\",\n \"mode\": \"dark\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Creates a terminal theme for the merchant account specified in the path, to customize screens shown on Android payment terminals. This request only creates a basic theme with a name and a dark or light mode. We refer to this as the metadata of the theme.   Next steps are to add terminal model-specific assets (images or videos) to the theme, and to apply (activate) the theme.   The theme name must be unique for the merchant account; other accounts can have a theme with the same name.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes/:id",
+                "description": "Deletes the terminal theme identified in the path. If the theme is currently in use, you must first deactivate it using a call to the `/merchants/{merchantId}/terminalThemes/unapply` endpoint before you can delete the theme.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Delete a terminal theme",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Deletes the terminal theme identified in the path. If the theme is currently in use, you must first deactivate it using a call to the `/merchants/{merchantId}/terminalThemes/unapply` endpoint before you can delete the theme.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes/:id",
+                "description": "Returns the details of the terminal theme specified in the path. The response includes the metadata of the theme and the content delivery network (CDN) URLs for all assets that have been added to the theme.  The URL for the logo of the theme will lead to the Adyen logo if the theme is not associated with the permission to customize terminal logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Get a terminal theme",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of the terminal theme specified in the path. The response includes the metadata of the theme and the content delivery network (CDN) URLs for all assets that have been added to the theme.  The URL for the logo of the theme will lead to the Adyen logo if the theme is not associated with the permission to customize terminal logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                        {"name": "OK",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"id\" : \"THEM_001ABC\",\n  \"name\" : \"MyBrandTheme\",\n  \"mode\" : \"dark\",\n  \"assets\" : [ {\n    \"type\" : \"homeScreen\",\n    \"model\" : \"AMS1\",\n    \"url\" : \"https://cdn.adyen.com/external/TestCompany/themeAssets/abc123.png?token=****************\"\n  }, {\n    \"type\" : \"logo\",\n    \"model\" : \"All\",\n    \"url\" : \"https://cdn.adyen.com/external/default/themeAssets/defaultAdyenLogo.svg?token=****************\"\n  } ]\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Returns the details of the terminal theme specified in the path. The response includes the metadata of the theme and the content delivery network (CDN) URLs for all assets that have been added to the theme.  The URL for the logo of the theme will lead to the Adyen logo if the theme is not associated with the permission to customize terminal logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                        }
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes/:id",
+                "description": "Changes the metadata, consisting of the name and dark or light mode, of the terminal theme specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Update theme name and mode",
+                                "request": {
+    "method": "PATCH",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"name\": \"ThemeLive\",\n \"mode\": \"light\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes/:id",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes",
+        ":id"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Changes the metadata, consisting of the name and dark or light mode, of the terminal theme specified in the path.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes/:id/apply",
+                "description": "Applies the terminal theme specified by its ID to all Android terminals under this merchant account, unless a different theme is applied at a lower level (store or individual terminal).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Apply a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes/:id/apply",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes",
+        ":id",
+        "apply"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Applies the terminal theme specified by its ID to all Android terminals under this merchant account, unless a different theme is applied at a lower level (store or individual terminal).  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions): - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes/:id/assets",
+                "description": "Deletes a single asset from a terminal theme owned by the merchant account specified in the path. To identify the asset you want to remove, you must use the query parameters `type` and `model`.  When the `type` is **logo**, deleting the asset is blocked if the theme owner is not allowed to edit logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Delete an asset from a terminal theme",
+                                "request": {
+    "method": "DELETE",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes/:id/assets",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes",
+        ":id",
+        "assets"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+        {
+        "key": "type",
+        "value": "type_example",
+        "description": "The screen type or screen element that the asset is for:  - **logo**: your logo. Only supported if `model` is **All**. - **homeScreen**: the default background screen. - **idleScreen**: a screensaver shown when the terminal is inactive. Only supported if `model` is **SFO1** or **M450**. - **afterPaymentScreen**: a screen shown after the payment is completed. - **shopperEngagementScreen**: a screen shown during [shopper engagement](https://docs.adyen.com/point-of-sale/shopper-engagement) requests. Only supported if `model` is **SFO1** or **M450**.",
+        "disabled": false
+        },
+        {
+        "key": "model",
+        "value": "model_example",
+        "description": "The Android terminal model that the asset is for. Use **All** only if the `type` is **logo**. For every other screen type specify a single Android terminal model such as **AMS1**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Deletes a single asset from a terminal theme owned by the merchant account specified in the path. To identify the asset you want to remove, you must use the query parameters `type` and `model`.  When the `type` is **logo**, deleting the asset is blocked if the theme owner is not allowed to edit logos.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes/:id/assets",
+                "description": "Adds an image or video (an 'asset') to a terminal theme owned by the merchant account specified in the path. This endpoint is [rate limited](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).  An asset is used for a specific screen type or screen element, and a specific Android terminal model. You must specify this using the query parameters `type` and `model`. The asset binary itself is uploaded as multipart/form-data with a single file part called `file`, which must declare one of the following supported Content-Type values:  - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**. - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**. - **image/jpeg** (or **image/jpg**): for all `model` values except **All**. - **image/png**: for all `model` values except **All**. - **image/gif**: for all `model` values except **SFO1** and **M450**.  The maximum size of the asset depends on the terminal model: 100 MB for `model` **SFO1** and **M450**, or 10 MB for all other `model` values.  If the theme already has an asset for the same combination of `type` and `model`, the request fails and you need to upload the new asset using the `/merchants/{merchantId}/terminalThemes/{id}/assets/replace` endpoint.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Add an asset to a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "multipart/form-data",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes/:id/assets",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes",
+        ":id",
+        "assets"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+        {
+        "key": "type",
+        "value": "type_example",
+        "description": "The screen type or screen element that the asset is for:  - **logo**: your logo. Only supported if `model` is **All**. - **homeScreen**: the default background screen. - **idleScreen**: a screensaver shown when the terminal is inactive. Only supported if `model` is **SFO1** or **M450**. - **afterPaymentScreen**: a screen shown after the payment is completed. - **shopperEngagementScreen**: a screen shown during a [shopper engagement](https://docs.adyen.com/point-of-sale/shopper-engagement) request. Only supported if `model` is **SFO1** or **M450**.",
+        "disabled": false
+        },
+        {
+        "key": "model",
+        "value": "model_example",
+        "description": "The Android terminal model that the asset is for. Use **All** only if the `type` is **logo**. For every other screen type specify a single Android terminal model such as **AMS1**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Adds an image or video (an 'asset') to a terminal theme owned by the merchant account specified in the path. This endpoint is [rate limited](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).  An asset is used for a specific screen type or screen element, and a specific Android terminal model. You must specify this using the query parameters `type` and `model`. The asset binary itself is uploaded as multipart/form-data with a single file part called `file`, which must declare one of the following supported Content-Type values:  - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**. - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**. - **image/jpeg** (or **image/jpg**): for all `model` values except **All**. - **image/png**: for all `model` values except **All**. - **image/gif**: for all `model` values except **SFO1** and **M450**.  The maximum size of the asset depends on the terminal model: 100 MB for `model` **SFO1** and **M450**, or 10 MB for all other `model` values.  If the theme already has an asset for the same combination of `type` and `model`, the request fails and you need to upload the new asset using the `/merchants/{merchantId}/terminalThemes/{id}/assets/replace` endpoint.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes/:id/assets/replace",
+                "description": "Replaces an existing image or video (an 'asset') of a terminal theme owned by the merchant account specified in the path. This endpoint is [rate limited](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).\\n\\n\" An asset is used for a specific screen type or screen element, and a specific Android  terminal model. You must specify this using the query parameters `type` and `model`.  The asset binary itself is uploaded as multipart/form-data with a single file part  called `file`, which must declare one of the following supported Content-Type values:  - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**. - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**. - **image/jpeg** (or **image/jpg**): for all `model` values except **All**. - **image/png**: for all `model` values except **All**. - **image/gif**: for all `model` values except **SFO1** and **M450**. The maximum size of the asset depends on the terminal model: 100 MB for `model` **SFO1**  and **M450**, or 10 MB for all other `model` values.  You can upload an asset using this endpoint if the theme already has an asset with the specified combination of `type` and `model`. If that is not the case, the request fails and you need to use the endpoint `/merchants/{merchantId}/terminalThemes/{id}/assets` instead.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Replace a theme asset",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "multipart/form-data",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes/:id/assets/replace",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes",
+        ":id",
+        "assets",
+        "replace"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        },
+        {
+        "key": "id",
+        "value": "",
+        "description": "The unique identifier of the terminal theme."
+        }
+    ],
+    "query": [
+        {
+        "key": "type",
+        "value": "type_example",
+        "description": "The screen type or screen element that the asset is for:  - **logo**: your logo. Only supported if `model` is **All**. - **homeScreen**: the default background screen. - **idleScreen**: a screensaver shown when the terminal is inactive. Only supported if `model` is **SFO1** or **M450**. - **afterPaymentScreen**: a screen shown after the payment is completed. - **shopperEngagementScreen**: a screen shown during [shopper engagement](https://docs.adyen.com/point-of-sale/shopper-engagement) requests. Only supported if `model` is **SFO1** or **M450**.",
+        "disabled": false
+        },
+        {
+        "key": "model",
+        "value": "model_example",
+        "description": "The Android terminal model that the asset is for. Use **All** only if the `type` is **logo**. For every other screen type specify a single Android terminal model such as **AMS1**.",
+        "disabled": false
+        }
+    ]
+    },
+    "description": "Replaces an existing image or video (an 'asset') of a terminal theme owned by the merchant account specified in the path. This endpoint is [rate limited](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).\\n\\n\" An asset is used for a specific screen type or screen element, and a specific Android  terminal model. You must specify this using the query parameters `type` and `model`.  The asset binary itself is uploaded as multipart/form-data with a single file part  called `file`, which must declare one of the following supported Content-Type values:  - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**. - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**. - **image/jpeg** (or **image/jpg**): for all `model` values except **All**. - **image/png**: for all `model` values except **All**. - **image/gif**: for all `model` values except **SFO1** and **M450**. The maximum size of the asset depends on the terminal model: 100 MB for `model` **SFO1**  and **M450**, or 10 MB for all other `model` values.  You can upload an asset using this endpoint if the theme already has an asset with the specified combination of `type` and `model`. If that is not the case, the request fails and you need to use the endpoint `/merchants/{merchantId}/terminalThemes/{id}/assets` instead.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/merchants/:merchantId/terminalThemes/unapply",
+                "description": "Resets the theme assignment for the merchant account specified in the path. The Android terminals under this merchant account will switch to the custom theme applied at the company level, or to the default Adyen theme if there is no custom theme applied at the company level. However, if a custom theme is applied at a lower level (store or individual terminal) those terminals continue to use their current theme.  The theme itself remains unchanged and is not deleted.   If no custom theme is currently applied to the merchant account, this request returns a **200 OK** response without error.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write",
+                 "item": [
+                            {
+                                "name": "Unapply a terminal theme",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/merchants/:merchantId/terminalThemes/unapply",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "merchants",
+        ":merchantId",
+        "terminalThemes",
+        "unapply"
+    ],
+    "variable": [
+        {
+        "key": "merchantId",
+        "value": "{{YOUR_MERCHANT_ACCOUNT}}",
+        "description": "The unique identifier of the merchant account."
+        }
+    ],
+    "query": [
+    ]
+    },
+    "description": "Resets the theme assignment for the merchant account specified in the path. The Android terminals under this merchant account will switch to the custom theme applied at the company level, or to the default Adyen theme if there is no custom theme applied at the company level. However, if a custom theme is applied at a lower level (store or individual terminal) those terminals continue to use their current theme.  The theme itself remains unchanged and is not deleted.   If no custom theme is currently applied to the merchant account, this request returns a **200 OK** response without error.   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):  - Management API - Terminal themes read and write"
+}
+                                ,"response": [
                                 ]
                             }
                             ]

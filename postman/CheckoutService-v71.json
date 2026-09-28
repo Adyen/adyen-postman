@@ -2324,7 +2324,7 @@
                         },
 	                        {
     "name": "/storedPaymentMethods",
-                "description": "Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper's payment. A summary of the stored details is included.  ",
+                "description": "Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper's payment. A summary of the stored details is included.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details",
                  "item": [
                             {
                                 "name": "Get tokens for stored payment details",
@@ -2372,7 +2372,7 @@
         }
     ]
     },
-    "description": "Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper's payment. A summary of the stored details is included.  "
+    "description": "Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper's payment. A summary of the stored details is included.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details"
 }
                                 ,"response": [
                                         {"name": "OK - the request has succeeded.",
@@ -2429,7 +2429,7 @@
         }
     ]
     },
-    "description": "Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper's payment. A summary of the stored details is included.  "
+    "description": "Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper's payment. A summary of the stored details is included.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details"
 }
                                         }
                                 ]
@@ -2438,7 +2438,7 @@
                         },
 	                        {
     "name": "/storedPaymentMethods",
-                "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.",
+                "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details",
                  "item": [
                             {
                                 "name": "Store encrypted card details for subscription payments",
@@ -2486,7 +2486,7 @@
     "query": [
     ]
     },
-    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments."
+    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details"
 }
                                 ,"response": [
                                         {"name": "Created - the request has been fulfilled and has resulted in one or more new resources being created.",
@@ -2543,7 +2543,7 @@
     "query": [
     ]
     },
-    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments."
+    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details"
 }
                                         }
                                 ]
@@ -2594,7 +2594,7 @@
     "query": [
     ]
     },
-    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments."
+    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details"
 }
                                 ,"response": [
                                         {"name": "Created - the request has been fulfilled and has resulted in one or more new resources being created.",
@@ -2651,7 +2651,7 @@
     "query": [
     ]
     },
-    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments."
+    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details"
 }
                                         }
                                 ]
@@ -2660,7 +2660,7 @@
                         },
 	                        {
     "name": "/storedPaymentMethods/:storedPaymentMethodId",
-                "description": "Deletes the token identified in the path. The token can no longer be used with payment requests.",
+                "description": "Deletes the token identified in the path. The token can no longer be used with payment requests.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details",
                  "item": [
                             {
                                 "name": "Delete a token for stored payment details",
@@ -2708,7 +2708,7 @@
         }
     ]
     },
-    "description": "Deletes the token identified in the path. The token can no longer be used with payment requests."
+    "description": "Deletes the token identified in the path. The token can no longer be used with payment requests.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details"
 }
                                 ,"response": [
                                 ]
@@ -2922,279 +2922,6 @@
     "body": {
     "mode": "raw",
     "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationCampaignId\": \"DONATION_CAMPAIGN_ID\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/donations",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "donations"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
-}
-                                        }
-                                ]
-                            },
-                            {
-                                "name": "Make a donation to a donation account",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/donations",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "donations"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"status\": \"completed\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"payment\": {\n \"pspReference\": \"8535762347980628\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n}\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\"\n},\n \"donationToken\": \"YOUR_DONATION_TOKEN\",\n \"donationOriginalPspReference\": \"991559660454807J\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"shopperInteraction\": \"ContAuth\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/donations",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "donations"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
-}
-                                        }
-                                ]
-                            },
-                            {
-                                "name": "Make a donation to a donation account with a token",
-                                "request": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/donations",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "donations"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
-}
-                                ,"response": [
-                                        {"name": "OK - the request has succeeded.",
-                                        "code": 200,
-                                        "status": "OK",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"id\": \"UNIQUE_RESOURCE_ID\",\n \"merchantAccount\": \"YOUR_MERCHANT_ACCOUNT\",\n \"payment\": {\n \"pspReference\": \"FJM726V375BV9D82\",\n \"resultCode\": \"Authorised\",\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 500\n},\n \"merchantReference\": \"YOUR_DONATION_REFERENCE\"\n},\n \"reference\": \"1412563167350061\",\n \"status\": \"completed\"\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
-    "options": {
-    "raw": {
-    "language": "json"
-    }
-    }
-    },
-    "url": {
-    "raw": "{{baseUrl}}/donations",
-    "host": [
-    "{{baseUrl}}"
-    ],
-    "path": [
-        "donations"
-    ],
-    "variable": [
-    ],
-    "query": [
-    ]
-    },
-    "description": "Takes in the donation token generated by the `/payments` request and uses it to make the donation.  For more information, see [Donations](https://docs.adyen.com/online-payments/donations)."
-}
-                                        },
-                                        {"name": "Unprocessable Entity - a request validation error.",
-                                        "code": 422,
-                                        "status": "Unprocessable Entity",
-                                        "header": [{
-                                        "key": "Content-Type",
-                                        "value": "application/json"}
-                                        ],
-                                        "_postman_previewlanguage": "json",
-                                        "cookie": [],
-                                        "body" : "{\n \"status\": 422,\n \"errorCode\": \"187\",\n \"message\": \"Field 'additionalData.donationAccount' is not valid.\",\n \"errorType\": \"validation\"\n}",
-                                        "originalRequest": {
-    "method": "POST",
-    "header": [
-        {
-        "key": "Content-Type",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Accept",
-        "value": "application/json",
-        "description": "",
-        "disabled": false
-        },
-        {
-        "key": "Idempotency-Key",
-        "value": "",
-        "description": "A unique identifier for the message with a maximum of 64 characters (we recommend a UUID).",
-        "disabled": true
-        }
-    ],
-    "body": {
-    "mode": "raw",
-    "raw": "{\n \"amount\": {\n \"currency\": \"EUR\",\n \"value\": 1000\n},\n \"reference\": \"YOUR_DONATION_REFERENCE\",\n \"paymentMethod\": {\n \"type\": \"scheme\",\n \"recurringDetailReference\": \"7219687191761347\"\n},\n \"returnUrl\": \"https://your-company.example.com/...\",\n \"merchantAccount\": \"{{YOUR_MERCHANT_ACCOUNT}}\",\n \"donationAccount\": \"NONPROFIT_ACCOUNT\",\n \"shopperInteraction\": \"ContAuth\",\n \"shopperReference\": \"YOUR_SHOPPER_REFERENCE\",\n \"recurringProcessingModel\": \"CardOnFile\"\n}",
     "options": {
     "raw": {
     "language": "json"

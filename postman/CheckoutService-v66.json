@@ -2216,7 +2216,7 @@
                         },
 	                        {
     "name": "/storedPaymentMethods",
-                "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.",
+                "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details",
                  "item": [
                             {
                                 "name": "Create a token to store payment details",
@@ -2264,7 +2264,7 @@
     "query": [
     ]
     },
-    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments."
+    "description": "Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):  * API tokenise payment details"
 }
                                 ,"response": [
                                 ]

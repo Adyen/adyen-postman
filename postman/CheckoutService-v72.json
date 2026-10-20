@@ -1593,6 +1593,57 @@
                             ]
                         },
 	                        {
+    "name": "/calculateTax",
+                "description": "Calculates the applicable tax, for example the India Liberalised Remittance Scheme Tax Collected at Source, based on the taxable amount and the tax calculation context. The response returns the canonical calculation and an opaque token that you submit in /payments. Use taxCalculation.totalAmount as the amount in /payments.",
+                 "item": [
+                            {
+                                "name": "Calculate the tax for a transaction.",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantAccount\": \"<string>\",\n \"taxCalculationContext\": \"<string>\",\n \"taxableAmount\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/calculateTax",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "calculateTax"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "Calculates the applicable tax, for example the India Liberalised Remittance Scheme Tax Collected at Source, based on the taxable amount and the tax calculation context. The response returns the canonical calculation and an opaque token that you submit in /payments. Use taxCalculation.totalAmount as the amount in /payments."
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
     "name": "/originKeys (DEPRECATED)",
                 "description": "This operation takes the origin domains and returns a JSON object containing the corresponding origin keys for the domains.  > If you're still using origin key for your Web Drop-in or Components integration, we recommend [switching to client key](https://docs.adyen.com/development-resources/client-side-authentication/migrate-from-origin-key-to-client-key). This allows you to use a single key for all origins, add or remove origins without generating a new key, and detect the card type from the number entered in your payment form. ",
                  "item": [
@@ -2197,6 +2248,57 @@
     ]
     },
     "description": "Validates the shopperId. "
+}
+                                ,"response": [
+                                ]
+                            }
+                            ]
+                        },
+	                        {
+    "name": "/verifyShopperTaxIdentification",
+                "description": "In some countries, collecting and verifying tax information is required for regulatory compliance. Submit the shopper's tax identification for verification; when the verification succeeds, the response returns an opaque token that you submit in /payments.",
+                 "item": [
+                            {
+                                "name": "Verify the shopper's tax identification.",
+                                "request": {
+    "method": "POST",
+    "header": [
+        {
+        "key": "Content-Type",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        },
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "{\n \"merchantAccount\": \"<string>\",\n \"shopperReference\": \"<string>\",\n \"shopperTaxIdentification\": \"<string>\"\n}",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/verifyShopperTaxIdentification",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "verifyShopperTaxIdentification"
+    ],
+    "variable": [
+    ],
+    "query": [
+    ]
+    },
+    "description": "In some countries, collecting and verifying tax information is required for regulatory compliance. Submit the shopper's tax identification for verification; when the verification succeeds, the response returns an opaque token that you submit in /payments."
 }
                                 ,"response": [
                                 ]

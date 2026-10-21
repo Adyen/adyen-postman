@@ -622,8 +622,8 @@
     "query": [
         {
         "key": "results",
-        "value": "",
-        "description": "Contains a list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.  Possible statuses: - **succeeded**: The payout was sent successfully. - **failed**: The payout was not sent due to an error. - **skipped**: The payout was not triggered as expected.",
+        "value": "results_example",
+        "description": "Contains a comma-separated list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.  Possible statuses: - **succeeded**: The payout was sent successfully. - **failed**: The payout was not sent due to an error. - **skipped**: The payout was not triggered as expected.  Examples: `results=succeeded`, `results=failed,skipped`",
         "disabled": true
         },
         {
@@ -699,8 +699,8 @@
     "query": [
         {
         "key": "results",
-        "value": "",
-        "description": "Contains a list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.  Possible statuses: - **succeeded**: The payout was sent successfully. - **failed**: The payout was not sent due to an error. - **skipped**: The payout was not triggered as expected.",
+        "value": "results_example",
+        "description": "Contains a comma-separated list of payout statuses. If included, the response returns only executed payouts that currently have one of the specified statuses.  Possible statuses: - **succeeded**: The payout was sent successfully. - **failed**: The payout was not sent due to an error. - **skipped**: The payout was not triggered as expected.  Examples: `results=succeeded`, `results=failed,skipped`",
         "disabled": true
         },
         {
@@ -8660,6 +8660,160 @@
                                 ]
                             }
                             ]
+                        },
+	                        {
+    "name": "/balanceAccounts/:balanceAccountId/sweeps/:sweepId/executions",
+                "description": "Returns a paginated list of executions of a custom payout schedule on a balance account. You can use query parameters to filter the executions that are returned in the list.",
+                 "item": [
+                            {
+                                "name": "View executions of a custom payout schedule",
+                                "request": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId/executions",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps",
+        ":sweepId",
+        "executions"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "sweepId",
+        "value": "",
+        "description": "The unique identifier of the sweep configuration."
+        }
+    ],
+    "query": [
+        {
+        "key": "results",
+        "value": "results_example",
+        "description": "Contains a comma-separated list of sweep execution results. If included, the response returns only sweep executions with the specified results.  Possible results: - **succeeded**: The sweep payout was completed successfully. - **failed**: The sweep payout was not completed due to an error. - **skipped**: The sweep payout was not triggered as expected.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page. By default, the response returns 10 items per page.",
+        "disabled": true
+        },
+        {
+        "key": "cursor",
+        "value": "cursor_example",
+        "description": "The cursor from the `next` or `previous` pagination link in the previous response.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of executions of a custom payout schedule on a balance account. You can use query parameters to filter the executions that are returned in the list."
+}
+                                ,"response": [
+                                        {"name": "OK - The request has succeeded.",
+                                        "code": 200,
+                                        "status": "OK",
+                                        "header": [{
+                                        "key": "Content-Type",
+                                        "value": "application/json"}
+                                        ],
+                                        "_postman_previewlanguage": "json",
+                                        "cookie": [],
+                                        "body" : "{\n  \"sweepExecutions\" : [ {\n    \"id\" : \"SWPE12345678901234567890123456\",\n    \"triggeredAt\" : \"2026-02-16T08:00:00Z\",\n    \"result\" : \"succeeded\",\n    \"resultDetails\" : {\n      \"transferId\" : \"4VXLNP68FCFE5FQ1\"\n    }\n  } ],\n  \"link\" : {\n    \"next\" : {\n      \"href\" : \"https://balanceplatform-api-test.adyen.com/bcl/v2/balanceAccounts/BA000000000000000000001/sweeps/SWPC000000000000000000001/executions?limit=10&cursor=eyJvZmZzZXQiOjEwfQ\"\n    }\n  }\n}",
+                                        "originalRequest": {
+    "method": "GET",
+    "header": [
+        {
+        "key": "Accept",
+        "value": "application/json",
+        "description": "",
+        "disabled": false
+        }
+    ],
+    "body": {
+    "mode": "raw",
+    "raw": "",
+    "options": {
+    "raw": {
+    "language": "json"
+    }
+    }
+    },
+    "url": {
+    "raw": "{{baseUrl}}/balanceAccounts/:balanceAccountId/sweeps/:sweepId/executions",
+    "host": [
+    "{{baseUrl}}"
+    ],
+    "path": [
+        "balanceAccounts",
+        ":balanceAccountId",
+        "sweeps",
+        ":sweepId",
+        "executions"
+    ],
+    "variable": [
+        {
+        "key": "balanceAccountId",
+        "value": "",
+        "description": "The unique identifier of the balance account."
+        },
+        {
+        "key": "sweepId",
+        "value": "",
+        "description": "The unique identifier of the sweep configuration."
+        }
+    ],
+    "query": [
+        {
+        "key": "results",
+        "value": "results_example",
+        "description": "Contains a comma-separated list of sweep execution results. If included, the response returns only sweep executions with the specified results.  Possible results: - **succeeded**: The sweep payout was completed successfully. - **failed**: The sweep payout was not completed due to an error. - **skipped**: The sweep payout was not triggered as expected.",
+        "disabled": true
+        },
+        {
+        "key": "limit",
+        "value": "56",
+        "description": "The number of items returned per page. By default, the response returns 10 items per page.",
+        "disabled": true
+        },
+        {
+        "key": "cursor",
+        "value": "cursor_example",
+        "description": "The cursor from the `next` or `previous` pagination link in the previous response.",
+        "disabled": true
+        }
+    ]
+    },
+    "description": "Returns a paginated list of executions of a custom payout schedule on a balance account. You can use query parameters to filter the executions that are returned in the list."
+}
+                                        }
+                                ]
+                            }
+                            ]
                         }
 	                    ]
 	        },
@@ -10634,7 +10788,7 @@
                         },
 	                        {
     "name": "/scaDevices/:deviceId/scaAssociations",
-                "description": "Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices.",
+                "description": "Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices. If the entity is configured to allow only a single associated device and single-device replacement is enabled for your account, the new association immediately replaces the existing one: its status is `active` and the previously associated device is no longer associated.",
                  "item": [
                             {
                                 "name": "Request to create a new SCA association.",
@@ -10683,7 +10837,7 @@
     "query": [
     ]
     },
-    "description": "Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices."
+    "description": "Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices. If the entity is configured to allow only a single associated device and single-device replacement is enabled for your account, the new association immediately replaces the existing one: its status is `active` and the previously associated device is no longer associated."
 }
                                 ,"response": [
                                 ]

@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 2
       - name: push-to-postman-action
         id: push-to-postman
-        uses: adyen-examples/push-to-postman-action@main
+        uses: adyen-examples/push-to-postman-action@47ddab08b66f30a5b0b72ce2d9958394d54607a2
         with:
           goal: update
           postman-key: ${{ secrets.POSTMAN_API_KEY }}

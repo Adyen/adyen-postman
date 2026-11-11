@@ -15,8 +15,8 @@ Othew workflows are provided for 'ad-hoc' operations:
 
 The workflows rely on different custom actions : 
 
-* The [openapi-generator-postman-v2](https://github.com/gcatanese/openapi-generator-postman-v2) which is used to transform OpenAPI specifications into a Postman compatible format.
-* The [push-to-postman-action](https://github.com/gcatanese/push-to-postman-action) that pushes a single file to Postman.com.
+* The [openapi-generator-postman-v2](https://github.com/adyen-examples/openapi-generator-postman-v2) which is used to transform OpenAPI specifications into a Postman compatible format.
+* The [push-to-postman-action](https://github.com/adyen-examples/push-to-postman-action) that pushes a single file to Postman.com.
 
 
 ## Workflow trigger-postman (see [trigger-postman.yml](./.github/workflows/trigger-postman.yml))
@@ -24,7 +24,7 @@ The workflows rely on different custom actions :
 When the workflow gets triggered :
 
 * The `generate` job will be fired
-    * This job first runs a script relying on [openapi-generator-postman-v2](https://github.com/gcatanese/openapi-generator-postman-v2). This script will take each yaml file in the adyen-openapi repository and generate a corresponding Postman compatible version from them.
+    * This job first runs a script relying on [openapi-generator-postman-v2](https://github.com/adyen-examples/openapi-generator-postman-v2). This script will take each yaml file in the adyen-openapi repository and generate a corresponding Postman compatible version from them.
         * The `generateAll.sh` script contains an `ALLOW_LIST` that lists all APIs that should **NOT** be ignored. Everything else (classic, webhooks, newer APIs), is ignored by default.
         *  The `generateAll.sh` script also contains a list of `postmanVariables` and `generatedVariables` that are needed to create the variables in the Postman format.
     * All files which have changed (been modified, or added) are then committed to the repository. 
@@ -43,7 +43,7 @@ The workflow can be executed manually (on-demand) and will perform the following
 
 The `generatePostmanJsonFile.sh` script contains a list of `postmanVariables` and `generatedVariables` that are needed to create the variables in the Postman format.
 
-This job first runs a script relying on [openapi-generator-postman-v2](https://github.com/gcatanese/openapi-generator-postman-v2). 
+This job first runs a script relying on [openapi-generator-postman-v2](https://github.com/adyen-examples/openapi-generator-postman-v2).
 
 ## Workflow create-collection (see [create-collection.yml](./.github/workflows/create-collection.yml))
 
@@ -72,7 +72,7 @@ Two repository secrets are necessary to successfully run this action :
 
 The repository includes multiple scripts:
 
-* `generateAll.sh` (*) generates all postman API collection files for all versions of the OpenAPI definitions and places them in the postman folder. It is meant to run inside the [dedicated docker image](https://github.com/gcatanese/openapi-generator-postman-v2/).
+* `generateAll.sh` (*) generates all postman API collection files for all versions of the OpenAPI definitions and places them in the postman folder. It is meant to run inside the [dedicated docker image](https://github.com/adyen-examples/openapi-generator-postman-v2/).
 * `runDocker.sh` is the script that actually runs `generateAll.sh` inside the docker image. 
 * `generatePostmanJsonFile.sh` (*) generates the postman JSON file for a given OpenAPI file.
 
